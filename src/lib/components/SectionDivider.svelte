@@ -21,25 +21,25 @@
   aria-hidden="true"
 >
   {#if variant === 'gradient'}
-    <div class="h-24 bg-gradient-to-b from-transparent via-violet-500/5 to-transparent" />
+    <div class="h-32 bg-gradient-to-b from-transparent via-violet-500/10 to-transparent" />
     <div class="absolute inset-0 flex items-center justify-center">
-      <div class="gradient-orb w-32 h-1 rounded-full bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />
+      <div class="gradient-orb w-48 h-1 rounded-full bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
     </div>
   {:else if variant === 'dots'}
-    <div class="h-16 flex items-center justify-center gap-3">
-      {#each [0, 1, 2] as i}
+    <div class="h-20 flex items-center justify-center gap-4">
+      {#each [0, 1, 2, 3, 4] as i}
         <div
-          class="dot w-1.5 h-1.5 rounded-full bg-violet-500/40"
-          style="animation-delay: {i * 150}ms"
+          class="dot w-2 h-2 rounded-full bg-violet-500/60"
+          style="animation-delay: {i * 100}ms"
         />
       {/each}
     </div>
   {:else if variant === 'line'}
-    <div class="h-16 flex items-center justify-center">
-      <div class="line-reveal w-24 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+    <div class="h-20 flex items-center justify-center">
+      <div class="line-reveal w-48 h-0.5 bg-gradient-to-r from-transparent via-white/40 to-transparent" />
     </div>
   {:else if variant === 'wave'}
-    <div class="h-20 relative">
+    <div class="h-24 relative">
       <svg class="absolute inset-0 w-full h-full" viewBox="0 0 1200 80" preserveAspectRatio="none">
         <path
           class="wave-path"
@@ -49,7 +49,7 @@
         <defs>
           <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" style="stop-color:rgb(139,92,246);stop-opacity:0" />
-            <stop offset="50%" style="stop-color:rgb(139,92,246);stop-opacity:0.1" />
+            <stop offset="50%" style="stop-color:rgb(139,92,246);stop-opacity:0.2" />
             <stop offset="100%" style="stop-color:rgb(139,92,246);stop-opacity:0" />
           </linearGradient>
         </defs>
