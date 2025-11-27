@@ -1,6 +1,13 @@
 <script>
   import { createEventDispatcher, onMount } from 'svelte';
   import { base } from '$app/paths';
+  import { fade, fly } from 'svelte/transition';
+  import { cubicOut, backOut } from 'svelte/easing';
+  import { reducedMotion } from '$lib/stores/gameFlow';
+
+  // Transition durations (respects reduced motion)
+  $: duration = $reducedMotion ? 0 : 300;
+  $: backdropDuration = $reducedMotion ? 0 : 200;
 
   export let images = [];
   export let initialImageId = '';
@@ -118,16 +125,20 @@
   }
 </script>
 
-<div class="fixed inset-0 z-50" style="display: {isOpen ? 'block' : 'none'}">
+{#if isOpen}
+<div class="fixed inset-0 z-50">
   <button
     type="button"
     class="absolute inset-0 bg-black/90 backdrop-blur-sm"
     on:click={close}
     aria-label="Close image viewer"
+    transition:fade={{ duration: backdropDuration }}
   ></button>
 
   <div
     class="relative z-10 w-full h-full flex items-center justify-center"
+    in:fly={{ y: 30, duration, easing: backOut }}
+    out:fly={{ y: 20, duration: duration * 0.7, easing: cubicOut }}
     bind:this={modalElement}
     role="dialog"
     aria-modal="true"
@@ -529,6 +540,7 @@
     </div>
   </div>
 </div>
+{/if}
 
 <style>
   /* Prevent body scroll when modal is open */
