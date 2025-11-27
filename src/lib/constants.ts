@@ -40,20 +40,89 @@ export const PROJECTS: Project[] = [
         description:
             'Long-form writing on AI-native development, enterprise architecture, and leadership. Designed for clarity and speed with an emphasis on accessibility and exceptional reading experience.',
         category: 'ai-native-systems',
-        technologies: ['MDX', 'Vercel'],
+        technologies: ['React', 'Vite', 'MDX', 'Tailwind CSS', 'Vercel'],
         featured: false,
         imageUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=800&fit=crop&q=80',
-        demo: 'https://signal-dispatch-blog.vercel.app',
+        demo: 'https://blog.ninochavez.co',
         repository: 'https://github.com/nino-chavez/signal-dispatch-blog',
         year: 2025,
-        status: 'in-progress',
-        outcomes: ['Accessible reading experience', 'Fast loads, minimal layout shift'],
+        status: 'live',
+        outcomes: ['Accessible reading experience', 'Fast loads, minimal layout shift', 'AI-generated category images', 'Mermaid diagram support'],
         metrics: {
             performance: 'Optimized for readability',
             scale: 'Static hosting (CDN)',
             timeline: 'Active updates'
         },
         tags: ['Writing', 'AI', 'Architecture']
+    },
+    // Photography gallery: High-performance photo portfolio
+    {
+        id: 'nino-chavez-gallery',
+        title: 'Photography Gallery',
+        subtitle: 'High-performance photo portfolio with 20,000+ images',
+        description:
+            'Production-grade photography portfolio built with SvelteKit 2 and Svelte 5. Features dynamic gallery with advanced filtering, timeline view, full-featured lightbox with EXIF overlays and keyboard navigation. Optimized for performance with comprehensive database indexing.',
+        category: 'ai-native-systems',
+        technologies: ['SvelteKit 2', 'Svelte 5', 'Supabase', 'Tailwind CSS 4', 'Playwright'],
+        featured: false,
+        imageUrl: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=1200&h=800&fit=crop&q=80',
+        demo: 'https://photography.ninochavez.co',
+        repository: 'https://github.com/nino-chavez/gallery',
+        year: 2025,
+        status: 'live',
+        outcomes: ['20,000+ photos indexed', 'Lighthouse >90 performance', 'WCAG 2.1 AA compliant', 'Full EXIF metadata display'],
+        metrics: {
+            performance: 'Sub-second gallery loads',
+            scale: '20k+ photos with efficient queries',
+            timeline: 'Production since Nov 2025'
+        },
+        tags: ['Photography', 'SvelteKit', 'Supabase', 'Performance']
+    },
+    // Rally HQ: Tournament management platform
+    {
+        id: 'rally-hq',
+        title: 'Rally HQ — Tournament Platform',
+        subtitle: 'Production volleyball tournament management SaaS',
+        description:
+            'Production-ready volleyball tournament management platform with 137 specialized services. Multi-tenant SaaS architecture with real-time WebSocket features, capability-based permissions, drag-and-drop bracket management, and white-label branding support.',
+        category: 'platform-architecture',
+        technologies: ['Next.js 15', 'React 19', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Radix UI'],
+        featured: false,
+        imageUrl: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=1200&h=800&fit=crop&q=80',
+        demo: 'https://rallyhq.app',
+        repository: 'https://github.com/signal-x-studio/rally-hq',
+        year: 2025,
+        status: 'live',
+        outcomes: ['137 specialized services', '88/100 production readiness score', 'Real-time bracket updates', 'Multi-tenant architecture'],
+        metrics: {
+            performance: 'Real-time WebSocket updates',
+            scale: 'Enterprise multi-tenant SaaS',
+            timeline: 'Active production'
+        },
+        tags: ['SaaS', 'Sports', 'Real-time', 'Enterprise']
+    },
+    // CIQ: Commerce Intelligence Quotient
+    {
+        id: 'ciq-platform',
+        title: 'CIQ — Commerce Intelligence',
+        subtitle: 'Enterprise AI transformation platform for commerce',
+        description:
+            'Strategic transformation platform mapping 137 commerce capabilities across domains. Features semantic search, interactive architecture visualization with XY Flow, AI-powered capability recommendations, and enterprise consulting workflows.',
+        category: 'enterprise-commerce',
+        technologies: ['SvelteKit 2', 'Svelte 5', 'Supabase', 'OpenAI', 'XY Flow', 'Tailwind CSS'],
+        featured: false,
+        imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop&q=80',
+        demo: 'https://ciq.signalx.studio',
+        repository: 'https://github.com/signal-x-studio/ciq',
+        year: 2025,
+        status: 'live',
+        outcomes: ['137 capabilities mapped', 'AI-powered semantic search', 'Interactive architecture diagrams', 'Enterprise consulting workflows'],
+        metrics: {
+            performance: 'Sub-100ms capability search',
+            scale: 'Enterprise transformation tool',
+            timeline: 'Active production'
+        },
+        tags: ['Consulting', 'Commerce', 'AI', 'Enterprise']
     },
     // AI Answer Intelligence Platform
     {
@@ -147,29 +216,6 @@ export const PROJECTS: Project[] = [
         },
         tags: ['AI‑accelerated', 'Integration', 'Proof']
     },
-    // AI‑native commerce intelligence
-    {
-        id: 'commerce-prompt-analyzer',
-        title: 'Commerce Prompt Analyzer',
-        subtitle: 'Rapid prototyping tool with Gemini integration',
-        description:
-            'Production-ready application scaffold with Google Gemini integration for commerce prompt analysis. Designed for rapid experimentation with simple local setup and environment configuration. Enables developers to prototype AI-powered commerce applications in minutes.',
-        category: 'ai-native-systems',
-        technologies: ['AI Studio', 'TypeScript', 'Gemini'],
-        featured: false,
-        imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop&q=80',
-        link: 'https://github.com/signal-x-studio/commerce-prompt-analyzer',
-        repository: 'https://github.com/signal-x-studio/commerce-prompt-analyzer',
-        year: 2025,
-        status: 'in-progress',
-        outcomes: ['Gemini API ready', 'Local dev in minutes'],
-        metrics: {
-            performance: 'Rapid prototyping',
-            scale: 'App template',
-            timeline: 'Ongoing improvements'
-        },
-        tags: ['AI', 'Prototype']
-    },
     // AI development workflow optimization
     {
         id: 'agent-os-workflow-system',
@@ -192,34 +238,6 @@ export const PROJECTS: Project[] = [
             timeline: 'Production‑validated'
         },
         tags: ['AI Workflow', 'Developer Tools', 'Efficiency']
-    }
-    ,
-    // AI-accelerated photo portfolio app
-    {
-    id: 'portfolio-app',
-    title: 'AI-Accelerated Photo Portfolio',
-    subtitle: 'Modern portfolio with EXIF overlays and fast image browsing',
-        description:
-            'Modern photo portfolio featuring fast image browsing, EXIF metadata overlays, and responsive design. Built using accelerated development practices that leveraged internal reference implementations, demonstrating how strategic reuse can dramatically accelerate product delivery.',
-        category: 'ai-native-systems',
-        technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'EXIF.js'],
-        featured: false,
-    imageUrl: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=1200&h=800&fit=crop&q=80',
-    repository: 'https://github.com/nino-chavez/portfolio',
-        year: 2024,
-        status: 'in-progress',
-        outcomes: [
-            'Development velocity: 2x faster by leveraging internal reference',
-            'EXIF-aware portfolio modal',
-            'Modern, responsive UI',
-            'Demonstrates value of reference architectures'
-        ],
-        metrics: {
-            performance: 'Instant image loads (optimized)',
-            scale: 'Personal and client-ready',
-            timeline: 'Accelerated by SmugMug reference app'
-        },
-    tags: ['Portfolio', 'AI-accelerated', 'Reference Implementation', 'React']
     }
 ];
 

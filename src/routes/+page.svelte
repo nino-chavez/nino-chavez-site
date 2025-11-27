@@ -181,7 +181,7 @@ async function handleNavigate(sectionId) {
 
 	<SectionDivider variant="dots" />
 
-	<Lazy loader={() => import('$lib/components/sections/PortfolioSection.svelte')} mode="idle">
+	<Lazy loader={() => import('$lib/components/sections/ConsultationSection.svelte')} mode="idle">
 		<div slot="placeholder" class="min-h-screen bg-neutral-800/20 animate-pulse"></div>
 	</Lazy>
 

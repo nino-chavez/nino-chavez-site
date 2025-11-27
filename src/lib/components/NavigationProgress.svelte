@@ -8,7 +8,7 @@
     { id: 'frame', label: 'Approach', icon: '📐' },
     { id: 'exposure', label: 'Experience', icon: '📷' },
     { id: 'gallery', label: 'Gallery', icon: '🎨' },
-    { id: 'portfolio', label: 'Work', icon: '💼' }
+    { id: 'consultation', label: 'Contact', icon: '📬' }
   ];
 
   // Get current section index

@@ -9,7 +9,7 @@
 				<a href="#focus" class="text-white/70 hover:text-white transition-colors">About</a>
 				<a href="#frame" class="text-white/70 hover:text-white transition-colors">Approach</a>
 				<a href="#exposure" class="text-white/70 hover:text-white transition-colors">Experience</a>
-				<a href="#portfolio" class="text-white/70 hover:text-white transition-colors">Work</a>
+				<a href="#consultation" class="text-white/70 hover:text-white transition-colors">Contact</a>
 			</div>
 	</nav>
 </header>
