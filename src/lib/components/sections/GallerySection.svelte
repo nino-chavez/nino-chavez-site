@@ -650,7 +650,7 @@
     -ms-overflow-style: none;
     cursor: grab;
     margin-top: 2rem;
-    min-height: 75vh;
+    min-height: 55vh;
     height: auto;
   }
 
@@ -664,8 +664,8 @@
 
   .gallery-track {
     display: inline-flex;
-    gap: 3vw;
-    padding: 0 10vw;
+    gap: 2vw;
+    padding: 0 8vw;
     height: 100%;
     align-items: center;
     min-width: 100%;
@@ -674,7 +674,7 @@
   .gallery-item {
     flex-shrink: 0;
     width: auto;
-    height: 80vh;
+    height: 55vh;
     aspect-ratio: 2 / 3;
     overflow: hidden;
     border-radius: 4px;

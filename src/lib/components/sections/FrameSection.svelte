@@ -11,6 +11,12 @@
   // All projects for alternating layout
   $: allProjects = PROJECTS;
 
+  // Show more state - initially show 4 projects
+  const INITIAL_PROJECT_COUNT = 4;
+  let showAllProjects = false;
+  $: visibleProjects = showAllProjects ? allProjects : allProjects.slice(0, INITIAL_PROJECT_COUNT);
+  $: hasMoreProjects = allProjects.length > INITIAL_PROJECT_COUNT;
+
   // Entry transition state
   let entered = false;
   let progress = 0; // 0..1 scroll progress through this section
@@ -91,7 +97,7 @@
         {#if allProjects.length > 0}
           <!-- Alternating Image-Text Layout -->
           <div class="space-y-16 md:space-y-20 lg:space-y-24">
-            {#each allProjects as project, index}
+            {#each visibleProjects as project, index}
               {@const isEven = index % 2 === 0}
               {@const isFeatured = project.featured}
 
@@ -244,6 +250,28 @@
               </div>
             {/each}
           </div>
+
+          <!-- Show More / Show Less Button -->
+          {#if hasMoreProjects}
+            <div class="mt-12 md:mt-16 text-center">
+              <button
+                on:click={() => (showAllProjects = !showAllProjects)}
+                class="inline-flex items-center gap-3 px-8 py-4 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-xl border border-white/10 hover:border-violet-500/40 transition-all duration-300 group"
+              >
+                {#if showAllProjects}
+                  <span>Show Less</span>
+                  <svg class="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                  </svg>
+                {:else}
+                  <span>Show {allProjects.length - INITIAL_PROJECT_COUNT} More Projects</span>
+                  <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                {/if}
+              </button>
+            </div>
+          {/if}
         {:else}
           <div class="text-center py-16">
             <p class="text-white/60">No projects available.</p>
