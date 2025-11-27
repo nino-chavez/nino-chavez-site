@@ -1,9 +1,16 @@
 <script>
   import { createEventDispatcher } from 'svelte';
+  import { fade, fly, scale } from 'svelte/transition';
+  import { cubicOut, backOut } from 'svelte/easing';
+  import { reducedMotion } from '$lib/stores/gameFlow';
 
   export let isOpen = false;
 
   const dispatch = createEventDispatcher();
+
+  // Transition durations (respects reduced motion)
+  $: duration = $reducedMotion ? 0 : 300;
+  $: backdropDuration = $reducedMotion ? 0 : 200;
   let modalContent;
 
   function onClose() {
@@ -34,19 +41,22 @@
     aria-modal="true"
     aria-labelledby="modal-title"
   >
-    <!-- Clickable overlay -->
+    <!-- Clickable overlay with fade -->
     <div
-      class="absolute inset-0 bg-black/80"
+      class="absolute inset-0 bg-black/80 backdrop-blur-sm"
       role="button"
       aria-label="Close modal"
       tabindex="0"
       on:click={onClose}
       on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && onClose()}
+      transition:fade={{ duration: backdropDuration }}
     ></div>
 
     <div
       bind:this={modalContent}
       class="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-neutral-900 border border-violet-500/20 rounded-xl shadow-2xl outline-none"
+      in:fly={{ y: 30, duration, easing: backOut }}
+      out:fly={{ y: 20, duration: duration * 0.7, easing: cubicOut }}
       role="document"
       tabindex="-1"
       style="background: linear-gradient(135deg, rgba(10, 10, 15, 0.95), rgba(30, 41, 59, 0.9)); backdrop-filter: blur(20px);"

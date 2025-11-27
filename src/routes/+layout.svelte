@@ -8,6 +8,7 @@
 
 	import { onMount } from 'svelte';
 	import { dev } from '$app/environment';
+	import Toast from '$lib/components/Toast.svelte';
 
 	let mounted = false;
 
@@ -42,6 +43,9 @@
 <div class="min-h-screen bg-neutral-900 text-white" class:mounted>
 	<slot />
 </div>
+
+<!-- Global Toast Notifications -->
+<Toast />
 
 <style>
 	:global(html) {

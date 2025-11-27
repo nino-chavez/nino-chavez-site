@@ -7,6 +7,7 @@ import Lazy from '$lib/components/util/Lazy.svelte';
 import ScrollDetector from '$lib/components/ScrollDetector.svelte';
 import ErrorBoundary from '$lib/components/ErrorBoundary.svelte';
 import MobileNav from '$lib/components/ui/MobileNav.svelte';
+import SectionDivider from '$lib/components/SectionDivider.svelte';
 import { lockFocus } from '$lib/stores/gameFlow';
 
 // Receive server data
@@ -150,29 +151,39 @@ async function handleNavigate(sectionId) {
 <main id="main-content" class="relative">
 	<Header onNavigate={handleNavigate}></Header>
 
-	 <HeroSection />
+	<HeroSection />
 
-			 <Lazy loader={() => import('$lib/components/sections/FocusSection.svelte')} onFocusLock={handleFocusLock}>
-			  <div slot="placeholder" class="min-h-screen bg-neutral-800/20 animate-pulse"></div>
-			 </Lazy>
+	<SectionDivider variant="gradient" />
 
-			 <Lazy loader={() => import('$lib/components/sections/FrameSection.svelte')} mode="visible">
-			  <div slot="placeholder" class="min-h-screen bg-neutral-800/20 animate-pulse"></div>
-			 </Lazy>
+	<Lazy loader={() => import('$lib/components/sections/FocusSection.svelte')} onFocusLock={handleFocusLock}>
+		<div slot="placeholder" class="min-h-screen bg-neutral-800/20 animate-pulse"></div>
+	</Lazy>
 
-			 <ErrorBoundary>
-			  <Lazy loader={() => import('$lib/components/sections/ExposureSection.svelte')} mode="idle" data={data}>
-			 	 <div slot="placeholder" class="min-h-[600px] bg-neutral-800/20 animate-pulse"></div>
-			  </Lazy>
-			 </ErrorBoundary>
+	<SectionDivider variant="dots" />
 
-			 <Lazy loader={() => import('$lib/components/sections/GallerySection.svelte')} mode="idle">
-			  <div slot="placeholder" class="min-h-screen bg-neutral-800/20 animate-pulse"></div>
-			 </Lazy>
+	<Lazy loader={() => import('$lib/components/sections/FrameSection.svelte')} mode="visible">
+		<div slot="placeholder" class="min-h-screen bg-neutral-800/20 animate-pulse"></div>
+	</Lazy>
 
-			 <Lazy loader={() => import('$lib/components/sections/PortfolioSection.svelte')} mode="idle">
-			  <div slot="placeholder" class="min-h-screen bg-neutral-800/20 animate-pulse"></div>
-			 </Lazy>
+	<SectionDivider variant="line" />
+
+	<ErrorBoundary>
+		<Lazy loader={() => import('$lib/components/sections/ExposureSection.svelte')} mode="idle" data={data}>
+			<div slot="placeholder" class="min-h-[600px] bg-neutral-800/20 animate-pulse"></div>
+		</Lazy>
+	</ErrorBoundary>
+
+	<SectionDivider variant="gradient" />
+
+	<Lazy loader={() => import('$lib/components/sections/GallerySection.svelte')} mode="idle">
+		<div slot="placeholder" class="min-h-screen bg-neutral-800/20 animate-pulse"></div>
+	</Lazy>
+
+	<SectionDivider variant="dots" />
+
+	<Lazy loader={() => import('$lib/components/sections/PortfolioSection.svelte')} mode="idle">
+		<div slot="placeholder" class="min-h-screen bg-neutral-800/20 animate-pulse"></div>
+	</Lazy>
 
 	<ScrollDetector />
 	<Footer></Footer>
