@@ -40,18 +40,42 @@
       <EventTypeCards filter="enterprise" />
     </div>
 
-    <!-- Fallback -->
-    <div class="text-center">
-      <p class="text-white/50 text-sm mb-3">Prefer to start with email?</p>
-      <a
-        href="mailto:{portfolioCopy.email}"
-        class="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 font-semibold transition-colors"
-      >
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-        <span>{portfolioCopy.email}</span>
-      </a>
+    <!-- Alternative actions -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-6 text-center">
+      <!-- Blog link -->
+      <div>
+        <p class="text-white/50 text-sm mb-3">Explore my thinking</p>
+        <a
+          href="https://signaldispatch.co"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 font-semibold transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+          </svg>
+          <span>Signal Dispatch Blog</span>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+
+      <span class="hidden md:block text-white/20">|</span>
+
+      <!-- Email fallback -->
+      <div>
+        <p class="text-white/50 text-sm mb-3">Prefer to start with email?</p>
+        <a
+          href="mailto:{portfolioCopy.email}"
+          class="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 font-semibold transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span>{portfolioCopy.email}</span>
+        </a>
+      </div>
     </div>
   </div>
 

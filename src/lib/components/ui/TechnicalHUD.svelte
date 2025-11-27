@@ -45,11 +45,11 @@
       ariaLabel: 'Frame shot at gallery section - Photography portfolio'
     },
     {
-      id: 'portfolio',
+      id: 'consultation',
       label: 'CONTACT',
       metric: 'Status: Available',
       description: 'Get in touch',
-      ariaLabel: 'Frame shot at portfolio section - Get in touch'
+      ariaLabel: 'Frame shot at consultation section - Get in touch'
     }
   ];
 

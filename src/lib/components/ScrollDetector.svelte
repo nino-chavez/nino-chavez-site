@@ -3,7 +3,7 @@
   import { currentSection, setSection } from '$lib/stores/gameFlow';
 
   // Define sections in order
-  const sections = ['hero', 'focus', 'frame', 'exposure', 'gallery', 'portfolio'];
+  const sections = ['hero', 'focus', 'frame', 'exposure', 'gallery', 'consultation'];
 
   onMount(() => {
     let ticking = false;

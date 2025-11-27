@@ -24,7 +24,7 @@
 
   // Section enter handler
   function onSectionEnter() {
-    currentSection.set('portfolio');
+    currentSection.set('consultation');
     entered = true;
   }
   
@@ -57,14 +57,14 @@
 </script>
 
 <section
-  id="portfolio"
-  data-section="portfolio"
+  id="consultation"
+  data-section="consultation"
   class="relative bg-gradient-to-br from-neutral-900 via-slate-800 to-neutral-900 pt-8 md:pt-16 lg:pt-20 pb-10 md:pb-16 lg:pb-20"
   use:inView={{ threshold: 0.3, once: true }}
   use:scrollProgress={{ offsetTop: 120, offsetBottom: 120, disabled: rm }}
   on:enter={onSectionEnter}
   on:progress={(e) => (progress = e.detail.progress)}
-  aria-label="Portfolio section - Contact and professional details"
+  aria-label="Consultation section - Contact and booking options"
 >
   {#if entered}
     <div
