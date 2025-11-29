@@ -18,11 +18,11 @@
     },
     {
       "source": "/labs",
-      "destination": "https://labs.ninochavez.co/labs"
+      "destination": "https://nino-chavez-labs.vercel.app/labs"
     },
     {
       "source": "/labs/:path*",
-      "destination": "https://labs.ninochavez.co/labs/:path*"
+      "destination": "https://nino-chavez-labs.vercel.app/labs/:path*"
     }
   ],
   "headers": [
