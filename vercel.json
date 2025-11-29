@@ -18,11 +18,19 @@
     },
     {
       "source": "/labs",
-      "destination": "https://nino-chavez-labs.vercel.app/labs"
+      "destination": "https://nino-labs-landing.vercel.app/labs"
+    },
+    {
+      "source": "/labs/code-to-cognition",
+      "destination": "https://code-to-cognition-ninochavez.vercel.app/labs/code-to-cognition"
+    },
+    {
+      "source": "/labs/code-to-cognition/:path*",
+      "destination": "https://code-to-cognition-ninochavez.vercel.app/labs/code-to-cognition/:path*"
     },
     {
       "source": "/labs/:path*",
-      "destination": "https://nino-chavez-labs.vercel.app/labs/:path*"
+      "destination": "https://nino-labs-landing.vercel.app/labs/:path*"
     }
   ],
   "headers": [
