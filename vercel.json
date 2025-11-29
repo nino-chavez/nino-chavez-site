@@ -1,37 +1,47 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/photography",
-      "destination": "https://photography.ninochavez.co",
-      "permanent": true
+      "destination": "https://photography.ninochavez.co/photography"
     },
     {
       "source": "/photography/:path*",
-      "destination": "https://photography.ninochavez.co/:path*",
-      "permanent": true
-    }
-  ],
-  "redirects": [
+      "destination": "https://photography.ninochavez.co/photography/:path*"
+    },
     {
       "source": "/blog",
-      "destination": "https://blog.ninochavez.co"
+      "destination": "https://blog.ninochavez.co/blog"
     },
     {
       "source": "/blog/:path*",
-      "destination": "https://blog.ninochavez.co/:path*"
+      "destination": "https://blog.ninochavez.co/blog/:path*"
+    },
+    {
+      "source": "/labs",
+      "destination": "https://labs.ninochavez.co/labs"
+    },
+    {
+      "source": "/labs/:path*",
+      "destination": "https://labs.ninochavez.co/labs/:path*"
     }
   ],
   "headers": [
     {
       "source": "/images/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/brand/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     }
   ]
