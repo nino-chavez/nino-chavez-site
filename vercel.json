@@ -10,11 +10,11 @@
     },
     {
       "source": "/blog",
-      "destination": "https://blog.ninochavez.co/blog"
+      "destination": "https://signal-dispatch-blog.vercel.app/blog"
     },
     {
       "source": "/blog/:path*",
-      "destination": "https://blog.ninochavez.co/blog/:path*"
+      "destination": "https://signal-dispatch-blog.vercel.app/blog/:path*"
     },
     {
       "source": "/labs",
