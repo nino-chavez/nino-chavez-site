@@ -337,7 +337,7 @@
 			</div>
 
 			<!-- Enhanced Scroll indicator - prevents false floor -->
-			<div class="absolute bottom-0 left-0 right-0 flex flex-col items-center pb-8 animate-fade-in" style="animation-delay: 800ms;">
+			<div class="absolute bottom-0 left-0 right-0 flex flex-col items-center pb-8 animate-fade-in pointer-events-none" style="animation-delay: 800ms;">
 				<!-- Partial content peek indicator -->
 				<div class="text-center mb-4">
 					<span class="font-rival-narrow text-xs tracking-widest uppercase text-neutral-600">Discover More</span>
