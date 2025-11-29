@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/photography",
-      "destination": "https://photography.ninochavez.co/photography"
+      "destination": "https://nino-chavez-gallery.vercel.app/photography"
     },
     {
       "source": "/photography/:path*",
-      "destination": "https://photography.ninochavez.co/photography/:path*"
+      "destination": "https://nino-chavez-gallery.vercel.app/photography/:path*"
     },
     {
       "source": "/blog",
