@@ -16,7 +16,7 @@ export const PROJECTS: Project[] = [
         isShowcase: true,
     demo: 'https://nino.photos',
     repository: 'https://github.com/nino-chavez/website',
-        imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop&q=80',
+        imageUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=800&fit=crop&q=80',
         year: 2025,
         status: 'live',
         outcomes: [
@@ -31,6 +31,29 @@ export const PROJECTS: Project[] = [
             timeline: 'React → SvelteKit migration completed'
         },
         tags: ['SvelteKit', 'Portfolio', 'Accessibility', 'Performance']
+    },
+    // Labs: Experimentation and prototyping platform
+    {
+        id: 'nino-labs',
+        title: 'Nino Labs — Experimentation Platform',
+        subtitle: 'Prototypes, explorations, and learning tools for AI-native development',
+        description:
+            'A curated collection of prototypes and experiments exploring the future of software development and AI-powered systems. Serves as an incubator for ideas that graduate into production systems—including AIQ, CIQ, Rally HQ, and workshops for AI search optimization.',
+        category: 'ai-native-systems',
+        technologies: ['Next.js', 'Turborepo', 'TypeScript', 'Tailwind CSS', 'Schema.org', 'Vercel'],
+        featured: false,
+        imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=800&fit=crop&q=80',
+        demo: 'https://labs.ninochavez.co',
+        repository: 'https://github.com/nino-chavez/labs',
+        year: 2025,
+        status: 'live',
+        outcomes: ['Incubator for production systems', 'AEO/GEO workshop platform', 'Structured data optimization', 'Monorepo architecture'],
+        metrics: {
+            performance: 'Turborepo-optimized builds',
+            scale: 'Multi-project monorepo',
+            timeline: 'Continuous experimentation'
+        },
+        tags: ['Labs', 'Experiments', 'AI', 'Prototypes']
     },
     // Personal blog: AI, architecture, commerce, leadership
     {
