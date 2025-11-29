@@ -1,10 +1,9 @@
 <script>
-	import { onMount, onDestroy } from 'svelte';
-import { browser } from '$app/environment';
-	import { CAREER_MILESTONES, CAPABILITY_SYSTEM, CAPABILITY_IDS, PROJECTS } from '$lib/constants';
-	import { focusCopy, frameCopy } from '$lib/copy';
 	import { base } from '$app/paths';
 	import { inView } from '$lib/actions/inView';
+	import { CAPABILITY_IDS, CAPABILITY_SYSTEM, CAREER_MILESTONES, PROJECTS } from '$lib/constants';
+	import { focusCopy, frameCopy } from '$lib/copy';
+	import { onDestroy, onMount } from 'svelte';
 
 	let mounted = false;
 	let activeCapability = 'enterprise-commerce';
@@ -286,7 +285,7 @@ import { browser } from '$app/environment';
 		</div>
 
 		<!-- Content overlay -->
-		<div class="relative z-10 min-h-screen flex flex-col">
+		<div class="relative z-20 min-h-screen flex flex-col">
 			<!-- Minimal top nav -->
 			<nav class="flex justify-between items-center p-6 lg:p-8 animate-fade-in" style="animation-delay: 200ms;">
 				<span class="font-rival-narrow text-sm text-neutral-500 tracking-widest uppercase">NINO CHAVEZ</span>
@@ -322,7 +321,7 @@ import { browser } from '$app/environment';
 					<!-- Subtle CTA row -->
 					<div class="flex flex-wrap items-center gap-6 animate-fade-in-up" style="animation-delay: 600ms;">
 						<a
-							href="https://blog.ninochavez.co"
+							href="/blog"
 							class="inline-flex items-center gap-3 text-white hover:text-[#e18718] transition-colors group"
 						>
 							<span class="font-rival-body text-sm font-medium tracking-wide">Read Signal Dispatch</span>
@@ -331,7 +330,7 @@ import { browser } from '$app/environment';
 							</svg>
 						</a>
 						<span class="w-px h-4 bg-neutral-700"></span>
-						<a href="https://photography.ninochavez.co" class="font-rival-body text-sm text-neutral-500 hover:text-white transition-colors">Photography</a>
+						<a href="/photography" class="font-rival-body text-sm text-neutral-500 hover:text-white transition-colors">Photography</a>
 						<a href="/cv" class="font-rival-body text-sm text-neutral-500 hover:text-white transition-colors">CV</a>
 					</div>
 				{/if}
