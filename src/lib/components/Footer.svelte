@@ -158,12 +158,17 @@
           &copy; {currentYear} Nino Chavez. Built with precision.
         </div>
 
-        <div class="flex items-center gap-4 text-xs text-white/30">
-          <span class="hover:text-white/50 transition-colors">SvelteKit</span>
-          <span class="text-white/20">•</span>
-          <span class="hover:text-white/50 transition-colors">Tailwind CSS</span>
-          <span class="text-white/20">•</span>
-          <span class="hover:text-white/50 transition-colors">Vercel</span>
+        <div class="flex items-center gap-6 text-xs">
+          <a href="/privacy" class="text-white/30 hover:text-white/60 transition-colors">
+            Privacy
+          </a>
+          <div class="flex items-center gap-4 text-white/30">
+            <span class="hover:text-white/50 transition-colors">SvelteKit</span>
+            <span class="text-white/20">•</span>
+            <span class="hover:text-white/50 transition-colors">Tailwind CSS</span>
+            <span class="text-white/20">•</span>
+            <span class="hover:text-white/50 transition-colors">Vercel</span>
+          </div>
         </div>
       </div>
     </div>
