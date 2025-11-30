@@ -30,11 +30,11 @@
     },
     {
       "source": "/code-to-cognition",
-      "destination": "https://labs.ninochavez.co/labs/code-to-cognition"
+      "destination": "https://code-to-cognition-ninochavez.vercel.app/labs/code-to-cognition"
     },
     {
       "source": "/code-to-cognition/:path*",
-      "destination": "https://labs.ninochavez.co/labs/code-to-cognition/:path*"
+      "destination": "https://code-to-cognition-ninochavez.vercel.app/labs/code-to-cognition/:path*"
     },
     {
       "source": "/labs",
@@ -42,11 +42,11 @@
     },
     {
       "source": "/labs/code-to-cognition",
-      "destination": "https://labs.ninochavez.co/labs/code-to-cognition"
+      "destination": "https://code-to-cognition-ninochavez.vercel.app/labs/code-to-cognition"
     },
     {
       "source": "/labs/code-to-cognition/:path*",
-      "destination": "https://labs.ninochavez.co/labs/code-to-cognition/:path*"
+      "destination": "https://code-to-cognition-ninochavez.vercel.app/labs/code-to-cognition/:path*"
     },
     {
       "source": "/labs/:path*",
