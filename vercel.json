@@ -2,35 +2,35 @@
   "rewrites": [
     {
       "source": "/photography",
-      "destination": "https://nino-chavez-gallery.vercel.app/photography"
+      "destination": "https://photography.ninochavez.co/photography"
     },
     {
       "source": "/photography/:path*",
-      "destination": "https://nino-chavez-gallery.vercel.app/photography/:path*"
+      "destination": "https://photography.ninochavez.co/photography/:path*"
     },
     {
       "source": "/blog",
-      "destination": "https://signal-dispatch-blog.vercel.app/blog"
+      "destination": "https://blog.ninochavez.co/blog"
     },
     {
       "source": "/blog/:path*",
-      "destination": "https://signal-dispatch-blog.vercel.app/blog/:path*"
+      "destination": "https://blog.ninochavez.co/blog/:path*"
     },
     {
       "source": "/labs",
-      "destination": "https://landing-signal-x-studio.vercel.app/labs"
+      "destination": "https://labs.ninochavez.co/labs"
     },
     {
       "source": "/labs/code-to-cognition",
-      "destination": "https://code-to-cognition-ninochavez.vercel.app/labs/code-to-cognition"
+      "destination": "https://labs.ninochavez.co/labs/code-to-cognition"
     },
     {
       "source": "/labs/code-to-cognition/:path*",
-      "destination": "https://code-to-cognition-ninochavez.vercel.app/labs/code-to-cognition/:path*"
+      "destination": "https://labs.ninochavez.co/labs/code-to-cognition/:path*"
     },
     {
       "source": "/labs/:path*",
-      "destination": "https://landing-signal-x-studio.vercel.app/labs/:path*"
+      "destination": "https://labs.ninochavez.co/labs/:path*"
     }
   ],
   "headers": [
