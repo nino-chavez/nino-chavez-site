@@ -29,6 +29,14 @@
       "destination": "https://blog.ninochavez.co/generated/:path*"
     },
     {
+      "source": "/code-to-cognition",
+      "destination": "https://labs.ninochavez.co/labs/code-to-cognition"
+    },
+    {
+      "source": "/code-to-cognition/:path*",
+      "destination": "https://labs.ninochavez.co/labs/code-to-cognition/:path*"
+    },
+    {
       "source": "/labs",
       "destination": "https://labs.ninochavez.co/labs"
     },
