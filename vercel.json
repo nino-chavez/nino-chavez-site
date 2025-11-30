@@ -18,7 +18,7 @@
     },
     {
       "source": "/labs",
-      "destination": "https://nino-labs-landing.vercel.app/labs"
+      "destination": "https://landing-signal-x-studio.vercel.app/labs"
     },
     {
       "source": "/labs/code-to-cognition",
@@ -30,7 +30,7 @@
     },
     {
       "source": "/labs/:path*",
-      "destination": "https://nino-labs-landing.vercel.app/labs/:path*"
+      "destination": "https://landing-signal-x-studio.vercel.app/labs/:path*"
     }
   ],
   "headers": [
