@@ -5,6 +5,10 @@
       "destination": "https://photography.ninochavez.co/photography"
     },
     {
+      "source": "/photography/",
+      "destination": "https://photography.ninochavez.co/photography/"
+    },
+    {
       "source": "/photography/:path*",
       "destination": "https://photography.ninochavez.co/photography/:path*"
     },
@@ -15,6 +19,14 @@
     {
       "source": "/blog/:path*",
       "destination": "https://blog.ninochavez.co/blog/:path*"
+    },
+    {
+      "source": "/_astro/:path*",
+      "destination": "https://blog.ninochavez.co/_astro/:path*"
+    },
+    {
+      "source": "/generated/:path*",
+      "destination": "https://blog.ninochavez.co/generated/:path*"
     },
     {
       "source": "/labs",
