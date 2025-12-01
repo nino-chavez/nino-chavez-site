@@ -49,6 +49,14 @@
       "destination": "https://code-to-cognition.vercel.app/labs/code-to-cognition/:path*"
     },
     {
+      "source": "/labs/llm-visibility",
+      "destination": "https://llm-visibility-alpha.vercel.app/visibility"
+    },
+    {
+      "source": "/labs/llm-visibility/:path*",
+      "destination": "https://llm-visibility-alpha.vercel.app/visibility/:path*"
+    },
+    {
       "source": "/labs/:path*",
       "destination": "https://labs.ninochavez.co/labs/:path*"
     }
