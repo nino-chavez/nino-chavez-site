@@ -53,8 +53,12 @@
       "destination": "https://llm-visibility-alpha.vercel.app/visibility"
     },
     {
+      "source": "/labs/llm-visibility/docs",
+      "destination": "https://llm-visibility-alpha.vercel.app/docs"
+    },
+    {
       "source": "/labs/llm-visibility/:path*",
-      "destination": "https://llm-visibility-alpha.vercel.app/visibility/:path*"
+      "destination": "https://llm-visibility-alpha.vercel.app/:path*"
     },
     {
       "source": "/labs/:path*",
