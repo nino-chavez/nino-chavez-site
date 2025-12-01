@@ -5,6 +5,22 @@
       "destination": "https://llm-visibility-alpha.vercel.app/api/visibility/:path*"
     },
     {
+      "source": "/api/generate-structure",
+      "destination": "https://llm-visibility-alpha.vercel.app/api/generate-structure"
+    },
+    {
+      "source": "/api/generate-prompts",
+      "destination": "https://llm-visibility-alpha.vercel.app/api/generate-prompts"
+    },
+    {
+      "source": "/api/test-prompt",
+      "destination": "https://llm-visibility-alpha.vercel.app/api/test-prompt"
+    },
+    {
+      "source": "/api/diagnose-gap",
+      "destination": "https://llm-visibility-alpha.vercel.app/api/diagnose-gap"
+    },
+    {
       "source": "/docs",
       "destination": "https://llm-visibility-alpha.vercel.app/docs"
     },
