@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/api/visibility/:path*",
+      "destination": "https://llm-visibility-alpha.vercel.app/api/visibility/:path*"
+    },
+    {
+      "source": "/docs",
+      "destination": "https://llm-visibility-alpha.vercel.app/docs"
+    },
+    {
       "source": "/photography",
       "destination": "https://photography.ninochavez.co/photography"
     },
