@@ -65,10 +65,10 @@
 			title: 'Enterprise Architect & Strategic Advisor',
 			current: true,
 			focus: [
-				'Architecting AI-native platforms and Gen AI adoption strategies',
-				'Cloud architecture roadmaps for autonomous enterprise',
-				'Leading Agile operating models and organizational redesign',
-				'Aligning executive vision with technical execution',
+				'Carry initiatives from strategy through production—bridging gaps where programs lose signal',
+				'Led 5+ enterprise Gen AI implementations from concept to production',
+				'Developed AI-native delivery methodology with documented 48-64x productivity gains',
+				'Bridge between C-suite strategy and engineering execution',
 			],
 		},
 		{
@@ -136,9 +136,14 @@
 
 	const capabilities = [
 		{
-			area: 'AI-Native Architecture',
-			evidence: 'Led Gen AI platform adoption for Fortune 500 clients',
-			scale: '5+ enterprise implementations',
+			area: 'Strategy → Production',
+			evidence: 'Carry context across transitions where programs lose signal',
+			scale: 'No handoffs, no drift',
+		},
+		{
+			area: 'AI-Native Delivery',
+			evidence: 'Documented 48-64x productivity multiplier on real projects',
+			scale: '5+ enterprise Gen AI implementations',
 		},
 		{
 			area: 'Enterprise Transformation',
@@ -146,24 +151,19 @@
 			scale: '100+ global resources managed',
 		},
 		{
-			area: 'Cloud-Native Platforms',
-			evidence: 'Microservices architecture for high-scale grocery platform',
-			scale: 'Real-time fulfillment integration',
-		},
-		{
 			area: 'Digital Commerce',
-			evidence: 'SAP, Salesforce, Adobe ecosystem expertise',
+			evidence: 'SAP, Salesforce, Adobe, composable/MACH expertise',
 			scale: '25+ years delivery experience',
 		},
 		{
-			area: 'Strategic Advisory',
-			evidence: 'Executive alignment & organizational redesign',
-			scale: 'Accenture Song principal-level advisor',
+			area: 'Technical Leadership',
+			evidence: "Led $10M programs AND wrote production code this week",
+			scale: 'Range from strategy to implementation',
 		},
 		{
-			area: 'Technical Leadership',
-			evidence: 'CI/CD, system integration, performance optimization',
-			scale: 'Global distributed team coordination',
+			area: 'Cloud-Native Platforms',
+			evidence: 'Microservices, event-driven, headless, API-first',
+			scale: 'Real-time fulfillment integration',
 		},
 	];
 
@@ -231,28 +231,34 @@
 					class="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mb-12"
 				>
 					<p class="text-xl md:text-2xl xl:text-3xl leading-relaxed text-gray-700 mb-4">
-						I help teams find clarity in complexity—architecting AI-native platforms that dismantle legacy constraints and unlock new business models.
+						I carry initiatives from strategy through production—bridging the gaps where most programs lose signal.
+					</p>
+					<p class="text-lg md:text-xl leading-relaxed text-gray-600">
+						Strategy → Design → Build → Production. No handoffs. No drift.
 					</p>
 				</div>
 
 				<!-- Key Stats Grid -->
 				<div
 					in:fly={{ y: 20, duration: 800, delay: 500 }}
-					class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12"
+					class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12"
 				>
 					<div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
 						<div class="text-4xl font-bold text-blue-600 mb-2">25+</div>
-						<div class="text-sm font-medium text-blue-700">Years Experience</div>
+						<div class="text-sm font-medium text-blue-700">Years Delivery</div>
 					</div>
 					<div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border border-green-200">
-						<div class="text-4xl font-bold text-green-600 mb-2">$25M</div>
-						<div class="text-sm font-medium text-green-700">Largest Project</div>
+						<div class="text-4xl font-bold text-green-600 mb-2">48-64x</div>
+						<div class="text-sm font-medium text-green-700">AI Multiplier</div>
 					</div>
 					<div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg border border-purple-200">
-						<div class="text-4xl font-bold text-purple-600 mb-2">100+</div>
-						<div class="text-sm font-medium text-purple-700">Team Resources</div>
+						<div class="text-4xl font-bold text-purple-600 mb-2">$25M</div>
+						<div class="text-sm font-medium text-purple-700">Largest Program</div>
 					</div>
-
+					<div class="bg-gradient-to-br from-amber-50 to-amber-100 p-6 rounded-lg border border-amber-200">
+						<div class="text-4xl font-bold text-amber-600 mb-2">100+</div>
+						<div class="text-sm font-medium text-amber-700">Team Resources</div>
+					</div>
 				</div>
 
 				<!-- Contact Quick Access -->
