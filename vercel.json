@@ -29,6 +29,14 @@
       "destination": "https://llm-visibility-alpha.vercel.app/visibility"
     },
     {
+      "source": "/terms",
+      "destination": "https://llm-visibility-alpha.vercel.app/terms"
+    },
+    {
+      "source": "/privacy",
+      "destination": "https://llm-visibility-alpha.vercel.app/privacy"
+    },
+    {
       "source": "/photography",
       "destination": "https://photography.ninochavez.co/photography"
     },
