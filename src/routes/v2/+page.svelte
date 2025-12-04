@@ -280,14 +280,14 @@
 </script>
 
 <svelte:head>
-	<title>Nino Chavez | Enterprise Architect & Strategic Advisor</title>
+	<title>Nino Chavez | v2 — Reimagined</title>
 	<link rel="stylesheet" href="https://use.typekit.net/wbj0oqh.css">
 	<link rel="stylesheet" href="https://use.typekit.net/pxj6trb.css">
 </svelte:head>
 
 <svelte:window on:keydown={handlePhotoKeydown} />
 
-<!-- Full-screen scroll-snap with dramatic layouts -->
+<!-- V2: Full-screen scroll-snap with dramatic layouts -->
 
 <!-- Floating Section Indicator -->
 <nav class="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-3">
@@ -307,6 +307,11 @@
 		</button>
 	{/each}
 </nav>
+
+<!-- V2 Badge -->
+<div class="fixed top-6 left-6 z-50 px-3 py-1.5 bg-[#e18718] text-[#0a0a0a] text-xs font-rival-narrow font-bold tracking-wider uppercase">
+	V2 Reimagined
+</div>
 
 <!-- Scroll Container -->
 <main class="scroll-container">
