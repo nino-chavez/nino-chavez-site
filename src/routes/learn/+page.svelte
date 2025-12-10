@@ -47,6 +47,77 @@
 		}
 	];
 
+	// Commerce Practitioner Track - for Song practitioners
+	const practitionerRoles = [
+		{
+			role: 'PMO / Delivery',
+			icon: 'clipboard',
+			focus: 'Program governance, lifecycle management, risk tracking',
+			mustKnow: ['Transformation lifecycle phases', 'Capability roadmap planning', 'Traditional vs. Agentic workflow comparisons'],
+			speakTo: ['Why agentic reduces manual intervention rates', 'How AI changes project timelines', 'Risk/compliance implications']
+		},
+		{
+			role: 'Technical / Architecture',
+			icon: 'server',
+			focus: 'System integration, API design, platform selection',
+			mustKnow: ['MCP (Model Context Protocol)', 'LangChain/LangGraph patterns', 'RAG architecture', 'Tool calling & function calling'],
+			speakTo: ['Integration complexity vs. traditional EDI', 'Security & PCI implications', 'Observability requirements']
+		},
+		{
+			role: 'Functional / Business',
+			icon: 'users',
+			focus: 'Business process design, requirements, stakeholder management',
+			mustKnow: ['Traditional vs. Agentic workflows by persona', 'Pain points addressed by AI', 'KPIs that change with automation'],
+			speakTo: ['How B2B quoting goes from 8-20 hours to minutes', 'Self-service deflection rates', 'Customer experience transformation']
+		},
+		{
+			role: 'Analyst / Data',
+			icon: 'chart',
+			focus: 'Data modeling, analytics, reporting, quality',
+			mustKnow: ['Embeddings & vectors', 'RAG retrieval patterns', 'CDP integration', 'GEO metrics (citation share)'],
+			speakTo: ['How AI search differs from keyword search', 'Data quality requirements for AI', 'Measurement frameworks']
+		}
+	];
+
+	const glossaryTerms = [
+		{ term: 'ACP', full: 'Agentic Commerce Protocol', desc: 'OpenAI + Stripe protocol for agent-driven checkout' },
+		{ term: 'MCP', full: 'Model Context Protocol', desc: 'Anthropic\'s open protocol for connecting AI to external tools' },
+		{ term: 'RAG', full: 'Retrieval-Augmented Generation', desc: 'Teaching AI to look up real data before answering' },
+		{ term: 'GEO', full: 'Generative Engine Optimization', desc: 'Optimizing content for AI citation (like SEO for ChatGPT)' },
+		{ term: 'SPT', full: 'Stripe Payment Token', desc: 'Secure token letting AI agents charge cards without seeing numbers' },
+		{ term: 'CDP', full: 'Customer Data Platform', desc: 'Unified customer profile across all touchpoints' },
+		{ term: 'PIM', full: 'Product Information Management', desc: 'Master system for all product data' },
+		{ term: 'DOM', full: 'Distributed Order Management', desc: 'System deciding WHERE to fulfill orders from' },
+		{ term: 'ATP', full: 'Available to Promise', desc: 'Real-time inventory actually available to sell' }
+	];
+
+	const workflowTransforms = [
+		{
+			persona: 'B2B Account Manager',
+			traditional: 'Manually build quotes in spreadsheets (8-20 hours per quote)',
+			agentic: 'AI generates professional quotes instantly with optimal pricing',
+			improvement: '70-85% less time on manual quoting'
+		},
+		{
+			persona: 'Credit Manager',
+			traditional: 'Manually review credit applications (3-5 days per customer)',
+			agentic: 'AI credit scoring provides instant approvals for low-risk customers',
+			improvement: '95% faster credit decisions'
+		},
+		{
+			persona: 'IT Operations Manager',
+			traditional: 'Respond to alert storms during outages (chaotic war rooms)',
+			agentic: 'AI correlates alerts automatically, creates single incident',
+			improvement: 'Alert noise reduced 90%'
+		},
+		{
+			persona: 'B2B Customer Service',
+			traditional: 'Answer repetitive phone calls about order status',
+			agentic: 'Self-service portal deflects 40-60% of routine inquiries',
+			improvement: '40-60% inquiry deflection'
+		}
+	];
+
 	const techStack = [
 		{ category: 'Language', tech: 'TypeScript (strict)', why: 'Type safety catches errors early' },
 		{ category: 'Frontend', tech: 'Next.js 15, SvelteKit', why: 'Production-grade, AI-friendly' },
@@ -279,6 +350,128 @@
 		</div>
 	</section>
 
+	<!-- Commerce Practitioner Track -->
+	<section class="py-12 md:py-16 px-6 md:px-12 border-y border-gray-800">
+		<div class="max-w-4xl mx-auto">
+			<div class="flex items-center gap-3 mb-4">
+				<div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
+					<svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+					</svg>
+				</div>
+				<h2 class="text-2xl font-bold">Commerce Practitioner Track</h2>
+				<span class="inline-flex items-center px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-medium rounded-full">
+					Song
+				</span>
+			</div>
+
+			<p class="text-gray-400 mb-8">
+				For PMO, delivery, tech, functional, and analyst roles who need to speak across disciplines and the project lifecycle. Based on real enterprise implementations at Best Buy, Conagra, and REI.
+			</p>
+
+			<!-- Role Cards -->
+			<div class="grid md:grid-cols-2 gap-4 mb-12">
+				{#each practitionerRoles as role}
+					<div class="bg-gray-900 border border-gray-800 rounded-lg p-5 hover:border-blue-500/30 transition-colors">
+						<div class="flex items-center gap-3 mb-3">
+							{#if role.icon === 'clipboard'}
+								<svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+								</svg>
+							{:else if role.icon === 'server'}
+								<svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
+								</svg>
+							{:else if role.icon === 'users'}
+								<svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+								</svg>
+							{:else}
+								<svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+								</svg>
+							{/if}
+							<h3 class="font-semibold text-white">{role.role}</h3>
+						</div>
+						<p class="text-sm text-gray-500 mb-4">{role.focus}</p>
+
+						<div class="space-y-3">
+							<div>
+								<span class="text-xs font-semibold text-gray-600 uppercase tracking-wider">Must Know:</span>
+								<ul class="mt-1 space-y-1">
+									{#each role.mustKnow as item}
+										<li class="text-xs text-gray-400 flex items-start gap-2">
+											<span class="text-blue-400 mt-1">•</span>
+											{item}
+										</li>
+									{/each}
+								</ul>
+							</div>
+							<div>
+								<span class="text-xs font-semibold text-gray-600 uppercase tracking-wider">Speak To:</span>
+								<ul class="mt-1 space-y-1">
+									{#each role.speakTo as item}
+										<li class="text-xs text-gray-400 flex items-start gap-2">
+											<span class="text-emerald-400 mt-1">•</span>
+											{item}
+										</li>
+									{/each}
+								</ul>
+							</div>
+						</div>
+					</div>
+				{/each}
+			</div>
+
+			<!-- Workflow Transformations -->
+			<div class="mb-12">
+				<h3 class="text-lg font-semibold text-white mb-4">Traditional → Agentic Workflow Examples</h3>
+				<p class="text-sm text-gray-500 mb-4">Real transformations to reference when explaining business value:</p>
+
+				<div class="space-y-3">
+					{#each workflowTransforms as transform}
+						<div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
+							<div class="flex items-center justify-between mb-2">
+								<span class="text-sm font-semibold text-white">{transform.persona}</span>
+								<span class="text-xs font-medium text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded">
+									{transform.improvement}
+								</span>
+							</div>
+							<div class="grid md:grid-cols-2 gap-3 text-xs">
+								<div>
+									<span class="text-gray-600 uppercase tracking-wider">Traditional:</span>
+									<p class="text-gray-500 mt-1">{transform.traditional}</p>
+								</div>
+								<div>
+									<span class="text-emerald-600 uppercase tracking-wider">Agentic:</span>
+									<p class="text-gray-400 mt-1">{transform.agentic}</p>
+								</div>
+							</div>
+						</div>
+					{/each}
+				</div>
+			</div>
+
+			<!-- Glossary -->
+			<div>
+				<h3 class="text-lg font-semibold text-white mb-4">Key Terms (Plain English)</h3>
+				<p class="text-sm text-gray-500 mb-4">Acronyms you'll encounter across disciplines:</p>
+
+				<div class="grid md:grid-cols-3 gap-3">
+					{#each glossaryTerms as term}
+						<div class="bg-gray-900/50 border border-gray-800 rounded-lg p-3">
+							<div class="flex items-baseline gap-2 mb-1">
+								<span class="text-sm font-bold text-blue-400">{term.term}</span>
+								<span class="text-xs text-gray-600">{term.full}</span>
+							</div>
+							<p class="text-xs text-gray-500">{term.desc}</p>
+						</div>
+					{/each}
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- Level 1 Deep Dive -->
 	<section class="py-12 md:py-16 px-6 md:px-12 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border-y border-gray-800">
 		<div class="max-w-4xl mx-auto">
@@ -464,7 +657,7 @@
 	<footer class="py-8 px-6 md:px-12 border-t border-gray-800">
 		<div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
 			<p class="text-sm text-gray-600">
-				Learning Gateway v1.0 — December 2024
+				Learning Gateway v1.1 — December 2024
 			</p>
 			<div class="flex items-center gap-6">
 				<a
