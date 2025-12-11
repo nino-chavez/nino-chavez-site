@@ -84,12 +84,6 @@
 		}
 	];
 
-	const corpusStats = [
-		{ label: 'Total words', value: '882,786' },
-		{ label: 'Client projects', value: '6' },
-		{ label: 'Reusable skills', value: '5' },
-		{ label: 'Architecture diagrams', value: '40+' }
-	];
 
 	onMount(() => {
 		mounted = true;
@@ -174,20 +168,6 @@
 		</div>
 	</section>
 
-	<!-- Corpus Stats Banner -->
-	<section class="py-8 px-6 md:px-12 bg-emerald-500/5 border-b border-emerald-500/20">
-		<div class="max-w-5xl mx-auto">
-			<p class="text-center text-sm text-gray-500 mb-4">What I've shipped using these methods:</p>
-			<div class="flex flex-wrap justify-center gap-8 md:gap-16">
-				{#each corpusStats as stat}
-					<div class="text-center">
-						<div class="text-2xl md:text-3xl font-bold text-emerald-400">{stat.value}</div>
-						<div class="text-xs text-gray-500 mt-1">{stat.label}</div>
-					</div>
-				{/each}
-			</div>
-		</div>
-	</section>
 
 	<!-- Builder Track (Primary) -->
 	<section class="py-16 md:py-20 px-6 md:px-12">
