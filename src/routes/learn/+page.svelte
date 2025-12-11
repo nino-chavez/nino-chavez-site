@@ -26,8 +26,7 @@
 			timeline: '8-12 weeks',
 			levels: 5,
 			color: 'cyan',
-			ready: false,
-			example: 'Signet AEO (51,386 words, 40+ diagrams)',
+			ready: true,
 			icon: 'boxes'
 		},
 		{
@@ -169,50 +168,55 @@
 	</section>
 
 
-	<!-- Builder Track (Primary) -->
+	<!-- Available Tracks -->
 	<section class="py-16 md:py-20 px-6 md:px-12">
-		<div class="max-w-3xl mx-auto">
-			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">Start Here</h2>
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">Available Tracks</h2>
 
-			{#each tracks.filter(t => t.ready) as track}
-				<a
-					href="/learn/{track.id}"
-					class="bg-gray-900 border border-emerald-500/30 rounded-xl p-8 hover:border-emerald-500/50 transition-all duration-300 group block"
-				>
-					<div class="flex items-center gap-4 mb-6">
-						<div class="w-16 h-16 rounded-lg bg-emerald-500/20 flex items-center justify-center">
-							<svg class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-							</svg>
+			<div class="grid md:grid-cols-2 gap-6">
+				{#each tracks.filter(t => t.ready) as track}
+					<a
+						href="/learn/{track.id}"
+						class="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-gray-700 transition-all duration-300 group block"
+					>
+						<div class="flex items-center gap-3 mb-4">
+							<div class="w-12 h-12 rounded-lg flex items-center justify-center {track.color === 'emerald' ? 'bg-emerald-500/20' : 'bg-cyan-500/20'}">
+								{#if track.icon === 'code'}
+									<svg class="w-6 h-6 {track.color === 'emerald' ? 'text-emerald-400' : 'text-cyan-400'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+									</svg>
+								{:else if track.icon === 'boxes'}
+									<svg class="w-6 h-6 {track.color === 'emerald' ? 'text-emerald-400' : 'text-cyan-400'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+									</svg>
+								{/if}
+							</div>
+							<div>
+								<h3 class="text-xl font-bold text-white">{track.title} Track</h3>
+								<span class="text-xs {track.color === 'emerald' ? 'text-emerald-400' : 'text-cyan-400'}">{track.levels} levels · {track.timeline}</span>
+							</div>
 						</div>
-						<div>
-							<h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">{track.title} Track</h3>
-							<span class="text-sm text-emerald-400">{track.levels} levels · {track.timeline}</span>
-						</div>
-					</div>
 
-					<p class="text-lg text-gray-400 mb-4">{track.description}</p>
+						<p class="text-sm text-gray-400 mb-4">{track.description}</p>
 
-					<div class="flex flex-col sm:flex-row sm:items-center gap-4 pt-4 border-t border-gray-800">
-						<div class="flex-1">
-							<span class="text-xs text-gray-600">You'll ship:</span>
-							<span class="text-sm text-white ml-2">{track.artifact}</span>
+						<div class="pt-4 border-t border-gray-800">
+							<div class="flex justify-between items-center">
+								<div>
+									<span class="text-xs text-gray-600">You'll ship:</span>
+									<span class="text-xs text-gray-400 ml-1">{track.artifact}</span>
+								</div>
+								<span class="text-sm font-medium {track.color === 'emerald' ? 'text-emerald-400' : 'text-cyan-400'}">Start →</span>
+							</div>
 						</div>
-						<div class="flex items-center gap-2 text-emerald-400 font-medium">
-							Start Track
-							<svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-							</svg>
-						</div>
-					</div>
-				</a>
-			{/each}
+					</a>
+				{/each}
+			</div>
 		</div>
 	</section>
 
 	<!-- Coming Soon Tracks -->
 	<section class="py-8 px-6 md:px-12 bg-gray-900/30">
-		<div class="max-w-3xl mx-auto">
+		<div class="max-w-4xl mx-auto">
 			<h3 class="text-sm font-semibold uppercase tracking-wider text-gray-600 mb-4">More Tracks Coming</h3>
 			<div class="grid sm:grid-cols-2 gap-3">
 				{#each tracks.filter(t => !t.ready) as track}
