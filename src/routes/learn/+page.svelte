@@ -169,7 +169,7 @@
 		<div class="max-w-4xl mx-auto">
 			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">Available Tracks</h2>
 
-			<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+			<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
 				{#each tracks.filter(t => t.ready) as track}
 					<a
 						href="/learn/{track.id}"
