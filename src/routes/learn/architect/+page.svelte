@@ -126,6 +126,12 @@
 				{ name: 'Data Consistency', desc: 'Source of truth per data type, eventual consistency windows' },
 				{ name: 'Integration ADRs', desc: 'Why this approach? What contracts negotiated? What compromises made?' }
 			],
+			commerceExamples: [
+				{ system: 'PIM → AI Enrichment', pattern: 'Event-driven: Product updates trigger enrichment pipeline. Source of truth: PIM. AI writes back enhanced attributes.' },
+				{ system: 'Search Platform → LLM', pattern: 'Hybrid: Traditional search for recall, LLM for semantic reranking. Circuit breaker if LLM latency exceeds threshold.' },
+				{ system: 'CMS → Personalization', pattern: 'Async: Content published → events → personalization engine indexes. Fallback: Generic content if engine unavailable.' },
+				{ system: 'Analytics → Optimization', pattern: 'Batch: Daily aggregation feeds optimization models. Real-time: Click data for immediate reranking.' }
+			],
 			checkpoints: [
 				'System-of-systems context diagram',
 				'Integration pattern documentation for 3+ external systems',
@@ -198,6 +204,57 @@
 					</span>
 				</div>
 			{/if}
+		</div>
+	</section>
+
+	<!-- Who This Is For -->
+	<section class="py-8 px-6 md:px-12 bg-cyan-500/5 border-y border-cyan-500/20">
+		<div class="max-w-4xl mx-auto">
+			<h3 class="text-lg font-semibold text-cyan-400 mb-4">Who This Track Is For</h3>
+			<div class="grid md:grid-cols-2 gap-6">
+				<div>
+					<p class="text-sm text-gray-500 uppercase tracking-wider mb-2">This is for you if:</p>
+					<ul class="space-y-2 text-gray-400 text-sm">
+						<li class="flex items-start gap-2">
+							<span class="text-cyan-400 mt-0.5">&#10003;</span>
+							<span>You're a tech lead or senior engineer who documents systems</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-cyan-400 mt-0.5">&#10003;</span>
+							<span>You've built systems but struggled to communicate their design</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-cyan-400 mt-0.5">&#10003;</span>
+							<span>You want documentation that developers actually use</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-cyan-400 mt-0.5">&#10003;</span>
+							<span>You're tired of explaining the same architecture decisions repeatedly</span>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<p class="text-sm text-gray-500 uppercase tracking-wider mb-2">This is NOT for you if:</p>
+					<ul class="space-y-2 text-gray-400 text-sm">
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You haven't built production systems yet (see <a href="/learn/builder" class="text-emerald-400 hover:underline">Builder Track</a>)</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You want to write persuasive content for executives (see <a href="/learn/strategist" class="text-rose-400 hover:underline">Strategist Track</a>)</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You're exploring AI for self-understanding (see <a href="/learn/explorer" class="text-indigo-400 hover:underline">Explorer Track</a>)</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You need to build AI apps, not document them</span>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -476,6 +533,20 @@
 												{/each}
 											</div>
 										</div>
+
+										{#if level.commerceExamples}
+											<div>
+												<h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Commerce Integration Examples</h4>
+												<div class="space-y-3">
+													{#each level.commerceExamples as ex}
+														<div class="p-3 bg-gray-900 rounded-lg border-l-2 border-amber-500/50">
+															<span class="text-amber-400 font-medium">{ex.system}</span>
+															<p class="text-gray-400 text-sm mt-1">{ex.pattern}</p>
+														</div>
+													{/each}
+												</div>
+											</div>
+										{/if}
 
 										<div class="border-t border-gray-800 pt-6">
 											<h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Checkpoints</h4>

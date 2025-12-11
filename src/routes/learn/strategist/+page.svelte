@@ -203,6 +203,57 @@
 		</div>
 	</section>
 
+	<!-- Who This Is For -->
+	<section class="py-8 px-6 md:px-12 bg-rose-500/5 border-y border-rose-500/20">
+		<div class="max-w-4xl mx-auto">
+			<h3 class="text-lg font-semibold text-rose-400 mb-4">Who This Track Is For</h3>
+			<div class="grid md:grid-cols-2 gap-6">
+				<div>
+					<p class="text-sm text-gray-500 uppercase tracking-wider mb-2">This is for you if:</p>
+					<ul class="space-y-2 text-gray-400 text-sm">
+						<li class="flex items-start gap-2">
+							<span class="text-rose-400 mt-0.5">&#10003;</span>
+							<span>You advise clients or stakeholders on strategy</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-rose-400 mt-0.5">&#10003;</span>
+							<span>You write for executives who need to make decisions</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-rose-400 mt-0.5">&#10003;</span>
+							<span>You want to communicate recommendations clearly and persuasively</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-rose-400 mt-0.5">&#10003;</span>
+							<span>You come from consulting, advisory, or leadership roles</span>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<p class="text-sm text-gray-500 uppercase tracking-wider mb-2">This is NOT for you if:</p>
+					<ul class="space-y-2 text-gray-400 text-sm">
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You're building software, not advising on it (see <a href="/learn/builder" class="text-emerald-400 hover:underline">Builder Track</a>)</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You need technical architecture documentation (see <a href="/learn/architect" class="text-cyan-400 hover:underline">Architect Track</a>)</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You're exploring AI for self-understanding (see <a href="/learn/explorer" class="text-indigo-400 hover:underline">Explorer Track</a>)</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You prefer showing data without recommending action</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- Prerequisites -->
 	<section class="py-6 px-6 md:px-12 bg-amber-500/5 border-y border-amber-500/20">
 		<div class="max-w-4xl mx-auto">

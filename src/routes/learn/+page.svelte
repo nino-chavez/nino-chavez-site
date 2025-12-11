@@ -6,6 +6,18 @@
 
 	const tracks = [
 		{
+			id: 'explorer',
+			title: 'Explorer',
+			tagline: 'Use AI to understand yourself',
+			description: 'Before you use AI to produce, use it to reflect. Build cognitive mirrors that show you how you think.',
+			artifact: 'Personal cognitive mirror + bridge to creation',
+			timeline: '4-8 weeks',
+			levels: 5,
+			color: 'indigo',
+			ready: true,
+			icon: 'compass'
+		},
+		{
 			id: 'builder',
 			title: 'Builder',
 			tagline: 'Build production apps with AI',
@@ -86,8 +98,8 @@
 </script>
 
 <svelte:head>
-	<title>Learning Gateway - Nino Chavez | 6 Tracks for AI-Assisted Work</title>
-	<meta name="description" content="A self-directed path for practitioners who want to work with AI. 6 tracks: Builder, Architect, Strategist, Author, Voice Designer, Enterprise." />
+	<title>Learning Gateway - Nino Chavez | 7 Tracks for AI-Assisted Work</title>
+	<meta name="description" content="A self-directed path for practitioners who want to work with AI. 7 tracks: Explorer, Builder, Architect, Strategist, Author, Voice Designer, Enterprise." />
 	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 
@@ -177,34 +189,39 @@
 					>
 						<div class="flex items-center gap-3 mb-3">
 							<div class="w-10 h-10 rounded-lg flex items-center justify-center
+								{track.color === 'indigo' ? 'bg-indigo-500/20' : ''}
 								{track.color === 'emerald' ? 'bg-emerald-500/20' : ''}
 								{track.color === 'cyan' ? 'bg-cyan-500/20' : ''}
 								{track.color === 'rose' ? 'bg-rose-500/20' : ''}
 								{track.color === 'violet' ? 'bg-violet-500/20' : ''}
 								{track.color === 'orange' ? 'bg-orange-500/20' : ''}
 								{track.color === 'teal' ? 'bg-teal-500/20' : ''}">
-								{#if track.icon === 'code'}
-									<svg class="w-5 h-5 {track.color === 'emerald' ? 'text-emerald-400' : ''} {track.color === 'cyan' ? 'text-cyan-400' : ''} {track.color === 'rose' ? 'text-rose-400' : ''} {track.color === 'violet' ? 'text-violet-400' : ''} {track.color === 'orange' ? 'text-orange-400' : ''} {track.color === 'teal' ? 'text-teal-400' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								{#if track.icon === 'compass'}
+									<svg class="w-5 h-5 {track.color === 'indigo' ? 'text-indigo-400' : ''} {track.color === 'emerald' ? 'text-emerald-400' : ''} {track.color === 'cyan' ? 'text-cyan-400' : ''} {track.color === 'rose' ? 'text-rose-400' : ''} {track.color === 'violet' ? 'text-violet-400' : ''} {track.color === 'orange' ? 'text-orange-400' : ''} {track.color === 'teal' ? 'text-teal-400' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+									</svg>
+								{:else if track.icon === 'code'}
+									<svg class="w-5 h-5 {track.color === 'indigo' ? 'text-indigo-400' : ''} {track.color === 'emerald' ? 'text-emerald-400' : ''} {track.color === 'cyan' ? 'text-cyan-400' : ''} {track.color === 'rose' ? 'text-rose-400' : ''} {track.color === 'violet' ? 'text-violet-400' : ''} {track.color === 'orange' ? 'text-orange-400' : ''} {track.color === 'teal' ? 'text-teal-400' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
 									</svg>
 								{:else if track.icon === 'boxes'}
-									<svg class="w-5 h-5 {track.color === 'emerald' ? 'text-emerald-400' : ''} {track.color === 'cyan' ? 'text-cyan-400' : ''} {track.color === 'rose' ? 'text-rose-400' : ''} {track.color === 'violet' ? 'text-violet-400' : ''} {track.color === 'orange' ? 'text-orange-400' : ''} {track.color === 'teal' ? 'text-teal-400' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<svg class="w-5 h-5 {track.color === 'indigo' ? 'text-indigo-400' : ''} {track.color === 'emerald' ? 'text-emerald-400' : ''} {track.color === 'cyan' ? 'text-cyan-400' : ''} {track.color === 'rose' ? 'text-rose-400' : ''} {track.color === 'violet' ? 'text-violet-400' : ''} {track.color === 'orange' ? 'text-orange-400' : ''} {track.color === 'teal' ? 'text-teal-400' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
 									</svg>
 								{:else if track.icon === 'lightbulb'}
-									<svg class="w-5 h-5 {track.color === 'emerald' ? 'text-emerald-400' : ''} {track.color === 'cyan' ? 'text-cyan-400' : ''} {track.color === 'rose' ? 'text-rose-400' : ''} {track.color === 'violet' ? 'text-violet-400' : ''} {track.color === 'orange' ? 'text-orange-400' : ''} {track.color === 'teal' ? 'text-teal-400' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<svg class="w-5 h-5 {track.color === 'indigo' ? 'text-indigo-400' : ''} {track.color === 'emerald' ? 'text-emerald-400' : ''} {track.color === 'cyan' ? 'text-cyan-400' : ''} {track.color === 'rose' ? 'text-rose-400' : ''} {track.color === 'violet' ? 'text-violet-400' : ''} {track.color === 'orange' ? 'text-orange-400' : ''} {track.color === 'teal' ? 'text-teal-400' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
 									</svg>
 								{:else if track.icon === 'book'}
-									<svg class="w-5 h-5 {track.color === 'emerald' ? 'text-emerald-400' : ''} {track.color === 'cyan' ? 'text-cyan-400' : ''} {track.color === 'rose' ? 'text-rose-400' : ''} {track.color === 'violet' ? 'text-violet-400' : ''} {track.color === 'orange' ? 'text-orange-400' : ''} {track.color === 'teal' ? 'text-teal-400' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<svg class="w-5 h-5 {track.color === 'indigo' ? 'text-indigo-400' : ''} {track.color === 'emerald' ? 'text-emerald-400' : ''} {track.color === 'cyan' ? 'text-cyan-400' : ''} {track.color === 'rose' ? 'text-rose-400' : ''} {track.color === 'violet' ? 'text-violet-400' : ''} {track.color === 'orange' ? 'text-orange-400' : ''} {track.color === 'teal' ? 'text-teal-400' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
 									</svg>
 								{:else if track.icon === 'mic'}
-									<svg class="w-5 h-5 {track.color === 'emerald' ? 'text-emerald-400' : ''} {track.color === 'cyan' ? 'text-cyan-400' : ''} {track.color === 'rose' ? 'text-rose-400' : ''} {track.color === 'violet' ? 'text-violet-400' : ''} {track.color === 'orange' ? 'text-orange-400' : ''} {track.color === 'teal' ? 'text-teal-400' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<svg class="w-5 h-5 {track.color === 'indigo' ? 'text-indigo-400' : ''} {track.color === 'emerald' ? 'text-emerald-400' : ''} {track.color === 'cyan' ? 'text-cyan-400' : ''} {track.color === 'rose' ? 'text-rose-400' : ''} {track.color === 'violet' ? 'text-violet-400' : ''} {track.color === 'orange' ? 'text-orange-400' : ''} {track.color === 'teal' ? 'text-teal-400' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
 									</svg>
 								{:else if track.icon === 'building'}
-									<svg class="w-5 h-5 {track.color === 'emerald' ? 'text-emerald-400' : ''} {track.color === 'cyan' ? 'text-cyan-400' : ''} {track.color === 'rose' ? 'text-rose-400' : ''} {track.color === 'violet' ? 'text-violet-400' : ''} {track.color === 'orange' ? 'text-orange-400' : ''} {track.color === 'teal' ? 'text-teal-400' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<svg class="w-5 h-5 {track.color === 'indigo' ? 'text-indigo-400' : ''} {track.color === 'emerald' ? 'text-emerald-400' : ''} {track.color === 'cyan' ? 'text-cyan-400' : ''} {track.color === 'rose' ? 'text-rose-400' : ''} {track.color === 'violet' ? 'text-violet-400' : ''} {track.color === 'orange' ? 'text-orange-400' : ''} {track.color === 'teal' ? 'text-teal-400' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
 									</svg>
 								{/if}
@@ -212,6 +229,7 @@
 							<div>
 								<h3 class="text-lg font-bold text-white">{track.title}</h3>
 								<span class="text-xs
+									{track.color === 'indigo' ? 'text-indigo-400' : ''}
 									{track.color === 'emerald' ? 'text-emerald-400' : ''}
 									{track.color === 'cyan' ? 'text-cyan-400' : ''}
 									{track.color === 'rose' ? 'text-rose-400' : ''}
@@ -225,6 +243,7 @@
 
 						<div class="pt-3 border-t border-gray-800">
 							<span class="text-xs font-medium
+								{track.color === 'indigo' ? 'text-indigo-400' : ''}
 								{track.color === 'emerald' ? 'text-emerald-400' : ''}
 								{track.color === 'cyan' ? 'text-cyan-400' : ''}
 								{track.color === 'rose' ? 'text-rose-400' : ''}
@@ -263,18 +282,29 @@
 				Ready to start?
 			</h2>
 			<p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-				Complete Level 1, then reach out.
+				New to AI? Start with Explorer. Ready to build? Jump to Builder.
 			</p>
 
-			<a
-				href="/learn/builder"
-				class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-500 text-gray-950 font-semibold rounded-lg hover:bg-emerald-400 transition-colors"
-			>
-				Start Builder Track
-				<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-				</svg>
-			</a>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<a
+					href="/learn/explorer"
+					class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-indigo-500 text-white font-semibold rounded-lg hover:bg-indigo-400 transition-colors"
+				>
+					Start Exploring
+					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+					</svg>
+				</a>
+				<a
+					href="/learn/builder"
+					class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-500 text-gray-950 font-semibold rounded-lg hover:bg-emerald-400 transition-colors"
+				>
+					Start Building
+					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+					</svg>
+				</a>
+			</div>
 		</div>
 	</section>
 

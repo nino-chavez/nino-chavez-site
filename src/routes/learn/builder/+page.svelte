@@ -134,6 +134,20 @@
 					]
 				},
 				{
+					name: 'Commerce & Data Orchestration',
+					items: [
+						'Product data enrichment — AI enhances PIM/catalog data with structured attributes',
+						'Search orchestration — Query understanding, intent classification, reranking',
+						'Feed optimization — Transform product data for AI answer engines (GEO)',
+						'Multi-system integration — Coordinating between PIM, search, CMS, and analytics'
+					],
+					examples: [
+						{ pattern: 'Agentic Product Feed', desc: 'AI analyzes product catalog → generates optimized descriptions → validates against brand guidelines → exports to multiple channels' },
+						{ pattern: 'Search Query Orchestration', desc: 'User query → intent classification → retrieval from multiple sources → LLM reranking → structured response' },
+						{ pattern: 'Data Quality Agent', desc: 'Monitors incoming product data → flags quality issues → suggests corrections → routes to human review' }
+					]
+				},
+				{
 					name: 'RAG Systems',
 					items: ['Document chunking strategies', 'Vector embeddings and similarity search', 'Hybrid search (semantic + keyword)', 'Context window management'],
 					resources: [
@@ -153,7 +167,9 @@
 				ideas: [
 					'A research assistant that searches, summarizes, and cites sources',
 					'A data analyzer that queries a database and generates insights',
-					'A content generator that pulls context from your documents'
+					'A content generator that pulls context from your documents',
+					'A product data enrichment pipeline that reads from PIM, enhances with AI, writes back',
+					'A search quality analyzer that compares user queries to search results and suggests improvements'
 				]
 			},
 			checkpoints: [
@@ -279,6 +295,57 @@
 					</span>
 				</div>
 			{/if}
+		</div>
+	</section>
+
+	<!-- Who This Is For -->
+	<section class="py-8 px-6 md:px-12 bg-emerald-500/5 border-y border-emerald-500/20">
+		<div class="max-w-4xl mx-auto">
+			<h3 class="text-lg font-semibold text-emerald-400 mb-4">Who This Track Is For</h3>
+			<div class="grid md:grid-cols-2 gap-6">
+				<div>
+					<p class="text-sm text-gray-500 uppercase tracking-wider mb-2">This is for you if:</p>
+					<ul class="space-y-2 text-gray-400 text-sm">
+						<li class="flex items-start gap-2">
+							<span class="text-emerald-400 mt-0.5">&#10003;</span>
+							<span>You're a developer who wants to ship AI-powered software</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-emerald-400 mt-0.5">&#10003;</span>
+							<span>You learn by building, not by watching tutorials</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-emerald-400 mt-0.5">&#10003;</span>
+							<span>You want production-ready code, not demo projects</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-emerald-400 mt-0.5">&#10003;</span>
+							<span>You're comfortable with JavaScript/TypeScript and web development</span>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<p class="text-sm text-gray-500 uppercase tracking-wider mb-2">This is NOT for you if:</p>
+					<ul class="space-y-2 text-gray-400 text-sm">
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You want to explore AI for personal use (see <a href="/learn/explorer" class="text-indigo-400 hover:underline">Explorer Track</a>)</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You're looking for prompt engineering tips without coding</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You need to document systems, not build them (see <a href="/learn/architect" class="text-cyan-400 hover:underline">Architect Track</a>)</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You're brand new to programming</span>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -543,6 +610,17 @@
 															<a href={resource.url} target="_blank" rel="noopener noreferrer" class="text-xs px-2 py-1 bg-purple-500/10 text-purple-400 rounded hover:bg-purple-500/20">
 																{resource.title} &rarr;
 															</a>
+														{/each}
+													</div>
+												{/if}
+												{#if skill.examples}
+													<div class="mt-4 space-y-2">
+														<h5 class="text-xs font-semibold text-gray-500 uppercase">Real-World Patterns:</h5>
+														{#each skill.examples as ex}
+															<div class="p-3 bg-gray-900 rounded-lg border-l-2 border-purple-500/50">
+																<span class="text-purple-400 font-medium text-sm">{ex.pattern}</span>
+																<p class="text-gray-500 text-xs mt-1">{ex.desc}</p>
+															</div>
 														{/each}
 													</div>
 												{/if}
