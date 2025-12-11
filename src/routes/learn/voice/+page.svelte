@@ -204,6 +204,57 @@
 		</div>
 	</section>
 
+	<!-- Who This Is For -->
+	<section class="py-8 px-6 md:px-12 bg-orange-500/5 border-y border-orange-500/20">
+		<div class="max-w-4xl mx-auto">
+			<h3 class="text-lg font-semibold text-orange-400 mb-4">Who This Track Is For</h3>
+			<div class="grid md:grid-cols-2 gap-6">
+				<div>
+					<p class="text-sm text-gray-500 uppercase tracking-wider mb-2">This is for you if:</p>
+					<ul class="space-y-2 text-gray-400 text-sm">
+						<li class="flex items-start gap-2">
+							<span class="text-orange-400 mt-0.5">&#10003;</span>
+							<span>You produce content regularly and want consistent voice</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-orange-400 mt-0.5">&#10003;</span>
+							<span>You want AI to sound like you, not like generic AI</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-orange-400 mt-0.5">&#10003;</span>
+							<span>You're a blogger, writer, or thought leader with an audience</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-orange-400 mt-0.5">&#10003;</span>
+							<span>You write for different contexts (blog vs docs vs email)</span>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<p class="text-sm text-gray-500 uppercase tracking-wider mb-2">This is NOT for you if:</p>
+					<ul class="space-y-2 text-gray-400 text-sm">
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You're just starting to explore AI (see <a href="/learn/explorer" class="text-indigo-400 hover:underline">Explorer Track</a>)</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You don't have existing writing to analyze</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You need architecture docs, not content (see <a href="/learn/architect" class="text-cyan-400 hover:underline">Architect Track</a>)</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You want generic AI output, not your voice specifically</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- Prerequisites -->
 	<section class="py-6 px-6 md:px-12 bg-amber-500/5 border-y border-amber-500/20">
 		<div class="max-w-4xl mx-auto">

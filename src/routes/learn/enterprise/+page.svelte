@@ -125,6 +125,12 @@
 				{ component: 'Quality Standards', desc: 'Minimum bar for new skills' },
 				{ component: 'Usage Monitoring', desc: 'Track adoption, success rates, feedback' }
 			],
+			skillExamples: [
+				{ skill: 'Solution Architecture', desc: 'Generates arc42 docs with C4 diagrams. References: templates/, quality rubric with 10 dimensions. Triggers: "document the architecture"' },
+				{ skill: 'Strategic Deck', desc: 'Creates slide content with brand colors + typography. Scripts: html2pptx converter. Assets: color palettes, font specs.' },
+				{ skill: 'Governance Playbook', desc: 'Multi-volume playbook generator with client variable substitution. Quality gate: terminology validation, section completeness.' },
+				{ skill: 'Voice Auditor', desc: 'Scores content against voice principles. References: 550-line voice guide. Output: score card with before/after examples.' }
+			],
 			metrics: [
 				'Skills in production',
 				'Users per skill',
@@ -204,6 +210,57 @@
 					</span>
 				</div>
 			{/if}
+		</div>
+	</section>
+
+	<!-- Who This Is For -->
+	<section class="py-8 px-6 md:px-12 bg-teal-500/5 border-y border-teal-500/20">
+		<div class="max-w-4xl mx-auto">
+			<h3 class="text-lg font-semibold text-teal-400 mb-4">Who This Track Is For</h3>
+			<div class="grid md:grid-cols-2 gap-6">
+				<div>
+					<p class="text-sm text-gray-500 uppercase tracking-wider mb-2">This is for you if:</p>
+					<ul class="space-y-2 text-gray-400 text-sm">
+						<li class="flex items-start gap-2">
+							<span class="text-teal-400 mt-0.5">&#10003;</span>
+							<span>You're scaling AI workflows across a team or organization</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-teal-400 mt-0.5">&#10003;</span>
+							<span>You need reusable, governed AI capabilities (not one-off prompts)</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-teal-400 mt-0.5">&#10003;</span>
+							<span>You're a team lead or manager responsible for AI adoption</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-teal-400 mt-0.5">&#10003;</span>
+							<span>You've completed at least one other track</span>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<p class="text-sm text-gray-500 uppercase tracking-wider mb-2">This is NOT for you if:</p>
+					<ul class="space-y-2 text-gray-400 text-sm">
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You're just getting started with AI (see <a href="/learn/explorer" class="text-indigo-400 hover:underline">Explorer Track</a>)</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You haven't shipped production work yet (see <a href="/learn/builder" class="text-emerald-400 hover:underline">Builder Track</a>)</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You're working alone without team requirements</span>
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-red-400 mt-0.5">&#10007;</span>
+							<span>You don't have recurring workflows to systematize</span>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -487,7 +544,21 @@
 											</div>
 										</div>
 
+										{#if level.skillExamples}
 										<div>
+											<h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Skill System Examples</h4>
+											<div class="space-y-2">
+												{#each level.skillExamples as ex}
+													<div class="p-3 bg-gray-900 rounded-lg border-l-2 border-violet-500/50">
+														<span class="text-violet-400 font-medium text-sm">{ex.skill}</span>
+														<p class="text-gray-500 text-xs mt-1">{ex.desc}</p>
+													</div>
+												{/each}
+											</div>
+										</div>
+									{/if}
+
+									<div>
 											<h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Success Metrics</h4>
 											<ul class="space-y-1">
 												{#each level.metrics as m}
