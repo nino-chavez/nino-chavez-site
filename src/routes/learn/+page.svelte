@@ -38,8 +38,7 @@
 			timeline: '6-10 weeks',
 			levels: 5,
 			color: 'rose',
-			ready: false,
-			example: 'BBY FY27 Brief (8,374 words)',
+			ready: true,
 			icon: 'lightbulb'
 		},
 		{
@@ -173,40 +172,47 @@
 		<div class="max-w-4xl mx-auto">
 			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">Available Tracks</h2>
 
-			<div class="grid md:grid-cols-2 gap-6">
+			<div class="grid md:grid-cols-3 gap-4">
 				{#each tracks.filter(t => t.ready) as track}
 					<a
 						href="/learn/{track.id}"
-						class="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-gray-700 transition-all duration-300 group block"
+						class="bg-gray-900 border border-gray-800 rounded-xl p-5 hover:border-gray-700 transition-all duration-300 group block"
 					>
-						<div class="flex items-center gap-3 mb-4">
-							<div class="w-12 h-12 rounded-lg flex items-center justify-center {track.color === 'emerald' ? 'bg-emerald-500/20' : 'bg-cyan-500/20'}">
+						<div class="flex items-center gap-3 mb-3">
+							<div class="w-10 h-10 rounded-lg flex items-center justify-center
+								{track.color === 'emerald' ? 'bg-emerald-500/20' : ''}
+								{track.color === 'cyan' ? 'bg-cyan-500/20' : ''}
+								{track.color === 'rose' ? 'bg-rose-500/20' : ''}">
 								{#if track.icon === 'code'}
-									<svg class="w-6 h-6 {track.color === 'emerald' ? 'text-emerald-400' : 'text-cyan-400'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<svg class="w-5 h-5 {track.color === 'emerald' ? 'text-emerald-400' : ''} {track.color === 'cyan' ? 'text-cyan-400' : ''} {track.color === 'rose' ? 'text-rose-400' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
 									</svg>
 								{:else if track.icon === 'boxes'}
-									<svg class="w-6 h-6 {track.color === 'emerald' ? 'text-emerald-400' : 'text-cyan-400'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<svg class="w-5 h-5 {track.color === 'emerald' ? 'text-emerald-400' : ''} {track.color === 'cyan' ? 'text-cyan-400' : ''} {track.color === 'rose' ? 'text-rose-400' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+									</svg>
+								{:else if track.icon === 'lightbulb'}
+									<svg class="w-5 h-5 {track.color === 'emerald' ? 'text-emerald-400' : ''} {track.color === 'cyan' ? 'text-cyan-400' : ''} {track.color === 'rose' ? 'text-rose-400' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
 									</svg>
 								{/if}
 							</div>
 							<div>
-								<h3 class="text-xl font-bold text-white">{track.title} Track</h3>
-								<span class="text-xs {track.color === 'emerald' ? 'text-emerald-400' : 'text-cyan-400'}">{track.levels} levels · {track.timeline}</span>
+								<h3 class="text-lg font-bold text-white">{track.title}</h3>
+								<span class="text-xs
+									{track.color === 'emerald' ? 'text-emerald-400' : ''}
+									{track.color === 'cyan' ? 'text-cyan-400' : ''}
+									{track.color === 'rose' ? 'text-rose-400' : ''}">{track.timeline}</span>
 							</div>
 						</div>
 
-						<p class="text-sm text-gray-400 mb-4">{track.description}</p>
+						<p class="text-xs text-gray-500 mb-3 line-clamp-2">{track.tagline}</p>
 
-						<div class="pt-4 border-t border-gray-800">
-							<div class="flex justify-between items-center">
-								<div>
-									<span class="text-xs text-gray-600">You'll ship:</span>
-									<span class="text-xs text-gray-400 ml-1">{track.artifact}</span>
-								</div>
-								<span class="text-sm font-medium {track.color === 'emerald' ? 'text-emerald-400' : 'text-cyan-400'}">Start →</span>
-							</div>
+						<div class="pt-3 border-t border-gray-800">
+							<span class="text-xs font-medium
+								{track.color === 'emerald' ? 'text-emerald-400' : ''}
+								{track.color === 'cyan' ? 'text-cyan-400' : ''}
+								{track.color === 'rose' ? 'text-rose-400' : ''}">Start →</span>
 						</div>
 					</a>
 				{/each}
