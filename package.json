@@ -20,8 +20,11 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@ai-sdk/anthropic": "^2.0.56",
     "@fontsource/inter": "^5.0.16",
+    "@supabase/supabase-js": "^2.87.1",
     "@vercel/analytics": "^1.1.1",
+    "ai": "^5.0.112",
     "web-vitals": "^3.5.0"
   },
   "devDependencies": {
