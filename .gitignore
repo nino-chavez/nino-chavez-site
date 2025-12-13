@@ -39,8 +39,8 @@ screenshot*.webp
 
 # Build outputs
 .svelte-kit/
-build/
-dist/
+/build/
+/dist/
 .vercel/
 .output/
 
