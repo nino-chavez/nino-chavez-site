@@ -135,7 +135,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 			'I ship complete products, not demos'
 		],
 
-		heroImage: 'https://images.unsplash.com/photo-1592656094267-764a45160876?w=1200&h=800&fit=crop&q=80',
+		heroImage: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&h=800&fit=crop&q=80',
 
 		started: '2025-10',
 		duration: '7 days initial, ongoing iteration',
@@ -192,7 +192,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 			'I understand enterprise consulting delivery patterns'
 		],
 
-		heroImage: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop&q=80',
+		heroImage: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1200&h=800&fit=crop&q=80',
 
 		started: '2024-11',
 		duration: 'Ongoing (Phase 22+)',
@@ -248,7 +248,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 			'I build tools that make other consultants more effective'
 		],
 
-		heroImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop&q=80',
+		heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop&q=80',
 
 		started: '2024-09',
 		duration: '7 phases completed',
@@ -302,7 +302,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 			'I build with cutting-edge AI infrastructure'
 		],
 
-		heroImage: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop&q=80',
+		heroImage: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200&h=800&fit=crop&q=80',
 
 		started: '2025-11',
 		duration: 'Active development',
@@ -363,7 +363,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 			'I create frameworks others can adopt'
 		],
 
-		heroImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&h=800&fit=crop&q=80',
+		heroImage: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1200&h=800&fit=crop&q=80',
 
 		started: '2024-08',
 		duration: '6 months to v2.5',
@@ -419,7 +419,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 			'I build tools that accelerate entire workflows, not just tasks'
 		],
 
-		heroImage: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=800&fit=crop&q=80',
+		heroImage: 'https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=1200&h=800&fit=crop&q=80',
 
 		started: '2024-10',
 		duration: 'Production, ongoing',
@@ -475,7 +475,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 			'I understand the economics of AI development'
 		],
 
-		heroImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&h=800&fit=crop&q=80',
+		heroImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=800&fit=crop&q=80',
 
 		started: '2024-07',
 		duration: 'Production-validated',
@@ -528,7 +528,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 			'I can ship useful tools quickly'
 		],
 
-		heroImage: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop&q=80',
+		heroImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=800&fit=crop&q=80',
 
 		started: '2024-12',
 		duration: '1 week to production',
@@ -585,7 +585,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 			'I create reusable foundations, not throwaway code'
 		],
 
-		heroImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=800&fit=crop&q=80',
+		heroImage: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1200&h=800&fit=crop&q=80',
 
 		started: '2024-06',
 		duration: 'Ongoing incubator',
