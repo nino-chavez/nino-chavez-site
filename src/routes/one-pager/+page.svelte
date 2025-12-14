@@ -6,69 +6,71 @@
 
 	const proofPoints = [
 		{
-			metric: '48-64x',
-			label: 'Productivity Multiplier',
-			detail: 'Documented across multiple production projects using AI workflow architecture'
+			metric: '8+',
+			label: 'Production Apps',
+			detail: 'Shipped to production, not demos or prototypes'
 		},
 		{
 			metric: '7 days',
 			label: 'Zero-to-Production',
-			detail: 'Built production-grade SaaS (Rally HQ) solo—what typically takes a team 6-8 weeks'
+			detail: 'Rally HQ: Production SaaS built solo with AI agents'
 		},
 		{
-			metric: '8+',
-			label: 'Shipped Apps',
-			detail: 'Production applications in active development, not demos or prototypes'
+			metric: '3',
+			label: 'AI Frameworks',
+			detail: 'AEGIS, Agent OS, Signal Forge - proprietary methodology'
 		},
 		{
-			metric: '$10M+',
-			label: 'Programs Led',
-			detail: '100+ global resources managed while still writing production code weekly'
+			metric: '25 yrs',
+			label: 'Enterprise Delivery',
+			detail: 'Fortune 500 commerce + AI transformation'
 		}
 	];
 
-	const valueProps = [
+	const targetEnvironments = [
 		{
-			icon: 'velocity',
-			title: 'Replace Team Headcount',
-			description: 'AI workflow architecture that delivers 10-person team output with 1 senior resource. Reduce OPEX while increasing velocity.',
+			company: 'AI-Native Tool Builders',
+			examples: 'Replit, Cursor, Vercel',
+			why: 'Building the tools I already use to multiply output',
+			fit: 'I ship with these tools daily. I understand the user.'
 		},
 		{
-			icon: 'asset',
-			title: 'Asset Creation, Not Hours',
-			description: 'Build reusable IP, frameworks, and production systems—not billable hour mountains. Every engagement leaves you with tangible assets.',
+			company: 'Commerce Avant-Garde',
+			examples: 'Stripe, Shopify, Faire',
+			why: 'Where commerce is an engineering problem, not a consulting deck',
+			fit: 'I understand commerce at the architecture level.'
 		},
 		{
-			icon: 'execution',
-			title: 'Strategy to Production',
-			description: 'No handoffs, no drift, no "that\'s not what we meant." I carry context from whiteboard to deployment.',
+			company: 'Applied AI Labs',
+			examples: 'Anthropic, OpenAI (Applied)',
+			why: 'Building AI products, not just research',
+			fit: 'I build production systems with these models.'
 		}
 	];
 
-	const targetRoles = [
+	const whatIBring = [
 		{
-			role: 'Founding Product Manager',
-			fit: 'Startups needing a "doer" who executes strategy without a team',
-			value: 'Ship your MVP in weeks, not quarters'
+			title: 'Zero-to-One Velocity',
+			description: 'I ship production apps in days using AI agents. Rally HQ (137 services) in 7 days. Not prototypes—production SaaS.',
+			evidence: '/work/rally-hq'
 		},
 		{
-			role: 'Technical Director of Product',
-			fit: 'Companies needing to operationalize AI agents, not just talk about them',
-			value: 'Documented frameworks for AI-native development'
+			title: 'AI Governance at Scale',
+			description: 'I built AEGIS—a constitutional framework for AI code generation. I think about AI adoption at enterprise scale.',
+			evidence: '/work/aegis'
 		},
 		{
-			role: 'Venture Studio Lead',
-			fit: 'Studios needing a temporary CTO to launch new businesses rapidly',
-			value: 'Zero-to-One velocity with production-grade output'
+			title: 'Full-Stack Business Thinking',
+			description: 'Strategy, architecture, implementation, deployment. I carry context from whiteboard to production without handoff loss.',
+			evidence: '/work'
 		}
 	];
 
-	const differentiators = [
-		'25 years enterprise delivery experience',
-		'Published thought leader on Agentic Commerce ($1T+ market thesis)',
-		'Built own AI governance frameworks (Agent OS, AEGIS)',
-		'Led $10M+ transformations AND wrote production code this week',
-		'Not selling strategy—shipping production systems daily'
+	const whatImLookingFor = [
+		'A team where AI-native velocity is the baseline, not the exception',
+		'Peers who think in products, not billable hours',
+		'An environment that measures output, not utilization',
+		'Problems worth solving with people worth working alongside'
 	];
 
 	onMount(() => {
@@ -77,20 +79,20 @@
 </script>
 
 <svelte:head>
-	<title>One-Pager - Nino Chavez | Technical Product Leader</title>
-	<meta name="description" content="Why hire a 10-person team when you can hire me? Technical Product Leader with documented 48-64x AI productivity multiplier." />
+	<title>Actively Interviewing - Nino Chavez | Product Engineer</title>
+	<meta name="description" content="Product Engineer actively interviewing for roles at AI-native companies. 8+ production apps, 3 AI frameworks, 25 years enterprise delivery." />
 	<meta name="robots" content="noindex, nofollow" />
 
 	<!-- Open Graph -->
-	<meta property="og:title" content="One-Pager - Nino Chavez | Technical Product Leader" />
-	<meta property="og:description" content="Why hire a 10-person team when you can hire me? Technical Product Leader with documented 48-64x AI productivity multiplier." />
+	<meta property="og:title" content="Actively Interviewing - Nino Chavez | Product Engineer" />
+	<meta property="og:description" content="Product Engineer seeking teams where AI-native velocity is the baseline." />
 	<meta property="og:type" content="profile" />
 	<meta property="og:url" content="https://ninochavez.co/one-pager" />
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="One-Pager - Nino Chavez | Technical Product Leader" />
-	<meta name="twitter:description" content="Why hire a 10-person team when you can hire me?" />
+	<meta name="twitter:title" content="Actively Interviewing - Nino Chavez" />
+	<meta name="twitter:description" content="Product Engineer seeking teams where AI-native velocity is the baseline." />
 </svelte:head>
 
 <div class="min-h-screen bg-gray-950 text-white">
@@ -98,45 +100,69 @@
 	<section class="pt-16 pb-12 md:pt-24 md:pb-16 px-6 md:px-12">
 		<div class="max-w-5xl mx-auto">
 			{#if mounted}
-				<!-- Tagline -->
+				<!-- Status Badge -->
 				<div
 					in:fade={{ duration: 600, delay: 100 }}
 					class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full mb-8"
 				>
 					<div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-					<span class="text-sm font-medium text-emerald-400">Open to Strategic Opportunities</span>
+					<span class="text-sm font-medium text-emerald-400">Actively Interviewing</span>
 				</div>
 
 				<!-- The Hook -->
 				<h1
 					in:fly={{ y: 20, duration: 800, delay: 200 }}
-					class="text-4xl md:text-6xl font-bold mb-6 leading-tight"
+					class="text-4xl md:text-5xl font-bold mb-6 leading-tight"
 				>
-					Why hire a 10-person team<br />
-					<span class="text-emerald-400">when you can hire me?</span>
+					I'm looking for a team where<br />
+					<span class="text-emerald-400">AI-native velocity is the norm.</span>
 				</h1>
 
 				<p
 					in:fly={{ y: 20, duration: 800, delay: 300 }}
 					class="text-xl md:text-2xl text-gray-400 mb-8 max-w-3xl leading-relaxed"
 				>
-					I'm a Technical Product Leader who uses AI agents to force-multiply velocity.
-					Documented <span class="text-white font-semibold">48-64x productivity gains</span>.
-					Production systems in days, not months.
+					Product Engineer with 25 years of enterprise delivery.
+					I've spent the last year building production systems with AI agents—not talking about it, <span class="text-white font-semibold">shipping it</span>.
 				</p>
 
 				<!-- Name Card -->
 				<div
 					in:fly={{ y: 20, duration: 800, delay: 400 }}
-					class="flex items-center gap-4 mb-12"
+					class="flex items-center gap-4 mb-8"
 				>
 					<div class="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-blue-500 flex items-center justify-center text-2xl font-bold">
 						NC
 					</div>
 					<div>
 						<div class="text-xl font-bold">Nino Chavez</div>
-						<div class="text-gray-400">Chicago, IL</div>
+						<div class="text-gray-400">Chicago, IL · Open to Remote</div>
 					</div>
+				</div>
+
+				<!-- Primary CTA -->
+				<div
+					in:fly={{ y: 20, duration: 800, delay: 500 }}
+					class="flex flex-wrap gap-4"
+				>
+					<a
+						href="/work"
+						class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 text-gray-950 font-semibold rounded-lg hover:bg-emerald-400 transition-colors"
+					>
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+						</svg>
+						See What I've Built
+					</a>
+					<a
+						href="mailto:abelino.chavez@gmail.com"
+						class="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 border border-gray-700 transition-colors"
+					>
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+						</svg>
+						Let's Talk
+					</a>
 				</div>
 			{/if}
 		</div>
@@ -145,13 +171,11 @@
 	<!-- Proof Points -->
 	<section class="py-12 px-6 md:px-12 bg-gray-900/50">
 		<div class="max-w-5xl mx-auto">
-			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">The Numbers</h2>
+			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">The Evidence</h2>
 
 			<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-				{#each proofPoints as point, i}
-					<div
-						class="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-emerald-500/50 transition-colors duration-300"
-					>
+				{#each proofPoints as point}
+					<div class="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-emerald-500/50 transition-colors duration-300">
 						<div class="text-3xl md:text-4xl font-bold text-emerald-400 mb-2">{point.metric}</div>
 						<div class="text-sm font-semibold text-white mb-2">{point.label}</div>
 						<div class="text-xs text-gray-500 leading-relaxed">{point.detail}</div>
@@ -161,41 +185,33 @@
 		</div>
 	</section>
 
-	<!-- Value Proposition -->
+	<!-- What I Bring -->
 	<section class="py-12 md:py-16 px-6 md:px-12">
 		<div class="max-w-5xl mx-auto">
-			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">What You Get</h2>
+			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">What I Bring</h2>
 
 			<div class="grid md:grid-cols-3 gap-6">
-				{#each valueProps as prop}
+				{#each whatIBring as item}
 					<div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
-						<!-- Icon -->
-						<div class="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4">
-							{#if prop.icon === 'velocity'}
-								<svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-								</svg>
-							{:else if prop.icon === 'asset'}
-								<svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-								</svg>
-							{:else}
-								<svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-								</svg>
-							{/if}
-						</div>
-
-						<h3 class="text-lg font-bold text-white mb-2">{prop.title}</h3>
-						<p class="text-sm text-gray-400 leading-relaxed">{prop.description}</p>
+						<h3 class="text-lg font-bold text-white mb-3">{item.title}</h3>
+						<p class="text-sm text-gray-400 leading-relaxed mb-4">{item.description}</p>
+						<a
+							href={item.evidence}
+							class="inline-flex items-center gap-1 text-sm text-emerald-400 hover:text-emerald-300 transition-colors"
+						>
+							See the work
+							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+							</svg>
+						</a>
 					</div>
 				{/each}
 			</div>
 		</div>
 	</section>
 
-	<!-- The Pivot Statement -->
-	<section class="py-12 md:py-16 px-6 md:px-12 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border-y border-gray-800">
+	<!-- The Shift -->
+	<section class="py-12 md:py-16 px-6 md:px-12 bg-gradient-to-r from-emerald-500/10 to-violet-500/10 border-y border-gray-800">
 		<div class="max-w-5xl mx-auto">
 			<div class="max-w-3xl">
 				<h2 class="text-sm font-semibold uppercase tracking-wider text-emerald-400 mb-6">The Shift</h2>
@@ -203,39 +219,44 @@
 				<div class="space-y-6">
 					<div class="flex items-start gap-4">
 						<div class="text-2xl text-gray-600">FROM</div>
-						<div class="text-xl text-gray-400">Consultant who manages delivery teams</div>
+						<div class="text-xl text-gray-400">Consultant who manages delivery teams for billable hours</div>
 					</div>
 
 					<div class="flex items-start gap-4">
 						<div class="text-2xl text-emerald-400 font-bold">TO</div>
-						<div class="text-xl text-white font-semibold">Technical Product Leader who uses AI to force-multiply velocity and reduce OPEX</div>
+						<div class="text-xl text-white font-semibold">Product Engineer who ships with AI agents in talent-dense environments</div>
 					</div>
 				</div>
 
 				<p class="mt-8 text-gray-400 leading-relaxed">
-					I spent the last year not selling strategy about AI—but <span class="text-white">shipping production systems with it</span>.
-					I built my own AI governance frameworks. I documented the multipliers. I understand what's hype and what's substance.
+					I spent the last year not selling strategy about AI—but <span class="text-white">building production systems with it</span>.
+					I created my own governance frameworks. I documented the methodology. I understand what's hype and what ships.
+				</p>
+
+				<p class="mt-4 text-gray-400 leading-relaxed">
+					Now I'm looking for an environment where this is <span class="text-white">the baseline expectation</span>, not the exception.
 				</p>
 			</div>
 		</div>
 	</section>
 
-	<!-- Target Roles -->
+	<!-- Target Environments -->
 	<section class="py-12 md:py-16 px-6 md:px-12">
 		<div class="max-w-5xl mx-auto">
-			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">Best Fit Roles</h2>
+			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">Where I Want to Be</h2>
 
 			<div class="space-y-4">
-				{#each targetRoles as target}
+				{#each targetEnvironments as env}
 					<div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-emerald-500/30 transition-colors duration-300">
-						<div class="flex flex-col md:flex-row md:items-center gap-4">
+						<div class="flex flex-col md:flex-row md:items-start gap-4">
 							<div class="flex-1">
-								<h3 class="text-lg font-bold text-white mb-1">{target.role}</h3>
-								<p class="text-sm text-gray-400">{target.fit}</p>
+								<h3 class="text-lg font-bold text-white mb-1">{env.company}</h3>
+								<p class="text-sm text-emerald-400 mb-2">{env.examples}</p>
+								<p class="text-sm text-gray-400">{env.why}</p>
 							</div>
-							<div class="md:text-right">
-								<span class="inline-block px-3 py-1 bg-emerald-500/10 text-emerald-400 text-sm font-medium rounded-full">
-									{target.value}
+							<div class="md:text-right md:max-w-xs">
+								<span class="inline-block px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full">
+									{env.fit}
 								</span>
 							</div>
 						</div>
@@ -245,20 +266,49 @@
 		</div>
 	</section>
 
-	<!-- Differentiators -->
+	<!-- What I'm Looking For -->
 	<section class="py-12 md:py-16 px-6 md:px-12 bg-gray-900/50">
 		<div class="max-w-5xl mx-auto">
-			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">Why Me</h2>
+			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">What I'm Looking For</h2>
 
 			<div class="grid md:grid-cols-2 gap-4">
-				{#each differentiators as diff}
+				{#each whatImLookingFor as item}
 					<div class="flex items-start gap-3">
 						<svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
 							<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
 						</svg>
-						<span class="text-gray-300">{diff}</span>
+						<span class="text-gray-300">{item}</span>
 					</div>
 				{/each}
+			</div>
+		</div>
+	</section>
+
+	<!-- Interview Questions for Them -->
+	<section class="py-12 md:py-16 px-6 md:px-12">
+		<div class="max-w-5xl mx-auto">
+			<div class="bg-violet-500/10 border border-violet-500/20 rounded-xl p-8">
+				<h2 class="text-xl font-bold text-white mb-6">Questions I'll Ask You</h2>
+				<p class="text-gray-400 mb-6">To make sure we're a mutual fit:</p>
+
+				<div class="space-y-4">
+					<div class="flex items-start gap-3">
+						<span class="text-violet-400 font-bold">1.</span>
+						<span class="text-gray-300">"What's the ratio of builders to facilitators on this team?"</span>
+					</div>
+					<div class="flex items-start gap-3">
+						<span class="text-violet-400 font-bold">2.</span>
+						<span class="text-gray-300">"Show me the last thing a single person shipped in one week."</span>
+					</div>
+					<div class="flex items-start gap-3">
+						<span class="text-violet-400 font-bold">3.</span>
+						<span class="text-gray-300">"How do you view AI-generated code?"</span>
+					</div>
+				</div>
+
+				<p class="mt-6 text-sm text-gray-500">
+					If the answers are "we have project managers," "a slide deck," and "we're cautious"—we're probably not a fit.
+				</p>
 			</div>
 		</div>
 	</section>
@@ -270,7 +320,7 @@
 				Ready to talk?
 			</h2>
 			<p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-				If you're building something that needs velocity, asset creation, and someone who ships—let's connect.
+				If you're building something that values velocity, craft, and people who ship—let's connect.
 			</p>
 
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -281,7 +331,7 @@
 					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 					</svg>
-					Email Me
+					abelino.chavez@gmail.com
 				</a>
 				<a
 					href="https://linkedin.com/in/nino-chavez"
@@ -295,13 +345,13 @@
 					LinkedIn
 				</a>
 				<a
-					href="/cv"
+					href="/work"
 					class="inline-flex items-center justify-center gap-2 px-8 py-4 text-gray-400 font-semibold rounded-lg hover:text-white border border-gray-800 hover:border-gray-700 transition-colors duration-200"
 				>
 					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
 					</svg>
-					Full CV
+					Portfolio
 				</a>
 			</div>
 		</div>
@@ -311,14 +361,20 @@
 	<footer class="py-8 px-6 md:px-12 border-t border-gray-800">
 		<div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
 			<p class="text-sm text-gray-600">
-				© 2025 Nino Chavez
+				2025 Nino Chavez
 			</p>
 			<div class="flex items-center gap-6">
 				<a
-					href="https://ninochavez.co/blog"
+					href="https://blog.ninochavez.co"
 					class="text-sm text-gray-500 hover:text-white transition-colors duration-200"
 				>
 					Blog
+				</a>
+				<a
+					href="/cv"
+					class="text-sm text-gray-500 hover:text-white transition-colors duration-200"
+				>
+					Full CV
 				</a>
 				<a
 					href="/"
