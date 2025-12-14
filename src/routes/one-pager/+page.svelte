@@ -88,11 +88,15 @@
 	<meta property="og:description" content="Product Engineer seeking teams where AI-native velocity is the baseline." />
 	<meta property="og:type" content="profile" />
 	<meta property="og:url" content="https://ninochavez.co/one-pager" />
+	<meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=630&fit=crop&q=80" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Actively Interviewing - Nino Chavez" />
 	<meta name="twitter:description" content="Product Engineer seeking teams where AI-native velocity is the baseline." />
+	<meta name="twitter:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=630&fit=crop&q=80" />
 </svelte:head>
 
 <div class="min-h-screen bg-gray-950 text-white">
