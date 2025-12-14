@@ -174,15 +174,10 @@
 									{project.tagline}
 								</p>
 
-								<!-- Key Metrics -->
-								<div class="flex flex-wrap gap-4 mb-4">
-									{#each project.metrics.slice(0, 3) as metric}
-										<div class="text-center">
-											<div class="text-lg font-bold text-white">{metric.value}</div>
-											<div class="text-xs text-gray-500">{metric.label}</div>
-										</div>
-									{/each}
-								</div>
+								<!-- Proof Point -->
+								<p class="text-sm text-emerald-400/90 mb-4 line-clamp-2">
+									{project.whatThisProves[0]}
+								</p>
 
 								<!-- Stack Preview -->
 								<div class="flex flex-wrap gap-1">
