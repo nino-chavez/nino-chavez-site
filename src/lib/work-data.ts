@@ -208,7 +208,6 @@ export const WORK_PROJECTS: WorkProject[] = [
 		status: 'production',
 		visibility: 'private',
 
-		demo: 'https://ciq.signalx.studio',
 		github: 'https://github.com/signal-x-studio/cix',
 
 		stack: ['SvelteKit 2', 'Svelte 5', 'TypeScript', 'Supabase', 'pgvector', 'OpenAI', 'XY Flow', 'Tailwind CSS'],
@@ -496,7 +495,6 @@ export const WORK_PROJECTS: WorkProject[] = [
 		status: 'production',
 		visibility: 'public',
 
-		demo: 'https://commerce-prompt-analyzer.vercel.app',
 		github: 'https://github.com/signal-x-studio/commerce-prompt-analyzer',
 
 		stack: ['TypeScript', 'Next.js', 'OpenAI API', 'Tailwind CSS', 'Vercel'],
@@ -535,6 +533,63 @@ export const WORK_PROJECTS: WorkProject[] = [
 		started: '2024-12',
 		duration: '1 week to production',
 		featured: false,
+		order: 9
+	},
+	{
+		slug: 'labs',
+		title: 'Nino Chavez Labs',
+		tagline: 'Turborepo monorepo incubating AI experiments into production systems',
+		description: 'A Turborepo-powered monorepo that serves as an incubator for software engineering experiments. Projects graduate from prototype to production, including Rally HQ, CIX, and the Code-to-Cognition learning platform. Features shared packages, Multi-Zone routing, and automated deployment pipelines.',
+		category: 'zero-to-one',
+		status: 'production',
+		visibility: 'private',
+
+		demo: 'https://ninochavez.co/labs',
+		github: 'https://github.com/nino-chavez/labs',
+
+		stack: ['Next.js 15', 'Turborepo', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Framer Motion', 'Vercel Multi-Zones'],
+		architecture: [
+			'Turborepo monorepo with npm workspaces',
+			'Next.js Multi-Zone routing for path-based apps',
+			'Shared packages (@nino-labs/ui, tsconfig, eslint)',
+			'Automated graph data pipeline (JSON → Neo4j → Supabase → pgvector)',
+			'Standards validation against ARTS/GS1/Oracle RDRM'
+		],
+		keyDecisions: [
+			'Used Turborepo for incremental builds and caching',
+			'Implemented Multi-Zone routing for independent app deployments',
+			'Created shared agentic-commerce-data package for cross-project data',
+			'Built automated embedding generation pipeline for semantic search'
+		],
+
+		metrics: [
+			{ label: 'Apps', value: '3', context: 'Landing, Code-to-Cognition, CIX' },
+			{ label: 'Graduated', value: '5+', context: 'Projects moved to production' },
+			{ label: 'Shared Packages', value: '4', context: 'UI, config, data, eslint' },
+			{ label: 'Capabilities', value: '127', context: 'Mapped commerce capabilities' }
+		],
+		outcomes: [
+			'Incubator that graduates experiments to production',
+			'Code-to-Cognition interactive learning platform',
+			'Shared design system and component library',
+			'Automated data pipeline for capability graphs',
+			'Standards-validated commerce taxonomy'
+		],
+
+		problem: 'Building multiple AI experiments in isolation leads to duplicated effort, inconsistent patterns, and no path from prototype to production. Each project reinvents infrastructure.',
+		approach: 'Created a Turborepo monorepo that provides shared infrastructure (UI components, TypeScript config, ESLint rules) while allowing independent apps to deploy separately. Projects start as experiments and graduate to production with shared learnings. The agentic-commerce-data package ensures all apps use the same capability taxonomy.',
+		whatThisProves: [
+			'I think about infrastructure and developer experience',
+			'I build systems that scale from experiment to production',
+			'I understand monorepo patterns and build optimization',
+			'I create reusable foundations, not throwaway code'
+		],
+
+		heroImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=800&fit=crop&q=80',
+
+		started: '2024-06',
+		duration: 'Ongoing incubator',
+		featured: true,
 		order: 8
 	}
 ];

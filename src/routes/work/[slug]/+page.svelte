@@ -150,31 +150,31 @@
 		</div>
 	</section>
 
-	<!-- Metrics Bar -->
-	<section class="px-6 md:px-12 py-8 bg-gray-900/50 border-y border-gray-800">
-		<div class="max-w-4xl mx-auto">
-			<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-				{#each project.metrics as metric}
-					<div class="text-center">
-						<div class="text-2xl md:text-3xl font-bold text-white">{metric.value}</div>
-						<div class="text-sm text-gray-400">{metric.label}</div>
-						{#if metric.context}
-							<div class="text-xs text-gray-600 mt-1">{metric.context}</div>
-						{/if}
-					</div>
-				{/each}
-			</div>
-		</div>
-	</section>
-
 	<!-- Main Content -->
 	<div class="px-6 md:px-12 py-12">
 		<div class="max-w-4xl mx-auto">
 			<!-- Description -->
-			<section class="mb-12">
+			<section class="mb-8">
 				<p class="text-lg text-gray-300 leading-relaxed">
 					{project.description}
 				</p>
+			</section>
+
+			<!-- What This Proves - Lead with the signal -->
+			<section class="mb-12">
+				<div class="bg-gradient-to-r from-emerald-500/10 to-violet-500/10 border border-emerald-500/20 rounded-xl p-6">
+					<h2 class="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-4">What This Proves</h2>
+					<div class="space-y-3">
+						{#each project.whatThisProves as proof}
+							<div class="flex items-start gap-3">
+								<svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+								</svg>
+								<span class="text-white">{proof}</span>
+							</div>
+						{/each}
+					</div>
+				</div>
 			</section>
 
 			<!-- Problem & Approach -->
@@ -258,26 +258,6 @@
 							<span class="text-gray-300">{outcome}</span>
 						</div>
 					{/each}
-				</div>
-			</section>
-
-			<!-- What This Proves -->
-			<section class="mb-12">
-				<div class="bg-gradient-to-r from-violet-500/10 to-emerald-500/10 border border-gray-800 rounded-xl p-8">
-					<h2 class="text-xl font-bold text-white mb-6">What This Proves</h2>
-					<p class="text-gray-400 mb-6">For engineering leaders evaluating my work:</p>
-					<div class="space-y-4">
-						{#each project.whatThisProves as proof}
-							<div class="flex items-start gap-3">
-								<span class="w-6 h-6 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-									<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-									</svg>
-								</span>
-								<span class="text-white font-medium">{proof}</span>
-							</div>
-						{/each}
-					</div>
 				</div>
 			</section>
 
