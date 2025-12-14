@@ -254,8 +254,8 @@
 								<p class="text-sm text-emerald-400 mb-2">{env.examples}</p>
 								<p class="text-sm text-gray-400">{env.why}</p>
 							</div>
-							<div class="md:text-right md:max-w-xs">
-								<span class="inline-block px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full">
+							<div class="md:text-right md:max-w-[280px] flex-shrink-0">
+								<span class="inline-block px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-lg leading-snug">
 									{env.fit}
 								</span>
 							</div>
