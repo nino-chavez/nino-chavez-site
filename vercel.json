@@ -30,6 +30,10 @@
       "destination": "https://blog.ninochavez.co/generated/:path*"
     },
     {
+      "source": "/images/generated/:path*",
+      "destination": "https://blog.ninochavez.co/images/generated/:path*"
+    },
+    {
       "source": "/code-to-cognition",
       "destination": "https://code-to-cognition.vercel.app/labs/code-to-cognition"
     },
