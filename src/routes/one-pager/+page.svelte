@@ -27,28 +27,7 @@
 		}
 	];
 
-	const targetEnvironments = [
-		{
-			company: 'AI-Native Tool Builders',
-			examples: 'Replit, Cursor, Vercel',
-			why: 'Building the tools I already use to multiply output',
-			fit: 'I ship with these tools daily. I understand the user.'
-		},
-		{
-			company: 'Commerce Avant-Garde',
-			examples: 'Stripe, Shopify, Faire',
-			why: 'Where commerce is an engineering problem, not a consulting deck',
-			fit: 'I understand commerce at the architecture level.'
-		},
-		{
-			company: 'Applied AI Labs',
-			examples: 'Anthropic, OpenAI (Applied)',
-			why: 'Building AI products, not just research',
-			fit: 'I build production systems with these models.'
-		}
-	];
-
-	const whatIBring = [
+	const howIWork = [
 		{
 			title: 'Zero-to-One Velocity',
 			description: 'I ship production apps in days using AI agents. Rally HQ (137 services) in 7 days. Not prototypes—production SaaS.',
@@ -66,11 +45,29 @@
 		}
 	];
 
-	const whatImLookingFor = [
-		'A team where AI-native velocity is the baseline, not the exception',
-		'Peers who think in products, not billable hours',
-		'An environment that measures output, not utilization',
+	const workingPrinciples = [
+		'AI-native velocity as baseline, not exception',
+		'Products over billable hours',
+		'Output over utilization metrics',
 		'Problems worth solving with people worth working alongside'
+	];
+
+	const background = [
+		{
+			era: 'Enterprise Foundation',
+			years: '2000-2023',
+			description: 'Fortune 500 commerce architecture. SAP, Salesforce, Adobe. Led $10M+ programs with 100+ person teams.'
+		},
+		{
+			era: 'AI-Native Pivot',
+			years: '2023-2025',
+			description: 'Built 8+ production apps with AI agents. Created AEGIS governance framework. Documented the methodology.'
+		},
+		{
+			era: 'Commerce.com',
+			years: '2026-Present',
+			description: 'Product Architect. Building AI-native commerce infrastructure.'
+		}
 	];
 
 	onMount(() => {
@@ -79,13 +76,13 @@
 </script>
 
 <svelte:head>
-	<title>Actively Interviewing - Nino Chavez | Product Engineer</title>
-	<meta name="description" content="Product Engineer actively interviewing for roles at AI-native companies. 8+ production apps, 3 AI frameworks, 25 years enterprise delivery." />
+	<title>How I Work - Nino Chavez | Product Architect</title>
+	<meta name="description" content="Product Architect at Commerce.com. 8+ production apps, 3 AI frameworks, 25 years enterprise delivery. Here's how I work." />
 	<meta name="robots" content="noindex, nofollow" />
 
 	<!-- Open Graph -->
-	<meta property="og:title" content="Actively Interviewing - Nino Chavez | Product Engineer" />
-	<meta property="og:description" content="Product Engineer seeking teams where AI-native velocity is the baseline." />
+	<meta property="og:title" content="How I Work - Nino Chavez | Product Architect" />
+	<meta property="og:description" content="Product Architect at Commerce.com. AI-native builder with 25 years of enterprise context." />
 	<meta property="og:type" content="profile" />
 	<meta property="og:url" content="https://ninochavez.co/one-pager" />
 	<meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=630&fit=crop&q=80" />
@@ -94,8 +91,8 @@
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Actively Interviewing - Nino Chavez" />
-	<meta name="twitter:description" content="Product Engineer seeking teams where AI-native velocity is the baseline." />
+	<meta name="twitter:title" content="How I Work - Nino Chavez" />
+	<meta name="twitter:description" content="Product Architect at Commerce.com. AI-native builder with 25 years of enterprise context." />
 	<meta name="twitter:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=630&fit=crop&q=80" />
 </svelte:head>
 
@@ -107,10 +104,10 @@
 				<!-- Status Badge -->
 				<div
 					in:fade={{ duration: 600, delay: 100 }}
-					class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full mb-8"
+					class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full mb-8"
 				>
-					<div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-					<span class="text-sm font-medium text-emerald-400">Actively Interviewing</span>
+					<div class="w-2 h-2 bg-blue-400 rounded-full" />
+					<span class="text-sm font-medium text-blue-400">Product Architect @ Commerce.com</span>
 				</div>
 
 				<!-- The Hook -->
@@ -118,16 +115,14 @@
 					in:fly={{ y: 20, duration: 800, delay: 200 }}
 					class="text-4xl md:text-5xl font-bold mb-6 leading-tight"
 				>
-					I'm looking for a team where<br />
-					<span class="text-emerald-400">AI-native velocity is the norm.</span>
+					How I Work
 				</h1>
 
 				<p
 					in:fly={{ y: 20, duration: 800, delay: 300 }}
 					class="text-xl md:text-2xl text-gray-400 mb-8 max-w-3xl leading-relaxed"
 				>
-					Product Engineer with 25 years of enterprise delivery.
-					I've spent the last year building production systems with AI agents—not talking about it, <span class="text-white font-semibold">shipping it</span>.
+					25 years of enterprise delivery. The last two building production systems with AI agents—not talking about it, <span class="text-white font-semibold">shipping it</span>.
 				</p>
 
 				<!-- Name Card -->
@@ -135,12 +130,12 @@
 					in:fly={{ y: 20, duration: 800, delay: 400 }}
 					class="flex items-center gap-4 mb-8"
 				>
-					<div class="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-blue-500 flex items-center justify-center text-2xl font-bold">
+					<div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-violet-500 flex items-center justify-center text-2xl font-bold">
 						NC
 					</div>
 					<div>
 						<div class="text-xl font-bold">Nino Chavez</div>
-						<div class="text-gray-400">Chicago, IL · Open to Remote</div>
+						<div class="text-gray-400">Chicago, IL</div>
 					</div>
 				</div>
 
@@ -151,12 +146,12 @@
 				>
 					<a
 						href="/work"
-						class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 text-gray-950 font-semibold rounded-lg hover:bg-emerald-400 transition-colors"
+						class="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-400 transition-colors"
 					>
 						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
 						</svg>
-						See What I've Built
+						See the Work
 					</a>
 					<a
 						href="mailto:abelino.chavez@gmail.com"
@@ -165,7 +160,7 @@
 						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 						</svg>
-						Let's Talk
+						Get in Touch
 					</a>
 				</div>
 			{/if}
@@ -179,8 +174,8 @@
 
 			<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
 				{#each proofPoints as point}
-					<div class="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-emerald-500/50 transition-colors duration-300">
-						<div class="text-3xl md:text-4xl font-bold text-emerald-400 mb-2">{point.metric}</div>
+					<div class="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition-colors duration-300">
+						<div class="text-3xl md:text-4xl font-bold text-blue-400 mb-2">{point.metric}</div>
 						<div class="text-sm font-semibold text-white mb-2">{point.label}</div>
 						<div class="text-xs text-gray-500 leading-relaxed">{point.detail}</div>
 					</div>
@@ -189,19 +184,19 @@
 		</div>
 	</section>
 
-	<!-- What I Bring -->
+	<!-- How I Work -->
 	<section class="py-12 md:py-16 px-6 md:px-12">
 		<div class="max-w-5xl mx-auto">
 			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">What I Bring</h2>
 
 			<div class="grid md:grid-cols-3 gap-6">
-				{#each whatIBring as item}
+				{#each howIWork as item}
 					<div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
 						<h3 class="text-lg font-bold text-white mb-3">{item.title}</h3>
 						<p class="text-sm text-gray-400 leading-relaxed mb-4">{item.description}</p>
 						<a
 							href={item.evidence}
-							class="inline-flex items-center gap-1 text-sm text-emerald-400 hover:text-emerald-300 transition-colors"
+							class="inline-flex items-center gap-1 text-sm text-blue-400 hover:text-blue-300 transition-colors"
 						>
 							See the work
 							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -215,53 +210,48 @@
 	</section>
 
 	<!-- The Shift -->
-	<section class="py-12 md:py-16 px-6 md:px-12 bg-gradient-to-r from-emerald-500/10 to-violet-500/10 border-y border-gray-800">
+	<section class="py-12 md:py-16 px-6 md:px-12 bg-gradient-to-r from-blue-500/10 to-violet-500/10 border-y border-gray-800">
 		<div class="max-w-5xl mx-auto">
 			<div class="max-w-3xl">
-				<h2 class="text-sm font-semibold uppercase tracking-wider text-emerald-400 mb-6">The Shift</h2>
+				<h2 class="text-sm font-semibold uppercase tracking-wider text-blue-400 mb-6">The Shift I Made</h2>
 
 				<div class="space-y-6">
 					<div class="flex items-start gap-4">
 						<div class="text-2xl text-gray-600">FROM</div>
-						<div class="text-xl text-gray-400">Consultant who manages delivery teams for billable hours</div>
+						<div class="text-xl text-gray-400">Consultant managing delivery teams for billable hours</div>
 					</div>
 
 					<div class="flex items-start gap-4">
-						<div class="text-2xl text-emerald-400 font-bold">TO</div>
-						<div class="text-xl text-white font-semibold">Product Engineer who ships with AI agents in talent-dense environments</div>
+						<div class="text-2xl text-blue-400 font-bold">TO</div>
+						<div class="text-xl text-white font-semibold">Product Architect shipping AI-native commerce infrastructure</div>
 					</div>
 				</div>
 
 				<p class="mt-8 text-gray-400 leading-relaxed">
-					I spent the last year not selling strategy about AI—but <span class="text-white">building production systems with it</span>.
-					I created my own governance frameworks. I documented the methodology. I understand what's hype and what ships.
+					I spent 2023-2025 not selling strategy about AI—but <span class="text-white">building production systems with it</span>.
+					I created my own governance frameworks. I documented the methodology. I learned what's hype and what ships.
 				</p>
 
 				<p class="mt-4 text-gray-400 leading-relaxed">
-					Now I'm looking for an environment where this is <span class="text-white">the baseline expectation</span>, not the exception.
+					Now I'm at Commerce.com, where AI-native velocity is <span class="text-white">the baseline expectation</span>.
 				</p>
 			</div>
 		</div>
 	</section>
 
-	<!-- Target Environments -->
+	<!-- Background Timeline -->
 	<section class="py-12 md:py-16 px-6 md:px-12">
 		<div class="max-w-5xl mx-auto">
-			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">Where I Want to Be</h2>
+			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">Background</h2>
 
 			<div class="space-y-4">
-				{#each targetEnvironments as env}
-					<div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-emerald-500/30 transition-colors duration-300">
+				{#each background as era}
+					<div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-blue-500/30 transition-colors duration-300">
 						<div class="flex flex-col md:flex-row md:items-start gap-4">
 							<div class="flex-1">
-								<h3 class="text-lg font-bold text-white mb-1">{env.company}</h3>
-								<p class="text-sm text-emerald-400 mb-2">{env.examples}</p>
-								<p class="text-sm text-gray-400">{env.why}</p>
-							</div>
-							<div class="md:text-right md:max-w-[280px] flex-shrink-0">
-								<span class="inline-block px-4 py-2 bg-gray-800 text-gray-300 text-sm rounded-lg leading-snug">
-									{env.fit}
-								</span>
+								<h3 class="text-lg font-bold text-white mb-1">{era.era}</h3>
+								<p class="text-sm text-blue-400 mb-2">{era.years}</p>
+								<p class="text-sm text-gray-400">{era.description}</p>
 							</div>
 						</div>
 					</div>
@@ -270,15 +260,15 @@
 		</div>
 	</section>
 
-	<!-- What I'm Looking For -->
+	<!-- Working Principles -->
 	<section class="py-12 md:py-16 px-6 md:px-12 bg-gray-900/50">
 		<div class="max-w-5xl mx-auto">
-			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">What I'm Looking For</h2>
+			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">What I Optimize For</h2>
 
 			<div class="grid md:grid-cols-2 gap-4">
-				{#each whatImLookingFor as item}
+				{#each workingPrinciples as item}
 					<div class="flex items-start gap-3">
-						<svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+						<svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
 							<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
 						</svg>
 						<span class="text-gray-300">{item}</span>
@@ -288,54 +278,25 @@
 		</div>
 	</section>
 
-	<!-- Interview Questions for Them -->
-	<section class="py-12 md:py-16 px-6 md:px-12">
-		<div class="max-w-5xl mx-auto">
-			<div class="bg-violet-500/10 border border-violet-500/20 rounded-xl p-8">
-				<h2 class="text-xl font-bold text-white mb-6">Questions I'll Ask You</h2>
-				<p class="text-gray-400 mb-6">To make sure we're a mutual fit:</p>
-
-				<div class="space-y-4">
-					<div class="flex items-start gap-3">
-						<span class="text-violet-400 font-bold">1.</span>
-						<span class="text-gray-300">"What's the ratio of builders to facilitators on this team?"</span>
-					</div>
-					<div class="flex items-start gap-3">
-						<span class="text-violet-400 font-bold">2.</span>
-						<span class="text-gray-300">"Show me the last thing a single person shipped in one week."</span>
-					</div>
-					<div class="flex items-start gap-3">
-						<span class="text-violet-400 font-bold">3.</span>
-						<span class="text-gray-300">"How do you view AI-generated code?"</span>
-					</div>
-				</div>
-
-				<p class="mt-6 text-sm text-gray-500">
-					If the answers are "we have project managers," "a slide deck," and "we're cautious"—we're probably not a fit.
-				</p>
-			</div>
-		</div>
-	</section>
-
 	<!-- CTA Section -->
 	<section class="py-16 md:py-24 px-6 md:px-12">
 		<div class="max-w-5xl mx-auto text-center">
 			<h2 class="text-3xl md:text-4xl font-bold mb-6">
-				Ready to talk?
+				Want to connect?
 			</h2>
 			<p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-				If you're building something that values velocity, craft, and people who ship—let's connect.
+				I write about AI-native development, commerce architecture, and the consulting industry at Signal Dispatch.
 			</p>
 
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
 				<a
-					href="mailto:abelino.chavez@gmail.com"
-					class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-500 text-gray-950 font-semibold rounded-lg hover:bg-emerald-400 transition-colors duration-200"
+					href="https://blog.ninochavez.co"
+					class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-400 transition-colors duration-200"
 				>
 					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
 					</svg>
-					abelino.chavez@gmail.com
+					Signal Dispatch
 				</a>
 				<a
 					href="https://linkedin.com/in/nino-chavez"
@@ -349,13 +310,13 @@
 					LinkedIn
 				</a>
 				<a
-					href="/work"
+					href="mailto:abelino.chavez@gmail.com"
 					class="inline-flex items-center justify-center gap-2 px-8 py-4 text-gray-400 font-semibold rounded-lg hover:text-white border border-gray-800 hover:border-gray-700 transition-colors duration-200"
 				>
 					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 					</svg>
-					Portfolio
+					Email
 				</a>
 			</div>
 		</div>
@@ -365,7 +326,7 @@
 	<footer class="py-8 px-6 md:px-12 border-t border-gray-800">
 		<div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
 			<p class="text-sm text-gray-600">
-				2025 Nino Chavez
+				2026 Nino Chavez
 			</p>
 			<div class="flex items-center gap-6">
 				<a
@@ -399,8 +360,8 @@
 			color: black !important;
 		}
 
-		.text-emerald-400 {
-			color: #059669 !important;
+		.text-blue-400 {
+			color: #2563eb !important;
 		}
 
 		.text-gray-400,
