@@ -2,10 +2,13 @@ import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { env } from '$env/dynamic/private';
 
 // Create client only if credentials are available
+// Uses dedicated 'askdad' schema in the labs Supabase project
 let supabaseClient: SupabaseClient | null = null;
 
 if (env.SUPABASE_URL && env.SUPABASE_ANON_KEY) {
-  supabaseClient = createClient(env.SUPABASE_URL, env.SUPABASE_ANON_KEY);
+  supabaseClient = createClient(env.SUPABASE_URL, env.SUPABASE_ANON_KEY, {
+    db: { schema: 'askdad' }
+  });
 }
 
 export const supabase = supabaseClient;
@@ -39,7 +42,7 @@ export async function searchContent(
 
   const { matchThreshold = 0.7, matchCount = 5, sourceType } = options;
 
-  const { data, error } = await supabase.rpc('askdad_match_content', {
+  const { data, error } = await supabase.rpc('match_content', {
     query_embedding: queryEmbedding,
     match_threshold: matchThreshold,
     match_count: matchCount,
@@ -64,7 +67,7 @@ export async function getSourceContent(sourceId: string): Promise<string> {
   }
 
   const { data, error } = await supabase
-    .from('askdad_content_chunks')
+    .from('content_chunks')
     .select('content, chunk_index')
     .eq('source_id', sourceId)
     .order('chunk_index');
