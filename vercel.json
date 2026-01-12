@@ -2,6 +2,22 @@
   "installCommand": "npm install",
   "rewrites": [
     {
+      "source": "/blog/sitemap-index.xml",
+      "destination": "https://blog.ninochavez.co/sitemap-index.xml"
+    },
+    {
+      "source": "/blog/sitemap-0.xml",
+      "destination": "https://blog.ninochavez.co/sitemap-0.xml"
+    },
+    {
+      "source": "/blog/sitemap.xml",
+      "destination": "https://blog.ninochavez.co/sitemap.xml"
+    },
+    {
+      "source": "/blog/rss.xml",
+      "destination": "https://blog.ninochavez.co/rss.xml"
+    },
+    {
       "source": "/photography",
       "destination": "https://photography.ninochavez.co/photography"
     },
