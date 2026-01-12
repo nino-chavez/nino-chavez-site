@@ -4,10 +4,9 @@
 	import { onMount, onDestroy } from 'svelte';
 
 	let mounted = false;
-	let currentSection = 0;
-	let isScrolling = false;
-	let activeProject = 0;
-	let activeCapability = CAPABILITY_IDS[0]; // For expertise expansion
+	let scrollY = 0;
+	let heroProgress = 0; // 0-1 for hero split animation
+	let activeServiceIndex = 0;
 
 	// Photo gallery state
 	let photoScrollContainer;
@@ -30,60 +29,53 @@
 	// Reduced motion preference
 	let prefersReducedMotion = false;
 
-	// Sections for scroll-snap navigation
-	const sections = [
-		{ id: 'hero', label: 'Home' },
-		{ id: 'about', label: 'About' },
-		{ id: 'expertise', label: 'Expertise' },
-		{ id: 'work', label: 'Work' },
-		{ id: 'photography', label: 'Photos' },
-		{ id: 'contact', label: 'Contact' }
-	];
-
-	// Featured projects with better hero images
+	// Featured projects with hero images
 	const projectImages = {
-		'ai-native-portfolio': 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=800&fit=crop&q=80', // Code on screen
-		'nino-labs': 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=800&fit=crop&q=80', // Tech circuit board / digital experimentation
-		'signal-dispatch-blog': 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&h=800&fit=crop&q=80', // Writing/coffee desk
-		'nino-chavez-gallery': 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1200&h=800&fit=crop&q=80', // Camera lens
-		'rally-hq': 'https://images.unsplash.com/photo-1592656094267-764a45160876?w=1200&h=800&fit=crop&q=80', // Volleyball game action
-		'ciq-platform': 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop&q=80', // Analytics dashboard
-		'aiq-platform': 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop&q=80', // AI/neural network
-		'commerce-transformation-navigator': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop&q=80', // Business charts
-		'aegis-framework': 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&h=800&fit=crop&q=80', // Shield/security
-		'smugmug-reference': 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1200&h=800&fit=crop&q=80', // Camera/photography
-		'agent-os-workflow-system': 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&h=800&fit=crop&q=80' // Robot/AI agent
+		'ai-native-portfolio': 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&h=900&fit=crop&q=80',
+		'nino-labs': 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&h=900&fit=crop&q=80',
+		'signal-dispatch-blog': 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1600&h=900&fit=crop&q=80',
+		'nino-chavez-gallery': 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1600&h=900&fit=crop&q=80',
+		'rally-hq': 'https://images.unsplash.com/photo-1592656094267-764a45160876?w=1600&h=900&fit=crop&q=80',
+		'ciq-platform': 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=900&fit=crop&q=80',
+		'aiq-platform': 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&h=900&fit=crop&q=80',
+		'commerce-transformation-navigator': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=900&fit=crop&q=80',
+		'aegis-framework': 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1600&h=900&fit=crop&q=80',
+		'smugmug-reference': 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1600&h=900&fit=crop&q=80',
+		'agent-os-workflow-system': 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1600&h=900&fit=crop&q=80'
 	};
 
-	// Featured projects for dramatic showcase
+	// Featured projects for sticky showcase
 	const featuredProjects = PROJECTS.slice(0, 5).map(p => ({
 		...p,
 		heroImage: projectImages[p.id] || p.imageUrl
+	}));
+
+	// Services data from capabilities
+	const services = CAPABILITY_IDS.map(id => ({
+		id,
+		title: CAPABILITY_SYSTEM[id].focusArea.title,
+		description: CAPABILITY_SYSTEM[id].focusArea.description,
+		domain: CAPABILITY_SYSTEM[id].domain.area
 	}));
 
 	onMount(() => {
 		mounted = true;
 		prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-		// Intersection observer for section detection
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-						const index = sections.findIndex(s => s.id === entry.target.id);
-						if (index !== -1) currentSection = index;
-					}
-				});
-			},
-			{ threshold: 0.5 }
-		);
+		const handleScroll = () => {
+			scrollY = window.scrollY;
 
-		sections.forEach(s => {
-			const el = document.getElementById(s.id);
-			if (el) observer.observe(el);
-		});
+			// Hero split animation: 0-200vh scroll = 0-1 progress
+			const heroHeight = window.innerHeight * 2;
+			heroProgress = Math.min(1, Math.max(0, scrollY / heroHeight));
+		};
 
-		return () => observer.disconnect();
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		handleScroll(); // Initial call
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
 	});
 
 	onDestroy(() => {
@@ -116,7 +108,6 @@
 			const maxScroll = photoScrollContainer.scrollWidth - photoScrollContainer.clientWidth;
 			photoScrollProgress = photoCurrentScroll / maxScroll;
 
-			// Apply parallax and scale effects to each gallery item
 			const imageElements = photoScrollContainer.querySelectorAll('.photo-gallery-item');
 			const containerWidth = photoScrollContainer.clientWidth;
 
@@ -151,12 +142,11 @@
 		};
 	}
 
-	// Setup animation when container becomes available
 	$: if (photoScrollContainer && mounted && !photoAnimationCleanup) {
 		setupPhotoAnimation();
 	}
 
-	// Photo gallery drag handlers (mouse)
+	// Photo gallery drag handlers
 	function handlePhotoMouseDown(e) {
 		if (!photoScrollContainer) return;
 		photoIsDragging = true;
@@ -194,7 +184,6 @@
 		}
 	}
 
-	// Photo gallery touch handlers (mobile)
 	function handlePhotoTouchStart(e) {
 		if (!photoScrollContainer) return;
 		photoIsDragging = true;
@@ -249,584 +238,350 @@
 		if (e.key === 'ArrowLeft') prevPhoto();
 	}
 
-	// Helper to get padded image number
 	function getImgNum(index) {
 		return String(index + 1).padStart(2, '0');
 	}
 
 	$: currentPhotoSrc = `${base}/images/gallery/portfolio-${getImgNum(currentPhotoIndex)}.jpg`;
 
-	function scrollToSection(index) {
-		const section = document.getElementById(sections[index].id);
-		if (section) {
-			section.scrollIntoView({ behavior: 'smooth' });
-		}
-	}
-
-	function nextProject() {
-		activeProject = (activeProject + 1) % featuredProjects.length;
-	}
-
-	function prevProject() {
-		activeProject = (activeProject - 1 + featuredProjects.length) % featuredProjects.length;
-	}
-
-	function setActiveCapability(id) {
-		activeCapability = id;
-	}
-
-	$: currentProject = featuredProjects[activeProject];
-	$: currentCapability = CAPABILITY_SYSTEM[activeCapability];
+	// Computed values for hero animation
+	$: splitAmount = heroProgress * 30; // max 30% split
+	$: heroOpacity = heroProgress < 0.5 ? 1 : 1 - (heroProgress - 0.5) * 2;
+	$: textRevealOpacity = heroProgress > 0.3 ? Math.min(1, (heroProgress - 0.3) * 3) : 0;
+	$: ctaRevealOpacity = heroProgress > 0.7 ? Math.min(1, (heroProgress - 0.7) * 3) : 0;
 </script>
 
 <svelte:head>
-	<title>Nino Chavez | v2 — Reimagined</title>
+	<title>Nino Chavez | V2 — Void-Inspired</title>
 	<link rel="stylesheet" href="https://use.typekit.net/wbj0oqh.css">
 	<link rel="stylesheet" href="https://use.typekit.net/pxj6trb.css">
 </svelte:head>
 
 <svelte:window on:keydown={handlePhotoKeydown} />
 
-<!-- V2: Full-screen scroll-snap with dramatic layouts -->
-
-<!-- Floating Section Indicator -->
-<nav class="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-3">
-	{#each sections as section, i}
-		<button
-			on:click={() => scrollToSection(i)}
-			class="group flex items-center gap-3 justify-end"
-			aria-label="Go to {section.label}"
-		>
-			<span class="text-xs font-rival-narrow tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white/70">
-				{section.label}
-			</span>
-			<div class="w-3 h-3 rounded-full border-2 transition-all duration-300 {currentSection === i
-				? 'bg-[#e18718] border-[#e18718] scale-125'
-				: 'border-white/30 hover:border-[#e18718] hover:scale-110'}">
-			</div>
-		</button>
-	{/each}
-</nav>
-
 <!-- V2 Badge -->
-<div class="fixed top-6 left-6 z-50 px-3 py-1.5 bg-[#e18718] text-[#0a0a0a] text-xs font-rival-narrow font-bold tracking-wider uppercase">
-	V2 Reimagined
+<div class="fixed top-6 left-6 z-50 px-3 py-1.5 bg-[#ff4500] text-black text-xs font-rival-narrow font-bold tracking-wider uppercase">
+	V2 Void-Style
 </div>
 
-<!-- Scroll Container -->
-<main class="scroll-container">
+<!-- ==================== HERO SECTION (Scroll-Split) ==================== -->
+<section class="hero-section">
+	<!-- Sticky container -->
+	<div class="hero-sticky">
+		<!-- Left image panel -->
+		<div
+			class="hero-image-panel hero-image-left"
+			style="--split: {splitAmount}%"
+		>
+			<img
+				src="{base}/images/hero.webp"
+				alt="Nino Chavez"
+				class="hero-image"
+			/>
+		</div>
 
-	<!-- ==================== SECTION 1: HERO ==================== -->
-	<!-- Split-screen dramatic hero -->
-	<section id="hero" class="snap-section">
-		<div class="h-full grid lg:grid-cols-2">
-			<!-- Left: Content -->
-			<div class="relative flex flex-col justify-center px-8 lg:px-16 xl:px-24 bg-[#0a0a0a] order-2 lg:order-1">
-				<!-- Decorative elements -->
-				<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#e18718] via-[#e18718]/50 to-transparent"></div>
-				<div class="absolute bottom-0 right-0 w-1/2 h-px bg-gradient-to-l from-[#e18718]/30 to-transparent"></div>
+		<!-- Right image panel -->
+		<div
+			class="hero-image-panel hero-image-right"
+			style="--split: {splitAmount}%"
+		>
+			<img
+				src="{base}/images/hero.webp"
+				alt="Nino Chavez"
+				class="hero-image"
+			/>
+		</div>
 
-				{#if mounted}
-					<div class="max-w-xl">
-						<!-- Eyebrow -->
-						<div class="flex items-center gap-4 mb-8 animate-slide-up" style="animation-delay: 200ms;">
-							<div class="w-16 h-px bg-[#e18718]"></div>
-							<span class="font-rival-narrow text-[#e18718] text-sm tracking-[0.3em] uppercase">Enterprise Architect</span>
-						</div>
-
-						<!-- Main headline - stacked for impact -->
-						<h1 class="mb-8">
-							<span class="block font-rival text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[0.9] animate-slide-up" style="animation-delay: 300ms;">
-								I build the
-							</span>
-							<span class="block font-rival text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[0.9] animate-slide-up" style="animation-delay: 400ms;">
-								systems that
-							</span>
-							<span class="block font-rival text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[0.9] animate-slide-up" style="animation-delay: 500ms;">
-								build the
-							</span>
-							<span class="block font-highest-praise text-6xl lg:text-7xl xl:text-8xl text-[#e18718] leading-[1.1] mt-2 animate-slide-up" style="animation-delay: 600ms;">
-								experiences.
-							</span>
-						</h1>
-
-						<!-- Stats row -->
-						<div class="grid grid-cols-3 gap-8 mb-10 animate-slide-up" style="animation-delay: 700ms;">
-							<div>
-								<div class="font-rival text-4xl lg:text-5xl font-bold text-[#e18718]">25+</div>
-								<div class="font-rival-narrow text-xs text-white/50 tracking-widest uppercase mt-1">Years</div>
-							</div>
-							<div>
-								<div class="font-rival text-4xl lg:text-5xl font-bold text-[#e18718]">F500</div>
-								<div class="font-rival-narrow text-xs text-white/50 tracking-widest uppercase mt-1">Clients</div>
-							</div>
-							<div>
-								<div class="font-rival text-4xl lg:text-5xl font-bold text-[#e18718]">AI</div>
-								<div class="font-rival-narrow text-xs text-white/50 tracking-widest uppercase mt-1">Native</div>
-							</div>
-						</div>
-
-						<!-- CTA -->
-						<div class="flex items-center gap-6 animate-slide-up" style="animation-delay: 800ms;">
-							<button
-								on:click={() => scrollToSection(3)}
-								class="group px-8 py-4 bg-[#e18718] text-[#0a0a0a] font-rival font-bold text-sm tracking-wide hover:bg-white transition-colors duration-300"
-							>
-								View Work
-							</button>
-							<button
-								on:click={() => scrollToSection(4)}
-								class="group flex items-center gap-3 text-white/70 hover:text-[#e18718] transition-colors"
-							>
-								<span class="font-rival text-sm">Get in Touch</span>
-								<svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-								</svg>
-							</button>
-						</div>
-					</div>
-				{/if}
-
-				<!-- Scroll indicator -->
-				<div class="absolute bottom-8 left-8 lg:left-16 flex items-center gap-3 text-white/30 animate-slide-up" style="animation-delay: 1000ms;">
-					<div class="w-px h-12 bg-gradient-to-b from-[#e18718] to-transparent animate-pulse"></div>
-					<span class="font-rival-narrow text-xs tracking-widest uppercase">Scroll</span>
-				</div>
+		<!-- Center black reveal -->
+		<div class="hero-center-reveal" style="opacity: {heroProgress}">
+			<!-- Corner taglines -->
+			<div class="hero-tagline hero-tagline-left" style="opacity: {textRevealOpacity}">
+				<span class="font-rival-narrow text-sm tracking-[0.3em] uppercase text-white/60">Void Studio Creates</span>
+				<span class="font-rival-narrow text-sm tracking-[0.3em] uppercase text-white/60">Brand Universes.</span>
 			</div>
-
-			<!-- Right: Full-bleed image -->
-			<div class="relative h-[40vh] lg:h-full order-1 lg:order-2 overflow-hidden">
-				<img
-					src="{base}/images/hero.webp"
-					alt="Nino Chavez"
-					class="w-full h-full object-cover scale-105"
-				/>
-				<!-- Overlay gradients -->
-				<div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent lg:opacity-100"></div>
-				<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent lg:hidden"></div>
-
-				<!-- Accenture badge -->
-				<div class="absolute bottom-8 right-8 px-4 py-2 bg-black/50 backdrop-blur-sm border border-white/10">
-					<span class="font-rival-narrow text-xs text-white/70 tracking-widest uppercase">Currently at</span>
-					<span class="block font-rival text-lg text-white font-medium">Accenture Song</span>
-				</div>
+			<div class="hero-tagline hero-tagline-right" style="opacity: {textRevealOpacity}">
+				<span class="font-rival-narrow text-sm tracking-[0.3em] uppercase text-white/60">Blending Precision</span>
+				<span class="font-rival-narrow text-sm tracking-[0.3em] uppercase text-white/60">With Passion.</span>
 			</div>
 		</div>
-	</section>
 
-	<!-- ==================== SECTION 2: ABOUT ==================== -->
-	<!-- Centered manifesto style -->
-	<section id="about" class="snap-section bg-[#0d0d08]">
-		<div class="h-full flex items-center justify-center px-8">
-			<div class="max-w-4xl text-center">
-				<!-- Section number -->
-				<div class="mb-8">
-					<span class="font-rival text-8xl lg:text-9xl font-bold text-white/5">01</span>
-				</div>
+		<!-- Name split across panels -->
+		<h1 class="hero-name hero-name-left" style="opacity: {textRevealOpacity}">
+			NINO
+		</h1>
+		<h1 class="hero-name hero-name-right" style="opacity: {textRevealOpacity}">
+			CHAVEZ
+		</h1>
 
-				<h2 class="font-rival text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-8 leading-tight">
-					Systems don't fail by accident.<br/>
-					<span class="text-[#e18718]">They fail in predictable ways.</span>
-				</h2>
-
-				<p class="font-rival-body text-xl lg:text-2xl text-white/60 leading-relaxed mb-12 max-w-3xl mx-auto">
-					From missing ownership boundaries to ignoring second-order effects of architecture decisions.
-					I've spent 25 years learning these patterns—and building systems that survive them.
-				</p>
-
-				<!-- Pull quote -->
-				<div class="relative inline-block">
-					<div class="absolute -left-6 top-0 bottom-0 w-1 bg-[#e18718]"></div>
-					<blockquote class="text-left pl-8 font-rival text-2xl lg:text-3xl text-white italic">
-						"The best architecture <span class="font-highest-praise text-[#e18718] text-3xl lg:text-4xl not-italic">disappears</span> into the experience."
-					</blockquote>
-				</div>
-			</div>
+		<!-- CTA after scroll completes -->
+		<div class="hero-cta" style="opacity: {ctaRevealOpacity}">
+			<span class="font-rival-narrow text-[#ff4500] text-sm tracking-[0.3em] uppercase mb-4 block">Enterprise Architect</span>
+			<p class="font-rival text-2xl lg:text-3xl text-white/80 mb-8 max-w-md">
+				I build the systems that build the experiences.
+			</p>
+			<a
+				href="#work"
+				class="inline-block px-8 py-4 bg-[#ff4500] text-black font-rival font-bold text-sm tracking-wide hover:bg-white transition-colors"
+			>
+				VIEW WORK
+			</a>
 		</div>
-	</section>
 
-	<!-- ==================== SECTION 3: EXPERTISE ==================== -->
-	<!-- Expertise cards with expandable detail panel -->
-	<section id="expertise" class="snap-section bg-[#0a0a0a] overflow-y-auto">
-		<div class="min-h-full flex flex-col justify-center px-8 lg:px-16 py-16">
-			<!-- Section header -->
-			<div class="flex items-center gap-4 mb-8">
-				<span class="font-rival text-6xl lg:text-7xl font-bold text-white/5">02</span>
-				<div>
-					<h2 class="font-rival text-3xl lg:text-4xl font-bold text-white">Areas of Expertise</h2>
-					<p class="font-rival-body text-white/50 mt-1">Click to explore capabilities</p>
-				</div>
-			</div>
-
-			<!-- Expertise grid - clickable cards -->
-			<div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
-				{#each CAPABILITY_IDS as id, i}
-					{@const item = CAPABILITY_SYSTEM[id]}
-					<button
-						on:click={() => setActiveCapability(id)}
-						class="expertise-card group relative overflow-hidden text-left p-6 transition-all duration-500
-							{activeCapability === id
-								? 'bg-[#e18718]/10 border-[#e18718]/50 border -translate-y-1'
-								: 'bg-gradient-to-br from-white/5 to-transparent border border-white/10 hover:border-[#e18718]/30 hover:-translate-y-1'}"
-					>
-						<!-- Number -->
-						<div class="absolute top-4 right-4 font-rival text-5xl font-bold transition-colors
-							{activeCapability === id ? 'text-[#e18718]/30' : 'text-white/5 group-hover:text-[#e18718]/20'}">
-							{String(i + 1).padStart(2, '0')}
-						</div>
-
-						<!-- Active indicator bar -->
-						<div class="absolute left-0 top-0 bottom-0 w-1 transition-all duration-300
-							{activeCapability === id ? 'bg-[#e18718]' : 'bg-transparent group-hover:bg-[#e18718]/30'}"></div>
-
-						<!-- Content -->
-						<div class="relative z-10 pl-2">
-							<h3 class="font-rival text-lg font-bold mb-3 transition-colors
-								{activeCapability === id ? 'text-[#e18718]' : 'text-white group-hover:text-[#e18718]'}">
-								{item.focusArea.title}
-							</h3>
-							<p class="font-rival-body text-sm text-white/50 leading-relaxed">
-								{item.focusArea.description}
-							</p>
-						</div>
-
-						<!-- Bottom accent -->
-						<div class="absolute bottom-0 left-0 w-full h-1 bg-[#e18718] transform transition-transform duration-500 origin-left
-							{activeCapability === id ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-50'}"></div>
-					</button>
-				{/each}
-			</div>
-
-			<!-- Capability Detail Panel -->
-			{#key activeCapability}
-				<div class="capability-detail-enter p-8 border border-white/10 relative overflow-hidden"
-					style="background: linear-gradient(135deg, rgba(225, 135, 24, 0.08) 0%, rgba(225, 135, 24, 0.02) 50%, transparent 100%);">
-					<!-- Decorative corner accent -->
-					<div class="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-[#e18718]/30"></div>
-					<div class="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-[#e18718]/30"></div>
-
-					<div class="grid lg:grid-cols-2 gap-8 relative z-10">
-						<!-- Left: Domain info -->
-						<div>
-							<div class="flex items-center gap-3 mb-4">
-								<div class="w-8 h-px bg-[#e18718]"></div>
-								<span class="font-rival-narrow text-xs text-[#e18718] tracking-widest uppercase">Domain</span>
-							</div>
-							<h4 class="font-rival text-2xl lg:text-3xl font-bold text-white mb-4">{currentCapability.domain.area}</h4>
-							<p class="font-rival-body text-white/60 leading-relaxed">{currentCapability.domain.description}</p>
-						</div>
-
-						<!-- Right: Capabilities list -->
-						<div>
-							<div class="flex items-center gap-3 mb-4">
-								<div class="w-8 h-px bg-white/20"></div>
-								<span class="font-rival-narrow text-xs text-white/40 tracking-widest uppercase">Capabilities</span>
-							</div>
-							<ul class="space-y-4">
-								{#each currentCapability.domain.capabilities as capability, i}
-									<li class="flex items-start font-rival-body text-white/70 capability-item" style="animation-delay: {i * 100}ms;">
-										<span class="text-[#e18718] mr-3 mt-0.5 font-bold">→</span>
-										<span>{capability}</span>
-									</li>
-								{/each}
-							</ul>
-						</div>
-					</div>
-				</div>
-			{/key}
+		<!-- Scroll indicator -->
+		<div class="hero-scroll-indicator" style="opacity: {1 - heroProgress}">
+			<div class="w-px h-16 bg-gradient-to-b from-[#ff4500] to-transparent"></div>
+			<span class="font-rival-narrow text-xs text-white/40 tracking-widest uppercase mt-2">Scroll</span>
 		</div>
-	</section>
+	</div>
+</section>
 
-	<!-- ==================== SECTION 4: WORK ==================== -->
-	<!-- Full-screen project showcase with navigation -->
-	<section id="work" class="snap-section bg-[#0d0d08] overflow-hidden">
-		<div class="h-full grid lg:grid-cols-2">
-			<!-- Left: Project image -->
-			<div class="relative h-[40vh] lg:h-full overflow-hidden">
-				{#key activeProject}
-					<img
-						src={currentProject.heroImage}
-						alt={currentProject.title}
-						class="w-full h-full object-cover project-image-enter"
-					/>
-				{/key}
-				<div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#0d0d08]"></div>
-				<div class="absolute inset-0 bg-gradient-to-t from-[#0d0d08] via-transparent to-transparent lg:hidden"></div>
+<!-- ==================== MANIFESTO SECTION ==================== -->
+<section id="manifesto" class="manifesto-section">
+	<div class="manifesto-content">
+		<!-- Section number watermark -->
+		<span class="manifesto-number">01</span>
 
-				<!-- Project counter -->
-				<div class="absolute bottom-8 left-8 flex items-baseline gap-2">
-					<span class="font-rival text-6xl font-bold text-white">{String(activeProject + 1).padStart(2, '0')}</span>
-					<span class="font-rival-narrow text-lg text-white/30">/ {String(featuredProjects.length).padStart(2, '0')}</span>
-				</div>
-			</div>
+		<h2 class="font-rival text-4xl lg:text-5xl xl:text-6xl font-medium text-white mb-8 leading-tight uppercase">
+			Systems don't fail by accident.<br/>
+			<span class="text-[#ff4500]">They fail in predictable ways.</span>
+		</h2>
 
-			<!-- Right: Project details -->
-			<div class="relative flex flex-col justify-center px-8 lg:px-16 py-12 lg:py-0">
-				<!-- Section indicator -->
-				<div class="absolute top-8 right-8 font-rival text-8xl font-bold text-white/5">03</div>
+		<p class="font-rival text-xl lg:text-2xl text-white/60 leading-relaxed mb-12 max-w-3xl mx-auto">
+			From missing ownership boundaries to ignoring second-order effects of architecture decisions.
+			I've spent 25 years learning these patterns—and building systems that survive them.
+		</p>
 
-				{#key activeProject}
-					<div class="project-content-enter">
-						<!-- Category -->
-						<div class="flex items-center gap-3 mb-6">
-							<div class="w-8 h-px bg-[#e18718]"></div>
-							<span class="font-rival-narrow text-[#e18718] text-sm tracking-widest uppercase">{currentProject.category}</span>
-						</div>
-
-						<!-- Title -->
-						<h3 class="font-rival text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 leading-tight">
-							{currentProject.title}
-						</h3>
-
-						<!-- Subtitle -->
-						{#if currentProject.subtitle}
-							<p class="font-rival-body text-xl text-[#e18718] mb-6">{currentProject.subtitle}</p>
-						{/if}
-
-						<!-- Description -->
-						<p class="font-rival-body text-lg text-white/60 leading-relaxed mb-8 max-w-lg">
-							{currentProject.description}
-						</p>
-
-						<!-- Tech stack -->
-						<div class="flex flex-wrap gap-2 mb-8">
-							{#each currentProject.technologies.slice(0, 5) as tech}
-								<span class="px-3 py-1 bg-white/5 border border-white/10 text-xs font-rival-narrow text-white/70">{tech}</span>
-							{/each}
-						</div>
-
-						<!-- CTAs -->
-						<div class="flex items-center gap-6">
-							{#if currentProject.demo}
-								<a
-									href={currentProject.demo}
-									target="_blank"
-									rel="noopener noreferrer"
-									class="group flex items-center gap-2 px-6 py-3 bg-[#e18718] text-[#0a0a0a] font-rival font-bold text-sm hover:bg-white transition-colors"
-								>
-									View Live
-									<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-									</svg>
-								</a>
-							{/if}
-							{#if currentProject.repository}
-								<a
-									href={currentProject.repository}
-									target="_blank"
-									rel="noopener noreferrer"
-									class="flex items-center gap-2 text-white/50 hover:text-white transition-colors font-rival text-sm"
-								>
-									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-										<path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-									</svg>
-									Source
-								</a>
-							{/if}
-						</div>
-					</div>
-				{/key}
-
-				<!-- Project navigation -->
-				<div class="absolute bottom-8 right-8 flex items-center gap-4">
-					<button
-						on:click={prevProject}
-						class="w-12 h-12 flex items-center justify-center border border-white/20 text-white/50 hover:border-[#e18718] hover:text-[#e18718] transition-colors"
-						aria-label="Previous project"
-					>
-						<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-						</svg>
-					</button>
-					<button
-						on:click={nextProject}
-						class="w-12 h-12 flex items-center justify-center border border-white/20 text-white/50 hover:border-[#e18718] hover:text-[#e18718] transition-colors"
-						aria-label="Next project"
-					>
-						<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-						</svg>
-					</button>
-				</div>
-			</div>
+		<!-- Pull quote -->
+		<div class="relative inline-block text-left">
+			<div class="absolute -left-6 top-0 bottom-0 w-1 bg-[#ff4500]"></div>
+			<blockquote class="pl-8 font-rival text-2xl lg:text-3xl text-white/80 italic">
+				"The best architecture <span class="font-highest-praise text-[#ff4500] text-3xl lg:text-4xl not-italic">disappears</span> into the experience."
+			</blockquote>
 		</div>
-	</section>
+	</div>
+</section>
 
-	<!-- ==================== SECTION 5: PHOTOGRAPHY ==================== -->
-	<!-- I Also Create - Photo gallery with draggable carousel -->
-	<section id="photography" class="snap-section bg-[#0a0a0a] overflow-hidden">
-		<div class="h-full flex flex-col">
-			<!-- Top: Cinematic hero image with overlay text -->
-			<div class="relative h-[30vh] lg:h-[35vh] flex-shrink-0 overflow-hidden">
-				<img
-					src="{base}/images/gallery/portfolio-06.jpg"
-					alt="Photography feature"
-					class="w-full h-full object-cover object-top scale-105"
-				/>
-				<div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/70 via-[#0a0a0a]/40 to-[#0a0a0a]"></div>
-				<div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/80 to-transparent"></div>
+<!-- ==================== WORK SECTION (Sticky-Stack Cards) ==================== -->
+<section id="work" class="work-section">
+	<!-- Section header -->
+	<div class="work-header">
+		<span class="font-rival text-8xl font-medium text-white/5">02</span>
+		<span class="font-rival-narrow text-sm tracking-[0.3em] uppercase text-white/40 ml-4">Curated Works</span>
+	</div>
 
-				<!-- Content overlay -->
-				<div class="absolute inset-0 flex items-center px-8 lg:px-16">
-					<div>
-						<!-- Section number -->
-						<span class="font-rival text-7xl lg:text-8xl font-bold text-white/10 absolute top-4 left-8 lg:left-16">04</span>
+	{#each featuredProjects as project, i}
+		<div
+			class="work-card"
+			style="z-index: {i + 1}; background-image: url({project.heroImage})"
+		>
+			<!-- Gradient overlay -->
+			<div class="work-card-overlay"></div>
 
-						<div class="flex items-center gap-3 mb-4">
-							<div class="w-10 h-px bg-[#e18718]"></div>
-							<span class="font-rival-narrow text-[#e18718] text-sm tracking-[0.3em] uppercase">I Also Create</span>
-						</div>
-
-						<h2 class="font-rival text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4">
-							Through the <span class="font-highest-praise text-[#e18718] text-5xl lg:text-6xl xl:text-7xl">Lens</span>
-						</h2>
-
-						<p class="font-rival-body text-lg text-white/60 max-w-xl">
-							Action sports photography. The same precision I bring to systems architecture,
-							applied to capturing decisive moments.
-						</p>
-					</div>
-				</div>
+			<!-- Project counter -->
+			<div class="work-card-counter">
+				<span class="font-rival text-6xl lg:text-7xl font-bold text-white">{String(i + 1).padStart(2, '0')}</span>
+				<span class="font-rival-narrow text-lg text-white/30 ml-2">/ {String(featuredProjects.length).padStart(2, '0')}</span>
 			</div>
 
-			<!-- Middle: Draggable photo carousel -->
-			<div class="flex-1 flex flex-col justify-center py-4">
-				<div
-					bind:this={photoScrollContainer}
-					class="photo-scroll-container cursor-grab select-none"
-					role="region"
-					aria-label="Photo gallery - drag to scroll"
-					on:mousedown={handlePhotoMouseDown}
-					on:mousemove={handlePhotoMouseMove}
-					on:mouseup={handlePhotoMouseUp}
-					on:mouseleave={handlePhotoMouseLeave}
-					on:touchstart={handlePhotoTouchStart}
-					on:touchmove={handlePhotoTouchMove}
-					on:touchend={handlePhotoTouchEnd}
-				>
-					<div class="photo-gallery-track">
-						{#each Array(TOTAL_PHOTOS) as _, i}
-							<button
-								class="photo-gallery-item"
-								on:click={() => openPhotoLightbox(i)}
-								type="button"
-								aria-label="View photo {i + 1}"
-							>
-								<img
-									src="{base}/images/gallery/portfolio-{getImgNum(i)}.jpg"
-									alt="Portfolio photo {i + 1}"
-									loading="lazy"
-									draggable="false"
-								/>
-							</button>
-						{/each}
-					</div>
-				</div>
-
-				<!-- Scroll progress bar -->
-				<div class="px-8 lg:px-16 mt-4">
-					<div class="relative h-1 bg-white/10 overflow-hidden">
-						<div
-							class="absolute left-0 top-0 h-full bg-[#e18718] transition-transform duration-100"
-							style="width: 100%; transform: scaleX({photoScrollProgress}); transform-origin: left;"
-						></div>
-					</div>
-					<div class="flex justify-between items-center mt-3">
-						<span class="font-rival-narrow text-xs text-white/40 tracking-widest uppercase">
-							Drag to explore • Click to view
-						</span>
-						<a
-							href="https://photography.ninochavez.co"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="group flex items-center gap-2 font-rival text-sm text-white/60 hover:text-[#e18718] transition-colors"
-						>
-							View Full Portfolio
-							<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-							</svg>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- ==================== SECTION 6: CONTACT ==================== -->
-	<!-- Bold contact section -->
-	<section id="contact" class="snap-section bg-[#0a0a0a]">
-		<div class="h-full flex items-center justify-center px-8">
-			<div class="max-w-4xl text-center">
-				<!-- Section number -->
-				<div class="mb-6">
-					<span class="font-rival text-8xl lg:text-9xl font-bold text-white/5">05</span>
-				</div>
-
-				<!-- Availability -->
-				<div class="inline-flex items-center gap-3 px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-full mb-8">
-					<span class="relative flex h-3 w-3">
-						<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-						<span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-					</span>
-					<span class="font-rival-narrow text-sm text-green-400 tracking-wide">Available for new engagements</span>
-				</div>
-
-				<h2 class="font-rival text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6">
-					Let's <span class="font-highest-praise text-[#e18718] text-6xl lg:text-7xl xl:text-8xl">build</span> something.
-				</h2>
-
-				<p class="font-rival-body text-xl text-white/50 mb-12 max-w-2xl mx-auto">
-					Enterprise consulting. Strategic advisory. AI transformation.
-				</p>
-
-				<!-- Contact options -->
-				<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+			<!-- Project info -->
+			<div class="work-card-info">
+				<span class="font-rival-narrow text-[#ff4500] text-sm tracking-[0.3em] uppercase mb-2 block">{project.category}</span>
+				<h3 class="font-rival text-4xl lg:text-5xl xl:text-6xl font-medium text-white uppercase mb-4">{project.title}</h3>
+				{#if project.demo}
 					<a
-						href="mailto:abelino.chavez@gmail.com"
-						class="group px-10 py-5 bg-[#e18718] text-[#0a0a0a] font-rival font-bold text-lg hover:bg-white transition-colors duration-300"
-					>
-						Get in Touch
-					</a>
-					<a
-						href="https://linkedin.com/in/nino-chavez"
+						href={project.demo}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="group flex items-center gap-3 px-10 py-5 border border-white/20 text-white font-rival font-bold text-lg hover:border-[#e18718] hover:text-[#e18718] transition-colors duration-300"
+						class="inline-flex items-center gap-2 px-6 py-3 border border-white/30 text-white font-rival-narrow text-sm tracking-widest uppercase hover:bg-white hover:text-black transition-all"
 					>
-						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-							<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+						VIEW WORK
+						<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
 						</svg>
-						LinkedIn
 					</a>
-				</div>
+				{/if}
+			</div>
+		</div>
+	{/each}
+</section>
 
-				<!-- Location -->
-				<div class="mt-16 flex items-center justify-center gap-8 text-white/30">
-					<div class="flex items-center gap-2">
-						<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-							<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-						</svg>
-						<span class="font-rival-narrow text-sm tracking-wide">Chicago, IL</span>
+<!-- ==================== SERVICES SECTION (Row Layout) ==================== -->
+<section id="services" class="services-section">
+	<div class="services-container">
+		<!-- Section header -->
+		<div class="flex items-baseline gap-4 mb-16">
+			<span class="font-rival text-7xl lg:text-8xl font-medium text-white/5">03</span>
+			<h2 class="font-rival text-4xl lg:text-5xl font-medium text-white uppercase">Our Service</h2>
+		</div>
+
+		<!-- Service rows -->
+		<div class="services-list">
+			{#each services as service, i}
+				<button
+					class="service-row"
+					class:active={activeServiceIndex === i}
+					on:click={() => activeServiceIndex = i}
+					on:mouseenter={() => activeServiceIndex = i}
+				>
+					<div class="service-row-left">
+						<span class="service-arrow {activeServiceIndex === i ? 'visible' : ''}">→</span>
+						<span class="font-rival text-lg lg:text-xl uppercase">{service.title}</span>
 					</div>
-					<div class="w-px h-4 bg-white/20"></div>
-					<span class="font-rival-narrow text-sm tracking-wide">Global Remote</span>
-				</div>
+					<div class="service-row-right">
+						<span class="font-rival text-sm lg:text-base text-white/60">{service.description}</span>
+					</div>
+				</button>
+			{/each}
+		</div>
 
-				<!-- Footer -->
-				<div class="absolute bottom-8 left-0 right-0 flex items-center justify-center gap-8 text-white/20">
-					<span class="font-rival-narrow text-xs tracking-widest">© 2025 Nino Chavez</span>
-					<a href="/cv" class="font-rival-narrow text-xs tracking-widest hover:text-[#e18718] transition-colors">CV</a>
-					<a href="https://blog.ninochavez.co" class="font-rival-narrow text-xs tracking-widest hover:text-[#e18718] transition-colors">Blog</a>
-					<a href="https://photography.ninochavez.co" class="font-rival-narrow text-xs tracking-widest hover:text-[#e18718] transition-colors">Photography</a>
+		<!-- Floating image -->
+		<div class="services-floating-image" style="transform: translateY({activeServiceIndex * 20}px) rotate({5 + activeServiceIndex * 2}deg)">
+			<img
+				src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=500&fit=crop&q=80"
+				alt="Abstract design"
+				class="w-full h-full object-cover"
+			/>
+		</div>
+	</div>
+</section>
+
+<!-- ==================== PHOTOGRAPHY SECTION ==================== -->
+<section id="photography" class="photography-section">
+	<div class="h-full flex flex-col">
+		<!-- Header -->
+		<div class="photography-header">
+			<span class="font-rival text-7xl lg:text-8xl font-medium text-white/5 absolute top-8 left-8">04</span>
+			<div class="flex items-center gap-3 mb-4">
+				<div class="w-10 h-px bg-[#ff4500]"></div>
+				<span class="font-rival-narrow text-[#ff4500] text-sm tracking-[0.3em] uppercase">I Also Create</span>
+			</div>
+			<h2 class="font-rival text-4xl lg:text-5xl xl:text-6xl font-medium text-white uppercase mb-4">
+				Through the <span class="font-highest-praise text-[#ff4500] text-5xl lg:text-6xl xl:text-7xl normal-case">Lens</span>
+			</h2>
+			<p class="font-rival text-lg text-white/60 max-w-xl">
+				Action sports photography. The same precision I bring to systems architecture,
+				applied to capturing decisive moments.
+			</p>
+		</div>
+
+		<!-- Draggable photo carousel -->
+		<div class="flex-1 flex flex-col justify-center py-4">
+			<div
+				bind:this={photoScrollContainer}
+				class="photo-scroll-container cursor-grab select-none"
+				role="region"
+				aria-label="Photo gallery - drag to scroll"
+				on:mousedown={handlePhotoMouseDown}
+				on:mousemove={handlePhotoMouseMove}
+				on:mouseup={handlePhotoMouseUp}
+				on:mouseleave={handlePhotoMouseLeave}
+				on:touchstart={handlePhotoTouchStart}
+				on:touchmove={handlePhotoTouchMove}
+				on:touchend={handlePhotoTouchEnd}
+			>
+				<div class="photo-gallery-track">
+					{#each Array(TOTAL_PHOTOS) as _, i}
+						<button
+							class="photo-gallery-item"
+							on:click={() => openPhotoLightbox(i)}
+							type="button"
+							aria-label="View photo {i + 1}"
+						>
+							<img
+								src="{base}/images/gallery/portfolio-{getImgNum(i)}.jpg"
+								alt="Portfolio photo {i + 1}"
+								loading="lazy"
+								draggable="false"
+							/>
+						</button>
+					{/each}
+				</div>
+			</div>
+
+			<!-- Progress bar -->
+			<div class="px-8 lg:px-16 mt-4">
+				<div class="relative h-px bg-white/10 overflow-hidden">
+					<div
+						class="absolute left-0 top-0 h-full bg-[#ff4500] transition-transform duration-100"
+						style="width: 100%; transform: scaleX({photoScrollProgress}); transform-origin: left;"
+					></div>
+				</div>
+				<div class="flex justify-between items-center mt-3">
+					<span class="font-rival-narrow text-xs text-white/40 tracking-widest uppercase">
+						Drag to explore • Click to view
+					</span>
+					<a
+						href="https://photography.ninochavez.co"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="group flex items-center gap-2 font-rival text-sm text-white/60 hover:text-[#ff4500] transition-colors"
+					>
+						View Full Portfolio
+						<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
+					</a>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 
-</main>
+<!-- ==================== CTA SECTION (Gradient) ==================== -->
+<section id="contact" class="cta-section">
+	<!-- Floating image -->
+	<div class="cta-floating-image">
+		<img
+			src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&h=500&fit=crop&q=80"
+			alt="Red chair"
+			class="w-full h-full object-cover"
+		/>
+	</div>
 
-<!-- Photo Lightbox Modal -->
+	<div class="cta-content">
+		<p class="font-rival text-xl lg:text-2xl text-white/80 mb-4 max-w-2xl">
+			I help Fortune 500 companies turn ideas into impact—fast.
+		</p>
+		<p class="font-rival text-lg text-white/60 mb-12 max-w-2xl">
+			From brand to product to web, I bring clarity and craft that move you forward without sacrificing quality.
+		</p>
+
+		<h2 class="font-rival text-4xl lg:text-5xl xl:text-6xl font-medium text-white uppercase mb-4">
+			Ready to build<br/>
+			something great together?
+		</h2>
+
+		<p class="font-rival text-lg text-white/60 mb-8">I saved you a seat!</p>
+
+		<a
+			href="mailto:abelino.chavez@gmail.com"
+			class="inline-block px-10 py-5 bg-white text-black font-rival font-bold text-lg tracking-wide hover:bg-[#ff4500] hover:text-white transition-colors"
+		>
+			BOOK A CALL
+		</a>
+	</div>
+
+	<!-- Footer -->
+	<footer class="cta-footer">
+		<div class="flex items-center gap-8">
+			<span class="font-rival-narrow text-xs text-white/30 tracking-widest">Get In Touch</span>
+			<span class="font-rival text-sm text-white/60">hello@ninochavez.co</span>
+		</div>
+		<div class="flex items-center gap-6">
+			<a href="/" class="font-rival-narrow text-xs text-white/40 tracking-widest uppercase hover:text-[#ff4500] transition-colors">Home</a>
+			<a href="/work" class="font-rival-narrow text-xs text-white/40 tracking-widest uppercase hover:text-[#ff4500] transition-colors">Work</a>
+			<a href="/cv" class="font-rival-narrow text-xs text-white/40 tracking-widest uppercase hover:text-[#ff4500] transition-colors">CV</a>
+			<a href="https://blog.ninochavez.co" class="font-rival-narrow text-xs text-white/40 tracking-widest uppercase hover:text-[#ff4500] transition-colors">Blog</a>
+		</div>
+		<div class="flex items-center gap-4">
+			<a href="https://instagram.com" class="font-rival-narrow text-xs text-white/40 hover:text-[#ff4500] transition-colors">IG</a>
+			<a href="https://linkedin.com/in/nino-chavez" class="font-rival-narrow text-xs text-white/40 hover:text-[#ff4500] transition-colors">LI</a>
+			<a href="https://github.com/nino-chavez" class="font-rival-narrow text-xs text-white/40 hover:text-[#ff4500] transition-colors">GH</a>
+		</div>
+	</footer>
+</section>
+
+<!-- ==================== PHOTO LIGHTBOX ==================== -->
 {#if photoLightboxOpen}
 	<div
 		class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex flex-col"
@@ -837,7 +592,6 @@
 		aria-label="Photo lightbox"
 		tabindex="-1"
 	>
-		<!-- Close button -->
 		<button
 			class="absolute top-6 right-6 z-10 w-12 h-12 flex items-center justify-center text-white/60 hover:text-white transition-colors"
 			on:click|stopPropagation={closePhotoLightbox}
@@ -848,9 +602,7 @@
 			</svg>
 		</button>
 
-		<!-- Main image area -->
 		<div class="flex-1 flex items-center justify-center p-8" on:click|stopPropagation>
-			<!-- Previous button -->
 			<button
 				class="absolute left-4 lg:left-8 w-12 h-12 flex items-center justify-center text-white/40 hover:text-white transition-colors"
 				on:click|stopPropagation={prevPhoto}
@@ -861,14 +613,12 @@
 				</svg>
 			</button>
 
-			<!-- Image -->
 			<img
 				src={currentPhotoSrc}
 				alt="Portfolio photo {currentPhotoIndex + 1}"
 				class="max-h-[70vh] max-w-[85vw] object-contain"
 			/>
 
-			<!-- Next button -->
 			<button
 				class="absolute right-4 lg:right-8 w-12 h-12 flex items-center justify-center text-white/40 hover:text-white transition-colors"
 				on:click|stopPropagation={nextPhoto}
@@ -880,12 +630,10 @@
 			</button>
 		</div>
 
-		<!-- Photo counter -->
 		<div class="absolute top-6 left-6 font-rival-narrow text-white/50 text-sm tracking-widest">
 			{String(currentPhotoIndex + 1).padStart(2, '0')} / {String(TOTAL_PHOTOS).padStart(2, '0')}
 		</div>
 
-		<!-- Thumbnail strip -->
 		<div class="flex-shrink-0 px-4 pb-6" on:click|stopPropagation>
 			<div class="flex justify-center gap-1 overflow-x-auto py-2 max-w-full">
 				{#each Array(Math.min(TOTAL_PHOTOS, 20)) as _, i}
@@ -893,7 +641,7 @@
 					{#if thumbIndex < TOTAL_PHOTOS}
 						<button
 							class="flex-shrink-0 w-16 h-12 overflow-hidden transition-all duration-200
-								{currentPhotoIndex === thumbIndex ? 'ring-2 ring-[#e18718] opacity-100' : 'opacity-40 hover:opacity-70'}"
+								{currentPhotoIndex === thumbIndex ? 'ring-2 ring-[#ff4500] opacity-100' : 'opacity-40 hover:opacity-70'}"
 							on:click|stopPropagation={() => { currentPhotoIndex = thumbIndex; }}
 							aria-label="View photo {thumbIndex + 1}"
 						>
@@ -909,7 +657,6 @@
 			</div>
 		</div>
 
-		<!-- Keyboard hint -->
 		<div class="absolute bottom-4 left-1/2 -translate-x-1/2 font-rival-narrow text-xs text-white/30 tracking-widest">
 			← → to navigate • ESC to close
 		</div>
@@ -917,11 +664,8 @@
 {/if}
 
 <style>
-	/* Fonts */
+	/* ==================== FONTS ==================== */
 	.font-rival {
-		font-family: "rival-sans", sans-serif;
-	}
-	.font-rival-body {
 		font-family: "rival-sans", sans-serif;
 	}
 	.font-rival-narrow {
@@ -931,114 +675,290 @@
 		font-family: "highest-praise", cursive;
 	}
 
-	/* Full-screen scroll snap */
-	.scroll-container {
-		height: 100vh;
-		overflow-y: scroll;
-		scroll-snap-type: y mandatory;
-		scroll-behavior: smooth;
+	/* ==================== HERO SECTION ==================== */
+	.hero-section {
+		height: 300vh; /* 3 viewport heights for scroll animation */
+		position: relative;
+		background: #000;
 	}
 
-	.snap-section {
+	.hero-sticky {
+		position: sticky;
+		top: 0;
 		height: 100vh;
+		overflow: hidden;
+	}
+
+	.hero-image-panel {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 50%;
+		overflow: hidden;
+		transition: transform 0.1s ease-out;
+	}
+
+	.hero-image-left {
+		left: 0;
+		clip-path: inset(0 var(--split) 0 0);
+		transform: translateX(calc(-1 * var(--split)));
+	}
+
+	.hero-image-right {
+		right: 0;
+		clip-path: inset(0 0 0 var(--split));
+		transform: translateX(var(--split));
+	}
+
+	.hero-image {
+		width: 200%; /* Double width to show same image on both panels */
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.hero-image-left .hero-image {
+		transform: translateX(0);
+	}
+
+	.hero-image-right .hero-image {
+		transform: translateX(-50%);
+	}
+
+	.hero-center-reveal {
+		position: absolute;
+		inset: 0;
+		background: #000;
+		z-index: 1;
+	}
+
+	.hero-tagline {
+		position: absolute;
+		top: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.hero-tagline-left {
+		left: 2rem;
+	}
+
+	.hero-tagline-right {
+		right: 2rem;
+		text-align: right;
+	}
+
+	.hero-name {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		font-family: "rival-sans", sans-serif;
+		font-size: clamp(4rem, 12vw, 10rem);
+		font-weight: 500;
+		color: white;
+		z-index: 2;
+		line-height: 1;
+	}
+
+	.hero-name-left {
+		left: 2rem;
+	}
+
+	.hero-name-right {
+		right: 2rem;
+	}
+
+	.hero-cta {
+		position: absolute;
+		bottom: 20%;
+		left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+		z-index: 3;
+	}
+
+	.hero-scroll-indicator {
+		position: absolute;
+		bottom: 2rem;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		z-index: 3;
+	}
+
+	/* ==================== MANIFESTO SECTION ==================== */
+	.manifesto-section {
 		min-height: 100vh;
-		scroll-snap-align: start;
-		scroll-snap-stop: always;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #000;
+		padding: 4rem 2rem;
+	}
+
+	.manifesto-content {
+		max-width: 64rem;
+		text-align: center;
 		position: relative;
 	}
 
-	/* Entrance animations */
-	@keyframes slide-up {
-		from {
-			opacity: 0;
-			transform: translateY(30px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
+	.manifesto-number {
+		position: absolute;
+		top: -4rem;
+		left: 50%;
+		transform: translateX(-50%);
+		font-family: "rival-sans", sans-serif;
+		font-size: 12rem;
+		font-weight: 500;
+		color: rgba(255, 255, 255, 0.03);
+		line-height: 1;
+		pointer-events: none;
 	}
 
-	.animate-slide-up {
+	/* ==================== WORK SECTION ==================== */
+	.work-section {
+		position: relative;
+		background: #000;
+	}
+
+	.work-header {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		padding: 2rem;
+		display: flex;
+		align-items: baseline;
+		pointer-events: none;
+	}
+
+	.work-card {
+		position: sticky;
+		top: 0;
+		height: 100vh;
+		background-size: cover;
+		background-position: center;
+		display: flex;
+		align-items: flex-end;
+		padding: 4rem;
+	}
+
+	.work-card-overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
+	}
+
+	.work-card-counter {
+		position: absolute;
+		top: 2rem;
+		left: 2rem;
+		display: flex;
+		align-items: baseline;
+		z-index: 2;
+	}
+
+	.work-card-info {
+		position: relative;
+		z-index: 2;
+		max-width: 600px;
+	}
+
+	/* ==================== SERVICES SECTION ==================== */
+	.services-section {
+		min-height: 100vh;
+		background: #000;
+		padding: 6rem 2rem;
+		display: flex;
+		align-items: center;
+	}
+
+	.services-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		width: 100%;
+		position: relative;
+	}
+
+	.services-list {
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.service-row {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1.5rem 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		background: transparent;
+		border-left: none;
+		border-right: none;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.service-row:hover,
+	.service-row.active {
+		background: rgba(255, 69, 0, 0.05);
+	}
+
+	.service-row-left {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		color: white;
+	}
+
+	.service-arrow {
+		color: #ff4500;
 		opacity: 0;
-		animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+		transform: translateX(-10px);
+		transition: all 0.3s ease;
 	}
 
-	/* Project image transition */
-	@keyframes project-image-enter {
-		from {
-			opacity: 0;
-			transform: scale(1.1);
-		}
-		to {
-			opacity: 1;
-			transform: scale(1);
-		}
+	.service-arrow.visible {
+		opacity: 1;
+		transform: translateX(0);
 	}
 
-	.project-image-enter {
-		animation: project-image-enter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+	.service-row-right {
+		max-width: 400px;
+		text-align: right;
 	}
 
-	/* Project content transition */
-	@keyframes project-content-enter {
-		from {
-			opacity: 0;
-			transform: translateX(20px);
-		}
-		to {
-			opacity: 1;
-			transform: translateX(0);
-		}
+	.services-floating-image {
+		position: absolute;
+		top: 50%;
+		right: -100px;
+		width: 250px;
+		height: 320px;
+		overflow: hidden;
+		transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+		pointer-events: none;
+		opacity: 0.8;
 	}
 
-	.project-content-enter {
-		animation: project-content-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-	}
-
-	/* Capability detail panel transition */
-	@keyframes capability-detail-enter {
-		from {
-			opacity: 0;
-			transform: translateY(10px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
+	@media (max-width: 1024px) {
+		.services-floating-image {
+			display: none;
 		}
 	}
 
-	.capability-detail-enter {
-		animation: capability-detail-enter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+	/* ==================== PHOTOGRAPHY SECTION ==================== */
+	.photography-section {
+		min-height: 100vh;
+		background: #000;
+		padding-top: 4rem;
 	}
 
-	/* Capability item stagger animation */
-	@keyframes capability-item-enter {
-		from {
-			opacity: 0;
-			transform: translateX(-10px);
-		}
-		to {
-			opacity: 1;
-			transform: translateX(0);
-		}
+	.photography-header {
+		padding: 0 2rem 2rem;
+		position: relative;
 	}
 
-	.capability-item {
-		opacity: 0;
-		animation: capability-item-enter 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-	}
-
-	/* Expertise card hover effect */
-	.expertise-card {
-		transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-	}
-
-	.expertise-card:hover {
-		background: linear-gradient(135deg, rgba(225, 135, 24, 0.1) 0%, transparent 100%);
-	}
-
-	/* Photo gallery carousel */
 	.photo-scroll-container {
 		overflow-x: auto;
 		overflow-y: hidden;
@@ -1083,7 +1003,6 @@
 		transform: scale(1.02);
 	}
 
-	/* Larger gallery items on bigger screens - portrait ratio (2:3) */
 	@media (min-width: 768px) {
 		.photo-gallery-item {
 			width: 220px;
@@ -1098,39 +1017,71 @@
 		}
 	}
 
-	/* Mobile adjustments */
-	@media (max-width: 1024px) {
-		.snap-section {
-			height: auto;
-			min-height: 100vh;
-		}
+	/* ==================== CTA SECTION ==================== */
+	.cta-section {
+		min-height: 100vh;
+		background: linear-gradient(to bottom, #ff4500 0%, #dc143c 40%, #000 100%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 4rem 2rem;
+		position: relative;
+		text-align: center;
+	}
 
-		.scroll-container {
-			scroll-snap-type: none;
+	.cta-floating-image {
+		position: absolute;
+		top: 20%;
+		left: 10%;
+		width: 200px;
+		height: 260px;
+		overflow: hidden;
+		transform: rotate(-8deg);
+		opacity: 0.9;
+		pointer-events: none;
+	}
+
+	@media (max-width: 1024px) {
+		.cta-floating-image {
+			display: none;
 		}
 	}
 
-	/* Reduced motion */
+	.cta-content {
+		position: relative;
+		z-index: 2;
+		max-width: 800px;
+	}
+
+	.cta-footer {
+		position: absolute;
+		bottom: 2rem;
+		left: 2rem;
+		right: 2rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	@media (max-width: 768px) {
+		.cta-footer {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	/* ==================== REDUCED MOTION ==================== */
 	@media (prefers-reduced-motion: reduce) {
-		.scroll-container {
-			scroll-behavior: auto;
-		}
-
-		.animate-slide-up,
-		.project-image-enter,
-		.project-content-enter,
-		.capability-detail-enter,
-		.capability-item {
-			animation: none;
-			opacity: 1;
-			transform: none;
-		}
-
+		.hero-image-panel,
+		.service-row,
+		.service-arrow,
+		.services-floating-image,
 		.photo-gallery-item,
 		.photo-gallery-item img {
 			transition: none;
-			transform: none;
-			opacity: 1;
 		}
 	}
 </style>
