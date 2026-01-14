@@ -3,24 +3,19 @@
 
 	const expertise = [
 		{
-			area: 'Enterprise Architecture',
-			description: '25+ years designing Fortune 500 commerce platforms',
-			keywords: ['SAP Commerce Cloud', 'Headless Architecture', 'Microservices']
+			area: 'Product Architecture',
+			description: '25+ years building commerce platforms',
+			keywords: ['Commerce Platforms', 'Headless Architecture', 'Microservices']
 		},
 		{
 			area: 'AI-Native Platforms',
-			description: 'Strategic Gen AI adoption for Fortune 500 clients',
+			description: 'Building systems with AI at the core',
 			keywords: ['AI Transformation', 'Platform Strategy', 'Innovation']
 		},
 		{
 			area: 'Cloud-Native Systems',
 			description: 'Distributed, scalable, API-first architecture',
 			keywords: ['AWS', 'Azure', 'GCP', 'Kubernetes', 'DevOps']
-		},
-		{
-			area: 'Strategic Advisory',
-			description: 'Executive alignment and organizational transformation',
-			keywords: ['Roadmap Planning', 'Agile Operating Models', 'Change Management']
 		},
 		{
 			area: 'Action Sports Photography',
@@ -31,7 +26,13 @@
 
 	const timeline = [
 		{
-			year: '2023 - Present',
+			year: '2025 - Present',
+			company: 'commerce.com',
+			role: 'Product Architect',
+			location: 'Chicago, IL'
+		},
+		{
+			year: '2023 - 2024',
 			company: 'Accenture Song',
 			role: 'Enterprise Architect & Strategic Advisor',
 			location: 'Chicago, IL'
@@ -71,17 +72,17 @@
 </script>
 
 <svelte:head>
-	<title>About Nino Chavez | Enterprise Architect & Strategic Advisor | Chicago</title>
+	<title>About Nino Chavez | Product Architect | Chicago</title>
 	<meta
 		name="description"
-		content="Nino Chavez is an enterprise architect with 25+ years building Fortune 500 commerce platforms. Based in Chicago, specializing in AI transformation, SAP Commerce Cloud, and action sports photography."
+		content="Nino Chavez is a Product Architect at commerce.com with 25+ years building commerce platforms. Based in Chicago, specializing in product architecture, AI-native systems, and action sports photography."
 	/>
 
 	<!-- Open Graph -->
-	<meta property="og:title" content="About Nino Chavez - Enterprise Architect & Photographer" />
+	<meta property="og:title" content="About Nino Chavez - Product Architect & Photographer" />
 	<meta
 		property="og:description"
-		content="25+ years architecting Fortune 500 commerce platforms. Strategic advisor at Accenture Song. Chicago-based action sports photographer."
+		content="25+ years building commerce platforms. Product Architect at commerce.com. Chicago-based action sports photographer."
 	/>
 	<meta property="og:type" content="profile" />
 	<meta property="og:url" content="https://ninochavez.co/about" />
@@ -89,10 +90,10 @@
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="About Nino Chavez - Enterprise Architect & Photographer" />
+	<meta name="twitter:title" content="About Nino Chavez - Product Architect & Photographer" />
 	<meta
 		name="twitter:description"
-		content="25+ years architecting Fortune 500 commerce platforms. Strategic advisor at Accenture Song."
+		content="25+ years building commerce platforms. Product Architect at commerce.com."
 	/>
 	<meta name="twitter:image" content="https://ninochavez.co/images/og-about-image.jpeg" />
 
@@ -128,16 +129,15 @@
 			<div in:fade={{ duration: 600 }}>
 				<h1 class="text-5xl md:text-7xl font-bold text-white mb-6">About Nino Chavez</h1>
 				<p class="text-2xl md:text-3xl text-cyan-400 mb-8 font-light">
-					Enterprise Architect & Strategic Advisor
+					Product Architect
 				</p>
 				<p class="text-xl text-neutral-300 leading-relaxed mb-6">
 					For over 25 years, I have built commerce infrastructure that holds up when it matters—from
-					early-stage platforms to Fortune 500 transformations.
+					early-stage platforms to enterprise transformations.
 				</p>
 				<p class="text-lg text-neutral-400 leading-relaxed">
 					Based in <strong class="text-white">Chicago, IL</strong>, I work at the intersection of
-					strategic vision and technical execution, helping organizations navigate AI transformation,
-					cloud-native architecture, and enterprise-scale digital commerce.
+					product vision and technical execution, building systems that scale.
 				</p>
 			</div>
 		</div>
@@ -149,23 +149,22 @@
 			<h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Current Role</h2>
 			<div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-lg p-8">
 				<h3 class="text-2xl font-semibold text-cyan-400 mb-2">
-					Enterprise Architect & Strategic Advisor
+					Product Architect
 				</h3>
-				<p class="text-xl text-neutral-300 mb-4">Accenture Song</p>
+				<p class="text-xl text-neutral-300 mb-4">commerce.com</p>
 				<p class="text-neutral-400 leading-relaxed mb-4">
-					I architect AI-native platforms and advise on cloud transformation roadmaps for Fortune 500
-					clients. My work focuses on aligning executive vision with technical execution while
-					leading Agile operating models and organizational redesign.
+					Leading product architecture for enterprise commerce platform. Building scalable systems
+					that power commerce experiences with AI-native development practices.
 				</p>
 				<div class="flex flex-wrap gap-2">
 					<span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm"
-						>AI Strategy</span
+						>Product Architecture</span
 					>
 					<span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm"
-						>Cloud Architecture</span
+						>Commerce Platforms</span
 					>
 					<span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm"
-						>Executive Advisory</span
+						>AI-Native Systems</span
 					>
 				</div>
 			</div>
@@ -317,7 +316,7 @@
 					Email: abelino.chavez@gmail.com
 				</a>
 				<a
-					href="https://linkedin.com/in/nino-chavez"
+					href="https://www.linkedin.com/in/nino-chavez/"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="px-8 py-4 bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/50 text-blue-300 rounded-lg transition-colors font-semibold"

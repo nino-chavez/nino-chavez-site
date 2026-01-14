@@ -26,7 +26,7 @@ export const GET: RequestHandler = async () => {
 		// Professional Profiles
 		url: 'https://ninochavez.co',
 		sameAs: [
-			'https://linkedin.com/in/nino-chavez',
+			'https://www.linkedin.com/in/nino-chavez/',
 			'https://github.com/nino-chavez'
 		],
 
@@ -47,10 +47,10 @@ export const GET: RequestHandler = async () => {
 		about: {
 			'@type': 'Person',
 			name: 'Nino Chavez',
-			jobTitle: ['Enterprise Architect', 'Strategic Advisor', 'Action Sports Photographer'],
+			jobTitle: ['Product Architect', 'Action Sports Photographer'],
 			worksFor: {
 				'@type': 'Organization',
-				name: 'Accenture Song'
+				name: 'commerce.com'
 			},
 			address: {
 				'@type': 'PostalAddress',

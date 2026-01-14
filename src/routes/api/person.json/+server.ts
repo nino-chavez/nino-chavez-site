@@ -20,17 +20,17 @@ export const GET: RequestHandler = async () => {
 		'@type': 'Person',
 		name: 'Nino Chavez',
 		alternateName: 'Antonino Chavez',
-		jobTitle: ['Enterprise Architect', 'Strategic Advisor', 'Action Sports Photographer'],
+		jobTitle: ['Product Architect', 'Action Sports Photographer'],
 		description:
-			'Enterprise architect with 25+ years building Fortune 500 commerce platforms and strategic advisor at Accenture Song. Specializes in AI-native platform architecture, SAP Commerce Cloud implementations, and enterprise transformation. Action sports photographer capturing tournament and event coverage.',
+			'Product Architect at commerce.com with 25+ years building commerce platforms. Specializes in product architecture, AI-native systems, and building systems that scale. Action sports photographer capturing tournament and event coverage.',
 		url: 'https://ninochavez.co',
 		email: 'abelino.chavez@gmail.com',
 
 		// Current Employment
 		worksFor: {
 			'@type': 'Organization',
-			name: 'Accenture Song',
-			url: 'https://www.accenture.com/us-en/services/song-index'
+			name: 'commerce.com',
+			url: 'https://commerce.com'
 		},
 
 		// Location
@@ -43,7 +43,7 @@ export const GET: RequestHandler = async () => {
 
 		// Professional Profiles
 		sameAs: [
-			'https://linkedin.com/in/nino-chavez',
+			'https://www.linkedin.com/in/nino-chavez/',
 			'https://github.com/nino-chavez'
 		],
 
@@ -51,9 +51,9 @@ export const GET: RequestHandler = async () => {
 		knowsAbout: [
 			{
 				'@type': 'Thing',
-				name: 'Enterprise Architecture',
+				name: 'Product Architecture',
 				description:
-					'25+ years designing and implementing large-scale commerce platforms for Fortune 500 companies',
+					'25+ years designing and implementing large-scale commerce platforms',
 				additionalProperty: {
 					'@type': 'PropertyValue',
 					name: 'Experience Level',
@@ -64,18 +64,18 @@ export const GET: RequestHandler = async () => {
 				'@type': 'Thing',
 				name: 'AI-Native Platform Architecture',
 				description:
-					'Strategic design and implementation of systems built AI-first from inception, including Gen AI platform adoption',
+					'Strategic design and implementation of systems built AI-first from inception',
 				additionalProperty: {
 					'@type': 'PropertyValue',
 					name: 'Recent Work',
-					value: '5+ enterprise AI implementations'
+					value: '5+ AI implementations'
 				}
 			},
 			{
 				'@type': 'Thing',
-				name: 'SAP Commerce Cloud',
+				name: 'Commerce Platforms',
 				description:
-					'Expert in SAP Hybris/Commerce Cloud implementation, migration, headless architecture, and ecosystem integration',
+					'Expert in commerce platform implementation, migration, headless architecture, and ecosystem integration',
 				additionalProperty: {
 					'@type': 'PropertyValue',
 					name: 'Years of Experience',
@@ -95,17 +95,6 @@ export const GET: RequestHandler = async () => {
 			},
 			{
 				'@type': 'Thing',
-				name: 'Strategic Advisory',
-				description:
-					'Executive alignment, organizational redesign, technical roadmap planning, and Agile operating models',
-				additionalProperty: {
-					'@type': 'PropertyValue',
-					name: 'Level',
-					value: 'Accenture Song principal-level advisor'
-				}
-			},
-			{
-				'@type': 'Thing',
 				name: 'Action Sports Photography',
 				description:
 					'Tournament photography, event coverage, action sports documentation with 20,000+ image portfolio',
@@ -121,7 +110,7 @@ export const GET: RequestHandler = async () => {
 		hasOccupation: [
 			{
 				'@type': 'Occupation',
-				name: 'Enterprise Architect',
+				name: 'Product Architect',
 				occupationLocation: {
 					'@type': 'City',
 					name: 'Chicago',
@@ -143,17 +132,6 @@ export const GET: RequestHandler = async () => {
 			},
 			{
 				'@type': 'Occupation',
-				name: 'Strategic Advisor',
-				occupationLocation: {
-					'@type': 'City',
-					name: 'Chicago'
-				},
-				experienceRequirements: 'Principal-level',
-				responsibilities:
-					'Executive alignment, technical roadmap planning, organizational transformation, Agile operating model design, vendor selection and governance'
-			},
-			{
-				'@type': 'Occupation',
 				name: 'Action Sports Photographer',
 				occupationLocation: {
 					'@type': 'City',
@@ -169,9 +147,16 @@ export const GET: RequestHandler = async () => {
 		alumniOf: [
 			{
 				'@type': 'Organization',
+				name: 'commerce.com',
+				startDate: '2025',
+				description: 'Product Architect - Current role'
+			},
+			{
+				'@type': 'Organization',
 				name: 'Accenture Song',
 				startDate: '2023',
-				description: 'Enterprise Architect & Strategic Advisor - Current role'
+				endDate: '2024',
+				description: 'Enterprise Architect & Strategic Advisor'
 			},
 			{
 				'@type': 'Organization',

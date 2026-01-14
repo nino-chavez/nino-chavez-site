@@ -36,7 +36,7 @@
 	 <!-- Preload hero images for performance -->
 	 <link rel="preload" as="image" href="/images/hero.webp" media="(min-width: 640px)" fetchpriority="high" />
 	 <link rel="preload" as="image" href="/images/hero-mobile.webp" media="(max-width: 639px)" fetchpriority="high" />
-	 <title>Nino Chavez - Enterprise Architect & Strategic Advisor</title>
+	 <title>Nino Chavez - Product Architect</title>
 	 <meta name="description" content="25 years building commerce infrastructure that holds up when it matters" />
 </svelte:head>
 

@@ -252,7 +252,7 @@
 </script>
 
 <svelte:head>
-	<title>Nino Chavez | Enterprise Architect & AI-Native Development</title>
+	<title>Nino Chavez | Product Architect & AI-Native Development</title>
 	<link rel="stylesheet" href="https://use.typekit.net/wbj0oqh.css">
 	<link rel="stylesheet" href="https://use.typekit.net/pxj6trb.css">
 </svelte:head>
@@ -301,7 +301,7 @@
 				<!-- Eyebrow with warm accent -->
 				<div class="flex items-center gap-3 mb-6 animate-fade-in-up" style="animation-delay: 300ms;">
 					<div class="w-12 h-px bg-[#e18718]"></div>
-					<span class="font-rival-narrow text-[#e18718] text-sm tracking-widest uppercase">Enterprise Architect</span>
+					<span class="font-rival-narrow text-[#e18718] text-sm tracking-widest uppercase">Product Architect</span>
 				</div>
 
 				<!-- Large editorial headline -->
@@ -315,7 +315,7 @@
 					<!-- Supporting text -->
 					<p class="font-rival-body text-lg lg:text-xl leading-relaxed mb-8 max-w-2xl animate-fade-in-up" style="color: #9a9a95; animation-delay: 500ms;">
 						25 years architecting commerce at scale. Fortune 500 platforms.
-						AI-native transformation. Strategic advisory at Accenture Song.
+						Product architecture for commerce platforms. Building systems that scale.
 					</p>
 
 					<!-- Subtle CTA row -->
@@ -872,7 +872,7 @@
 					Get in Touch
 				</a>
 				<a
-					href="https://linkedin.com/in/nino-chavez"
+					href="https://www.linkedin.com/in/nino-chavez/"
 					class="inline-flex items-center gap-3 px-8 py-4 border border-neutral-700 font-rival-body font-medium hover:border-[#e18718] hover:bg-[#e18718]/10 hover:text-[#e18718] transition-all duration-300"
 					style="color: #f5f5f0;"
 				>
