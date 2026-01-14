@@ -24,7 +24,7 @@ export const GET: RequestHandler = async () => {
 		description:
 			'Product Architect at commerce.com with 25+ years building commerce platforms. Specializes in product architecture, AI-native systems, and building systems that scale. Action sports photographer capturing tournament and event coverage.',
 		url: 'https://ninochavez.co',
-		email: 'abelino.chavez@gmail.com',
+		email: 'nino@ninochavez.co',
 
 		// Current Employment
 		worksFor: {
@@ -148,14 +148,14 @@ export const GET: RequestHandler = async () => {
 			{
 				'@type': 'Organization',
 				name: 'commerce.com',
-				startDate: '2025',
+				startDate: '2026',
 				description: 'Product Architect - Current role'
 			},
 			{
 				'@type': 'Organization',
 				name: 'Accenture Song',
 				startDate: '2023',
-				endDate: '2024',
+				endDate: '2026',
 				description: 'Enterprise Architect & Strategic Advisor'
 			},
 			{

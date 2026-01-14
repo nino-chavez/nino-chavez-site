@@ -615,7 +615,7 @@
 				class="flex flex-col sm:flex-row gap-4 justify-center"
 			>
 				<a
-					href="mailto:abelino.chavez@gmail.com?subject=Voice%20Designer%20Track%20-%20Level%201%20Complete&body=Link%20to%20voice%20guide%3A%20%0A%0AExamples%20of%20writing%20using%20it%3A%20%0A%0APattern%20that%20surprised%20you%3A%20"
+					href="mailto:nino@ninochavez.co?subject=Voice%20Designer%20Track%20-%20Level%201%20Complete&body=Link%20to%20voice%20guide%3A%20%0A%0AExamples%20of%20writing%20using%20it%3A%20%0A%0APattern%20that%20surprised%20you%3A%20"
 					class="inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold rounded-lg transition-colors"
 					style="background: var(--ai-accent-purple); color: white;"
 				>
@@ -642,7 +642,7 @@
 			>
 				<p class="text-sm" style="color: var(--ai-text-muted);">
 					<span class="font-medium" style="color: var(--ai-text-secondary);">Stuck?</span>
-					Email me at <a href="mailto:abelino.chavez@gmail.com" style="color: var(--ai-accent-purple);">abelino.chavez@gmail.com</a> with your blockers. Common issues: can't identify patterns, guide is too vague, validation catches too much/little.
+					Email me at <a href="mailto:nino@ninochavez.co" style="color: var(--ai-accent-purple);">nino@ninochavez.co</a> with your blockers. Common issues: can't identify patterns, guide is too vague, validation catches too much/little.
 				</p>
 			</div>
 		{/if}

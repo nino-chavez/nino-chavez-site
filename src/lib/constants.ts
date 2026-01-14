@@ -355,7 +355,7 @@ export const INSIGHTS_ARTICLES: InsightArticle[] = [
 
 export const CAREER_MILESTONES = [
     {
-        year: 2025,
+        year: 2026,
         era: 'commerce.com',
         scale: 'commerce.com',
         role: 'Product Architect',
@@ -365,6 +365,7 @@ export const CAREER_MILESTONES = [
     },
     {
         year: 2023,
+        endYear: 2026,
         era: 'Accenture Song',
         scale: 'Accenture',
         role: 'Enterprise Architect & Strategic Advisor',

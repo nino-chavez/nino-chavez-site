@@ -778,7 +778,7 @@
 				class="flex flex-col sm:flex-row gap-4 justify-center"
 			>
 				<a
-					href="mailto:abelino.chavez@gmail.com?subject=Builder%20Track%20-%20Level%201%20Complete&body=Link%20to%20deployed%20app%3A%20%0A%0AGitHub%20repo%3A%20%0A%0AWhat%20was%20hardest%3A%20%0A%0AWhat%20surprised%20me%3A%20"
+					href="mailto:nino@ninochavez.co?subject=Builder%20Track%20-%20Level%201%20Complete&body=Link%20to%20deployed%20app%3A%20%0A%0AGitHub%20repo%3A%20%0A%0AWhat%20was%20hardest%3A%20%0A%0AWhat%20surprised%20me%3A%20"
 					class="inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold rounded-lg transition-colors"
 					style="background: var(--ai-accent-green); color: white;"
 				>
@@ -805,7 +805,7 @@
 			>
 				<p class="text-sm" style="color: var(--ai-text-muted);">
 					<span class="font-medium" style="color: var(--ai-text-secondary);">Stuck?</span>
-					Email me at <a href="mailto:abelino.chavez@gmail.com" style="color: var(--ai-accent-green);">abelino.chavez@gmail.com</a> with your blockers. I'll help you figure out if you need to go back a level, get specific technical help, or reassess your project scope.
+					Email me at <a href="mailto:nino@ninochavez.co" style="color: var(--ai-accent-green);">nino@ninochavez.co</a> with your blockers. I'll help you figure out if you need to go back a level, get specific technical help, or reassess your project scope.
 				</p>
 			</div>
 		{/if}

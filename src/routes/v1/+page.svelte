@@ -866,7 +866,7 @@
 
 			<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
 				<a
-					href="mailto:abelino.chavez@gmail.com"
+					href="mailto:nino@ninochavez.co"
 					class="inline-flex items-center gap-3 px-8 py-4 bg-[#e18718] text-[#0a0a0a] font-rival-body font-bold hover:bg-[#f59825] hover:scale-105 hover:shadow-lg hover:shadow-[#e18718]/20 transition-all duration-300"
 				>
 					Get in Touch

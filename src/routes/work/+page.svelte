@@ -255,7 +255,7 @@
 						View One-Pager
 					</a>
 					<a
-						href="mailto:abelino.chavez@gmail.com"
+						href="mailto:nino@ninochavez.co"
 						class="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 border border-gray-700 transition-colors"
 					>
 						Get in Touch

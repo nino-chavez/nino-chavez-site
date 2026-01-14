@@ -647,7 +647,7 @@
 				class="flex flex-col sm:flex-row gap-4 justify-center"
 			>
 				<a
-					href="mailto:abelino.chavez@gmail.com?subject=Enterprise%20Track%20-%20Level%201%20Complete&body=Link%20to%20SKILL.md%3A%20%0A%0AExample%20output%3A%20%0A%0AWorkflow%20it%20replaced%3A%20%0A%0ATime%20saved%20per%20use%3A%20"
+					href="mailto:nino@ninochavez.co?subject=Enterprise%20Track%20-%20Level%201%20Complete&body=Link%20to%20SKILL.md%3A%20%0A%0AExample%20output%3A%20%0A%0AWorkflow%20it%20replaced%3A%20%0A%0ATime%20saved%20per%20use%3A%20"
 					class="inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold rounded-lg transition-colors"
 					style="background: var(--ai-accent-purple); color: white;"
 				>
@@ -674,7 +674,7 @@
 			>
 				<p class="text-sm" style="color: var(--ai-text-muted);">
 					<span class="font-medium" style="color: var(--ai-text-secondary);">Stuck?</span>
-					Email me at <a href="mailto:abelino.chavez@gmail.com" style="color: var(--ai-accent-purple);">abelino.chavez@gmail.com</a> with your blockers. Common issues: can't identify patterns, skill output inconsistent, quality gates too strict/loose.
+					Email me at <a href="mailto:nino@ninochavez.co" style="color: var(--ai-accent-purple);">nino@ninochavez.co</a> with your blockers. Common issues: can't identify patterns, skill output inconsistent, quality gates too strict/loose.
 				</p>
 			</div>
 		{/if}

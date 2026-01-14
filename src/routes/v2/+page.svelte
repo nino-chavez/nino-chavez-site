@@ -554,7 +554,7 @@
 		<p class="font-rival text-lg text-white/60 mb-8">I saved you a seat!</p>
 
 		<a
-			href="mailto:abelino.chavez@gmail.com"
+			href="mailto:nino@ninochavez.co"
 			class="inline-block px-10 py-5 bg-white text-black font-rival font-bold text-lg tracking-wide hover:bg-[#ff4500] hover:text-white transition-colors"
 		>
 			BOOK A CALL

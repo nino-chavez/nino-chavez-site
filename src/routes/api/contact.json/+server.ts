@@ -21,7 +21,7 @@ export const GET: RequestHandler = async () => {
 		description: 'Primary contact methods for enterprise consulting and photography inquiries',
 
 		// Email (Primary)
-		email: 'abelino.chavez@gmail.com',
+		email: 'nino@ninochavez.co',
 
 		// Professional Profiles
 		url: 'https://ninochavez.co',
