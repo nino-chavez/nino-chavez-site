@@ -154,7 +154,7 @@
 						See the Work
 					</a>
 					<a
-						href="mailto:abelino.chavez@gmail.com"
+						href="mailto:nino@ninochavez.co"
 						class="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 border border-gray-700 transition-colors"
 					>
 						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -310,7 +310,7 @@
 					LinkedIn
 				</a>
 				<a
-					href="mailto:abelino.chavez@gmail.com"
+					href="mailto:nino@ninochavez.co"
 					class="inline-flex items-center justify-center gap-2 px-8 py-4 text-gray-400 font-semibold rounded-lg hover:text-white border border-gray-800 hover:border-gray-700 transition-colors duration-200"
 				>
 					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

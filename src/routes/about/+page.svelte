@@ -26,13 +26,13 @@
 
 	const timeline = [
 		{
-			year: '2025 - Present',
+			year: '2026 - Present',
 			company: 'commerce.com',
 			role: 'Product Architect',
 			location: 'Chicago, IL'
 		},
 		{
-			year: '2023 - 2024',
+			year: '2023 - 2026',
 			company: 'Accenture Song',
 			role: 'Enterprise Architect & Strategic Advisor',
 			location: 'Chicago, IL'
@@ -310,10 +310,10 @@
 			</p>
 			<div class="flex flex-col md:flex-row gap-4 justify-center items-center">
 				<a
-					href="mailto:abelino.chavez@gmail.com"
+					href="mailto:nino@ninochavez.co"
 					class="px-8 py-4 bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/50 text-cyan-300 rounded-lg transition-colors font-semibold"
 				>
-					Email: abelino.chavez@gmail.com
+					Email: nino@ninochavez.co
 				</a>
 				<a
 					href="https://www.linkedin.com/in/nino-chavez/"

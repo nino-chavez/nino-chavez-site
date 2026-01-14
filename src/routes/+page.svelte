@@ -777,7 +777,7 @@
 				<!-- Contact options -->
 				<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
 					<a
-						href="mailto:abelino.chavez@gmail.com"
+						href="mailto:nino@ninochavez.co"
 						class="group px-10 py-5 bg-[#e18718] text-[#0a0a0a] font-rival font-bold text-lg hover:bg-white transition-colors duration-300"
 					>
 						Get in Touch

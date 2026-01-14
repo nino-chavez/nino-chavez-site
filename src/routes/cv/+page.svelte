@@ -58,8 +58,8 @@
 
 	const experience = [
 		{
-			period: '2025 - Present',
-			year: '2025',
+			period: '2026 - Present',
+			year: '2026',
 			company: 'commerce.com',
 			location: 'Chicago, IL',
 			title: 'Product Architect',
@@ -72,7 +72,7 @@
 			],
 		},
 		{
-			period: '2023 - 2024',
+			period: '2023 - 2026',
 			year: '2023',
 			company: 'Accenture Song',
 			location: 'Chicago, IL',
@@ -281,7 +281,7 @@
 					class="flex flex-col md:flex-row md:flex-wrap gap-3"
 				>
 					<a
-						href="mailto:abelino.chavez@gmail.com"
+						href="mailto:nino@ninochavez.co"
 						class="inline-flex items-center justify-center md:justify-start gap-2 px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200"
 					>
 						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -528,7 +528,7 @@
 	<footer class="py-8 px-6 md:px-12 bg-gray-900 text-white">
 		<div class="max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
 			<p class="text-sm text-gray-400">
-				© 2025 Nino Chavez. All rights reserved.
+				© 2026 Nino Chavez. All rights reserved.
 			</p>
 			<a
 				href="/"

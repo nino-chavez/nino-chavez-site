@@ -599,7 +599,7 @@
 				class="flex flex-col sm:flex-row gap-4 justify-center"
 			>
 				<a
-					href="mailto:abelino.chavez@gmail.com?subject=Author%20Track%20-%20Level%203%20Complete&body=Link%20to%20playbook%3A%20%0A%0ATotal%20word%20count%3A%20%0A%0AWhich%20chapter%20was%20hardest%3A%20"
+					href="mailto:nino@ninochavez.co?subject=Author%20Track%20-%20Level%203%20Complete&body=Link%20to%20playbook%3A%20%0A%0ATotal%20word%20count%3A%20%0A%0AWhich%20chapter%20was%20hardest%3A%20"
 					class="inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold rounded-lg transition-colors"
 					style="background: var(--ai-accent-purple); color: white;"
 				>
@@ -626,7 +626,7 @@
 			>
 				<p class="text-sm" style="color: var(--ai-text-muted);">
 					<span class="font-medium" style="color: var(--ai-text-secondary);">Stuck?</span>
-					Email me at <a href="mailto:abelino.chavez@gmail.com" style="color: var(--ai-accent-purple);">abelino.chavez@gmail.com</a> with your blockers. Common issues: can't decide on structure, chapters feel disconnected, running out of steam mid-project.
+					Email me at <a href="mailto:nino@ninochavez.co" style="color: var(--ai-accent-purple);">nino@ninochavez.co</a> with your blockers. Common issues: can't decide on structure, chapters feel disconnected, running out of steam mid-project.
 				</p>
 			</div>
 		{/if}

@@ -614,7 +614,7 @@
 				class="flex flex-col sm:flex-row gap-4 justify-center"
 			>
 				<a
-					href="mailto:abelino.chavez@gmail.com?subject=Strategist%20Track%20-%20Level%203%20Complete&body=Link%20to%20strategic%20brief%3A%20%0A%0ADecision%20it%20supports%3A%20%0A%0AYour%20recommendation%3A%20"
+					href="mailto:nino@ninochavez.co?subject=Strategist%20Track%20-%20Level%203%20Complete&body=Link%20to%20strategic%20brief%3A%20%0A%0ADecision%20it%20supports%3A%20%0A%0AYour%20recommendation%3A%20"
 					class="inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold rounded-lg transition-colors"
 					style="background: var(--ai-accent-red); color: white;"
 				>
@@ -641,7 +641,7 @@
 			>
 				<p class="text-sm" style="color: var(--ai-text-muted);">
 					<span class="font-medium" style="color: var(--ai-text-secondary);">Stuck?</span>
-					Email me at <a href="mailto:abelino.chavez@gmail.com" style="color: var(--ai-accent-red);">abelino.chavez@gmail.com</a> with your blockers. Common issues: can't decide what topic to write about, struggling to form an opinion, recommendations feel weak.
+					Email me at <a href="mailto:nino@ninochavez.co" style="color: var(--ai-accent-red);">nino@ninochavez.co</a> with your blockers. Common issues: can't decide what topic to write about, struggling to form an opinion, recommendations feel weak.
 				</p>
 			</div>
 		{/if}

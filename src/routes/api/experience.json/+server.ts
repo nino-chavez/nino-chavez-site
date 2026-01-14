@@ -19,17 +19,50 @@ export const GET: RequestHandler = async () => {
 		'@type': 'ItemList',
 		name: 'Nino Chavez - Professional Experience',
 		description: 'Chronological work history spanning 25+ years in enterprise architecture',
-		numberOfItems: 6,
+		numberOfItems: 7,
 		itemListElement: [
 			{
 				'@type': 'ListItem',
 				position: 1,
 				item: {
 					'@type': 'EmployeeRole',
-					roleName: 'Enterprise Architect & Strategic Advisor',
-					startDate: '2023',
+					roleName: 'Product Architect',
+					startDate: '2026',
 					endDate: null, // Current role
 					isCurrentRole: true,
+					employmentType: 'FULL_TIME',
+					description:
+						'Leading product architecture for enterprise commerce platform, building scalable systems that power commerce experiences with AI-native development practices.',
+					responsibilities: [
+						'Product architecture for enterprise commerce platform',
+						'Building scalable systems that power commerce experiences',
+						'AI-native development practices',
+						'Technical leadership and system design'
+					],
+					worksFor: {
+						'@type': 'Organization',
+						name: 'commerce.com',
+						location: {
+							'@type': 'Place',
+							address: {
+								'@type': 'PostalAddress',
+								addressLocality: 'Chicago',
+								addressRegion: 'IL',
+								addressCountry: 'US'
+							}
+						}
+					}
+				}
+			},
+			{
+				'@type': 'ListItem',
+				position: 2,
+				item: {
+					'@type': 'EmployeeRole',
+					roleName: 'Enterprise Architect & Strategic Advisor',
+					startDate: '2023',
+					endDate: '2026',
+					isCurrentRole: false,
 					employmentType: 'FULL_TIME',
 					description:
 						'Strategic advisor for AI-native platform adoption, cloud architecture roadmaps, and organizational transformation. Leading Agile operating models and aligning executive vision with technical execution.',
@@ -57,7 +90,7 @@ export const GET: RequestHandler = async () => {
 			},
 			{
 				'@type': 'ListItem',
-				position: 2,
+				position: 3,
 				item: {
 					'@type': 'EmployeeRole',
 					roleName: 'Managing Delivery Architect',
@@ -89,7 +122,7 @@ export const GET: RequestHandler = async () => {
 			},
 			{
 				'@type': 'ListItem',
-				position: 3,
+				position: 4,
 				item: {
 					'@type': 'EmployeeRole',
 					roleName: 'Domain Architect',
@@ -120,7 +153,7 @@ export const GET: RequestHandler = async () => {
 			},
 			{
 				'@type': 'ListItem',
-				position: 4,
+				position: 5,
 				item: {
 					'@type': 'EmployeeRole',
 					roleName: 'Managing Enterprise Architect',
@@ -163,7 +196,7 @@ export const GET: RequestHandler = async () => {
 			},
 			{
 				'@type': 'ListItem',
-				position: 5,
+				position: 6,
 				item: {
 					'@type': 'EmployeeRole',
 					roleName: 'Managing Enterprise Architect',
@@ -194,7 +227,7 @@ export const GET: RequestHandler = async () => {
 			},
 			{
 				'@type': 'ListItem',
-				position: 6,
+				position: 7,
 				item: {
 					'@type': 'EmployeeRole',
 					roleName: 'Software Engineering & Engineering Lead',
@@ -245,7 +278,7 @@ export const GET: RequestHandler = async () => {
 				{
 					'@type': 'PropertyValue',
 					name: 'Current Employer',
-					value: 'Accenture Song'
+					value: 'commerce.com'
 				},
 				{
 					'@type': 'PropertyValue',
