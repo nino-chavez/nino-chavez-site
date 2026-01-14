@@ -140,25 +140,25 @@ export const GET: RequestHandler = async () => {
 				position: 5,
 				item: {
 					'@type': 'Thing',
-					name: 'Strategic Advisory',
+					name: 'Product Architecture',
 					description:
-						'Executive alignment, organizational transformation, technical roadmap planning, vendor governance, and Agile operating model design',
+						'Product strategy, platform architecture, and building systems that scale from concept to production',
 					additionalType: 'Skill',
 					additionalProperty: [
 						{
 							'@type': 'PropertyValue',
 							name: 'Evidence',
-							value: 'Executive alignment & organizational redesign for Fortune 500 transformations'
+							value: 'Leading product architecture for enterprise commerce platform'
 						},
 						{
 							'@type': 'PropertyValue',
 							name: 'Scale',
-							value: 'Accenture Song principal-level advisor'
+							value: '25+ years building scalable systems'
 						},
 						{
 							'@type': 'PropertyValue',
 							name: 'Focus Areas',
-							value: 'Vision alignment, Technical strategy, Operating model design, Change management'
+							value: 'Platform design, Scalability, AI-native systems, Commerce platforms'
 						}
 					]
 				}
@@ -199,7 +199,7 @@ export const GET: RequestHandler = async () => {
 			'@type': 'Person',
 			name: 'Nino Chavez',
 			url: 'https://ninochavez.co',
-			jobTitle: ['Enterprise Architect', 'Strategic Advisor']
+			jobTitle: ['Product Architect']
 		}
 	};
 

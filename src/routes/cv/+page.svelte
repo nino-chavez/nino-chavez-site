@@ -58,14 +58,28 @@
 
 	const experience = [
 		{
-			period: '2023 - Present',
+			period: '2025 - Present',
+			year: '2025',
+			company: 'commerce.com',
+			location: 'Chicago, IL',
+			title: 'Product Architect',
+			current: true,
+			focus: [
+				'Leading product architecture for enterprise commerce platform',
+				'Building scalable systems that power commerce experiences',
+				'Bridging product strategy with technical implementation',
+				'AI-native development practices and platform evolution',
+			],
+		},
+		{
+			period: '2023 - 2024',
 			year: '2023',
 			company: 'Accenture Song',
 			location: 'Chicago, IL',
 			title: 'Enterprise Architect & Strategic Advisor',
-			current: true,
+			current: false,
 			focus: [
-				'Carry initiatives from strategy through production—bridging gaps where programs lose signal',
+				'Carried initiatives from strategy through production—bridging gaps where programs lose signal',
 				'Led 5+ enterprise Gen AI implementations from concept to production',
 				'Developed AI-native delivery methodology with documented 48-64x productivity gains',
 				'Bridge between C-suite strategy and engineering execution',
@@ -173,14 +187,14 @@
 </script>
 
 <svelte:head>
-	<title>CV - Nino Chavez | Enterprise Architect & Strategic Advisor</title>
-	<meta name="description" content="Digital CV for Nino Chavez - 25+ years architecting AI-native platforms and leading enterprise transformation" />
+	<title>CV - Nino Chavez | Product Architect</title>
+	<meta name="description" content="Digital CV for Nino Chavez - 25+ years building commerce platforms and AI-native systems" />
 
 	<!-- Open Graph -->
-	<meta property="og:title" content="CV - Nino Chavez | Enterprise Architect & Strategic Advisor" />
+	<meta property="og:title" content="CV - Nino Chavez | Product Architect" />
 	<meta
 		property="og:description"
-		content="Digital CV for Nino Chavez - 25+ years architecting AI-native platforms and leading enterprise transformation"
+		content="Digital CV for Nino Chavez - 25+ years building commerce platforms and AI-native systems"
 	/>
 	<meta property="og:type" content="profile" />
 	<meta property="og:url" content="https://ninochavez.co/cv" />
@@ -188,10 +202,10 @@
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="CV - Nino Chavez | Enterprise Architect & Strategic Advisor" />
+	<meta name="twitter:title" content="CV - Nino Chavez | Product Architect" />
 	<meta
 		name="twitter:description"
-		content="Digital CV for Nino Chavez - 25+ years architecting AI-native platforms and leading enterprise transformation"
+		content="Digital CV for Nino Chavez - 25+ years building commerce platforms and AI-native systems"
 	/>
 	<meta name="twitter:image" content="https://ninochavez.co/images/og-cv-image.jpeg" />
 </svelte:head>
@@ -222,7 +236,7 @@
 					in:fly={{ y: 20, duration: 800, delay: 300 }}
 					class="text-2xl md:text-3xl xl:text-4xl font-light text-gray-600 mb-8"
 				>
-					Enterprise Architect & Strategic Advisor
+					Product Architect
 				</p>
 
 				<!-- Professional Statement -->
@@ -276,7 +290,7 @@
 						Email Me
 					</a>
 					<a
-						href="https://linkedin.com/in/abelinochavez"
+						href="https://www.linkedin.com/in/nino-chavez/"
 						target="_blank"
 						rel="noopener noreferrer"
 						class="inline-flex items-center justify-center md:justify-start gap-2 px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:border-gray-400 transition-colors duration-200"

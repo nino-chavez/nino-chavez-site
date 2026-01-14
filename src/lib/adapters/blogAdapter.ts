@@ -98,7 +98,7 @@ export const FALLBACK_BLOG_POSTS: InsightArticle[] = [
     title: 'Answer-First Commerce',
     subtitle: 'Rethinking assumptions in an AI-native world',
     platform: 'Blog',
-    excerpt: 'Current work at Accenture Song: AI commerce transformation frameworks for Fortune 500 retailers. When customers expect answers instead of search results, your entire commerce platform needs rethinking—not retrofitting.',
+    excerpt: 'AI commerce transformation frameworks for retailers. When customers expect answers instead of search results, your entire commerce platform needs rethinking—not retrofitting.',
     imageUrl: 'https://picsum.photos/seed/ai-commerce/600/400',
     link: 'https://blog.ninochavez.co',
     readTime: '10 min read',

@@ -299,7 +299,7 @@
 					Signal Dispatch
 				</a>
 				<a
-					href="https://linkedin.com/in/nino-chavez"
+					href="https://www.linkedin.com/in/nino-chavez/"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 border border-gray-700 transition-colors duration-200"

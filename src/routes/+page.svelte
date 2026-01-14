@@ -280,7 +280,7 @@
 </script>
 
 <svelte:head>
-	<title>Nino Chavez | Enterprise Architect & Strategic Advisor</title>
+	<title>Nino Chavez | Product Architect</title>
 	<link rel="stylesheet" href="https://use.typekit.net/wbj0oqh.css">
 	<link rel="stylesheet" href="https://use.typekit.net/pxj6trb.css">
 </svelte:head>
@@ -326,7 +326,7 @@
 						<!-- Eyebrow -->
 						<div class="flex items-center gap-4 mb-8 animate-slide-up" style="animation-delay: 200ms;">
 							<div class="w-16 h-px bg-[#e18718]"></div>
-							<span class="font-rival-narrow text-[#e18718] text-sm tracking-[0.3em] uppercase">Enterprise Architect</span>
+							<span class="font-rival-narrow text-[#e18718] text-sm tracking-[0.3em] uppercase">Product Architect</span>
 						</div>
 
 						<!-- Main headline - stacked for impact -->
@@ -400,10 +400,10 @@
 				<div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent lg:opacity-100"></div>
 				<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent lg:hidden"></div>
 
-				<!-- Accenture badge -->
+				<!-- Company badge -->
 				<div class="absolute bottom-8 right-8 px-4 py-2 bg-black/50 backdrop-blur-sm border border-white/10">
 					<span class="font-rival-narrow text-xs text-white/70 tracking-widest uppercase">Currently at</span>
-					<span class="block font-rival text-lg text-white font-medium">Accenture Song</span>
+					<span class="block font-rival text-lg text-white font-medium">commerce.com</span>
 				</div>
 			</div>
 		</div>
@@ -783,7 +783,7 @@
 						Get in Touch
 					</a>
 					<a
-						href="https://linkedin.com/in/nino-chavez"
+						href="https://www.linkedin.com/in/nino-chavez/"
 						target="_blank"
 						rel="noopener noreferrer"
 						class="group flex items-center gap-3 px-10 py-5 border border-white/20 text-white font-rival font-bold text-lg hover:border-[#e18718] hover:text-[#e18718] transition-colors duration-300"

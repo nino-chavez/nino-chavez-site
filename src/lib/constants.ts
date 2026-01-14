@@ -337,7 +337,7 @@ export const INSIGHTS_ARTICLES: InsightArticle[] = [
         title: 'Answer-First Commerce',
         subtitle: 'Rethinking assumptions in an AI-native world',
         platform: 'Blog',
-        excerpt: 'Current work at Accenture Song: AI commerce transformation frameworks for Fortune 500 retailers. When customers expect answers instead of search results, your entire commerce platform needs rethinking—not retrofitting.',
+        excerpt: 'AI commerce transformation frameworks for retailers. When customers expect answers instead of search results, your entire commerce platform needs rethinking—not retrofitting.',
         imageUrl: 'https://picsum.photos/seed/ai-commerce/600/400',
         link: 'https://blog.ninochavez.co',
         readTime: '10 min read',
@@ -356,20 +356,20 @@ export const INSIGHTS_ARTICLES: InsightArticle[] = [
 export const CAREER_MILESTONES = [
     {
         year: 2025,
-        era: 'Song',
-        scale: 'Accenture',
-        role: 'Principal Advisor',
+        era: 'commerce.com',
+        scale: 'commerce.com',
+        role: 'Product Architect',
         achievement:
-            'Leading AI-native commerce innovation at Accenture, bridging strategic vision with hands-on technical implementation for enterprise clients.',
+            'Leading product architecture for enterprise commerce platform, building scalable systems that power commerce experiences.',
         current: true
     },
     {
-        year: 2020,
-        era: 'Strategic Advisory',
-        scale: 'Enterprise Architecture & AI-Native Strategy',
+        year: 2023,
+        era: 'Accenture Song',
+        scale: 'Accenture',
         role: 'Enterprise Architect & Strategic Advisor',
         achievement:
-            'As a trusted advisor to enterprise clients, I guide leadership teams beyond incremental transformation toward fundamental business reinvention. My role merges architecture, delivery, and organizational strategy to build the capabilities required for the AI-native era.',
+            'Led AI-native commerce innovation at Accenture, bridging strategic vision with hands-on technical implementation for enterprise clients.',
         details:
             'Architecting AI-Native Readiness • Driving Strategic Foresight • Enabling Agile Operating Models • Aligning Executive Vision with Execution • Leading commerce platform modernization for composable, data-rich foundations'
     },

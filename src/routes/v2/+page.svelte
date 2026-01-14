@@ -315,7 +315,7 @@
 
 		<!-- CTA after scroll completes -->
 		<div class="hero-cta" style="opacity: {ctaRevealOpacity}">
-			<span class="font-rival-narrow text-[#ff4500] text-sm tracking-[0.3em] uppercase mb-4 block">Enterprise Architect</span>
+			<span class="font-rival-narrow text-[#ff4500] text-sm tracking-[0.3em] uppercase mb-4 block">Product Architect</span>
 			<p class="font-rival text-2xl lg:text-3xl text-white/80 mb-8 max-w-md">
 				I build the systems that build the experiences.
 			</p>
@@ -575,7 +575,7 @@
 		</div>
 		<div class="flex items-center gap-4">
 			<a href="https://instagram.com" class="font-rival-narrow text-xs text-white/40 hover:text-[#ff4500] transition-colors">IG</a>
-			<a href="https://linkedin.com/in/nino-chavez" class="font-rival-narrow text-xs text-white/40 hover:text-[#ff4500] transition-colors">LI</a>
+			<a href="https://www.linkedin.com/in/nino-chavez/" class="font-rival-narrow text-xs text-white/40 hover:text-[#ff4500] transition-colors">LI</a>
 			<a href="https://github.com/nino-chavez" class="font-rival-narrow text-xs text-white/40 hover:text-[#ff4500] transition-colors">GH</a>
 		</div>
 	</footer>
