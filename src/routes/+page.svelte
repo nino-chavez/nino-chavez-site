@@ -390,11 +390,16 @@
 			</div>
 
 			<!-- Right: Full-bleed image -->
-			<div class="relative h-[40vh] lg:h-full order-1 lg:order-2 overflow-hidden">
+			<div class="relative h-[40vh] lg:h-full order-1 lg:order-2 overflow-hidden" style="aspect-ratio: 4/3;">
 				<img
 					src="{base}/images/hero.webp"
 					alt="Nino Chavez"
-					class="w-full h-full object-cover scale-105"
+					width="1200"
+					height="900"
+					class="absolute inset-0 w-full h-full object-cover scale-105"
+					fetchpriority="high"
+					loading="eager"
+					decoding="async"
 				/>
 				<!-- Overlay gradients -->
 				<div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent lg:opacity-100"></div>
@@ -537,12 +542,16 @@
 	<section id="work" class="snap-section bg-[#0d0d08] overflow-hidden">
 		<div class="h-full grid lg:grid-cols-2">
 			<!-- Left: Project image -->
-			<div class="relative h-[40vh] lg:h-full overflow-hidden">
+			<div class="relative h-[40vh] lg:h-full overflow-hidden" style="aspect-ratio: 16/10;">
 				{#key activeProject}
 					<img
 						src={currentProject.heroImage}
 						alt={currentProject.title}
-						class="w-full h-full object-cover project-image-enter"
+						width="1200"
+						height="800"
+						class="absolute inset-0 w-full h-full object-cover project-image-enter"
+						loading="lazy"
+						decoding="async"
 					/>
 				{/key}
 				<div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#0d0d08]"></div>
@@ -652,11 +661,15 @@
 	<section id="photography" class="snap-section bg-[#0a0a0a] overflow-hidden">
 		<div class="h-full flex flex-col">
 			<!-- Top: Cinematic hero image with overlay text -->
-			<div class="relative h-[30vh] lg:h-[35vh] flex-shrink-0 overflow-hidden">
+			<div class="relative h-[30vh] lg:h-[35vh] flex-shrink-0 overflow-hidden" style="aspect-ratio: 16/9;">
 				<img
 					src="{base}/images/gallery/portfolio-06.jpg"
 					alt="Photography feature"
-					class="w-full h-full object-cover object-top scale-105"
+					width="1600"
+					height="900"
+					class="absolute inset-0 w-full h-full object-cover object-top scale-105"
+					loading="lazy"
+					decoding="async"
 				/>
 				<div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/70 via-[#0a0a0a]/40 to-[#0a0a0a]"></div>
 				<div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/80 to-transparent"></div>
@@ -710,7 +723,10 @@
 								<img
 									src="{base}/images/gallery/portfolio-{getImgNum(i)}.jpg"
 									alt="Portfolio photo {i + 1}"
+									width="280"
+									height="420"
 									loading="lazy"
+									decoding="async"
 									draggable="false"
 								/>
 							</button>

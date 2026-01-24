@@ -266,7 +266,10 @@
                 <img
                   src={`${base}/images/gallery/${image.filename}`}
                   alt={image.alt || 'Gallery image'}
+                  width="280"
+                  height="420"
                   loading={index < 3 ? 'eager' : 'lazy'}
+                  decoding="async"
                 />
               </button>
             {/each}

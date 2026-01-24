@@ -122,8 +122,11 @@
                       <img
                         src={project.imageUrl}
                         alt="{project.title} screenshot"
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        width="800"
+                        height="500"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
+                        decoding="async"
                       />
 
                       <!-- Image Overlay on Hover -->

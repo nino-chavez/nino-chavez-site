@@ -42,7 +42,18 @@
       >
         <div class="grid md:grid-cols-2 gap-0">
           <!-- Image -->
-          <img src={featured.imageUrl} alt={featured.title} class="w-full h-64 md:h-96 object-cover" loading="eager" />
+          <div class="relative w-full aspect-[16/10] md:aspect-[4/3]">
+            <img
+              src={featured.imageUrl}
+              alt={featured.title}
+              width="800"
+              height="600"
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
 
           <!-- Content -->
           <div class="p-4 md:p-6 lg:p-8 flex flex-col">
@@ -86,12 +97,15 @@
 
               <!-- Image Column -->
               <div class="relative {isEven ? 'lg:order-1' : 'lg:order-2'}">
-                <div class="relative h-64 md:h-80 lg:h-full overflow-hidden">
+                <div class="relative aspect-[16/10] lg:aspect-auto lg:h-full overflow-hidden">
                   <img
                     src={post.imageUrl}
                     alt={post.title}
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    width="800"
+                    height="500"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
+                    decoding="async"
                   />
                   <!-- Image overlay on hover -->
                   <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
