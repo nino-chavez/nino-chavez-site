@@ -62,7 +62,12 @@
 			<img
 				src={project.heroImage}
 				alt={project.title}
+				width="1920"
+				height="1080"
 				class="w-full h-full object-cover"
+				fetchpriority="high"
+				loading="eager"
+				decoding="async"
 			/>
 			<div class="absolute inset-0 bg-gradient-to-b from-gray-950/60 via-gray-950/80 to-gray-950"></div>
 		</div>

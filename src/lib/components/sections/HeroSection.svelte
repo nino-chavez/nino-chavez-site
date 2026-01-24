@@ -124,11 +124,16 @@ import ThesisModal from '$lib/components/ui/ThesisModal.svelte';
 		</div>
 
 		<!-- Right Image Panel (visible on all screens with adaptive height) -->
-		<div class="lg:w-7/12 relative h-[50vh] sm:h-[55vh] md:h-[60vh] lg:h-full">
+		<div class="lg:w-7/12 relative h-[50vh] sm:h-[55vh] md:h-[60vh] lg:h-full" style="aspect-ratio: 4/3;">
 			<img
 				src={`${base}/images/hero.webp`}
 				alt="Nino Chavez - Systems thinker and photographer"
+				width="1200"
+				height="900"
 				class="w-full h-full object-cover"
+				fetchpriority="high"
+				loading="eager"
+				decoding="async"
 			/>
 			<div class="absolute inset-0 bg-gradient-to-r from-neutral-900/30 to-transparent"></div>
 		</div>

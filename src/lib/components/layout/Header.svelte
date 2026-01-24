@@ -124,15 +124,14 @@
       >
         <!-- Logo Image - Visible in hero section -->
         <div
-          class="transition-all duration-500 ease-out {isInHeroSection ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'}"
-          style="
-            position: {isInHeroSection ? 'static' : 'absolute'};
-            transform: {isInHeroSection ? 'translateX(0)' : 'translateX(-10px)'};
-          "
+          class="transition-all duration-500 ease-out w-10 h-10 {isInHeroSection ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none absolute'}"
+          style="transform: {isInHeroSection ? 'translateX(0)' : 'translateX(-10px)'};"
         >
           <img
             src="{base}/brand/logo.png"
             alt="Nino Chavez Logo"
+            width="40"
+            height="40"
             class="w-10 h-10 transition-all duration-300 ease-out group-hover:scale-110 filter drop-shadow-lg rounded-full"
             style="filter: drop-shadow(0 4px 8px rgba(139, 92, 246, 0.3));"
           />

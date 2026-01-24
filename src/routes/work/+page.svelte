@@ -150,7 +150,11 @@
 								<img
 									src={project.heroImage}
 									alt={project.title}
-									class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+									width="800"
+									height="450"
+									class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+									loading="lazy"
+									decoding="async"
 								/>
 								<div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/20 to-transparent"></div>
 
