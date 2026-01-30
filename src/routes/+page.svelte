@@ -281,7 +281,7 @@
 					href="https://photography.ninochavez.co"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="bento-card bento-wide group relative overflow-hidden cursor-pointer"
+					class="bento-card group relative overflow-hidden cursor-pointer"
 				>
 					<img
 						src="{base}/images/gallery/portfolio-06.jpg"
@@ -308,6 +308,30 @@
 							</svg>
 						</div>
 					</div>
+				</a>
+
+				<!-- AI Analyst Academy -->
+				<a
+					href="https://academy.ninochavez.co"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="bento-card group relative overflow-hidden cursor-pointer"
+				>
+					<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent"></div>
+					<div class="relative z-10 h-full flex flex-col justify-between p-6">
+						<div>
+							<div class="flex items-center gap-3 mb-3">
+								<span class="w-2 h-2 bg-cyan-400 rounded-full"></span>
+								<span class="text-cyan-400 font-mono text-[10px] tracking-widest">28 MODULES</span>
+							</div>
+							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">AI ACADEMY</h3>
+							<p class="text-neutral-500 text-sm">AI Analyst Training</p>
+						</div>
+						<p class="text-neutral-500 text-sm leading-relaxed">
+							6 phases from prompt engineering to enterprise architecture. Hands-on labs and capstone project.
+						</p>
+					</div>
+					<div class="absolute bottom-0 left-0 w-full h-1 bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
 				</a>
 
 			</div>
