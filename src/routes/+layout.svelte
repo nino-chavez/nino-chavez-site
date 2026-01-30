@@ -33,11 +33,8 @@
 </script>
 
 <svelte:head>
-	 <!-- Preload hero images for performance -->
-	 <link rel="preload" as="image" href="/images/hero.webp" media="(min-width: 640px)" fetchpriority="high" />
-	 <link rel="preload" as="image" href="/images/hero-mobile.webp" media="(max-width: 639px)" fetchpriority="high" />
 	 <title>Nino Chavez - Product Architect</title>
-	 <meta name="description" content="25 years building commerce infrastructure that holds up when it matters" />
+	 <meta name="description" content="Product Architect building AI-native commerce systems. 25 years shipping enterprise software." />
 </svelte:head>
 
 <div class="min-h-screen bg-neutral-900 text-white" class:mounted>
