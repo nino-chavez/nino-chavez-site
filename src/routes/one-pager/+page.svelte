@@ -6,37 +6,37 @@
 
 	const proofPoints = [
 		{
-			metric: '8+',
-			label: 'Production Apps',
-			detail: 'Shipped to production, not demos or prototypes'
-		},
-		{
-			metric: '7 days',
-			label: 'Zero-to-Production',
-			detail: 'Rally HQ: Production SaaS built solo with AI agents'
-		},
-		{
-			metric: '3',
-			label: 'AI Frameworks',
-			detail: 'AEGIS, Agent OS, Signal Forge - proprietary methodology'
-		},
-		{
 			metric: '25 yrs',
 			label: 'Enterprise Delivery',
-			detail: 'Fortune 500 commerce + AI transformation'
+			detail: 'Fortune 500 commerce architecture + AI transformation'
+		},
+		{
+			metric: 'Live',
+			label: 'Rally HQ',
+			detail: 'Tournament SaaS in open beta, serving midwest volleyball'
+		},
+		{
+			metric: '28',
+			label: 'Academy Modules',
+			detail: 'AI Analyst training curriculum with hands-on labs'
+		},
+		{
+			metric: '196',
+			label: 'Essays Published',
+			detail: 'Signal Dispatch: AI, architecture, and commerce'
 		}
 	];
 
 	const howIWork = [
 		{
-			title: 'Zero-to-One Velocity',
-			description: 'I ship production apps in days using AI agents. Rally HQ (137 services) in 7 days. Not prototypes—production SaaS.',
-			evidence: '/work/rally-hq'
+			title: 'AI-Native Builder',
+			description: 'Rally HQ is live in open beta—real tournament management SaaS built with AI agents. Not demos, production.',
+			evidence: 'https://rallyhq.app'
 		},
 		{
-			title: 'AI Governance at Scale',
-			description: 'I built AEGIS—a constitutional framework for AI code generation. I think about AI adoption at enterprise scale.',
-			evidence: '/work/aegis'
+			title: 'Teaching What I Know',
+			description: 'AI Analyst Academy: 28 modules from prompt engineering to enterprise architecture. Hands-on labs, real projects.',
+			evidence: 'https://academy.ninochavez.co'
 		},
 		{
 			title: 'Full-Stack Business Thinking',
@@ -59,14 +59,14 @@
 			description: 'Fortune 500 commerce architecture. SAP, Salesforce, Adobe. Led $10M+ programs with 100+ person teams.'
 		},
 		{
-			era: 'AI-Native Pivot',
-			years: '2023-2025',
-			description: 'Built 8+ production apps with AI agents. Created AEGIS governance framework. Documented the methodology.'
+			era: 'AI-Native Builder',
+			years: '2023-Present',
+			description: 'Shipped Rally HQ, AI Academy, Signal Dispatch. Created AEGIS governance framework. Learning by building.'
 		},
 		{
 			era: 'Commerce.com',
 			years: '2026-Present',
-			description: 'Product Architect. Building AI-native commerce infrastructure.'
+			description: 'Product Architect. Building AI-native commerce infrastructure at scale.'
 		}
 	];
 
@@ -228,8 +228,8 @@
 				</div>
 
 				<p class="mt-8 text-gray-400 leading-relaxed">
-					I spent 2023-2025 not selling strategy about AI—but <span class="text-white">building production systems with it</span>.
-					I created my own governance frameworks. I documented the methodology. I learned what's hype and what ships.
+					I stopped selling strategy about AI and started <span class="text-white">building production systems with it</span>.
+					Rally HQ is live. AI Academy has 28 modules. Signal Dispatch has 196 essays. I learned what's hype and what ships.
 				</p>
 
 				<p class="mt-4 text-gray-400 leading-relaxed">
