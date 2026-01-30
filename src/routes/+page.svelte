@@ -520,7 +520,7 @@
 						</svg>
 					</a>
 					<a
-						href="https://x.com/PhotyByNino"
+						href="https://x.com/PhotoByNino"
 						target="_blank"
 						rel="noopener noreferrer"
 						class="text-neutral-600 hover:text-lime-400 transition-colors"
