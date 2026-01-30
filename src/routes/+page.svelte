@@ -194,9 +194,9 @@
 		<div class="max-w-7xl mx-auto">
 			<div class="bento-grid">
 
-				<!-- AIQ - Large featured card (PAUSED) -->
+				<!-- Rally HQ - Large featured card (OPEN BETA) -->
 				<a
-					href="https://clear-cite.vercel.app"
+					href="https://rallyhq.app"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="bento-card bento-large group relative overflow-hidden cursor-pointer"
@@ -205,52 +205,54 @@
 					<div class="relative z-10 h-full flex flex-col justify-between p-8">
 						<div>
 							<div class="flex items-center gap-3 mb-4">
-								<span class="w-2 h-2 bg-amber-400 rounded-full"></span>
-								<span class="text-amber-400 font-mono text-xs tracking-widest">PAUSED</span>
+								<span class="relative flex h-2 w-2">
+									<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
+									<span class="relative inline-flex rounded-full h-2 w-2 bg-lime-400"></span>
+								</span>
+								<span class="text-lime-400 font-mono text-xs tracking-widest">OPEN BETA</span>
 							</div>
-							<h3 class="text-4xl lg:text-5xl font-display font-bold mb-3 group-hover:text-lime-400 transition-colors">AIQ</h3>
-							<p class="text-neutral-400 text-lg mb-6">Answer Intelligence Platform</p>
+							<h3 class="text-4xl lg:text-5xl font-display font-bold mb-3 group-hover:text-lime-400 transition-colors">RALLY HQ</h3>
+							<p class="text-neutral-400 text-lg mb-6">Tournament Management Platform</p>
 							<p class="text-neutral-500 leading-relaxed max-w-md">
-								Tracks how LLMs cite your brand across ChatGPT, Claude, Gemini, Perplexity.
-								Enterprise SaaS with real-time analytics.
+								Volleyball tournament management with real-time brackets, instant registration,
+								and zero-friction payments. Multi-tenant SaaS serving tournaments across the midwest.
 							</p>
 						</div>
 						<div class="flex flex-wrap gap-2 mt-6">
-							<span class="px-3 py-1 border border-neutral-700 text-neutral-500 text-xs">Next.js 15</span>
+							<span class="px-3 py-1 border border-lime-400/30 text-lime-400/80 text-xs">SvelteKit</span>
 							<span class="px-3 py-1 border border-neutral-700 text-neutral-500 text-xs">Supabase</span>
-							<span class="px-3 py-1 border border-neutral-700 text-neutral-500 text-xs">Multi-LLM</span>
+							<span class="px-3 py-1 border border-neutral-700 text-neutral-500 text-xs">Real-time</span>
 						</div>
 					</div>
 					<!-- Corner accent -->
 					<div class="absolute top-0 right-0 w-24 h-24 border-r-2 border-t-2 border-lime-400/0 group-hover:border-lime-400/50 transition-colors"></div>
 				</a>
 
-				<!-- CIQ (PAUSED) -->
+				<!-- AI Practice Area -->
 				<a
-					href="https://ciq.signalx.studio"
-					target="_blank"
-					rel="noopener noreferrer"
+					href="/ai"
 					class="bento-card group relative overflow-hidden cursor-pointer"
 				>
+					<div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent"></div>
 					<div class="relative z-10 h-full flex flex-col justify-between p-6">
 						<div>
 							<div class="flex items-center gap-3 mb-3">
-								<span class="w-2 h-2 bg-amber-400 rounded-full"></span>
-								<span class="text-amber-400 font-mono text-[10px] tracking-widest">PAUSED</span>
+								<span class="w-2 h-2 bg-purple-400 rounded-full"></span>
+								<span class="text-purple-400 font-mono text-[10px] tracking-widest">4 TRACKS</span>
 							</div>
-							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">CIQ</h3>
-							<p class="text-neutral-500 text-sm">Commerce Intelligence</p>
+							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">AI PRACTICE</h3>
+							<p class="text-neutral-500 text-sm">Learn, Build, Reference, Ask</p>
 						</div>
 						<p class="text-neutral-500 text-sm leading-relaxed">
-							137 commerce capabilities mapped. Semantic search + architecture visualization.
+							Self-directed AI learning tracks. RAG chatbot, architectures, and patterns from real work.
 						</p>
 					</div>
-					<div class="absolute bottom-0 left-0 w-full h-1 bg-amber-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+					<div class="absolute bottom-0 left-0 w-full h-1 bg-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
 				</a>
 
-				<!-- Rally HQ (LIVE) -->
+				<!-- Signal Dispatch Blog -->
 				<a
-					href="https://rallyhq.app"
+					href="https://blog.ninochavez.co"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="bento-card group relative overflow-hidden cursor-pointer"
@@ -259,19 +261,22 @@
 						<div>
 							<div class="flex items-center gap-3 mb-3">
 								<span class="w-2 h-2 bg-lime-400 rounded-full"></span>
-								<span class="text-lime-400 font-mono text-[10px] tracking-widest">LIVE</span>
+								<span class="text-lime-400 font-mono text-[10px] tracking-widest">196 POSTS</span>
 							</div>
-							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">RALLY HQ</h3>
-							<p class="text-neutral-500 text-sm">Tournament Platform</p>
+							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">SIGNAL DISPATCH</h3>
+							<p class="text-neutral-500 text-sm">Writing on AI & Architecture</p>
 						</div>
-						<p class="text-neutral-500 text-sm leading-relaxed">
-							Volleyball tournament management. Real-time brackets, multi-tenant SaaS.
-						</p>
+						<div class="flex items-center gap-2 text-neutral-600 text-xs group-hover:text-lime-400 transition-colors">
+							<span>Read blog</span>
+							<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							</svg>
+						</div>
 					</div>
 					<div class="absolute bottom-0 left-0 w-full h-1 bg-lime-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
 				</a>
 
-				<!-- Gallery - with photo background (LIVE) -->
+				<!-- Gallery - with photo background -->
 				<a
 					href="https://photography.ninochavez.co"
 					target="_blank"
@@ -291,7 +296,7 @@
 						<div>
 							<div class="flex items-center gap-3 mb-3">
 								<span class="w-2 h-2 bg-lime-400 rounded-full"></span>
-								<span class="text-lime-400 font-mono text-[10px] tracking-widest">20K+ PHOTOS</span>
+								<span class="text-lime-400 font-mono text-[10px] tracking-widest">15K+ PHOTOS</span>
 							</div>
 							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">GALLERY</h3>
 							<p class="text-neutral-400 text-sm">Action Sports Photography</p>
@@ -303,28 +308,6 @@
 							</svg>
 						</div>
 					</div>
-				</a>
-
-				<!-- Signal Dispatch Blog -->
-				<a
-					href="https://blog.ninochavez.co"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="bento-card group relative overflow-hidden cursor-pointer"
-				>
-					<div class="relative z-10 h-full flex flex-col justify-between p-6">
-						<div>
-							<h3 class="text-xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">SIGNAL DISPATCH</h3>
-							<p class="text-neutral-500 text-sm">Writing on AI & Architecture</p>
-						</div>
-						<div class="flex items-center gap-2 text-neutral-600 text-xs group-hover:text-lime-400 transition-colors">
-							<span>Read blog</span>
-							<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-							</svg>
-						</div>
-					</div>
-					<div class="absolute bottom-0 left-0 w-full h-1 bg-lime-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
 				</a>
 
 			</div>
