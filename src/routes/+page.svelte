@@ -503,6 +503,7 @@
 			<div class="flex items-center gap-6">
 				<!-- Text links -->
 				<a href="/cv" class="text-neutral-600 text-sm hover:text-lime-400 transition-colors">CV</a>
+				<a href="/one-pager" class="text-neutral-600 text-sm hover:text-lime-400 transition-colors">HOW I WORK</a>
 				<a href="https://blog.ninochavez.co" class="text-neutral-600 text-sm hover:text-lime-400 transition-colors">BLOG</a>
 
 				<!-- Social icons -->
