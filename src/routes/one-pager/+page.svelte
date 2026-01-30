@@ -77,65 +77,67 @@
 
 <svelte:head>
 	<title>How I Work - Nino Chavez | Product Architect</title>
-	<meta name="description" content="Product Architect at Commerce.com. 8+ production apps, 3 AI frameworks, 25 years enterprise delivery. Here's how I work." />
+	<meta name="description" content="Product Architect at Commerce.com. Rally HQ live, AI Academy, 25 years enterprise delivery. Here's how I work." />
 	<meta name="robots" content="noindex, nofollow" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 	<!-- Open Graph -->
 	<meta property="og:title" content="How I Work - Nino Chavez | Product Architect" />
 	<meta property="og:description" content="Product Architect at Commerce.com. AI-native builder with 25 years of enterprise context." />
 	<meta property="og:type" content="profile" />
 	<meta property="og:url" content="https://ninochavez.co/one-pager" />
-	<meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=630&fit=crop&q=80" />
-	<meta property="og:image:width" content="1200" />
-	<meta property="og:image:height" content="630" />
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="How I Work - Nino Chavez" />
 	<meta name="twitter:description" content="Product Architect at Commerce.com. AI-native builder with 25 years of enterprise context." />
-	<meta name="twitter:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=630&fit=crop&q=80" />
 </svelte:head>
 
-<div class="min-h-screen bg-gray-950 text-white">
+<div class="min-h-screen bg-black text-white">
 	<!-- Hero Section -->
 	<section class="pt-16 pb-12 md:pt-24 md:pb-16 px-6 md:px-12">
-		<div class="max-w-5xl mx-auto">
+		<div class="max-w-4xl mx-auto">
 			{#if mounted}
 				<!-- Status Badge -->
 				<div
 					in:fade={{ duration: 600, delay: 100 }}
-					class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full mb-8"
+					class="inline-flex items-center gap-2 px-4 py-2 border border-lime-400/50 mb-8"
 				>
-					<div class="w-2 h-2 bg-blue-400 rounded-full" />
-					<span class="text-sm font-medium text-blue-400">Product Architect @ Commerce.com</span>
+					<span class="relative flex h-2 w-2">
+						<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
+						<span class="relative inline-flex rounded-full h-2 w-2 bg-lime-400"></span>
+					</span>
+					<span class="text-sm font-medium text-lime-400 tracking-wide">Product Architect @ Commerce.com</span>
 				</div>
 
 				<!-- The Hook -->
 				<h1
 					in:fly={{ y: 20, duration: 800, delay: 200 }}
-					class="text-4xl md:text-5xl font-bold mb-6 leading-tight"
+					class="font-display text-5xl md:text-7xl tracking-tight mb-6 leading-[0.9]"
 				>
-					How I Work
+					HOW I WORK
 				</h1>
 
 				<p
 					in:fly={{ y: 20, duration: 800, delay: 300 }}
-					class="text-xl md:text-2xl text-gray-400 mb-8 max-w-3xl leading-relaxed"
+					class="text-xl md:text-2xl text-neutral-400 mb-10 max-w-2xl leading-relaxed"
 				>
-					25 years of enterprise delivery. The last two building production systems with AI agents—not talking about it, <span class="text-white font-semibold">shipping it</span>.
+					25 years of enterprise delivery. The last two building production systems with AI agents—not talking about it, <span class="text-lime-400 font-medium">shipping it</span>.
 				</p>
 
 				<!-- Name Card -->
 				<div
 					in:fly={{ y: 20, duration: 800, delay: 400 }}
-					class="flex items-center gap-4 mb-8"
+					class="flex items-center gap-4 mb-10"
 				>
-					<div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-violet-500 flex items-center justify-center text-2xl font-bold">
+					<div class="w-14 h-14 bg-lime-400 text-black flex items-center justify-center text-xl font-display">
 						NC
 					</div>
 					<div>
-						<div class="text-xl font-bold">Nino Chavez</div>
-						<div class="text-gray-400">Chicago, IL</div>
+						<div class="text-lg font-semibold">Nino Chavez</div>
+						<div class="text-neutral-500 text-sm">Chicago, IL</div>
 					</div>
 				</div>
 
@@ -146,20 +148,17 @@
 				>
 					<a
 						href="/work"
-						class="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-400 transition-colors"
+						class="inline-flex items-center gap-2 px-6 py-3 bg-lime-400 text-black font-semibold hover:bg-white transition-colors"
 					>
-						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-						</svg>
 						See the Work
+						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
 					</a>
 					<a
 						href="mailto:nino@ninochavez.co"
-						class="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 border border-gray-700 transition-colors"
+						class="inline-flex items-center gap-2 px-6 py-3 border border-neutral-700 text-white font-semibold hover:border-lime-400 hover:text-lime-400 transition-colors"
 					>
-						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-						</svg>
 						Get in Touch
 					</a>
 				</div>
@@ -168,16 +167,16 @@
 	</section>
 
 	<!-- Proof Points -->
-	<section class="py-12 px-6 md:px-12 bg-gray-900/50">
-		<div class="max-w-5xl mx-auto">
-			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">The Evidence</h2>
+	<section class="py-12 px-6 md:px-12 border-y border-neutral-800">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-lime-400 font-mono text-xs tracking-widest uppercase mb-8">The Evidence</h2>
 
 			<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
 				{#each proofPoints as point}
-					<div class="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition-colors duration-300">
-						<div class="text-3xl md:text-4xl font-bold text-blue-400 mb-2">{point.metric}</div>
+					<div class="bg-neutral-900/50 border border-neutral-800 p-5 hover:border-lime-400/50 transition-colors">
+						<div class="text-3xl md:text-4xl font-display text-lime-400 mb-1">{point.metric}</div>
 						<div class="text-sm font-semibold text-white mb-2">{point.label}</div>
-						<div class="text-xs text-gray-500 leading-relaxed">{point.detail}</div>
+						<div class="text-xs text-neutral-500 leading-relaxed">{point.detail}</div>
 					</div>
 				{/each}
 			</div>
@@ -185,22 +184,24 @@
 	</section>
 
 	<!-- How I Work -->
-	<section class="py-12 md:py-16 px-6 md:px-12">
-		<div class="max-w-5xl mx-auto">
-			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">What I Bring</h2>
+	<section class="py-16 px-6 md:px-12">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-lime-400 font-mono text-xs tracking-widest uppercase mb-8">What I Bring</h2>
 
 			<div class="grid md:grid-cols-3 gap-6">
 				{#each howIWork as item}
-					<div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
-						<h3 class="text-lg font-bold text-white mb-3">{item.title}</h3>
-						<p class="text-sm text-gray-400 leading-relaxed mb-4">{item.description}</p>
+					<div class="border border-neutral-800 p-6 hover:border-lime-400/50 transition-colors">
+						<h3 class="text-lg font-display text-white mb-3 tracking-wide">{item.title.toUpperCase()}</h3>
+						<p class="text-sm text-neutral-400 leading-relaxed mb-4">{item.description}</p>
 						<a
 							href={item.evidence}
-							class="inline-flex items-center gap-1 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+							target={item.evidence.startsWith('http') ? '_blank' : undefined}
+							rel={item.evidence.startsWith('http') ? 'noopener noreferrer' : undefined}
+							class="inline-flex items-center gap-1 text-sm text-lime-400 hover:text-white transition-colors"
 						>
-							See the work
+							See it live
 							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
 							</svg>
 						</a>
 					</div>
@@ -210,50 +211,47 @@
 	</section>
 
 	<!-- The Shift -->
-	<section class="py-12 md:py-16 px-6 md:px-12 bg-gradient-to-r from-blue-500/10 to-violet-500/10 border-y border-gray-800">
-		<div class="max-w-5xl mx-auto">
-			<div class="max-w-3xl">
-				<h2 class="text-sm font-semibold uppercase tracking-wider text-blue-400 mb-6">The Shift I Made</h2>
+	<section class="py-16 px-6 md:px-12 bg-neutral-900/30 border-y border-neutral-800">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-lime-400 font-mono text-xs tracking-widest uppercase mb-8">The Shift I Made</h2>
 
-				<div class="space-y-6">
-					<div class="flex items-start gap-4">
-						<div class="text-2xl text-gray-600">FROM</div>
-						<div class="text-xl text-gray-400">Consultant managing delivery teams for billable hours</div>
-					</div>
-
-					<div class="flex items-start gap-4">
-						<div class="text-2xl text-blue-400 font-bold">TO</div>
-						<div class="text-xl text-white font-semibold">Product Architect shipping AI-native commerce infrastructure</div>
-					</div>
+			<div class="max-w-2xl space-y-6">
+				<div class="flex items-start gap-6">
+					<span class="text-neutral-600 font-display text-2xl w-16 flex-shrink-0">FROM</span>
+					<span class="text-xl text-neutral-400">Consultant managing delivery teams for billable hours</span>
 				</div>
 
-				<p class="mt-8 text-gray-400 leading-relaxed">
+				<div class="flex items-start gap-6">
+					<span class="text-lime-400 font-display text-2xl w-16 flex-shrink-0">TO</span>
+					<span class="text-xl text-white font-medium">Product Architect shipping AI-native commerce infrastructure</span>
+				</div>
+			</div>
+
+			<div class="mt-10 max-w-2xl space-y-4 text-neutral-400 leading-relaxed">
+				<p>
 					I stopped selling strategy about AI and started <span class="text-white">building production systems with it</span>.
 					Rally HQ is live. AI Academy has 28 modules. Signal Dispatch has 196 essays. I learned what's hype and what ships.
 				</p>
-
-				<p class="mt-4 text-gray-400 leading-relaxed">
-					Now I'm at Commerce.com, where AI-native velocity is <span class="text-white">the baseline expectation</span>.
+				<p>
+					Now I'm at Commerce.com, where AI-native velocity is <span class="text-lime-400">the baseline expectation</span>.
 				</p>
 			</div>
 		</div>
 	</section>
 
 	<!-- Background Timeline -->
-	<section class="py-12 md:py-16 px-6 md:px-12">
-		<div class="max-w-5xl mx-auto">
-			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">Background</h2>
+	<section class="py-16 px-6 md:px-12">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-lime-400 font-mono text-xs tracking-widest uppercase mb-8">Background</h2>
 
 			<div class="space-y-4">
 				{#each background as era}
-					<div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-blue-500/30 transition-colors duration-300">
-						<div class="flex flex-col md:flex-row md:items-start gap-4">
-							<div class="flex-1">
-								<h3 class="text-lg font-bold text-white mb-1">{era.era}</h3>
-								<p class="text-sm text-blue-400 mb-2">{era.years}</p>
-								<p class="text-sm text-gray-400">{era.description}</p>
-							</div>
+					<div class="border border-neutral-800 p-6 hover:border-lime-400/30 transition-colors">
+						<div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6">
+							<h3 class="text-lg font-display text-white tracking-wide">{era.era.toUpperCase()}</h3>
+							<span class="text-lime-400 font-mono text-sm">{era.years}</span>
 						</div>
+						<p class="text-sm text-neutral-400 mt-3">{era.description}</p>
 					</div>
 				{/each}
 			</div>
@@ -261,17 +259,17 @@
 	</section>
 
 	<!-- Working Principles -->
-	<section class="py-12 md:py-16 px-6 md:px-12 bg-gray-900/50">
-		<div class="max-w-5xl mx-auto">
-			<h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">What I Optimize For</h2>
+	<section class="py-16 px-6 md:px-12 border-t border-neutral-800">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-lime-400 font-mono text-xs tracking-widest uppercase mb-8">What I Optimize For</h2>
 
 			<div class="grid md:grid-cols-2 gap-4">
 				{#each workingPrinciples as item}
 					<div class="flex items-start gap-3">
-						<svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-							<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+						<svg class="w-5 h-5 text-lime-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
-						<span class="text-gray-300">{item}</span>
+						<span class="text-neutral-300">{item}</span>
 					</div>
 				{/each}
 			</div>
@@ -279,43 +277,39 @@
 	</section>
 
 	<!-- CTA Section -->
-	<section class="py-16 md:py-24 px-6 md:px-12">
-		<div class="max-w-5xl mx-auto text-center">
-			<h2 class="text-3xl md:text-4xl font-bold mb-6">
-				Want to connect?
+	<section class="py-20 px-6 md:px-12 border-t border-neutral-800">
+		<div class="max-w-4xl mx-auto text-center">
+			<h2 class="font-display text-4xl md:text-5xl tracking-tight mb-6">
+				WANT TO CONNECT?
 			</h2>
-			<p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+			<p class="text-lg text-neutral-400 mb-10 max-w-xl mx-auto">
 				I write about AI-native development, commerce architecture, and the consulting industry at Signal Dispatch.
 			</p>
 
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
 				<a
 					href="https://blog.ninochavez.co"
-					class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-400 transition-colors duration-200"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-lime-400 text-black font-semibold hover:bg-white transition-colors"
 				>
-					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-					</svg>
 					Signal Dispatch
+					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+					</svg>
 				</a>
 				<a
 					href="https://www.linkedin.com/in/nino-chavez/"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 border border-gray-700 transition-colors duration-200"
+					class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-neutral-700 text-white font-semibold hover:border-lime-400 hover:text-lime-400 transition-colors"
 				>
-					<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-						<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-					</svg>
 					LinkedIn
 				</a>
 				<a
 					href="mailto:nino@ninochavez.co"
-					class="inline-flex items-center justify-center gap-2 px-8 py-4 text-gray-400 font-semibold rounded-lg hover:text-white border border-gray-800 hover:border-gray-700 transition-colors duration-200"
+					class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-neutral-800 text-neutral-400 font-semibold hover:border-neutral-700 hover:text-white transition-colors"
 				>
-					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-					</svg>
 					Email
 				</a>
 			</div>
@@ -323,28 +317,19 @@
 	</section>
 
 	<!-- Footer -->
-	<footer class="py-8 px-6 md:px-12 border-t border-gray-800">
-		<div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-			<p class="text-sm text-gray-600">
-				2026 Nino Chavez
+	<footer class="py-8 px-6 md:px-12 border-t border-neutral-800">
+		<div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+			<p class="text-sm text-neutral-600 font-mono">
+				© 2026 NINO CHAVEZ
 			</p>
 			<div class="flex items-center gap-6">
-				<a
-					href="https://blog.ninochavez.co"
-					class="text-sm text-gray-500 hover:text-white transition-colors duration-200"
-				>
+				<a href="https://blog.ninochavez.co" class="text-sm text-neutral-500 hover:text-lime-400 transition-colors">
 					Blog
 				</a>
-				<a
-					href="/cv"
-					class="text-sm text-gray-500 hover:text-white transition-colors duration-200"
-				>
+				<a href="/cv" class="text-sm text-neutral-500 hover:text-lime-400 transition-colors">
 					Full CV
 				</a>
-				<a
-					href="/"
-					class="text-sm text-gray-500 hover:text-white transition-colors duration-200"
-				>
+				<a href="/" class="text-sm text-neutral-500 hover:text-lime-400 transition-colors">
 					Portfolio
 				</a>
 			</div>
@@ -353,20 +338,28 @@
 </div>
 
 <style>
+	.font-display {
+		font-family: 'Bebas Neue', sans-serif;
+	}
+
 	/* Print styles */
 	@media print {
-		.bg-gray-950 {
+		.bg-black {
 			background: white !important;
 			color: black !important;
 		}
 
-		.text-blue-400 {
-			color: #2563eb !important;
+		.text-lime-400 {
+			color: #65a30d !important;
 		}
 
-		.text-gray-400,
-		.text-gray-500 {
+		.text-neutral-400,
+		.text-neutral-500 {
 			color: #374151 !important;
+		}
+
+		.border-neutral-800 {
+			border-color: #e5e7eb !important;
 		}
 	}
 </style>
