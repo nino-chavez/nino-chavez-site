@@ -46,19 +46,19 @@
 </script>
 
 <svelte:head>
-	<title>Work - Nino Chavez | Production Portfolio</title>
-	<meta name="description" content="Production applications, AI frameworks, and enterprise platforms. Built solo with AI agents. Evidence of zero-to-one velocity." />
+	<title>Work - Nino Chavez</title>
+	<meta name="description" content="Projects I've built. Production applications, AI experiments, and things I'm tinkering with." />
 
 	<!-- Open Graph -->
-	<meta property="og:title" content="Work - Nino Chavez | Production Portfolio" />
-	<meta property="og:description" content="Production applications, AI frameworks, and enterprise platforms. Built solo with AI agents." />
+	<meta property="og:title" content="Work - Nino Chavez" />
+	<meta property="og:description" content="Projects I've built. Production applications, AI experiments, and things I'm tinkering with." />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://ninochavez.co/work" />
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Work - Nino Chavez | Production Portfolio" />
-	<meta name="twitter:description" content="Production applications, AI frameworks, and enterprise platforms." />
+	<meta name="twitter:title" content="Work - Nino Chavez" />
+	<meta name="twitter:description" content="Projects I've built. Production applications, AI experiments, and things I'm tinkering with." />
 </svelte:head>
 
 <div class="min-h-screen bg-gray-950 text-white">
@@ -86,21 +86,9 @@
 						in:fly={{ y: 20, duration: 600, delay: 200 }}
 						class="text-xl text-gray-400 max-w-3xl mb-8"
 					>
-						Production applications, AI governance frameworks, and enterprise platforms.
-						All built solo using AI agents. Not demos—real systems in active use.
+						Side projects, experiments, and things I've built. Some are production apps,
+						some are just things I wanted to exist.
 					</p>
-
-					<!-- The Signal -->
-					<div
-						in:fly={{ y: 20, duration: 600, delay: 300 }}
-						class="inline-flex items-center gap-3 px-4 py-3 bg-gray-900/50 border border-gray-800 rounded-lg mb-8"
-					>
-						<div class="flex items-center gap-2">
-							<div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-							<span class="text-sm text-gray-400">Looking for</span>
-						</div>
-						<span class="text-sm font-medium text-white">teams where AI-native velocity is the baseline</span>
-					</div>
 				</div>
 			{/if}
 		</div>
@@ -178,11 +166,6 @@
 									{project.tagline}
 								</p>
 
-								<!-- Proof Point -->
-								<p class="text-sm text-emerald-400/90 mb-4 line-clamp-2">
-									{project.whatThisProves[0]}
-								</p>
-
 								<!-- Stack Preview -->
 								<div class="flex flex-wrap gap-1">
 									{#each project.stack.slice(0, 5) as tech}
@@ -245,24 +228,23 @@
 		<div class="max-w-6xl mx-auto">
 			<div class="bg-gradient-to-r from-emerald-500/10 to-violet-500/10 border border-gray-800 rounded-xl p-8 text-center">
 				<h2 class="text-2xl font-bold text-white mb-4">
-					Looking for the full story?
+					Want to chat?
 				</h2>
 				<p class="text-gray-400 mb-6 max-w-2xl mx-auto">
-					These projects demonstrate how I work. If you're building something that needs velocity,
-					let's talk about what I can bring to your team.
+					Always happy to talk about building things, photography, or whatever's interesting.
 				</p>
 				<div class="flex flex-wrap gap-4 justify-center">
 					<a
-						href="/one-pager"
+						href="mailto:nino@ninochavez.co"
 						class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 text-gray-950 font-semibold rounded-lg hover:bg-emerald-400 transition-colors"
 					>
-						View One-Pager
+						Say Hi
 					</a>
 					<a
-						href="mailto:nino@ninochavez.co"
+						href="/about"
 						class="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 border border-gray-700 transition-colors"
 					>
-						Get in Touch
+						About Me
 					</a>
 				</div>
 			</div>

@@ -3,9 +3,6 @@
 	import { onMount } from 'svelte';
 
 	let mounted = false;
-	let yearsCount = 0;
-	let aboutSection;
-	let hasAnimatedYears = false;
 
 	// Hero image rotation - curated pool of strongest shots
 	const HERO_PHOTOS = [1, 3, 5, 6, 8, 12, 15, 20];
@@ -17,46 +14,33 @@
 	const STRIP_PHOTOS = 12; // Visible in strip
 	const TOTAL_PHOTOS = 60; // All photos for lightbox
 
+	// Creative pursuits with equal weight
+	const interests = [
+		{
+			title: 'Photography',
+			description: 'Action sports and volleyball. Freezing moments at 1/2000th of a second.',
+			link: 'https://photography.ninochavez.co'
+		},
+		{
+			title: 'Music',
+			description: 'DJ sets and mixes. House, disco, and whatever moves.',
+			link: 'https://soundcloud.com/ni-no-cha-vez'
+		},
+		{
+			title: 'Writing',
+			description: 'Essays on tech, craft, and the process of making things.',
+			link: 'https://blog.ninochavez.co'
+		},
+		{
+			title: 'Building',
+			description: 'Software, side projects, and tools. Always tinkering.',
+			link: '#labs'
+		}
+	];
+
 	onMount(() => {
 		mounted = true;
-
-		// Intersection observer for years counter animation
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting && !hasAnimatedYears) {
-						hasAnimatedYears = true;
-						animateYears();
-					}
-				});
-			},
-			{ threshold: 0.3 }
-		);
-
-		if (aboutSection) {
-			observer.observe(aboutSection);
-		}
-
-		return () => observer.disconnect();
 	});
-
-	function animateYears() {
-		const target = 25;
-		const duration = 1500;
-		const steps = 30;
-		const increment = target / steps;
-		let current = 0;
-
-		const timer = setInterval(() => {
-			current += increment;
-			if (current >= target) {
-				yearsCount = target;
-				clearInterval(timer);
-			} else {
-				yearsCount = Math.floor(current);
-			}
-		}, duration / steps);
-	}
 
 	function getImgNum(index) {
 		return String(index + 1).padStart(2, '0');
@@ -92,8 +76,8 @@
 </script>
 
 <svelte:head>
-	<title>Nino Chavez | Product Architect</title>
-	<meta name="description" content="Product Architect building AI-native commerce systems. 25 years shipping enterprise software." />
+	<title>Nino Chavez</title>
+	<meta name="description" content="Photographer. DJ. Writer. Builder. Creating things in Chicago." />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -131,32 +115,23 @@
 		<!-- Content -->
 		<div class="relative z-20">
 			{#if mounted}
-				<!-- Role badge - improved contrast -->
-				<div class="mb-8 animate-slide-up" style="animation-delay: 0ms">
-					<span class="inline-block px-4 py-2 border border-lime-400 text-lime-400 text-xs font-mono tracking-widest uppercase backdrop-blur-sm bg-black/40">
-						Product Architect
-					</span>
-				</div>
-
 				<!-- Massive headline - improved mobile scaling -->
 				<h1 class="hero-text leading-[0.85] tracking-tighter mb-8">
-					<span class="block animate-slide-up" style="animation-delay: 100ms">BUILDING</span>
-					<span class="block animate-slide-up" style="animation-delay: 200ms">AI</span>
-					<span class="block text-lime-400 animate-slide-up" style="animation-delay: 300ms">PRODUCTS</span>
+					<span class="block text-lime-400 animate-slide-up" style="animation-delay: 100ms">CREATING</span>
 				</h1>
 
 				<!-- Subtext - offset to the right -->
-				<div class="max-w-md ml-auto mr-0 lg:mr-24 text-right animate-slide-up" style="animation-delay: 400ms">
+				<div class="max-w-md ml-auto mr-0 lg:mr-24 text-right animate-slide-up" style="animation-delay: 200ms">
 					<p class="text-lg text-neutral-400 font-light leading-relaxed mb-6">
-						25 years shipping enterprise software.<br/>
-						Now focused on AI-native commerce.
+						Photographer. DJ. Writer. Builder.<br/>
+						Chicago.
 					</p>
 					<div class="flex justify-end gap-4">
 						<a href="#labs" class="px-6 py-3 bg-lime-400 text-black font-bold text-sm hover:bg-white transition-colors">
-							SEE LABS
+							SEE PROJECTS
 						</a>
 						<a href="#contact" class="px-6 py-3 border border-white/30 text-white text-sm hover:border-lime-400 hover:text-lime-400 transition-colors backdrop-blur-sm bg-black/20">
-							CONTACT
+							SAY HI
 						</a>
 					</div>
 				</div>
@@ -177,14 +152,14 @@
 		<div class="max-w-7xl mx-auto mb-16">
 			<div class="grid lg:grid-cols-2 gap-8 items-end">
 				<div>
-					<span class="text-lime-400 font-mono text-sm tracking-widest mb-4 block">01 / LABS</span>
+					<span class="text-lime-400 font-mono text-sm tracking-widest mb-4 block">01 / PROJECTS</span>
 					<h2 class="text-5xl lg:text-7xl font-display font-bold tracking-tight">
-						ACTIVE<br/>PROJECTS
+						THINGS I'M<br/>MAKING
 					</h2>
 				</div>
 				<div class="lg:text-right">
 					<p class="text-neutral-400 text-lg max-w-md lg:ml-auto">
-						Production systems I'm building. Not demos—real products solving real problems.
+						Sounds, images, words, code, and a few businesses along the way.
 					</p>
 				</div>
 			</div>
@@ -194,43 +169,69 @@
 		<div class="max-w-7xl mx-auto">
 			<div class="bento-grid">
 
-				<!-- Rally HQ - Large featured card (OPEN BETA) -->
+				<!-- Let's Pepper - Large featured card -->
 				<a
-					href="https://rallyhq.app"
+					href="https://new.letspepper.com"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="bento-card bento-large group relative overflow-hidden cursor-pointer"
 				>
-					<div class="absolute inset-0 bg-gradient-to-br from-lime-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+					<div class="absolute inset-0 bg-gradient-to-br from-orange-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 					<div class="relative z-10 h-full flex flex-col justify-between p-8">
 						<div>
 							<div class="flex items-center gap-3 mb-4">
 								<span class="relative flex h-2 w-2">
-									<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
-									<span class="relative inline-flex rounded-full h-2 w-2 bg-lime-400"></span>
+									<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+									<span class="relative inline-flex rounded-full h-2 w-2 bg-orange-400"></span>
 								</span>
-								<span class="text-lime-400 font-mono text-xs tracking-widest">OPEN BETA</span>
+								<span class="text-orange-400 font-mono text-xs tracking-widest">TOURNAMENT SERIES</span>
 							</div>
-							<h3 class="text-4xl lg:text-5xl font-display font-bold mb-3 group-hover:text-lime-400 transition-colors">RALLY HQ</h3>
-							<p class="text-neutral-400 text-lg mb-6">Tournament Management Platform</p>
+							<h3 class="text-4xl lg:text-5xl font-display font-bold mb-3 group-hover:text-lime-400 transition-colors">LET'S PEPPER</h3>
+							<p class="text-neutral-400 text-lg mb-6">Grassroots 3v3 Volleyball</p>
 							<p class="text-neutral-500 leading-relaxed max-w-md">
-								Volleyball tournament management with real-time brackets, instant registration,
-								and zero-friction payments. Multi-tenant SaaS serving tournaments across the midwest.
+								Competitive grass volleyball tournament series. No fluff—just skill, sweat, and fun.
+								Cash prizes, pro photography, player-first vibes.
 							</p>
 						</div>
 						<div class="flex flex-wrap gap-2 mt-6">
-							<span class="px-3 py-1 border border-lime-400/30 text-lime-400/80 text-xs">SvelteKit</span>
-							<span class="px-3 py-1 border border-neutral-700 text-neutral-500 text-xs">Supabase</span>
-							<span class="px-3 py-1 border border-neutral-700 text-neutral-500 text-xs">Real-time</span>
+							<span class="px-3 py-1 border border-orange-400/30 text-orange-400/80 text-xs">Chicago</span>
+							<span class="px-3 py-1 border border-neutral-700 text-neutral-500 text-xs">Grass Volleyball</span>
+							<span class="px-3 py-1 border border-neutral-700 text-neutral-500 text-xs">3v3</span>
 						</div>
 					</div>
 					<!-- Corner accent -->
-					<div class="absolute top-0 right-0 w-24 h-24 border-r-2 border-t-2 border-lime-400/0 group-hover:border-lime-400/50 transition-colors"></div>
+					<div class="absolute top-0 right-0 w-24 h-24 border-r-2 border-t-2 border-orange-400/0 group-hover:border-orange-400/50 transition-colors"></div>
 				</a>
 
-				<!-- AI Practice Area -->
+				<!-- Flickday Media -->
 				<a
-					href="/ai"
+					href="https://flickdaymedia.com"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="bento-card group relative overflow-hidden cursor-pointer"
+				>
+					<div class="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-transparent"></div>
+					<div class="relative z-10 h-full flex flex-col justify-between p-6">
+						<div>
+							<div class="flex items-center gap-3 mb-3">
+								<span class="w-2 h-2 bg-pink-400 rounded-full"></span>
+								<span class="text-pink-400 font-mono text-[10px] tracking-widest">MEDIA</span>
+							</div>
+							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">FLICKDAY</h3>
+							<p class="text-neutral-500 text-sm">Sports Media Company</p>
+						</div>
+						<p class="text-neutral-500 text-sm leading-relaxed">
+							Raw, fast, player-first. Tournament coverage, reels, and same-day photo drops.
+						</p>
+					</div>
+					<div class="absolute bottom-0 left-0 w-full h-1 bg-pink-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+				</a>
+
+				<!-- Music / DJ -->
+				<a
+					href="https://soundcloud.com/ni-no-cha-vez"
+					target="_blank"
+					rel="noopener noreferrer"
 					class="bento-card group relative overflow-hidden cursor-pointer"
 				>
 					<div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent"></div>
@@ -238,42 +239,17 @@
 						<div>
 							<div class="flex items-center gap-3 mb-3">
 								<span class="w-2 h-2 bg-purple-400 rounded-full"></span>
-								<span class="text-purple-400 font-mono text-[10px] tracking-widest">4 TRACKS</span>
+								<span class="text-purple-400 font-mono text-[10px] tracking-widest">MUSIC</span>
 							</div>
-							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">AI PRACTICE</h3>
-							<p class="text-neutral-500 text-sm">Learn, Build, Reference, Ask</p>
+							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">DJ SETS</h3>
+							<p class="text-neutral-500 text-sm">House, disco, and whatever moves</p>
 						</div>
-						<p class="text-neutral-500 text-sm leading-relaxed">
-							Self-directed AI learning tracks. RAG chatbot, architectures, and patterns from real work.
-						</p>
+						<div class="flex items-center gap-4 text-neutral-600 text-xs">
+							<span class="group-hover:text-lime-400 transition-colors">SoundCloud</span>
+							<a href="https://www.mixcloud.com/ninochavez/" target="_blank" rel="noopener noreferrer" class="hover:text-lime-400 transition-colors">Mixcloud</a>
+						</div>
 					</div>
 					<div class="absolute bottom-0 left-0 w-full h-1 bg-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-				</a>
-
-				<!-- Signal Dispatch Blog -->
-				<a
-					href="https://blog.ninochavez.co"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="bento-card group relative overflow-hidden cursor-pointer"
-				>
-					<div class="relative z-10 h-full flex flex-col justify-between p-6">
-						<div>
-							<div class="flex items-center gap-3 mb-3">
-								<span class="w-2 h-2 bg-lime-400 rounded-full"></span>
-								<span class="text-lime-400 font-mono text-[10px] tracking-widest">196 POSTS</span>
-							</div>
-							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">SIGNAL DISPATCH</h3>
-							<p class="text-neutral-500 text-sm">Writing on AI & Architecture</p>
-						</div>
-						<div class="flex items-center gap-2 text-neutral-600 text-xs group-hover:text-lime-400 transition-colors">
-							<span>Read blog</span>
-							<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-							</svg>
-						</div>
-					</div>
-					<div class="absolute bottom-0 left-0 w-full h-1 bg-lime-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
 				</a>
 
 				<!-- Gallery - with photo background -->
@@ -296,10 +272,10 @@
 						<div>
 							<div class="flex items-center gap-3 mb-3">
 								<span class="w-2 h-2 bg-lime-400 rounded-full"></span>
-								<span class="text-lime-400 font-mono text-[10px] tracking-widest">15K+ PHOTOS</span>
+								<span class="text-lime-400 font-mono text-[10px] tracking-widest">PHOTOGRAPHY</span>
 							</div>
 							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">GALLERY</h3>
-							<p class="text-neutral-400 text-sm">Action Sports Photography</p>
+							<p class="text-neutral-400 text-sm">Action Sports & Volleyball</p>
 						</div>
 						<div class="flex items-center gap-2 text-neutral-500 text-sm group-hover:text-lime-400 transition-colors">
 							<span>View gallery</span>
@@ -310,26 +286,55 @@
 					</div>
 				</a>
 
-				<!-- AI Analyst Academy -->
+				<!-- Rally HQ -->
 				<a
-					href="https://academy.ninochavez.co"
+					href="https://rallyhq.app"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="bento-card group relative overflow-hidden cursor-pointer"
 				>
-					<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent"></div>
+					<div class="absolute inset-0 bg-gradient-to-br from-lime-400/5 to-transparent"></div>
+					<div class="relative z-10 h-full flex flex-col justify-between p-6">
+						<div>
+							<div class="flex items-center gap-3 mb-3">
+								<span class="relative flex h-2 w-2">
+									<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
+									<span class="relative inline-flex rounded-full h-2 w-2 bg-lime-400"></span>
+								</span>
+								<span class="text-lime-400 font-mono text-[10px] tracking-widest">OPEN BETA</span>
+							</div>
+							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">RALLY HQ</h3>
+							<p class="text-neutral-500 text-sm">Tournament Management Platform</p>
+						</div>
+						<p class="text-neutral-500 text-sm leading-relaxed">
+							Real-time brackets, registration, payments. Built because tournament software was terrible.
+						</p>
+					</div>
+					<div class="absolute bottom-0 left-0 w-full h-1 bg-lime-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+				</a>
+
+				<!-- Signal Dispatch Blog -->
+				<a
+					href="https://blog.ninochavez.co"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="bento-card group relative overflow-hidden cursor-pointer"
+				>
 					<div class="relative z-10 h-full flex flex-col justify-between p-6">
 						<div>
 							<div class="flex items-center gap-3 mb-3">
 								<span class="w-2 h-2 bg-cyan-400 rounded-full"></span>
-								<span class="text-cyan-400 font-mono text-[10px] tracking-widest">28 MODULES</span>
+								<span class="text-cyan-400 font-mono text-[10px] tracking-widest">WRITING</span>
 							</div>
-							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">AI ACADEMY</h3>
-							<p class="text-neutral-500 text-sm">AI Analyst Training</p>
+							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">SIGNAL DISPATCH</h3>
+							<p class="text-neutral-500 text-sm">Essays on making things</p>
 						</div>
-						<p class="text-neutral-500 text-sm leading-relaxed">
-							6 phases from prompt engineering to enterprise architecture. Hands-on labs and capstone project.
-						</p>
+						<div class="flex items-center gap-2 text-neutral-600 text-xs group-hover:text-lime-400 transition-colors">
+							<span>Read blog</span>
+							<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							</svg>
+						</div>
 					</div>
 					<div class="absolute bottom-0 left-0 w-full h-1 bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
 				</a>
@@ -381,60 +386,45 @@
 		</div>
 	</section>
 
-	<!-- ==================== ABOUT - ANIMATED COUNTER ==================== -->
-	<section bind:this={aboutSection} class="py-24 px-6 lg:px-12 border-t border-neutral-800">
+	<!-- ==================== ABOUT - INTERESTS WITH EQUAL WEIGHT ==================== -->
+	<section class="py-24 px-6 lg:px-12 border-t border-neutral-800">
 		<div class="max-w-7xl mx-auto">
 
-			<!-- Section header with animated counter -->
-			<div class="flex flex-col sm:flex-row sm:items-end gap-4 sm:gap-8 mb-16">
-				<span class="text-[6rem] sm:text-[8rem] lg:text-[12rem] font-display font-bold text-neutral-900 leading-none select-none tabular-nums">
-					{yearsCount}
-				</span>
-				<div class="pb-2 sm:pb-4">
-					<span class="text-lime-400 font-mono text-sm tracking-widest block mb-2">02 / BACKGROUND</span>
-					<span class="text-neutral-500 text-lg">Years building software</span>
-				</div>
+			<!-- Section header -->
+			<div class="mb-16">
+				<span class="text-lime-400 font-mono text-sm tracking-widest block mb-4">02 / ABOUT</span>
+				<h2 class="text-5xl lg:text-7xl font-display font-bold tracking-tight mb-6">
+					WHAT I'M INTO
+				</h2>
+				<p class="text-neutral-400 text-lg max-w-2xl">
+					I make things across a few different mediums. Some of it pays, most of it's just for the love of it.
+				</p>
 			</div>
 
-			<!-- 4 column grid -->
+			<!-- 4 column grid - equal weight interests -->
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-				<div>
-					<h3 class="text-xl font-bold mb-3 text-white">Enterprise</h3>
-					<p class="text-neutral-400 leading-relaxed text-sm">
-						Platform architecture for commerce systems. SAP, Salesforce, custom builds.
-						Led teams through F500 implementations.
-					</p>
-				</div>
-				<div>
-					<h3 class="text-xl font-bold mb-3 text-white">AI Integration</h3>
-					<p class="text-neutral-400 leading-relaxed text-sm">
-						Building AI into production systems. Not demos—actual products.
-						Focused on commerce and developer tools.
-					</p>
-				</div>
-				<div>
-					<h3 class="text-xl font-bold mb-3 text-white">Systems</h3>
-					<p class="text-neutral-400 leading-relaxed text-sm">
-						Connecting things that weren't designed to work together.
-						ERPs, payment processors, inventory. The plumbing.
-					</p>
-				</div>
-				<div>
-					<h3 class="text-xl font-bold mb-3 text-white">Advisory</h3>
-					<p class="text-neutral-400 leading-relaxed text-sm">
-						Technical consulting for teams starting complex projects.
-						Architecture reviews, technology selection.
-					</p>
-				</div>
+				{#each interests as item}
+					<a
+						href={item.link}
+						target={item.link.startsWith('http') ? '_blank' : undefined}
+						rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+						class="group"
+					>
+						<h3 class="text-xl font-bold mb-3 text-white group-hover:text-lime-400 transition-colors">{item.title}</h3>
+						<p class="text-neutral-400 leading-relaxed text-sm">
+							{item.description}
+						</p>
+					</a>
+				{/each}
 			</div>
 
-			<!-- CV Link -->
+			<!-- More Link -->
 			<div class="mt-16 pt-8 border-t border-neutral-800">
 				<a
-					href="/cv"
+					href="/about"
 					class="group inline-flex items-center gap-3 text-neutral-400 hover:text-lime-400 transition-colors"
 				>
-					<span class="font-mono text-sm tracking-wider">VIEW FULL CV</span>
+					<span class="font-mono text-sm tracking-wider">MORE ABOUT ME</span>
 					<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
 					</svg>
@@ -448,28 +438,19 @@
 
 		<!-- Background text -->
 		<div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-			<span class="text-[20vw] font-display font-bold text-neutral-900/50 whitespace-nowrap">LET'S TALK</span>
+			<span class="text-[20vw] font-display font-bold text-neutral-900/50 whitespace-nowrap">SAY HI</span>
 		</div>
 
 		<div class="max-w-7xl mx-auto relative z-10">
 			<div class="max-w-2xl">
 				<span class="text-lime-400 font-mono text-sm tracking-widest mb-6 block">03 / CONTACT</span>
 
-				<div class="flex items-center gap-3 mb-8">
-					<span class="relative flex h-3 w-3">
-						<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
-						<span class="relative inline-flex rounded-full h-3 w-3 bg-lime-400"></span>
-					</span>
-					<span class="text-neutral-400">Available for new projects</span>
-				</div>
-
 				<h2 class="text-5xl lg:text-7xl font-display font-bold tracking-tight mb-8">
 					GET IN<br/>TOUCH
 				</h2>
 
 				<p class="text-neutral-400 text-lg mb-12 max-w-md">
-					Enterprise consulting, technical advisory, or a conversation about architecture.
-					Chicago-based, work globally.
+					Always happy to chat about photography, building things, or whatever's interesting.
 				</p>
 
 				<div class="flex flex-col sm:flex-row gap-4">
@@ -502,9 +483,9 @@
 
 			<div class="flex items-center gap-6">
 				<!-- Text links -->
-				<a href="/cv" class="text-neutral-600 text-sm hover:text-lime-400 transition-colors">CV</a>
-				<a href="/one-pager" class="text-neutral-600 text-sm hover:text-lime-400 transition-colors">HOW I WORK</a>
 				<a href="https://blog.ninochavez.co" class="text-neutral-600 text-sm hover:text-lime-400 transition-colors">BLOG</a>
+				<a href="https://photography.ninochavez.co" class="text-neutral-600 text-sm hover:text-lime-400 transition-colors">PHOTOGRAPHY</a>
+				<a href="/about" class="text-neutral-600 text-sm hover:text-lime-400 transition-colors">ABOUT</a>
 
 				<!-- Social icons -->
 				<div class="flex items-center gap-4 pl-4 border-l border-neutral-800">
@@ -647,11 +628,6 @@
 		font-family: 'Bebas Neue', sans-serif;
 		font-size: clamp(3rem, 15vw, 14rem);
 		font-weight: 400;
-	}
-
-	/* Tabular nums for counter animation */
-	.tabular-nums {
-		font-variant-numeric: tabular-nums;
 	}
 
 	/* Grid lines */
