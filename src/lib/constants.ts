@@ -353,86 +353,56 @@ export const INSIGHTS_ARTICLES: InsightArticle[] = [
     }
 ];
 
+// Simplified career milestones - brief mentions without budget figures or team sizes
 export const CAREER_MILESTONES = [
     {
         year: 2026,
-        era: 'commerce.com',
-        scale: 'commerce.com',
         role: 'Product Architect',
-        achievement:
-            'Leading product architecture for enterprise commerce platform, building scalable systems that power commerce experiences.',
+        company: 'commerce.com',
         current: true
     },
     {
         year: 2023,
         endYear: 2026,
-        era: 'Accenture Song',
-        scale: 'Accenture',
-        role: 'Enterprise Architect & Strategic Advisor',
-        achievement:
-            'Led AI-native commerce innovation at Accenture, bridging strategic vision with hands-on technical implementation for enterprise clients.',
-        details:
-            'Architecting AI-Native Readiness • Driving Strategic Foresight • Enabling Agile Operating Models • Aligning Executive Vision with Execution • Leading commerce platform modernization for composable, data-rich foundations'
+        role: 'Enterprise Architect',
+        company: 'Accenture Song'
     },
     {
         year: 2015,
-        era: 'Enterprise Leadership',
-        scale: 'Fortune 500 Commerce Platforms',
-        role: 'Managing Enterprise Architect',
-        achievement:
-            'Transitioned from hands-on engineering leadership to enterprise architecture and technical advisory. Led implementation efforts on large-scale commerce platforms, then gradually moved into shaping the strategy behind them.',
-        details:
-            'Advising clients on platform selection, technical roadmaps, and architectural design • Led cross-functional teams through complex eCommerce builds (SAP Commerce, Magento, Salesforce Commerce Cloud) • Defined patterns, standards, and architectures that bridged engineering execution with long-term platform vision'
+        endYear: 2023,
+        role: 'Enterprise Architect',
+        company: 'Various (Capgemini, Peapod, Accenture, Gorilla Group)'
     },
     {
-        year: 2010,
-        era: 'Scale & Growth',
-        scale: '100K→1M users',
-        role: 'Engineering Lead',
-        achievement:
-            'Elevated from individual contributor to engineering leadership, scaling custom solutions while establishing foundational enterprise engineering practices. Led cross-functional teams through complex platform builds, balancing technical delivery with emerging leadership responsibilities.',
-        details:
-            'Transitioned from senior developer to engineering lead roles • Scaled platforms from hundreds of thousands to millions of users • Established delivery methodologies and team coordination patterns • Built foundation for enterprise-level system design and architecture practices'
-    },
-    {
-        year: 2000,
-        era: 'Foundation Building',
-        scale: 'Individual Contributor Growth',
-        role: 'Software Engineer',
-        achievement:
-            'Built a strong foundation in software development and systems integration across consulting firms, agencies, and enterprise organizations. Progressed from junior developer to senior software engineer, mastering full-stack development and complex system design.',
-        details:
-            'Progressed from junior to senior software engineer roles • Full-stack development using Java, .NET, and open-source frameworks • Solution architecture for retail, B2B, and CMS-driven platforms • Built expertise in agile delivery and cross-functional collaboration'
+        year: 1999,
+        endYear: 2015,
+        role: 'Software Engineer → Engineering Lead',
+        company: 'Various'
     }
 ];
 
-export const FOCUS_AREAS = [
+// Creative pursuits - equal weight to all
+export const INTERESTS = [
     {
-        area: 'Enterprise Commerce Architecture',
-        description: 'Designing scalable commerce platforms that serve millions of users',
-        color: 'violet'
+        area: 'Photography',
+        description: 'Action sports and volleyball'
     },
     {
-        area: 'AI-Native Development',
-        description: 'Building with AI as core infrastructure, not just an add-on',
-        color: 'cyan'
+        area: 'Music',
+        description: 'DJ sets, house, disco'
     },
     {
-        area: 'Systems Integration',
-        description: 'Connecting legacy systems that were never meant to work together',
-        color: 'green'
+        area: 'Writing',
+        description: 'Essays on making things'
     },
     {
-        area: 'Technical Leadership',
-        description: 'Guiding teams through complex technical challenges',
-        color: 'violet'
-    },
-    {
-        area: 'Performance Engineering',
-        description: 'Optimizing systems for maximum efficiency and user experience',
-        color: 'cyan'
+        area: 'Building',
+        description: 'Software and side projects'
     }
 ];
+
+// Legacy export for backward compatibility
+export const FOCUS_AREAS = INTERESTS;
 
 export const ARCHITECTURAL_DOMAINS = [
     {

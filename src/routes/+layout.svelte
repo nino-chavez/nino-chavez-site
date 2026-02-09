@@ -33,8 +33,8 @@
 </script>
 
 <svelte:head>
-	 <title>Nino Chavez - Product Architect</title>
-	 <meta name="description" content="Product Architect building AI-native commerce systems. 25 years shipping enterprise software." />
+	 <title>Nino Chavez</title>
+	 <meta name="description" content="Photographer. DJ. Writer. Builder. Creating things in Chicago." />
 </svelte:head>
 
 <div class="min-h-screen bg-neutral-900 text-white" class:mounted>
