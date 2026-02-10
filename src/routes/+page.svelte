@@ -97,7 +97,7 @@
 			<img
 				src="{base}/images/gallery/portfolio-{getImgNum(heroPhotoNum - 1)}.jpg"
 				alt=""
-				class="w-full h-full object-cover opacity-40 mix-blend-luminosity"
+				class="w-full h-full object-cover object-top opacity-40 mix-blend-luminosity"
 				width="1920"
 				height="1280"
 				loading="eager"
@@ -345,6 +345,76 @@
 						</div>
 					</div>
 					<div class="absolute bottom-0 left-0 w-full h-1 bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+				</a>
+
+				<!-- Signal X Studio - Platform Company -->
+				<a
+					href="https://www.signalx.studio"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="bento-card bento-wide group relative overflow-hidden cursor-pointer"
+				>
+					<div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-transparent"></div>
+					<!-- Animated signal lines -->
+					<div class="absolute inset-0 overflow-hidden opacity-20 group-hover:opacity-40 transition-opacity">
+						<div class="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-400 to-transparent animate-pulse"></div>
+						<div class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-400 to-transparent animate-pulse" style="animation-delay: 0.5s"></div>
+						<div class="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-400 to-transparent animate-pulse" style="animation-delay: 1s"></div>
+					</div>
+					<div class="relative z-10 h-full flex flex-col justify-between p-6">
+						<div>
+							<div class="flex items-center gap-3 mb-3">
+								<span class="relative flex h-2 w-2">
+									<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+									<span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-400"></span>
+								</span>
+								<span class="text-indigo-400 font-mono text-[10px] tracking-widest">AI VISIBILITY</span>
+							</div>
+							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">SIGNAL X STUDIO</h3>
+							<p class="text-neutral-500 text-sm">Answer Engine Optimization</p>
+						</div>
+						<p class="text-neutral-500 text-sm leading-relaxed">
+							Platform infrastructure for AI visibility. Track how brands appear across LLMs—Claude, GPT-4, Gemini, Perplexity.
+						</p>
+					</div>
+					<div class="absolute bottom-0 left-0 w-full h-1 bg-indigo-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+				</a>
+
+				<!-- IX Suite - AI Platforms -->
+				<a
+					href="https://www.signalx.studio/#ix-suite"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="bento-card group relative overflow-hidden cursor-pointer"
+				>
+					<div class="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent"></div>
+					<!-- Circuit pattern -->
+					<div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
+						<svg class="w-full h-full" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
+							<circle cx="20" cy="30" r="3" class="text-amber-400"/>
+							<circle cx="80" cy="70" r="3" class="text-amber-400"/>
+							<circle cx="50" cy="50" r="3" class="text-amber-400"/>
+							<path d="M20 30 L50 50 L80 70" class="text-amber-400"/>
+							<path d="M20 30 L20 70 L50 50" class="text-amber-400"/>
+						</svg>
+					</div>
+					<div class="relative z-10 h-full flex flex-col justify-between p-6">
+						<div>
+							<div class="flex items-center gap-3 mb-3">
+								<span class="w-2 h-2 bg-amber-400 rounded-full"></span>
+								<span class="text-amber-400 font-mono text-[10px] tracking-widest">PLATFORMS</span>
+							</div>
+							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">IX SUITE</h3>
+							<p class="text-neutral-500 text-sm">AIX, BIX, CIX, SIX, RIX</p>
+						</div>
+						<div class="flex items-center gap-2 text-neutral-600 text-xs group-hover:text-lime-400 transition-colors">
+							<span>AI visibility & commerce tools</span>
+							<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							</svg>
+						</div>
+					</div>
+					<div class="absolute bottom-0 left-0 w-full h-1 bg-amber-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
 				</a>
 
 			</div>
