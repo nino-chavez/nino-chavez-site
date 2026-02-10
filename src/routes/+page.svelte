@@ -380,9 +380,9 @@
 					<div class="absolute bottom-0 left-0 w-full h-1 bg-indigo-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
 				</a>
 
-				<!-- IX Suite - AI Platforms -->
+				<!-- Labs - Experiments & Prototypes -->
 				<a
-					href="https://www.signalx.studio/#ix-suite"
+					href="https://ninochavez.co/labs"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="bento-card group relative overflow-hidden cursor-pointer"
@@ -402,13 +402,13 @@
 						<div>
 							<div class="flex items-center gap-3 mb-3">
 								<span class="w-2 h-2 bg-amber-400 rounded-full"></span>
-								<span class="text-amber-400 font-mono text-[10px] tracking-widest">PLATFORMS</span>
+								<span class="text-amber-400 font-mono text-[10px] tracking-widest">EXPERIMENTS</span>
 							</div>
-							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">IX SUITE</h3>
-							<p class="text-neutral-500 text-sm">AIX, BIX, CIX, SIX, RIX</p>
+							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">LABS</h3>
+							<p class="text-neutral-500 text-sm">Prototypes & Side Projects</p>
 						</div>
 						<div class="flex items-center gap-2 text-neutral-600 text-xs group-hover:text-lime-400 transition-colors">
-							<span>AI visibility & commerce tools</span>
+							<span>AIX, BIX, CIX, SIX & more</span>
 							<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
 							</svg>
