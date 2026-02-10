@@ -4,9 +4,18 @@
 
 	let mounted = false;
 
-	// Hero image rotation - curated pool of strongest shots
-	const HERO_PHOTOS = [1, 3, 5, 6, 8, 12, 15, 20];
-	let heroPhotoNum = HERO_PHOTOS[Math.floor(Math.random() * HERO_PHOTOS.length)];
+	// Hero image rotation - curated pool with focal point positioning
+	const HERO_PHOTOS = [
+		{ num: 1, position: 'center 50%' },   // Standing player, centered
+		{ num: 3, position: 'center 50%' },   // Woman in gym, centered
+		{ num: 5, position: 'center 30%' },   // UCLA athlete, face in upper third
+		{ num: 6, position: 'center 50%' },   // Champagne celebration, centered
+		{ num: 8, position: 'center 55%' },   // High-five, subjects middle-lower
+		{ num: 12, position: 'center 65%' },  // Team celebration, subjects in lower 2/3
+		{ num: 15, position: 'center 40%' },  // Jump serve, upper-middle
+		{ num: 20, position: 'center 25%' },  // Attack at net, action at top
+	];
+	let heroPhoto = HERO_PHOTOS[Math.floor(Math.random() * HERO_PHOTOS.length)];
 
 	// Lightbox state
 	let lightboxOpen = false;
@@ -95,9 +104,10 @@
 		<!-- Background photo with grain overlay -->
 		<div class="absolute inset-0 z-0">
 			<img
-				src="{base}/images/gallery/portfolio-{getImgNum(heroPhotoNum - 1)}.jpg"
+				src="{base}/images/gallery/portfolio-{getImgNum(heroPhoto.num - 1)}.jpg"
 				alt=""
-				class="w-full h-full object-cover object-center opacity-40 mix-blend-luminosity"
+				class="w-full h-full object-cover opacity-40 mix-blend-luminosity"
+				style="object-position: {heroPhoto.position}"
 				width="1920"
 				height="1280"
 				loading="eager"
