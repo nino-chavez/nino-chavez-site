@@ -117,7 +117,9 @@
 			{#if mounted}
 				<!-- Massive headline - improved mobile scaling -->
 				<h1 class="hero-text leading-[0.85] tracking-tighter mb-8">
-					<span class="block text-lime-400 animate-slide-up" style="animation-delay: 100ms">CREATING</span>
+					<span class="block animate-slide-up" style="animation-delay: 100ms">MAKE</span>
+					<span class="block animate-slide-up" style="animation-delay: 150ms">THINGS</span>
+					<span class="block text-lime-400 animate-slide-up" style="animation-delay: 200ms">HAPPEN</span>
 				</h1>
 
 				<!-- Subtext - offset to the right -->
@@ -234,7 +236,13 @@
 					rel="noopener noreferrer"
 					class="bento-card group relative overflow-hidden cursor-pointer"
 				>
-					<div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent"></div>
+					<div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent"></div>
+					<!-- Audio waveform visual -->
+					<div class="absolute bottom-0 left-0 right-0 h-24 flex items-end justify-center gap-[3px] px-6 opacity-20 group-hover:opacity-40 transition-opacity">
+						{#each [40, 65, 45, 80, 55, 90, 50, 75, 60, 85, 45, 70, 55, 95, 40, 60, 75, 50, 85, 65, 45, 70, 80, 55] as height}
+							<div class="w-1 bg-purple-400 rounded-full transition-all duration-300" style="height: {height}%"></div>
+						{/each}
+					</div>
 					<div class="relative z-10 h-full flex flex-col justify-between p-6">
 						<div>
 							<div class="flex items-center gap-3 mb-3">
