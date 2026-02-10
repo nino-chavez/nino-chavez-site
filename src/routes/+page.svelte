@@ -97,7 +97,7 @@
 			<img
 				src="{base}/images/gallery/portfolio-{getImgNum(heroPhotoNum - 1)}.jpg"
 				alt=""
-				class="w-full h-full object-cover object-[center_30%] opacity-40 mix-blend-luminosity"
+				class="w-full h-full object-cover object-center opacity-40 mix-blend-luminosity"
 				width="1920"
 				height="1280"
 				loading="eager"
