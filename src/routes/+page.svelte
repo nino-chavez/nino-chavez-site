@@ -117,9 +117,8 @@
 			{#if mounted}
 				<!-- Massive headline - improved mobile scaling -->
 				<h1 class="hero-text leading-[0.85] tracking-tighter mb-8">
-					<span class="block animate-slide-up" style="animation-delay: 100ms">MAKE</span>
-					<span class="block animate-slide-up" style="animation-delay: 150ms">THINGS</span>
-					<span class="block text-lime-400 animate-slide-up" style="animation-delay: 200ms">HAPPEN</span>
+					<span class="block animate-slide-up" style="animation-delay: 100ms">CUT THE NOISE</span>
+					<span class="block text-lime-400 animate-slide-up" style="animation-delay: 150ms">FOLLOW THE SIGNAL</span>
 				</h1>
 
 				<!-- Subtext - offset to the right -->
