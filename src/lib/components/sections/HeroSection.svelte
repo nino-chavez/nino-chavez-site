@@ -130,7 +130,7 @@ import ThesisModal from '$lib/components/ui/ThesisModal.svelte';
 				alt="Nino Chavez - Systems thinker and photographer"
 				width="1200"
 				height="900"
-				class="w-full h-full object-cover"
+				class="w-full h-full object-cover object-top"
 				fetchpriority="high"
 				loading="eager"
 				decoding="async"
