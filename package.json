@@ -21,7 +21,9 @@
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^2.0.56",
+    "@fontsource/bebas-neue": "^5.2.7",
     "@fontsource/inter": "^5.0.16",
+    "@fontsource/space-grotesk": "^5.2.10",
     "@supabase/supabase-js": "^2.87.1",
     "@vercel/analytics": "^1.1.1",
     "ai": "^5.0.112",

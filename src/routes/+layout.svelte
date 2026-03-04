@@ -1,10 +1,16 @@
 <script>
 	import '../app.css';
-	// Import self-hosted Inter font weights
+	// Self-hosted fonts (eliminates external Google Fonts requests)
 	import '@fontsource/inter/300.css';
 	import '@fontsource/inter/400.css';
 	import '@fontsource/inter/600.css';
 	import '@fontsource/inter/900.css';
+	import '@fontsource/bebas-neue/400.css';
+	import '@fontsource/space-grotesk/300.css';
+	import '@fontsource/space-grotesk/400.css';
+	import '@fontsource/space-grotesk/500.css';
+	import '@fontsource/space-grotesk/600.css';
+	import '@fontsource/space-grotesk/700.css';
 
 	import { onMount } from 'svelte';
 	import { dev } from '$app/environment';
