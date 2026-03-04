@@ -98,10 +98,6 @@
 	<title>Now - Nino Chavez</title>
 	<meta name="description" content="What I'm working on, thinking about, and building right now." />
 	<meta name="robots" content="noindex, nofollow" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 	<!-- Open Graph -->
 	<meta property="og:title" content="Now - Nino Chavez" />
 	<meta property="og:description" content="What I'm working on, thinking about, and building right now." />

@@ -1,21 +1,21 @@
 <script>
 	import { base } from '$app/paths';
-	import { onMount } from 'svelte';
-
-	let mounted = false;
+	import { cfImageUrl, cfSrcSet } from '$lib/utils/cloudflare-images';
 
 	// Hero image rotation - curated pool with focal point positioning
+	// Images served via Cloudflare Images (auto WebP/AVIF, CDN-optimized)
 	const HERO_PHOTOS = [
-		{ num: 1, position: 'center 50%' },   // Standing player, centered
-		{ num: 3, position: 'center 50%' },   // Woman in gym, centered
-		{ num: 5, position: 'center 30%' },   // UCLA athlete, face in upper third
-		{ num: 6, position: 'center 50%' },   // Champagne celebration, centered
-		{ num: 8, position: 'center 55%' },   // High-five, subjects middle-lower
-		{ num: 12, position: 'center 65%' },  // Team celebration, subjects in lower 2/3
-		{ num: 15, position: 'center 40%' },  // Jump serve, upper-middle
-		{ num: 20, position: 'center 25%' },  // Attack at net, action at top
+		{ num: 1, cfId: 'portfolio-01', position: 'center 50%' },   // Standing player, centered
+		{ num: 3, cfId: 'portfolio-03', position: 'center 50%' },   // Woman in gym, centered
+		{ num: 5, cfId: 'portfolio-05', position: 'center 30%' },   // UCLA athlete, face in upper third
+		{ num: 6, cfId: 'portfolio-06', position: 'center 50%' },   // Champagne celebration, centered
+		{ num: 8, cfId: 'portfolio-08', position: 'center 55%' },   // High-five, subjects middle-lower
+		{ num: 12, cfId: 'portfolio-12', position: 'center 65%' },  // Team celebration, subjects in lower 2/3
+		{ num: 15, cfId: 'portfolio-15', position: 'center 40%' },  // Jump serve, upper-middle
+		{ num: 20, cfId: 'portfolio-20', position: 'center 25%' },  // Attack at net, action at top
 	];
 	let heroPhoto = HERO_PHOTOS[Math.floor(Math.random() * HERO_PHOTOS.length)];
+	$: heroImageUrl = cfImageUrl(heroPhoto.cfId, 'large');
 
 	// Lightbox state
 	let lightboxOpen = false;
@@ -46,10 +46,6 @@
 			link: '#labs'
 		}
 	];
-
-	onMount(() => {
-		mounted = true;
-	});
 
 	function getImgNum(index) {
 		return String(index + 1).padStart(2, '0');
@@ -87,9 +83,7 @@
 <svelte:head>
 	<title>Nino Chavez</title>
 	<meta name="description" content="Photographer. DJ. Writer. Builder. Creating things in Chicago." />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="preload" as="image" href={heroImageUrl} fetchpriority="high" />
 </svelte:head>
 
 <svelte:window on:keydown={handleKeydown} />
@@ -104,13 +98,17 @@
 		<!-- Background photo with grain overlay -->
 		<div class="absolute inset-0 z-0">
 			<img
-				src="{base}/images/gallery/portfolio-{getImgNum(heroPhoto.num - 1)}.jpg"
+				src={heroImageUrl}
+				srcset={cfSrcSet(heroPhoto.cfId)}
+				sizes="100vw"
 				alt=""
 				class="w-full h-full object-cover opacity-40 mix-blend-luminosity"
 				style="object-position: {heroPhoto.position}"
 				width="1920"
 				height="1280"
 				loading="eager"
+				fetchpriority="high"
+				decoding="async"
 			/>
 			<div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60"></div>
 			<!-- Grain texture -->
@@ -124,29 +122,27 @@
 
 		<!-- Content -->
 		<div class="relative z-20">
-			{#if mounted}
-				<!-- Massive headline - improved mobile scaling -->
-				<h1 class="hero-text leading-[0.85] tracking-tighter mb-8">
-					<span class="block animate-slide-up" style="animation-delay: 100ms">CUT THE NOISE</span>
-					<span class="block text-lime-400 animate-slide-up" style="animation-delay: 150ms">FOLLOW THE SIGNAL</span>
-				</h1>
+			<!-- Massive headline - improved mobile scaling -->
+			<h1 class="hero-text leading-[0.85] tracking-tighter mb-8">
+				<span class="block animate-slide-up" style="animation-delay: 100ms">CUT THE NOISE</span>
+				<span class="block text-lime-400 animate-slide-up" style="animation-delay: 150ms">FOLLOW THE SIGNAL</span>
+			</h1>
 
-				<!-- Subtext - offset to the right -->
-				<div class="max-w-md ml-auto mr-0 lg:mr-24 text-right animate-slide-up" style="animation-delay: 200ms">
-					<p class="text-lg text-neutral-400 font-light leading-relaxed mb-6">
-						Photographer. DJ. Writer. Builder.<br/>
-						Chicago.
-					</p>
-					<div class="flex justify-end gap-4">
-						<a href="#labs" class="px-6 py-3 bg-lime-400 text-black font-bold text-sm hover:bg-white transition-colors">
-							SEE PROJECTS
-						</a>
-						<a href="#contact" class="px-6 py-3 border border-white/30 text-white text-sm hover:border-lime-400 hover:text-lime-400 transition-colors backdrop-blur-sm bg-black/20">
-							SAY HI
-						</a>
-					</div>
+			<!-- Subtext - offset to the right -->
+			<div class="max-w-md ml-auto mr-0 lg:mr-24 text-right animate-slide-up" style="animation-delay: 200ms">
+				<p class="text-lg text-neutral-400 font-light leading-relaxed mb-6">
+					Photographer. DJ. Writer. Builder.<br/>
+					Chicago.
+				</p>
+				<div class="flex justify-end gap-4">
+					<a href="#labs" class="px-6 py-3 bg-lime-400 text-black font-bold text-sm hover:bg-white transition-colors">
+						SEE PROJECTS
+					</a>
+					<a href="#contact" class="px-6 py-3 border border-white/30 text-white text-sm hover:border-lime-400 hover:text-lime-400 transition-colors backdrop-blur-sm bg-black/20">
+						SAY HI
+					</a>
 				</div>
-			{/if}
+			</div>
 		</div>
 
 		<!-- Scroll indicator -->
