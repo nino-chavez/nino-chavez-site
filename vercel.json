@@ -1,6 +1,26 @@
 {
   "installCommand": "npm install",
+  "redirects": [
+    {
+      "source": "/cv",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/photo/:path*",
+      "destination": "/photography/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
+    {
+      "source": "/gallery/sitemap.xml",
+      "destination": "https://photography.ninochavez.co/sitemap.xml"
+    },
+    {
+      "source": "/content/:path*",
+      "destination": "https://blog.ninochavez.co/content/:path*"
+    },
     {
       "source": "/blog/sitemap-index.xml",
       "destination": "https://blog.ninochavez.co/sitemap-index.xml"
