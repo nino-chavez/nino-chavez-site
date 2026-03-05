@@ -24,7 +24,7 @@ Allow: /
 Allow: /cv
 Allow: /about
 Allow: /blog/
-Allow: /gallery/
+Allow: /photography/
 Allow: /api/person.json
 Allow: /api/expertise.json
 Allow: /api/experience.json
@@ -41,7 +41,7 @@ Allow: /
 Allow: /cv
 Allow: /about
 Allow: /blog/
-Allow: /gallery/
+Allow: /photography/
 Allow: /api/person.json
 Allow: /api/expertise.json
 Allow: /api/experience.json
@@ -59,7 +59,7 @@ Allow: /
 Allow: /cv
 Allow: /about
 Allow: /blog/
-Allow: /gallery/
+Allow: /photography/
 Allow: /api/person.json
 Allow: /api/expertise.json
 Allow: /api/experience.json
@@ -76,7 +76,7 @@ User-agent: CCBot
 Allow: /
 Allow: /cv
 Allow: /blog/
-Allow: /gallery/
+Allow: /photography/
 Allow: /api/person.json
 Disallow: /api/
 Disallow: /writing/
@@ -115,7 +115,7 @@ Allow: /
 Sitemap: https://ninochavez.co/sitemap.xml
 # Blog sitemap (served via rewrite from signal-dispatch-blog project)
 Sitemap: https://ninochavez.co/blog/sitemap.xml
-# Gallery sitemap (served via rewrite from gallery project)
+# Photography sitemap (served via rewrite from photography project)
 Sitemap: https://ninochavez.co/gallery/sitemap.xml
 
 # ============================================================================
