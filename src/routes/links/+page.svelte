@@ -72,7 +72,7 @@
 
 		<!-- Header -->
 		<header class="text-center mb-8">
-			<h1 class="font-display text-6xl tracking-tight leading-none mb-2">NC</h1>
+			<img src="/images/nino-badge.png" alt="Nino Chavez" class="w-24 h-24 mx-auto mb-4 rounded-full" />
 			<p class="font-display text-lg tracking-[0.2em] text-lime-400 uppercase mb-4">
 				Cut the Noise / Follow the Signal
 			</p>
