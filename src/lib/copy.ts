@@ -1,79 +1,59 @@
 // Centralized copy constants for sections and modals.
-// Source of truth derived from the original React implementation in archive/nino-chavez-site.
 
 export const focusCopy = {
-  heading: 'Systems Thinking Meets Enterprise Reality',
-  subhead:
-    'For over 25 years, I have built commerce infrastructure that holds up when it matters—from early-stage platforms to Fortune 500 transformations.',
-  narrative1:
-    'My approach is built on a foundational observation: Enterprise systems do not fail by accident. They fail in predictable ways—from missing ownership boundaries to ignoring the second-order effects of a simple architecture decision.',
-  narrative2: 'I build the resilient systems that survive production.',
-  timelineLabel: '2020 ← 2000 • Leadership Evolution',
-  cta: "Read: The Architect's Principle"
+	heading: 'Finding the Signal',
+	subhead:
+		'I build with AI the way I shoot with a camera — reading the moment, finding the signal, and making something real from it.',
+	narrative1:
+		'Code, photographs, music, words — different mediums, same craft. The tools change, the instinct doesn\'t: cut through the noise, find what matters, ship it.',
+	narrative2: 'AI-native builder. Chicago.',
+	timelineLabel: 'Chicago • AI-Native Builder',
+	cta: 'Read Signal Dispatch'
 };
 
 export const exposureCopy = {
-  kicker: 'Field Notes',
-  heading1: 'Systems & Strategy',
-  heading2: 'What you learn building enterprise infrastructure that processes billions',
-  intro:
-    'Long-form essays and technical field notes from 25 years in enterprise architecture.\nLessons learned, systems built, and the road ahead.',
-  keyInsightsLabel: 'Key Insights',
-  keyInsightsIcon: '6',
-  readMore: 'Read on Signal Dispatch 2'
+	kicker: 'Writing',
+	heading1: 'Signal Dispatch',
+	heading2: 'Essays on making things, building software, and working through ideas in public',
+	intro:
+		'Long-form writing on craft, code, and the process of building.\nWhat I\'m learning, what I\'m making, and what I\'m thinking about.',
+	keyInsightsLabel: 'Key Insights',
+	keyInsightsIcon: '6',
+	readMore: 'Read on Signal Dispatch'
 };
 
 export const frameCopy = {
-  kicker: 'Personal Projects',
-  heading1: "What I Build",
-  heading2: "When Nobody's Watching",
-  subhead:
-    "Two decades building Fortune 500 commerce platforms. Can't show you that work.\nWhat I can show: what I build on my own time, solving problems I'm not paid to solve.",
-  outcomeBulletIcon: '→',
-  demoLabel: 'Demo →',
-  codeLabel: 'Code →'
+	kicker: 'Projects',
+	heading1: "Things I've",
+	heading2: 'Built',
+	subhead:
+		'Software, platforms, and tools—built because the existing options weren\'t good enough\nor because I wanted to learn how something worked.',
+	outcomeBulletIcon: '→',
+	demoLabel: 'Demo →',
+	codeLabel: 'Code →'
 };
 
 export const portfolioCopy = {
-  heading1: 'The Shot is',
-  heading2: 'Complete',
-  intro:
-    'From initial capture to final development, every frame in this portfolio represents the same precision I bring to enterprise architecture.',
-  ctaIntro:
-    "Whether you're modernizing legacy systems, building AI-native platforms, or need strategic architecture guidance—let's start the conversation.",
-  email: 'hello@ninochavez.co',
-  // Contact cards
-  enterpriseCard: {
-    title: 'Enterprise Consulting',
-    description:
-      'Strategic architecture guidance for Fortune 500 companies. From legacy modernization to AI-native platforms, I help teams build systems that matter.',
-    badges: [
-      { text: 'Available for new projects', color: 'green' },
-      { text: 'Remote & on-site options', color: 'violet' }
-    ]
-  },
-  speakingCard: {
-    title: 'Speaking & Content',
-    description:
-      'Keynotes, workshops, and technical content about enterprise architecture, AI systems, and building at scale. Available for conferences and corporate events.',
-    badges: [
-      { text: 'Conference speaking', color: 'cyan' },
-      { text: 'Technical workshops', color: 'blue' }
-    ]
-  },
-  // Contact CTA
-  ctaHeading: 'Start the Conversation',
-  ctaSubheading: 'Enterprise architecture. AI systems. Strategic guidance.',
-  emailButtonLabel: 'hello@nino.photos',
-  linkedInButtonLabel: 'LinkedIn',
-  calendarButtonLabel: 'Schedule a Call',
-  githubPersonalButtonLabel: 'GitHub',
-  githubStudioButtonLabel: 'Signal-X-Studio',
-  // Additional info
-  locationLabel: 'Location',
-  locationValue: 'Chicago',
-  timezoneLabel: 'Timezone',
-  timezoneValue: 'Central (UTC-6)',
-  responseLabel: 'Response Time',
-  responseValue: 'Within 24 hours'
+	heading1: 'The Shot is',
+	heading2: 'Complete',
+	intro:
+		'Every frame in this portfolio is about the same thing the code is about—reading the moment, anticipating what happens next, and being ready when it does.',
+	ctaIntro:
+		"Want to talk about building something, shooting something, or just whatever's interesting? I'm always up for it.",
+	email: 'nino@ninochavez.co',
+	// Contact CTA
+	ctaHeading: 'Get in Touch',
+	ctaSubheading: 'Always happy to chat.',
+	emailButtonLabel: 'nino@ninochavez.co',
+	linkedInButtonLabel: 'LinkedIn',
+	calendarButtonLabel: 'Schedule a Call',
+	githubPersonalButtonLabel: 'GitHub',
+	githubStudioButtonLabel: 'Signal-X-Studio',
+	// Additional info
+	locationLabel: 'Location',
+	locationValue: 'Chicago',
+	timezoneLabel: 'Timezone',
+	timezoneValue: 'Central (UTC-6)',
+	responseLabel: 'Response Time',
+	responseValue: 'Within 24 hours'
 };

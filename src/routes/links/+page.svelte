@@ -56,9 +56,9 @@
 
 <svelte:head>
 	<title>Nino Chavez — Links</title>
-	<meta name="description" content="Photographer. DJ. Writer. Builder. All the links in one place." />
+	<meta name="description" content="Code, cameras, sound, words. All the links in one place." />
 	<meta property="og:title" content="Nino Chavez — Links" />
-	<meta property="og:description" content="Photographer. DJ. Writer. Builder. All the links in one place." />
+	<meta property="og:description" content="Code, cameras, sound, words. All the links in one place." />
 	<meta property="og:type" content="profile" />
 	<meta property="og:url" content="https://ninochavez.co/links" />
 </svelte:head>

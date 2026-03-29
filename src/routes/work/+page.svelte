@@ -25,8 +25,8 @@
 	// Category colors
 	const categoryColors: Record<string, string> = {
 		'zero-to-one': 'from-emerald-500/20 to-emerald-500/5 border-emerald-500/30',
-		'ai-frameworks': 'from-violet-500/20 to-violet-500/5 border-violet-500/30',
-		'enterprise-platforms': 'from-blue-500/20 to-blue-500/5 border-blue-500/30',
+		'ai-tools': 'from-violet-500/20 to-violet-500/5 border-violet-500/30',
+		'platforms': 'from-blue-500/20 to-blue-500/5 border-blue-500/30',
 		'open-source': 'from-amber-500/20 to-amber-500/5 border-amber-500/30'
 	};
 
@@ -47,11 +47,11 @@
 
 <svelte:head>
 	<title>Work - Nino Chavez</title>
-	<meta name="description" content="Projects I've built. Production applications, AI experiments, and things I'm tinkering with." />
+	<meta name="description" content="Things I've built — production platforms, AI tools, and experiments. The work behind the signal." />
 
 	<!-- Open Graph -->
 	<meta property="og:title" content="Work - Nino Chavez" />
-	<meta property="og:description" content="Projects I've built. Production applications, AI experiments, and things I'm tinkering with." />
+	<meta property="og:description" content="Things I've built — production platforms, AI tools, and experiments. The work behind the signal." />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://ninochavez.co/work" />
 

@@ -1,12 +1,7 @@
 /**
  * Work Portfolio Data
- * Strategic case studies for talent-dense environments
  *
- * This data is structured to answer the questions that matter to
- * engineering leaders at Replit, Stripe, Anthropic, Cursor, and Vercel:
- * - Can this person ship?
- * - What did they actually build?
- * - How do they think?
+ * What I've built, how I built it, and what I learned.
  */
 
 export interface WorkProject {
@@ -14,7 +9,7 @@ export interface WorkProject {
 	title: string;
 	tagline: string;
 	description: string;
-	category: 'zero-to-one' | 'ai-frameworks' | 'enterprise-platforms' | 'open-source';
+	category: 'zero-to-one' | 'ai-tools' | 'platforms' | 'open-source';
 	status: 'production' | 'active' | 'beta' | 'archived';
 	visibility: 'public' | 'private' | 'partial';
 
@@ -36,10 +31,10 @@ export interface WorkProject {
 	}[];
 	outcomes: string[];
 
-	// Case study content
+	// Story
 	problem: string;
 	approach: string;
-	whatThisProves: string[];
+	learned: string[];
 
 	// Visual
 	heroImage: string;
@@ -57,39 +52,39 @@ export interface WorkProject {
 export const WORK_CATEGORIES = [
 	{
 		id: 'zero-to-one',
-		label: 'Zero-to-One Products',
-		description: 'Full production apps built solo with AI agents',
+		label: 'Zero to One',
+		description: 'Full products built from scratch',
 		color: 'emerald'
 	},
 	{
-		id: 'ai-frameworks',
-		label: 'AI/Agentic Frameworks',
-		description: 'Proprietary methodologies and governance tools',
+		id: 'ai-tools',
+		label: 'AI Tools & Frameworks',
+		description: 'Tools for working with AI',
 		color: 'violet'
 	},
 	{
-		id: 'enterprise-platforms',
-		label: 'Enterprise Platforms',
-		description: 'Transformation and intelligence tools',
+		id: 'platforms',
+		label: 'Platforms',
+		description: 'Intelligence and transformation tools',
 		color: 'blue'
 	},
 	{
 		id: 'open-source',
 		label: 'Open Source',
-		description: 'Public contributions and reference implementations',
+		description: 'Public tools and reference implementations',
 		color: 'amber'
 	}
 ] as const;
 
 export const WORK_PROJECTS: WorkProject[] = [
 	// ============================================
-	// ZERO-TO-ONE PRODUCTS
+	// ZERO TO ONE
 	// ============================================
 	{
 		slug: 'rally-hq',
 		title: 'Rally HQ',
-		tagline: 'Production volleyball tournament SaaS built in 7 days',
-		description: 'Enterprise multi-tenant tournament management platform with 137 specialized services, real-time WebSocket features, capability-based permissions, and white-label branding support.',
+		tagline: 'Tournament management platform built in 7 days',
+		description: 'Multi-tenant volleyball tournament platform with real-time brackets, capability-based permissions, drag-and-drop scheduling, and white-label branding.',
 		category: 'zero-to-one',
 		status: 'production',
 		visibility: 'private',
@@ -99,7 +94,6 @@ export const WORK_PROJECTS: WorkProject[] = [
 
 		stack: ['Next.js 15', 'React 19', 'TypeScript', 'Supabase', 'PostgreSQL', 'Tailwind CSS', 'Radix UI', 'WebSocket'],
 		architecture: [
-			'137 specialized services with clear boundaries',
 			'Capability-based permission system (not role-based)',
 			'Real-time bracket updates via WebSocket',
 			'Multi-tenant architecture with RLS',
@@ -108,31 +102,26 @@ export const WORK_PROJECTS: WorkProject[] = [
 		keyDecisions: [
 			'Chose capability-based permissions over RBAC for flexibility',
 			'Built real-time features from day one, not bolted on',
-			'Used Supabase for rapid iteration without DevOps overhead',
-			'Implemented comprehensive health monitoring dashboard'
+			'Used Supabase for rapid iteration without DevOps overhead'
 		],
 
 		metrics: [
-			{ label: 'Services', value: '137', context: 'Specialized service modules' },
-			{ label: 'Build Time', value: '7 days', context: 'Zero to production-ready' },
-			{ label: 'Readiness Score', value: '88/100', context: 'Production assessment' },
-			{ label: 'Context Window', value: '200k+', context: 'Token optimization achieved' }
+			{ label: 'Build Time', value: '7 days', context: 'Zero to production' },
+			{ label: 'Readiness', value: '88/100', context: 'Production assessment' }
 		],
 		outcomes: [
-			'Production-ready multi-tenant SaaS',
+			'Production multi-tenant SaaS',
 			'Real-time tournament bracket management',
-			'Drag-and-drop scheduling interface',
-			'White-label branding for tournament operators',
-			'Comprehensive admin dashboard with analytics'
+			'Drag-and-drop scheduling',
+			'White-label branding for operators'
 		],
 
-		problem: 'Volleyball tournament management is fragmented across spreadsheets, emails, and outdated software. Tournament directors need a modern platform that handles registration, scheduling, brackets, and real-time scoring.',
-		approach: 'Built the entire platform solo using AI coding agents (Claude Code) with my AEGIS governance framework. Started with a comprehensive architecture document, then implemented features in parallel using multi-agent workflows. The key insight was treating the AI as a team member that needed clear specifications and guardrails.',
-		whatThisProves: [
-			'I can go from zero to production SaaS in days, not months',
-			'I understand enterprise architecture patterns (multi-tenancy, RLS, capability-based auth)',
-			'I build real-time features as core infrastructure, not afterthoughts',
-			'I ship complete products, not demos'
+		problem: 'Tournament management is fragmented across spreadsheets, emails, and outdated software. Directors need a modern platform for registration, scheduling, brackets, and scoring.',
+		approach: 'Built the entire platform solo using AI coding agents with my AEGIS governance framework. Started with a comprehensive architecture document, then implemented features in parallel. Treated the AI as a team member that needed clear specs and guardrails.',
+		learned: [
+			'Capability-based auth is worth the upfront complexity',
+			'Real-time needs to be core infrastructure, not an afterthought',
+			'AI agents can ship production code if you give them constraints'
 		],
 
 		heroImage: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&h=800&fit=crop&q=80',
@@ -145,8 +134,8 @@ export const WORK_PROJECTS: WorkProject[] = [
 	{
 		slug: 'aix',
 		title: 'AIX (Answer Intelligence)',
-		tagline: 'Track how LLMs cite your brand across billions of AI conversations',
-		description: 'Multi-LLM visibility platform that monitors how ChatGPT, Claude, Gemini, and Perplexity mention and cite brands in AI-generated answers. Enterprise SaaS with real-time analytics and competitive intelligence.',
+		tagline: 'Track how LLMs cite your brand',
+		description: 'Multi-LLM visibility platform that monitors how ChatGPT, Claude, Gemini, and Perplexity mention and cite brands in AI-generated answers. Real-time analytics and competitive intelligence.',
 		category: 'zero-to-one',
 		status: 'production',
 		visibility: 'private',
@@ -159,37 +148,31 @@ export const WORK_PROJECTS: WorkProject[] = [
 			'Multi-LLM orchestration layer',
 			'AEO Readiness Score framework (0-100 with 4 weighted dimensions)',
 			'Real-time citation tracking and analytics',
-			'Consultant-mediated service delivery engine',
 			'Cost tracking and attribution per query'
 		],
 		keyDecisions: [
 			'Built multi-LLM from start rather than single-provider',
 			'Created proprietary AEO Readiness Score methodology',
-			'Designed for consultant delivery model ($100k-$1.45M engagements)',
 			'Implemented cost tracking at query level for margin visibility'
 		],
 
 		metrics: [
 			{ label: 'LLMs Tracked', value: '4', context: 'ChatGPT, Claude, Gemini, Perplexity' },
-			{ label: 'Score Dimensions', value: '4', context: 'Weighted AEO assessment' },
-			{ label: 'Query Latency', value: '<100ms', context: 'Real-time analytics' },
-			{ label: 'Engagement Range', value: '$100k-$1.45M', context: 'Service delivery model' }
+			{ label: 'Query Latency', value: '<100ms', context: 'Real-time analytics' }
 		],
 		outcomes: [
 			'First-mover platform for AI answer visibility',
-			'Proprietary AEO Readiness Score methodology',
-			'Enterprise-grade multi-tenant architecture',
-			'Consultant workflow integration',
+			'Proprietary AEO Readiness Score',
+			'Multi-tenant architecture',
 			'Competitive intelligence automation'
 		],
 
 		problem: 'Brands have no visibility into how AI assistants represent them. When someone asks ChatGPT "What\'s the best CRM?", brands don\'t know if they\'re being mentioned, how accurately, or compared to whom.',
-		approach: 'Built a multi-LLM monitoring platform that queries each major AI provider with category-relevant prompts and analyzes the responses for brand mentions, sentiment, accuracy, and competitive positioning. The platform generates an "AEO Readiness Score" that quantifies a brand\'s AI visibility.',
-		whatThisProves: [
-			'I identify emerging market opportunities before they\'re obvious',
-			'I can build multi-provider integrations with proper orchestration',
-			'I think about business models, not just features',
-			'I understand enterprise consulting delivery patterns'
+		approach: 'Built a monitoring platform that queries each major AI provider and analyzes responses for brand mentions, sentiment, accuracy, and competitive positioning. Generates an "AEO Readiness Score" that quantifies AI visibility.',
+		learned: [
+			'Multi-provider orchestration is harder than it looks — each LLM has different response patterns',
+			'The scoring methodology matters more than the platform',
+			'This market is moving fast — first-mover advantage is real but fragile'
 		],
 
 		heroImage: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1200&h=800&fit=crop&q=80',
@@ -202,9 +185,9 @@ export const WORK_PROJECTS: WorkProject[] = [
 	{
 		slug: 'cix',
 		title: 'CIX (Commerce Intelligence)',
-		tagline: '137 capabilities × 550 functions mapped for enterprise transformation',
-		description: 'Strategic transformation platform for enterprise commerce. Maps capabilities across domains, provides AI-powered gap analysis, and generates transformation roadmaps with semantic search.',
-		category: 'enterprise-platforms',
+		tagline: '137 capabilities mapped for commerce transformation',
+		description: 'Strategic tool for mapping commerce capabilities across domains. AI-powered gap analysis, semantic search, and transformation roadmap generation.',
+		category: 'platforms',
 		status: 'production',
 		visibility: 'private',
 
@@ -212,40 +195,34 @@ export const WORK_PROJECTS: WorkProject[] = [
 
 		stack: ['SvelteKit 2', 'Svelte 5', 'TypeScript', 'Supabase', 'pgvector', 'OpenAI', 'XY Flow', 'Tailwind CSS'],
 		architecture: [
-			'137 capabilities × 550 functions data model',
+			'137 capabilities x 550 functions data model',
 			'Semantic search with vector embeddings (pgvector)',
 			'Interactive architecture visualization (XY Flow)',
-			'AI-powered capability recommendations',
-			'Collaborative workspace features'
+			'AI-powered capability recommendations'
 		],
 		keyDecisions: [
 			'Used pgvector for semantic search over traditional full-text',
 			'Built visual architecture diagrams with XY Flow',
-			'Designed for consultant workflows, not self-service',
 			'Implemented 12 industry vertical configurations'
 		],
 
 		metrics: [
 			{ label: 'Capabilities', value: '137', context: 'Mapped commerce capabilities' },
-			{ label: 'Functions', value: '550', context: 'Detailed function specifications' },
-			{ label: 'Domains', value: '12', context: 'Industry verticals' },
+			{ label: 'Functions', value: '550', context: 'Detailed specifications' },
 			{ label: 'Search Latency', value: '<100ms', context: 'Semantic query performance' }
 		],
 		outcomes: [
 			'Complete commerce capability taxonomy',
 			'AI-powered transformation recommendations',
-			'Visual architecture diagram generation',
-			'Enterprise consulting workflow support',
-			'Benchmarking against industry standards'
+			'Visual architecture diagram generation'
 		],
 
-		problem: 'Enterprise commerce transformations fail because there\'s no comprehensive map of what capabilities exist, what functions they enable, and how to prioritize investments. Consultants recreate this from scratch for every engagement.',
-		approach: 'Built a comprehensive capability taxonomy by analyzing dozens of commerce platforms and enterprise implementations. Used vector embeddings to enable semantic search ("find capabilities related to order orchestration") and AI to generate transformation recommendations based on current state assessments.',
-		whatThisProves: [
-			'I understand enterprise commerce at a structural level',
-			'I can build knowledge management systems with AI-native search',
-			'I think about reusable IP, not one-off deliverables',
-			'I build tools that make other consultants more effective'
+		problem: 'Commerce transformations fail because there\'s no comprehensive map of what capabilities exist and how to prioritize investments. People recreate this from scratch every time.',
+		approach: 'Built a comprehensive capability taxonomy by analyzing dozens of commerce platforms and implementations. Used vector embeddings for semantic search and AI to generate transformation recommendations.',
+		learned: [
+			'pgvector makes semantic search surprisingly accessible',
+			'Reusable knowledge bases are more valuable than one-off analyses',
+			'The taxonomy is the product — the UI is just the interface to it'
 		],
 
 		heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop&q=80',
@@ -271,35 +248,30 @@ export const WORK_PROJECTS: WorkProject[] = [
 			'Intent detection via multi-model ensemble',
 			'LangChain/LangGraph agent orchestration',
 			'Product extraction pipeline with embeddings',
-			'Adaptive UI component system',
-			'Real-time personalization engine'
+			'Adaptive UI component system'
 		],
 		keyDecisions: [
 			'Used LangGraph for complex agent workflows',
 			'Built intent-first architecture (detect intent before showing UI)',
-			'Implemented multi-model approach for accuracy',
-			'Designed component system that morphs based on context'
+			'Implemented multi-model approach for accuracy'
 		],
 
 		metrics: [
 			{ label: 'Agent Types', value: '5', context: 'Specialized shopping agents' },
-			{ label: 'Intent Categories', value: '12', context: 'Shopping intent taxonomy' },
-			{ label: 'Personalization', value: 'Real-time', context: 'Sub-second adaptation' }
+			{ label: 'Intent Categories', value: '12', context: 'Shopping intent taxonomy' }
 		],
 		outcomes: [
-			'Intent-first shopping experience architecture',
+			'Intent-first shopping experience',
 			'Multi-agent commerce orchestration',
-			'Adaptive UI component library',
-			'Product extraction and embedding pipeline'
+			'Adaptive UI component library'
 		],
 
-		problem: 'Traditional e-commerce shows the same interface to everyone regardless of intent. Someone researching a category needs different information than someone ready to buy. Current personalization is limited to "you might also like" recommendations.',
-		approach: 'Building a commerce experience that detects user intent in real-time and adapts the entire interface accordingly. Uses a multi-agent system where different agents specialize in different shopping modes (research, comparison, purchase, support).',
-		whatThisProves: [
-			'I\'m pushing the boundaries of what commerce can be',
-			'I understand and implement LangChain/LangGraph patterns',
-			'I think about UX as adaptive systems, not static pages',
-			'I build with cutting-edge AI infrastructure'
+		problem: 'Traditional e-commerce shows the same interface to everyone regardless of intent. Someone researching is different from someone ready to buy.',
+		approach: 'Building a commerce experience that detects user intent in real-time and adapts the interface. Uses a multi-agent system where different agents specialize in different shopping modes.',
+		learned: [
+			'LangGraph is powerful but the learning curve is real',
+			'Intent detection is more useful than recommendation engines',
+			'The UI adaptation needs to be subtle or it feels uncanny'
 		],
 
 		heroImage: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200&h=800&fit=crop&q=80',
@@ -311,14 +283,14 @@ export const WORK_PROJECTS: WorkProject[] = [
 	},
 
 	// ============================================
-	// AI/AGENTIC FRAMEWORKS
+	// AI TOOLS & FRAMEWORKS
 	// ============================================
 	{
 		slug: 'aegis',
 		title: 'AEGIS Framework',
-		tagline: 'Constitutional governance for AI code generation',
-		description: 'Production-ready framework for governing AI agent behavior in software development. Enforces consistency, quality, and compliance across AI-generated code with plan gating, self-healing, and drift detection.',
-		category: 'ai-frameworks',
+		tagline: 'Governance for AI code generation',
+		description: 'Framework for governing AI agent behavior in software development. Enforces consistency and quality across AI-generated code with plan gating, self-healing, and drift detection.',
+		category: 'ai-tools',
 		status: 'production',
 		visibility: 'public',
 
@@ -327,40 +299,33 @@ export const WORK_PROJECTS: WorkProject[] = [
 
 		stack: ['TypeScript', 'Bun', 'Vite', 'Playwright', 'Vitest', 'CLI', 'Docker'],
 		architecture: [
-			'Plan gating system (MVP → Surgical → Systemic)',
+			'Plan gating system (MVP, Surgical, Systemic)',
 			'Self-healing blueprint engine with drift detection',
 			'Evolution story tracking (learns from patterns)',
-			'Democratic amendment system (version governance)',
-			'Cross-framework learning engine',
-			'MCP (Model Context Protocol) server integration'
+			'Cross-framework learning engine'
 		],
 		keyDecisions: [
 			'Built as a governance layer, not a replacement for AI tools',
-			'Implemented "constitutional" approach inspired by Anthropic',
-			'Designed for teams adopting AI-assisted development',
+			'Inspired by Anthropic\'s constitutional approach',
 			'Made framework-agnostic to work with any AI coding tool'
 		],
 
 		metrics: [
 			{ label: 'Version', value: '2.5.0', context: 'Production release' },
-			{ label: 'Plan Levels', value: '3', context: 'MVP, Surgical, Systemic' },
-			{ label: 'Validation Gates', value: '12', context: 'Quality checkpoints' }
+			{ label: 'Plan Levels', value: '3', context: 'MVP, Surgical, Systemic' }
 		],
 		outcomes: [
 			'Constitutional governance for AI code generation',
 			'Automated quality enforcement',
-			'Multi-agent coordination patterns',
-			'Reproducible blueprint system',
-			'Team adoption playbook'
+			'Reproducible blueprint system'
 		],
 
-		problem: 'AI coding tools generate inconsistent code across a team. Without governance, you get drift in patterns, violations of standards, and no auditability. Enterprises can\'t adopt AI coding at scale without controls.',
-		approach: 'Created a governance framework that wraps AI coding tools with "constitutional" rules. Every AI-generated change goes through plan gating (is this change appropriate?), validation (does it meet standards?), and evolution tracking (what patterns are emerging?). The framework learns from the codebase and gets smarter over time.',
-		whatThisProves: [
-			'I think about AI adoption at enterprise scale',
-			'I build tools that govern AI, not just use it',
-			'I understand compliance and auditability requirements',
-			'I create frameworks others can adopt'
+		problem: 'AI coding tools generate inconsistent code. Without governance, you get drift in patterns, violations of standards, and no auditability. Hard to adopt AI coding at scale without controls.',
+		approach: 'Created a governance framework that wraps AI coding tools with rules. Every AI-generated change goes through plan gating, validation, and evolution tracking. The framework learns from the codebase over time.',
+		learned: [
+			'Constitutional AI principles apply beyond language models — they work for code generation too',
+			'The framework needs to learn, not just enforce',
+			'Plan gating is the single most effective quality control'
 		],
 
 		heroImage: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1200&h=800&fit=crop&q=80',
@@ -373,9 +338,9 @@ export const WORK_PROJECTS: WorkProject[] = [
 	{
 		slug: 'signal-forge',
 		title: 'Signal Forge',
-		tagline: 'Strategic content generation with three-role AI workflow',
-		description: 'CLI tool that generates consultant-grade strategic content (decks, POVs, white papers) using a three-role AI workflow: Ghost Writer → Copywriter → Editor. Maintains voice consistency across all outputs.',
-		category: 'ai-frameworks',
+		tagline: 'AI content generation with a three-role workflow',
+		description: 'CLI tool that generates strategic content using a three-role AI workflow: Ghost Writer, Copywriter, Editor. Maintains voice consistency across all outputs.',
+		category: 'ai-tools',
 		status: 'production',
 		visibility: 'private',
 
@@ -383,40 +348,34 @@ export const WORK_PROJECTS: WorkProject[] = [
 
 		stack: ['Node.js', 'TypeScript', 'CLI', 'OpenAI API', 'Anthropic API', 'PPTX.js', 'Docx.js', 'PDF-lib'],
 		architecture: [
-			'Three-role workflow (Ghost Writer → Copywriter → Editor)',
+			'Three-role workflow (Ghost Writer > Copywriter > Editor)',
 			'Voice guide enforcement system',
 			'Multi-format export (PPTX, DOCX, PDF, HTML)',
-			'Content mode taxonomy (Thought Leadership, Solution Architecture, Executive Advisory)',
-			'Red-team audited architecture'
+			'Content mode taxonomy'
 		],
 		keyDecisions: [
 			'Built as CLI for automation, not GUI for manual use',
 			'Implemented three-role separation for quality',
-			'Created mode-specific voice guides for consistency',
-			'Designed for integration with consulting workflows'
+			'Created mode-specific voice guides for consistency'
 		],
 
 		metrics: [
-			{ label: 'Client Projects', value: '12+', context: 'BBY, REI, MSFT, Signet, Conagra, etc.' },
-			{ label: 'Content Modes', value: '3', context: 'Specialized output types' },
+			{ label: 'Projects', value: '12+', context: 'Client deliverables produced' },
 			{ label: 'Export Formats', value: '4', context: 'PPTX, DOCX, PDF, HTML' },
 			{ label: 'Voice Consistency', value: '95%+', context: 'Audited accuracy' }
 		],
 		outcomes: [
-			'Consultant-grade content at AI speed',
+			'Professional content at AI speed',
 			'Voice consistency across all outputs',
-			'Multi-format export for client delivery',
-			'Integration with strategic workflows',
-			'Red-team validated architecture'
+			'Multi-format export'
 		],
 
-		problem: 'Strategic consulting content (decks, POVs, papers) takes weeks to produce. AI can accelerate this, but raw AI output lacks the voice, structure, and polish that clients expect. The gap between "AI-generated" and "consultant-grade" is significant.',
-		approach: 'Built a three-role pipeline where the Ghost Writer creates the raw content, the Copywriter refines it for voice and flow, and the Editor polishes for client delivery. Each role has specific prompts, constraints, and quality gates. The system maintains voice guides per content mode to ensure consistency.',
-		whatThisProves: [
-			'I understand content quality at a professional level',
-			'I can build multi-stage AI pipelines with quality gates',
-			'I think about voice and brand consistency programmatically',
-			'I build tools that accelerate entire workflows, not just tasks'
+		problem: 'Strategic content takes weeks to produce. Raw AI output lacks voice, structure, and polish. The gap between "AI-generated" and "good enough to send" is significant.',
+		approach: 'Built a three-role pipeline where the Ghost Writer creates raw content, the Copywriter refines for voice, and the Editor polishes for delivery. Each role has specific prompts, constraints, and quality gates.',
+		learned: [
+			'Multi-stage pipelines produce dramatically better output than single prompts',
+			'Voice guides are surprisingly effective at maintaining consistency',
+			'CLI-first design means it integrates into any workflow'
 		],
 
 		heroImage: 'https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=1200&h=800&fit=crop&q=80',
@@ -428,10 +387,10 @@ export const WORK_PROJECTS: WorkProject[] = [
 	},
 	{
 		slug: 'agent-os',
-		title: 'Agent OS Workflow System',
-		tagline: '3-mode implementation framework for AI-assisted development',
-		description: 'Configurable workflow system with three implementation modes (Fast, Selective, Thorough) for AI-assisted development. Delivers 3.5x faster implementation and 73% token savings while maintaining production quality.',
-		category: 'ai-frameworks',
+		title: 'Agent OS',
+		tagline: 'Three-mode workflow for AI-assisted development',
+		description: 'Workflow system with three modes (Fast, Selective, Thorough) for AI-assisted development. 3.5x faster and 73% less tokens while maintaining quality.',
+		category: 'ai-tools',
 		status: 'production',
 		visibility: 'public',
 
@@ -440,39 +399,33 @@ export const WORK_PROJECTS: WorkProject[] = [
 		stack: ['YAML', 'Documentation', 'Workflow Design', 'Prompt Engineering'],
 		architecture: [
 			'Three-mode system (Fast 95%, Selective default, Thorough 5%)',
-			'Token-optimized workflows (<1000 for Fast, <5000 for Thorough)',
-			'Phase-based development (Research → Design → Implement → Test)',
-			'Role-based implementation patterns',
-			'Context tier management (40k/40k/20k allocation)'
+			'Token-optimized workflows',
+			'Phase-based development (Research > Design > Implement > Test)',
+			'Context tier management'
 		],
 		keyDecisions: [
 			'Optimized for token efficiency, not just speed',
 			'Built mode selection into workflow, not afterthought',
-			'Designed for reproducibility across projects',
 			'Made methodology documentation-first'
 		],
 
 		metrics: [
-			{ label: 'Velocity', value: '3.5x', context: 'vs baseline implementation' },
+			{ label: 'Velocity', value: '3.5x', context: 'vs baseline' },
 			{ label: 'Token Savings', value: '73%', context: 'Optimized prompts' },
-			{ label: 'Quality', value: 'Same', context: 'WCAG AA, 60fps maintained' },
-			{ label: 'Modes', value: '3', context: 'Fast, Selective, Thorough' }
+			{ label: 'Quality', value: 'Same', context: 'WCAG AA, 60fps maintained' }
 		],
 		outcomes: [
 			'Reproducible AI development methodology',
 			'Token-efficient workflows',
-			'Quality maintained at higher velocity',
-			'Team-adoptable patterns',
-			'Mode-appropriate tool selection'
+			'Quality maintained at higher velocity'
 		],
 
-		problem: 'AI-assisted development without a methodology leads to inconsistent results, token waste, and quality drift. Teams struggle to know when to use AI and when to code manually.',
-		approach: 'Created a three-mode system where the complexity of the task determines the workflow: Fast mode for routine changes (95% of work, <1000 tokens), Selective mode for standard features (default), and Thorough mode for critical/complex work (5%, full context). Each mode has specific tools, prompts, and validation gates.',
-		whatThisProves: [
-			'I think about AI usage strategically, not just tactically',
-			'I can quantify and optimize AI workflows',
-			'I build methodologies others can follow',
-			'I understand the economics of AI development'
+		problem: 'AI-assisted development without a methodology leads to inconsistent results, token waste, and quality drift.',
+		approach: 'Three-mode system where task complexity determines the workflow: Fast mode for routine changes (95% of work), Selective for standard features, Thorough for critical/complex work (5%).',
+		learned: [
+			'95% of changes are routine — treat them that way',
+			'Token efficiency compounds over time',
+			'The methodology matters more than the tools'
 		],
 
 		heroImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=800&fit=crop&q=80',
@@ -489,8 +442,8 @@ export const WORK_PROJECTS: WorkProject[] = [
 	{
 		slug: 'commerce-prompt-analyzer',
 		title: 'Commerce Prompt Analyzer',
-		tagline: 'Discover how customers search in the age of AI',
-		description: 'Open-source tool for analyzing how customers phrase commerce queries to AI assistants. Helps brands understand the language patterns that lead to AI recommendations.',
+		tagline: 'How customers search in the age of AI',
+		description: 'Open-source tool for analyzing how customers phrase commerce queries to AI assistants. Helps understand the language patterns that lead to AI recommendations.',
 		category: 'open-source',
 		status: 'production',
 		visibility: 'public',
@@ -501,11 +454,10 @@ export const WORK_PROJECTS: WorkProject[] = [
 		architecture: [
 			'Prompt analysis engine',
 			'Pattern recognition for commerce queries',
-			'Category and intent classification',
-			'Export and reporting features'
+			'Category and intent classification'
 		],
 		keyDecisions: [
-			'Made fully open-source for community benefit',
+			'Made fully open-source',
 			'Focused on commerce-specific patterns',
 			'Built for actionable insights, not just analysis'
 		],
@@ -516,16 +468,15 @@ export const WORK_PROJECTS: WorkProject[] = [
 		],
 		outcomes: [
 			'Open tool for commerce AI analysis',
-			'Community contribution to AEO understanding',
 			'Reference implementation for prompt analysis'
 		],
 
-		problem: 'Brands don\'t understand how customers phrase questions to AI assistants. Traditional SEO keywords don\'t map to conversational AI queries.',
-		approach: 'Built an analyzer that takes commerce queries and breaks them down into intent, category, entities, and sentiment. Helps brands understand the "language of AI search" so they can optimize their content.',
-		whatThisProves: [
-			'I contribute to the community, not just build proprietary tools',
-			'I understand emerging patterns in AI-native commerce',
-			'I can ship useful tools quickly'
+		problem: 'Brands don\'t understand how customers phrase questions to AI assistants. Traditional SEO keywords don\'t map to conversational queries.',
+		approach: 'Built an analyzer that breaks down commerce queries into intent, category, entities, and sentiment.',
+		learned: [
+			'Conversational queries are structurally different from search keywords',
+			'Open-sourcing gets more feedback than keeping it private',
+			'Small focused tools get more adoption than comprehensive platforms'
 		],
 
 		heroImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=800&fit=crop&q=80',
@@ -535,63 +486,6 @@ export const WORK_PROJECTS: WorkProject[] = [
 		featured: false,
 		order: 9
 	},
-	{
-		slug: 'labs',
-		title: 'Nino Chavez Labs',
-		tagline: 'Turborepo monorepo incubating AI experiments into production systems',
-		description: 'A Turborepo-powered monorepo that serves as an incubator for software engineering experiments. Projects graduate from prototype to production, including Rally HQ, CIX, and the Code-to-Cognition learning platform. Features shared packages, Multi-Zone routing, and automated deployment pipelines.',
-		category: 'zero-to-one',
-		status: 'production',
-		visibility: 'private',
-
-		demo: 'https://ninochavez.co/labs',
-		github: 'https://github.com/nino-chavez/labs',
-
-		stack: ['Next.js 15', 'Turborepo', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Framer Motion', 'Vercel Multi-Zones'],
-		architecture: [
-			'Turborepo monorepo with npm workspaces',
-			'Next.js Multi-Zone routing for path-based apps',
-			'Shared packages (@nino-labs/ui, tsconfig, eslint)',
-			'Automated graph data pipeline (JSON → Neo4j → Supabase → pgvector)',
-			'Standards validation against ARTS/GS1/Oracle RDRM'
-		],
-		keyDecisions: [
-			'Used Turborepo for incremental builds and caching',
-			'Implemented Multi-Zone routing for independent app deployments',
-			'Created shared agentic-commerce-data package for cross-project data',
-			'Built automated embedding generation pipeline for semantic search'
-		],
-
-		metrics: [
-			{ label: 'Apps', value: '3', context: 'Landing, Code-to-Cognition, CIX' },
-			{ label: 'Graduated', value: '5+', context: 'Projects moved to production' },
-			{ label: 'Shared Packages', value: '4', context: 'UI, config, data, eslint' },
-			{ label: 'Capabilities', value: '127', context: 'Mapped commerce capabilities' }
-		],
-		outcomes: [
-			'Incubator that graduates experiments to production',
-			'Code-to-Cognition interactive learning platform',
-			'Shared design system and component library',
-			'Automated data pipeline for capability graphs',
-			'Standards-validated commerce taxonomy'
-		],
-
-		problem: 'Building multiple AI experiments in isolation leads to duplicated effort, inconsistent patterns, and no path from prototype to production. Each project reinvents infrastructure.',
-		approach: 'Created a Turborepo monorepo that provides shared infrastructure (UI components, TypeScript config, ESLint rules) while allowing independent apps to deploy separately. Projects start as experiments and graduate to production with shared learnings. The agentic-commerce-data package ensures all apps use the same capability taxonomy.',
-		whatThisProves: [
-			'I think about infrastructure and developer experience',
-			'I build systems that scale from experiment to production',
-			'I understand monorepo patterns and build optimization',
-			'I create reusable foundations, not throwaway code'
-		],
-
-		heroImage: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1200&h=800&fit=crop&q=80',
-
-		started: '2024-06',
-		duration: 'Ongoing incubator',
-		featured: true,
-		order: 8
-	}
 ];
 
 // Helper functions
