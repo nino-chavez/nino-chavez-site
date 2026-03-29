@@ -25,9 +25,9 @@
 
 	// Category labels
 	const categoryLabels: Record<string, string> = {
-		'zero-to-one': 'Zero-to-One Product',
-		'ai-frameworks': 'AI/Agentic Framework',
-		'enterprise-platforms': 'Enterprise Platform',
+		'zero-to-one': 'Zero to One',
+		'ai-tools': 'AI Tools & Frameworks',
+		'platforms': 'Platforms',
 		'open-source': 'Open Source'
 	};
 
@@ -165,17 +165,17 @@
 				</p>
 			</section>
 
-			<!-- What This Proves - Lead with the signal -->
+			<!-- What I Learned -->
 			<section class="mb-12">
 				<div class="bg-gradient-to-r from-emerald-500/10 to-violet-500/10 border border-emerald-500/20 rounded-xl p-6">
-					<h2 class="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-4">What This Proves</h2>
+					<h2 class="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-4">What I Learned</h2>
 					<div class="space-y-3">
-						{#each project.whatThisProves as proof}
+						{#each project.learned as lesson}
 							<div class="flex items-start gap-3">
 								<svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
 								</svg>
-								<span class="text-white">{proof}</span>
+								<span class="text-white">{lesson}</span>
 							</div>
 						{/each}
 					</div>
@@ -299,10 +299,10 @@
 						Back to All Work
 					</a>
 					<a
-						href="/one-pager"
-						class="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-500 text-gray-950 font-semibold rounded-lg hover:bg-emerald-400 transition-colors"
+						href="/"
+						class="inline-flex items-center gap-2 px-5 py-2.5 bg-lime-400 text-gray-950 font-semibold rounded-lg hover:bg-white transition-colors"
 					>
-						View One-Pager
+						Home
 						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
 						</svg>

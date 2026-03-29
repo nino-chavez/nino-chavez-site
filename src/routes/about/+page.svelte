@@ -20,7 +20,7 @@
 		},
 		{
 			title: 'Building',
-			description: 'Software, apps, tools. Rally HQ for tournament management, AI experiments, and whatever else I\'m tinkering with.',
+			description: 'AI-native software, platforms, and tools. Rally HQ, Signal X Studio, and whatever else I\'m tinkering with.',
 			link: '/#labs'
 		}
 	];
@@ -48,14 +48,14 @@
 	<title>About - Nino Chavez</title>
 	<meta
 		name="description"
-		content="Photographer. DJ. Writer. Builder. Creating things in Chicago."
+		content="AI-native builder crafting signals from code, cameras, sound, and words. Chicago."
 	/>
 
 	<!-- Open Graph -->
 	<meta property="og:title" content="About - Nino Chavez" />
 	<meta
 		property="og:description"
-		content="Photographer. DJ. Writer. Builder. Creating things in Chicago."
+		content="AI-native builder crafting signals from code, cameras, sound, and words. Chicago."
 	/>
 	<meta property="og:type" content="profile" />
 	<meta property="og:url" content="https://ninochavez.co/about" />
@@ -65,7 +65,7 @@
 	<meta name="twitter:title" content="About - Nino Chavez" />
 	<meta
 		name="twitter:description"
-		content="Photographer. DJ. Writer. Builder. Creating things in Chicago."
+		content="AI-native builder crafting signals from code, cameras, sound, and words. Chicago."
 	/>
 
 </svelte:head>
@@ -79,17 +79,20 @@
 
 				<div class="max-w-2xl space-y-6 text-lg text-neutral-300 leading-relaxed">
 					<p>
-						I'm Nino. I live in Chicago. I make things—photographs, music, words, software,
-						and a couple of businesses along the way.
+						I'm Nino. I live in Chicago. I build things with AI the way I shoot with a camera —
+						reading the moment, finding the signal, and making something real from it.
 					</p>
 
 					<p>
-						By day I'm a product architect (I've been writing code for 25 years). But that's
-						not really what this site is about.
+						The thread connecting everything I make is the same instinct: cut through the noise,
+						find what matters. A decisive moment at the net. The groove that makes a room move.
+						The architecture pattern that actually survives production. The sentence that says
+						what it means.
 					</p>
 
 					<p>
-						This is the space for everything I create outside of that.
+						I've been writing code since 1999 and building with AI agents since the tools
+						existed. The projects on this site say more about how I think than any resume would.
 					</p>
 				</div>
 			</div>
@@ -145,8 +148,8 @@
 		<div class="max-w-4xl mx-auto mb-8">
 			<h2 class="text-lime-400 font-mono text-xs tracking-widest uppercase mb-4">Photography</h2>
 			<p class="text-neutral-400 max-w-xl">
-				I shoot volleyball and action sports. It's a good counterbalance to sitting at a computer—
-				you're outside, moving, trying to anticipate moments before they happen.
+				I shoot volleyball and action sports. It's a good counterbalance to sitting at a computer —
+				you're outside, moving, reading the play, anticipating the moment before it happens.
 			</p>
 		</div>
 
@@ -188,18 +191,19 @@
 
 			<div class="max-w-2xl space-y-6 text-neutral-300 leading-relaxed">
 				<p>
-					I've been writing code since 1999. Started at small agencies, moved through consulting
-					firms, eventually ended up leading architecture for Fortune 500 commerce platforms.
+					I've been writing code since 1999. Started at small agencies, moved through
+					consulting firms, eventually ended up building commerce platforms at scale.
+					Now I build with AI agents as a core part of the process — not as an afterthought.
 				</p>
 
 				<p>
-					These days the day job is at commerce.com as a product architect. But the projects
-					on this site are what I spend my free time on—and they say more about how I think
-					than any resume would.
+					The day job is product architect at commerce.com. But the projects on this
+					site are what I spend my free time on — and honestly, they're a better window
+					into how I think than a career summary.
 				</p>
 
 				<p>
-					If you want the formal career timeline, it's on the
+					If you want the formal timeline, it's on the
 					<a href="/now#cv" class="text-lime-400 hover:underline">Now page</a>.
 				</p>
 			</div>
@@ -212,7 +216,7 @@
 			<h2 class="text-lime-400 font-mono text-xs tracking-widest uppercase mb-8">Connect</h2>
 
 			<p class="text-neutral-300 mb-8 max-w-xl">
-				Always happy to chat about photography, music, building things, or whatever's interesting.
+				Always happy to talk about building things, shooting things, or whatever's interesting.
 			</p>
 
 			<div class="flex flex-wrap gap-4">

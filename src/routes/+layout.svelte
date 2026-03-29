@@ -42,7 +42,7 @@
 
 <svelte:head>
 	 <title>Nino Chavez</title>
-	 <meta name="description" content="Photographer. DJ. Writer. Builder. Creating things in Chicago." />
+	 <meta name="description" content="AI-native builder crafting signals from code, cameras, sound, and words. Chicago." />
 </svelte:head>
 
 <div class="min-h-screen bg-neutral-900 text-white" class:mounted>

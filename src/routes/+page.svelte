@@ -42,7 +42,7 @@
 		},
 		{
 			title: 'Building',
-			description: 'Software, side projects, and tools. Always tinkering.',
+			description: 'AI-native software, platforms, and tools. Always tinkering.',
 			link: '#labs'
 		}
 	];
@@ -81,8 +81,8 @@
 </script>
 
 <svelte:head>
-	<title>Nino Chavez</title>
-	<meta name="description" content="Photographer. DJ. Writer. Builder. Creating things in Chicago." />
+	<title>Nino Chavez — Cut the Noise, Follow the Signal</title>
+	<meta name="description" content="AI-native builder crafting signals from code, cameras, sound, and words. Chicago." />
 	<link rel="preload" as="image" href={heroImageUrl} fetchpriority="high" />
 </svelte:head>
 
@@ -131,8 +131,9 @@
 			<!-- Subtext - offset to the right -->
 			<div class="max-w-md ml-auto mr-0 lg:mr-24 text-right animate-slide-up" style="animation-delay: 200ms">
 				<p class="text-lg text-neutral-400 font-light leading-relaxed mb-6">
-					Photographer. DJ. Writer. Builder.<br/>
-					Chicago.
+					AI-native builder. I build with AI the way I<br/>
+					shoot with a camera — reading the moment,<br/>
+					finding the signal. Chicago.
 				</p>
 				<div class="flex justify-end gap-4">
 					<a href="#labs" class="px-6 py-3 bg-lime-400 text-black font-bold text-sm hover:bg-white transition-colors">
@@ -385,44 +386,7 @@
 					<div class="absolute bottom-0 left-0 w-full h-1 bg-indigo-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
 				</a>
 
-				<!-- Labs - Experiments & Prototypes -->
-				<a
-					href="https://ninochavez.co/labs"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="bento-card group relative overflow-hidden cursor-pointer"
-				>
-					<div class="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent"></div>
-					<!-- Circuit pattern -->
-					<div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
-						<svg class="w-full h-full" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-							<circle cx="20" cy="30" r="3" class="text-amber-400"/>
-							<circle cx="80" cy="70" r="3" class="text-amber-400"/>
-							<circle cx="50" cy="50" r="3" class="text-amber-400"/>
-							<path d="M20 30 L50 50 L80 70" class="text-amber-400"/>
-							<path d="M20 30 L20 70 L50 50" class="text-amber-400"/>
-						</svg>
-					</div>
-					<div class="relative z-10 h-full flex flex-col justify-between p-6">
-						<div>
-							<div class="flex items-center gap-3 mb-3">
-								<span class="w-2 h-2 bg-amber-400 rounded-full"></span>
-								<span class="text-amber-400 font-mono text-[10px] tracking-widest">EXPERIMENTS</span>
-							</div>
-							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">LABS</h3>
-							<p class="text-neutral-500 text-sm">Prototypes & Side Projects</p>
-						</div>
-						<div class="flex items-center gap-2 text-neutral-600 text-xs group-hover:text-lime-400 transition-colors">
-							<span>AIX, BIX, CIX, SIX & more</span>
-							<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-							</svg>
-						</div>
-					</div>
-					<div class="absolute bottom-0 left-0 w-full h-1 bg-amber-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-				</a>
-
-			</div>
+				</div>
 		</div>
 	</section>
 
@@ -480,7 +444,7 @@
 					WHAT I'M INTO
 				</h2>
 				<p class="text-neutral-400 text-lg max-w-2xl">
-					I make things across a few different mediums. Some of it pays, most of it's just for the love of it.
+					Different mediums, same craft — find the signal, make something real from it. Some of it pays, most of it's for the love of it.
 				</p>
 			</div>
 
@@ -533,7 +497,7 @@
 				</h2>
 
 				<p class="text-neutral-400 text-lg mb-12 max-w-md">
-					Always happy to chat about photography, building things, or whatever's interesting.
+					Always happy to talk about building things, shooting things, or whatever's interesting.
 				</p>
 
 				<div class="flex flex-col sm:flex-row gap-4">
