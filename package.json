@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "svelte-kit sync && vite build",
     "build:analyze": "vite build --mode analyze",
     "preview": "vite preview",
     "prepreview:test": "vite build",
