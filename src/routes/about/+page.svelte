@@ -20,7 +20,7 @@
 		},
 		{
 			title: 'Building',
-			description: 'AI-native software, platforms, and tools. Rally HQ, Signal X Studio, and whatever else I\'m tinkering with.',
+			description: 'AI-native software shipped at architect leverage. Rally HQ, Signal X Studio, and whatever else is compiling today.',
 			link: '/#labs'
 		}
 	];
@@ -48,14 +48,14 @@
 	<title>About - Nino Chavez</title>
 	<meta
 		name="description"
-		content="AI-native builder crafting signals from code, cameras, sound, and words. Chicago."
+		content="AI-native architect shipping signals from code, cameras, sound, and words. Chicago."
 	/>
 
 	<!-- Open Graph -->
 	<meta property="og:title" content="About - Nino Chavez" />
 	<meta
 		property="og:description"
-		content="AI-native builder crafting signals from code, cameras, sound, and words. Chicago."
+		content="AI-native architect shipping signals from code, cameras, sound, and words. Chicago."
 	/>
 	<meta property="og:type" content="profile" />
 	<meta property="og:url" content="https://ninochavez.co/about" />
@@ -65,7 +65,7 @@
 	<meta name="twitter:title" content="About - Nino Chavez" />
 	<meta
 		name="twitter:description"
-		content="AI-native builder crafting signals from code, cameras, sound, and words. Chicago."
+		content="AI-native architect shipping signals from code, cameras, sound, and words. Chicago."
 	/>
 
 </svelte:head>
@@ -79,8 +79,8 @@
 
 				<div class="max-w-2xl space-y-6 text-lg text-neutral-300 leading-relaxed">
 					<p>
-						I'm Nino. I live in Chicago. I build things with AI the way I shoot with a camera —
-						reading the moment, finding the signal, and making something real from it.
+						I'm Nino. I live in Chicago. I direct the build the way I shoot a frame —
+						reading the moment, selecting the one that holds, and shipping something real from it.
 					</p>
 
 					<p>

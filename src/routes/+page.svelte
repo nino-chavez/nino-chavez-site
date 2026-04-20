@@ -42,7 +42,7 @@
 		},
 		{
 			title: 'Building',
-			description: 'AI-native software, platforms, and tools. Always tinkering.',
+			description: 'AI-native software shipped at architect leverage. Rally HQ, Signal X Studio, and whatever else is compiling today.',
 			link: '#labs'
 		}
 	];
@@ -82,7 +82,7 @@
 
 <svelte:head>
 	<title>Nino Chavez — Cut the Noise, Follow the Signal</title>
-	<meta name="description" content="AI-native builder crafting signals from code, cameras, sound, and words. Chicago." />
+	<meta name="description" content="AI-native architect shipping signals from code, cameras, sound, and words. Chicago." />
 	<link rel="preload" as="image" href={heroImageUrl} fetchpriority="high" />
 </svelte:head>
 
@@ -131,9 +131,9 @@
 			<!-- Subtext - offset to the right -->
 			<div class="max-w-md ml-auto mr-0 lg:mr-24 text-right animate-slide-up" style="animation-delay: 200ms">
 				<p class="text-lg text-neutral-400 font-light leading-relaxed mb-6">
-					AI-native builder. I build with AI the way I<br/>
-					shoot with a camera — reading the moment,<br/>
-					finding the signal. Chicago.
+					AI-native architect. I direct the build the way I<br/>
+					shoot a frame — reading the moment,<br/>
+					selecting the one that holds. Chicago.
 				</p>
 				<div class="flex justify-end gap-4">
 					<a href="#labs" class="px-6 py-3 bg-lime-400 text-black font-bold text-sm hover:bg-white transition-colors">
