@@ -9,7 +9,7 @@
 		{
 			title: "Let's Pepper",
 			description: 'Running the grassroots 3v3 volleyball tournament series.',
-			link: 'https://new.letspepper.com'
+			link: 'https://letspepper.com'
 		},
 		{
 			title: 'Flickday Media',

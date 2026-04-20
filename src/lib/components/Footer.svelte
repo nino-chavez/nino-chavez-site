@@ -10,7 +10,7 @@
     { href: 'https://photography.ninochavez.co', label: 'Photography' },
     { href: 'https://blog.ninochavez.co', label: 'Blog' },
     { href: 'https://signalx.studio', label: 'Signal-X-Studio' },
-    { href: 'https://new.letspepper.com', label: 'LetsPepper' }
+    { href: 'https://letspepper.com', label: 'LetsPepper' }
   ];
 
   // Social links
