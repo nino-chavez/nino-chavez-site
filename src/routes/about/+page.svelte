@@ -29,7 +29,7 @@
 		{
 			name: "Let's Pepper",
 			description: 'Grassroots 3v3 volleyball tournament series. Competitive play, cash prizes, no fluff.',
-			link: 'https://new.letspepper.com'
+			link: 'https://letspepper.com'
 		},
 		{
 			name: 'Flickday Media',

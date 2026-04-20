@@ -179,7 +179,7 @@
 
 				<!-- Let's Pepper - Large featured card -->
 				<a
-					href="https://new.letspepper.com"
+					href="https://letspepper.com"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="bento-card bento-large group relative overflow-hidden cursor-pointer"
