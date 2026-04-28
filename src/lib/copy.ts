@@ -3,11 +3,11 @@
 export const focusCopy = {
 	heading: 'Finding the Signal',
 	subhead:
-		'I direct the build the way I shoot a frame — reading the moment, selecting the one that holds, and shipping something real from it.',
+		'Software, photographs, mixes, essays. Different mediums, same impulse to make something honest and finish it.',
 	narrative1:
-		'Code, photographs, music, words — different mediums, same craft. The tools change, the instinct doesn\'t: cut through the noise, find what matters, ship it.',
-	narrative2: 'AI-native architect. Chicago.',
-	timelineLabel: 'Chicago • AI-Native Architect',
+		'Code, photographs, music, words. The tools change, the work is the same: pay attention, pick what matters, finish it.',
+	narrative2: 'Chicago.',
+	timelineLabel: 'Chicago',
 	cta: 'Read Signal Dispatch'
 };
 

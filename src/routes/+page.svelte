@@ -42,7 +42,7 @@
 		},
 		{
 			title: 'Building',
-			description: 'AI-native software shipped at architect leverage. Rally HQ, Signal X Studio, and whatever else is compiling today.',
+			description: 'Software built with AI agents. Rally HQ, Signal X Studio, and whatever else is compiling today.',
 			link: '#labs'
 		}
 	];
@@ -82,7 +82,7 @@
 
 <svelte:head>
 	<title>Nino Chavez — Cut the Noise, Follow the Signal</title>
-	<meta name="description" content="AI-native architect shipping signals from code, cameras, sound, and words. Chicago." />
+	<meta name="description" content="Photography, music, writing, and software. Nino Chavez, Chicago." />
 	<link rel="preload" as="image" href={heroImageUrl} fetchpriority="high" />
 </svelte:head>
 
@@ -131,9 +131,9 @@
 			<!-- Subtext - offset to the right -->
 			<div class="max-w-md ml-auto mr-0 lg:mr-24 text-right animate-slide-up" style="animation-delay: 200ms">
 				<p class="text-lg text-neutral-400 font-light leading-relaxed mb-6">
-					AI-native architect. I direct the build the way I<br/>
-					shoot a frame — reading the moment,<br/>
-					selecting the one that holds. Chicago.
+					Software, photographs, mixes, essays.<br/>
+					Day job: product architect.<br/>
+					Chicago.
 				</p>
 				<div class="flex justify-end gap-4">
 					<a href="#labs" class="px-6 py-3 bg-lime-400 text-black font-bold text-sm hover:bg-white transition-colors">
@@ -167,7 +167,7 @@
 				</div>
 				<div class="lg:text-right">
 					<p class="text-neutral-400 text-lg max-w-md lg:ml-auto">
-						Sounds, images, words, code, and a few businesses along the way.
+						Software, photographs, mixes, essays. Some ships, some doesn't.
 					</p>
 				</div>
 			</div>
@@ -197,8 +197,8 @@
 							<h3 class="text-4xl lg:text-5xl font-display font-bold mb-3 group-hover:text-lime-400 transition-colors">LET'S PEPPER</h3>
 							<p class="text-neutral-400 text-lg mb-6">Grassroots 3v3 Volleyball</p>
 							<p class="text-neutral-500 leading-relaxed max-w-md">
-								Competitive grass volleyball tournament series. No fluff—just skill, sweat, and fun.
-								Cash prizes, pro photography, player-first vibes.
+								Competitive grass volleyball without the over-organization.
+								Cash prizes, real photography, runs on weekends.
 							</p>
 						</div>
 						<div class="flex flex-wrap gap-2 mt-6">
@@ -229,7 +229,7 @@
 							<p class="text-neutral-500 text-sm">Sports Media Company</p>
 						</div>
 						<p class="text-neutral-500 text-sm leading-relaxed">
-							Raw, fast, player-first. Tournament coverage, reels, and same-day photo drops.
+							Tournament coverage and same-day photo drops for grassroots volleyball.
 						</p>
 					</div>
 					<div class="absolute bottom-0 left-0 w-full h-1 bg-pink-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
@@ -444,7 +444,7 @@
 					WHAT I'M INTO
 				</h2>
 				<p class="text-neutral-400 text-lg max-w-2xl">
-					Different mediums, same craft — find the signal, make something real from it. Some of it pays, most of it's for the love of it.
+					Photography, music, writing, code. Some pays the bills. Most of it doesn't.
 				</p>
 			</div>
 

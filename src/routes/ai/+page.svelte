@@ -75,19 +75,11 @@
 			</h1>
 
 			<p
-				in:fly={{ y: 20, duration: 800, delay: 300 }}
-				class="text-xl md:text-2xl mb-4 leading-relaxed"
-				style="color: var(--ai-text-secondary);"
-			>
-				Not talking about it. Doing it.
-			</p>
-
-			<p
 				in:fly={{ y: 20, duration: 800, delay: 400 }}
 				class="text-base leading-relaxed max-w-2xl"
 				style="color: var(--ai-text-muted);"
 			>
-				This is where I document what I've learned, what I've built, and what patterns have emerged from real work with AI systems.
+				Where I document what I've learned, what I've built, and what patterns have emerged from real work with AI systems.
 			</p>
 		{/if}
 	</section>
