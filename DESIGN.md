@@ -3,7 +3,7 @@
 # Personal brand surface. Answer Engine Optimization (AEO) proof-of-concept.
 schemaVersion: 1
 name: Nino Chavez Portfolio
-tagline: Two decades architecting Fortune 500 commerce platforms
+tagline: Personal portfolio — Nino Chavez, Chicago
 mode: dark
 
 colors:

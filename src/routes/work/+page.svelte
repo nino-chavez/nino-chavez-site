@@ -47,11 +47,11 @@
 
 <svelte:head>
 	<title>Work - Nino Chavez</title>
-	<meta name="description" content="Things I've built — production platforms, AI tools, and experiments. The work behind the signal." />
+	<meta name="description" content="Things I've built — production platforms, AI tools, side projects." />
 
 	<!-- Open Graph -->
 	<meta property="og:title" content="Work - Nino Chavez" />
-	<meta property="og:description" content="Things I've built — production platforms, AI tools, and experiments. The work behind the signal." />
+	<meta property="og:description" content="Things I've built — production platforms, AI tools, side projects." />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://ninochavez.co/work" />
 

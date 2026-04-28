@@ -5,7 +5,7 @@
 	const interests = [
 		{
 			title: 'Photography',
-			description: 'Action sports and volleyball. I run Flickday Media for tournament coverage—raw, fast, player-first. 20,000+ photos and counting.',
+			description: 'Action sports and volleyball. I run Flickday Media for tournament coverage. 20,000+ photos in the archive.',
 			link: 'https://flickdaymedia.com'
 		},
 		{
@@ -20,7 +20,7 @@
 		},
 		{
 			title: 'Building',
-			description: 'AI-native software shipped at architect leverage. Rally HQ, Signal X Studio, and whatever else is compiling today.',
+			description: 'Software built with AI agents. Rally HQ, Signal X Studio, and whatever else is compiling today.',
 			link: '/#labs'
 		}
 	];
@@ -48,14 +48,14 @@
 	<title>About - Nino Chavez</title>
 	<meta
 		name="description"
-		content="AI-native architect shipping signals from code, cameras, sound, and words. Chicago."
+		content="Photography, music, writing, and software. Nino Chavez, Chicago."
 	/>
 
 	<!-- Open Graph -->
 	<meta property="og:title" content="About - Nino Chavez" />
 	<meta
 		property="og:description"
-		content="AI-native architect shipping signals from code, cameras, sound, and words. Chicago."
+		content="Photography, music, writing, and software. Nino Chavez, Chicago."
 	/>
 	<meta property="og:type" content="profile" />
 	<meta property="og:url" content="https://ninochavez.co/about" />
@@ -65,7 +65,7 @@
 	<meta name="twitter:title" content="About - Nino Chavez" />
 	<meta
 		name="twitter:description"
-		content="AI-native architect shipping signals from code, cameras, sound, and words. Chicago."
+		content="Photography, music, writing, and software. Nino Chavez, Chicago."
 	/>
 
 </svelte:head>
@@ -79,20 +79,17 @@
 
 				<div class="max-w-2xl space-y-6 text-lg text-neutral-300 leading-relaxed">
 					<p>
-						I'm Nino. I live in Chicago. I direct the build the way I shoot a frame —
-						reading the moment, selecting the one that holds, and shipping something real from it.
+						I'm Nino. I live in Chicago.
 					</p>
 
 					<p>
-						The thread connecting everything I make is the same instinct: cut through the noise,
-						find what matters. A decisive moment at the net. The groove that makes a room move.
-						The architecture pattern that actually survives production. The sentence that says
-						what it means.
+						I make things across a few mediums — software, photographs, music, essays.
+						The projects on this site are a better window into how I think than a résumé.
 					</p>
 
 					<p>
 						I've been writing code since 1999 and building with AI agents since the tools
-						existed. The projects on this site say more about how I think than any resume would.
+						existed. Day job is product architect at commerce.com.
 					</p>
 				</div>
 			</div>

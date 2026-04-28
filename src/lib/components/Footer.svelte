@@ -65,7 +65,7 @@
         <div class="mb-8">
           <h3 class="text-3xl font-black text-white mb-4 tracking-tight">Nino Chavez</h3>
           <p class="text-white/50 text-base leading-relaxed max-w-md">
-            Enterprise architect building AI-native commerce platforms. 25 years transforming complex systems into scalable infrastructure that processes billions.
+            Photography, music, writing, and software. Day job: product architect at commerce.com.
           </p>
         </div>
 

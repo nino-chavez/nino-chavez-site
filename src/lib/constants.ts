@@ -5,10 +5,10 @@ import type { InsightArticle, Project } from './types';
 export const PROJECTS: Project[] = [
 	{
 		id: 'ai-native-portfolio',
-		title: 'AI-Native Portfolio',
-		subtitle: 'This site — built with SvelteKit and AI-accelerated workflows',
+		title: 'Portfolio',
+		subtitle: 'This site — SvelteKit, hosted on Vercel',
 		description:
-			'Production portfolio built with SvelteKit. Centralized copy management, lazy-loaded sections, EXIF-aware photo modals, and automated Playwright audits for visual QA and accessibility.',
+			'Personal portfolio. SvelteKit, centralized copy, lazy-loaded sections, EXIF photo modals, Playwright visual checks.',
 		category: 'ai-native-systems',
 		technologies: ['SvelteKit', 'Svelte 4', 'TypeScript', 'Tailwind CSS', 'Playwright', 'Vercel'],
 		featured: true,
