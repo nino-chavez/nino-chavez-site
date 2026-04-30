@@ -5,7 +5,8 @@
 	import '@fontsource/inter/400.css';
 	import '@fontsource/inter/600.css';
 	import '@fontsource/inter/900.css';
-	import '@fontsource/bebas-neue/400.css';
+	// Bebas Neue is self-hosted in static/fonts with font-display: optional
+	// (declared in app.css). Avoids CLS from font swap on the hero headline.
 	import '@fontsource/space-grotesk/300.css';
 	import '@fontsource/space-grotesk/400.css';
 	import '@fontsource/space-grotesk/500.css';
