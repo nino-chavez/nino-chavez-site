@@ -5,6 +5,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Self-hosted Bebas Neue with font-display: optional.
+ * The hero headline uses clamp(3rem, 15vw, 14rem); a swap from sans-serif
+ * fallback to Bebas Neue at that size produces a measurable CLS (~0.138).
+ * `optional` blocks the swap entirely — first paint may use the fallback,
+ * but the font loads from cache on subsequent visits. Preloaded in app.html.
+ */
+@font-face {
+	font-family: 'Bebas Neue';
+	font-style: normal;
+	font-weight: 400;
+	font-display: optional;
+	src: url('/fonts/bebas-neue-400.woff2') format('woff2');
+}
+
 @layer base {
 	html {
 		scroll-behavior: smooth;
