@@ -78,20 +78,12 @@
       "destination": "https://code-to-cognition.vercel.app/labs/code-to-cognition/:path*"
     },
     {
-      "source": "/labs",
-      "destination": "https://labs.ninochavez.co/labs"
-    },
-    {
-      "source": "/labs/code-to-cognition",
+      "source": "/code-to-cognition",
       "destination": "https://code-to-cognition.vercel.app/labs/code-to-cognition"
     },
     {
-      "source": "/labs/code-to-cognition/:path*",
+      "source": "/code-to-cognition/:path*",
       "destination": "https://code-to-cognition.vercel.app/labs/code-to-cognition/:path*"
-    },
-    {
-      "source": "/labs/:path*",
-      "destination": "https://labs.ninochavez.co/labs/:path*"
     }
   ],
   "headers": [

@@ -260,7 +260,7 @@
 						</div>
 						<div class="flex items-center gap-4 text-neutral-600 text-xs">
 							<span class="group-hover:text-lime-400 transition-colors">SoundCloud</span>
-							<a href="https://www.mixcloud.com/ninochavez/" target="_blank" rel="noopener noreferrer" class="hover:text-lime-400 transition-colors">Mixcloud</a>
+							<button on:click={(e) => { e.preventDefault(); window.open('https://www.mixcloud.com/ninochavez/', '_blank'); }} class="hover:text-lime-400 transition-colors">Mixcloud</button>
 						</div>
 					</div>
 					<div class="absolute bottom-0 left-0 w-full h-1 bg-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
