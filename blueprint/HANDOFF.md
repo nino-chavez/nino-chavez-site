@@ -41,6 +41,8 @@ Hero claim (locked, do not relitigate): **"Context engineer. I _instrument_ the 
 ## What's done (commits on `redesign/v3-context-engineer`)
 
 ```
+61ef1e7  feat(v3): wire homepage, /about, /practice, /contact — Phase 3a content
+39e0f61  feat(aeo): rewrite person/expertise/experience JSON for context-engineer positioning
 757a27f  feat(blueprint): /blueprint route — site-as-prototype review portal
 3a19271  feat(blueprint): bc-subs pattern adoption — DESIGN-PRINCIPLES + 5 ADRs + README
 39d324a  feat(content): Phase 2 drafts — hero, about, practice, AEO payloads, work-data refresh
@@ -48,6 +50,8 @@ Hero claim (locked, do not relitigate): **"Context engineer. I _instrument_ the 
 ```
 
 **`/blueprint/` route shipped:** Live at <https://redesign-v3-context-engineer.ninochavez-main.pages.dev/blueprint> once the CF Pages deploy completes. Prerendered, noindex/nofollow, violet/Inter/JetBrains-Mono styling. Source: `src/routes/blueprint/{+page.svelte,+page.ts,[...slug]/+page.svelte,[...slug]/+page.ts,blueprint-docs.ts}`. Link resolver rewrites in-blueprint relative refs to `/blueprint/<slug>` and out-of-blueprint refs to GitHub source URLs on the redesign branch.
+
+**Phase 3a shipped:** AEO endpoints, work-data refresh, homepage, `/about`, `/practice`, `/contact` all wired. Every refusal in `DESIGN-PRINCIPLES.md` §10 is removed from the new surfaces (no lime, no Bebas, no bento, no volleyball hero, no 4-way grid, no Cal.com). `aegis`/`signal-forge`/`agent-os` deleted from work-data — they live on `/practice` toolchain. `aix`/`cix`/`six`/`commerce-prompt-analyzer` demoted to honorable mentions at order 11-14. New `Schematic.svelte` component renders `forge-pipeline` and `hesitation-fold` SVG placeholders inline (Phase 3b replaces with hand-drafted final art). All 4 new routes export `prerender = true`.
 
 Also on other repo `main` branches (already pushed):
 - `nino-chavez/atelier` — `f53f5db` custom domain bind: <https://atelier.ninochavez.co>
@@ -62,20 +66,20 @@ These are authorized. Execute without re-confirming.
 
 Live at `<preview>/blueprint`. Reference implementation lives at `src/routes/blueprint/`. Do NOT redo this work. If a future change is needed (new doc type, new group, theming pass), edit the existing files.
 
-### 2. Phase 3a — content wiring (NEXT)
+### 2. ~~Phase 3a — content wiring~~ — SHIPPED (commit `61ef1e7` + `39e0f61`)
 
-Apply Phase 2 drafts (in `blueprint/content/`) to actual SvelteKit code:
-- `blueprint/content/aeo-person.json` → `src/routes/api/person.json/+server.ts` (rewrite payload)
-- `blueprint/content/aeo-expertise.json` → `src/routes/api/expertise.json/+server.ts`
-- `blueprint/content/aeo-experience.json` → `src/routes/api/experience.json/+server.ts`
-- `blueprint/content/work-data-refresh.md` → `src/lib/work-data.ts` (add 5 new lead entries, demote AIX/CIX/SIX/CPA to `featured: false`, delete aegis/signal-forge/agent-os entries which move to /practice)
-- `blueprint/content/hero.md` + `about.md` + `practice.md` → rewrite `src/routes/+page.svelte`, `src/routes/about/+page.svelte`, add `src/routes/practice/+page.svelte`
+All five wires landed: AEO endpoints, `work-data.ts`, `/`, `/about`, `/practice`, `/contact`.
 
-All fully reversible. Push as you go; preview deploys on every commit.
+**Phase 3a follow-up still needed (not blocking 3b/3c):**
+- `/work` index page (`src/routes/work/+page.svelte`) still uses the v2 visual register (status/visibility badges, category chips, runtime filter). Per `03-design-brief.md` it should become `hero-with-thesis → case-study-readout (5 cards in priority order) → honorable-mentions-strip`. Currently functional with refreshed data but visually inconsistent with the v3 surfaces.
+- `/work/[slug]` pages should adopt the case-study composition (`hero-case-study → signature-diagram-opener → agentic-approach-readout → quotable-artifact-block → outcome-readout`). The new schema fields (`pullQuote`, `quotableArtifacts`, `schematic`) are populated on the 5 lead entries — just need a renderer that consumes them.
+- Honorable mentions strip (`getHonorableMentions()`) needs a placement on `/work` index.
 
 ### 3. Phase 3b — schematic SVGs
 
 Hand-draft 7 SVGs per `blueprint/03-design-brief.md` §3. Save under `static/case-studies/<slug>/schematic.svg` and `static/schematics/`. Reference from work-data entries (`schematic` field per the schema additions in `blueprint/content/work-data-refresh.md`).
+
+Two placeholders currently render inline via `src/lib/components/Schematic.svelte`: `forge-pipeline` (homepage) and `hesitation-fold` (`/practice`). They're at the correct visual register (1.5px stroke, no fill, mono labels, violet spine) so the layout reads as intentional, not unfinished. Replace by either: (a) finalizing the inline SVGs in `Schematic.svelte` with the hand-drafted geometry, or (b) externalizing to `static/schematics/*.svg` and updating the component to `<img src>`. The 5 case-study schematics (rally-hq-blueprint-pipeline, atelier-12-tool-mcp, ask-bc-hybrid-arch, photography-cf-pipeline, bc-subscriptions-dual-track) are not yet drafted; the `schematic` field on each work-data entry points to the target filename.
 
 ### 4. Phase 3c — finish Cloudflare migration
 
