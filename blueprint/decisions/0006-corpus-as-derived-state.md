@@ -64,6 +64,32 @@ Specifically:
 - **Catalog stays in sync.** When a new source is added to `tools/derive-corpus/sources.ts`, the human-readable `blueprint/content/askdad-corpus-catalog.md` gets a row added too. Documentation drift here is recoverable but should be caught at review.
 - **GH Action stays event-triggered, not cron-triggered.** If a `schedule:` trigger ever shows up in the workflow file, that PR contradicts this ADR.
 
+## Secret management
+
+Per `~/.claude/CLAUDE.md`'s 1Password-as-standard-convention rule, the
+workflow pulls secrets from 1Password at runtime via the
+`1password/load-secrets-action@v2` action. The only static GH Actions
+secret is `OP_SERVICE_ACCOUNT_TOKEN` (a 1Password service account token
+with read access to the "Developer Secrets" vault).
+
+Referenced 1Password items:
+
+| GH env var             | 1Password reference                                         |
+|------------------------|-------------------------------------------------------------|
+| `OPENAI_API_KEY`       | `op://Developer Secrets/OpenAI labs/credential`             |
+| `SUPABASE_URL`         | `op://Developer Secrets/Supabase ask-dad/url`               |
+| `SUPABASE_SERVICE_KEY` | `op://Developer Secrets/Supabase ask-dad/service_role_key`  |
+
+bc-subscriptions secrets were not reusable — that project uses
+BigCommerce + Cloudflare Workers bindings, not the OpenAI + Supabase
+stack ask-dad needs.
+
+**Pre-launch blocker:** the `Supabase ask-dad` 1Password item currently
+has `url` set to `http://127.0.0.1:54521` (local-dev). Production
+ingestion requires the cloud Supabase URL (`https://<project>.supabase.co`)
+in that field. Updating the field in 1Password is a one-time setup task;
+the workflow will fail with a `Connection refused` error until then.
+
 ## References
 
 - `tools/derive-corpus/sources.ts` — the executable spec

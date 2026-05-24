@@ -5,8 +5,23 @@
 # scheduled background agents are refused per prior Nino direction; the
 # artifact change is the event.
 #
-# If this file ever grows a `schedule:` trigger, that PR contradicts
-# ADR-0006 and should be reverted.
+# Secrets are pulled from 1Password at runtime via the official
+# 1password/load-secrets-action — matches the global convention recorded
+# in ~/.claude/CLAUDE.md ("save sensitive data in 1Password as the
+# standard convention going forward"). The ONLY GitHub Actions repo
+# secret required is OP_SERVICE_ACCOUNT_TOKEN (1Password service account
+# token with read access to the "Developer Secrets" vault).
+#
+# 1Password items referenced:
+#   - Supabase ask-dad → service_role_key, url
+#   - OpenAI labs      → credential
+#
+# Production-URL warning: the "Supabase ask-dad" item's `url` field
+# currently resolves to http://127.0.0.1:54521 (local-dev). Before this
+# workflow can succeed against the deployed corpus, that field needs to
+# hold the cloud Supabase URL (https://<project>.supabase.co). Nino's
+# call to update the 1Password item; the workflow will fail with a
+# meaningful error until then.
 
 name: ingest-askdad-corpus
 
@@ -14,17 +29,14 @@ on:
   push:
     branches: [main]
     paths:
-      # Only re-derive when content that's actually in the corpus changes.
-      # This keeps the ingester cost-bounded and avoids running on unrelated
-      # site edits (CSS-only commits, dependency bumps, etc).
       - 'blueprint/**'
       - 'src/lib/server/askdad/**'
       - 'tools/derive-corpus/**'
-  workflow_dispatch: # manual trigger from Actions tab
+  workflow_dispatch:
 
 concurrency:
   group: askdad-corpus
-  cancel-in-progress: false # never cancel in-flight ingestion; corpus rows are mid-mutation
+  cancel-in-progress: false
 
 jobs:
   ingest:
@@ -42,10 +54,17 @@ jobs:
       - name: Install deps
         run: npm ci
 
+      - name: Load secrets from 1Password
+        uses: 1password/load-secrets-action@v2
+        with:
+          export-env: true
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+          OPENAI_API_KEY: op://Developer Secrets/OpenAI labs/credential
+          SUPABASE_URL: op://Developer Secrets/Supabase ask-dad/url
+          SUPABASE_SERVICE_KEY: op://Developer Secrets/Supabase ask-dad/service_role_key
+
       - name: Run derive-corpus
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           GITHUB_WORKSPACE: ${{ github.workspace }}
         run: npx tsx tools/derive-corpus/derive-corpus.ts
