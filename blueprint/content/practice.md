@@ -58,7 +58,7 @@ Shared Claude Code skills + subagents packaged for installation by others. 9 ski
 
 ### 6. big-blueprint
 
-7-stage agent-assisted methodology for product-planning initiatives. Research → design principles → prototype → fact-check → docs → deploy → iterate. Used on Rally HQ (`blueprint.rallyhq.app`) and `bc-subscriptions`.
+7-stage agent-assisted methodology for product-planning initiatives. Research → design principles → prototype → fact-check → docs → deploy → iterate. Extracted March 2026 from a 48-hour P&P initiative; A/B-tested at 70–80% quality in 10–15× less time, with six template gaps caught and re-tested. Used on Rally HQ (`blueprint.rallyhq.app`), `bc-subscriptions`, and the redesign of this site.
 
 > **Enforces:** every product decision has a recorded source in the synthesis layer; planning state derives from artifacts, not whiteboard memory.
 

@@ -12,9 +12,10 @@
 	const ribbon = [
 		{ value: '56+', label: 'projects shipped', detail: 'under ~/Workspace/dev' },
 		{
-			value: '5',
-			label: 'lathes in the production line',
-			detail: 'specchain → big-blueprint → forge-brand → forge-signal → gen-images'
+			value: '4 projects',
+			label: 'through the chain',
+			detail:
+				'P&P origin → bc-subscriptions → rally-hq → website-nc-v3 · A/B at 70–80% quality, 10–15× faster'
 		},
 		{
 			value: '746',
@@ -102,6 +103,10 @@
 		Most engineers configure Claude.<br />
 		I <em>instrument</em> it. The artifacts above are how.
 	</p>
+	<p class="closing-receipts">
+		48 hours · 11 pages · 4 strategy docs · 30+ cited sources · A/B'd at 70–80% quality · 4
+		projects ran through the chain
+	</p>
 	<p class="closing-row">
 		<a href="mailto:nino@ninochavez.co">nino@ninochavez.co</a>
 		<span class="sep">·</span>
@@ -188,6 +193,16 @@
 	.closing-thesis em {
 		font-style: italic;
 		color: var(--color-brand-violet);
+	}
+
+	.closing-receipts {
+		font-family: var(--font-mono);
+		font-size: var(--type-sm);
+		color: var(--text-muted);
+		margin: 0 0 var(--space-6);
+		padding-bottom: var(--space-4);
+		border-bottom: 1px solid var(--border-subtle);
+		line-height: 1.6;
 	}
 
 	.closing-row {

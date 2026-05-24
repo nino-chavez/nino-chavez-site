@@ -24,7 +24,7 @@
 		{
 			name: 'big-blueprint',
 			subtitle: '02 · spec → archetype + design brief',
-			body: 'Routes a spec through a small set of archetypes (portfolio-brand, commerce, internal-tool, etc.) and emits the design brief the rest of the chain consumes. 7-stage pipeline: research → principles → prototype → fact-check → docs → deploy → iterate.',
+			body: 'Routes a spec through a small set of archetypes (portfolio-brand, commerce, internal-tool, etc.) and emits the design brief the rest of the chain consumes. 7-stage pipeline: research → principles → prototype → fact-check → docs → deploy → iterate. Extracted March 2026 from a 48-hour P&P initiative; A/B-tested at 70–80% quality in 10–15× less time, with six template gaps caught and re-tested; currently applied to bc-subscriptions, rally-hq, and the redesign of this site.',
 			enforces:
 				'every product decision has a recorded source in the synthesis layer; planning state derives from artifacts, not whiteboard memory.',
 			href: 'github.com/nino-chavez/big-blueprint',

@@ -32,18 +32,24 @@
 	</p>
 
 	<p>
-		What changed for me in May 2025 was realizing that AI coding agents are not a faster
-		autocomplete. They're a different working unit — closer to a junior engineer with no memory
-		and no opinions. Productive use requires the same things productive teams have always needed:
-		clear specs, conventions, decision logs, guardrails, and a record of what was tried. So I
-		started building those — a five-link production line that takes intent through spec
-		(<code>specchain</code>) and archetype routing (<code>big-blueprint</code>) into a typed
-		design system (<code>forge-brand</code>) and voiced prose and imagery
-		(<code>forge-signal</code>, <code>gen-images</code>). The chain is the lathe; the case studies
-		are what came off it. The single public piece is
-		<a href="https://github.com/nino-chavez/ai-champions-kit" rel="noopener"
-			>ai-champions-kit</a
-		> — the practice packaged for others. <a href="/practice">/practice</a> has the full inventory.
+		Where the toolchain came from: March 2026. About ten months after I'd started taking AI
+		coding agents seriously, I built a Pricing &amp; Packaging initiative for a commerce
+		platform — 11 prototype pages, an AI billing agent with 8 tools, 4 strategy documents
+		validated against production code, 30+ cited sources. About 48 hours of work, mostly
+		prompts. Zero lines of code or copy by hand. The artifacts shipped. The interesting
+		question came around hour 18: <em>can this happen again from a template, without me in the
+		feedback loop?</em> That extracted into <code>big-blueprint</code>, A/B'd at 70–80% quality
+		in 10–15× less time, then ran on <code>bc-subscriptions</code>, <code>rally-hq</code>, and
+		the redesign of this site. Each pass made the chain sharper.
+	</p>
+
+	<p>
+		The chain is the lathe: <code>specchain</code> (intent → spec → tasks) →
+		<code>big-blueprint</code> (archetype routing) → <code>forge-brand</code> (typed design
+		system) → <code>forge-signal</code> (voiced prose) → <code>gen-images</code> (visuals).
+		Five links, each consuming the prior link's output. The single public piece is
+		<a href="https://github.com/nino-chavez/ai-champions-kit" rel="noopener">ai-champions-kit</a> —
+		the practice packaged for others. <a href="/practice">/practice</a> has the full inventory.
 	</p>
 
 	<p>

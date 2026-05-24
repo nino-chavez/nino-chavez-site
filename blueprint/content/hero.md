@@ -22,7 +22,7 @@ Numbers are defensible and pulled from the inventory + Poe corpus. Each card has
 | Card | Value | Caption |
 |---|---|---|
 | 1 | **56+** | projects shipped under `~/Workspace/dev` |
-| 2 | **5** | lathes in the production line — specchain → big-blueprint → forge-brand → forge-signal → gen-images |
+| 2 | **4 projects** | through the chain — P&P origin → bc-subscriptions → rally-hq → website-nc-v3 · A/B at 70–80% quality, 10–15× faster |
 | 3 | **746** | voice signals codified across 62 projects (voice corpus) |
 
 The third card is the differentiator. *56+ projects* and *5 lathes* are structural claims any senior engineer could make on a good day. *746 signals across 62 projects* is a specific, quantitative artifact that only exists because Nino built it. It's the hook for the `/practice` page.
@@ -73,7 +73,11 @@ Italic emphasis on **instrument**, schematic-mono frame:
 > Most engineers configure Claude.
 > I _instrument_ it. The artifacts above are how.
 
-Followed by single mono row: `email · github · linkedin · /writing · /contact`.
+Followed by a mono receipts row:
+
+> 48 hours · 11 pages · 4 strategy docs · 30+ cited sources · A/B'd at 70–80% quality · 4 projects ran through the chain
+
+Then a single mono contact row: `email · github · linkedin · /writing · /contact`.
 
 ---
 
