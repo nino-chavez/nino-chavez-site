@@ -3,8 +3,9 @@
 	// Self-hosted fonts (eliminates external Google Fonts requests)
 	import '@fontsource/inter/300.css';
 	import '@fontsource/inter/400.css';
+	import '@fontsource/inter/500.css';
 	import '@fontsource/inter/600.css';
-	import '@fontsource/inter/900.css';
+	import '@fontsource/inter/700.css';
 	// Bebas Neue is self-hosted in static/fonts with font-display: optional
 	// (declared in app.css). Avoids CLS from font swap on the hero headline.
 	import '@fontsource/space-grotesk/300.css';
@@ -15,21 +16,40 @@
 
 	import { onMount } from 'svelte';
 	import { dev } from '$app/environment';
+	import { page } from '$app/stores';
 	import Toast from '$lib/components/Toast.svelte';
+	import Masthead from '$lib/components/compositions/Masthead.svelte';
+	import SiteFooter from '$lib/components/compositions/SiteFooter.svelte';
 
 	let mounted = false;
+
+	// Routes that get their own chrome:
+	// - /blueprint/* — stakeholder review portal with its own scaffolding masthead
+	// - /v1, /now, /links, /privacy, /ai/*, /work* — v2 surfaces (haven't been
+	//   refactored yet); they still ship their own headers inline. The v3
+	//   chrome only wraps the routes that have been refactored to the design
+	//   system. Once /work etc are refactored, they get added here.
+	$: pathname = $page.url.pathname;
+	$: useV3Chrome =
+		pathname === '/' ||
+		pathname === '/about' ||
+		pathname === '/practice' ||
+		pathname === '/contact' ||
+		pathname === '/design-system' ||
+		pathname === '/writing' ||
+		pathname.startsWith('/work');
 
 	onMount(() => {
 		mounted = true;
 
-		// Initialize performance monitoring (production only)
+		// Initialize performance monitoring (production only).
+		// TODO Phase 3c — drop @vercel/* in favor of CF Web Analytics.
 		if (!dev && typeof window !== 'undefined') {
-			// Vercel Analytics
 			import('@vercel/analytics').then(({ inject }) => inject());
-			// Vercel Speed Insights
-			import('@vercel/speed-insights/sveltekit').then(({ injectSpeedInsights }) => injectSpeedInsights());
+			import('@vercel/speed-insights/sveltekit').then(({ injectSpeedInsights }) =>
+				injectSpeedInsights()
+			);
 
-			// Web Vitals monitoring
 			import('web-vitals').then(({ onCLS, onFID, onLCP, onFCP, onTTFB }) => {
 				onCLS((metric) => console.log('CLS:', metric));
 				onFID((metric) => console.log('FID:', metric));
@@ -42,12 +62,25 @@
 </script>
 
 <svelte:head>
-	 <title>Nino Chavez</title>
-	 <meta name="description" content="Photography, music, writing, and software. Nino Chavez, Chicago." />
+	<title>Nino Chavez — Context Engineer</title>
+	<meta
+		name="description"
+		content="Context engineer. Codified a working practice for shipping production software with AI agents. Open toolchain, public case studies."
+	/>
 </svelte:head>
 
-<div class="min-h-screen bg-neutral-900 text-white" class:mounted>
-	<slot />
+<div class="root" class:mounted>
+	{#if useV3Chrome}
+		<div class="site">
+			<Masthead />
+			<main>
+				<slot />
+			</main>
+			<SiteFooter />
+		</div>
+	{:else}
+		<slot />
+	{/if}
 </div>
 
 <!-- Global Toast Notifications -->
@@ -58,13 +91,30 @@
 		scroll-behavior: smooth;
 	}
 
-	.mounted {
-		opacity: 1;
-	}
-
 	:global(*) {
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
+	}
+
+	.root {
+		min-height: 100vh;
+		background: var(--surface-background);
+		color: var(--text-primary);
+		font-family: var(--font-body);
+	}
+
+	.mounted {
+		opacity: 1;
+	}
+
+	.site {
+		max-width: var(--container-max);
+		margin: 0 auto;
+		padding: var(--space-8) var(--space-6) var(--space-16);
+	}
+
+	main {
+		display: block;
 	}
 </style>

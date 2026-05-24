@@ -1,0 +1,139 @@
+/*
+ * Design tokens — single source of truth.
+ *
+ * Mirror of DESIGN.md (project root). Every component CSS in the v3 surface
+ * must consume these custom properties. Hex literals, magic ems, and
+ * one-off durations are drift and should be replaced on sight.
+ *
+ * Authoring rules:
+ * - Brand colors: only the three named in DESIGN.md (dark / violet / light)
+ * - Type: Inter (display + body) + JetBrains Mono. No third family.
+ * - Spacing: powers of 0.25rem from --space-1 (0.25rem) to --space-32 (8rem)
+ * - Motion: ease-out 0.16,1,0.3,1 is the canonical curve; durations from --dur-*
+ *
+ * The /design-system route renders every token below live; treat that page
+ * as the visual proof that any new component must match.
+ */
+
+:root {
+	/* ───── color tokens ───────────────────────────────────────────────── */
+	--color-brand-dark: #0a0a0f;
+	--color-brand-violet: #8b5cf6; /* primary accent — single saturated hue */
+	--color-brand-violet-hover: #a78bfa; /* violet-400 */
+	--color-brand-violet-soft: #c4b5fd; /* violet-300 — italic emphasis text */
+	--color-brand-light: #f0f0f5;
+
+	/* Neutral ramp — surface hierarchy lives here, not in component CSS */
+	--color-neutral-50: #fafafa;
+	--color-neutral-100: #f5f5f5;
+	--color-neutral-200: #e5e5e5;
+	--color-neutral-300: #d4d4d4;
+	--color-neutral-400: #a3a3a3;
+	--color-neutral-500: #737373;
+	--color-neutral-600: #525252;
+	--color-neutral-700: #404040;
+	--color-neutral-800: #262626;
+	--color-neutral-900: #171717;
+	--color-neutral-950: #0a0a0a;
+
+	/* Surfaces — composed from the ramp; reference these, not raw neutrals */
+	--surface-background: var(--color-brand-dark);
+	--surface-card: rgba(255, 255, 255, 0.02);
+	--surface-card-hover: rgba(139, 92, 246, 0.05);
+	--surface-elevated: rgba(139, 92, 246, 0.04);
+
+	/* Borders */
+	--border-subtle: rgba(255, 255, 255, 0.06);
+	--border-base: rgba(255, 255, 255, 0.08);
+	--border-violet-subtle: rgba(139, 92, 246, 0.2);
+	--border-violet: rgba(139, 92, 246, 0.25);
+	--border-violet-strong: rgba(139, 92, 246, 0.4);
+
+	/* Text */
+	--text-primary: var(--color-brand-light);
+	--text-secondary: #c4c4cd; /* hue-matched neutral-300 */
+	--text-muted: #a8a8b2;
+	--text-faint: #7a7a85;
+	--text-disabled: #4a4a55;
+	--text-link: var(--color-brand-violet-hover);
+	--text-link-hover: var(--color-brand-violet-soft);
+	--text-accent: var(--color-brand-violet);
+
+	/* ───── typography tokens ──────────────────────────────────────────── */
+	--font-display: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+	--font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+	/* Fluid scale — matches DESIGN.md typography.scale */
+	--type-hero: clamp(3rem, 2.25rem + 3.75vw, 5rem);
+	--type-display: clamp(2.25rem, 1.75rem + 2.5vw, 3.75rem);
+	--type-h1: clamp(1.875rem, 1.5rem + 1.875vw, 2.75rem);
+	--type-h2: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+	--type-h3: 1.25rem;
+	--type-lead: 1.125rem;
+	--type-body: 1rem;
+	--type-sm: 0.875rem;
+	--type-xs: 0.75rem;
+
+	/* Leading */
+	--leading-hero: 1.05;
+	--leading-heading: 1.2;
+	--leading-body: 1.6;
+	--leading-relaxed: 1.75;
+
+	/* Tracking */
+	--tracking-tighter: -0.03em;
+	--tracking-tight: -0.02em;
+	--tracking-normal: 0;
+	--tracking-wide: 0.02em;
+	--tracking-mono: 0.04em;
+	--tracking-kicker: 0.12em;
+
+	/* ───── spacing tokens ─────────────────────────────────────────────── */
+	--space-1: 0.25rem;
+	--space-2: 0.5rem;
+	--space-3: 0.75rem;
+	--space-4: 1rem;
+	--space-5: 1.25rem;
+	--space-6: 1.5rem;
+	--space-8: 2rem;
+	--space-10: 2.5rem;
+	--space-12: 3rem;
+	--space-16: 4rem;
+	--space-20: 5rem;
+	--space-24: 6rem;
+	--space-32: 8rem;
+
+	/* ───── layout tokens ──────────────────────────────────────────────── */
+	--container-max: 72rem; /* page container */
+	--content-max: 44rem; /* prose column */
+	--prose-max: 42rem; /* tighter prose, /about lede */
+	--header-height: 4rem;
+	--touch-target-min: 2.75rem;
+	--gutter: var(--space-4);
+	--gutter-md: var(--space-6);
+	--gutter-lg: var(--space-8);
+
+	/* ───── motion tokens ──────────────────────────────────────────────── */
+	--dur-fast: 150ms;
+	--dur-base: 250ms;
+	--dur-slow: 500ms;
+	--dur-hero: 800ms;
+	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+	--ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+	/* ───── elevation ──────────────────────────────────────────────────── */
+	--shadow-sm: 0 2px 8px rgb(0 0 0 / 0.4);
+	--shadow-md: 0 12px 32px rgb(0 0 0 / 0.5);
+	--shadow-focus: 0 0 0 3px rgb(139 92 246 / 0.4);
+}
+
+/* Reduced motion — disable all token-driven transitions */
+@media (prefers-reduced-motion: reduce) {
+	:root {
+		--dur-fast: 0ms;
+		--dur-base: 0ms;
+		--dur-slow: 0ms;
+		--dur-hero: 0ms;
+	}
+}

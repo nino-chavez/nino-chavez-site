@@ -1,4 +1,7 @@
-/* Modern Animation System - must be first */
+/* Design tokens — must load before Tailwind base so :root cascades correctly */
+@import './lib/styles/tokens.css';
+
+/* Modern Animation System */
 @import './lib/styles/modernAnimations.css';
 
 @tailwind base;
