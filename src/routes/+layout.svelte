@@ -38,7 +38,15 @@
 		pathname === '/design-system' ||
 		pathname === '/writing' ||
 		pathname === '/now' ||
+		pathname === '/links' ||
+		pathname === '/ai' ||
+		pathname === '/ai/learn' ||
+		pathname.startsWith('/ai/learn/') ||
 		pathname.startsWith('/work');
+
+	// /ai/ask intentionally NOT in the v3 chrome list — it owns its full
+	// viewport for the chat interface (per DESIGN-PRINCIPLES.md §6:
+	// supplementary, not headline; its own visual register).
 
 	onMount(() => {
 		mounted = true;

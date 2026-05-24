@@ -83,11 +83,6 @@ sitemap:
 cut_routes:
   - path: "/v1"
     reason: "Parallel old homepage with custom font-rival typography. Dead route."
-  - path: "/ai/learn/*"
-    reason: "8 unfinished course sub-pages. Competing course-seller framing."
-    instances: [architect, builder, strategist, enterprise, corpus, author, explorer, voice]
-  - path: "/ai/ask"
-    reason: "RAG chat with Virtual Nino. Chatbot novelty dilutes seriousness."
   - path: "/ai/build"
     reason: "Part of /ai/ scaffolding being collapsed."
   - path: "/ai/reference"
@@ -95,14 +90,22 @@ cut_routes:
   - path: "/api/cal/*"
     reason: "Cal.com booking funnel. Transactional framing — explicit cut per Diagnose."
     instances: [event-types, availability, webhooks]
+    status: "CUT 2026-05-25 — files deleted, privacy page updated, no references remain"
+
+# Routes preserved (originally proposed for cut, direction reversed 2026-05-25):
+preserved_routes:
+  - path: "/ai/learn"
+    reason: "8-track curriculum is the mechanism for sharing the practice publicly without sharing the lathes. Per Nino: 'share the concepts of the agentic workflows and principles without having to share the repo entirely.' Direction reversed; DESIGN-PRINCIPLES.md §5 revised."
+    instances: [architect, builder, strategist, enterprise, corpus, author, explorer, voice]
+  - path: "/ai/ask"
+    reason: "RAG surface preserved as supplementary interface, not primary credibility. DESIGN-PRINCIPLES.md §6 revised — RAG is allowed when grounded in published artifacts and not headline."
   - path: "/api/ask/chat"
-    reason: "Backend for /ai/ask."
+    reason: "Backend for /ai/ask — preserved with it."
   - path: "/links"
-    reason: "Bio-link landing — duplicated by /contact. Consolidate."
+    reason: "Bio-link landing — preserved per Nino direction, refactored to v3 design system rather than consolidated into /contact."
   - path: "/now"
-    reason: "Keep but rewrite. Currently lists co-equal hobbies; reframe to lead with practice work."
-    keep: true
-    rewrite: true
+    reason: "Keep but rewrite. Reframe to lead with practice work."
+    rewrite: "DONE — commit 870566c"
 
 environment_variables:
   - name: "RESEND_API_KEY"

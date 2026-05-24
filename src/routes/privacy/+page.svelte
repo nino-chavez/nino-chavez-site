@@ -41,8 +41,8 @@
 
       <h3>1.1 Information You Provide</h3>
       <ul>
-        <li><strong>Contact Information:</strong> If you book a consultation via Cal.com, I receive your name, email, and scheduling preferences</li>
-        <li><strong>Inquiry Details:</strong> Any information you provide when reaching out for consulting or photography services</li>
+        <li><strong>Contact Information:</strong> Email content you send directly to <code>nino@ninochavez.co</code> — name, email address, and the body of your message</li>
+        <li><strong>Inquiry Details:</strong> Any information you provide when reaching out about interesting work, photography, or the toolchain</li>
       </ul>
 
       <h3>1.2 Information Collected Automatically</h3>
@@ -59,8 +59,7 @@
 
       <p>I use collected information to:</p>
       <ul>
-        <li>Respond to your consultation requests and inquiries</li>
-        <li>Schedule meetings and follow up on potential engagements</li>
+        <li>Respond to direct inquiries sent to my email</li>
         <li>Improve the Website's performance and user experience</li>
         <li>Understand how visitors interact with the Website</li>
       </ul>
@@ -79,15 +78,7 @@
         for more information.
       </p>
 
-      <h3>3.2 Cal.com</h3>
-      <p>
-        I use Cal.com for consultation booking. When you schedule a meeting, Cal.com
-        collects your name, email, and scheduling preferences. See
-        <a href="https://cal.com/privacy" target="_blank" rel="noopener noreferrer">Cal.com's Privacy Policy</a>
-        for more information.
-      </p>
-
-      <h3>3.3 AI Crawlers</h3>
+      <h3>3.2 AI Crawlers</h3>
       <p>
         This Website intentionally allows AI crawlers (such as GPTBot and ClaudeBot) to
         index its content for Answer Engine Optimization purposes. This means information

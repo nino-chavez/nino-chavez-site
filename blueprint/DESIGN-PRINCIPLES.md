@@ -38,21 +38,21 @@ No equal-weight grid presenting Software / Photography / Music / Writing as para
 
 **Enforcement:** [ADR-0001](./decisions/0001-positioning-context-engineer.md). Diagnose explicitly cuts the v2 interests grid.
 
-### 5. No course / education / training pitch
+### 5. No paid course / curriculum-tier cards / membership funnel
 
-No `/ai/learn` surface, no "Learn X with Nino" framing, no AI-course offerings, no curriculum-tier cards. The practice is documented openly on `/practice`; visitors can read it; that's the surface.
+`/ai/learn` is **preserved** as free, ungated reference material — 8 tracks (Explorer, Builder, Architect, Strategist, Author, Voice, Corpus, Enterprise) that document HOW the practice can be applied by others. Refused: payment, gating, "Learn X with Nino" packaging, tier cards, membership signup, course-completion certificates, or any framing that reads as a paid product.
 
-**Why:** course-seller framing competes directly with the hireable-context-engineer framing. The current v2 site has 8 `/ai/learn/*` sub-pages marked `noindex,nofollow` — the fact that they're un-indexable suggests they were already abandoned; v3 deletes them.
+**Why:** course-seller framing competes with hireable-context-engineer framing. Open reference material does NOT — it demonstrates the practice without selling it. Per Nino's intent: "share the concepts of the agentic workflows and principles used here without having to share the repo entirely." `/ai/learn` is that mechanism.
 
-**Enforcement:** `02-prescription.yml` `cut_routes` block. Phase 4 destructive cut.
+**Enforcement:** No pricing tables, no "enroll" CTAs, no email-gate. Each track surfaces structure (levels, artifacts, timelines) as reference, not as a sales funnel. Direction reversed from earlier draft of this file 2026-05-25.
 
-### 6. No RAG-chat / "Virtual Nino" / chatbot novelty
+### 6. RAG / Q&A surfaces are supplementary, never primary
 
-No `/ai/ask` page, no Rive avatar, no conversational interface dressed as a feature.
+`/ai/ask` is **preserved** as a supplementary interface — an alternative entry point grounded in real artifacts (blog posts, case studies, toolchain documentation). Refused: positioning the RAG surface as the headline credibility play, replacing readable toolchain artifacts with conversational extraction, decorative novelty (Rive avatar, "Virtual Nino" personality framing, talking-head conceit).
 
-**Why:** "ask the AI version of me" positions the brand as chatbot novelty, not hireable expert. The credibility play is the toolchain artifacts being readable by humans, not a chatbot demonstrating Nino's voice.
+**Why:** the primary credibility play remains the toolchain artifacts being human-readable. The chatbot is the door for someone who wants to ask one question — not the substitute for browsing the case studies. As long as `/ai/ask` doesn't lead the homepage or replace `/practice` and `/work`, it's an additive surface.
 
-**Enforcement:** `02-prescription.yml` `cut_routes` block. Phase 4 destructive cut.
+**Enforcement:** `/ai/ask` is reachable via direct URL and from `/ai`; not from the primary nav. The chat is grounded in published content; new training data only added from artifacts that already exist on the site (no fabricated training). Direction reversed from earlier draft of this file 2026-05-25.
 
 ### 7. No prescriptive-authority voice
 
