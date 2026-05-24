@@ -50,7 +50,7 @@ Global `/recall` slash commands plus the voice-stack generator that builds the c
 
 ### 5. ai-champions-kit
 
-Shared Claude Code skills + subagents packaged for installation by others. 10 skills, 5 subagents, 5 templates. The practice transferred to other practitioners as a kit.
+Shared Claude Code skills + subagents packaged for installation by others. 9 skills, 5 subagents, 5 templates. The practice transferred to other practitioners as a kit.
 
 > **Enforces:** the practice is reproducible, not personal. If it only works for me, it isn't a practice.
 

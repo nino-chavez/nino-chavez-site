@@ -164,7 +164,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 		schematic: 'rally-hq-blueprint-pipeline.svg',
 		heroImage: '/case-studies/rally-hq/schematic.svg',
 
-		started: '2025-10',
+		started: '2026-01',
 		duration: '7 days initial; ongoing iteration',
 		featured: true,
 		order: 1
@@ -246,7 +246,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 		schematic: 'atelier-12-tool-mcp.svg',
 		heroImage: '/case-studies/atelier/schematic.svg',
 
-		started: '2025-04',
+		started: '2026-04',
 		duration: 'M0–M7 shipped; v1.x scope ongoing',
 		featured: true,
 		order: 2
@@ -326,7 +326,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 		schematic: 'ask-bc-hybrid-arch.svg',
 		heroImage: '/case-studies/ask-bc/schematic.svg',
 
-		started: '2025-08',
+		started: '2026-04',
 		duration: 'Production, ongoing',
 		featured: true,
 		order: 3
@@ -406,7 +406,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 		schematic: 'photography-cf-pipeline.svg',
 		heroImage: '/case-studies/photography/schematic.svg',
 
-		started: '2024-12',
+		started: '2025-10',
 		duration: 'Production, ongoing',
 		featured: true,
 		order: 4
@@ -505,7 +505,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 		schematic: 'bc-subscriptions-dual-track.svg',
 		heroImage: '/case-studies/bc-subscriptions/schematic.svg',
 
-		started: '2025-06',
+		started: '2026-04',
 		duration: 'Active development',
 		featured: true,
 		order: 5
@@ -575,7 +575,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 		heroImage:
 			'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1200&h=800&fit=crop&q=80',
 
-		started: '2024-11',
+		started: '2025-10',
 		duration: 'Ongoing (Phase 22+)',
 		featured: false,
 		order: 11
@@ -638,7 +638,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 		heroImage:
 			'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop&q=80',
 
-		started: '2024-09',
+		started: '2025-11',
 		duration: '7 phases completed',
 		featured: false,
 		order: 12
@@ -753,7 +753,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 		heroImage:
 			'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=800&fit=crop&q=80',
 
-		started: '2024-12',
+		started: '2025-09',
 		duration: '1 week to production',
 		featured: false,
 		order: 14

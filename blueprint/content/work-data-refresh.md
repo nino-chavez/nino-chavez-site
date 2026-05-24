@@ -107,7 +107,7 @@ Lead 1 (rally-hq) and Lead 4 (photography) get this line in the `approach` field
   ],
   schematic: 'rally-hq-blueprint-pipeline.svg',
   heroImage: '/case-studies/rally-hq/schematic.svg',
-  started: '2025-10',
+  started: '2026-01',
   duration: '7 days initial; ongoing iteration',
   featured: true,
   order: 1
@@ -166,7 +166,7 @@ Lead 1 (rally-hq) and Lead 4 (photography) get this line in the `approach` field
   ],
   schematic: 'atelier-12-tool-mcp.svg',
   heroImage: '/case-studies/atelier/schematic.svg',
-  started: '2025-04',
+  started: '2026-04',
   duration: 'M0–M7 shipped; v1.x scope ongoing',
   featured: true,
   order: 2
@@ -223,7 +223,7 @@ Lead 1 (rally-hq) and Lead 4 (photography) get this line in the `approach` field
   ],
   schematic: 'ask-bc-hybrid-arch.svg',
   heroImage: '/case-studies/ask-bc/schematic.svg',
-  started: '2025-08',
+  started: '2026-04',
   duration: 'Production, ongoing',
   featured: true,
   order: 3
@@ -280,7 +280,7 @@ Lead 1 (rally-hq) and Lead 4 (photography) get this line in the `approach` field
   ],
   schematic: 'photography-cf-pipeline.svg',
   heroImage: '/case-studies/photography/schematic.svg',
-  started: '2024-12',
+  started: '2025-10',
   duration: 'Production, ongoing',
   featured: true,
   order: 4
@@ -339,7 +339,7 @@ Lead 1 (rally-hq) and Lead 4 (photography) get this line in the `approach` field
   ],
   schematic: 'bc-subscriptions-dual-track.svg',
   heroImage: '/case-studies/bc-subscriptions/schematic.svg',
-  started: '2025-06',
+  started: '2026-04',
   duration: 'Active development',
   featured: true,
   order: 5
