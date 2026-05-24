@@ -60,7 +60,7 @@
 		Toolchain, operating rules, instrumentation.
 	</PointerRow>
 	<PointerRow title="Photography" href="https://ninochavez.co/photography" external>
-		20K action-sports photos. AAA accessibility. Custom album-zip worker. Not a hobby — the craft
+		20K action-sports photos. AA accessibility. Custom album-zip worker. Not a hobby — the craft
 		dimension of the same practice.
 	</PointerRow>
 	<PointerRow title="Writing" href="https://blog.ninochavez.co" external>

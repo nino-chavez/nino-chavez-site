@@ -335,9 +335,9 @@ export const WORK_PROJECTS: WorkProject[] = [
 		slug: 'photography',
 		title: 'Photography — ninochavez.co/photography',
 		tagline:
-			'20,000-photo action-sports gallery on SvelteKit + Supabase + Cloudflare R2 / Images / Workers, AAA accessibility, AI-enriched semantic search',
+			'20,000-photo action-sports gallery on SvelteKit + Supabase + Cloudflare R2 / Images / Workers, AA accessibility, AI-enriched semantic search',
 		description:
-			'Production photography site at scale. SvelteKit 2 + Svelte 5 + Supabase metadata + Cloudflare R2 for original storage + Cloudflare Images for variant delivery + a custom Cloudflare Worker for album-zip generation. AI enrichment via Gemini for play type, intensity, composition, lighting — enables semantic search without manual tagging. AAA accessibility throughout. Lighthouse > 90 across categories.',
+			'Production photography site at scale. SvelteKit 2 + Svelte 5 + Supabase metadata + Cloudflare R2 for original storage + Cloudflare Images for variant delivery + a custom Cloudflare Worker for album-zip generation. AI enrichment via Gemini for play type, intensity, composition, lighting — enables semantic search without manual tagging. AA accessibility throughout. Lighthouse target > 90 across categories.',
 		category: 'platforms',
 		status: 'production',
 		visibility: 'public',
@@ -362,7 +362,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 			'Responsive srcset: 400w / 800w / 1600w with viewport-aware quality',
 			'Custom Worker for album-zip generation (streams R2 originals into a zip without buffering)',
 			'Gemini-enriched metadata for semantic search (play type, intensity, composition, lighting)',
-			'WCAG 2.1 AAA — keyboard nav, ARIA, contrast, reduce-motion fallback throughout'
+			'WCAG 2.1 AA — keyboard nav, ARIA, contrast, reduce-motion fallback throughout'
 		],
 		keyDecisions: [
 			'Cloudflare Images variants over on-the-fly transforms — set up once in dashboard, predictable performance',
@@ -373,7 +373,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 		metrics: [
 			{ label: 'Photos', value: '20,000+', context: 'Live in the gallery' },
 			{ label: 'Accessibility', value: 'AAA', context: 'WCAG 2.1' },
-			{ label: 'Lighthouse', value: '>90', context: 'Across categories' }
+			{ label: 'Lighthouse', value: 'target >90', context: 'Across categories' }
 		],
 		outcomes: [
 			'Production gallery at real scale',
@@ -384,15 +384,15 @@ export const WORK_PROJECTS: WorkProject[] = [
 		problem:
 			"Action-sports photography at volume (20K+ images across tournaments and events) needs a gallery that loads fast on mobile, allows semantic search, and meets accessibility standards. Off-the-shelf gallery products either don't scale, don't do semantic search, or fail accessibility audits.",
 		approach:
-			'Built end-to-end on SvelteKit + Supabase + the Cloudflare data plane (R2 + Images + Workers). AI enrichment via Gemini classifies each photo on ingest. A custom Cloudflare Worker handles album-zip downloads by streaming R2 originals through. AAA accessibility was a design constraint from day one. Built through the codified production line (specchain → big-blueprint → forge-brand → forge-signal → gen-images), with the brand and copy resolving to one source-of-truth JSON.',
+			'Built end-to-end on SvelteKit + Supabase + the Cloudflare data plane (R2 + Images + Workers). AI enrichment via Gemini classifies each photo on ingest. A custom Cloudflare Worker handles album-zip downloads by streaming R2 originals through. AA accessibility was a design constraint from day one. Built through the codified production line (specchain → big-blueprint → forge-brand → forge-signal → gen-images), with the brand and copy resolving to one source-of-truth JSON.',
 		learned: [
 			'AI enrichment is a portfolio superpower at scale — manual tagging at 20K photos is impossible',
 			'Cloudflare Images named variants beat on-the-fly transforms for predictable performance',
-			'AAA accessibility costs more upfront than AA but the marginal cost beyond AA is small if you bake it in from the start'
+			'AA accessibility costs more upfront than AA but the marginal cost beyond AA is small if you bake it in from the start'
 		],
 
 		pullQuote:
-			'20K-photo gallery on SvelteKit + Supabase + Cloudflare R2/Images/Workers, AAA accessibility, custom album-zip worker, AI semantic search via Gemini enrichment.',
+			'20K-photo gallery on SvelteKit + Supabase + Cloudflare R2/Images/Workers, AA accessibility, custom album-zip worker, AI semantic search via Gemini enrichment.',
 		quotableArtifacts: [
 			{
 				label: 'cloudflare-images.ts utility',

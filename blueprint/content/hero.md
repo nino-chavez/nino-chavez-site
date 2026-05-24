@@ -25,7 +25,7 @@ Numbers are defensible and pulled from the inventory + Poe corpus. Each card has
 | 2 | **5** | lathes in the production line — specchain → big-blueprint → forge-brand → forge-signal → gen-images |
 | 3 | **746** | voice signals codified across 62 projects (voice corpus) |
 
-The third card is the differentiator. *60+ projects* and *6 tools* are claims any senior engineer could make on a good day. *743 signals across 62 projects* is a specific, quantitative artifact that only exists because Nino built it. It's the hook for the `/practice` page.
+The third card is the differentiator. *56+ projects* and *5 lathes* are structural claims any senior engineer could make on a good day. *746 signals across 62 projects* is a specific, quantitative artifact that only exists because Nino built it. It's the hook for the `/practice` page.
 
 ## Composition 3 — `signature-diagram-hero`
 
@@ -54,7 +54,7 @@ Order (locked from prescription):
 1. Rally HQ + Blueprint    Product and methodology shipped to two surfaces of one offering    rallyhq.app · blueprint.rallyhq.app
 2. Atelier                 Spine connecting tools around one project for mixed human + AI teams    atelier.ninochavez.co
 3. Ask BC                  Hybrid Vercel + Cloudflare Worker + Durable Objects, two-turn confirmation gate    askbc.ninochavez.co
-4. Photography             20K-photo gallery on SvelteKit + Supabase + CF R2/Images/Workers, AAA accessibility    ninochavez.co/photography
+4. Photography             20K-photo gallery on SvelteKit + Supabase + CF R2/Images/Workers, AA accessibility    ninochavez.co/photography
 5. bc-subscriptions        Spec + reference implementation. 38 ADRs. Dual-track agile in one repo.    github.com/nino-chavez/bc-subscriptions
 ```
 

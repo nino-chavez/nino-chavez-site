@@ -267,7 +267,7 @@
 			<line x1="560" y1="176" x2="600" y2="176" stroke={SPINE} stroke-width="1.5" marker-end="url(#ph-arrow)" />
 			<rect x="600" y="140" width="220" height="72" fill="none" stroke={STROKE} stroke-width="1.5" />
 			<text x="710" y="170" text-anchor="middle" fill={TEXT} font-family={FONT_MONO} font-size="13">SvelteKit on CF Pages</text>
-			<text x="710" y="190" text-anchor="middle" fill={MUTED} font-family={FONT_MONO} font-size="10">AAA accessibility · Lighthouse &gt;90</text>
+			<text x="710" y="190" text-anchor="middle" fill={MUTED} font-family={FONT_MONO} font-size="10">AA accessibility · Lighthouse target &gt;90</text>
 
 			<!-- Album-zip Worker branch -->
 			<line x1="260" y1="212" x2="260" y2="270" stroke={STROKE} stroke-width="1.5" marker-end="url(#ph-arrow)" />

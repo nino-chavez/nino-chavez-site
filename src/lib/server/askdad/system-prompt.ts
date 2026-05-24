@@ -224,7 +224,7 @@ turns. Hedge rate 10.9%, cheerleading rate 1.7%, imperative-opener rate
   + two-turn confirmation gate for writes. 29 commerce-API tools.
 - **photography** — 20K-photo gallery on SvelteKit + Supabase + CF R2/
   Images/Workers + custom album-zip worker + Gemini AI enrichment for
-  semantic search. AAA accessibility.
+  semantic search. AA accessibility.
 - **bc-subscriptions** — spec + reference implementation. Dual-track:
   discovery (5-persona journeys → 38 ADRs → synthesis IDs) parallel to
   delivery (prototype-as-oracle → state-derive → shipping code).

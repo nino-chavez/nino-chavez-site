@@ -27,7 +27,7 @@ Three short paragraphs. No bullet lists in this composition (per brief — edito
 Mono row, no decoration. Three pointers in order of "least → most personal":
 
 > **Practice** → `/practice` — toolchain, operating rules, instrumentation
-> **Photography** → `ninochavez.co/photography` — 20K action-sports photos, AAA accessibility, custom album-zip worker; not a hobby, the craft dimension of the same practice
+> **Photography** → `ninochavez.co/photography` — 20K action-sports photos, AA accessibility, custom album-zip worker; not a hobby, the craft dimension of the same practice
 > **Writing** → `ninochavez.co/blog` — Signal Dispatch, where I publish the things that don't fit on a case-study card
 
 Followed by single mono line:

@@ -142,7 +142,7 @@ export const GET: RequestHandler = async () => {
 					'@type': 'DefinedTerm',
 					name: 'Production Web Engineering',
 					description:
-						'End-to-end production craft on SvelteKit + Supabase + Cloudflare R2/Images/Workers. AAA accessibility, viewport-aware image serving, custom Workers for non-trivial paths (e.g., album zip generation).',
+						'End-to-end production craft on SvelteKit + Supabase + Cloudflare R2/Images/Workers. AA accessibility, viewport-aware image serving, custom Workers for non-trivial paths (e.g., album zip generation).',
 					subjectOf: [{ '@type': 'WebPage', url: 'https://ninochavez.co/photography' }],
 					additionalProperty: [
 						{
@@ -150,11 +150,11 @@ export const GET: RequestHandler = async () => {
 							name: 'Photography Site Scale',
 							value: '20,000+ photos with AI-enriched semantic search'
 						},
-						{ '@type': 'PropertyValue', name: 'Accessibility Target', value: 'WCAG 2.1 AAA' },
+						{ '@type': 'PropertyValue', name: 'Accessibility Target', value: 'WCAG 2.1 AA' },
 						{
 							'@type': 'PropertyValue',
 							name: 'Performance Target',
-							value: 'Lighthouse >90 across categories'
+							value: 'Lighthouse target >90 across categories'
 						}
 					]
 				}
