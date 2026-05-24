@@ -13,7 +13,11 @@
 			tagline: 'Use AI to understand yourself',
 			artifact: 'Personal cognitive mirror + bridge to creation',
 			timeline: '4-8 weeks',
-			levels: 5
+			levels: 5,
+			anchors: [
+				{ label: 'Poe stack — 746-signal voice corpus', href: '/practice#instrumentation' },
+				{ label: 'claude-recall-cli — session mining', href: '/practice#substrate' }
+			]
 		},
 		{
 			id: 'builder',
@@ -21,7 +25,11 @@
 			tagline: 'Build production apps with AI',
 			artifact: 'Deployed production application',
 			timeline: '8-12 weeks',
-			levels: 5
+			levels: 5,
+			anchors: [
+				{ label: 'Rally HQ — 7-day zero-to-production', href: '/work/rally-hq' },
+				{ label: 'Ask BC — hybrid Vercel + CF Worker', href: '/work/ask-bc' }
+			]
 		},
 		{
 			id: 'architect',
@@ -29,7 +37,11 @@
 			tagline: 'Design systems, write arc42 docs',
 			artifact: 'Complete arc42 solution architecture',
 			timeline: '8-12 weeks',
-			levels: 5
+			levels: 5,
+			anchors: [
+				{ label: 'bc-subscriptions — 38 ADRs', href: '/work/bc-subscriptions' },
+				{ label: 'Atelier — 12-tool MCP protocol', href: '/work/atelier' }
+			]
 		},
 		{
 			id: 'strategist',
@@ -37,7 +49,11 @@
 			tagline: 'Write consulting-grade docs',
 			artifact: 'Executive-ready strategic brief',
 			timeline: '6-10 weeks',
-			levels: 5
+			levels: 5,
+			anchors: [
+				{ label: 'bc-subscriptions — 5-persona journey template', href: '/work/bc-subscriptions' },
+				{ label: 'big-blueprint — 7-stage methodology', href: '/practice#toolchain' }
+			]
 		},
 		{
 			id: 'author',
@@ -45,7 +61,11 @@
 			tagline: 'Create multi-chapter reference works',
 			artifact: 'Multi-volume playbook (20,000+ words)',
 			timeline: '12-20 weeks',
-			levels: 5
+			levels: 5,
+			anchors: [
+				{ label: 'Signal Dispatch voice guide — 913 lines', href: 'https://blog.ninochavez.co' },
+				{ label: 'forge-signal — voiced-prose generator', href: '/practice#toolchain' }
+			]
 		},
 		{
 			id: 'voice',
@@ -53,7 +73,11 @@
 			tagline: 'Define consistent voice at scale',
 			artifact: 'Complete voice system with validation',
 			timeline: '6-10 weeks',
-			levels: 5
+			levels: 5,
+			anchors: [
+				{ label: 'Poe stack + adversarial-test-plan', href: '/practice#instrumentation' },
+				{ label: 'Hesitation-fold classifier (3 hook layers)', href: '/practice#substrate' }
+			]
 		},
 		{
 			id: 'enterprise',
@@ -61,7 +85,11 @@
 			tagline: 'Scale AI work across teams',
 			artifact: 'Reusable skill with quality gates',
 			timeline: '10-16 weeks',
-			levels: 5
+			levels: 5,
+			anchors: [
+				{ label: 'ai-champions-kit — public transfer kit', href: 'https://github.com/nino-chavez/ai-champions-kit' },
+				{ label: 'Hive / Atelier — cross-surface coordination', href: '/practice#substrate' }
+			]
 		}
 	];
 </script>
@@ -82,8 +110,9 @@
 	</svelte:fragment>
 	<svelte:fragment slot="subhead">
 		Self-directed reference paths for AI-assisted work. Free, ungated, no enrollment. Each track
-		documents what to learn, what to build, and what shipping looks like — the structure I'd
-		recommend to someone asking how to get started.
+		documents what to learn, what to build, and what shipping looks like — and points at the
+		real case studies on <a href="/work">/work</a> and the live substrate on
+		<a href="/practice">/practice</a> as the live anchors for the pattern it teaches.
 	</svelte:fragment>
 </Hero>
 

@@ -2,7 +2,9 @@
 	/**
 	 * Track-readout card — used on /ai/learn index. Each card surfaces the
 	 * spine of one curriculum track: title, tagline, artifact, timeline, level
-	 * count. Clicking links to the per-track deep-dive at /ai/learn/[id].
+	 * count, and optional v3 anchors that point at real case studies / practice
+	 * surfaces embodying the track's pattern. Clicking links to the per-track
+	 * deep-dive at /ai/learn/[id].
 	 */
 	export let id;
 	export let title;
@@ -10,6 +12,7 @@
 	export let artifact;
 	export let timeline;
 	export let levels;
+	export let anchors = []; // [{ label, href }]
 </script>
 
 <a class="track" href="/ai/learn/{id}">
@@ -28,6 +31,16 @@
 			<dd>{timeline}</dd>
 		</div>
 	</dl>
+	{#if anchors.length > 0}
+		<div class="anchors">
+			<p class="anchors-label">Live anchors</p>
+			<ul>
+				{#each anchors as anchor}
+					<li>{anchor.label}</li>
+				{/each}
+			</ul>
+		</div>
+	{/if}
 	<p class="arrow">→ /ai/learn/{id}</p>
 </a>
 
@@ -112,6 +125,38 @@
 		font-size: var(--type-sm);
 		color: var(--text-secondary);
 		line-height: 1.4;
+	}
+
+	.anchors {
+		margin: 0 0 var(--space-3);
+		padding: var(--space-3) var(--space-3);
+		background: var(--surface-elevated);
+		border-left: 2px solid var(--color-brand-violet);
+	}
+
+	.anchors-label {
+		margin: 0 0 var(--space-1);
+		font-family: var(--font-mono);
+		font-size: var(--type-xs);
+		color: var(--color-brand-violet);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-wide);
+	}
+
+	.anchors ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+	}
+
+	.anchors li {
+		font-family: var(--font-mono);
+		font-size: var(--type-xs);
+		color: var(--text-secondary);
+		line-height: 1.5;
 	}
 
 	.arrow {
