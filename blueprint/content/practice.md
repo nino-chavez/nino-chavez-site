@@ -20,7 +20,7 @@ Six instrument-readout cards in a 2-column grid (3 rows). Each card: title (bold
 
 One brand-kit JSON drives tokens, copy, images, and a site archetype. Four CLIs chain together: brand definition → CSS variables → voiced content → imagery → archetype-instantiated site.
 
-> **Enforces:** brand drift is mechanically impossible — every downstream artifact resolves to one source-of-truth JSON.
+> **Enforces:** brand drift is structurally prevented — every downstream artifact resolves to the same source JSON.
 
 → `github.com/nino-chavez/forge-brand` · `forge-signal` · `forge-site` · `gen-images`
 
@@ -28,13 +28,13 @@ One brand-kit JSON drives tokens, copy, images, and a site archetype. Four CLIs 
 
 Spec-driven development workflow for AI-assisted coding. Execution profiles, crash recovery, traceability between spec and implementation, multi-agent handoffs.
 
-> **Enforces:** the spec is the durable artifact; the implementation is derived. Spec drift surfaces as test failure, not whisper-network observation.
+> **Enforces:** the spec is the durable artifact; the implementation is derived. Spec drift surfaces as a failing test, not a hallway conversation three sprints later.
 
 → `github.com/nino-chavez/specchain`
 
 ### 3. AEGIS Framework
 
-Governance layer for AI code generation. Plan gating (MVP / Surgical / Systemic), self-healing blueprint engine, evolution-story tracking, cross-framework learning. Constitutional discipline applied to code generation.
+Governance layer for AI code generation. Plan gating (MVP / Surgical / Systemic), self-healing blueprint engine, evolution-story tracking, cross-framework learning.
 
 > **Enforces:** every AI-generated change passes through plan classification + validation + evolution tracking before it lands.
 
@@ -42,7 +42,7 @@ Governance layer for AI code generation. Plan gating (MVP / Surgical / Systemic)
 
 ### 4. claude-recall-cli + Poe stack
 
-Global `/recall` slash commands plus the voice-stack generator that builds the character sheet at the top of every session. 743 signals across 62 projects. SQLite + FTS5; same schema as the QuantifAI commercial product.
+Global `/recall` slash commands plus the voice-stack generator that builds the character sheet at the top of every session. 743 signals across 62 projects. SQLite + FTS5 underneath; the Poe stack is the serialized output that loads into every prompt.
 
 > **Enforces:** corrections survive the session — past corrections inform future drafts, with measurable tone metrics (hedge rate, cheerleading rate, imperative-opener rate) as evidence the loop is closed.
 
@@ -78,7 +78,7 @@ Four rules from `~/.claude/CLAUDE.md`, quoted verbatim. Each rule: mono pill hea
 
 > Don't pause to ask which direction to take when the direction is obvious from the conversation. If we've been working on X and there's a natural next step on X, take it. Mid-task "continue or pause?" questions kill flow and read as timidity, not care. The user can interrupt at any time; they can't recover the time spent waiting for a green light on something that didn't need one.
 
-> *Why:* there are three layers reinforcing this rule — the declarative text in CLAUDE.md, a `UserPromptSubmit` hook that injects voice context predictively before Claude generates a response, and a `Stop` hook that blocks turns ending with hesitation patterns. See *Instrumentation* below.
+> *Why:* there are three layers reinforcing this rule — the declarative text in CLAUDE.md, a `UserPromptSubmit` hook that injects voice context before Claude generates a response, and a `Stop` hook that blocks turns ending with hesitation patterns. See *Instrumentation* below.
 
 ### Rule 3 — Multi-session work isolation (worktrees mandatory)
 

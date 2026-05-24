@@ -18,7 +18,7 @@
 		{
 			value: '743',
 			label: 'voice signals',
-			detail: 'codified across 62 projects (Poe corpus)'
+			detail: 'codified across 62 projects (voice corpus)'
 		}
 	];
 
@@ -35,7 +35,7 @@
 		},
 		{
 			title: 'Instrumentation',
-			body: 'A three-layer fold against one failure mode, with an adversarial test plan.',
+			body: 'A three-layer classifier against one failure mode, with an adversarial test plan.',
 			href: '/practice#instrumentation'
 		}
 	];

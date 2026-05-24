@@ -135,6 +135,18 @@ These are the things that drew correction. Do not relitigate.
 6. End-of-turn: status sentence describing the next move you're taking. Not a question. Not a request for permission.
 7. If you hit a real fork (something not covered by ADRs / DESIGN-PRINCIPLES / this doc), update this doc with the new decision before executing.
 
+## Prose-voice discipline (canonical going forward)
+
+**Before writing or editing any prose on this site** (hero claims, /about narrative, /practice rules + captions, case-study taglines/pull-quotes, contact lines, blog teasers, OG cards, AEO `description` fields):
+
+1. **Load first** — `~/Workspace/dev/apps/blog/docs/signal-dispatch-voice-guide.md` (913 lines, v1.2). The "Phrases that have become tells" list, the "Recently Used (Cooling Off)" table, and the §"Concrete Over Coined" rule are the highest-priority checks.
+2. **Pick a content mode** — Thought Leadership (hero, /about, case-study narratives) vs Solution Architecture (/practice toolchain, ADRs, technical compositions) vs Documentation (blueprint portal, README). See `~/.claude/CLAUDE.md` → "Prose-voice tasks load the voice guide FIRST" for the taxonomy.
+3. **Ground self-interrogation** — no invented people, conversations, internal admissions, or experiences. Per `~/.claude/CLAUDE.md` → "Never fabricate Nino's interior state."
+
+**Before shipping** any prose change — dispatch the `architects-protocol-auditor` agent against the changed files. Apply phrase-level fixes. Re-audit if drift is non-trivial. Sync fixes back to the `blueprint/content/*.md` drafts so the source-of-record matches.
+
+The voice-guide check is not optional. The fact-check gates in DESIGN-PRINCIPLES.md §"Stage 4" assume it ran.
+
 ## Glossary of pointers
 
 - forge-site playbook: `~/Workspace/dev/tools/forge-site/playbook/`

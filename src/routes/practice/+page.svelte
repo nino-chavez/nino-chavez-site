@@ -7,7 +7,7 @@
 			subtitle: 'forge-brand · forge-signal · forge-site · gen-images',
 			body: 'One brand-kit JSON drives tokens, copy, images, and a site archetype. Four CLIs chain together: brand definition → CSS variables → voiced content → imagery → archetype-instantiated site.',
 			enforces:
-				'brand drift is mechanically impossible — every downstream artifact resolves to one source-of-truth JSON.',
+				'brand drift is structurally prevented — every downstream artifact resolves to the same source JSON.',
 			href: 'https://github.com/nino-chavez/forge-brand'
 		},
 		{
@@ -15,13 +15,13 @@
 			subtitle: 'spec-driven workflow',
 			body: 'Spec-driven development workflow for AI-assisted coding. Execution profiles, crash recovery, traceability between spec and implementation, multi-agent handoffs.',
 			enforces:
-				'the spec is the durable artifact; the implementation is derived. Spec drift surfaces as test failure, not whisper-network observation.',
+				'the spec is the durable artifact; the implementation is derived. Spec drift surfaces as a failing test, not a hallway conversation three sprints later.',
 			href: 'https://github.com/nino-chavez/specchain'
 		},
 		{
 			name: 'AEGIS Framework',
-			subtitle: 'v2.5.0 · constitutional governance',
-			body: 'Governance layer for AI code generation. Plan gating (MVP / Surgical / Systemic), self-healing blueprint engine, evolution-story tracking, cross-framework learning.',
+			subtitle: 'v2.5.0 · governance layer for AI code generation',
+			body: 'Plan gating (MVP / Surgical / Systemic), self-healing blueprint engine, evolution-story tracking, cross-framework learning.',
 			enforces:
 				'every AI-generated change passes through plan classification + validation + evolution tracking before it lands.',
 			href: 'https://github.com/signal-x-studio/aegis-framework'
@@ -29,7 +29,7 @@
 		{
 			name: 'claude-recall-cli + Poe stack',
 			subtitle: '743 signals · 62 projects',
-			body: 'Global /recall slash commands plus the voice-stack generator that builds the character sheet at the top of every session. SQLite + FTS5; same schema as the QuantifAI commercial product.',
+			body: 'Global /recall slash commands plus the voice-stack generator that builds the character sheet at the top of every session. SQLite + FTS5 underneath; the Poe stack is the serialized output that loads into every prompt.',
 			enforces:
 				'corrections survive the session — past corrections inform future drafts, with measurable tone metrics as evidence the loop is closed.',
 			href: 'https://github.com/nino-chavez/claude-recall-cli'
@@ -63,7 +63,7 @@
 			label: 'Rule 2',
 			title: 'Default to action, not confirmation',
 			body: `Don't pause to ask which direction to take when the direction is obvious from the conversation. If we've been working on X and there's a natural next step on X, take it. Mid-task "continue or pause?" questions kill flow and read as timidity, not care. The user can interrupt at any time; they can't recover the time spent waiting for a green light on something that didn't need one.`,
-			why: `Three layers reinforce this rule — the declarative text in CLAUDE.md, a UserPromptSubmit hook that injects voice context predictively before Claude generates a response, and a Stop hook that blocks turns ending with hesitation patterns. See Instrumentation below.`
+			why: `Three layers reinforce this rule — the declarative text in CLAUDE.md, a UserPromptSubmit hook that injects voice context before Claude generates a response, and a Stop hook that blocks turns ending with hesitation patterns. See Instrumentation below.`
 		},
 		{
 			label: 'Rule 3',
@@ -213,8 +213,8 @@
 				{/each}
 			</dl>
 			<p class="corpus-caption">
-				Distilled from corrections in past sessions. The metrics are how I know the corpus is
-				doing what it's supposed to do.
+				Distilled from corrections in past sessions. The metrics are the record of whether the
+				loop is actually closing.
 			</p>
 		</div>
 

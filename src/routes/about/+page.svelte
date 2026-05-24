@@ -58,11 +58,10 @@
 			autocomplete. They're a different working unit — closer to a junior engineer with no
 			memory and no opinions. Productive use requires the same things productive teams have
 			always needed: clear specs, conventions, decision logs, guardrails, and a record of what
-			was tried. So I started building those: a spec-driven workflow
-			(<code>specchain</code>), a brand-kit-to-site pipeline (the forge family), a session voice
-			corpus (<code>claude-recall-cli</code> + the Poe stack), an open governance layer for code
-			generation (AEGIS), a planning methodology (<code>big-blueprint</code>). The toolchain is
-			the practice. The case studies are what came out of using it.
+			was tried. So I started building those: a spec-driven workflow, a brand-to-site pipeline,
+			a session memory corpus, a governance layer for code generation, a planning methodology.
+			The toolchain is the practice; the tools are public; the case studies are what came out
+			of using them. <a href="/practice">/practice</a> has the inventory.
 		</p>
 
 		<p>
@@ -88,7 +87,7 @@
 			</h2>
 			<p>
 				20K action-sports photos. AAA accessibility. Custom album-zip worker. Not a hobby — the
-				production craft side of the practice.
+				craft dimension of the same practice.
 			</p>
 		</div>
 		<div class="pointer">
