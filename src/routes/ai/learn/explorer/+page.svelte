@@ -647,15 +647,3 @@
 		{/if}
 	</section>
 </main>
-
-<!-- Footer -->
-<footer class="py-6 px-6 mt-8" style="background: var(--ai-bg-card-alt); border-top: 1px solid var(--ai-border-color);">
-	<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-		<p class="text-xs" style="color: var(--ai-text-muted);">
-			Explorer Track
-		</p>
-		<a href="/ai/learn" class="text-xs transition-colors" style="color: var(--ai-text-muted);">
-			All Tracks
-		</a>
-	</div>
-</footer>
