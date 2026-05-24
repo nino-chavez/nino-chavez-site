@@ -33,13 +33,17 @@
 
 	<p>
 		What changed for me around late 2024 was realizing that AI coding agents are not a faster
-		autocomplete. They're a different working unit — closer to a junior engineer with no memory and
-		no opinions. Productive use requires the same things productive teams have always needed: clear
-		specs, conventions, decision logs, guardrails, and a record of what was tried. So I started
-		building those: a spec-driven workflow, a brand-to-site pipeline, a session memory corpus, a
-		governance layer for code generation, a planning methodology. The toolchain is the practice;
-		the case studies are what came out of using it. <a href="/practice">/practice</a> has the inventory
-		(with public/private markers per tool).
+		autocomplete. They're a different working unit — closer to a junior engineer with no memory
+		and no opinions. Productive use requires the same things productive teams have always needed:
+		clear specs, conventions, decision logs, guardrails, and a record of what was tried. So I
+		started building those — a five-link production line that takes intent through spec
+		(<code>specchain</code>) and archetype routing (<code>big-blueprint</code>) into a typed
+		design system (<code>forge-brand</code>) and voiced prose and imagery
+		(<code>forge-signal</code>, <code>gen-images</code>). The chain is the lathe; the case studies
+		are what came off it. The single public piece is
+		<a href="https://github.com/nino-chavez/ai-champions-kit" rel="noopener"
+			>ai-champions-kit</a
+		> — the practice packaged for others. <a href="/practice">/practice</a> has the full inventory.
 	</p>
 
 	<p>

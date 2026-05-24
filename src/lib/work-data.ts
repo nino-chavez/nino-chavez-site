@@ -2,8 +2,9 @@
  * Work Portfolio Data — v3 refresh
  *
  * Lead slate of 5 case studies (rally-hq, atelier, ask-bc, photography,
- * bc-subscriptions) per blueprint/02-prescription.yml. AEGIS / signal-forge /
- * agent-os live on /practice as toolchain rows, not as case studies here.
+ * bc-subscriptions). signal-forge and agent-os live on /practice as
+ * toolchain rows (under their canonical names forge-signal and as part of
+ * the production-line story respectively), not as case studies here.
  * Honorable-mention entries (aix, cix, six, cpa) retained as `featured: false`
  * for the honorable-mentions strip.
  *
@@ -139,7 +140,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 		problem:
 			'Tournament management is fragmented across spreadsheets, group chats, and outdated desktop software. Directors need a modern platform for registration, scheduling, brackets, and scoring — mobile-first because scorekeeping happens at the court.',
 		approach:
-			'Built solo using the big-blueprint methodology — 7-stage pipeline (research → design principles → prototype → fact-check → docs → deploy → iterate). The blueprint outputs ship as a public surface at blueprint.rallyhq.app, separate from the product itself. Built using the AEGIS governance framework (plan gating + drift detection + evolution-story tracking) to keep AI-generated changes consistent across the codebase.',
+			'Built solo using the big-blueprint methodology — 7-stage pipeline (research → design principles → prototype → fact-check → docs → deploy → iterate). The blueprint outputs ship as a public surface at blueprint.rallyhq.app, separate from the product itself. Built through the codified production line (specchain → big-blueprint → forge-brand → forge-signal → gen-images), with the brand and copy resolving to one source-of-truth JSON.',
 		learned: [
 			'Capability-based auth is worth the upfront complexity for organizer-facing products',
 			'Real-time needs to be core infrastructure, not an afterthought — retrofitting is more work than designing for it',
@@ -383,7 +384,7 @@ export const WORK_PROJECTS: WorkProject[] = [
 		problem:
 			"Action-sports photography at volume (20K+ images across tournaments and events) needs a gallery that loads fast on mobile, allows semantic search, and meets accessibility standards. Off-the-shelf gallery products either don't scale, don't do semantic search, or fail accessibility audits.",
 		approach:
-			'Built end-to-end on SvelteKit + Supabase + the Cloudflare data plane (R2 + Images + Workers). AI enrichment via Gemini classifies each photo on ingest. A custom Cloudflare Worker handles album-zip downloads by streaming R2 originals through. AAA accessibility was a design constraint from day one. Built using the AEGIS governance framework (plan gating + drift detection + evolution-story tracking) to keep AI-generated changes consistent across the codebase.',
+			'Built end-to-end on SvelteKit + Supabase + the Cloudflare data plane (R2 + Images + Workers). AI enrichment via Gemini classifies each photo on ingest. A custom Cloudflare Worker handles album-zip downloads by streaming R2 originals through. AAA accessibility was a design constraint from day one. Built through the codified production line (specchain → big-blueprint → forge-brand → forge-signal → gen-images), with the brand and copy resolving to one source-of-truth JSON.',
 		learned: [
 			'AI enrichment is a portfolio superpower at scale — manual tagging at 20K photos is impossible',
 			'Cloudflare Images named variants beat on-the-fly transforms for predictable performance',

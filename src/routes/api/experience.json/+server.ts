@@ -11,6 +11,8 @@ import type { RequestHandler } from './$types';
  * Source draft: blueprint/content/aeo-experience.json
  */
 
+export const prerender = true;
+
 export const GET: RequestHandler = async () => {
 	const experienceData = {
 		'@context': 'https://schema.org',
@@ -29,7 +31,7 @@ export const GET: RequestHandler = async () => {
 					roleName: 'Context Engineer (Independent Practice)',
 					startDate: '2024',
 					description:
-						'Codified a working practice for AI-assisted software development. Built and shipped a six-tool open toolchain, an AI governance framework (AEGIS), and a session voice corpus. Used the toolchain to ship 5 lead case studies under his own brand (Rally HQ + blueprint surface, Atelier, Ask BC, Photography, bc-subscriptions). Independent of the day-job employment below.',
+						'Codified a working practice for AI-assisted software development. Built a five-link production line (specchain → big-blueprint → forge-brand → forge-signal → gen-images) that turns intent into a shipping site, plus the ai-champions-kit that packages the practice for other practitioners (the single public artifact). Used the production line to ship 5 lead case studies under his own brand (Rally HQ + blueprint surface, Atelier, Ask BC, Photography, bc-subscriptions). Independent of the day-job employment below.',
 					namedPosition: 'Context Engineer',
 					url: 'https://ninochavez.co/practice'
 				}

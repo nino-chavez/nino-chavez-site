@@ -11,6 +11,8 @@ import type { RequestHandler } from './$types';
  * Source draft: blueprint/content/aeo-person.json
  */
 
+export const prerender = true;
+
 export const GET: RequestHandler = async () => {
 	const personData = {
 		'@context': 'https://schema.org',
@@ -19,7 +21,7 @@ export const GET: RequestHandler = async () => {
 		alternateName: 'Antonino Chavez',
 		jobTitle: ['Context Engineer', 'Product Architect'],
 		description:
-			'Context engineer who codified a working practice for shipping production software with AI agents. Author of a six-tool toolchain (forge-brand, forge-signal, forge-site, specchain, claude-recall-cli, ai-champions-kit — currently mixed public/private) and the AEGIS governance framework for AI code generation. Day job: Product Architect at commerce.com. Independent work shipped under his own brand: Rally HQ, Atelier, Ask BC, a 20K-photo gallery on Cloudflare. Based in Chicago.',
+			'Context engineer who codified a working practice for shipping production software with AI agents. Author of a five-link production line (specchain → big-blueprint → forge-brand → forge-signal → gen-images) that turns intent into a spec, archetype, design system, voiced prose, and imagery, plus the ai-champions-kit (publicly available on GitHub) that packages the practice for other practitioners. Day job: Product Architect at commerce.com. Independent work shipped under his own brand: Rally HQ, Atelier, Ask BC, a 20K-photo gallery on Cloudflare. Based in Chicago.',
 		url: 'https://ninochavez.co',
 		email: 'nino@ninochavez.co',
 
@@ -51,19 +53,19 @@ export const GET: RequestHandler = async () => {
 					'@type': 'PropertyValue',
 					name: 'Codified Practice',
 					value:
-						'Six-tool toolchain + AEGIS governance framework + 746 voice signals across 62 projects'
+						'Five-link production line (specchain → big-blueprint → forge-brand → forge-signal → gen-images) + 746 voice signals across 62 projects + ai-champions-kit (public)'
 				}
 			},
 			{
 				'@type': 'Thing',
 				name: 'AI-Assisted Software Development',
 				description:
-					'Production agentic software development at volume. 60+ projects shipped, 5 lead case studies live (Rally HQ + blueprint surface, Atelier, Ask BC, Photography, bc-subscriptions).',
+					'Production agentic software development at volume. 56+ projects shipped, 5 lead case studies live (Rally HQ + blueprint surface, Atelier, Ask BC, Photography, bc-subscriptions).',
 				additionalProperty: {
 					'@type': 'PropertyValue',
 					name: 'Tooling Authored',
 					value:
-						'forge-brand · forge-signal · forge-site · specchain · claude-recall-cli · ai-champions-kit · big-blueprint · AEGIS'
+						'specchain · big-blueprint · forge-brand · forge-signal · gen-images · forge-site · claude-recall-cli · ai-champions-kit'
 				}
 			},
 			{
@@ -112,13 +114,12 @@ export const GET: RequestHandler = async () => {
 					'@id': 'https://www.wikidata.org/wiki/Q1297'
 				},
 				responsibilities:
-					'Codify working practices for AI-assisted software development. Author and maintain open-source toolchain. Ship production software using the codified practice as the proof.',
+					'Codify working practices for AI-assisted software development. Author and maintain the production line (specchain, big-blueprint, forge-brand, forge-signal, gen-images). Ship production software using the codified practice as the proof.',
 				skills: [
 					'Claude Code instrumentation (hooks, classifiers, subagents, skills)',
 					'Agentic software architecture (MCP, Durable Objects, multi-model routing)',
 					'Spec-driven development (specchain, big-blueprint)',
-					'AI governance frameworks (AEGIS — plan gating, drift detection)',
-					'Brand-to-site pipelines (forge family)',
+					'Brand-to-site pipelines (forge-brand, forge-signal, gen-images, forge-site)',
 					'Voice-corpus engineering (claude-recall-cli + Poe stack)'
 				]
 			},
@@ -193,9 +194,9 @@ export const GET: RequestHandler = async () => {
 			},
 			{
 				'@type': 'PropertyValue',
-				name: 'Toolchain Size',
+				name: 'Production Line Size',
 				value:
-					'6 tools (forge-brand, forge-signal, forge-site, specchain, claude-recall-cli, ai-champions-kit) — mixed public/private'
+					'5 lathes (specchain → big-blueprint → forge-brand → forge-signal → gen-images) + 1 public transfer kit (ai-champions-kit). Production-line lathes are currently private.'
 			},
 			{
 				'@type': 'PropertyValue',

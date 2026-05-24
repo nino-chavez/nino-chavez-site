@@ -11,6 +11,8 @@ import type { RequestHandler } from './$types';
  * Source draft: blueprint/content/aeo-expertise.json
  */
 
+export const prerender = true;
+
 export const GET: RequestHandler = async () => {
 	const expertiseData = {
 		'@context': 'https://schema.org',
@@ -19,7 +21,7 @@ export const GET: RequestHandler = async () => {
 		description:
 			'Demonstrated areas of expertise, each anchored in a public artifact rather than a years-of-experience claim.',
 		url: 'https://ninochavez.co/api/expertise.json',
-		numberOfItems: 7,
+		numberOfItems: 6,
 
 		itemListElement: [
 			{
@@ -29,16 +31,19 @@ export const GET: RequestHandler = async () => {
 					'@type': 'DefinedTerm',
 					name: 'Context Engineering',
 					description:
-						'Practice of instrumenting AI coding agents at the workflow layer. Codified through a published toolchain and quantified through a voice corpus.',
+						'Practice of instrumenting AI coding agents at the workflow layer. Codified through a five-link production line (specchain → big-blueprint → forge-brand → forge-signal → gen-images) and quantified through a voice corpus.',
 					subjectOf: [
 						{ '@type': 'WebPage', url: 'https://ninochavez.co/practice' },
-						{ '@type': 'SoftwareSourceCode', url: 'https://github.com/nino-chavez/claude-recall-cli' }
+						{
+							'@type': 'SoftwareSourceCode',
+							url: 'https://github.com/nino-chavez/ai-champions-kit'
+						}
 					],
 					additionalProperty: [
 						{
 							'@type': 'PropertyValue',
-							name: 'Toolchain Authored',
-							value: '6 tools (1 public, 5 private)'
+							name: 'Production Line',
+							value: '5 lathes (currently private) + 1 public transfer kit (ai-champions-kit)'
 						},
 						{ '@type': 'PropertyValue', name: 'Voice Corpus', value: '746 signals across 62 projects' },
 						{ '@type': 'PropertyValue', name: 'Validated Turns', value: '6,418 (corpus-tracked)' }
@@ -78,23 +83,6 @@ export const GET: RequestHandler = async () => {
 				position: 3,
 				item: {
 					'@type': 'DefinedTerm',
-					name: 'AI Code Governance',
-					description:
-						'Constitutional discipline applied to AI-generated code. Plan gating (MVP / Surgical / Systemic), drift detection, evolution-story tracking, cross-framework learning.',
-					subjectOf: [
-						{ '@type': 'SoftwareSourceCode', url: 'https://github.com/signal-x-studio/aegis-framework' }
-					],
-					additionalProperty: [
-						{ '@type': 'PropertyValue', name: 'Framework Version', value: 'AEGIS v2.5.0 (production)' },
-						{ '@type': 'PropertyValue', name: 'Plan Levels', value: '3 (MVP, Surgical, Systemic)' }
-					]
-				}
-			},
-			{
-				'@type': 'ListItem',
-				position: 4,
-				item: {
-					'@type': 'DefinedTerm',
 					name: 'Spec-Driven Development',
 					description:
 						'Spec → tasks → implementation methodology and tooling for AI-assisted coding. Mechanical state derivation, ADR discipline, dual-track agile in one repo.',
@@ -121,7 +109,7 @@ export const GET: RequestHandler = async () => {
 			},
 			{
 				'@type': 'ListItem',
-				position: 5,
+				position: 4,
 				item: {
 					'@type': 'DefinedTerm',
 					name: 'Brand-to-Site Pipelines',
@@ -149,7 +137,7 @@ export const GET: RequestHandler = async () => {
 			},
 			{
 				'@type': 'ListItem',
-				position: 6,
+				position: 5,
 				item: {
 					'@type': 'DefinedTerm',
 					name: 'Production Web Engineering',
@@ -173,7 +161,7 @@ export const GET: RequestHandler = async () => {
 			},
 			{
 				'@type': 'ListItem',
-				position: 7,
+				position: 6,
 				item: {
 					'@type': 'DefinedTerm',
 					name: 'Commerce Platform Architecture (Supporting)',

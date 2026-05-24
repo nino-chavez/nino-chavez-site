@@ -32,13 +32,13 @@ Spec-driven development workflow for AI-assisted coding. Execution profiles, cra
 
 → `github.com/nino-chavez/specchain`
 
-### 3. AEGIS Framework
-
-Governance layer for AI code generation. Plan gating (MVP / Surgical / Systemic), self-healing blueprint engine, evolution-story tracking, cross-framework learning.
-
-> **Enforces:** every AI-generated change passes through plan classification + validation + evolution tracking before it lands.
-
-→ `github.com/signal-x-studio/aegis-framework` · v2.5.0
+<!-- AEGIS Framework removed 2026-05-25: the referenced repo at
+     signal-x-studio/aegis-framework returns GraphQL "Could not resolve to
+     a Repository" — i.e., it does not exist. The /practice toolchain now
+     leads with the canonical 5-link production line from the post
+     "The Backport I Didn't Make" (specchain → big-blueprint → forge-brand
+     → forge-signal → gen-images). AI code governance is a separate concern
+     and will get its own card only if a real artifact exists to back it. -->
 
 ### 4. claude-recall-cli + Poe stack
 

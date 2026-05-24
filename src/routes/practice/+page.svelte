@@ -6,19 +6,15 @@
 	import PullQuote from '$lib/components/compositions/PullQuote.svelte';
 	import Schematic from '$lib/components/Schematic.svelte';
 
+	// The production line — five tools, ordered. Each link consumes the prior
+	// link's output. From "The Backport I Didn't Make" (Signal Dispatch):
+	// "The chassis is the lathe. The template. The spec format. The brand
+	// bridge. The contract that says every prototype slice exposes the same
+	// shape, so the next thing built on top can assume it."
 	const toolchain = [
 		{
-			name: 'forge family',
-			subtitle: 'forge-brand · forge-signal · forge-site · gen-images',
-			body: 'One brand-kit JSON drives tokens, copy, images, and a site archetype. Four CLIs chain together: brand definition → CSS variables → voiced content → imagery → archetype-instantiated site.',
-			enforces:
-				'brand drift is structurally prevented — every downstream artifact resolves to the same source JSON.',
-			href: 'github.com/nino-chavez/forge-brand',
-			visibility: 'private'
-		},
-		{
 			name: 'specchain',
-			subtitle: 'spec-driven workflow',
+			subtitle: '01 · intent → spec → tasks',
 			body: 'Spec-driven development workflow for AI-assisted coding. Execution profiles, crash recovery, traceability between spec and implementation, multi-agent handoffs.',
 			enforces:
 				'the spec is the durable artifact; the implementation is derived. Spec drift surfaces as a failing test, not a hallway conversation three sprints later.',
@@ -26,42 +22,52 @@
 			visibility: 'private'
 		},
 		{
-			name: 'AEGIS Framework',
-			subtitle: 'v2.5.0 · governance layer for AI code generation',
-			body: 'Plan gating (MVP / Surgical / Systemic), self-healing blueprint engine, evolution-story tracking, cross-framework learning.',
-			enforces:
-				'every AI-generated change passes through plan classification + validation + evolution tracking before it lands.',
-			href: 'github.com/signal-x-studio/aegis-framework',
-			visibility: 'private'
-		},
-		{
-			name: 'claude-recall-cli + Poe stack',
-			subtitle: '746 signals · 62 projects',
-			body: 'Global /recall slash commands plus the voice-stack generator that builds the character sheet at the top of every session. SQLite + FTS5 underneath; the Poe stack is the serialized output that loads into every prompt.',
-			enforces:
-				'corrections survive the session — past corrections inform future drafts, with measurable tone metrics as evidence the loop is closed.',
-			href: 'github.com/nino-chavez/claude-recall-cli',
-			visibility: 'private'
-		},
-		{
-			name: 'ai-champions-kit',
-			subtitle: '10 skills · 5 subagents · 5 templates',
-			body: 'Shared Claude Code skills + subagents packaged for installation by others. The practice transferred to other practitioners as a kit.',
-			enforces:
-				"the practice is reproducible, not personal. If it only works for me, it isn't a practice.",
-			href: 'https://github.com/nino-chavez/ai-champions-kit',
-			visibility: 'public'
-		},
-		{
 			name: 'big-blueprint',
-			subtitle: '7-stage methodology · used by rally-hq, bc-subscriptions',
-			body: '7-stage agent-assisted methodology for product-planning initiatives. Research → design principles → prototype → fact-check → docs → deploy → iterate.',
+			subtitle: '02 · spec → archetype + design brief',
+			body: 'Routes a spec through a small set of archetypes (portfolio-brand, commerce, internal-tool, etc.) and emits the design brief the rest of the chain consumes. 7-stage pipeline: research → principles → prototype → fact-check → docs → deploy → iterate.',
 			enforces:
 				'every product decision has a recorded source in the synthesis layer; planning state derives from artifacts, not whiteboard memory.',
 			href: 'github.com/nino-chavez/big-blueprint',
 			visibility: 'private'
+		},
+		{
+			name: 'forge-brand',
+			subtitle: '03 · brand-kit JSON → typed design system',
+			body: 'One brand-kit JSON emits the design tokens, the type ramp, the spacing scale, the motion curves, and the component primitives the downstream tools consume. Every artifact resolves to one source-of-truth JSON.',
+			enforces:
+				'brand drift is structurally prevented — tokens, copy, and imagery downstream all resolve to the same source.',
+			href: 'github.com/nino-chavez/forge-brand',
+			visibility: 'private'
+		},
+		{
+			name: 'forge-signal',
+			subtitle: '04 · brand bridge → voiced prose',
+			body: 'Writes the prose for whatever mode the surface needs — Thought Leadership / Solution Architecture / Executive Advisory / Documentation. Voice guides per mode, voice-corpus enforcement, no templated provisionality.',
+			enforces:
+				'voice register is picked first; the draft never opens in the wrong mode and then gets "edited" toward the right one.',
+			href: 'github.com/nino-chavez/forge-signal',
+			visibility: 'private'
+		},
+		{
+			name: 'gen-images',
+			subtitle: '05 · brand bridge → schematic-grade visuals',
+			body: 'Renders heroes, OG cards, and diagrams from the brand bridge. Schematic-diagram register where the brand calls for it; never AI-statistical for surfaces whose claim is engineering precision.',
+			enforces:
+				'imagery is generated against the same tokens the type and copy resolve to — three artifacts, one bridge.',
+			href: 'github.com/nino-chavez/gen-images',
+			visibility: 'private'
 		}
 	];
+
+	// forge-site is the human's playbook reference — it doesn't run; it gets
+	// read. Surfaced separately so it doesn't read as a 6th runtime in the
+	// chain.
+	const playbook = {
+		name: 'forge-site',
+		body: 'The playbook the human reads before the chain runs. Archetypes, modules, stage 2/3/3.5 templates. Knowledge artifact, no runtime.',
+		href: 'github.com/nino-chavez/forge-site',
+		visibility: 'private'
+	};
 
 	const rules = [
 		{
@@ -120,12 +126,33 @@
 </Hero>
 
 <section id="toolchain" class="section">
-	<SectionHead kicker="01 — Toolchain">Six tools that codify the practice.</SectionHead>
+	<SectionHead kicker="01 — The production line">
+		Five lathes that make the next prototype possible.
+	</SectionHead>
+	<p class="section-lede">
+		The Industrial Revolution gets remembered as steam. The actual inflection was Maudslay's
+		screw-cutting lathe — a machine that produced interchangeable parts other machines could be
+		built from. The LLM is the steam engine of this moment. The chain below is the lathe.
+		Each link consumes the prior link's output; together they turn raw generative output into
+		something the next layer can assume the shape of.
+		<a href="https://blog.ninochavez.co/the-backport-i-didnt-make" rel="noopener">More in the post</a>.
+	</p>
 	<div class="tool-grid">
 		{#each toolchain as tool}
 			<ToolCard {...tool} />
 		{/each}
 	</div>
+
+	<aside class="playbook-note">
+		<p class="playbook-head">Playbook (not a runtime)</p>
+		<p>
+			<strong>{playbook.name}</strong> — {playbook.body}
+		</p>
+		<p class="playbook-href">
+			{playbook.href}
+			<span class="link-note">— private; request access</span>
+		</p>
+	</aside>
 </section>
 
 <section id="rules" class="section">
@@ -210,6 +237,25 @@
 		margin: var(--space-20) 0;
 	}
 
+	.section-lede {
+		font-size: var(--type-body);
+		line-height: var(--leading-body);
+		color: var(--text-secondary);
+		max-width: var(--content-max);
+		margin: 0 0 var(--space-8);
+	}
+
+	.section-lede a {
+		color: var(--text-link);
+		text-decoration: none;
+	}
+
+	.section-lede a:hover {
+		color: var(--text-link-hover);
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+
 	.tool-grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -220,6 +266,48 @@
 		.tool-grid {
 			grid-template-columns: 1fr;
 		}
+	}
+
+	.playbook-note {
+		margin: var(--space-6) 0 0;
+		padding: var(--space-5) var(--space-6);
+		border: 1px solid var(--border-base);
+		background: var(--surface-card);
+	}
+
+	.playbook-head {
+		margin: 0 0 var(--space-2);
+		font-family: var(--font-mono);
+		font-size: var(--type-xs);
+		color: var(--color-brand-violet);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-kicker);
+	}
+
+	.playbook-note p {
+		margin: 0 0 var(--space-2);
+		font-size: var(--type-sm);
+		line-height: 1.6;
+		color: var(--text-secondary);
+	}
+
+	.playbook-note p:last-child {
+		margin-bottom: 0;
+	}
+
+	.playbook-note strong {
+		color: var(--text-primary);
+		font-weight: 600;
+	}
+
+	.playbook-href {
+		font-family: var(--font-mono);
+		font-size: var(--type-xs);
+		color: var(--text-faint);
+	}
+
+	.link-note {
+		color: var(--text-disabled);
 	}
 
 	.rules-stack {

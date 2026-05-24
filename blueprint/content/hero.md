@@ -21,9 +21,9 @@ Numbers are defensible and pulled from the inventory + Poe corpus. Each card has
 
 | Card | Value | Caption |
 |---|---|---|
-| 1 | **60+** | projects shipped under `~/Workspace/dev` |
-| 2 | **6** | tools in the published toolchain — forge-brand · forge-signal · forge-site · specchain · claude-recall-cli · ai-champions-kit |
-| 3 | **743** | voice signals codified across 62 projects (voice corpus) |
+| 1 | **56+** | projects shipped under `~/Workspace/dev` |
+| 2 | **5** | lathes in the production line — specchain → big-blueprint → forge-brand → forge-signal → gen-images |
+| 3 | **746** | voice signals codified across 62 projects (voice corpus) |
 
 The third card is the differentiator. *60+ projects* and *6 tools* are claims any senior engineer could make on a good day. *743 signals across 62 projects* is a specific, quantitative artifact that only exists because Nino built it. It's the hook for the `/practice` page.
 

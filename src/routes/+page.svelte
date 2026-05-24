@@ -12,10 +12,9 @@
 	const ribbon = [
 		{ value: '56+', label: 'projects shipped', detail: 'under ~/Workspace/dev' },
 		{
-			value: '6',
-			label: 'tools in the toolchain',
-			detail:
-				'forge-brand · forge-signal · forge-site · specchain · claude-recall-cli · ai-champions-kit'
+			value: '5',
+			label: 'lathes in the production line',
+			detail: 'specchain → big-blueprint → forge-brand → forge-signal → gen-images'
 		},
 		{
 			value: '746',
