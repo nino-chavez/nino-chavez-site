@@ -12,15 +12,16 @@
 		return u.replace(/^https?:\/\//, '').replace(/\/$/, '');
 	}
 
-	// Map work-data slug → Schematic kind. Only forge-pipeline + hesitation-fold
-	// are drafted today; the per-case-study schematics are Phase 3b. Until then,
-	// fall back to the forge-pipeline placeholder so the slot doesn't read empty.
+	// Per-case-study schematic mapping. All five lead studies have hand-drafted
+	// SVGs in Schematic.svelte. Honorable mentions (aix, cix, six, cpa) fall
+	// back to the forge-pipeline placeholder — they're not lead studies and
+	// the brief doesn't prescribe per-study schematics for them.
 	const SCHEMATIC_KIND = {
-		'rally-hq': 'forge-pipeline',
-		atelier: 'forge-pipeline',
-		'ask-bc': 'forge-pipeline',
-		photography: 'forge-pipeline',
-		'bc-subscriptions': 'forge-pipeline'
+		'rally-hq': 'rally-hq-blueprint-pipeline',
+		atelier: 'atelier-12-tool-mcp',
+		'ask-bc': 'ask-bc-hybrid-arch',
+		photography: 'photography-cf-pipeline',
+		'bc-subscriptions': 'bc-subscriptions-dual-track'
 	};
 	$: schematicKind = SCHEMATIC_KIND[project.slug] || 'forge-pipeline';
 	$: hasPullQuote = Boolean(project.pullQuote);
@@ -68,7 +69,7 @@
 	<h2 id="diagram-heading" class="visually-hidden">{project.title} architecture</h2>
 	<Schematic
 		kind={schematicKind}
-		caption={`${project.schematic ?? 'schematic'} — hand-drafted final lands in Phase 3b (this is the placeholder at the correct register).`}
+		caption={`${project.schematic ?? schematicKind + '.svg'} — case-study architecture diagram`}
 	/>
 </section>
 

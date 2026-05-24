@@ -316,6 +316,44 @@
 			caption="hesitation-fold-diagram — appears on /practice instrumentation, /about (small inline)"
 		/>
 	</div>
+
+	<h3 class="prim-name">Case-study schematics (5)</h3>
+	<p class="ds-note">
+		Hand-drafted per case study. Each renders on its <code>/work/[slug]</code> deep-dive page.
+		Same register as the marquee diagrams — 1.5px stroke, no fill, mono labels, violet on the
+		load-bearing elements.
+	</p>
+
+	<div class="prim-frame">
+		<Schematic
+			kind="rally-hq-blueprint-pipeline"
+			caption="rally-hq-blueprint-pipeline.svg — methodology produces two paired deployable surfaces"
+		/>
+	</div>
+	<div class="prim-frame">
+		<Schematic
+			kind="atelier-12-tool-mcp"
+			caption="atelier-12-tool-mcp.svg — three consumer surfaces → 12-tool MCP → CF Workers substrate"
+		/>
+	</div>
+	<div class="prim-frame">
+		<Schematic
+			kind="ask-bc-hybrid-arch"
+			caption="ask-bc-hybrid-arch.svg — Vercel + CF Worker swim-lanes with two-turn confirmation gate"
+		/>
+	</div>
+	<div class="prim-frame">
+		<Schematic
+			kind="photography-cf-pipeline"
+			caption="photography-cf-pipeline.svg — R2 → Gemini enrichment → Supabase + CF Images → SvelteKit + custom album-zip Worker"
+		/>
+	</div>
+	<div class="prim-frame">
+		<Schematic
+			kind="bc-subscriptions-dual-track"
+			caption="bc-subscriptions-dual-track.svg — discovery (personas → ADRs → synthesis IDs) parallel to delivery (prototype → state-derive → PR), joined through commit messages"
+		/>
+	</div>
 </section>
 
 <!-- ───── Layout rules ───────────────────────────────────────────────── -->
