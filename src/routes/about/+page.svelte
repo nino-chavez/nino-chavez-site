@@ -32,7 +32,7 @@
 	</p>
 
 	<p>
-		What changed for me around late 2024 was realizing that AI coding agents are not a faster
+		What changed for me in May 2025 was realizing that AI coding agents are not a faster
 		autocomplete. They're a different working unit — closer to a junior engineer with no memory
 		and no opinions. Productive use requires the same things productive teams have always needed:
 		clear specs, conventions, decision logs, guardrails, and a record of what was tried. So I
