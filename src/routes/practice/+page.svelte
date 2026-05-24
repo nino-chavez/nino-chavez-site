@@ -105,13 +105,58 @@
 		{ label: 'Imperative-opener rate', value: '11.6%', detail: 'target: rising' },
 		{ label: 'Validated turns (no correction)', value: '6,418', detail: '' }
 	];
+
+	// The substrate — what runs in every Claude Code session, before the
+	// production line ever fires. Each entry names real files / real repos
+	// that exist on disk today (verified via ls).
+	const substrate = [
+		{
+			name: 'Hooks',
+			subtitle: 'Three lifecycle points · one classifier',
+			body: 'Stop hook (`anti-hesitation.py`) catches end-of-turn hesitation post-response. UserPromptSubmit hook injects voice context predictively pre-response. Session-end hook extracts new patterns into the corpus. All three call the SAME `classify_situation()` function — a new pattern added to one is automatically caught by the other two.',
+			refs: [
+				{ label: '~/.claude/hooks/anti-hesitation.py', meta: 'Stop · ~280 lines' },
+				{ label: '~/.claude/poe/hook.log', meta: 'execution log' }
+			]
+		},
+		{
+			name: 'Skills + subagents',
+			subtitle: 'Verbs the human invokes · specialized roles',
+			body: 'Custom slash-commands live in `~/.claude/commands/` (`/recall`, `/recall-scan`, `/poe`, `/poe-check`). Custom subagents live in `~/.claude/agents/` (`ux-ui-auditor`). Claude Code builtins fill the rest of the verb-set: `/diagnose`, `/tdd`, `/grill-with-docs`, `/to-prd`, `/verify`, `/run`, `/loop`, `/schedule`, `/write-a-skill`, plus the audit subagents (`architects-protocol-auditor`, `code-review`, etc.). The `ai-champions-kit` repo packages a transferable subset.',
+			refs: [
+				{ label: '~/.claude/commands/', meta: '6 custom skills' },
+				{ label: '~/.claude/agents/', meta: '1 custom + 7 archived' },
+				{ label: 'github.com/nino-chavez/ai-champions-kit', meta: 'public transfer kit' }
+			]
+		},
+		{
+			name: 'Session mining',
+			subtitle: 'Sessions → corpus → voice card → in every prompt',
+			body: '`recall-cli.py` reads `~/.claude/history.jsonl` (currently ~7MB of session data). `recall-scan.py` batch-classifies messages against `classify_situation()`. The output is a corpus (`~/.claude/poe/corpus.jsonl`) which `poe-extract.py` serializes into `~/.claude/poe/stack.md` — the character sheet that loads into the system prompt of every new session via `@~/path` imports in CLAUDE.md. The loop closes because the classifier the hooks call is the same classifier the miner calls.',
+			refs: [
+				{ label: 'tools/claude-recall-cli/', meta: 'private · 13 files' },
+				{ label: '~/.claude/poe/stack.md', meta: 'serialized character sheet' },
+				{ label: '~/.claude/poe/adversarial-test-plan.md', meta: 'control/treatment protocol' }
+			]
+		},
+		{
+			name: 'Hive coordination',
+			subtitle: 'Cross-surface spine for mixed human + AI teams',
+			body: 'Started inside Commerce Inc as `ai-hive` — a coordination layer that connects IDE, browser, and terminal surfaces so contributions don\'t drift. Atelier is the unconstrained OSS rebuild: a 12-tool MCP protocol with role-aware lenses, fenced locks, and an SSE Durable Object for per-project fan-out. `bc-subscriptions` uses Hive synthesis to carry traceability IDs from idea → ADR → PR. The protocol is published independently of the reference implementation so other implementers can ship on a different stack.',
+			refs: [
+				{ label: 'atelier.ninochavez.co', meta: 'reference deployment · live' },
+				{ label: 'github.com/nino-chavez/atelier', meta: '12-tool MCP protocol · private' },
+				{ label: '/work/atelier', meta: 'case study' }
+			]
+		}
+	];
 </script>
 
 <svelte:head>
 	<title>Practice — Nino Chavez</title>
 	<meta
 		name="description"
-		content="The differentiator page: six published tools, four operating rules, a three-layer classifier against hesitation, and a 746-signal voice corpus. Every claim links to a public artifact."
+		content="The differentiator page: a five-link production line, the substrate that automates it (hooks, skills, subagents, session mining, Hive coordination), four operating rules from CLAUDE.md, and the closed-loop evidence — a 746-signal voice corpus with measurable tone metrics and an adversarial test plan."
 	/>
 </svelte:head>
 
@@ -119,9 +164,10 @@
 	<p slot="kicker">/practice</p>
 	<svelte:fragment slot="claim">This is <em>how</em> I work.</svelte:fragment>
 	<svelte:fragment slot="subhead">
-		Every claim on this page is anchored in a specific artifact — a tool, a hook, a corpus, a
-		repo. Some are public; some are private (marked below). No methodology that isn't running.
-		No rule that hasn't caught a real failure.
+		Two halves of the same practice. The <em>production line</em> turns intent into shipping
+		software (five lathes). The <em>substrate</em> is what runs in every session before, during,
+		and after — hooks, skills, subagents, session mining, coordination. Both halves are anchored
+		in specific artifacts on disk. Some are public; some are private (marked below).
 	</svelte:fragment>
 </Hero>
 
@@ -155,8 +201,45 @@
 	</aside>
 </section>
 
+<section id="substrate" class="section">
+	<SectionHead kicker="02 — The substrate">
+		What runs in every session — before, during, and after.
+	</SectionHead>
+	<p class="section-lede">
+		The lathes above produce sites. The substrate below produces the lathes — and runs alongside
+		every session, mining patterns out and feeding them back in. Hooks predict and catch drift;
+		skills and subagents are the verbs the human invokes; session mining keeps the corpus current;
+		Hive coordinates work across surfaces when more than one human or agent is involved. This is
+		the part most "I prompt Claude well" claims skip.
+	</p>
+	<div class="substrate-grid">
+		{#each substrate as block}
+			<article class="substrate-card">
+				<header class="substrate-head">
+					<h3 class="substrate-name">{block.name}</h3>
+					<p class="substrate-subtitle">{block.subtitle}</p>
+				</header>
+				<p class="substrate-body">{block.body}</p>
+				<ul class="substrate-refs">
+					{#each block.refs as ref}
+						<li>
+							<code>{ref.label}</code>
+							<span>— {ref.meta}</span>
+						</li>
+					{/each}
+				</ul>
+			</article>
+		{/each}
+	</div>
+</section>
+
 <section id="rules" class="section">
-	<SectionHead kicker="02 — Operating rules">Four rules from <code>~/.claude/CLAUDE.md</code>.</SectionHead>
+	<SectionHead kicker="03 — Operating rules">Four rules from <code>~/.claude/CLAUDE.md</code>.</SectionHead>
+	<p class="section-lede">
+		The declarative half of the substrate. The hooks above are the mechanical enforcement of the
+		rules below. Each rule's <em>Why</em> inset traces back to a specific past failure mode that
+		the rule prevents.
+	</p>
 	<div class="rules-stack">
 		{#each rules as rule}
 			<RuleBlock {...rule} />
@@ -165,7 +248,9 @@
 </section>
 
 <section id="instrumentation" class="section">
-	<SectionHead kicker="03 — Instrumentation">One classifier. Three lifecycle points.</SectionHead>
+	<SectionHead kicker="04 — Instrumentation evidence">
+		One classifier. Three lifecycle points. Measurable output.
+	</SectionHead>
 
 	<Schematic
 		kind="hesitation-fold"
@@ -243,6 +328,97 @@
 		color: var(--text-secondary);
 		max-width: var(--content-max);
 		margin: 0 0 var(--space-8);
+	}
+
+	.section-lede em {
+		font-style: italic;
+		color: var(--text-link-hover);
+	}
+
+	/* Substrate grid */
+	.substrate-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--space-5);
+	}
+
+	@media (max-width: 720px) {
+		.substrate-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.substrate-card {
+		border: 1px solid var(--border-base);
+		padding: var(--space-6) var(--space-6) var(--space-5);
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-3);
+	}
+
+	.substrate-head {
+		margin: 0;
+	}
+
+	.substrate-name {
+		margin: 0 0 var(--space-1);
+		font-size: var(--type-h3);
+		font-weight: 500;
+		color: var(--text-primary);
+	}
+
+	.substrate-subtitle {
+		margin: 0;
+		font-family: var(--font-mono);
+		font-size: var(--type-xs);
+		color: var(--color-brand-violet);
+		letter-spacing: var(--tracking-wide);
+	}
+
+	.substrate-body {
+		margin: 0;
+		font-size: var(--type-sm);
+		color: var(--text-secondary);
+		line-height: 1.55;
+	}
+
+	.substrate-body :global(code) {
+		font-family: var(--font-mono);
+		font-size: 0.875em;
+		color: var(--text-link-hover);
+		padding: 0.0625rem 0.3125rem;
+		background: rgba(139, 92, 246, 0.1);
+		border: 1px solid var(--border-violet);
+	}
+
+	.substrate-refs {
+		list-style: none;
+		padding: 0;
+		margin: var(--space-2) 0 0;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+		border-top: 1px solid var(--border-subtle);
+		padding-top: var(--space-3);
+	}
+
+	.substrate-refs li {
+		font-family: var(--font-mono);
+		font-size: var(--type-xs);
+		color: var(--text-muted);
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		align-items: baseline;
+	}
+
+	.substrate-refs li code {
+		color: var(--text-link);
+		word-break: break-all;
+	}
+
+	.substrate-refs li span {
+		color: var(--text-faint);
 	}
 
 	.section-lede a {
