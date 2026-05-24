@@ -53,6 +53,20 @@ Hero claim (locked, do not relitigate): **"Context engineer. I _instrument_ the 
 
 **Phase 3a shipped:** AEO endpoints, work-data refresh, homepage, `/about`, `/practice`, `/contact` all wired. Every refusal in `DESIGN-PRINCIPLES.md` §10 is removed from the new surfaces (no lime, no Bebas, no bento, no volleyball hero, no 4-way grid, no Cal.com). `aegis`/`signal-forge`/`agent-os` deleted from work-data — they live on `/practice` toolchain. `aix`/`cix`/`six`/`commerce-prompt-analyzer` demoted to honorable mentions at order 11-14. New `Schematic.svelte` component renders `forge-pipeline` and `hesitation-fold` SVG placeholders inline (Phase 3b replaces with hand-drafted final art). All 4 new routes export `prerender = true`.
 
+**Design system foundation + /work/[slug] + /now + /writing + /api/contact.json shipped (commits `580038f`, `a8292e4`, `e81a155`, `870566c`):**
+
+Built the load-bearing audit gate the brief named — `/design-system` route renders every token (colors, type scale, spacing, motion) and every composition primitive (Hero, SectionHead, RibbonCard, CaseStudyCard, ToolCard, RuleBlock, PullQuote, ChannelRow, PointerRow, HonorableStrip, CaseStripeItem, TeaserCard, Masthead, SiteFooter) live in code. Tokens codified at `src/lib/styles/tokens.css` as CSS custom properties mirroring `DESIGN.md`. Shared `+layout.svelte` mounts Masthead + container + SiteFooter for all v3 public routes (/, /about, /practice, /contact, /design-system, /writing, /now, /work*) — eliminates the 4-way per-page masthead duplication. /blueprint and /api/* opt out (they have their own chrome / JSON).
+
+Pages refactored to consume primitives: `/`, `/about`, `/practice`, `/contact` (per-page chrome CSS deleted, ~600 lines net), `/work` (case-study-readout + honorable-mentions-strip composition), `/work/[slug]` (5-composition deep-dive: hero-case-study → signature-diagram-opener → agentic-approach-readout → quotable-artifact-block → outcome-readout, consuming the `pullQuote` / `quotableArtifacts` / `schematic` schema fields on work-data entries), `/now` (editorial-lede + 3 RibbonCards leading with practice work, no co-equal hobbies), `/writing` (editorial-lede + 3-flagship whitepaper-row + archive pointer — closes nav IA asymmetry).
+
+Stage 4 fact-check gates run for the first time. Findings landed in DESIGN-PRINCIPLES.md §"Stage 4 (Fact-Check) discipline":
+- ✓ 5 lead case-study URLs all return 200 via `curl -sI -L`
+- ✓ Project count "60+" → "56+" (narrow find undercounted; broader rule documented)
+- ✓ Voice corpus 743 → 746 (synced to current `~/.claude/poe/stack.md`)
+- ⚠️ Toolchain visibility — 5 of 6 named tools are PRIVATE on GitHub (only `ai-champions-kit` is public). All "open toolchain"/"published"/"public artifact" copy on /, /about, /practice, /api/* reworded to honest framing. ToolCard component renders a [private] badge and non-clickable href for each private repo. **Launch decision needed**: make the 5 private repos public OR keep "mixed visibility" framing permanently. See "What's BLOCKED" section.
+
+New AEO endpoint: `/api/contact.json` (was missing from sitemap). Old v2 payload had "Enterprise Consulting / Photography Services" service-tier properties — direct DESIGN-PRINCIPLES.md §1 violation. Replaced with v3 engagement posture and three typed contactPoints (primary email / professional LinkedIn / code GitHub).
+
 Also on other repo `main` branches (already pushed):
 - `nino-chavez/atelier` — `f53f5db` custom domain bind: <https://atelier.ninochavez.co>
 - `nino-chavez/ask-bc` — `4cafbc6` custom domain bind: <https://askbc.ninochavez.co>
