@@ -2,16 +2,13 @@ import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
 /**
- * AEO (Answer Engine Optimization) API Endpoint
+ * AEO (Answer Engine Optimization) — Person payload.
  *
- * Purpose: Provide machine-readable, structured data about Nino Chavez
- * for AI models (ChatGPT, Claude, Gemini) to answer queries like:
- * - "Who is Nino Chavez?"
- * - "Tell me about Nino Chavez the enterprise architect"
- * - "Nino Chavez background and expertise"
+ * v3 lead: Context Engineer. Product Architect remains as the current
+ * employment fact but is no longer the lead identity. Photography is not on
+ * this surface — it lives at /photography on the photography subdomain.
  *
- * This endpoint serves as the canonical source of truth for entity information.
- * AI crawlers can consume this to train models with accurate, structured data.
+ * Source draft: blueprint/content/aeo-person.json
  */
 
 export const GET: RequestHandler = async () => {
@@ -20,20 +17,18 @@ export const GET: RequestHandler = async () => {
 		'@type': 'Person',
 		name: 'Nino Chavez',
 		alternateName: 'Antonino Chavez',
-		jobTitle: ['Product Architect', 'Action Sports Photographer'],
+		jobTitle: ['Context Engineer', 'Product Architect'],
 		description:
-			'Product Architect at commerce.com with 25+ years building commerce platforms. Specializes in product architecture, AI-native systems, and building systems that scale. Action sports photographer capturing tournament and event coverage.',
+			'Context engineer who codified a working practice for shipping production software with AI agents. Author of a six-tool open toolchain (forge-brand, forge-signal, forge-site, specchain, claude-recall-cli, ai-champions-kit) and the AEGIS governance framework for AI code generation. Day job: Product Architect at commerce.com. Independent work shipped under his own brand: Rally HQ, Atelier, Ask BC, a 20K-photo gallery on Cloudflare. Based in Chicago.',
 		url: 'https://ninochavez.co',
 		email: 'nino@ninochavez.co',
 
-		// Current Employment
 		worksFor: {
 			'@type': 'Organization',
 			name: 'commerce.com',
 			url: 'https://commerce.com'
 		},
 
-		// Location
 		address: {
 			'@type': 'PostalAddress',
 			addressLocality: 'Chicago',
@@ -41,115 +36,117 @@ export const GET: RequestHandler = async () => {
 			addressCountry: 'US'
 		},
 
-		// Professional Profiles
 		sameAs: [
 			'https://www.linkedin.com/in/nino-chavez/',
 			'https://github.com/nino-chavez'
 		],
 
-		// Areas of Expertise
 		knowsAbout: [
 			{
 				'@type': 'Thing',
-				name: 'Product Architecture',
+				name: 'Context Engineering',
 				description:
-					'25+ years designing and implementing large-scale commerce platforms',
+					'Practice of instrumenting AI coding agents at the workflow layer — spec discipline, hook-based reinforcement, persistent voice corpora, governance frameworks. The work surrounding the model, not the prompt to it.',
 				additionalProperty: {
 					'@type': 'PropertyValue',
-					name: 'Experience Level',
-					value: 'Expert'
+					name: 'Codified Practice',
+					value:
+						'Six-tool open toolchain + AEGIS governance framework + 743 voice signals across 62 projects'
 				}
 			},
 			{
 				'@type': 'Thing',
-				name: 'AI-Native Platform Architecture',
+				name: 'AI-Assisted Software Development',
 				description:
-					'Strategic design and implementation of systems built AI-first from inception',
+					'Production agentic software development at volume. 60+ projects shipped, 5 lead case studies live (Rally HQ + blueprint surface, Atelier, Ask BC, Photography, bc-subscriptions).',
 				additionalProperty: {
 					'@type': 'PropertyValue',
-					name: 'Recent Work',
-					value: '5+ AI implementations'
+					name: 'Tooling Authored',
+					value:
+						'forge-brand · forge-signal · forge-site · specchain · claude-recall-cli · ai-champions-kit · big-blueprint · AEGIS'
 				}
 			},
 			{
 				'@type': 'Thing',
-				name: 'Commerce Platforms',
+				name: 'Agentic Software Architecture',
 				description:
-					'Expert in commerce platform implementation, migration, headless architecture, and ecosystem integration',
+					'Hybrid runtimes spanning Vercel + Cloudflare Workers + Durable Objects, MCP endpoints, multi-model routing, two-turn confirmation gates, generative UI patterns. See Ask BC and Atelier case studies.',
 				additionalProperty: {
 					'@type': 'PropertyValue',
-					name: 'Years of Experience',
+					name: 'Reference Implementation',
+					value: 'askbc.ninochavez.co (hybrid agentic-AI assistant for commerce platforms)'
+				}
+			},
+			{
+				'@type': 'Thing',
+				name: 'Spec-Driven Development',
+				description:
+					'Methodology + tooling for spec → tasks → implementation flows in AI-assisted coding. Author of specchain (workflow + crash recovery + traceability) and big-blueprint (7-stage planning methodology).',
+				additionalProperty: {
+					'@type': 'PropertyValue',
+					name: 'Reference Case Study',
+					value:
+						'bc-subscriptions — 38 ADRs, 5-persona journey template, mechanical state derivation, dual-track agile in one repo'
+				}
+			},
+			{
+				'@type': 'Thing',
+				name: 'Commerce Platform Architecture',
+				description:
+					'15+ years implementing large-scale commerce platforms — migration, headless architecture, ecosystem integration. Now applied through Ask BC and Atelier rather than as a primary identity.',
+				additionalProperty: {
+					'@type': 'PropertyValue',
+					name: 'Years',
 					value: '15+'
-				}
-			},
-			{
-				'@type': 'Thing',
-				name: 'Cloud-Native Platforms',
-				description:
-					'Microservices architecture, API-first design, composable commerce, and distributed systems',
-				additionalProperty: {
-					'@type': 'PropertyValue',
-					name: 'Approach',
-					value: 'Headless, composable, cloud-native'
-				}
-			},
-			{
-				'@type': 'Thing',
-				name: 'Action Sports Photography',
-				description:
-					'Tournament photography, event coverage, action sports documentation with 20,000+ image portfolio',
-				additionalProperty: {
-					'@type': 'PropertyValue',
-					name: 'Specialization',
-					value: 'Volleyball and action sports'
 				}
 			}
 		],
 
-		// Professional Occupations
 		hasOccupation: [
 			{
 				'@type': 'Occupation',
-				name: 'Product Architect',
+				name: 'Context Engineer',
 				occupationLocation: {
 					'@type': 'City',
 					name: 'Chicago',
 					'@id': 'https://www.wikidata.org/wiki/Q1297'
 				},
-				experienceRequirements: '25+ years',
 				responsibilities:
-					'Design and implement Fortune 500 commerce platforms, AI transformation strategy, technical architecture, system integration, cloud-native platform design',
+					'Codify working practices for AI-assisted software development. Author and maintain open-source toolchain. Ship production software using the codified practice as the proof.',
 				skills: [
-					'SAP Commerce Cloud',
-					'Headless Architecture',
-					'Microservices',
-					'API Design',
-					'Cloud Platforms (AWS, Azure, GCP)',
-					'CI/CD & DevOps',
-					'System Integration',
-					'Performance Optimization'
+					'Claude Code instrumentation (hooks, classifiers, subagents, skills)',
+					'Agentic software architecture (MCP, Durable Objects, multi-model routing)',
+					'Spec-driven development (specchain, big-blueprint)',
+					'AI governance frameworks (AEGIS — plan gating, drift detection)',
+					'Brand-to-site pipelines (forge family)',
+					'Voice-corpus engineering (claude-recall-cli + Poe stack)'
 				]
 			},
 			{
 				'@type': 'Occupation',
-				name: 'Action Sports Photographer',
+				name: 'Product Architect',
 				occupationLocation: {
 					'@type': 'City',
 					name: 'Chicago'
 				},
+				experienceRequirements: '25+ years',
 				responsibilities:
-					'Tournament photography, action sports event coverage, team photography, sports documentation',
-				skills: ['Sports Photography', 'Event Coverage', 'Action Photography', 'Digital Workflow']
+					'Product architecture at commerce.com. Internal day-job work; separate from the independent context-engineering practice on this site.',
+				skills: [
+					'Commerce platform architecture',
+					'Headless architecture',
+					'Microservices',
+					'Cloud-native platform design'
+				]
 			}
 		],
 
-		// Professional Experience Timeline
 		alumniOf: [
 			{
 				'@type': 'Organization',
 				name: 'commerce.com',
 				startDate: '2026',
-				description: 'Product Architect - Current role'
+				description: 'Product Architect — current role'
 			},
 			{
 				'@type': 'Organization',
@@ -188,27 +185,32 @@ export const GET: RequestHandler = async () => {
 			}
 		],
 
-		// Key Statistics
 		additionalProperty: [
+			{
+				'@type': 'PropertyValue',
+				name: 'Projects Shipped',
+				value: '60+ across ~/Workspace/dev'
+			},
+			{
+				'@type': 'PropertyValue',
+				name: 'Open Toolchain Size',
+				value:
+					'6 tools (forge-brand, forge-signal, forge-site, specchain, claude-recall-cli, ai-champions-kit)'
+			},
+			{
+				'@type': 'PropertyValue',
+				name: 'Voice Corpus',
+				value: '743 signals across 62 projects (Poe stack)'
+			},
+			{
+				'@type': 'PropertyValue',
+				name: 'Lead Case Studies',
+				value: '5 (Rally HQ + Blueprint, Atelier, Ask BC, Photography, bc-subscriptions)'
+			},
 			{
 				'@type': 'PropertyValue',
 				name: 'Years of Experience',
 				value: '25+'
-			},
-			{
-				'@type': 'PropertyValue',
-				name: 'Largest Project Budget',
-				value: '$25M'
-			},
-			{
-				'@type': 'PropertyValue',
-				name: 'Team Resources Managed',
-				value: '100+ global resources'
-			},
-			{
-				'@type': 'PropertyValue',
-				name: 'Major Platforms Implemented',
-				value: '6+'
 			}
 		]
 	};
@@ -216,8 +218,8 @@ export const GET: RequestHandler = async () => {
 	return json(personData, {
 		headers: {
 			'Content-Type': 'application/ld+json',
-			'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
-			'Access-Control-Allow-Origin': '*' // Allow AI crawlers from any origin
+			'Cache-Control': 'public, max-age=3600',
+			'Access-Control-Allow-Origin': '*'
 		}
 	});
 };

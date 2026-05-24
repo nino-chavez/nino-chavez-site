@@ -2,51 +2,42 @@ import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
 /**
- * AEO (Answer Engine Optimization) API Endpoint
+ * AEO (Answer Engine Optimization) — Expertise payload.
  *
- * Purpose: Provide machine-readable, structured expertise data for queries like:
- * - "What does Nino Chavez specialize in?"
- * - "Nino Chavez SAP Commerce Cloud experience"
- * - "Nino Chavez AI transformation capabilities"
+ * v3 framing: each expertise area anchors to a public artifact (repo, deploy,
+ * or measured corpus), not a years-of-experience claim. Practice + agentic
+ * architecture + governance lead; commerce demoted to a supporting position.
  *
- * This endpoint maps capabilities to evidence and scale, enabling AI models
- * to answer questions about specific expertise areas with concrete examples.
+ * Source draft: blueprint/content/aeo-expertise.json
  */
 
 export const GET: RequestHandler = async () => {
 	const expertiseData = {
 		'@context': 'https://schema.org',
 		'@type': 'ItemList',
-		name: 'Nino Chavez - Areas of Expertise',
+		name: 'Nino Chavez — Expertise',
 		description:
-			'Core competencies and specializations across enterprise architecture, AI transformation, and photography',
-		numberOfItems: 6,
+			'Demonstrated areas of expertise, each anchored in a public artifact rather than a years-of-experience claim.',
+		url: 'https://ninochavez.co/api/expertise.json',
+		numberOfItems: 7,
+
 		itemListElement: [
 			{
 				'@type': 'ListItem',
 				position: 1,
 				item: {
-					'@type': 'Thing',
-					name: 'AI-Native Architecture',
+					'@type': 'DefinedTerm',
+					name: 'Context Engineering',
 					description:
-						'Strategic design and implementation of platforms built AI-first from inception, including Gen AI adoption strategies for Fortune 500 clients',
-					additionalType: 'Skill',
+						'Practice of instrumenting AI coding agents at the workflow layer. Codified through a published toolchain and quantified through a voice corpus.',
+					subjectOf: [
+						{ '@type': 'WebPage', url: 'https://ninochavez.co/practice' },
+						{ '@type': 'SoftwareSourceCode', url: 'https://github.com/nino-chavez/claude-recall-cli' }
+					],
 					additionalProperty: [
-						{
-							'@type': 'PropertyValue',
-							name: 'Evidence',
-							value: 'Led Gen AI platform adoption for Fortune 500 clients'
-						},
-						{
-							'@type': 'PropertyValue',
-							name: 'Scale',
-							value: '5+ enterprise implementations'
-						},
-						{
-							'@type': 'PropertyValue',
-							name: 'Proficiency Level',
-							value: 'Expert'
-						}
+						{ '@type': 'PropertyValue', name: 'Toolchain Authored', value: '6 published tools' },
+						{ '@type': 'PropertyValue', name: 'Voice Corpus', value: '743 signals across 62 projects' },
+						{ '@type': 'PropertyValue', name: 'Validated Turns', value: '6,397 (corpus-tracked)' }
 					]
 				}
 			},
@@ -54,26 +45,26 @@ export const GET: RequestHandler = async () => {
 				'@type': 'ListItem',
 				position: 2,
 				item: {
-					'@type': 'Thing',
-					name: 'Enterprise Transformation',
+					'@type': 'DefinedTerm',
+					name: 'Agentic Software Architecture',
 					description:
-						'End-to-end architecture for multi-brand commerce platforms spanning strategy, technical design, and delivery execution',
-					additionalType: 'Skill',
+						'Hybrid runtimes for production agentic systems — MCP endpoints, Durable Objects, multi-model routing (Sonnet/Haiku), Codemode sandboxes, two-turn confirmation gates, generative UI.',
+					subjectOf: [
+						{ '@type': 'WebPage', url: 'https://askbc.ninochavez.co' },
+						{ '@type': 'WebPage', url: 'https://atelier.ninochavez.co' }
+					],
 					additionalProperty: [
 						{
 							'@type': 'PropertyValue',
-							name: 'Evidence',
-							value: 'Architected $25M multi-brand commerce platform'
+							name: 'Reference Implementation 1',
+							value:
+								'Ask BC — Next.js + Cloudflare Worker + Durable Objects per store, 29 commerce-API tools'
 						},
 						{
 							'@type': 'PropertyValue',
-							name: 'Scale',
-							value: '100+ global resources managed'
-						},
-						{
-							'@type': 'PropertyValue',
-							name: 'Years of Experience',
-							value: '25+'
+							name: 'Reference Implementation 2',
+							value:
+								'Atelier — 12-tool MCP protocol, role-aware lenses, find_similar with hybrid retrieval, fenced locks'
 						}
 					]
 				}
@@ -82,27 +73,16 @@ export const GET: RequestHandler = async () => {
 				'@type': 'ListItem',
 				position: 3,
 				item: {
-					'@type': 'Thing',
-					name: 'Cloud-Native Platforms',
+					'@type': 'DefinedTerm',
+					name: 'AI Code Governance',
 					description:
-						'Microservices architecture, API-first design, distributed systems, and containerized workloads for high-scale applications',
-					additionalType: 'Skill',
+						'Constitutional discipline applied to AI-generated code. Plan gating (MVP / Surgical / Systemic), drift detection, evolution-story tracking, cross-framework learning.',
+					subjectOf: [
+						{ '@type': 'SoftwareSourceCode', url: 'https://github.com/signal-x-studio/aegis-framework' }
+					],
 					additionalProperty: [
-						{
-							'@type': 'PropertyValue',
-							name: 'Evidence',
-							value: 'Microservices architecture for high-scale grocery platform'
-						},
-						{
-							'@type': 'PropertyValue',
-							name: 'Scale',
-							value: 'Real-time fulfillment integration'
-						},
-						{
-							'@type': 'PropertyValue',
-							name: 'Technologies',
-							value: 'AWS, Azure, GCP, Docker, Kubernetes'
-						}
+						{ '@type': 'PropertyValue', name: 'Framework Version', value: 'AEGIS v2.5.0 (production)' },
+						{ '@type': 'PropertyValue', name: 'Plan Levels', value: '3 (MVP, Surgical, Systemic)' }
 					]
 				}
 			},
@@ -110,27 +90,27 @@ export const GET: RequestHandler = async () => {
 				'@type': 'ListItem',
 				position: 4,
 				item: {
-					'@type': 'Thing',
-					name: 'Digital Commerce',
+					'@type': 'DefinedTerm',
+					name: 'Spec-Driven Development',
 					description:
-						'Deep expertise in SAP Commerce Cloud (Hybris), Salesforce Commerce Cloud, Adobe Commerce (Magento), headless architecture, and composable commerce patterns',
-					additionalType: 'Skill',
+						'Spec → tasks → implementation methodology and tooling for AI-assisted coding. Mechanical state derivation, ADR discipline, dual-track agile in one repo.',
+					subjectOf: [
+						{ '@type': 'SoftwareSourceCode', url: 'https://github.com/nino-chavez/specchain' },
+						{ '@type': 'SoftwareSourceCode', url: 'https://github.com/nino-chavez/big-blueprint' },
+						{ '@type': 'SoftwareSourceCode', url: 'https://github.com/nino-chavez/bc-subscriptions' }
+					],
 					additionalProperty: [
 						{
 							'@type': 'PropertyValue',
-							name: 'Evidence',
-							value: 'SAP, Salesforce, Adobe ecosystem expertise across 20+ implementations'
-						},
-						{
-							'@type': 'PropertyValue',
-							name: 'Scale',
-							value: '25+ years delivery experience'
-						},
-						{
-							'@type': 'PropertyValue',
-							name: 'Specializations',
+							name: 'Reference Case Study',
 							value:
-								'Headless commerce, Composable architecture, Marketplace integration, Distributed order management'
+								'bc-subscriptions — 38 ADRs, 5-persona journey template, runnable prototype as design oracle'
+						},
+						{
+							'@type': 'PropertyValue',
+							name: 'Planning Methodology',
+							value:
+								'big-blueprint — 7-stage pipeline (research → principles → prototype → fact-check → docs → deploy → iterate)'
 						}
 					]
 				}
@@ -139,26 +119,26 @@ export const GET: RequestHandler = async () => {
 				'@type': 'ListItem',
 				position: 5,
 				item: {
-					'@type': 'Thing',
-					name: 'Product Architecture',
+					'@type': 'DefinedTerm',
+					name: 'Brand-to-Site Pipelines',
 					description:
-						'Product strategy, platform architecture, and building systems that scale from concept to production',
-					additionalType: 'Skill',
+						'One brand-kit JSON drives tokens, voiced copy, imagery, and an archetype-instantiated site. CLI-chained workflow used across multiple shipped sites.',
+					subjectOf: [
+						{ '@type': 'SoftwareSourceCode', url: 'https://github.com/nino-chavez/forge-brand' },
+						{ '@type': 'SoftwareSourceCode', url: 'https://github.com/nino-chavez/forge-signal' },
+						{ '@type': 'SoftwareSourceCode', url: 'https://github.com/nino-chavez/forge-site' },
+						{ '@type': 'SoftwareSourceCode', url: 'https://github.com/nino-chavez/gen-images' }
+					],
 					additionalProperty: [
 						{
 							'@type': 'PropertyValue',
-							name: 'Evidence',
-							value: 'Leading product architecture for enterprise commerce platform'
+							name: 'Tools',
+							value: '4 chained CLIs (forge-brand → forge-signal → gen-images → forge-site)'
 						},
 						{
 							'@type': 'PropertyValue',
-							name: 'Scale',
-							value: '25+ years building scalable systems'
-						},
-						{
-							'@type': 'PropertyValue',
-							name: 'Focus Areas',
-							value: 'Platform design, Scalability, AI-native systems, Commerce platforms'
+							name: 'Sites Shipped Through Pipeline',
+							value: '10+ (signalx.studio, letspepper.com, flickdaymedia.com, plus client work)'
 						}
 					]
 				}
@@ -167,40 +147,46 @@ export const GET: RequestHandler = async () => {
 				'@type': 'ListItem',
 				position: 6,
 				item: {
-					'@type': 'Thing',
-					name: 'Technical Leadership',
+					'@type': 'DefinedTerm',
+					name: 'Production Web Engineering',
 					description:
-						'Global team coordination, CI/CD pipeline design, system integration, performance optimization, and cross-functional delivery management',
-					additionalType: 'Skill',
+						'End-to-end production craft on SvelteKit + Supabase + Cloudflare R2/Images/Workers. AAA accessibility, viewport-aware image serving, custom Workers for non-trivial paths (e.g., album zip generation).',
+					subjectOf: [{ '@type': 'WebPage', url: 'https://ninochavez.co/photography' }],
 					additionalProperty: [
 						{
 							'@type': 'PropertyValue',
-							name: 'Evidence',
+							name: 'Photography Site Scale',
+							value: '20,000+ photos with AI-enriched semantic search'
+						},
+						{ '@type': 'PropertyValue', name: 'Accessibility Target', value: 'WCAG 2.1 AAA' },
+						{
+							'@type': 'PropertyValue',
+							name: 'Performance Target',
+							value: 'Lighthouse >90 across categories'
+						}
+					]
+				}
+			},
+			{
+				'@type': 'ListItem',
+				position: 7,
+				item: {
+					'@type': 'DefinedTerm',
+					name: 'Commerce Platform Architecture (Supporting)',
+					description:
+						'15+ years of commerce platform implementation — headless architecture, ecosystem integration, multi-tenant SaaS. Now applied through agentic-AI products (Ask BC, bc-subscriptions) rather than as a primary positioning.',
+					additionalProperty: [
+						{ '@type': 'PropertyValue', name: 'Years', value: '15+' },
+						{
+							'@type': 'PropertyValue',
+							name: 'Current Application',
 							value:
-								'Led system integration, performance, QA, and CI/CD streams for $25M program'
-						},
-						{
-							'@type': 'PropertyValue',
-							name: 'Scale',
-							value: 'Global distributed team coordination (100+ resources)'
-						},
-						{
-							'@type': 'PropertyValue',
-							name: 'Methodologies',
-							value: 'Agile, DevOps, Continuous Integration, Quality Engineering'
+								'Ask BC (agentic assistant for BigCommerce merchants) + bc-subscriptions (subscription-management platform spec)'
 						}
 					]
 				}
 			}
-		],
-
-		// Additional metadata for context
-		about: {
-			'@type': 'Person',
-			name: 'Nino Chavez',
-			url: 'https://ninochavez.co',
-			jobTitle: ['Product Architect']
-		}
+		]
 	};
 
 	return json(expertiseData, {
