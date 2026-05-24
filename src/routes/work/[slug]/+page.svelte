@@ -1,314 +1,442 @@
-<script lang="ts">
-	import { onMount } from 'svelte';
-	import { fly, fade } from 'svelte/transition';
-	import type { PageData } from './$types';
+<script>
+	import Hero from '$lib/components/compositions/Hero.svelte';
+	import SectionHead from '$lib/components/compositions/SectionHead.svelte';
+	import PullQuote from '$lib/components/compositions/PullQuote.svelte';
+	import Schematic from '$lib/components/Schematic.svelte';
 
-	export let data: PageData;
+	export let data;
 	$: project = data.project;
 
-	let mounted = false;
+	function urlLabel(u) {
+		if (!u) return '';
+		return u.replace(/^https?:\/\//, '').replace(/\/$/, '');
+	}
 
-	// Status badge colors
-	const statusColors: Record<string, string> = {
-		production: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
-		active: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-		beta: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
-		archived: 'bg-gray-500/20 text-gray-400 border-gray-500/30'
+	// Map work-data slug → Schematic kind. Only forge-pipeline + hesitation-fold
+	// are drafted today; the per-case-study schematics are Phase 3b. Until then,
+	// fall back to the forge-pipeline placeholder so the slot doesn't read empty.
+	const SCHEMATIC_KIND = {
+		'rally-hq': 'forge-pipeline',
+		atelier: 'forge-pipeline',
+		'ask-bc': 'forge-pipeline',
+		photography: 'forge-pipeline',
+		'bc-subscriptions': 'forge-pipeline'
 	};
+	$: schematicKind = SCHEMATIC_KIND[project.slug] || 'forge-pipeline';
+	$: hasPullQuote = Boolean(project.pullQuote);
+	$: hasQuotableArtifacts = Array.isArray(project.quotableArtifacts) && project.quotableArtifacts.length > 0;
 
-	// Visibility icons and labels
-	const visibilityConfig: Record<string, { label: string; class: string }> = {
-		public: { label: 'Open Source', class: 'text-emerald-400' },
-		private: { label: 'Private Repository', class: 'text-violet-400' },
-		partial: { label: 'Partial Access', class: 'text-amber-400' }
-	};
-
-	// Category labels
-	const categoryLabels: Record<string, string> = {
-		'zero-to-one': 'Zero to One',
-		'ai-tools': 'AI Tools & Frameworks',
-		'platforms': 'Platforms',
-		'open-source': 'Open Source'
-	};
-
-	onMount(() => {
-		mounted = true;
-	});
+	$: liveUrl = project.demo || project.github;
 </script>
 
 <svelte:head>
-	<title>{project.title} - Nino Chavez | Work</title>
-	<meta name="description" content="{project.tagline}. {project.description}" />
-
-	<!-- Open Graph -->
-	<meta property="og:title" content="{project.title} - Nino Chavez | Work" />
-	<meta property="og:description" content="{project.tagline}" />
+	<title>{project.title} — Work — Nino Chavez</title>
+	<meta name="description" content={project.tagline} />
+	<meta property="og:title" content="{project.title} — Nino Chavez" />
+	<meta property="og:description" content={project.tagline} />
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content="https://ninochavez.co/work/{project.slug}" />
-	<meta property="og:image" content="{project.heroImage}" />
-
-	<!-- Twitter Card -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="{project.title} - Nino Chavez" />
-	<meta name="twitter:description" content="{project.tagline}" />
-	<meta name="twitter:image" content="{project.heroImage}" />
 </svelte:head>
 
-<div class="min-h-screen bg-gray-950 text-white">
-	<!-- Hero -->
-	<section class="relative">
-		<!-- Background Image -->
-		<div class="absolute inset-0 h-[50vh]">
-			<img
-				src={project.heroImage}
-				alt={project.title}
-				width="1920"
-				height="1080"
-				class="w-full h-full object-cover"
-				fetchpriority="high"
-				loading="eager"
-				decoding="async"
-			/>
-			<div class="absolute inset-0 bg-gradient-to-b from-gray-950/60 via-gray-950/80 to-gray-950"></div>
-		</div>
+<!-- ───── hero-case-study ────────────────────────────────────────────── -->
+<Hero size="compact">
+	<p slot="kicker">/work / {project.slug}</p>
+	<svelte:fragment slot="claim">{project.title}</svelte:fragment>
+	<svelte:fragment slot="subhead">{project.tagline}</svelte:fragment>
+</Hero>
 
-		<!-- Content -->
-		<div class="relative pt-16 pb-8 md:pt-24 md:pb-12 px-6 md:px-12">
-			<div class="max-w-4xl mx-auto">
-				{#if mounted}
-					<!-- Breadcrumb -->
-					<nav class="mb-8" in:fade={{ duration: 300 }}>
-						<a href="/" class="text-gray-400 hover:text-gray-200 transition-colors text-sm">Home</a>
-						<span class="text-gray-600 mx-2">/</span>
-						<a href="/work" class="text-gray-400 hover:text-gray-200 transition-colors text-sm">Work</a>
-						<span class="text-gray-600 mx-2">/</span>
-						<span class="text-gray-200 text-sm">{project.title}</span>
-					</nav>
-
-					<!-- Badges -->
-					<div class="flex flex-wrap gap-3 mb-6" in:fly={{ y: 20, duration: 400, delay: 100 }}>
-						<span class="px-3 py-1 text-sm font-medium rounded-full border {statusColors[project.status]}">
-							{project.status}
-						</span>
-						<span class="px-3 py-1 text-sm font-medium rounded-full bg-gray-800/80 text-gray-300">
-							{categoryLabels[project.category]}
-						</span>
-						<span class="px-3 py-1 text-sm font-medium rounded-full bg-gray-800/80 {visibilityConfig[project.visibility].class}">
-							{visibilityConfig[project.visibility].label}
-						</span>
-					</div>
-
-					<!-- Title -->
-					<h1
-						class="text-4xl md:text-5xl font-bold mb-4"
-						in:fly={{ y: 20, duration: 500, delay: 150 }}
-					>
-						{project.title}
-					</h1>
-
-					<!-- Tagline -->
-					<p
-						class="text-xl md:text-2xl text-gray-300 mb-8"
-						in:fly={{ y: 20, duration: 500, delay: 200 }}
-					>
-						{project.tagline}
-					</p>
-
-					<!-- Quick Links -->
-					<div class="flex flex-wrap gap-4" in:fly={{ y: 20, duration: 500, delay: 250 }}>
-						{#if project.demo}
-							<a
-								href={project.demo}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-500 text-gray-950 font-semibold rounded-lg hover:bg-emerald-400 transition-colors"
-							>
-								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-								</svg>
-								View Live
-							</a>
-						{/if}
-						{#if project.github && project.visibility === 'public'}
-							<a
-								href={project.github}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 border border-gray-700 transition-colors"
-							>
-								<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-									<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-								</svg>
-								View Source
-							</a>
-						{:else if project.visibility === 'private'}
-							<span class="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-800/50 text-gray-400 font-medium rounded-lg border border-gray-700/50">
-								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-								</svg>
-								Private - Available on Request
-							</span>
-						{/if}
-					</div>
-				{/if}
-			</div>
-		</div>
-	</section>
-
-	<!-- Main Content -->
-	<div class="px-6 md:px-12 py-12">
-		<div class="max-w-4xl mx-auto">
-			<!-- Description -->
-			<section class="mb-8">
-				<p class="text-lg text-gray-300 leading-relaxed">
-					{project.description}
-				</p>
-			</section>
-
-			<!-- What I Learned -->
-			<section class="mb-12">
-				<div class="bg-gradient-to-r from-emerald-500/10 to-violet-500/10 border border-emerald-500/20 rounded-xl p-6">
-					<h2 class="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-4">What I Learned</h2>
-					<div class="space-y-3">
-						{#each project.learned as lesson}
-							<div class="flex items-start gap-3">
-								<svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-								</svg>
-								<span class="text-white">{lesson}</span>
-							</div>
-						{/each}
-					</div>
-				</div>
-			</section>
-
-			<!-- Problem & Approach -->
-			<section class="grid md:grid-cols-2 gap-8 mb-12">
-				<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
-					<h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-						<span class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center">
-							<svg class="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-							</svg>
-						</span>
-						The Problem
-					</h2>
-					<p class="text-gray-400 leading-relaxed">{project.problem}</p>
-				</div>
-
-				<div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
-					<h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-						<span class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center">
-							<svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-							</svg>
-						</span>
-						The Approach
-					</h2>
-					<p class="text-gray-400 leading-relaxed">{project.approach}</p>
-				</div>
-			</section>
-
-			<!-- Architecture -->
-			<section class="mb-12">
-				<h2 class="text-xl font-bold text-white mb-6">Architecture Decisions</h2>
-				<div class="grid gap-3">
-					{#each project.architecture as decision}
-						<div class="flex items-start gap-3 bg-gray-900/30 border border-gray-800/50 rounded-lg p-4">
-							<svg class="w-5 h-5 text-violet-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-							</svg>
-							<span class="text-gray-300">{decision}</span>
-						</div>
-					{/each}
-				</div>
-			</section>
-
-			<!-- Key Decisions -->
-			<section class="mb-12">
-				<h2 class="text-xl font-bold text-white mb-6">Why I Built It This Way</h2>
-				<div class="space-y-4">
-					{#each project.keyDecisions as decision}
-						<div class="flex items-start gap-3">
-							<svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-								<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-							</svg>
-							<span class="text-gray-300">{decision}</span>
-						</div>
-					{/each}
-				</div>
-			</section>
-
-			<!-- Tech Stack -->
-			<section class="mb-12">
-				<h2 class="text-xl font-bold text-white mb-6">Technology Stack</h2>
-				<div class="flex flex-wrap gap-2">
-					{#each project.stack as tech}
-						<span class="px-3 py-1.5 bg-gray-800 text-gray-300 rounded-lg text-sm font-medium">
-							{tech}
-						</span>
-					{/each}
-				</div>
-			</section>
-
-			<!-- Outcomes -->
-			<section class="mb-12">
-				<h2 class="text-xl font-bold text-white mb-6">Outcomes</h2>
-				<div class="grid md:grid-cols-2 gap-3">
-					{#each project.outcomes as outcome}
-						<div class="flex items-start gap-3 bg-emerald-500/5 border border-emerald-500/20 rounded-lg p-4">
-							<svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-							</svg>
-							<span class="text-gray-300">{outcome}</span>
-						</div>
-					{/each}
-				</div>
-			</section>
-
-			<!-- Timeline -->
-			<section class="mb-12">
-				<div class="flex items-center gap-6 text-sm text-gray-400">
-					<div class="flex items-center gap-2">
-						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-						</svg>
-						<span>Started: {project.started}</span>
-					</div>
-					{#if project.duration}
-						<div class="flex items-center gap-2">
-							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-							</svg>
-							<span>{project.duration}</span>
-						</div>
-					{/if}
-				</div>
-			</section>
-
-			<!-- Navigation -->
-			<section class="border-t border-gray-800 pt-8">
-				<div class="flex flex-wrap gap-4 justify-between items-center">
-					<a
-						href="/work"
-						class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
-					>
-						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-						</svg>
-						Back to All Work
-					</a>
-					<a
-						href="/"
-						class="inline-flex items-center gap-2 px-5 py-2.5 bg-lime-400 text-gray-950 font-semibold rounded-lg hover:bg-white transition-colors"
-					>
-						Home
-						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-						</svg>
-					</a>
-				</div>
-			</section>
-		</div>
-	</div>
+<div class="case-meta">
+	{#if liveUrl}
+		<a class="url-pill" href={liveUrl} rel="noopener" target="_blank">
+			{urlLabel(liveUrl)}
+		</a>
+	{/if}
+	{#if project.github && project.github !== liveUrl}
+		<a class="url-pill secondary" href={project.github} rel="noopener" target="_blank">
+			{urlLabel(project.github)}
+		</a>
+	{/if}
+	<ul class="stack">
+		{#each project.stack as tech}
+			<li>{tech}</li>
+		{/each}
+	</ul>
 </div>
+
+<!-- ───── signature-diagram-opener ───────────────────────────────────── -->
+<section class="diagram" aria-labelledby="diagram-heading">
+	<h2 id="diagram-heading" class="visually-hidden">{project.title} architecture</h2>
+	<Schematic
+		kind={schematicKind}
+		caption={`${project.schematic ?? 'schematic'} — hand-drafted final lands in Phase 3b (this is the placeholder at the correct register).`}
+	/>
+</section>
+
+<!-- ───── agentic-approach-readout ───────────────────────────────────── -->
+<section class="approach" aria-labelledby="approach-heading">
+	<SectionHead kicker="01 — The approach" id="approach-heading">
+		Problem framing, agent design, artifact links.
+	</SectionHead>
+	<div class="readout-grid">
+		<article class="readout">
+			<h3 class="readout-label">Problem</h3>
+			<p>{project.problem}</p>
+		</article>
+		<article class="readout">
+			<h3 class="readout-label">Approach</h3>
+			<p>{project.approach}</p>
+		</article>
+		<article class="readout">
+			<h3 class="readout-label">Key decisions</h3>
+			<ul>
+				{#each project.keyDecisions as decision}
+					<li>{decision}</li>
+				{/each}
+			</ul>
+		</article>
+	</div>
+</section>
+
+<!-- ───── quotable-artifact-block ────────────────────────────────────── -->
+{#if hasPullQuote || hasQuotableArtifacts}
+	<section class="artifacts" aria-labelledby="artifacts-heading">
+		<SectionHead kicker="02 — Quotable artifacts" id="artifacts-heading">
+			Specific things you can click into.
+		</SectionHead>
+
+		{#if hasPullQuote}
+			<PullQuote>{project.pullQuote}</PullQuote>
+		{/if}
+
+		{#if hasQuotableArtifacts}
+			<ul class="artifact-list">
+				{#each project.quotableArtifacts as artifact}
+					<li class="artifact">
+						<a href={artifact.href} rel="noopener" target="_blank">
+							<span class="artifact-label">{artifact.label}</span>
+							{#if artifact.excerpt}
+								<span class="artifact-excerpt">{artifact.excerpt}</span>
+							{/if}
+							<span class="artifact-href">{urlLabel(artifact.href)}</span>
+						</a>
+					</li>
+				{/each}
+			</ul>
+		{/if}
+	</section>
+{/if}
+
+<!-- ───── outcome-readout ────────────────────────────────────────────── -->
+<section class="outcomes" aria-labelledby="outcomes-heading">
+	<SectionHead kicker="03 — Outcomes" id="outcomes-heading">
+		What shipped, what it measures.
+	</SectionHead>
+
+	<dl class="metric-list">
+		{#each project.metrics as metric}
+			<div class="metric-row">
+				<dt>{metric.label}</dt>
+				<dd>
+					<span class="metric-value">{metric.value}</span>
+					{#if metric.context}<span class="metric-context">{metric.context}</span>{/if}
+				</dd>
+			</div>
+		{/each}
+	</dl>
+
+	{#if project.outcomes?.length}
+		<ul class="outcome-list">
+			{#each project.outcomes as outcome}
+				<li>{outcome}</li>
+			{/each}
+		</ul>
+	{/if}
+
+	{#if project.learned?.length}
+		<aside class="learned">
+			<h3 class="learned-head">What I learned</h3>
+			<ul>
+				{#each project.learned as item}
+					<li>{item}</li>
+				{/each}
+			</ul>
+		</aside>
+	{/if}
+
+	<footer class="case-foot">
+		<a href="/work">← back to work index</a>
+		{#if liveUrl}
+			<a href={liveUrl} rel="noopener" target="_blank" class="primary-link">
+				{urlLabel(liveUrl)} ↗
+			</a>
+		{/if}
+	</footer>
+</section>
+
+<style>
+	.visually-hidden {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.case-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		margin: 0 0 var(--space-16);
+		align-items: center;
+	}
+
+	.url-pill {
+		font-family: var(--font-mono);
+		font-size: var(--type-sm);
+		color: var(--text-link-hover);
+		padding: var(--space-2) var(--space-3);
+		border: 1px solid var(--border-violet-strong);
+		text-decoration: none;
+		transition: background-color var(--dur-base) var(--ease-out);
+	}
+
+	.url-pill:hover {
+		background: var(--surface-card-hover);
+	}
+
+	.url-pill.secondary {
+		color: var(--text-muted);
+		border-color: var(--border-base);
+	}
+
+	.stack {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		list-style: none;
+		padding: 0;
+		margin: 0 0 0 var(--space-2);
+	}
+
+	.stack li {
+		font-family: var(--font-mono);
+		font-size: var(--type-xs);
+		color: var(--text-muted);
+		padding: var(--space-1) var(--space-2);
+		border: 1px solid var(--border-base);
+	}
+
+	.diagram,
+	.approach,
+	.artifacts,
+	.outcomes {
+		margin: var(--space-20) 0;
+	}
+
+	.readout-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+	}
+
+	.readout {
+		border: 1px solid var(--border-base);
+		padding: var(--space-6);
+	}
+
+	.readout-label {
+		margin: 0 0 var(--space-3);
+		font-family: var(--font-mono);
+		font-size: var(--type-xs);
+		color: var(--color-brand-violet);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-kicker);
+		font-weight: 500;
+	}
+
+	.readout p {
+		margin: 0;
+		font-size: var(--type-body);
+		line-height: var(--leading-body);
+		color: var(--text-secondary);
+		max-width: 64ch;
+	}
+
+	.readout ul {
+		margin: 0;
+		padding-left: var(--space-5);
+		font-size: var(--type-body);
+		line-height: var(--leading-body);
+		color: var(--text-secondary);
+		max-width: 64ch;
+	}
+
+	.readout li {
+		margin-bottom: var(--space-2);
+	}
+
+	.artifact-list {
+		list-style: none;
+		padding: 0;
+		margin: var(--space-8) 0 0;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-3);
+	}
+
+	.artifact a {
+		display: block;
+		padding: var(--space-4) var(--space-5);
+		border: 1px solid var(--border-base);
+		text-decoration: none;
+		color: inherit;
+		transition: border-color var(--dur-base) var(--ease-out),
+			background-color var(--dur-base) var(--ease-out);
+	}
+
+	.artifact a:hover {
+		border-color: var(--border-violet-strong);
+		background: var(--surface-card-hover);
+	}
+
+	.artifact-label {
+		display: block;
+		font-family: var(--font-mono);
+		font-size: var(--type-sm);
+		color: var(--text-primary);
+		margin-bottom: var(--space-1);
+	}
+
+	.artifact-excerpt {
+		display: block;
+		font-size: var(--type-sm);
+		color: var(--text-secondary);
+		line-height: 1.5;
+		margin-bottom: var(--space-2);
+		font-style: italic;
+	}
+
+	.artifact-href {
+		display: block;
+		font-family: var(--font-mono);
+		font-size: var(--type-xs);
+		color: var(--text-link);
+		word-break: break-all;
+	}
+
+	.metric-list {
+		margin: 0 0 var(--space-8);
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		border-top: 1px solid var(--border-subtle);
+	}
+
+	.metric-row {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: var(--space-4);
+		padding: var(--space-4) 0;
+		border-bottom: 1px solid var(--border-subtle);
+		align-items: baseline;
+	}
+
+	.metric-row dt {
+		margin: 0;
+		font-size: var(--type-sm);
+		color: var(--text-secondary);
+	}
+
+	.metric-row dd {
+		margin: 0;
+		font-family: var(--font-mono);
+		text-align: right;
+		display: flex;
+		flex-direction: column;
+		gap: 0.125rem;
+	}
+
+	.metric-value {
+		font-size: var(--type-lead);
+		color: var(--text-primary);
+		font-weight: 500;
+	}
+
+	.metric-context {
+		font-size: var(--type-xs);
+		color: var(--text-muted);
+	}
+
+	.outcome-list {
+		margin: var(--space-6) 0 0;
+		padding-left: var(--space-5);
+		font-size: var(--type-body);
+		line-height: var(--leading-body);
+		color: var(--text-secondary);
+		max-width: 64ch;
+	}
+
+	.outcome-list li {
+		margin-bottom: var(--space-2);
+	}
+
+	.learned {
+		margin: var(--space-8) 0 0;
+		padding: var(--space-5);
+		background: var(--surface-elevated);
+		border-left: 2px solid var(--color-brand-violet);
+	}
+
+	.learned-head {
+		margin: 0 0 var(--space-3);
+		font-family: var(--font-mono);
+		font-size: var(--type-xs);
+		color: var(--color-brand-violet);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-kicker);
+		font-weight: 500;
+	}
+
+	.learned ul {
+		margin: 0;
+		padding-left: var(--space-5);
+		font-size: var(--type-sm);
+		line-height: 1.6;
+		color: var(--text-secondary);
+		max-width: 64ch;
+	}
+
+	.learned li {
+		margin-bottom: var(--space-2);
+	}
+
+	.case-foot {
+		margin: var(--space-12) 0 0;
+		padding-top: var(--space-6);
+		border-top: 1px solid var(--border-subtle);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: var(--space-4);
+		font-family: var(--font-mono);
+		font-size: var(--type-sm);
+	}
+
+	.case-foot a {
+		color: var(--text-link);
+		text-decoration: none;
+	}
+
+	.case-foot a:hover {
+		color: var(--text-link-hover);
+	}
+
+	.primary-link {
+		color: var(--text-link-hover) !important;
+	}
+</style>
