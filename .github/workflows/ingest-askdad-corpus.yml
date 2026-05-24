@@ -1,0 +1,51 @@
+# Event-triggered ask-dad corpus ingestion. Per ADR-0006.
+#
+# Triggers ONLY on push to main (content lands) and on workflow_dispatch
+# (manual re-run from the Actions tab). Explicitly NOT a `schedule:` —
+# scheduled background agents are refused per prior Nino direction; the
+# artifact change is the event.
+#
+# If this file ever grows a `schedule:` trigger, that PR contradicts
+# ADR-0006 and should be reverted.
+
+name: ingest-askdad-corpus
+
+on:
+  push:
+    branches: [main]
+    paths:
+      # Only re-derive when content that's actually in the corpus changes.
+      # This keeps the ingester cost-bounded and avoids running on unrelated
+      # site edits (CSS-only commits, dependency bumps, etc).
+      - 'blueprint/**'
+      - 'src/lib/server/askdad/**'
+      - 'tools/derive-corpus/**'
+  workflow_dispatch: # manual trigger from Actions tab
+
+concurrency:
+  group: askdad-corpus
+  cancel-in-progress: false # never cancel in-flight ingestion; corpus rows are mid-mutation
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Run derive-corpus
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          GITHUB_WORKSPACE: ${{ github.workspace }}
+        run: npx tsx tools/derive-corpus/derive-corpus.ts
