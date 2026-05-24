@@ -41,10 +41,13 @@ Hero claim (locked, do not relitigate): **"Context engineer. I _instrument_ the 
 ## What's done (commits on `redesign/v3-context-engineer`)
 
 ```
+757a27f  feat(blueprint): /blueprint route — site-as-prototype review portal
 3a19271  feat(blueprint): bc-subs pattern adoption — DESIGN-PRINCIPLES + 5 ADRs + README
 39d324a  feat(content): Phase 2 drafts — hero, about, practice, AEO payloads, work-data refresh
 8fd227a  feat(blueprint): forge-site stages 2/3/3.5 for v3 redesign
 ```
+
+**`/blueprint/` route shipped:** Live at <https://redesign-v3-context-engineer.ninochavez-main.pages.dev/blueprint> once the CF Pages deploy completes. Prerendered, noindex/nofollow, violet/Inter/JetBrains-Mono styling. Source: `src/routes/blueprint/{+page.svelte,+page.ts,[...slug]/+page.svelte,[...slug]/+page.ts,blueprint-docs.ts}`. Link resolver rewrites in-blueprint relative refs to `/blueprint/<slug>` and out-of-blueprint refs to GitHub source URLs on the redesign branch.
 
 Also on other repo `main` branches (already pushed):
 - `nino-chavez/atelier` — `f53f5db` custom domain bind: <https://atelier.ninochavez.co>
@@ -55,20 +58,11 @@ Also on other repo `main` branches (already pushed):
 
 These are authorized. Execute without re-confirming.
 
-### 1. `/blueprint/` route on the SvelteKit site (in flight, NOT shipped)
+### 1. ~~`/blueprint/` route~~ — SHIPPED (commit `757a27f`)
 
-The user asked for a deployable + reviewable blueprint portal. Current state: docs are in `blueprint/` as markdown only; no rendered web surface. The decision (already made, do not re-litigate per ADR-0005) is to add a `/blueprint/` route on the same SvelteKit app — NOT a separate static portal at `blueprint.ninochavez.co`.
+Live at `<preview>/blueprint`. Reference implementation lives at `src/routes/blueprint/`. Do NOT redo this work. If a future change is needed (new doc type, new group, theming pass), edit the existing files.
 
-Implementation (do this; do not ask):
-1. `npm install marked` in worktree root
-2. Create `src/routes/blueprint/+page.svelte` — index listing all blueprint docs with links, grouped (Stage 2 Diagnose, Stage 3 Prescribe, Stage 3.5 Design Brief, DESIGN-PRINCIPLES, Decisions, Content)
-3. Create `src/routes/blueprint/[...slug]/+page.ts` — `import.meta.glob('/blueprint/**/*.md', { eager: true, query: '?raw', import: 'default' })` to load all docs at build time; resolve `params.slug` → file, return `{ content, slug }`
-4. Create `src/routes/blueprint/[...slug]/+page.svelte` — use `marked.parse(data.content)` and render with `{@html}`. Apply the DESIGN.md tokens (violet accent, Inter, JetBrains Mono for code).
-5. Add a back-to-index link at top of each rendered doc
-6. Verify locally with `npm run dev` then push → preview URL serves at `<preview>/blueprint`
-7. Do NOT route this through the `apps/router` CF Worker; the SvelteKit `/blueprint/` route ships as part of the main site
-
-### 2. Phase 3a — content wiring (after `/blueprint/` route)
+### 2. Phase 3a — content wiring (NEXT)
 
 Apply Phase 2 drafts (in `blueprint/content/`) to actual SvelteKit code:
 - `blueprint/content/aeo-person.json` → `src/routes/api/person.json/+server.ts` (rewrite payload)
