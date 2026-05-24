@@ -37,6 +37,7 @@
 		pathname === '/contact' ||
 		pathname === '/design-system' ||
 		pathname === '/writing' ||
+		pathname === '/now' ||
 		pathname.startsWith('/work');
 
 	onMount(() => {

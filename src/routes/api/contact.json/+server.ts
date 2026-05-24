@@ -2,86 +2,72 @@ import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
 /**
- * AEO (Answer Engine Optimization) API Endpoint
+ * AEO (Answer Engine Optimization) — ContactPoint payload.
  *
- * Purpose: Provide machine-readable contact information for queries like:
- * - "How do I contact Nino Chavez?"
- * - "Nino Chavez email"
- * - "How to reach Nino Chavez"
- *
- * This endpoint provides definitive contact methods, making it easy for
- * AI models to provide accurate contact information in responses.
+ * Per 02-prescription.yml sitemap. The site does not sell services
+ * (DESIGN-PRINCIPLES.md §1); this endpoint exists so AI crawlers can
+ * resolve "how to reach Nino Chavez" deterministically without surfacing
+ * the v2 "Enterprise Consulting / Photography Services" framing.
  */
+
+export const prerender = true;
 
 export const GET: RequestHandler = async () => {
 	const contactData = {
 		'@context': 'https://schema.org',
-		'@type': 'ContactPoint',
-		name: 'Nino Chavez - Contact Information',
-		description: 'Primary contact methods for enterprise consulting and photography inquiries',
-
-		// Email (Primary)
-		email: 'nino@ninochavez.co',
-
-		// Professional Profiles
+		'@type': 'Person',
+		name: 'Nino Chavez',
 		url: 'https://ninochavez.co',
+		email: 'nino@ninochavez.co',
+		address: {
+			'@type': 'PostalAddress',
+			addressLocality: 'Chicago',
+			addressRegion: 'IL',
+			addressCountry: 'US'
+		},
+		contactPoint: [
+			{
+				'@type': 'ContactPoint',
+				contactType: 'primary',
+				email: 'nino@ninochavez.co',
+				availableLanguage: ['en', 'es'],
+				description:
+					'Email is the primary channel. Responds to interesting work; does not sell services.'
+			},
+			{
+				'@type': 'ContactPoint',
+				contactType: 'professional',
+				url: 'https://www.linkedin.com/in/nino-chavez/',
+				description: "LinkedIn for professional inquiries that aren't a fit for direct email."
+			},
+			{
+				'@type': 'ContactPoint',
+				contactType: 'code',
+				url: 'https://github.com/nino-chavez',
+				description:
+					'GitHub for repo-level conversations — issues, PRs, code-specific discussion.'
+			}
+		],
 		sameAs: [
 			'https://www.linkedin.com/in/nino-chavez/',
-			'https://github.com/nino-chavez'
+			'https://github.com/nino-chavez',
+			'https://blog.ninochavez.co'
 		],
-
-		// Contact Types
-		contactType: ['Customer Service', 'Sales', 'Technical Support'],
-
-		// Availability
-		availableLanguage: ['English'],
-
-		// Location
-		areaServed: {
-			'@type': 'Place',
-			name: 'Global',
-			description: 'Available for remote consulting worldwide, based in Chicago'
-		},
-
-		// Person Details
-		about: {
-			'@type': 'Person',
-			name: 'Nino Chavez',
-			jobTitle: ['Product Architect', 'Action Sports Photographer'],
-			worksFor: {
-				'@type': 'Organization',
-				name: 'commerce.com'
-			},
-			address: {
-				'@type': 'PostalAddress',
-				addressLocality: 'Chicago',
-				addressRegion: 'IL',
-				addressCountry: 'US'
-			}
-		},
-
-		// Service Offerings for Context
 		additionalProperty: [
 			{
 				'@type': 'PropertyValue',
-				name: 'Enterprise Consulting',
-				value:
-					'Available for strategic advisory, enterprise architecture, AI transformation projects'
-			},
-			{
-				'@type': 'PropertyValue',
-				name: 'Photography Services',
-				value: 'Available for tournament photography, action sports events, team photography'
+				name: 'Engagement Posture',
+				value: "I'm not selling services. I respond to interesting work."
 			},
 			{
 				'@type': 'PropertyValue',
 				name: 'Response Time',
-				value: 'Typically responds within 24-48 hours'
+				value: 'Email replied within 1-3 business days; no SLA.'
 			},
 			{
 				'@type': 'PropertyValue',
-				name: 'Preferred Contact Method',
-				value: 'Email for initial inquiries, LinkedIn for professional networking'
+				name: 'Primary Identity',
+				value: 'Context Engineer'
 			}
 		]
 	};
