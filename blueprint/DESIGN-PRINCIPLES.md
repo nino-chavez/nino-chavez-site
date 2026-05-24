@@ -110,14 +110,14 @@ Manual verification at v3 launch; tool deferred (per Option B "lean" scope).
 
 The bc-subscriptions case-study (`wip/big-blueprint/docs/case-study-bc-subscriptions-skipped-stages-2-4.md`) shows the cost of skipping Stage 4. Concrete fact-check gates for v3:
 
-| Claim site makes | How it gets verified before ship |
-|---|---|
-| "Context engineer" toolchain has 6 published tools | `gh repo list nino-chavez` shows the 6 named tools as public repos. Verified during Phase 5 handoff. |
-| Hero credibility ribbon: 60+ projects | `find ~/Workspace/dev/{apps,wip,tools,client} -maxdepth 2 -name "package.json" -o -name "Cargo.toml" -o -name "wrangler.toml" \| count`; round down to be honest |
-| Hero credibility ribbon: 743 voice signals across 62 projects | Read `~/.claude/poe/stack.md` top; update number on every push if the corpus has grown |
-| 5 lead case studies with live URLs | `curl -sI` each URL in the `case_studies.lead` block of `02-prescription.yml`. All must return 200 or appropriate state before homepage links go live. |
-| `/practice` toolchain card claims | Each public-repo link clicked manually before launch; broken links block deploy |
-| AEO `/api/person.json` leads with "Context Engineer" | grep the deployed payload, not just the source file; fact-check against the live JSON |
+| Claim site makes | How it gets verified | Current status |
+|---|---|---|
+| Toolchain size = 6 named tools | `gh repo view nino-chavez/<tool> --json visibility` for each | **5 of 6 are PRIVATE** (only `ai-champions-kit` is public; AEGIS at `signal-x-studio/aegis-framework` not accessible either). Surfaces have been reworded to "toolchain" not "open/published toolchain" and each tool is marked public/private on `/practice`. **Launch decision needed**: make tools public OR keep current "mixed visibility" framing permanently. See HANDOFF.md "Open launch decisions." |
+| Hero credibility ribbon: 56+ projects | `find ~/Workspace/dev/{apps,wip,tools,client} -mindepth 1 -maxdepth 1 -type d \| wc -l` | ✓ 56 top-level workspace project directories. Updated from "60+" — original undercounted because the narrow `-name package.json -o ...` find missed projects without those manifest files. Broader rule is verifiable. |
+| Hero credibility ribbon: 746 voice signals across 62 projects | Read `~/.claude/poe/stack.md` top; update number on every push if the corpus has grown | ✓ Updated to 746 (corpus grew from 743 → 746 mid-session). |
+| 5 lead case-study URLs return 200 | `curl -sI -L` each URL | ✓ All 5 verified: rallyhq.app, blueprint.rallyhq.app, atelier.ninochavez.co, askbc.ninochavez.co, ninochavez.co/photography |
+| AEO `/api/person.json` leads with "Context Engineer" in deployed payload | `curl` against the live preview deploy, not just source grep | Pending — verify after the next CF Pages deploy lands. |
+| `/practice` toolchain card claims | Each public-repo link clicked manually before launch; broken links block deploy. Private repos display non-clickable with "request access" label. | ✓ Card visibility prop wired; private repos render as non-link text. |
 
 These aren't optional. They're the discipline the bc-subs case study says is the difference between "structurally complete" and "runtime-complete."
 

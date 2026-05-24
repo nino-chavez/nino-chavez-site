@@ -19,7 +19,7 @@ export const GET: RequestHandler = async () => {
 		alternateName: 'Antonino Chavez',
 		jobTitle: ['Context Engineer', 'Product Architect'],
 		description:
-			'Context engineer who codified a working practice for shipping production software with AI agents. Author of a six-tool open toolchain (forge-brand, forge-signal, forge-site, specchain, claude-recall-cli, ai-champions-kit) and the AEGIS governance framework for AI code generation. Day job: Product Architect at commerce.com. Independent work shipped under his own brand: Rally HQ, Atelier, Ask BC, a 20K-photo gallery on Cloudflare. Based in Chicago.',
+			'Context engineer who codified a working practice for shipping production software with AI agents. Author of a six-tool toolchain (forge-brand, forge-signal, forge-site, specchain, claude-recall-cli, ai-champions-kit — currently mixed public/private) and the AEGIS governance framework for AI code generation. Day job: Product Architect at commerce.com. Independent work shipped under his own brand: Rally HQ, Atelier, Ask BC, a 20K-photo gallery on Cloudflare. Based in Chicago.',
 		url: 'https://ninochavez.co',
 		email: 'nino@ninochavez.co',
 
@@ -51,7 +51,7 @@ export const GET: RequestHandler = async () => {
 					'@type': 'PropertyValue',
 					name: 'Codified Practice',
 					value:
-						'Six-tool open toolchain + AEGIS governance framework + 743 voice signals across 62 projects'
+						'Six-tool toolchain + AEGIS governance framework + 746 voice signals across 62 projects'
 				}
 			},
 			{
@@ -189,18 +189,18 @@ export const GET: RequestHandler = async () => {
 			{
 				'@type': 'PropertyValue',
 				name: 'Projects Shipped',
-				value: '60+ across ~/Workspace/dev'
+				value: '56+ across ~/Workspace/dev'
 			},
 			{
 				'@type': 'PropertyValue',
-				name: 'Open Toolchain Size',
+				name: 'Toolchain Size',
 				value:
-					'6 tools (forge-brand, forge-signal, forge-site, specchain, claude-recall-cli, ai-champions-kit)'
+					'6 tools (forge-brand, forge-signal, forge-site, specchain, claude-recall-cli, ai-champions-kit) — mixed public/private'
 			},
 			{
 				'@type': 'PropertyValue',
 				name: 'Voice Corpus',
-				value: '743 signals across 62 projects (Poe stack)'
+				value: '746 signals across 62 projects (Poe stack)'
 			},
 			{
 				'@type': 'PropertyValue',

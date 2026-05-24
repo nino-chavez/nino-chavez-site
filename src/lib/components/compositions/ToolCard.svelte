@@ -5,10 +5,17 @@
 	export let body;
 	export let enforces;
 	export let href;
+	/** 'public' | 'private' — controls whether the repo URL is clickable + adds a marker */
+	export let visibility = 'public';
 </script>
 
-<article class="tool">
-	<h3 class="name">{name}</h3>
+<article class="tool" class:private={visibility === 'private'}>
+	<header class="head">
+		<h3 class="name">{name}</h3>
+		{#if visibility === 'private'}
+			<span class="badge" title="Private repo — not publicly accessible">private</span>
+		{/if}
+	</header>
 	{#if subtitle}
 		<p class="subtitle">{subtitle}</p>
 	{/if}
@@ -17,9 +24,15 @@
 		<span class="enforces-label">Enforces:</span>
 		{enforces}
 	</p>
-	<a class="link" {href} rel="noopener" target="_blank">
-		→ {href.replace(/^https?:\/\//, '')}
-	</a>
+	{#if visibility === 'public'}
+		<a class="link" {href} rel="noopener" target="_blank">
+			→ {href.replace(/^https?:\/\//, '')}
+		</a>
+	{:else}
+		<p class="link link-private">
+			{href.replace(/^https?:\/\//, '')} <span class="link-note">— private; request access</span>
+		</p>
+	{/if}
 </article>
 
 <style>
@@ -31,11 +44,45 @@
 		gap: var(--space-3);
 	}
 
+	.head {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: var(--space-3);
+		flex-wrap: wrap;
+	}
+
 	.name {
 		margin: 0;
 		font-size: var(--type-h3);
 		font-weight: 500;
 		color: var(--text-primary);
+	}
+
+	.badge {
+		font-family: var(--font-mono);
+		font-size: var(--type-xs);
+		color: var(--text-muted);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-mono);
+		padding: var(--space-1) var(--space-2);
+		border: 1px solid var(--border-base);
+	}
+
+	.private .name {
+		color: var(--text-secondary);
+	}
+
+	.link-private {
+		font-family: var(--font-mono);
+		font-size: var(--type-sm);
+		color: var(--text-faint);
+		margin-top: auto;
+		word-break: break-all;
+	}
+
+	.link-note {
+		color: var(--text-disabled);
 	}
 
 	.subtitle {

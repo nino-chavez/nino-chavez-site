@@ -13,7 +13,8 @@
 			body: 'One brand-kit JSON drives tokens, copy, images, and a site archetype. Four CLIs chain together: brand definition → CSS variables → voiced content → imagery → archetype-instantiated site.',
 			enforces:
 				'brand drift is structurally prevented — every downstream artifact resolves to the same source JSON.',
-			href: 'https://github.com/nino-chavez/forge-brand'
+			href: 'github.com/nino-chavez/forge-brand',
+			visibility: 'private'
 		},
 		{
 			name: 'specchain',
@@ -21,7 +22,8 @@
 			body: 'Spec-driven development workflow for AI-assisted coding. Execution profiles, crash recovery, traceability between spec and implementation, multi-agent handoffs.',
 			enforces:
 				'the spec is the durable artifact; the implementation is derived. Spec drift surfaces as a failing test, not a hallway conversation three sprints later.',
-			href: 'https://github.com/nino-chavez/specchain'
+			href: 'github.com/nino-chavez/specchain',
+			visibility: 'private'
 		},
 		{
 			name: 'AEGIS Framework',
@@ -29,7 +31,8 @@
 			body: 'Plan gating (MVP / Surgical / Systemic), self-healing blueprint engine, evolution-story tracking, cross-framework learning.',
 			enforces:
 				'every AI-generated change passes through plan classification + validation + evolution tracking before it lands.',
-			href: 'https://github.com/signal-x-studio/aegis-framework'
+			href: 'github.com/signal-x-studio/aegis-framework',
+			visibility: 'private'
 		},
 		{
 			name: 'claude-recall-cli + Poe stack',
@@ -37,7 +40,8 @@
 			body: 'Global /recall slash commands plus the voice-stack generator that builds the character sheet at the top of every session. SQLite + FTS5 underneath; the Poe stack is the serialized output that loads into every prompt.',
 			enforces:
 				'corrections survive the session — past corrections inform future drafts, with measurable tone metrics as evidence the loop is closed.',
-			href: 'https://github.com/nino-chavez/claude-recall-cli'
+			href: 'github.com/nino-chavez/claude-recall-cli',
+			visibility: 'private'
 		},
 		{
 			name: 'ai-champions-kit',
@@ -45,7 +49,8 @@
 			body: 'Shared Claude Code skills + subagents packaged for installation by others. The practice transferred to other practitioners as a kit.',
 			enforces:
 				"the practice is reproducible, not personal. If it only works for me, it isn't a practice.",
-			href: 'https://github.com/nino-chavez/ai-champions-kit'
+			href: 'https://github.com/nino-chavez/ai-champions-kit',
+			visibility: 'public'
 		},
 		{
 			name: 'big-blueprint',
@@ -53,7 +58,8 @@
 			body: '7-stage agent-assisted methodology for product-planning initiatives. Research → design principles → prototype → fact-check → docs → deploy → iterate.',
 			enforces:
 				'every product decision has a recorded source in the synthesis layer; planning state derives from artifacts, not whiteboard memory.',
-			href: 'https://github.com/nino-chavez/big-blueprint'
+			href: 'github.com/nino-chavez/big-blueprint',
+			visibility: 'private'
 		}
 	];
 
@@ -107,8 +113,9 @@
 	<p slot="kicker">/practice</p>
 	<svelte:fragment slot="claim">This is <em>how</em> I work.</svelte:fragment>
 	<svelte:fragment slot="subhead">
-		Every claim on this page links to a public artifact. No methodology that isn't running. No tool
-		that hasn't shipped. No rule that hasn't caught a real failure.
+		Every claim on this page is anchored in a specific artifact — a tool, a hook, a corpus, a
+		repo. Some are public; some are private (marked below). No methodology that isn't running.
+		No rule that hasn't caught a real failure.
 	</svelte:fragment>
 </Hero>
 

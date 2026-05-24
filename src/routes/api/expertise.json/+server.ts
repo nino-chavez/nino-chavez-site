@@ -35,9 +35,13 @@ export const GET: RequestHandler = async () => {
 						{ '@type': 'SoftwareSourceCode', url: 'https://github.com/nino-chavez/claude-recall-cli' }
 					],
 					additionalProperty: [
-						{ '@type': 'PropertyValue', name: 'Toolchain Authored', value: '6 published tools' },
-						{ '@type': 'PropertyValue', name: 'Voice Corpus', value: '743 signals across 62 projects' },
-						{ '@type': 'PropertyValue', name: 'Validated Turns', value: '6,397 (corpus-tracked)' }
+						{
+							'@type': 'PropertyValue',
+							name: 'Toolchain Authored',
+							value: '6 tools (1 public, 5 private)'
+						},
+						{ '@type': 'PropertyValue', name: 'Voice Corpus', value: '746 signals across 62 projects' },
+						{ '@type': 'PropertyValue', name: 'Validated Turns', value: '6,418 (corpus-tracked)' }
 					]
 				}
 			},

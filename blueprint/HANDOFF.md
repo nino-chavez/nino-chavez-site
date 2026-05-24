@@ -97,6 +97,7 @@ Do NOT execute without Nino confirming each route. List from `blueprint/02-presc
 
 | Block | Detail |
 |---|---|
+| **Toolchain visibility** | 5 of 6 named tools are PRIVATE on GitHub (only `ai-champions-kit` is public; `aegis-framework` at `signal-x-studio` isn't accessible either). The site's credibility play assumes "go look at the public repos." Copy has been reworded to "toolchain" instead of "open toolchain" and each tool is marked public/private on `/practice`. **Launch decision**: (A) make the 5 tools public — restores the "open toolchain" claim, OR (B) keep mixed-visibility framing permanently — softer credibility play but honest. Nino's call. |
 | **Vercel deploys to `ask-bc` are BLOCKED** | `TEAM_ACCESS_REQUIRED` — git author `abelino.chavez@gmail.com` is not a member on `sxs-labs` Vercel team. Custom domain `askbc.ninochavez.co` serves the 16-day-old READY deployment with old `APP_ORIGIN` baked in; chat CORS will fail from the new domain until a fresh deploy lands. Fix requires adding the email as a team member on Vercel (one seat) — Nino's call. |
 | **BC Developer Portal callbacks** | Ask BC custom domain change requires updating callback URLs in `https://devtools.bigcommerce.com/my/apps`. Interactive auth, can't be automated. |
 | **Phase 4 destructive cuts** | Per-route confirmation required from Nino. Don't preemptively delete. |

@@ -10,10 +10,10 @@
 	const featured = getFeaturedProjects();
 
 	const ribbon = [
-		{ value: '60+', label: 'projects shipped', detail: 'under ~/Workspace/dev' },
+		{ value: '56+', label: 'projects shipped', detail: 'under ~/Workspace/dev' },
 		{
 			value: '6',
-			label: 'open toolchain',
+			label: 'tools in the toolchain',
 			detail:
 				'forge-brand · forge-signal · forge-site · specchain · claude-recall-cli · ai-champions-kit'
 		},

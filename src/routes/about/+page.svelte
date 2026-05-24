@@ -38,8 +38,8 @@
 		specs, conventions, decision logs, guardrails, and a record of what was tried. So I started
 		building those: a spec-driven workflow, a brand-to-site pipeline, a session memory corpus, a
 		governance layer for code generation, a planning methodology. The toolchain is the practice;
-		the tools are public; the case studies are what came out of using them.
-		<a href="/practice">/practice</a> has the inventory.
+		the case studies are what came out of using it. <a href="/practice">/practice</a> has the inventory
+		(with public/private markers per tool).
 	</p>
 
 	<p>
