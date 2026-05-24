@@ -1,276 +1,384 @@
 <script>
-	import { fade } from 'svelte/transition';
-	import { base } from '$app/paths';
-
-	const interests = [
-		{
-			title: 'Photography',
-			description: 'Action sports and volleyball. I run Flickday Media for tournament coverage. 20,000+ photos in the archive.',
-			link: 'https://flickdaymedia.com'
-		},
-		{
-			title: 'Music',
-			description: 'I DJ. House, disco, and whatever makes people move. Been doing it for years, still love it.',
-			link: 'https://soundcloud.com/ni-no-cha-vez'
-		},
-		{
-			title: 'Writing',
-			description: 'Signal Dispatch is my blog—essays on making things, software craft, and working through ideas in public.',
-			link: 'https://blog.ninochavez.co'
-		},
-		{
-			title: 'Building',
-			description: 'Software built with AI agents. Rally HQ, Signal X Studio, and whatever else is compiling today.',
-			link: '/#labs'
-		}
-	];
-
-	const ventures = [
-		{
-			name: "Let's Pepper",
-			description: 'Grassroots 3v3 volleyball tournament series. Competitive play, cash prizes, no fluff.',
-			link: 'https://letspepper.com'
-		},
-		{
-			name: 'Flickday Media',
-			description: 'Sports media company. Tournament photography, reels, same-day photo drops.',
-			link: 'https://flickdaymedia.com'
-		},
-		{
-			name: 'Rally HQ',
-			description: 'Tournament management platform. Real-time brackets, registration, payments.',
-			link: 'https://rallyhq.app'
-		}
-	];
+	// hero-with-thesis → narrative-prose-block → closing-pointer-row
+	// Source: blueprint/content/about.md
 </script>
 
 <svelte:head>
-	<title>About - Nino Chavez</title>
+	<title>About — Nino Chavez</title>
 	<meta
 		name="description"
-		content="Photography, music, writing, and software. Nino Chavez, Chicago."
+		content="Nino Chavez. Chicago. Product Architect at commerce.com. Independent work: an open toolchain and case studies for AI-assisted software development."
 	/>
-
-	<!-- Open Graph -->
-	<meta property="og:title" content="About - Nino Chavez" />
-	<meta
-		property="og:description"
-		content="Photography, music, writing, and software. Nino Chavez, Chicago."
-	/>
-	<meta property="og:type" content="profile" />
-	<meta property="og:url" content="https://ninochavez.co/about" />
-
-	<!-- Twitter Card -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="About - Nino Chavez" />
-	<meta
-		name="twitter:description"
-		content="Photography, music, writing, and software. Nino Chavez, Chicago."
-	/>
-
 </svelte:head>
 
-<main class="min-h-screen bg-black text-white">
-	<!-- Hero Section -->
-	<section class="relative px-6 py-24 md:py-32 border-b border-neutral-800">
-		<div class="max-w-4xl mx-auto">
-			<div in:fade={{ duration: 600 }}>
-				<h1 class="text-5xl md:text-7xl font-display font-bold tracking-tight text-white mb-8">ABOUT</h1>
+<main class="site">
+	<header class="masthead">
+		<a href="/" class="monogram" aria-label="Nino Chavez — home">
+			<span>nc</span><span class="dot">.</span>
+		</a>
+		<nav class="topnav" aria-label="Primary">
+			<a href="/work">work</a>
+			<a href="/practice">practice</a>
+			<a href="https://blog.ninochavez.co" rel="noopener">writing</a>
+			<a href="/about" aria-current="page">about</a>
+			<a href="/contact">contact</a>
+		</nav>
+		<p class="masthead-caption">context engineer · chicago</p>
+	</header>
 
-				<div class="max-w-2xl space-y-6 text-lg text-neutral-300 leading-relaxed">
-					<p>
-						I'm Nino. I live in Chicago.
-					</p>
-
-					<p>
-						I make things across a few mediums — software, photographs, music, essays.
-						The projects on this site are a better window into how I think than a résumé.
-					</p>
-
-					<p>
-						I've been writing code since 1999 and building with AI agents since the tools
-						existed. Day job is product architect at commerce.com.
-					</p>
-				</div>
-			</div>
-		</div>
+	<!-- ============================================================
+		 Hero
+		============================================================ -->
+	<section class="hero">
+		<p class="kicker">/about</p>
+		<h1 class="claim">
+			I'm Nino. I <em>codified</em> how to ship software with AI agents, and I run the practice
+			in public.
+		</h1>
+		<p class="subhead">
+			Chicago. Product Architect at commerce.com. The work on this site is my own — built solo,
+			evenings and weekends, with the toolchain documented in
+			<a href="/practice">/practice</a>.
+		</p>
 	</section>
 
-	<!-- What I'm Into -->
-	<section class="px-6 py-16 border-b border-neutral-800">
-		<div class="max-w-4xl mx-auto">
-			<h2 class="text-lime-400 font-mono text-xs tracking-widest uppercase mb-12">What I'm Into</h2>
+	<!-- ============================================================
+		 Narrative prose
+		============================================================ -->
+	<section class="narrative">
+		<p>
+			I've been writing code since 1999. Twenty-five years in commerce platform architecture
+			taught me how large systems hold together — and how teams fail to keep them together. The
+			job I do at commerce.com is product architect on a real platform with real customers; the
+			writing and tools on this site are what I've built independently in parallel.
+		</p>
 
-			<div class="grid md:grid-cols-2 gap-8">
-				{#each interests as item}
-					<a
-						href={item.link}
-						target={item.link.startsWith('http') ? '_blank' : undefined}
-						rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-						class="group block border border-neutral-800 p-6 hover:border-lime-400/50 transition-colors"
-					>
-						<h3 class="text-xl font-bold text-white mb-3 group-hover:text-lime-400 transition-colors">{item.title}</h3>
-						<p class="text-neutral-400 leading-relaxed text-sm">{item.description}</p>
-					</a>
-				{/each}
-			</div>
-		</div>
+		<p>
+			What changed for me around late 2024 was realizing that AI coding agents are not a faster
+			autocomplete. They're a different working unit — closer to a junior engineer with no
+			memory and no opinions. Productive use requires the same things productive teams have
+			always needed: clear specs, conventions, decision logs, guardrails, and a record of what
+			was tried. So I started building those: a spec-driven workflow
+			(<code>specchain</code>), a brand-kit-to-site pipeline (the forge family), a session voice
+			corpus (<code>claude-recall-cli</code> + the Poe stack), an open governance layer for code
+			generation (AEGIS), a planning methodology (<code>big-blueprint</code>). The toolchain is
+			the practice. The case studies are what came out of using it.
+		</p>
+
+		<p>
+			The shorthand for that is <em>context engineer</em>. The work isn't novel prompts or
+			clever models — it's the surrounding system: the rules a session inherits, the artifacts
+			it produces, the hooks that catch failure modes, the corpus that pulls forward what worked
+			before. Most engineers configure Claude. I instrument it. That's the line; the rest of
+			this site is the proof.
+		</p>
 	</section>
 
-	<!-- Ventures -->
-	<section class="px-6 py-16 border-b border-neutral-800">
-		<div class="max-w-4xl mx-auto">
-			<h2 class="text-lime-400 font-mono text-xs tracking-widest uppercase mb-8">Things I Run</h2>
-
-			<div class="space-y-6">
-				{#each ventures as item}
-					<a
-						href={item.link}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="group flex items-start gap-4 border-l-2 border-neutral-800 pl-6 py-2 hover:border-lime-400/50 transition-colors"
-					>
-						<div>
-							<h3 class="text-lg font-bold text-white group-hover:text-lime-400 transition-colors">{item.name}</h3>
-							<p class="text-neutral-400 text-sm">{item.description}</p>
-						</div>
-					</a>
-				{/each}
-			</div>
+	<!-- ============================================================
+		 Closing pointer row
+		============================================================ -->
+	<section class="pointers">
+		<div class="pointer">
+			<h2><a href="/practice">Practice →</a></h2>
+			<p>Toolchain, operating rules, instrumentation.</p>
 		</div>
-	</section>
-
-	<!-- Photography Preview -->
-	<section class="px-6 py-16 border-b border-neutral-800 overflow-hidden">
-		<div class="max-w-4xl mx-auto mb-8">
-			<h2 class="text-lime-400 font-mono text-xs tracking-widest uppercase mb-4">Photography</h2>
-			<p class="text-neutral-400 max-w-xl">
-				I shoot volleyball and action sports. It's a good counterbalance to sitting at a computer —
-				you're outside, moving, reading the play, anticipating the moment before it happens.
+		<div class="pointer">
+			<h2>
+				<a href="https://ninochavez.co/photography" rel="noopener">Photography →</a>
+			</h2>
+			<p>
+				20K action-sports photos. AAA accessibility. Custom album-zip worker. Not a hobby — the
+				production craft side of the practice.
 			</p>
 		</div>
-
-		<!-- Photo strip preview -->
-		<div class="flex gap-4 overflow-x-auto pb-4 -mx-6 px-6">
-			{#each [1, 3, 5, 8, 12, 15] as num}
-				<div class="flex-shrink-0 w-48 h-64 overflow-hidden">
-					<img
-						src="{base}/images/gallery/portfolio-{String(num).padStart(2, '0')}.jpg"
-						alt="Action sports photography"
-						width="192"
-						height="256"
-						class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-						loading="lazy"
-					/>
-				</div>
-			{/each}
+		<div class="pointer">
+			<h2>
+				<a href="https://blog.ninochavez.co" rel="noopener">Writing →</a>
+			</h2>
+			<p>Signal Dispatch, where I publish the things that don't fit on a case-study card.</p>
 		</div>
+	</section>
 
-		<div class="max-w-4xl mx-auto mt-6">
-			<a
-				href="https://photography.ninochavez.co"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="inline-flex items-center gap-2 text-lime-400 hover:text-white transition-colors text-sm font-medium"
+	<section class="contact-row">
+		<p>
+			contact
+			<span class="sep">·</span>
+			<a href="mailto:nino@ninochavez.co">nino@ninochavez.co</a>
+			<span class="sep">·</span>
+			<a href="https://github.com/nino-chavez" rel="noopener">github.com/nino-chavez</a>
+			<span class="sep">·</span>
+			<a href="https://www.linkedin.com/in/nino-chavez/" rel="noopener"
+				>linkedin.com/in/nino-chavez</a
 			>
-				View full gallery
-				<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-				</svg>
-			</a>
-		</div>
+		</p>
 	</section>
 
-	<!-- Background -->
-	<section class="px-6 py-16 border-b border-neutral-800">
-		<div class="max-w-4xl mx-auto">
-			<h2 class="text-lime-400 font-mono text-xs tracking-widest uppercase mb-8">Background</h2>
-
-			<div class="max-w-2xl space-y-6 text-neutral-300 leading-relaxed">
-				<p>
-					I've been writing code since 1999. Started at small agencies, moved through
-					consulting firms, eventually ended up building commerce platforms at scale.
-					Now I build with AI agents as a core part of the process — not as an afterthought.
-				</p>
-
-				<p>
-					The day job is product architect at commerce.com. But the projects on this
-					site are what I spend my free time on — and honestly, they're a better window
-					into how I think than a career summary.
-				</p>
-
-				<p>
-					If you want the formal timeline, it's on the
-					<a href="/now#cv" class="text-lime-400 hover:underline">Now page</a>.
-				</p>
-			</div>
-		</div>
-	</section>
-
-	<!-- Connect Section -->
-	<section class="px-6 py-16">
-		<div class="max-w-4xl mx-auto">
-			<h2 class="text-lime-400 font-mono text-xs tracking-widest uppercase mb-8">Connect</h2>
-
-			<p class="text-neutral-300 mb-8 max-w-xl">
-				Always happy to talk about building things, shooting things, or whatever's interesting.
-			</p>
-
-			<div class="flex flex-wrap gap-4">
-				<a
-					href="mailto:nino@ninochavez.co"
-					class="px-6 py-3 bg-lime-400 text-black font-semibold hover:bg-white transition-colors"
-				>
-					Email
-				</a>
-				<a
-					href="https://www.linkedin.com/in/nino-chavez/"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="px-6 py-3 border border-neutral-700 text-white font-semibold hover:border-lime-400 hover:text-lime-400 transition-colors"
-				>
-					LinkedIn
-				</a>
-				<a
-					href="https://x.com/PhotoByNino"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="px-6 py-3 border border-neutral-800 text-neutral-400 font-semibold hover:border-neutral-700 hover:text-white transition-colors"
-				>
-					X / Twitter
-				</a>
-				<a
-					href="https://github.com/nino-chavez"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="px-6 py-3 border border-neutral-800 text-neutral-400 font-semibold hover:border-neutral-700 hover:text-white transition-colors"
-				>
-					GitHub
-				</a>
-				<a
-					href="https://soundcloud.com/ni-no-cha-vez"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="px-6 py-3 border border-neutral-800 text-neutral-400 font-semibold hover:border-neutral-700 hover:text-white transition-colors"
-				>
-					SoundCloud
-				</a>
-			</div>
-		</div>
-	</section>
-
-	<!-- Back to Home -->
-	<section class="px-6 py-12 border-t border-neutral-800">
-		<div class="max-w-4xl mx-auto">
-			<a href="/" class="text-neutral-500 hover:text-lime-400 transition-colors text-sm">
-				← Back to Home
-			</a>
-		</div>
-	</section>
+	<footer class="site-foot">
+		<p>© {new Date().getFullYear()} Nino Chavez · Chicago</p>
+		<p class="foot-meta">
+			<a href="/blueprint">/blueprint</a>
+			<span class="sep">·</span>
+			<a href="/api/person.json">/api/person.json</a>
+		</p>
+	</footer>
 </main>
 
 <style>
-	.font-display {
-		font-family: 'Bebas Neue', sans-serif;
+	.site {
+		max-width: 64rem;
+		margin: 0 auto;
+		padding: 2rem 1.5rem 4rem;
+		font-family: 'Inter', system-ui, sans-serif;
+		color: #e5e5ea;
+		background: #0a0a0f;
+	}
+
+	/* ===== Masthead ===== */
+	.masthead {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-rows: auto auto;
+		grid-column-gap: 2rem;
+		grid-row-gap: 0.25rem;
+		align-items: center;
+		padding-bottom: 1.5rem;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+		margin-bottom: 3rem;
+	}
+
+	.monogram {
+		grid-column: 1;
+		grid-row: 1 / span 2;
+		font-size: 1.5rem;
+		font-weight: 600;
+		text-decoration: none;
+		color: #ffffff;
+		letter-spacing: -0.02em;
+		line-height: 1;
+		display: inline-flex;
+		align-items: baseline;
+	}
+
+	.monogram .dot {
+		color: #8b5cf6;
+	}
+
+	.topnav {
+		grid-column: 2;
+		grid-row: 1;
+		display: flex;
+		gap: 1.5rem;
+		justify-content: flex-end;
+		font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 0.8125rem;
+		flex-wrap: wrap;
+	}
+
+	.topnav a {
+		color: #a8a8b2;
+		text-decoration: none;
+		transition: color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.topnav a:hover,
+	.topnav a[aria-current='page'] {
+		color: #c4b5fd;
+	}
+
+	.masthead-caption {
+		grid-column: 1 / -1;
+		grid-row: 2;
+		font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 0.75rem;
+		color: #7a7a85;
+		margin: 0.5rem 0 0;
+		letter-spacing: 0.02em;
+	}
+
+	/* ===== Hero ===== */
+	.hero {
+		padding: 2rem 0 4rem;
+	}
+
+	.kicker {
+		font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 0.875rem;
+		color: #8b5cf6;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		margin: 0 0 1.25rem;
+	}
+
+	.claim {
+		font-size: clamp(1.875rem, 4.5vw, 3rem);
+		line-height: 1.15;
+		letter-spacing: -0.02em;
+		font-weight: 500;
+		margin: 0 0 1.5rem;
+		color: #ffffff;
+		max-width: 32ch;
+	}
+
+	.claim em {
+		font-style: italic;
+		color: #8b5cf6;
+		font-weight: 500;
+	}
+
+	.subhead {
+		font-size: 1rem;
+		line-height: 1.55;
+		color: #a8a8b2;
+		max-width: 56ch;
+		margin: 0;
+	}
+
+	.subhead a {
+		color: #c4b5fd;
+		text-decoration: none;
+	}
+
+	.subhead a:hover {
+		color: #ffffff;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+
+	/* ===== Narrative ===== */
+	.narrative {
+		max-width: 44rem;
+		margin: 0 0 5rem;
+		font-size: 1.0625rem;
+		line-height: 1.75;
+		color: #c4c4cd;
+	}
+
+	.narrative p {
+		margin: 0 0 1.5rem;
+	}
+
+	.narrative p:last-child {
+		margin-bottom: 0;
+	}
+
+	.narrative em {
+		font-style: italic;
+		color: #c4b5fd;
+	}
+
+	.narrative code {
+		font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 0.875em;
+		color: #c4b5fd;
+		background: rgba(139, 92, 246, 0.1);
+		border: 1px solid rgba(139, 92, 246, 0.2);
+		padding: 0.0625rem 0.375rem;
+	}
+
+	/* ===== Pointers ===== */
+	.pointers {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+		margin-bottom: 3rem;
+		padding-top: 2rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
+	}
+
+	.pointer h2 {
+		font-size: 1.0625rem;
+		font-weight: 500;
+		margin: 0 0 0.5rem;
+		letter-spacing: -0.01em;
+	}
+
+	.pointer h2 a {
+		color: #ffffff;
+		text-decoration: none;
+		transition: color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.pointer h2 a:hover {
+		color: #c4b5fd;
+	}
+
+	.pointer p {
+		font-size: 0.875rem;
+		color: #a8a8b2;
+		margin: 0;
+		line-height: 1.55;
+	}
+
+	@media (max-width: 720px) {
+		.pointers {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	/* ===== Contact row ===== */
+	.contact-row {
+		padding-top: 2rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
+	}
+
+	.contact-row p {
+		font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 0.875rem;
+		color: #a8a8b2;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		align-items: center;
+	}
+
+	.contact-row a {
+		color: #c4b5fd;
+		text-decoration: none;
+	}
+
+	.contact-row a:hover {
+		color: #ffffff;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+
+	.sep {
+		color: #4a4a55;
+	}
+
+	/* ===== Footer ===== */
+	.site-foot {
+		margin-top: 3rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 0.75rem;
+		color: #7a7a85;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	.site-foot p {
+		margin: 0;
+	}
+
+	.foot-meta a {
+		color: #a8a8b2;
+		text-decoration: none;
+	}
+
+	.foot-meta a:hover {
+		color: #c4b5fd;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.topnav a,
+		.pointer h2 a {
+			transition: none;
+		}
 	}
 </style>
