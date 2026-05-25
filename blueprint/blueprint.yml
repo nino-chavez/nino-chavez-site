@@ -1,0 +1,107 @@
+# Blueprint Configuration — ninochavez.co (brownfield audit + redesign)
+#
+# Canonical references (loaded by SessionStart hook once installed):
+#   ~/Workspace/dev/wip/blueprint/METHODOLOGY.md
+#   ~/Workspace/dev/wip/blueprint/docs/variant-selection.md
+#   ~/Workspace/dev/wip/blueprint/docs/portal-and-tier-ladder.md
+
+variant: brownfield                   # Pipeline shape — see docs/variant-selection.md
+tier: 1                               # Portal exists, product surfaces not yet shipped from redesign
+portal_pattern: B                     # redesign-review-portal (drawers + COMPARE toggle + chat FAB)
+
+project:
+  name: "ninochavez.co"
+  description: "Brownfield audit + redesign of the personal site. Diagnose v2, prescribe v3, prototype the new state alongside the live product."
+  product: "ninochavez.co (SvelteKit on Cloudflare Pages)"
+  slug: "ninochavez"                  # Used in CF Pages project name: ninochavez-blueprint
+  audience:
+    leadership: ["Nino Chavez (self)"]
+    engineering: ["Nino Chavez (self)"]
+    broader: ["Peer architects", "Prospective clients", "Conference circuit"]
+
+execution:
+  depth: thorough                     # Brownfield audit benefits from full pipeline (research + market comparables)
+
+# Brownfield stage requirements per docs/variant-selection.md § "Required sub-deliverables per stage"
+stages:
+  stage_1:
+    output: "01-diagnose.md"
+    requires:
+      - "research/current-state/"
+      - "research/personas/"
+      - "research/funnel/"
+      - "research/competitive/"
+      - "research/01-diagnose.md"
+  stage_2:
+    output: "02-prescription.yml"
+    requires:
+      - "research/02-prescription.yml"
+  stage_3:
+    output: "03-design-brief.md"
+    requires:
+      - "research/03-design-brief.md"
+
+# Infrastructure already on Cloudflare; the redesign should stay there.
+cloudflare:
+  enabled: true
+  account_strategy: single
+  primitives:
+    workers: false
+    pages: true
+    d1: false
+    workers_ai: false
+    vectorize: true                   # Likely needed for chat FAB grounded in blog corpus
+    kv: false
+    r2: false
+    queues: false
+    durable_objects: false
+
+# Content voice modes per ~/Workspace/dev/wip/blueprint/docs/voice-template.md
+# Prose-voice tasks ALSO load apps/blog/docs/signal-dispatch-voice-guide.md per global CLAUDE.md
+voices:
+  strategy: internal-strategy
+  feasibility: solution-architecture
+  research: internal-strategy
+  integration: solution-architecture
+
+prototype:
+  design_system: custom               # The redesign is the new design system, not the existing one
+  comparison_enabled: true            # current-state drawer required for Pattern B
+  strategy_panel_enabled: true        # strategy drawer required for Pattern B
+  chat_enabled: true                  # AI chat FAB grounded in blog + audit corpus
+  deploy_target: cloudflare-pages
+
+# Research scope — brownfield audit
+research:
+  competitors:
+    - "https://aurvia.io/"            # Friend's site — peer reference, not adversarial
+    - "Personal portfolios of practicing architects (peer cohort)"
+    - "Signal Dispatch authors / similar voice cohort"
+  analogous_industries:
+    - "Designer portfolios (Brian Lovin, Jordan Singer, Rauno Freiberg)"
+    - "Architecture/POV sites (Patrick Collison, Julian Lehr)"
+  codebase_path: "."                  # Current site source is the project root
+  screenshots_path: "docs/agency/"    # Existing audit screenshots if any; populate during Stage 1
+  external_corpus:
+    - "~/Workspace/dev/apps/signal-dispatch-blog"
+    - "~/Workspace/dev/apps/blog"
+    - "~/Workspace/dev/apps/nino-chavez-gallery"
+    - "~/Workspace/dev/apps/signal-x-studio-website"
+    - "~/Workspace/dev/apps/rally-hq"
+    - "~/Workspace/dev/wip/atelier"
+    - "~/Workspace/dev/wip/quantifai-platform"
+    - "~/Workspace/dev/wip/blueprint"  # Methodology meta-reference
+
+# Brownfield deliverable package (lighter than greenfield's four-doc set)
+documents:
+  - type: strategy
+    title: "ninochavez.co Redesign — Strategy"
+    audience: leadership              # self + peer-architect cohort
+  - type: research
+    title: "Diagnose + Market Audit"
+    audience: broader
+
+quality:
+  audit_before_share: true
+  fact_check_against_code: true       # Current-state claims must match the live source
+  cite_sources: true                  # Research synthesis requires citations
