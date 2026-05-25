@@ -1,139 +1,186 @@
-/*
- * Design tokens — single source of truth.
+/* ninochavez.co v3 — design tokens
  *
- * Mirror of DESIGN.md (project root). Every component CSS in the v3 surface
- * must consume these custom properties. Hex literals, magic ems, and
- * one-off durations are drift and should be replaced on sight.
+ * Source-of-truth for every visual + motion + spacing decision in the v3 site.
+ * No hardcoded hex / px / font values anywhere in components — consume tokens.
  *
- * Authoring rules:
- * - Brand colors: only the three named in DESIGN.md (dark / violet / light)
- * - Type: Inter (display + body) + JetBrains Mono. No third family.
- * - Spacing: powers of 0.25rem from --space-1 (0.25rem) to --space-32 (8rem)
- * - Motion: ease-out 0.16,1,0.3,1 is the canonical curve; durations from --dur-*
+ * Anchored by:
+ *   - blueprint/03-design-brief.md (signature, compositions, motion budget)
+ *   - blueprint/DESIGN-PRINCIPLES.md §10 (no bento/lime/Bebas — categorical refusal)
+ *   - blueprint/decisions/0004-signature-schematic-diagram.md
+ *   - blueprint/decisions/0009-cluster-surfacing-pattern.md (ribbon, cluster sections)
+ *   - blueprint/decisions/0010-* (harness + forge + threshold framework)
  *
- * The /design-system route renders every token below live; treat that page
- * as the visual proof that any new component must match.
+ * Surface register: dark (continuity with v2; the schematic-diagram signature
+ * reads higher contrast on dark; the violet accent has visual weight against
+ * dark surfaces without competing with the schematic stroke).
  */
 
 :root {
-	/* ───── color tokens ───────────────────────────────────────────────── */
-	--color-brand-dark: #0a0a0f;
-	--color-brand-violet: #8b5cf6; /* primary accent — single saturated hue */
-	--color-brand-violet-hover: #a78bfa; /* violet-400 */
-	--color-brand-violet-soft: #c4b5fd; /* violet-300 — italic emphasis text */
-	--color-brand-light: #f0f0f5;
+  /* ─────────────── Brand ─────────────── */
+  /* Violet (HSL 270) — per ADR-0004 schematic-diagram signature.
+     One accent. No secondary. The schematic's load-bearing node + every
+     interactive emphasis renders in --brand-500; --brand-400 is the
+     softer companion for backgrounds + dividers. */
+  --brand-50:  hsl(270, 95%, 97%);
+  --brand-100: hsl(270, 95%, 92%);
+  --brand-200: hsl(270, 95%, 85%);
+  --brand-300: hsl(270, 95%, 75%);
+  --brand-400: hsl(270, 90%, 70%);
+  --brand-500: hsl(270, 85%, 65%);  /* primary accent — italic-emphasis word, schematic load-bearing node */
+  --brand-600: hsl(270, 80%, 55%);  /* interactive hover */
+  --brand-700: hsl(270, 80%, 42%);
+  --brand-800: hsl(270, 85%, 30%);
+  --brand-900: hsl(270, 90%, 20%);
 
-	/* Neutral ramp — surface hierarchy lives here, not in component CSS */
-	--color-neutral-50: #fafafa;
-	--color-neutral-100: #f5f5f5;
-	--color-neutral-200: #e5e5e5;
-	--color-neutral-300: #d4d4d4;
-	--color-neutral-400: #a3a3a3;
-	--color-neutral-500: #737373;
-	--color-neutral-600: #525252;
-	--color-neutral-700: #404040;
-	--color-neutral-800: #262626;
-	--color-neutral-900: #171717;
-	--color-neutral-950: #0a0a0a;
+  /* ─────────────── Neutral / surfaces ─────────────── */
+  /* Dark surfaces. --bg is the page; --surface-1/2 are card/section bumps.
+     Cool-leaning grey (220 deg) so violet reads warm against it. */
+  --neutral-50:  hsl(220, 15%, 98%);
+  --neutral-100: hsl(220, 15%, 92%);
+  --neutral-200: hsl(220, 13%, 80%);
+  --neutral-300: hsl(220, 12%, 68%);
+  --neutral-400: hsl(220, 10%, 55%);
+  --neutral-500: hsl(220, 10%, 42%);
+  --neutral-600: hsl(220, 12%, 30%);
+  --neutral-700: hsl(220, 15%, 20%);
+  --neutral-800: hsl(220, 18%, 12%);
+  --neutral-900: hsl(220, 22%, 7%);
+  --neutral-950: hsl(220, 25%, 4%);
 
-	/* Surfaces — composed from the ramp; reference these, not raw neutrals */
-	--surface-background: var(--color-brand-dark);
-	--surface-card: rgba(255, 255, 255, 0.02);
-	--surface-card-hover: rgba(139, 92, 246, 0.05);
-	--surface-elevated: rgba(139, 92, 246, 0.04);
+  --bg:        var(--neutral-950);  /* page background */
+  --surface-1: var(--neutral-900);  /* card / section bump (subtle) */
+  --surface-2: var(--neutral-800);  /* drawer / dialog */
+  --border-subtle: hsl(220, 18%, 18%);
+  --border-strong: hsl(220, 18%, 28%);
 
-	/* Borders */
-	--border-subtle: rgba(255, 255, 255, 0.06);
-	--border-base: rgba(255, 255, 255, 0.08);
-	--border-violet-subtle: rgba(139, 92, 246, 0.2);
-	--border-violet: rgba(139, 92, 246, 0.25);
-	--border-violet-strong: rgba(139, 92, 246, 0.4);
+  /* ─────────────── Text ─────────────── */
+  --text-primary:    hsl(0, 0%, 96%);
+  --text-secondary:  hsl(220, 10%, 72%);
+  --text-muted:      hsl(220, 8%, 55%);
+  --text-faint:      hsl(220, 8%, 40%);
+  --text-link:       var(--brand-400);
+  --text-link-hover: var(--brand-300);
 
-	/* Text */
-	--text-primary: var(--color-brand-light);
-	--text-secondary: #c4c4cd; /* hue-matched neutral-300 */
-	--text-muted: #a8a8b2;
-	--text-faint: #7a7a85;
-	--text-disabled: #4a4a55;
-	--text-link: var(--color-brand-violet-hover);
-	--text-link-hover: var(--color-brand-violet-soft);
-	--text-accent: var(--color-brand-violet);
+  /* ─────────────── Type ─────────────── */
+  /* Per DESIGN-PRINCIPLES.md §10: no Bebas Neue, no condensed display.
+     Inter for everything except mono; JetBrains Mono for data/labels/code. */
+  --font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-body:    'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
-	/* ───── typography tokens ──────────────────────────────────────────── */
-	--font-display: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-	--font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-	--font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  /* Fluid scale — clamp(min, preferred, max). Mobile-respectful. */
+  --type-xs:   clamp(0.75rem,  0.70rem + 0.25vw, 0.875rem);
+  --type-sm:   clamp(0.875rem, 0.80rem + 0.375vw, 1rem);
+  --type-base: clamp(1rem,     0.925rem + 0.375vw, 1.125rem);
+  --type-lg:   clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --type-xl:   clamp(1.25rem,  1.10rem + 0.75vw, 1.5rem);
+  --type-2xl:  clamp(1.5rem,   1.25rem + 1.25vw, 2rem);
+  --type-3xl:  clamp(1.875rem, 1.50rem + 1.875vw, 2.5rem);
+  --type-4xl:  clamp(2.25rem,  1.75rem + 2.5vw,   3rem);
+  --type-5xl:  clamp(3rem,     2.25rem + 3.75vw,  4rem);
+  --type-6xl:  clamp(3.75rem,  2.75rem + 5vw,     5rem);
 
-	/* Fluid scale — matches DESIGN.md typography.scale */
-	--type-hero: clamp(3rem, 2.25rem + 3.75vw, 5rem);
-	--type-display: clamp(2.25rem, 1.75rem + 2.5vw, 3.75rem);
-	--type-h1: clamp(1.875rem, 1.5rem + 1.875vw, 2.75rem);
-	--type-h2: clamp(1.5rem, 1.3rem + 1vw, 2rem);
-	--type-h3: 1.25rem;
-	--type-lead: 1.125rem;
-	--type-body: 1rem;
-	--type-sm: 0.875rem;
-	--type-xs: 0.75rem;
+  /* Weights */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
 
-	/* Leading */
-	--leading-hero: 1.05;
-	--leading-heading: 1.2;
-	--leading-body: 1.6;
-	--leading-relaxed: 1.75;
+  /* Letterspacing */
+  --tracking-tight:  -0.02em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.04em;
+  --tracking-mono:    0.08em;  /* JetBrains Mono caps/pills */
 
-	/* Tracking */
-	--tracking-tighter: -0.03em;
-	--tracking-tight: -0.02em;
-	--tracking-normal: 0;
-	--tracking-wide: 0.02em;
-	--tracking-mono: 0.04em;
-	--tracking-kicker: 0.12em;
+  /* Line heights */
+  --leading-tight:    1.1;
+  --leading-snug:     1.3;
+  --leading-normal:   1.5;
+  --leading-relaxed:  1.7;
 
-	/* ───── spacing tokens ─────────────────────────────────────────────── */
-	--space-1: 0.25rem;
-	--space-2: 0.5rem;
-	--space-3: 0.75rem;
-	--space-4: 1rem;
-	--space-5: 1.25rem;
-	--space-6: 1.5rem;
-	--space-8: 2rem;
-	--space-10: 2.5rem;
-	--space-12: 3rem;
-	--space-16: 4rem;
-	--space-20: 5rem;
-	--space-24: 6rem;
-	--space-32: 8rem;
+  /* ─────────────── Spacing (4pt grid) ─────────────── */
+  --space-0:  0;
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
 
-	/* ───── layout tokens ──────────────────────────────────────────────── */
-	--container-max: 72rem; /* page container */
-	--content-max: 44rem; /* prose column */
-	--prose-max: 42rem; /* tighter prose, /about lede */
-	--header-height: 4rem;
-	--touch-target-min: 2.75rem;
-	--gutter: var(--space-4);
-	--gutter-md: var(--space-6);
-	--gutter-lg: var(--space-8);
+  /* ─────────────── Radius ─────────────── */
+  /* Squared by default — schematic-diagram register has no rounded ends.
+     Use --radius-pill only for visibility badges and small chips where
+     the schematic geometry would over-dominate. */
+  --radius-none: 0;
+  --radius-sm:   2px;   /* tight feature highlight */
+  --radius-md:   4px;   /* card hover background */
+  --radius-pill: 9999px; /* visibility badges, count chips */
 
-	/* ───── motion tokens ──────────────────────────────────────────────── */
-	--dur-fast: 150ms;
-	--dur-base: 250ms;
-	--dur-slow: 500ms;
-	--dur-hero: 800ms;
-	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-	--ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  /* ─────────────── Border weights ─────────────── */
+  --border-1: 1px;
+  --border-2: 1.5px;   /* schematic stroke per ADR-0004 */
 
-	/* ───── elevation ──────────────────────────────────────────────────── */
-	--shadow-sm: 0 2px 8px rgb(0 0 0 / 0.4);
-	--shadow-md: 0 12px 32px rgb(0 0 0 / 0.5);
-	--shadow-focus: 0 0 0 3px rgb(139 92 246 / 0.4);
+  /* ─────────────── Elevation ─────────────── */
+  /* Dark surfaces need elevation via lift + violet glow, not heavy shadow.
+     --shadow-hover is the canonical interactive lift treatment. */
+  --shadow-card:    0 1px 0 hsl(220 22% 14%);
+  --shadow-hover:   0 -2px 0 hsl(270 85% 65% / 0.35), 0 8px 24px hsl(270 85% 25% / 0.18);
+  --shadow-focus:   0 0 0 3px hsl(270 85% 65% / 0.35);
+
+  /* ─────────────── Motion ─────────────── */
+  /* Brief §4: static by default. Hover lift is the only ambient motion.
+     Cluster ribbon scroll-reveal is the only on-load motion. All gated
+     on prefers-reduced-motion: no-preference. */
+  --duration-instant: 120ms;
+  --duration-fast:    200ms;
+  --duration-base:    320ms;
+  --duration-slow:    480ms;
+
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:   cubic-bezier(0.4, 0, 1, 1);
+  --ease-both: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ─────────────── Layout ─────────────── */
+  --container-narrow: 56ch;   /* /contact, single-form pages */
+  --container-prose:  64ch;   /* /about narrative, deep-dive prose */
+  --container-wide:   80ch;   /* /practice catalog */
+  --container-full:   80rem;  /* /work cluster ribbon + sections */
+
+  --gutter-x: var(--space-6);
+  --gutter-y: var(--space-12);
+
+  /* ─────────────── Z-index ─────────────── */
+  --z-base:     0;
+  --z-elevated: 10;
+  --z-masthead: 100;
+  --z-drawer:   500;
+  --z-modal:    1000;
+  --z-toast:    2000;
 }
 
-/* Reduced motion — disable all token-driven transitions */
+/* ─────────────── Reduce motion (mandatory per brief §4) ─────────────── */
+
 @media (prefers-reduced-motion: reduce) {
-	:root {
-		--dur-fast: 0ms;
-		--dur-base: 0ms;
-		--dur-slow: 0ms;
-		--dur-hero: 0ms;
-	}
+  :root {
+    --duration-instant: 0ms;
+    --duration-fast:    0ms;
+    --duration-base:    0ms;
+    --duration-slow:    0ms;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
