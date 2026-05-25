@@ -1,0 +1,17 @@
+# Cloudflare Pages runtime config for the ninochavez-main project.
+#
+# Site is deployed via Git integration to the ninochavez-main CF Pages
+# project; this file declares runtime bindings the Pages worker uses
+# at request time. Picked up automatically by the CF Pages build.
+#
+# Per ADR-0007, ask-dad RAG storage is on Cloudflare Vectorize. The
+# binding name VECTORIZE matches what src/lib/server/askdad/vectorize.ts
+# expects on platform.env at request time.
+
+name = "ninochavez-main"
+compatibility_date = "2026-05-25"
+pages_build_output_dir = ".svelte-kit/cloudflare"
+
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "askdad-corpus"
