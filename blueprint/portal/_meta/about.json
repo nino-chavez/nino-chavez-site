@@ -17,6 +17,8 @@
   "currentState": {
     "route": "/about",
     "summary": "v2 about — polymath narrative, equal-weight photography / music / writing framing.",
+    "screenshot": "current-state/about.full.png",
+    "screenshotCaption": "v2 /about — polymath framing capture.",
     "sourceFiles": ["v2 ninochavez-main CF Pages deploy"],
     "annotation": "Reframe lead from polymath to practice-led (R4 refusal). Photography becomes pointer not co-equal. Add one grounded inflection-point moment, scanned against ~/Workspace/dev to ensure it's a real shift, not a fabrication."
   }

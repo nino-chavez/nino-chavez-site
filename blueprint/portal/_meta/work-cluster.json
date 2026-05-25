@@ -17,6 +17,8 @@
   "currentState": {
     "route": "/work",
     "summary": "v2 /work — flat slate, 5 lead case studies + 4 honorable mentions.",
+    "screenshot": "current-state/work.full.png",
+    "screenshotCaption": "v2 /work — flat 9-item slate capture.",
     "sourceFiles": ["v2 ninochavez-main CF Pages deploy /work"],
     "annotation": "Major IA change: flat slate → 8 cluster ribbon + 8 anchored sections. The page becomes long-scroll editorial; the scroll IS the proof of scope."
   }

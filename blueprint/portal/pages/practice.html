@@ -9,18 +9,423 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/shared.css">
+  <style>
+    /* /practice — four-section catalog page. Section register matches /work
+       cluster-section so the two long-form catalog pages share a visual rhythm. */
+    .practice-hero { padding-top: var(--space-12); padding-bottom: var(--space-8); }
+    .practice-section {
+      padding: var(--space-12) 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .practice-section h2 {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-600);
+      margin-bottom: var(--space-2);
+    }
+    .practice-section h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      margin-bottom: var(--space-4);
+    }
+    .practice-section p { color: var(--text-secondary); max-width: 72ch; }
+
+    /* Schematic diagram — hand-drafted, 1.5px stroke, no fill, mono labels.
+       Per 03-design-brief.md §1. Violet-accent node is the load-bearing one. */
+    .schematic {
+      margin: var(--space-8) 0;
+      padding: var(--space-6);
+      border: 1px solid var(--card-border);
+      background: var(--surface-2);
+    }
+    .schematic svg { display: block; width: 100%; height: auto; max-width: 720px; margin: 0 auto; }
+    .schematic-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-top: var(--space-3);
+      text-align: center;
+    }
+
+    /* Readout cards — bordered, mono pill header, body copy. */
+    .readout-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+    .readout {
+      padding: var(--space-5);
+      border: 1px solid var(--card-border);
+      background: var(--surface-1);
+    }
+    .readout-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: var(--space-2);
+    }
+    .readout-title {
+      font-family: var(--font-sans);
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--space-2);
+    }
+    .readout-body {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .readout-footer {
+      margin-top: var(--space-3);
+      padding-top: var(--space-3);
+      border-top: 1px solid var(--card-border);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: lowercase;
+    }
+    .readout-footer code { font-size: 10px; }
+
+    /* Operating-rules stack — verbatim quotes from ~/.claude/CLAUDE.md. */
+    .rule-stack { display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-6); }
+    .rule-block {
+      padding: var(--space-5);
+      border-left: 3px solid var(--brand-500);
+      background: var(--surface-2);
+    }
+    .rule-id {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-600);
+      margin-bottom: var(--space-2);
+    }
+    .rule-title {
+      font-family: var(--font-sans);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      margin-bottom: var(--space-2);
+    }
+    .rule-quote {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      font-style: italic;
+      margin-bottom: var(--space-2);
+    }
+    .rule-source {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    /* Corpus stats — mono numeric tiles. */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: var(--space-3);
+      margin-top: var(--space-6);
+    }
+    .stat-tile {
+      padding: var(--space-4);
+      border: 1px solid var(--card-border);
+      background: var(--surface-1);
+    }
+    .stat-tag {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: var(--space-1);
+    }
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+    .stat-note {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: var(--space-1);
+    }
+
+    .visibility-badge {
+      display: inline-block;
+      padding: 2px 6px;
+      margin-right: var(--space-2);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .visibility-badge.public { color: var(--brand-600); }
+    .visibility-badge.private { color: var(--text-muted); }
+  </style>
 </head>
 <body data-compare-root data-view="proposed">
   <section class="proposed-view">
-    <main class="container" style="padding-top: var(--space-12); padding-bottom: var(--space-12); max-width: 80ch;">
-      <h1>Practice</h1>
-      <p style="margin-top: var(--space-6); color: var(--text-secondary);">Prototype in authoring. Four sections in execution order: 01 production line · 02 substrate · 03 operating rules · 04 instrumentation evidence. Every claim grounds to a real file or repo path. See <strong>strategy drawer</strong> for the 4-section structure rationale (DESIGN-PRINCIPLES.md §Stage 4).</p>
-      <aside class="proposed-pointer" style="margin-top: var(--space-12); padding: var(--space-6); border: 1px dashed var(--card-border); font-size: var(--text-sm); color: var(--text-secondary);">
-        <p style="margin: 0 0 var(--space-2) 0; font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-600);">where the proposed view lives</p>
-        <p style="margin: 0;">This portal exposes the <strong>design rationale</strong> (right drawer) and the <strong>v2 comparison</strong> (left drawer, where a shipped equivalent exists). The production-indistinguishable surface ships on the v3 main site at <code>ninochavez.co</code> &mdash; currently in Phase 2 rebuild on the <code>redesign/v3-context-engineer</code> branch. Reviewer questions: chat (bottom-right) answers from the blueprint corpus.</p>
-      </aside>
+    <main class="container">
+
+      <div class="practice-hero">
+        <p style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);">/practice</p>
+        <h1 style="margin-top: var(--space-3);">This is how I <em style="color: var(--brand-500); font-style: italic;">work</em>.</h1>
+        <p style="margin-top: var(--space-4); color: var(--text-secondary); max-width: 64ch;">Four sections in execution order. Every claim grounds to a real file or repo path — the catalog IS the evidence. The signature schematic in §01 depicts the production line that built every case study under <a href="/pages/work-cluster.html">/work</a>.</p>
+      </div>
+
+      <section id="production-line" class="practice-section">
+        <h2>01 — Production line</h2>
+        <h3>One umbrella. Six lathes. Every artifact downstream.</h3>
+        <p><span class="visibility-badge public">public</span><code>forge</code> is the umbrella entry point — the documented catalog of how the toolchain hangs together. Six private lathes do the work: <code>specchain</code> writes requirements into specs into tasks; <code>blueprint</code> formalizes the three-stage diagnose-prescribe-design methodology this very portal demonstrates; <code>forge-brand</code> emits tokens + media + components from a brand kit; <code>forge-signal</code> generates site copy from brand bridges; <code>forge-site</code> orchestrates archetypes; <code>image-gen</code> produces hero + social art assets.</p>
+
+        <figure class="schematic" aria-label="Forge production line — umbrella feeding six lathes">
+          <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="forge-diagram-title">
+            <title id="forge-diagram-title">Forge umbrella feeding six private lathes</title>
+            <defs>
+              <style>
+                .node { fill: none; stroke: #1f2937; stroke-width: 1.5; }
+                .node-public { fill: none; stroke: #7c3aed; stroke-width: 2; }
+                .label { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #1f2937; }
+                .label-public { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #7c3aed; font-weight: 700; }
+                .label-tag { font-family: 'JetBrains Mono', monospace; font-size: 9px; fill: #6b7280; letter-spacing: 0.08em; }
+                .edge { fill: none; stroke: #9ca3af; stroke-width: 1.5; }
+                .edge-trunk { fill: none; stroke: #1f2937; stroke-width: 1.5; }
+              </style>
+            </defs>
+
+            <rect class="node-public" x="290" y="30" width="140" height="50"/>
+            <text class="label-tag" x="360" y="22" text-anchor="middle">UMBRELLA · PUBLIC</text>
+            <text class="label-public" x="360" y="62" text-anchor="middle">forge</text>
+
+            <line class="edge-trunk" x1="360" y1="80" x2="360" y2="130"/>
+            <line class="edge-trunk" x1="80" y1="130" x2="640" y2="130"/>
+
+            <line class="edge" x1="105" y1="130" x2="105" y2="170"/>
+            <rect class="node" x="40" y="170" width="130" height="50"/>
+            <text class="label" x="105" y="200" text-anchor="middle">specchain</text>
+            <text class="label-tag" x="105" y="240" text-anchor="middle">requirements → tasks</text>
+
+            <line class="edge" x1="220" y1="130" x2="220" y2="170"/>
+            <rect class="node" x="180" y="170" width="80" height="50"/>
+            <text class="label" x="220" y="200" text-anchor="middle">blueprint</text>
+            <text class="label-tag" x="220" y="240" text-anchor="middle">methodology</text>
+
+            <line class="edge" x1="320" y1="130" x2="320" y2="170"/>
+            <rect class="node" x="270" y="170" width="100" height="50"/>
+            <text class="label" x="320" y="200" text-anchor="middle">forge-brand</text>
+            <text class="label-tag" x="320" y="240" text-anchor="middle">tokens · media</text>
+
+            <line class="edge" x1="430" y1="130" x2="430" y2="170"/>
+            <rect class="node" x="380" y="170" width="100" height="50"/>
+            <text class="label" x="430" y="200" text-anchor="middle">forge-signal</text>
+            <text class="label-tag" x="430" y="240" text-anchor="middle">site copy</text>
+
+            <line class="edge" x1="540" y1="130" x2="540" y2="170"/>
+            <rect class="node" x="490" y="170" width="100" height="50"/>
+            <text class="label" x="540" y="200" text-anchor="middle">forge-site</text>
+            <text class="label-tag" x="540" y="240" text-anchor="middle">archetypes</text>
+
+            <line class="edge" x1="640" y1="130" x2="640" y2="170"/>
+            <rect class="node" x="600" y="170" width="80" height="50"/>
+            <text class="label" x="640" y="200" text-anchor="middle">image-gen</text>
+            <text class="label-tag" x="640" y="240" text-anchor="middle">hero · social</text>
+
+            <line class="edge-trunk" x1="105" y1="240" x2="640" y2="240"/>
+            <line class="edge-trunk" x1="360" y1="240" x2="360" y2="290"/>
+            <rect class="node" x="270" y="290" width="180" height="50"/>
+            <text class="label-tag" x="360" y="282" text-anchor="middle">DOWNSTREAM</text>
+            <text class="label" x="360" y="322" text-anchor="middle">case studies · sites · portals</text>
+          </svg>
+          <p class="schematic-label">Fig. 01 · forge production line — umbrella + six lathes → downstream artifacts</p>
+        </figure>
+
+        <p style="margin-top: var(--space-6);">Every site under <a href="/pages/work-cluster.html">/work</a> — including this blueprint portal — was produced through some subset of these lathes. The receipts are the case-study deep dives.</p>
+      </section>
+
+      <section id="substrate" class="practice-section">
+        <h2>02 — Substrate</h2>
+        <h3>What's underneath the toolchain.</h3>
+        <p>Four layers, each citable to a working repo. The substrate is what makes the production line above repeatable — without these the lathes would each invent their own context loading, recall, and coordination patterns.</p>
+
+        <div class="readout-grid">
+          <article class="readout">
+            <p class="readout-tag">L1 · Hooks</p>
+            <p class="readout-title">Declarative behavior shaping</p>
+            <p class="readout-body">SessionStart, UserPromptSubmit, Stop, PostToolUse hooks injected via <code>.claude/settings.json</code>. The Poe stack + decision-bias enforcement at the top of this very session arrived through this layer.</p>
+            <p class="readout-footer"><code>~/.claude/settings.json</code></p>
+          </article>
+
+          <article class="readout">
+            <p class="readout-tag">L2 · Skills + subagents</p>
+            <p class="readout-title">Capability + isolation primitives</p>
+            <p class="readout-body">50+ skills covering deploy / audit / spec / verify workflows. Subagents invoked with <code>isolation: worktree</code> for parallel work that can't share a working tree.</p>
+            <p class="readout-footer"><code>~/.claude/skills/</code> · <code>~/.claude/agents/</code></p>
+          </article>
+
+          <article class="readout">
+            <p class="readout-tag">L3 · Session mining</p>
+            <p class="readout-title">Pattern extraction across history</p>
+            <p class="readout-body"><code>claude-recall-cli</code> walks every <code>.jsonl</code> session transcript under <code>~/.claude/projects/</code>, distills red lines + rules + rationale + alternatives, and rebuilds the Poe stack at every catchup ingest.</p>
+            <p class="readout-footer"><code>tools/claude-recall-cli/</code></p>
+          </article>
+
+          <article class="readout">
+            <p class="readout-tag">L4 · Hive coordination</p>
+            <p class="readout-title">Multi-session orchestration</p>
+            <p class="readout-body"><code>ai-hive</code> + <code>claude-orchestrator</code> + <code>worktree-orchestrator</code> partition work across parallel sessions so the main session never blocks on subagent compute, and merges land in the right branch.</p>
+            <p class="readout-footer"><code>tools/ai-hive/</code> · <code>tools/claude-orchestrator/</code></p>
+          </article>
+        </div>
+      </section>
+
+      <section id="operating-rules" class="practice-section">
+        <h2>03 — Operating rules</h2>
+        <h3>Four rules quoted verbatim from <code>~/.claude/CLAUDE.md</code>.</h3>
+        <p>The global instructions file is the source of truth for how every agent on this workstation operates. These four rules carry the most cross-project leverage — they shape every session, not just specific workflows.</p>
+
+        <div class="rule-stack">
+          <article class="rule-block">
+            <p class="rule-id">R1 · Decision bias</p>
+            <p class="rule-title">Default to action, not confirmation.</p>
+            <p class="rule-quote">"Don't pause to ask which direction to take when the direction is obvious from the conversation. If we've been working on X and there's a natural next step on X, take it. Mid-task 'continue or pause?' questions kill flow and read as timidity, not care."</p>
+            <p class="rule-source">~/.claude/CLAUDE.md §"Decision bias"</p>
+          </article>
+
+          <article class="rule-block">
+            <p class="rule-id">R2 · Canonical-pattern-first</p>
+            <p class="rule-title">Vendor canonical, then internal reference, before custom shapes.</p>
+            <p class="rule-quote">"When implementing infrastructure with a well-known canonical pattern — auth, payments, OAuth, sessions, queues, webhooks — default to the canonical pattern. Custom shapes must justify themselves explicitly against the canonical baseline."</p>
+            <p class="rule-source">~/.claude/CLAUDE.md §"Canonical-pattern-first for infrastructure"</p>
+          </article>
+
+          <article class="rule-block">
+            <p class="rule-id">R3 · Worktree isolation</p>
+            <p class="rule-title">Multi-session work isolation is mandatory.</p>
+            <p class="rule-quote">"Any time more than one session has independent work in flight against the same repo, each session MUST operate in its own git worktree. Sessions sharing a working directory will switch each other's branches under each other's feet."</p>
+            <p class="rule-source">~/.claude/CLAUDE.md §"Multi-session work isolation"</p>
+          </article>
+
+          <article class="rule-block">
+            <p class="rule-id">R4 · Grounded interior state</p>
+            <p class="rule-title">Never fabricate. Always ground self-interrogation in evidence.</p>
+            <p class="rule-quote">"In prose drafted on Nino's behalf, never invent specific people, conversations, internal admissions, or experiences. Self-interrogation without grounding evidence is decoration that fails the voice's central test."</p>
+            <p class="rule-source">~/.claude/CLAUDE.md §"Never fabricate Nino's interior state"</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="instrumentation" class="practice-section">
+        <h2>04 — Instrumentation evidence</h2>
+        <h3>The proof that the rules above aren't aspirational.</h3>
+        <p>Three artifacts. The hesitation fold diagram below is the declarative-rule + prompt-hook + stop-hook triple that catches the "ending with a question" failure mode — and surfaces it through a Stop-hook violation message when it slips past. The corpus stats are the dataset that calibrated the Poe voice stack. Each grounds to a real file path or repo, not a claim.</p>
+
+        <figure class="schematic" aria-label="Hesitation fold — three layers sharing one classifier">
+          <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="hesitation-diagram-title">
+            <title id="hesitation-diagram-title">Hesitation fold — declarative rule + prompt hook + stop hook share one classifier</title>
+            <defs>
+              <style>
+                .h-node { fill: none; stroke: #1f2937; stroke-width: 1.5; }
+                .h-node-classifier { fill: none; stroke: #7c3aed; stroke-width: 2; }
+                .h-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #1f2937; }
+                .h-label-public { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #7c3aed; font-weight: 700; }
+                .h-label-tag { font-family: 'JetBrains Mono', monospace; font-size: 9px; fill: #6b7280; letter-spacing: 0.08em; }
+                .h-edge { fill: none; stroke: #9ca3af; stroke-width: 1.5; }
+              </style>
+            </defs>
+
+            <rect class="h-node" x="40" y="30" width="180" height="70"/>
+            <text class="h-label-tag" x="130" y="22" text-anchor="middle">LAYER 1 · DECLARE</text>
+            <text class="h-label" x="130" y="62" text-anchor="middle">declarative rule</text>
+            <text class="h-label-tag" x="130" y="86" text-anchor="middle">~/.claude/CLAUDE.md</text>
+
+            <rect class="h-node" x="270" y="30" width="180" height="70"/>
+            <text class="h-label-tag" x="360" y="22" text-anchor="middle">LAYER 2 · PREDICT</text>
+            <text class="h-label" x="360" y="62" text-anchor="middle">prompt hook</text>
+            <text class="h-label-tag" x="360" y="86" text-anchor="middle">UserPromptSubmit · Poe context</text>
+
+            <rect class="h-node" x="500" y="30" width="180" height="70"/>
+            <text class="h-label-tag" x="590" y="22" text-anchor="middle">LAYER 3 · CORRECT</text>
+            <text class="h-label" x="590" y="62" text-anchor="middle">stop hook</text>
+            <text class="h-label-tag" x="590" y="86" text-anchor="middle">end-of-turn audit</text>
+
+            <line class="h-edge" x1="130" y1="100" x2="130" y2="200"/>
+            <line class="h-edge" x1="360" y1="100" x2="360" y2="200"/>
+            <line class="h-edge" x1="590" y1="100" x2="590" y2="200"/>
+            <line class="h-edge" x1="130" y1="200" x2="590" y2="200"/>
+            <line class="h-edge" x1="360" y1="200" x2="360" y2="220"/>
+
+            <rect class="h-node-classifier" x="280" y="220" width="160" height="60"/>
+            <text class="h-label-tag" x="360" y="212" text-anchor="middle">SHARED CLASSIFIER</text>
+            <text class="h-label-public" x="360" y="256" text-anchor="middle">hesitation_pattern?</text>
+          </svg>
+          <p class="schematic-label">Fig. 02 · hesitation fold — three layers route through one classifier so the rule predicts AND corrects</p>
+        </figure>
+
+        <div class="stats-grid">
+          <div class="stat-tile">
+            <p class="stat-tag">Corpus</p>
+            <p class="stat-value">775</p>
+            <p class="stat-note">signals · 64 projects</p>
+          </div>
+          <div class="stat-tile">
+            <p class="stat-tag">Median sentence</p>
+            <p class="stat-value">12</p>
+            <p class="stat-note">words · p90 = 30</p>
+          </div>
+          <div class="stat-tile">
+            <p class="stat-tag">Hedge rate</p>
+            <p class="stat-value">10.6%</p>
+            <p class="stat-note">messages · "maybe / might / I think"</p>
+          </div>
+          <div class="stat-tile">
+            <p class="stat-tag">Cheerleading rate</p>
+            <p class="stat-value">1.6%</p>
+            <p class="stat-note">messages · "great / awesome / perfect"</p>
+          </div>
+          <div class="stat-tile">
+            <p class="stat-tag">Red lines</p>
+            <p class="stat-value">86</p>
+            <p class="stat-note">rejection signals · weighted</p>
+          </div>
+          <div class="stat-tile">
+            <p class="stat-tag">Hesitation overrides</p>
+            <p class="stat-value">321</p>
+            <p class="stat-note">question shapes overridden with "go"</p>
+          </div>
+        </div>
+
+        <div class="readout-grid" style="margin-top: var(--space-8);">
+          <article class="readout">
+            <p class="readout-tag">Adversarial tests</p>
+            <p class="readout-title">Decision-bias audit fires on every turn</p>
+            <p class="readout-body">A Stop hook scans the final assistant turn for hesitation patterns ("want me to..?", "should I..?", "let me know if..") and writes feedback into the next prompt context. The rule predicts AND corrects — Layer 1 declares, Layer 2 primes, Layer 3 audits.</p>
+            <p class="readout-footer">enforced this very session</p>
+          </article>
+
+          <article class="readout">
+            <p class="readout-tag">Reverse-Poe shapes</p>
+            <p class="readout-title">Validated response patterns</p>
+            <p class="readout-body">6,525 assistant turns Nino did NOT correct, classified by size + structure. The most-common shapes describe response forms that survive contact — the stack mirrors them when speaking AS Nino so corrections aren't required round-trip.</p>
+            <p class="readout-footer">corpus: <code>~/.claude/poe/stack.md</code></p>
+          </article>
+        </div>
+      </section>
+
     </main>
   </section>
+
   <script>
     window.PROTO_PAGE = { id: 'practice' };
   </script>

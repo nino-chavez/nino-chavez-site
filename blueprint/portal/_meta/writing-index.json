@@ -17,6 +17,8 @@
   "currentState": {
     "route": "/writing",
     "summary": "v2 /writing — editorial lede + 3 flagship whitepaper teasers + archive pointer.",
+    "screenshot": "current-state/writing.full.png",
+    "screenshotCaption": "v2 /writing — 3-flagship view capture.",
     "sourceFiles": ["v2 ninochavez-main CF Pages deploy /writing"],
     "annotation": "Expand from 3-flagship view to 7-collection surfacing. Counts source from `apps/blog/astro-build/src/content/<collection>` filesystem — refresh before every push."
   }

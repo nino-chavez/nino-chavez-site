@@ -17,6 +17,8 @@
   "currentState": {
     "route": "/contact",
     "summary": "v2 /contact — form only, sales-funnel framing.",
+    "screenshot": "current-state/contact.full.png",
+    "screenshotCaption": "v2 /contact — form-only sales-funnel framing.",
     "sourceFiles": ["v2 ninochavez-main CF Pages deploy /contact"],
     "annotation": "Reframe copy explicitly (R1 enforcement); add receipts row above form."
   }
