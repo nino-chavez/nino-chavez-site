@@ -1,0 +1,23 @@
+{
+  "name": "Nino Chavez Blueprint",
+  "tagline": "Brownfield audit + redesign of ninochavez.co — diagnose, prescribe, prototype the new state.",
+  "slices": [
+    "example-slice"
+  ],
+  "groups": [
+    { "id": "marketing", "label": "Marketing",  "color": "brand" },
+    { "id": "audience",  "label": "Audience",   "color": "accent" },
+    { "id": "operator",  "label": "Operator",   "color": "neutral" }
+  ],
+  "pages": [
+    "example"
+  ],
+  "flows": [
+    {
+      "id": "main-journey",
+      "label": "Main journey",
+      "summary": "Replace with your primary persona's end-to-end flow across pages.",
+      "pages": ["example"]
+    }
+  ]
+}
