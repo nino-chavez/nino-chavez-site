@@ -129,8 +129,11 @@ site does not invite this persona at all.
   Atelier)
 - commerce.com role (credible speaker frame for commerce + AI events)
 
-**Why the gap exists**: the personal site was not architected with speaking
-in mind. This is a clean greenfield-inside-a-brownfield surface.
+**Why the gap exists**: v2 was architected as a personal-brand surface,
+not a practitioner studio surface, so a `/speaking` page wasn't part of
+the original IA. The v3 reframe (2026-05-25) treats the site as Nino
+Chavez ⊕ studio, where `/speaking` is load-bearing. This is a clean
+greenfield-inside-a-brownfield surface.
 
 **Prescription anchor** (Stage 2): Author a `/speaking` (or `/press`)
 page with bio variants, headshot library, topic list, and scoped inquiry

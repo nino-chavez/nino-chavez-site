@@ -2,7 +2,7 @@
   "id": "home",
   "title": "Home (v3)",
   "group": "marketing",
-  "slice": "v3-home",
+  "slice": "v3",
   "surface": "src/routes/+page.svelte",
   "phase": "MVP",
   "route": "/pages/home.html",

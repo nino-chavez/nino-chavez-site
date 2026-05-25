@@ -1,0 +1,23 @@
+{
+  "id": "now",
+  "title": "Now (v3)",
+  "group": "audience",
+  "slice": "v3",
+  "surface": "src/routes/now/+page.svelte (exists in v2; gets v3 treatment)",
+  "phase": "MVP",
+  "route": "/pages/now.html",
+  "summary": "Live state mirror per differentiation move 4. In-flight initiatives + Blueprint stage status + recent writing + reading queue + last-updated stamp. The site reads its own state — the page itself is one of the in-flight items.",
+  "strategy": {
+    "decision": "Promote v2's /now from lateral surface to primary live-state mirror. Surfaces real-feeling commit hashes, real Rally HQ uptime metrics, real Blueprint stage status. The page is self-referential — it shows itself in the in-flight list.",
+    "why": "Implements differentiation move 4 (live runtime signals). Cohort-aligned in posture (Lopopolo's 'lifestream,' Lovin's 'TIL,' Lehr's 'lifelog') but specific to the practice. Returning visitors (Peer Architect cohort) get a bookmarkable status surface.",
+    "shipped": "v2 has /now at src/routes/now/+page.svelte. Page exists but isn't part of any persona's primary funnel (per blueprint/research/funnel/funnel-current-state.md). Treated as lateral surface.",
+    "gap": "v2: /now exists but is unfeatured and not state-driven. v3: /now is a load-bearing live-state surface with structured signal groups.",
+    "question": "Data source authentication for live signals at launch — RSS is ready (Signal Dispatch). Rally HQ status + Blueprint stage status need lightweight endpoints. Stage 6 deploy notes capture the MVP shape; Stage 7 iterate hardens."
+  },
+  "currentState": {
+    "route": "/now",
+    "summary": "v2 /now exists as a status page but is lateral — not in primary funnels.",
+    "sourceFiles": ["src/routes/now/+page.svelte"],
+    "annotation": "v3 promotes /now to primary live-state surface and adds structured signal groups."
+  }
+}

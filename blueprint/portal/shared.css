@@ -1195,17 +1195,34 @@ body:has(.proto-slice-header):not(:has(.proto-brand-bar)) { padding-top: 44px; }
   flex-wrap: wrap;
 }
 
-/* Custom drafting-mark wordmark — N⊕C ligature (placeholder; Nino picks final) */
+/* Custom drafting-mark wordmark — Nino Chavez⊕ + small "studio" tag */
 .proposed-view[data-v3] .v3-wordmark {
   display: inline-flex;
-  align-items: baseline;
-  gap: 0.4rem;
+  flex-direction: column;
+  align-items: flex-start;
   font-family: var(--v3-font-display);
   font-size: 1.75rem;
   font-weight: 400;
   color: var(--v3-text-primary);
   letter-spacing: -0.02em;
   border-bottom: none;
+  line-height: 1;
+  gap: 0.25rem;
+}
+
+.proposed-view[data-v3] .v3-wordmark-name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.proposed-view[data-v3] .v3-wordmark-tag {
+  font-family: var(--v3-font-mono);
+  font-size: 0.6875rem;
+  color: var(--v3-text-muted);
+  text-transform: lowercase;
+  letter-spacing: 0.12em;
+  padding-left: 2px;
 }
 
 .proposed-view[data-v3] .v3-wordmark:hover {

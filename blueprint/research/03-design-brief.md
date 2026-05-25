@@ -20,6 +20,27 @@ alternates were considered and rejected, they're named so the choice is
 traceable. Stage 4 fact-check validates against this brief; Stage 6 deploys
 against it.
 
+## Framing — 2026-05-25 reframe to studio surface
+
+Original briefs and the inherited `blueprint.yml` description called v3 a
+"personal site" / "personal portfolio." That framing was wrong for what
+the work has been producing. The capability statement, receipt list,
+`/speaking`, `/colophon`, `/now` surfaces, and footer meta-receipt all
+describe a **practitioner's studio / studio surface**, not a personal
+site.
+
+Per the 2026-05-25 reframe decision: v3 is a **practitioner studio
+surface** identified as **Nino Chavez ⊕ studio** (wordmark adds a small
+mono `studio` subtitle). Smallest delta — no wordmark rename, no new
+practice name, signalx.studio relationship unchanged. The change is
+framing language only, but it changes how IA decisions land.
+
+Stage 4 prototype + this brief now use "studio surface" / "practitioner
+home" framing throughout. References in older artifacts
+(`_external-corpus.md`, `peer-cohort.md`) that say "personal site" are
+either (a) describing OTHER sites in the cohort accurately and stay, or
+(b) describing v2 historically and get updated as discovered.
+
 ## Operating constraints (carried forward)
 
 Resolved in `01-diagnose.md § Open questions resolved` (2026-05-25):
