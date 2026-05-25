@@ -21,9 +21,6 @@
 <section class="cluster-section" {id}>
 	<SectionHead kicker={kicker} id="{id}-head">
 		{title}
-		{#if $$slots.lede}
-			<svelte:fragment slot="lede"><slot name="lede" /></svelte:fragment>
-		{/if}
 	</SectionHead>
 	<div class="cluster-body">
 		<slot />
