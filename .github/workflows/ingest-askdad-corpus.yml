@@ -9,8 +9,13 @@
 # Only one static GH Actions secret required: OP_SERVICE_ACCOUNT_TOKEN.
 #
 # 1Password items referenced:
-#   OpenAI labs                 → credential (embeddings)
+#   OpenAI atelier              → credential (embeddings)
 #   Vectorize ask-dad           → account_id, api_token, index_name
+#
+# Note: originally pointed at "OpenAI labs" but that key returns 401 as
+# of 2026-05-25 (revoked / rotated). Using OpenAI atelier as a working
+# fallback until the labs key is rotated; switch back when labs is
+# refreshed in 1Password.
 #
 # Pre-launch setup (one-time):
 #   1. wrangler vectorize create askdad-corpus --dimensions=1536 --metric=cosine
@@ -60,7 +65,7 @@ jobs:
           export-env: true
         env:
           OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
-          OPENAI_API_KEY: op://Developer Secrets/OpenAI labs/credential
+          OPENAI_API_KEY: op://Developer Secrets/OpenAI atelier/credential
           CLOUDFLARE_ACCOUNT_ID: op://Developer Secrets/Vectorize ask-dad/account_id
           CLOUDFLARE_API_TOKEN: op://Developer Secrets/Vectorize ask-dad/api_token
           VECTORIZE_INDEX: op://Developer Secrets/Vectorize ask-dad/index_name
