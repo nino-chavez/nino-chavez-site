@@ -1,7 +1,10 @@
 <script>
 	import '$lib/styles/global.css';
+	import { page } from '$app/state';
+	import Masthead from '$lib/components/Masthead.svelte';
+	import SiteFooter from '$lib/components/SiteFooter.svelte';
 
-	export let data;
+	let { children } = $props();
 </script>
 
 <svelte:head>
@@ -11,10 +14,13 @@
 
 <a class="skip-to-content" href="#main">Skip to content</a>
 
-<slot />
+<Masthead currentPath={page.url.pathname} />
+
+{@render children()}
+
+<SiteFooter />
 
 <style>
-	/* Layout-specific styles only. Tokens + body baseline live in global.css. */
 	:global(html) {
 		scroll-behavior: smooth;
 	}

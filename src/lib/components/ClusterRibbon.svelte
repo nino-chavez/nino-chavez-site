@@ -26,7 +26,11 @@
 	aria-labelledby={labelledby || undefined}
 >
 	{#each clusters as cluster (cluster.id)}
-		<RibbonCard label={cluster.label} count={cluster.count} href="#{cluster.id}" />
+		<RibbonCard
+			label={cluster.label}
+			count={cluster.count}
+			href="{variant === 'compressed' ? '/work' : ''}#{cluster.id}"
+		/>
 	{/each}
 </nav>
 
