@@ -266,9 +266,12 @@ strategy. The 1,900 lines stay symlinked as historical artifact only.
 ### D8 — The site does not show its work
 
 **Evidence**:
-- The corpus (per `_external-corpus.md`) contains 9 shipped or in-flight
-  products, 277 published blog posts, a methodology repo (Blueprint), and
-  client work (630 Volleyball, commerce.com role).
+- The corpus (per `_external-corpus.md` § "Working products to reference,"
+  updated 2026-05-25 with receipt bucketing) contains 11 CURRENT receipts
+  (cite as "where I'm at"), 2 EVOLUTION surfaces (cite only as "where I
+  started"), and 1 client-context surface (mention only). Plus 277
+  published blog posts, the Blueprint methodology repo (meta-receipt), and
+  the commerce.com Product Architect role as day-job context.
 - The home page mentions 4 of these (letspepper, flickdaymedia, rallyhq,
   signalx.studio) and a few side links (SoundCloud, Photography gallery,
   Signal Dispatch).
@@ -281,7 +284,10 @@ strategy. The 1,900 lines stay symlinked as historical artifact only.
 the depth of the receipt layer is hidden one click deep at `/work`.
 
 **Receipt that contradicts the under-surfacing**: `/work` itself, plus the
-9 corpus products, plus the 277 blog posts.
+11 CURRENT corpus receipts, plus the 277 blog posts. Per the receipt-bucket
+discipline in `_external-corpus.md`, the prescription surfaces only the
+11 CURRENT (not the EVOLUTION or ADJACENT items) — citing predecessors
+alongside flagships would dilute the signal.
 
 **Why the gap exists**: home-page IA was optimized for creative-pursuit
 exploration (D1) rather than receipt-first scanning. The peer cohort
@@ -359,18 +365,57 @@ failures":
   (per § "Audit history layering" above) carry the technical detail; this
   diagnose names the *strategic* gaps the redesign must close.
 
-## Open questions for Stage 2 to answer
+## Open questions for Stage 2 — resolved 2026-05-25
 
-1. **Is `/ai/` finished or experimental?** (D2 — pre-condition for
-   prescribing its surfacing or removal)
-2. **Which design direction is canonical for v3 — DESIGN.md's content-
-   forward + violet, or the live home page's spectacle-forward + lime?**
-   (D5 — pre-condition for the Stage 3 design brief)
-3. **Does the v3 home page lead with the architect identity exclusively, or
-   does it integrate creative-pursuit framing as a "facets of one person"
-   read?** (D1 — pre-condition for IA decisions)
-4. **What scoped inquiry types does Cal.com need to support — speaking,
-   advisory, methodology, other?** (D4 — pre-condition for intake-form
-   schema)
+All four pre-conditions for Stage 2 prescription are resolved.
 
-These four questions, answered, unblock Stage 2 prescription.
+### Q1 — Is `/ai/` finished or experimental? → Finished. Actively maintained.
+
+Resolved by investigation (not user input). Last touched 2026-04-28 with a
+copy pass ("strip douche factor across hero, about, work, ai, footer").
+Shipped December 2025. 1,377 lines of Svelte across 5 pages (index + ask
++ build + learn + reference). The `/ai/ask/` page wires a `Chat` component
+from `$lib/components/askdad/Chat.svelte` — the chat-FAB grounding work
+already started here.
+
+**Stage 2 implication for D2**: `/ai/` is a live receipt, not an experiment.
+Prescription surfaces it from `/` — not "if it's finished," but "since it
+is finished." The unsurfacing was the bug.
+
+### Q2 — Canonical design direction for v3? → Fresh direction.
+
+Neither DESIGN.md (content-forward / violet) nor the live home page
+(spectacle-forward / lime) is correct for v3. Both become historical
+reference. Stage 3 design brief authors a net-new direction grounded in
+the receipts surfaced by D8 (the working-products corpus) and the
+peer-cohort calibration in `competitive/peer-cohort.md`.
+
+**Stage 2 implication for D5**: Prescription does not pick a winner
+between DESIGN.md and the live `/`. Both get retired; Stage 3 ships the
+new system from a clean slate.
+
+### Q3 — Home page identity frame? → Architect-primary, facets in nav only.
+
+Home is architect-only. Creative pursuits — photography, music, writing
+— move off `/` entirely. They live on their own subdomains
+(`photography.ninochavez.co`, SoundCloud, `blog.ninochavez.co`) and
+surface from `/` as nav links only, not as body content. The personal
+site stops trying to index creative pursuits in the home page composition.
+
+**Stage 2 implication for D1**: The prescription is sharper than the
+diagnose staged. The home page does not present a "facets of one
+person" body section. It presents the architect identity, the receipts
+(D8), and the contact path. Facets are nav only.
+
+### Q4 — Cal.com inquiry types? → General path only. No scoped types.
+
+Single general inquiry path. Stage 2 prescription does not create scoped
+speaking / advisory / methodology intake forms. One contact surface,
+one form, one Cal.com link. The Conference Circuit persona still gets
+its dedicated `/speaking` surface (per D3) for bio variants, headshot
+library, and topic list — but the *booking action* uses the same
+general path as everyone else.
+
+**Stage 2 implication for D4**: Prescription is simplified. Surface the
+single general inquiry path on `/`. The `/speaking` surface (D3) does
+not need a parallel form schema — it routes to the same contact path.

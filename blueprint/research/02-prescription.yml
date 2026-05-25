@@ -1,0 +1,329 @@
+# 02 — Prescription
+#
+# Brownfield Stage 2 deliverable for the ninochavez.co v3 redesign.
+# Impact-ordered changes with one evidence cite per item. Each prescription
+# resolves a diagnosis from 01-diagnose.md and grounds in a receipt (current
+# state file, live source line, or corpus item per _external-corpus.md).
+#
+# Discipline:
+#   - Every prescription cites at least one evidence anchor.
+#   - Every receipt cited belongs to the CURRENT bucket in _external-corpus.md.
+#     EVOLUTION items (ai-hive, labs hub) are not surfaced as receipts.
+#   - Resolved questions from 01-diagnose.md § "Open questions" are treated as
+#     constraints, not options.
+#
+# Stage 3 design brief authors the visual + IA direction for these changes.
+# Stage 4 fact-check verifies every claim against the implementation.
+
+canonical: true
+stage: 2
+status: draft
+last_updated: 2026-05-25
+voice_mode: internal-strategy
+version: 0.1
+
+# ---------------------------------------------------------------------------
+# Resolved constraints (from 01-diagnose.md § Open Questions, 2026-05-25)
+# ---------------------------------------------------------------------------
+constraints:
+  ai_subsection_status: finished-and-maintained
+  ai_subsection_action: surface-from-home
+  canonical_design_direction: fresh-direction       # neither DESIGN.md nor live /
+  home_identity_frame: architect-primary-facets-in-nav-only
+  contact_path_inquiry_types: single-general-path   # no scoped speaking/advisory/methodology forms
+  cross_app_scope: stops-at-main-site               # blog/gallery/studio stay where they are
+  v1_legacy_route: archive-at-ship-time             # Stage 6 housekeeping, not Stage 2 priority
+
+# ---------------------------------------------------------------------------
+# Receipt-surfacing rules (from _external-corpus.md § Working products)
+# ---------------------------------------------------------------------------
+receipt_rules:
+  cite_as_current_receipt:
+    - rally-hq                    # rallyhq.app (blueprint Pattern B ref impl)
+    - signal-dispatch             # blog.ninochavez.co (277 posts)
+    - blueprint-methodology       # meta-receipt
+    - atelier                     # OSS template + interop protocol
+    - atelier-dashboard-blueprint # active alongside atelier
+    - photography                 # photography.ninochavez.co
+    - signal-x-studio             # signalx.studio
+    - quantifai                   # landing + platform (one product)
+    - letspepper                  # letspepper.com
+    - flickday-media              # flickdaymedia.com
+    - bc-subscriptions            # client engagement; B2B delivery receipt
+
+  cite_as_evolution_only:
+    - ai-hive                     # predecessor to atelier
+    - labs-hub                    # index, not flagship
+
+  mention_as_client_context_only:
+    - 630-volleyball              # subcontractor; never "Nino's product"
+
+  do_not_cite:
+    - "all other wip/ items"      # see _external-corpus.md § ADJACENT
+
+# ---------------------------------------------------------------------------
+# Prescriptions (impact-ordered)
+# ---------------------------------------------------------------------------
+prescriptions:
+
+  # ===== P0 — Stage 2 must ship; P0 failures are funnel-fatal =====
+
+  - id: P0-1
+    title: "Surface a single general inquiry path on /"
+    resolves_diagnosis: D4
+    constraint_ref: contact_path_inquiry_types
+    rationale: |
+      Cal.com integration shipped (`docs/CAL-COM-INTEGRATION.md`) but is not
+      linked from `/`. The mailto on the home page is unstructured, so the
+      Prospective Client persona either bounces or sends a low-information
+      cold email. Resolution: surface a single general inquiry CTA on the
+      home page. NOT scoped types (no speaking/advisory/methodology
+      sub-forms) per resolved Q4.
+    changes:
+      - "Add a single visible CTA on the home page: 'Schedule a conversation' (or equivalent)."
+      - "Wire to Cal.com booking link OR to a single intake form with structured fields (name, org, what brings you here, anything else)."
+      - "Replace the unstructured mailto with a mailto that pre-populates subject + body templates, OR remove it in favor of the single CTA above."
+    evidence_cite:
+      - "src/routes/+page.svelte:505 (current unstructured mailto)"
+      - "docs/CAL-COM-INTEGRATION.md (integration exists)"
+      - "blueprint/research/personas/prospective-client.md (persona analysis)"
+      - "blueprint/research/funnel/funnel-current-state.md § Cross-persona observations (P0 ranking)"
+    stage_3_dependency: "Stage 3 design brief decides CTA placement, form vs Cal.com link, and visual treatment."
+    stage_4_check: "Verify booking flow end-to-end on production after Stage 6 deploy."
+
+  - id: P0-2
+    title: "Author a /speaking surface for the Conference Circuit persona"
+    resolves_diagnosis: D3
+    constraint_ref: contact_path_inquiry_types
+    rationale: |
+      The site has no speaking surface. The Conference Circuit persona has
+      no funnel — they enter `/about`, find no bio variants, no headshot,
+      no topic list, and bounce. Per persona analysis, one accepted
+      speaking slot reaches more Peer Architects than the home page does
+      in months. The booking action uses the single general inquiry path
+      from P0-1 (no parallel form schema).
+    changes:
+      - "Author a /speaking page (or /press, equivalent slug)."
+      - "Include three bio variants: 50-word, 100-word, 250-word — copy-pasteable."
+      - "Include at least one headshot, square + wide if possible, with explicit credit line. Direct download links."
+      - "Include a topic-area list: 3–7 named topics, one-sentence talk description each."
+      - "Include past-talks list if any exist; if none, state 'writing-first; talks coming' and link Signal Dispatch."
+      - "Single inquiry CTA routes to the general path from P0-1."
+    evidence_cite:
+      - "blueprint/research/personas/conference-circuit.md (full persona analysis)"
+      - "blueprint/research/funnel/funnel-current-state.md (Conference Circuit funnel section: 'this persona has no funnel')"
+      - "_external-corpus.md § Cross-cohort observations ('none of the cohort has a /speaking page — building one differentiates')"
+    stage_3_dependency: "Stage 3 brief decides /speaking IA: single page vs. tabbed, bio variants display, topic list visual."
+    receipts_to_cite_on_page:
+      - "Signal Dispatch corpus (voice substrate, 277 posts)"
+      - "Working products as speakable topics: rally-hq (architect-directs-agents), blueprint-methodology (methodology design), atelier (mixed human/agent teams)"
+      - "commerce.com Product Architect role (day-job context, credible commerce+AI speaker frame)"
+
+  # ===== P1 — Stage 2 should ship; P1 failures are dilution, not bounce =====
+
+  - id: P1-1
+    title: "Rewrite the home page identity frame: architect-primary, facets in nav only"
+    resolves_diagnosis: D1
+    constraint_ref: home_identity_frame
+    rationale: |
+      Current `/` presents Nino as a four-pursuit polymath (Photography +
+      Music + Writing + Building, equal weight). Corpus shows Nino as a
+      practicing software architect. The Prospective Client persona reads
+      the polymath framing as hobbyist. Per resolved Q3: home is
+      architect-primary; creative pursuits move off `/` body into nav
+      links only.
+    changes:
+      - "Remove the four-pursuit bento grid from /."
+      - "Replace the 'Cut the Noise, Follow the Signal' brand line with a one-sentence capability statement in buyer language (e.g., 'Product Architect at commerce.com. I direct agents to ship AI-native software.' Stage 3 brief finalizes the exact line)."
+      - "Move photography, music, writing surfaces to nav links: link to photography.ninochavez.co, SoundCloud, blog.ninochavez.co. NOT body content on /."
+      - "Hero photo rotation: revisit per Stage 3. Current rotation is volleyball action shots — those carry photography-first signal, which contradicts the architect-primary frame."
+    evidence_cite:
+      - "src/routes/+page.svelte:27-48 (current 4-pursuit interests array)"
+      - "src/routes/+page.svelte:84 (current page title — 'Cut the Noise, Follow the Signal')"
+      - "src/routes/+page.svelte:91 (current design intent comment: 'Bento grid, oversized type, asymmetric')"
+      - "blueprint/research/personas/peer-architect.md (architect identity expected)"
+      - "blueprint/research/personas/prospective-client.md (specialist signal expected, not generalist)"
+    stage_3_dependency: "Stage 3 brief authors the new home page composition, including capability-line copy and hero treatment."
+
+  - id: P1-2
+    title: "Surface /ai/ from the home page"
+    resolves_diagnosis: D2
+    constraint_ref: ai_subsection_status
+    rationale: |
+      `/ai/` subsection is finished and actively maintained (5 pages, 1,377
+      lines, last touched 2026-04-28). It is the highest-fit Peer Architect
+      surface on the entire site. The home page does not link to it. The
+      unsurfacing was the bug.
+    changes:
+      - "Add a primary link from / to /ai/. Naming TBD by Stage 3 brief (e.g., 'AI & Architecture,' 'How I work with AI,' or the literal /ai/ subsection titles)."
+      - "If /ai/ index page has stale framing inconsistent with the architect-primary frame from P1-1, refresh it. Per recency, last copy pass was 2026-04-28 ('strip douche factor') — re-audit at Stage 4 fact-check."
+    evidence_cite:
+      - "src/routes/ai/ (5 pages: index, ask, build, learn, reference; 1,377 lines)"
+      - "git log: last touched 2026-04-28 ('strip douche factor across hero, about, work, ai, footer')"
+      - "blueprint/research/personas/peer-architect.md (highest-fit surface for this persona)"
+      - "blueprint/research/funnel/funnel-current-state.md § The /ai/ subsection mystery"
+    stage_3_dependency: "Stage 3 brief decides nav placement, label, and whether /ai/ needs its own design pass."
+
+  - id: P1-3
+    title: "Retire DESIGN.md and the live home page as the canonical design system"
+    resolves_diagnosis: D5
+    constraint_ref: canonical_design_direction
+    rationale: |
+      DESIGN.md (violet + Inter + content-forward, 209 lines) and the live
+      home page (lime + bento + spectacle) describe two different sites.
+      Per resolved Q2: neither is canonical for v3. Stage 3 authors a fresh
+      design direction grounded in receipts (D8) and peer-cohort calibration
+      (`competitive/peer-cohort.md`).
+    changes:
+      - "Move DESIGN.md (root) to blueprint/research/current-state/design-notes-current.md status update: historical reference. Already symlinked there per inventory."
+      - "Stage 3 design brief (03-design-brief.md) authors the new design system."
+      - "After Stage 3 ships, DESIGN.md at root is replaced with the new system (not edited from the old; written fresh)."
+      - "Until Stage 3 ships, do not patch DESIGN.md or the live home page to 'reconcile' them. Both stay as-is; Stage 3 supersedes both."
+    evidence_cite:
+      - "DESIGN.md (root) lines 9-14 (violet single-accent rule)"
+      - "DESIGN.md (root) line 134 ('content-forward, not spectacle-driven')"
+      - "src/routes/+page.svelte:139,142,533-566 (lime accent throughout)"
+      - "src/routes/+page.svelte:91 (spectacle-driven design intent)"
+    stage_3_dependency: "This prescription IS the Stage 3 trigger. The Stage 3 brief carries forward the actual design work."
+
+  - id: P1-4
+    title: "Surface receipt density on the home page itself"
+    resolves_diagnosis: D8
+    constraint_ref: home_identity_frame
+    rationale: |
+      The corpus contains 11 CURRENT receipts; the home page surfaces 4 in
+      hero-image cards. Per peer-cohort archetype 1 (Lopopolo, Collison,
+      Lehr), a flat list of named products with one-sentence descriptions
+      is more credible than 4 hero cards. The 277 blog posts compound the
+      authority signal. Bring receipt density to `/`, do not bury it at
+      `/work`.
+    changes:
+      - "Replace the bento product cards on / with a list-style 'Selected work' surface naming the 11 CURRENT receipts (per receipt_rules above)."
+      - "Keep /work as the deep page for per-project pages — /work/[slug] route already exists (src/routes/work/[slug]/). The home list links into /work/[slug] for the items that have detail pages."
+      - "Each item: name + one-sentence description + live URL where applicable. NOT hero images per item."
+      - "Do NOT include EVOLUTION items (ai-hive, labs hub) in the home list. Do NOT include 630-volleyball. Do NOT include any ADJACENT/EXPERIMENT items."
+      - "Surface 'Latest from Signal Dispatch' as the second receipt density block — single most recent post title + link, OR a 3-item recent-posts list. Decided by Stage 3 brief."
+    evidence_cite:
+      - "blueprint/research/_external-corpus.md § Working products (11 CURRENT)"
+      - "blueprint/research/competitive/peer-cohort.md § Archetype 1 (Lopopolo, Collison, Lehr)"
+      - "src/lib/constants.ts (current 9 project rows; some titles drifted from COPY_ASSESSMENT.md baseline — see P2-1)"
+    stage_3_dependency: "Stage 3 brief authors the list visual + ordering + per-item copy."
+
+  # ===== P2 — Stage 4 fact-check sweeps; not Stage 2 primary work =====
+
+  - id: P2-1
+    title: "Copy fact-check sweep: stale platform/role/product claims"
+    resolves_diagnosis: D6
+    rationale: |
+      `src/lib/constants.ts:9` says "hosted on Vercel" — site is on Cloudflare
+      Pages. Project titles drifted from the COPY_ASSESSMENT.md baseline
+      ("AIQ" → "AIX", "Aegis" → "AEGIS"). A full copy fact-check pass
+      verifies platforms, role descriptions, product names, and numeric
+      claims (e.g., "20,000+ images" on the photography link).
+    changes:
+      - "Audit every named platform, product, role, URL, and number on /, /about, /work, /ai/, and the new /speaking surface."
+      - "Update src/lib/constants.ts § Portfolio entry: 'hosted on Vercel' → 'hosted on Cloudflare Pages'."
+      - "Verify every external URL in src/routes/+page.svelte returns 200."
+      - "Reconcile constants.ts project titles with the COPY_ASSESSMENT.md baseline OR update COPY_ASSESSMENT.md if titles have moved on intentionally."
+    evidence_cite:
+      - "src/lib/constants.ts:9 (Vercel/Cloudflare drift)"
+      - "blueprint/research/current-state/copy-assessment.md (drifted baseline, Oct 30 2025)"
+    stage_4_check: "Ralph Wiggum convergence loop verifies the sweep before ship."
+
+  - id: P2-2
+    title: "Retire brand-domination-strategy as canonical"
+    resolves_diagnosis: D7
+    rationale: |
+      `docs/brand-domination-strategy.md` (683 lines) + adjacent strategy
+      docs (`domain-brand-stress-test.md`, `domain-selection-analysis.md`)
+      total ~1,900 lines authored but never shipped. Per `_inventory.md`
+      decision 3: historical artifact only. v3 brand positioning authors
+      from working-product receipts and peer-cohort frame, NOT from these.
+    changes:
+      - "Add a banner / frontmatter note to brand-domination-strategy.md marking it 'HISTORICAL — superseded by Blueprint Stage 2 prescription 2026-05-25'."
+      - "Same banner on domain-brand-stress-test.md and domain-selection-analysis.md."
+      - "Stage 3 design brief explicitly does NOT forward-port content from these docs."
+    evidence_cite:
+      - "blueprint/research/_inventory.md § Decision 3 (2026-05-25)"
+      - "blueprint/research/competitive/brand-strategy-prior.md (the symlinked doc)"
+
+  - id: P2-3
+    title: "Sensor referrer + Cal.com + mailto-click analytics"
+    resolves_diagnosis: "supporting D4, P0-1"
+    rationale: |
+      Funnel analysis (`funnel-current-state.md`) is synthesized from
+      source code, not analytics. To validate the prescription works,
+      Stage 4 fact-check needs real conversion data: where do entries
+      come from, what % of `/` visits click the inquiry CTA, what % of
+      CTA clicks become Cal.com bookings or mailtos sent.
+    changes:
+      - "Add referrer + UTM capture (likely Plausible/Umami/Cloudflare Web Analytics — Stage 3 picks)."
+      - "Sensor the inquiry CTA click event."
+      - "Sensor the Cal.com booking-completed event (Cal.com webhook → log)."
+    stage_4_check: "Confirm analytics events fire end-to-end."
+
+  # ===== P3 — Ship-time housekeeping; logged so it doesn't get forgotten =====
+
+  - id: P3-1
+    title: "Archive /v1 legacy route at ship time"
+    resolves_diagnosis: "logged in 01-diagnose.md § Cross-cutting observations"
+    constraint_ref: v1_legacy_route
+    rationale: |
+      `/v1` route is currently live and indexable. Per `_inventory.md`
+      decision 1: archive at end of redesign. Not a Stage 2 priority;
+      Stage 6 ship-time housekeeping.
+    changes:
+      - "After Stage 6 deploy of v3, move src/routes/v1/ to a _archive/ location."
+      - "Remove from public route table."
+      - "Add 301 redirect from /v1/* to / or to the relevant v3 surface."
+    stage: 6
+
+# ---------------------------------------------------------------------------
+# Prescription handoff — what Stage 3 (Design Brief) starts with
+# ---------------------------------------------------------------------------
+stage_3_handoff:
+  required_design_decisions:
+    - "Capability-line copy (P1-1) — final sentence in buyer language"
+    - "Receipt-density list visual + ordering (P1-4)"
+    - "Home page composition without the four-pursuit grid (P1-1)"
+    - "Hero treatment (P1-1) — does the volleyball photo rotation stay, change, or retire?"
+    - "Nav placement and label for /ai/ (P1-2)"
+    - "Single inquiry CTA visual + placement (P0-1)"
+    - "/speaking IA + visual (P0-2)"
+    - "Fresh design direction (P1-3) — color, type, spacing, motion. NOT inheriting DESIGN.md or live /."
+    - "Receipt list vs. blog-recent-posts ordering on /"
+
+  receipts_to_surface_on_home_via_stage_3:
+    primary_focus: # the 'why I'm worth your time' density
+      - rally-hq            # production tournament platform
+      - signal-x-studio     # studio identity
+      - blueprint-methodology  # meta-receipt (the methodology that runs this site)
+      - atelier             # OSS template + interop protocol
+    secondary_density: # mid-page expansion
+      - quantifai
+      - photography
+      - letspepper
+      - flickday-media
+      - bc-subscriptions
+      - atelier-dashboard-blueprint
+    voice_substrate:
+      - signal-dispatch     # 277 posts (link prominently; not 'inline'd on home)
+    explicit_exclusions:
+      - ai-hive             # EVOLUTION — predecessor to atelier
+      - labs-hub            # EVOLUTION — index, not flagship
+      - 630-volleyball      # client context only
+      - all_other_wip       # ADJACENT / experiment
+
+  out_of_scope_for_v3:
+    - "Cross-app navigation shell. blog/gallery/studio stay where they are."
+    - "Scoped inquiry-type forms (speaking/advisory/methodology). Single general path only."
+    - "Reconciling DESIGN.md with live /. Both retire; Stage 3 ships fresh."
+
+# ---------------------------------------------------------------------------
+# What this prescription is NOT
+# ---------------------------------------------------------------------------
+non_goals:
+  - "Not the design brief. Stage 3 authors visual + IA decisions."
+  - "Not the implementation plan. Stage 6 deploy carries the build work."
+  - "Not exhaustive on copy. P2-1 sweep handles facts; Stage 3 handles voice."
+  - "Not a rewrite of /work/[slug] per-project pages. P1-4 surfaces /work entries on / without restructuring the slug pages themselves."
