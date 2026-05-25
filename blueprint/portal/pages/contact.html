@@ -9,19 +9,195 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/shared.css">
+  <style>
+    .contact-hero { padding-top: var(--space-12); padding-bottom: var(--space-6); max-width: 56ch; }
+    .contact-thesis {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-top: var(--space-4);
+    }
+    .contact-lede {
+      color: var(--text-secondary);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      margin-top: var(--space-4);
+      max-width: 56ch;
+    }
+
+    /* Receipts row — email + GitHub + LinkedIn as mono row. */
+    .receipts-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+      padding: var(--space-6) 0;
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+    }
+    .receipt {
+      padding: var(--space-4);
+      border: 1px solid var(--card-border);
+      background: var(--surface-1);
+    }
+    .receipt-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: var(--space-2);
+    }
+    .receipt-value {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      color: var(--text-primary);
+      word-break: break-all;
+    }
+    .receipt-value a {
+      color: var(--text-primary);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    .receipt-value a:hover {
+      color: var(--brand-700);
+      border-bottom-color: var(--brand-500);
+    }
+
+    /* Form — minimal, mono labels, no decoration. */
+    .contact-form {
+      margin-top: var(--space-10);
+      max-width: 56ch;
+    }
+    .form-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-600);
+      margin-bottom: var(--space-2);
+    }
+    .form-title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      margin-bottom: var(--space-2);
+    }
+    .form-sub {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      margin-bottom: var(--space-6);
+    }
+    .field { margin-bottom: var(--space-4); }
+    .field label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: var(--space-1);
+    }
+    .field input,
+    .field textarea {
+      width: 100%;
+      padding: var(--space-3) var(--space-4);
+      border: 1px solid var(--card-border);
+      background: var(--surface-1);
+      font-family: var(--font-sans);
+      font-size: var(--text-base);
+      color: var(--text-primary);
+    }
+    .field input:focus,
+    .field textarea:focus {
+      outline: 2px solid var(--brand-500);
+      outline-offset: 1px;
+      border-color: var(--brand-500);
+    }
+    .field textarea { resize: vertical; min-height: 120px; }
+    .form-meta {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: var(--space-3);
+    }
+    .submit-btn {
+      margin-top: var(--space-4);
+      padding: var(--space-3) var(--space-6);
+      border: 1px solid var(--brand-500);
+      background: var(--brand-500);
+      color: white;
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: background-color 160ms ease;
+    }
+    .submit-btn:hover {
+      background: var(--brand-700);
+      border-color: var(--brand-700);
+    }
+  </style>
 </head>
 <body data-compare-root data-view="proposed">
   <section class="proposed-view">
-    <main class="container" style="padding-top: var(--space-12); padding-bottom: var(--space-12); max-width: 56ch;">
-      <h1>Contact</h1>
-      <p style="margin-top: var(--space-6); font-size: var(--text-lg);">I'm not selling services. I respond to interesting work.</p>
-      <p style="margin-top: var(--space-4); color: var(--text-secondary);">Prototype in authoring. Receipts row (email · GitHub · LinkedIn) + minimal form (Resend + Turnstile) land in Phase 2. See <strong>strategy drawer</strong> for the R1 transactional-framing refusal rationale.</p>
-      <aside class="proposed-pointer" style="margin-top: var(--space-12); padding: var(--space-6); border: 1px dashed var(--card-border); font-size: var(--text-sm); color: var(--text-secondary);">
-        <p style="margin: 0 0 var(--space-2) 0; font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-600);">where the proposed view lives</p>
-        <p style="margin: 0;">This portal exposes the <strong>design rationale</strong> (right drawer) and the <strong>v2 comparison</strong> (left drawer, where a shipped equivalent exists). The production-indistinguishable surface ships on the v3 main site at <code>ninochavez.co</code> &mdash; currently in Phase 2 rebuild on the <code>redesign/v3-context-engineer</code> branch. Reviewer questions: chat (bottom-right) answers from the blueprint corpus.</p>
-      </aside>
+    <main class="container">
+
+      <div class="contact-hero">
+        <p style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);">/contact</p>
+        <h1 style="margin-top: var(--space-3);">Contact.</h1>
+        <p class="contact-thesis">I'm not selling services. I respond to <em style="color: var(--brand-500); font-style: italic;">interesting</em> work.</p>
+        <p class="contact-lede">Day job at commerce.com is full-time. The receipts on this site exist to make me reachable when the conversation is worth having — not to convert visitors into clients. Email or LinkedIn is the fastest path. The form below is here for the people who prefer it.</p>
+      </div>
+
+      <section class="receipts-row" aria-label="Direct contact channels">
+        <div class="receipt">
+          <p class="receipt-label">Email</p>
+          <p class="receipt-value"><a href="mailto:nino@ninochavez.co">nino@ninochavez.co</a></p>
+        </div>
+        <div class="receipt">
+          <p class="receipt-label">GitHub</p>
+          <p class="receipt-value"><a href="https://github.com/nino-chavez" target="_blank" rel="noopener">github.com/nino-chavez</a></p>
+        </div>
+        <div class="receipt">
+          <p class="receipt-label">LinkedIn</p>
+          <p class="receipt-value"><a href="https://www.linkedin.com/in/ninochavez/" target="_blank" rel="noopener">linkedin.com/in/ninochavez</a></p>
+        </div>
+      </section>
+
+      <section class="contact-form" aria-label="Contact form">
+        <p class="form-tag">Form</p>
+        <h2 class="form-title">If the form is your speed.</h2>
+        <p class="form-sub">Goes to the same inbox as the email line above. Resend handles delivery; Cloudflare Turnstile catches bot traffic before it reaches me.</p>
+
+        <form action="/api/contact" method="POST">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Your email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="message">What you're working on</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <div class="field">
+            <label for="turnstile">Verification</label>
+            <div id="turnstile" style="height: 65px; border: 1px dashed var(--card-border); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);">[ Cloudflare Turnstile widget mounts here on production ]</div>
+          </div>
+          <button type="submit" class="submit-btn">Send</button>
+          <p class="form-meta">No newsletter signup. No marketing follow-up. One reply, then the thread is yours.</p>
+        </form>
+      </section>
+
     </main>
   </section>
+
   <script>
     window.PROTO_PAGE = { id: 'contact' };
   </script>

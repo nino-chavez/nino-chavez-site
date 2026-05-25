@@ -9,18 +9,131 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/shared.css">
+  <style>
+    .about-hero { padding-top: var(--space-12); padding-bottom: var(--space-8); max-width: 64ch; }
+    .about-lede {
+      font-size: var(--text-lg);
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-top: var(--space-4);
+    }
+
+    .narrative {
+      max-width: 64ch;
+      padding: var(--space-8) 0;
+    }
+    .narrative-block { padding: var(--space-6) 0; border-bottom: 1px solid var(--card-border); }
+    .narrative-block:last-child { border-bottom: 0; }
+    .narrative-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-600);
+      margin-bottom: var(--space-3);
+    }
+    .narrative-block p {
+      font-size: var(--text-base);
+      color: var(--text-primary);
+      line-height: 1.7;
+      margin-bottom: var(--space-3);
+    }
+    .narrative-block p:last-child { margin-bottom: 0; }
+    .narrative-block code {
+      font-size: 0.9em;
+      color: var(--brand-700);
+      background: var(--surface-2);
+      padding: 1px 4px;
+    }
+
+    .closing-row {
+      margin-top: var(--space-12);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+    }
+    .closing-row a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 2px;
+    }
+    .closing-row a:hover {
+      color: var(--brand-700);
+      border-bottom-color: var(--brand-500);
+    }
+    .closing-row .label {
+      color: var(--text-muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 4px;
+    }
+  </style>
 </head>
 <body data-compare-root data-view="proposed">
   <section class="proposed-view">
-    <main class="container" style="padding-top: var(--space-12); padding-bottom: var(--space-12); max-width: 64ch;">
-      <h1>About</h1>
-      <p style="margin-top: var(--space-6); color: var(--text-secondary);">Prototype in authoring. Three paragraphs lead with the codified practice (not polymath). Pointers to photography subdomain + Signal Dispatch + contact close the page. See <strong>strategy drawer</strong> (right) for the §R4 polymath-refusal rationale and the inflection-point grounding rule.</p>
-      <aside class="proposed-pointer" style="margin-top: var(--space-12); padding: var(--space-6); border: 1px dashed var(--card-border); font-size: var(--text-sm); color: var(--text-secondary);">
-        <p style="margin: 0 0 var(--space-2) 0; font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-600);">where the proposed view lives</p>
-        <p style="margin: 0;">This portal exposes the <strong>design rationale</strong> (right drawer) and the <strong>v2 comparison</strong> (left drawer, where a shipped equivalent exists). The production-indistinguishable surface ships on the v3 main site at <code>ninochavez.co</code> &mdash; currently in Phase 2 rebuild on the <code>redesign/v3-context-engineer</code> branch. Reviewer questions: chat (bottom-right) answers from the blueprint corpus.</p>
+    <main class="container">
+
+      <div class="about-hero">
+        <p style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);">/about</p>
+        <h1 style="margin-top: var(--space-3);">Nino Chavez. I codify the <em style="color: var(--brand-500); font-style: italic;">practice</em>, then publish the receipts.</h1>
+        <p class="about-lede">Product Architect at commerce.com by day. The practice — instrumented agent work, documented through a methodology called <code>blueprint</code> — runs through everything else.</p>
+      </div>
+
+      <section class="narrative">
+
+        <div class="narrative-block">
+          <p class="narrative-tag">Who · the lede</p>
+          <p>I work at the intersection of product architecture, agentic-software engineering, and a slowly-codified discipline I now call <em>context engineering</em>. The day job is at commerce.com, where I architect against BigCommerce-platform systems. The orbit around it is what this site exists to surface.</p>
+          <p>The orbit: a public methodology (<code>github.com/nino-chavez/blueprint</code>), a six-lathe production line (<code>github.com/nino-chavez/forge</code>), a 275-artifact writing corpus at <code>blog.ninochavez.co</code>, and a portfolio of agent-assisted side projects ranging from a 12-tool MCP architecture (Atelier) to a tournament-management platform paired with its own blueprint deploy (rally-hq.app).</p>
+        </div>
+
+        <div class="narrative-block">
+          <p class="narrative-tag">What changed · the inflection</p>
+          <p>The v2 of this site framed the work as polymath — software, photography, music, and writing as four co-equal interests in a 2×2 grid. That framing was honest about the breadth but wrong about the structure. The breadth isn't four parallel interests; it's a single discipline (build agent-assisted systems that produce verifiable artifacts) with documentation surfaces in different media.</p>
+          <p>The shift is encoded in <code>ADR-0001</code> on this repo: context-engineer positioning over polymath framing. The receipts followed — the <code>forge</code> umbrella went public, the blueprint methodology got formal staging (diagnose → prescribe → design → portal), and the surface area of the work went from 9 case studies on v2 to 8 clusters spanning 69 repos + 17 deploys + 275 artifacts on v3. The cluster IA on <a href="/pages/work-cluster.html">/work</a> exists because the v2 surface hid 88% of the work.</p>
+        </div>
+
+        <div class="narrative-block">
+          <p class="narrative-tag">What now · the practice</p>
+          <p>The practice has four operational layers: declarative rules in <code>~/.claude/CLAUDE.md</code>, prompt-time hooks that load context (the Poe voice stack arrives this way), stop-time audits that catch hesitation patterns before they ship, and session-mining tools that rebuild the Poe stack from every prior transcript. The hesitation-fold diagram on <a href="/pages/practice.html">/practice</a> is what it looks like wired together.</p>
+          <p>The instrumented part is the point. The agents aren't doing the thinking — they're doing the executing, against a stack that predicts where I'd want to redirect and catches places I haven't redirected explicitly. Every claim on this site grounds to a real repo path or commit; that's the only positioning that survives contact with someone evaluating whether the receipts are real.</p>
+        </div>
+
+      </section>
+
+      <aside class="closing-row" aria-label="Adjacent surfaces">
+        <div>
+          <span class="label">Photography</span>
+          <a href="https://photography.ninochavez.co" target="_blank" rel="noopener">photography.ninochavez.co</a>
+        </div>
+        <div>
+          <span class="label">Writing</span>
+          <a href="https://blog.ninochavez.co" target="_blank" rel="noopener">blog.ninochavez.co</a>
+        </div>
+        <div>
+          <span class="label">GitHub</span>
+          <a href="https://github.com/nino-chavez" target="_blank" rel="noopener">github.com/nino-chavez</a>
+        </div>
+        <div>
+          <span class="label">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/ninochavez/" target="_blank" rel="noopener">linkedin.com/in/ninochavez</a>
+        </div>
+        <div>
+          <span class="label">Contact</span>
+          <a href="/pages/contact.html">/contact</a>
+        </div>
       </aside>
+
     </main>
   </section>
+
   <script>
     window.PROTO_PAGE = { id: 'about' };
   </script>
