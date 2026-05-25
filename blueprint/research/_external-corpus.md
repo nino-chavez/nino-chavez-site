@@ -24,8 +24,9 @@ grounding — that's read-only consumption, not in-scope work on the blog.
 |---|---|---|---|
 | `ninochavez.co` (main) | `apps/website-nc` (this repo) | Personal brand / portfolio / POV | Yes |
 | Signal Dispatch blog | `apps/blog` | Written POV — 277 posts in `astro-build/src` | Yes |
-| Nino Chavez Gallery | `apps/photography` | Volleyball + action photography (~20k photos) | Yes |
-| Signal X Studio site | `apps/website-ss` | Static studio identity surface (api/card/index.html) | Yes |
+| Photography gallery | `apps/photography` | Volleyball + action photography at `photography.ninochavez.co` (~20k photos). Replaces the old `nino-chavez-gallery` repo name. | Yes |
+| Signal X Studio site | `apps/website-ss` | Studio identity surface (api/, card/, index.html) at `signalx.studio`. | Yes |
+| Labs hub | `apps/labs` | Live experimental-apps index at `labs.ninochavez.co`. Indexes Rally HQ, CIQ, Code-to-Cognition. | Yes |
 | Router | `apps/router` | Cross-app request routing under the ninochavez domain | Yes |
 
 The four content/identity surfaces (main, blog, gallery, studio) share the
@@ -35,21 +36,61 @@ has to make it explicit.
 
 ## Working products to reference
 
-Material the v3 portfolio can cite as evidence rather than abstract claim. Each
-of these is a live thing Nino has shipped or is shipping — the "show your work"
-substrate.
+Material the v3 portfolio can cite as evidence rather than abstract claim. Per
+the 2026-05-25 receipt-bucket interview, the corpus splits into three tiers,
+not one flat list. Mixing tiers in the prescription would dilute receipts.
 
-| Product | Repo | Why the redesign cites it |
+### CURRENT — cite as live receipts of "where I'm at"
+
+These ARE the receipts the v3 site should foreground. Each is shipped or
+actively in-flight, maintained within the last ~30 days.
+
+| Product | Repo | Live URL | Why the redesign cites it |
+|---|---|---|---|
+| Rally HQ | `apps/rally-hq` | rallyhq.app | Live tournament platform. Blueprint Pattern B reference impl. Architect-directs-agents at production scale. |
+| Signal Dispatch | `apps/blog` | blog.ninochavez.co | 277 published posts; voice corpus; primary text substrate. |
+| Blueprint methodology | `wip/blueprint` | (methodology repo) | Meta-receipt: "I used my own methodology on my own site." Cite explicitly. |
+| Atelier | `wip/atelier` | (in flight) | OSS template + interop protocol for mixed human/agent teams. |
+| Atelier dashboard blueprint | `wip/atelier-dashboard-blueprint` | (in flight) | Active surface alongside atelier; cite together. |
+| Photography | `apps/photography` | photography.ninochavez.co | Volleyball + action sports gallery (replaces the old `nino-chavez-gallery` repo). |
+| Signal X Studio | `apps/website-ss` | signalx.studio | Studio identity surface (api/, card/, index.html). |
+| Quantifai | `apps/quantifai-landing` + `wip/quantifai-platform` | (one product, two surfaces) | AI FinOps platform; landing is marketing surface, platform is the app. Cite together as one current receipt. |
+| Let's Pepper | `apps/letspepper` | letspepper.com | Live brand surface; volleyball cultural property. |
+| Flickday Media | `apps/flickdaymedia` | flickdaymedia.com | Live brand surface; photography subcontractor brand. |
+| BC Subscriptions | `wip/bc-subscriptions` | (client) | Active client engagement; B2B delivery receipt. |
+
+**Receipt count: 11 current.** D8 prescription priority surfaces these
+on `/`, not the 4 currently in the v2 bento grid.
+
+### EVOLUTION — cite only as "where I started," NOT as current receipts
+
+These are real and live (or were), but they are predecessors / index
+surfaces, not flagship receipts. Citing them as current would dilute the
+flagship signal. If the prescription needs to show evolution, these are
+the citations — but the default is to not surface them on `/`.
+
+| Surface | Repo | Why it's evolution, not receipt |
 |---|---|---|
-| Rally HQ | `apps/rally-hq` | Live tournament platform. Blueprint Pattern B reference impl. Demonstrates the architect-directs-agents pattern at production scale. |
-| Quantifai | `wip/quantifai-platform` + `apps/quantifai-landing` | AI FinOps platform; cost-attribution + adoption-metrics product. Demonstrates AI-native product architecture. |
-| Atelier | `wip/atelier` | OSS template + interop protocol for mixed human/agent teams. Demonstrates the methodology layer behind everything else. |
-| Blueprint | `wip/blueprint` | The methodology powering this redesign (self-referential — useful as receipt that the approach works on its own surface). |
-| AI Hive | `wip/ai-hive` | Multi-agent coordination layer. Demonstrates parallel-agent infrastructure. |
-| Let's Pepper | `apps/letspepper` | Volleyball cultural surface; brand voice exemplar. |
-| Flickday Media | `apps/flickdaymedia` | Media subcontractor brand with its own design system (`DESIGN-SYSTEM.md` + `DESIGN.md`). Adjacent brand identity reference. |
-| 630 Volleyball platform | `apps/630-apps` | Client work (subcontractor role, not employee). esign / cci / design-system / vbranking. Demonstrates B2B product delivery. |
-| Labs | `apps/labs` | Experimental AI / agentic / enterprise architecture projects. |
+| AI Hive | `wip/ai-hive` | "atelier is what i want hive to become" — Nino's own poe-stack framing. Hive is the predecessor; atelier supersedes. |
+| Labs | `apps/labs` (live at labs.ninochavez.co) | Live index page that points at the flagship products (Rally HQ, CIQ, Code-to-Cognition). The flagships are the receipts; labs is the hub. |
+
+### CLIENT-CONTEXT — mention only, do not list as Nino's product
+
+| Surface | Repo | Citation rule |
+|---|---|---|
+| 630 Volleyball platform | `apps/630-apps` | Client subcontractor work (esign / cci / vbranking / design-system). Mention only as "client engagement context," never as "Nino's product." |
+
+### ADJACENT / EXPERIMENT — do not cite
+
+Per the 2026-05-25 interview, the following `wip/` items are
+experiments or exploratory and do NOT belong in the v3 receipts list:
+
+`ai-champions-kit`, `aisles-admin`, `ask-bc`, `bealls-aisles`,
+`brainstorming`, `claudius`, `cortex`, `ecomm`, `practice`, `simple-aes`,
+`six`, `tmp`, `tna`, `zen-loft`
+
+Some of these may earn promotion to CURRENT in future iterations. Today,
+none of them.
 
 ## Blog content — voice + authority substrate
 
@@ -85,7 +126,7 @@ These exist in the corpus but should NOT seed the redesign:
 
 - **`apps/website-nc-v3`** — referenced in canonical Blueprint docs as a brownfield reference impl. **It does not exist on disk.** Per user confirmation 2026-05-25, the v3 work happens *here* (in `apps/website-nc`), not in a sibling repo. The canonical Blueprint docs themselves need a cleanup pass to remove the outdated reference, but that's a methodology-repo concern, not this initiative's.
 - **`apps/zerospecs`** — Svelte experiment, no portfolio relevance.
-- **`apps/website-ss`** static fragments — reference the brand surface but do not import patterns.
+- **`apps/website-ss`** patterns — the studio surface is a CURRENT receipt to *cite* (see § "Working products"), but its static-fragment patterns do not import into v3. The v3 design system is net-new (per resolved Q2 in `01-diagnose.md`).
 
 ## How this corpus enters each stage
 
