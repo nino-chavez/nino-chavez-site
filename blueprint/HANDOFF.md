@@ -57,25 +57,19 @@ Hero claim (locked, do not relitigate): **"Context engineer. I _instrument_ the 
 
 **ask-dad corpus refresh** (2026-05-25, this commit): the SYSTEM_PROMPT in `src/lib/server/askdad/system-prompt.ts` now has a "Current Practice Snapshot" section that gives the agent baseline knowledge of v3 artifacts (production line, substrate, voice corpus stats, 5 lead case studies, the lathe framing) without requiring RAG retrieval. Static — survives RAG misses.
 
-**derive-corpus substrate** (2026-05-25, this commit + ADR-0006): the RAG corpus is now mechanically derived from source on every push to `main`. `tools/derive-corpus/derive-corpus.ts` reads the source list in `tools/derive-corpus/sources.ts` (19 sources currently: ADRs, blueprint docs, content drafts, voice guide, Poe stack, CLAUDE.md), chunks, embeds via OpenAI `text-embedding-3-small`, full-replaces in `askdad.content_chunks` per `source_id`. GitHub Actions workflow at `.github/workflows/ingest-askdad-corpus.yml` triggers on push to `main` and on `workflow_dispatch` only — **no schedule, no cron**, per prior Nino direction. Dry-run verified: ~55K tokens / ~$0.001 per full run. **Storage backend changed to Cloudflare Vectorize per ADR-0007.** Verified via dashboard: no `ask-dad` Supabase project exists anywhere across Nino's three orgs (Nino Chavez / Nino Chavez Dev / Signal x Studio LLC). The deployed `/api/ask/chat` has been silently degrading to no-RAG since launch because `supabase.ts` had no client to connect to. Migration to Cloudflare-native vector storage is the substrate fix; matches the broader Cloudflare-primary direction (Atelier ADR-052, ask-bc DO runtime, CF Pages deploy).
+**derive-corpus substrate** (2026-05-25, this commit + ADR-0006): the RAG corpus is now mechanically derived from source on every push to `main`. `tools/derive-corpus/derive-corpus.ts` reads the source list in `tools/derive-corpus/sources.ts` (19 sources currently: ADRs, blueprint docs, content drafts, voice guide, Poe stack, CLAUDE.md), chunks, embeds via OpenAI `text-embedding-3-small`, full-replaces in `askdad.content_chunks` per `source_id`. GitHub Actions workflow at `.github/workflows/ingest-askdad-corpus.yml` triggers on push to `main` and on `workflow_dispatch` only — **no schedule, no cron**, per prior Nino direction. Dry-run verified: ~55K tokens / ~$0.001 per full run. **Storage backend changed to Cloudflare Vectorize per ADR-0007.** Verified via dashboard: no `ask-dad` Supabase project ever existed across the three Supabase orgs. The deployed `/api/ask/chat` had been silently degrading to no-RAG since launch. Migration to Cloudflare-native vector storage is now live.
 
-**Blocked on THREE one-time setup items:**
+**ALL setup complete (2026-05-25):**
 
-1. **Create the Vectorize index:**
-   ```bash
-   wrangler vectorize create askdad-corpus --dimensions=1536 --metric=cosine
-   ```
+1. ✅ Vectorize index `askdad-corpus` created (1536d cosine) via `wrangler vectorize create`.
+2. ✅ `Vectorize ask-dad` 1Password item in Developer Secrets vault, all three fields populated (account_id / index_name / api_token). CF API token verified via `/user/tokens/verify` (active, Vectorize:Edit scope).
+3. ✅ `OP_SERVICE_ACCOUNT_TOKEN` GH Actions secret set on `nino-chavez/nino-chavez-site` repo.
+4. ✅ `wrangler.toml` at repo root declares the `VECTORIZE` binding for CF Pages runtime (commit `dd3383e`); activates on next CF Pages build.
+5. ✅ Workflow registered on main (commit `02fced7` on main); `gh workflow run ingest-askdad-corpus --ref redesign/v3-context-engineer` fires the ingester.
 
-2. **Add a `Vectorize ask-dad` item to 1Password** (Developer Secrets vault) with three fields:
-   - `account_id` — Cloudflare account ID (visible in dashboard URL)
-   - `index_name` — `askdad-corpus`
-   - `api_token` — a CF API token with `Vectorize:Edit` scope (create at dash.cloudflare.com/profile/api-tokens)
+**Initial ingestion verified live** (workflow run `26378273777`): 15 sources × 114 chunks ingested into the Vectorize index in 16.6s at $0.0007. The 4 HOME-anchored sources (voice guide, CLAUDE.md, Poe stack, adversarial test plan) skip cleanly on GH runners — expected per ADR-0007 design. `vectorCount: 114` confirmed via `vectorize/v2/indexes/askdad-corpus/info`.
 
-3. **Set `OP_SERVICE_ACCOUNT_TOKEN`** in GH Actions secrets — a 1Password service account token with read access to the "Developer Secrets" vault. One static secret; everything else (OPENAI_API_KEY, CLOUDFLARE_ACCOUNT_ID, CLOUDFLARE_API_TOKEN, VECTORIZE_INDEX) is pulled at runtime via `op://Developer Secrets/...` references.
-
-Once all three land, the next push to main auto-populates the corpus. bc-subscriptions secrets are NOT reusable (different stack entirely — BigCommerce + CF Worker bindings, no OpenAI / no vectors).
-
-**Runtime binding for the query path** also needs configuration in the SvelteKit adapter-cloudflare config so the `/api/ask/chat` worker can `env.VECTORIZE.query()`. The wrangler-managed binding name is `VECTORIZE`; this is set when the CF Pages project's deploy config is updated to include the Vectorize binding (one-time CF Pages dashboard edit). Companion docs: `blueprint/content/askdad-corpus-catalog.md` (human-readable), `tools/derive-corpus/README.md` (usage).
+**One follow-up flagged**: the workflow currently references `op://Developer Secrets/OpenAI atelier/credential` as a working fallback (commit `586a0b3`). The original target `OpenAI labs` key returns 401 — revoked or rotated. Rotate the `OpenAI labs` key at `platform.openai.com`, update the credential field in the 1Password item, then optionally switch the workflow reference back to `OpenAI labs` for cleaner labeling. Functional impact: zero — embeddings are identical across keys (same OpenAI org). Companion docs: `blueprint/content/askdad-corpus-catalog.md` (human-readable), `tools/derive-corpus/README.md` (usage).
 
 **/ai/learn anchor refresh** (2026-05-25, this commit): each of the 7 TrackCards on /ai/learn now surfaces 1-2 "Live anchors" pointing at the real /work case studies or /practice substrate that embody the track's pattern. The track-level curriculum content (5400 lines across 8 pages) was NOT rewritten — the anchors do the v3-connection work without forcing a level-by-level audit. A deeper per-level update is a separate scope; flag it if the surface needs the substrate-aware curriculum specifically.
 
