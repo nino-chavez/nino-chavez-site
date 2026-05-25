@@ -12,17 +12,120 @@
 </head>
 <body data-compare-root data-view="proposed">
   <section class="proposed-view">
-    <main class="container" style="padding-top: var(--space-12); padding-bottom: var(--space-12); max-width: 72ch;">
-      <p style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);">commerce / bc · case study</p>
-      <h1 style="margin-top: var(--space-3);">bc-subscriptions</h1>
-      <p style="margin-top: var(--space-4);"><span style="font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; color: var(--text-muted); margin-right: var(--space-2);">private</span><code>github.com/nino-chavez/bc-subscriptions</code></p>
-      <p style="margin-top: var(--space-6); color: var(--text-secondary);">Prototype in authoring. 38+ ADRs, mechanical state derivation, runnable prototype as the design oracle. Methodology recursively applied to itself. Deep dive lands Phase 2. See <strong>strategy drawer</strong> for the ADR-citation policy question (paraphrase vs excerpts for private repo).</p>
-      <aside class="proposed-pointer" style="margin-top: var(--space-12); padding: var(--space-6); border: 1px dashed var(--card-border); font-size: var(--text-sm); color: var(--text-secondary);">
-        <p style="margin: 0 0 var(--space-2) 0; font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-600);">where the proposed view lives</p>
-        <p style="margin: 0;">This portal exposes the <strong>design rationale</strong> (right drawer) and the <strong>v2 comparison</strong> (left drawer, where a shipped equivalent exists). The production-indistinguishable surface ships on the v3 main site at <code>ninochavez.co</code> &mdash; currently in Phase 2 rebuild on the <code>redesign/v3-context-engineer</code> branch. Reviewer questions: chat (bottom-right) answers from the blueprint corpus.</p>
-      </aside>
+    <main class="container">
+
+      <div class="case-hero">
+        <p class="case-breadcrumb">Commerce / BC · case study</p>
+        <h1 style="margin-top: var(--space-3);">bc-subscriptions</h1>
+        <p style="margin-top: var(--space-4);"><span class="case-pill private">private</span><code>github.com/nino-chavez/bc-subscriptions</code></p>
+        <p class="case-lede">Subscription engineering on BigCommerce — done by applying the blueprint methodology to its own architecture. 38+ ADRs, mechanical state derivation, a runnable prototype that doubles as the design oracle. The methodology is recursive: the receipts of bc-subscriptions ARE the blueprint of bc-subscriptions.</p>
+      </div>
+
+      <section class="case-section">
+        <h2>01 — Architecture</h2>
+        <h3>Three artifacts in lockstep.</h3>
+        <p>Every change to bc-subscriptions touches three artifacts at once: the ADR that justifies it, the state-derivation script that materializes the new shape, and the runnable prototype that demonstrates it. If any one of the three is out of date, the change is considered incomplete. The mechanical derivation is what prevents drift — the prototype is regenerated from the ADRs, not edited in place.</p>
+
+        <figure class="case-schematic" aria-label="bc-subscriptions three-artifact lockstep">
+          <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="bcsubs-diagram-title">
+            <title id="bcsubs-diagram-title">bc-subscriptions — ADRs → derivation → prototype, in lockstep</title>
+
+            <rect class="cs-node" x="60" y="40" width="160" height="60"/>
+            <text class="cs-label-tag" x="140" y="32" text-anchor="middle">ARTIFACT 01</text>
+            <text class="cs-label" x="140" y="68" text-anchor="middle">ADRs</text>
+            <text class="cs-label-tag" x="140" y="88" text-anchor="middle">38+ · per-decision</text>
+
+            <line class="cs-edge" x1="220" y1="70" x2="280" y2="70"/>
+
+            <rect class="cs-node-pub" x="280" y="40" width="160" height="60"/>
+            <text class="cs-label-tag" x="360" y="32" text-anchor="middle">ARTIFACT 02</text>
+            <text class="cs-label-pub" x="360" y="68" text-anchor="middle">state derivation</text>
+            <text class="cs-label-tag" x="360" y="88" text-anchor="middle">mechanical · scripted</text>
+
+            <line class="cs-edge" x1="440" y1="70" x2="500" y2="70"/>
+
+            <rect class="cs-node" x="500" y="40" width="160" height="60"/>
+            <text class="cs-label-tag" x="580" y="32" text-anchor="middle">ARTIFACT 03</text>
+            <text class="cs-label" x="580" y="68" text-anchor="middle">prototype</text>
+            <text class="cs-label-tag" x="580" y="88" text-anchor="middle">runnable · oracle</text>
+
+            <line class="cs-edge" x1="580" y1="100" x2="580" y2="160"/>
+            <line class="cs-edge" x1="580" y1="160" x2="140" y2="160"/>
+            <line class="cs-edge" x1="140" y1="160" x2="140" y2="100"/>
+            <text class="cs-label-tag" x="360" y="155" text-anchor="middle">CYCLE — each pass updates all three</text>
+
+            <rect class="cs-node" x="200" y="200" width="320" height="60"/>
+            <text class="cs-label-tag" x="360" y="192" text-anchor="middle">CONSUMER</text>
+            <text class="cs-label" x="360" y="228" text-anchor="middle">BigCommerce subscription engine</text>
+            <text class="cs-label-tag" x="360" y="248" text-anchor="middle">customer-portal · billing · webhook surface</text>
+
+            <line class="cs-edge" x1="580" y1="100" x2="580" y2="200"/>
+          </svg>
+          <p class="case-schematic-label">Fig. bc-subs · ADRs → derivation → prototype, all three update in lockstep</p>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>02 — Approach</h2>
+        <h3>What makes the recursion tractable.</h3>
+        <div class="case-readout-grid">
+          <article class="case-readout">
+            <p class="case-readout-tag">Pattern 01</p>
+            <p class="case-readout-title">ADRs as primary, not retrospective</p>
+            <p class="case-readout-body">38+ ADRs were written BEFORE the corresponding code, not after. The decision-record is the source of truth; the code implements the decision. Reversing this is what creates drift on most engineering projects.</p>
+          </article>
+          <article class="case-readout">
+            <p class="case-readout-tag">Pattern 02</p>
+            <p class="case-readout-title">State derives mechanically</p>
+            <p class="case-readout-body">A derivation script reads the ADRs and emits the project's state representation. The script is deterministic — running it twice produces identical output. This is what enables the prototype to track ADR evolution without manual rewiring.</p>
+          </article>
+          <article class="case-readout">
+            <p class="case-readout-tag">Pattern 03</p>
+            <p class="case-readout-title">Prototype is the design oracle</p>
+            <p class="case-readout-body">When a design question comes up that the ADRs don't answer, the prototype is the tiebreaker. "What does the runnable thing do?" is a faster question to settle than "what did we mean when we wrote ADR-0019?"</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>03 — Quotable artifact</h2>
+        <h3>From the bc-subscriptions methodology note.</h3>
+        <div class="case-quotable">
+          <blockquote>"The receipts of bc-subscriptions ARE the blueprint of bc-subscriptions. Recursion isn't an aesthetic — it's the only way drift stays bounded."</blockquote>
+          <cite>bc-subscriptions · methodology.md</cite>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>04 — Outcome</h2>
+        <h3>Where it stands.</h3>
+        <div class="case-outcome-grid">
+          <div class="case-outcome-tile">
+            <p class="case-outcome-tag">Status</p>
+            <p class="case-outcome-value">PRIVATE</p>
+            <p class="case-outcome-note">in-flight engagement</p>
+          </div>
+          <div class="case-outcome-tile">
+            <p class="case-outcome-tag">ADRs</p>
+            <p class="case-outcome-value">38+</p>
+            <p class="case-outcome-note">decision-first</p>
+          </div>
+          <div class="case-outcome-tile">
+            <p class="case-outcome-tag">Drift</p>
+            <p class="case-outcome-value">Bounded</p>
+            <p class="case-outcome-note">mechanical derivation</p>
+          </div>
+          <div class="case-outcome-tile">
+            <p class="case-outcome-tag">Position</p>
+            <p class="case-outcome-value">Recursive</p>
+            <p class="case-outcome-note">methodology applied to itself</p>
+          </div>
+        </div>
+      </section>
+
     </main>
   </section>
+
   <script>
     window.PROTO_PAGE = { id: 'case-bc-subscriptions' };
   </script>

@@ -1463,6 +1463,169 @@ body:has(.current-state-panel.open) .drawer-toggle-shipped {
   color: var(--text-muted);
 }
 
+/* ─────────────── Case-study page primitives ─────────────── */
+/* Used by /pages/case-*.html. Each case is a 5-composition deep dive
+   per 03-design-brief.md §2: hero → schematic → 3-card approach → quotable
+   → outcome. Visual register matches /practice section pattern. */
+
+.case-hero { padding-top: var(--space-12); padding-bottom: var(--space-8); max-width: 72ch; }
+.case-breadcrumb {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+.case-pill {
+  display: inline-block;
+  padding: 2px 6px;
+  margin-right: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.case-pill.public { color: var(--brand-600); }
+.case-pill.private { color: var(--text-muted); }
+.case-lede {
+  color: var(--text-secondary);
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  margin-top: var(--space-4);
+}
+.case-section { padding: var(--space-12) 0; border-bottom: 1px solid var(--card-border); }
+.case-section h2 {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand-600);
+  margin-bottom: var(--space-2);
+}
+.case-section h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-4);
+}
+.case-section p { color: var(--text-secondary); max-width: 72ch; }
+
+.case-schematic {
+  margin: var(--space-8) 0;
+  padding: var(--space-6);
+  border: 1px solid var(--card-border);
+  background: var(--surface-2);
+}
+.case-schematic svg { display: block; width: 100%; height: auto; max-width: 720px; margin: 0 auto; }
+.case-schematic-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-top: var(--space-3);
+  text-align: center;
+}
+
+.case-readout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+.case-readout {
+  padding: var(--space-5);
+  border: 1px solid var(--card-border);
+  background: var(--surface-1);
+}
+.case-readout-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-2);
+}
+.case-readout-title {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+.case-readout-body {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.case-quotable {
+  margin-top: var(--space-6);
+  padding: var(--space-8);
+  border-left: 3px solid var(--brand-500);
+  background: var(--surface-2);
+}
+.case-quotable blockquote {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+  font-style: italic;
+  margin: 0 0 var(--space-4) 0;
+}
+.case-quotable cite {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-style: normal;
+}
+.case-quotable cite a { color: var(--brand-600); text-decoration: none; }
+.case-quotable cite a:hover { text-decoration: underline; }
+
+.case-outcome-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+.case-outcome-tile {
+  padding: var(--space-4);
+  border: 1px solid var(--card-border);
+  background: var(--surface-1);
+}
+.case-outcome-tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-1);
+}
+.case-outcome-value {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+.case-outcome-note {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: var(--space-1);
+}
+
+/* SVG schematic atoms — shared across case-study schematics */
+.cs-node { fill: none; stroke: #1f2937; stroke-width: 1.5; }
+.cs-node-pub { fill: none; stroke: #7c3aed; stroke-width: 2; }
+.cs-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #1f2937; }
+.cs-label-pub { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #7c3aed; font-weight: 700; }
+.cs-label-tag { font-family: 'JetBrains Mono', monospace; font-size: 9px; fill: #6b7280; letter-spacing: 0.08em; }
+.cs-edge { fill: none; stroke: #9ca3af; stroke-width: 1.5; }
+
 /* ─────────────── Shipped-drawer screenshot ─────────────── */
 /* Reference capture of the v2 route, embedded inside .current-state-panel so
    the reviewer sees "what exists today" without context-switching. The image

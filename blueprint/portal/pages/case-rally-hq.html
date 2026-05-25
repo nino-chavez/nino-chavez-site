@@ -12,17 +12,119 @@
 </head>
 <body data-compare-root data-view="proposed">
   <section class="proposed-view">
-    <main class="container" style="padding-top: var(--space-12); padding-bottom: var(--space-12); max-width: 72ch;">
-      <p style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);">630 / volleyball · case study</p>
-      <h1 style="margin-top: var(--space-3);">Rally HQ</h1>
-      <p style="margin-top: var(--space-4);"><span style="font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; color: var(--text-muted); margin-right: var(--space-2);">private</span><code>rallyhq.app</code> &nbsp; · &nbsp; <code>blueprint.rallyhq.app</code> — the canonical blueprint v2 portal deploy</p>
-      <p style="margin-top: var(--space-6); color: var(--text-secondary);">Prototype in authoring. Hero case study for the volleyball-630 cluster. Paired-deploy pattern — the same pattern THIS blueprint adopts (ADR-0008). Five-composition deep dive lands Phase 2. See <strong>strategy drawer</strong> for the meta-reference framing question (does "we built v3 using this same pattern" read confident or self-aggrandizing?).</p>
-      <aside class="proposed-pointer" style="margin-top: var(--space-12); padding: var(--space-6); border: 1px dashed var(--card-border); font-size: var(--text-sm); color: var(--text-secondary);">
-        <p style="margin: 0 0 var(--space-2) 0; font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-600);">where the proposed view lives</p>
-        <p style="margin: 0;">This portal exposes the <strong>design rationale</strong> (right drawer) and the <strong>v2 comparison</strong> (left drawer, where a shipped equivalent exists). The production-indistinguishable surface ships on the v3 main site at <code>ninochavez.co</code> &mdash; currently in Phase 2 rebuild on the <code>redesign/v3-context-engineer</code> branch. Reviewer questions: chat (bottom-right) answers from the blueprint corpus.</p>
-      </aside>
+    <main class="container">
+
+      <div class="case-hero">
+        <p class="case-breadcrumb">630 / volleyball · case study</p>
+        <h1 style="margin-top: var(--space-3);">Rally HQ</h1>
+        <p style="margin-top: var(--space-4);"><span class="case-pill private">private</span><code>rallyhq.app</code> · paired <code>blueprint.rallyhq.app</code></p>
+        <p class="case-lede">Tournament-management platform for 630 Volleyball — and the canonical demonstration of the paired-deploy pattern. Two CF Pages projects ship from one repo: the product surface at rallyhq.app, the blueprint portal at blueprint.rallyhq.app. This very portal you're reading mirrors that pattern.</p>
+      </div>
+
+      <section class="case-section">
+        <h2>01 — Architecture</h2>
+        <h3>One repo. Two deploys. Shared substrate.</h3>
+        <p>The product (Rally HQ) and its review portal (Rally HQ Blueprint) are sibling CF Pages projects deployed from the same source tree. They share the design system, the schematic SVGs, and the underlying RAG corpus — but each is independently addressable. Reviewers walk blueprint.rallyhq.app to evaluate decisions; users hit rallyhq.app to run tournaments. Neither surface gets diluted by the other's audience.</p>
+
+        <figure class="case-schematic" aria-label="Rally HQ paired-deploy architecture">
+          <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="rallyhq-diagram-title">
+            <title id="rallyhq-diagram-title">Rally HQ — one repo, two CF Pages projects, shared substrate</title>
+
+            <rect class="cs-node-pub" x="260" y="30" width="200" height="60"/>
+            <text class="cs-label-tag" x="360" y="22" text-anchor="middle">SOURCE</text>
+            <text class="cs-label-pub" x="360" y="58" text-anchor="middle">github.com/.../rally-hq</text>
+            <text class="cs-label-tag" x="360" y="78" text-anchor="middle">single repo · two pages projects</text>
+
+            <line class="cs-edge" x1="360" y1="90" x2="360" y2="120"/>
+            <line class="cs-edge" x1="180" y1="120" x2="540" y2="120"/>
+
+            <line class="cs-edge" x1="180" y1="120" x2="180" y2="160"/>
+            <rect class="cs-node" x="80" y="160" width="200" height="60"/>
+            <text class="cs-label-tag" x="180" y="152" text-anchor="middle">DEPLOY 01 · PRODUCT</text>
+            <text class="cs-label" x="180" y="188" text-anchor="middle">rallyhq.app</text>
+            <text class="cs-label-tag" x="180" y="208" text-anchor="middle">tournament-management surface</text>
+
+            <line class="cs-edge" x1="540" y1="120" x2="540" y2="160"/>
+            <rect class="cs-node" x="440" y="160" width="200" height="60"/>
+            <text class="cs-label-tag" x="540" y="152" text-anchor="middle">DEPLOY 02 · BLUEPRINT</text>
+            <text class="cs-label" x="540" y="188" text-anchor="middle">blueprint.rallyhq.app</text>
+            <text class="cs-label-tag" x="540" y="208" text-anchor="middle">review portal · this very pattern</text>
+
+            <line class="cs-edge" x1="180" y1="220" x2="180" y2="260"/>
+            <line class="cs-edge" x1="540" y1="220" x2="540" y2="260"/>
+            <line class="cs-edge" x1="180" y1="260" x2="540" y2="260"/>
+
+            <rect class="cs-node" x="260" y="260" width="200" height="40"/>
+            <text class="cs-label-tag" x="360" y="252" text-anchor="middle">SHARED SUBSTRATE</text>
+            <text class="cs-label" x="360" y="285" text-anchor="middle">tokens · schematics · RAG corpus</text>
+
+            <line class="cs-edge" x1="360" y1="260" x2="360" y2="290"/>
+          </svg>
+          <p class="case-schematic-label">Fig. rally-hq · paired CF Pages projects from one source tree</p>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>02 — Approach</h2>
+        <h3>What the paired-deploy pattern earns.</h3>
+        <div class="case-readout-grid">
+          <article class="case-readout">
+            <p class="case-readout-tag">Earn 01</p>
+            <p class="case-readout-title">Audience separation</p>
+            <p class="case-readout-body">Tournament admins shouldn't have to scroll past architecture rationale to schedule a bracket. Reviewers shouldn't have to learn the product UI to evaluate a design decision. Separate deploys → separate IAs → neither audience compromises.</p>
+          </article>
+          <article class="case-readout">
+            <p class="case-readout-tag">Earn 02</p>
+            <p class="case-readout-title">Shared substrate without coupling</p>
+            <p class="case-readout-body">Design tokens, schematic SVGs, and the RAG corpus live in the shared tree. Both deploys pull from the same canonical source. A token change ripples to both at next deploy; neither surface goes out of sync with the design system.</p>
+          </article>
+          <article class="case-readout">
+            <p class="case-readout-tag">Earn 03</p>
+            <p class="case-readout-title">Methodology made portable</p>
+            <p class="case-readout-body">The Rally HQ pattern is what ADR-0008 codified for this site. ninochavez-blueprint is sibling to ninochavez-main exactly the way blueprint.rallyhq.app is sibling to rallyhq.app. The pattern travels.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>03 — Quotable artifact</h2>
+        <h3>From ADR-0008 — adopting Rally HQ's paired-deploy pattern.</h3>
+        <div class="case-quotable">
+          <blockquote>"The product surface and the design rationale are not the same artifact. They have different audiences, different cadences, and different success criteria. The paired deploy is what makes that legible."</blockquote>
+          <cite>ADR-0008 · paired-deploy adoption (ninochavez.co v3)</cite>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>04 — Outcome</h2>
+        <h3>Where it stands.</h3>
+        <div class="case-outcome-grid">
+          <div class="case-outcome-tile">
+            <p class="case-outcome-tag">Status</p>
+            <p class="case-outcome-value">LIVE</p>
+            <p class="case-outcome-note">both deploys in prod</p>
+          </div>
+          <div class="case-outcome-tile">
+            <p class="case-outcome-tag">Deploys</p>
+            <p class="case-outcome-value">2</p>
+            <p class="case-outcome-note">product + blueprint</p>
+          </div>
+          <div class="case-outcome-tile">
+            <p class="case-outcome-tag">Source</p>
+            <p class="case-outcome-value">1 repo</p>
+            <p class="case-outcome-note">shared substrate</p>
+          </div>
+          <div class="case-outcome-tile">
+            <p class="case-outcome-tag">Position</p>
+            <p class="case-outcome-value">Pattern</p>
+            <p class="case-outcome-note">this portal mirrors it</p>
+          </div>
+        </div>
+      </section>
+
     </main>
   </section>
+
   <script>
     window.PROTO_PAGE = { id: 'case-rally-hq' };
   </script>

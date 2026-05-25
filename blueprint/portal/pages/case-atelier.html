@@ -12,17 +12,134 @@
 </head>
 <body data-compare-root data-view="proposed">
   <section class="proposed-view">
-    <main class="container" style="padding-top: var(--space-12); padding-bottom: var(--space-12); max-width: 72ch;">
-      <p style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);">ai products · case study</p>
-      <h1 style="margin-top: var(--space-3);">Atelier</h1>
-      <p style="margin-top: var(--space-4);"><span style="font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; color: var(--brand-600); margin-right: var(--space-2);">public</span><code>github.com/nino-chavez/atelier</code></p>
-      <p style="margin-top: var(--space-6); color: var(--text-secondary);">Prototype in authoring. 5-composition deep dive (hero → 12-tool MCP schematic → approach → quotable → outcome) lands Phase 2. See <strong>strategy drawer</strong> for cluster-IA rationale.</p>
-      <aside class="proposed-pointer" style="margin-top: var(--space-12); padding: var(--space-6); border: 1px dashed var(--card-border); font-size: var(--text-sm); color: var(--text-secondary);">
-        <p style="margin: 0 0 var(--space-2) 0; font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-600);">where the proposed view lives</p>
-        <p style="margin: 0;">This portal exposes the <strong>design rationale</strong> (right drawer) and the <strong>v2 comparison</strong> (left drawer, where a shipped equivalent exists). The production-indistinguishable surface ships on the v3 main site at <code>ninochavez.co</code> &mdash; currently in Phase 2 rebuild on the <code>redesign/v3-context-engineer</code> branch. Reviewer questions: chat (bottom-right) answers from the blueprint corpus.</p>
-      </aside>
+    <main class="container">
+
+      <div class="case-hero">
+        <p class="case-breadcrumb">AI products · case study</p>
+        <h1 style="margin-top: var(--space-3);">Atelier</h1>
+        <p style="margin-top: var(--space-4);"><span class="case-pill public">public</span><code>github.com/nino-chavez/atelier</code></p>
+        <p class="case-lede">Self-hostable OSS template + agent-interop protocol + reference prototype for mixed human/agent teams. Atelier is the credibility anchor for the AI-products cluster — public, externally verifiable, and embodying the methodology-as-software thesis.</p>
+      </div>
+
+      <section class="case-section">
+        <h2>01 — Architecture</h2>
+        <h3>Twelve tools across one MCP surface.</h3>
+        <p>Atelier exposes a 12-tool MCP server that mediates between an orchestrator agent and a fan-out of domain agents (design, frontend, backend, infra, docs). The orchestrator never calls domain agents directly — every cross-team handoff goes through a tool call so the contract is inspectable and the trace is reproducible.</p>
+
+        <figure class="case-schematic" aria-label="Atelier 12-tool MCP architecture">
+          <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="atelier-diagram-title">
+            <title id="atelier-diagram-title">Atelier MCP — orchestrator fanning out to 12 tools across 5 domain namespaces</title>
+            <rect class="cs-node-pub" x="280" y="30" width="160" height="50"/>
+            <text class="cs-label-tag" x="360" y="22" text-anchor="middle">ORCHESTRATOR</text>
+            <text class="cs-label-pub" x="360" y="62" text-anchor="middle">atelier-mcp</text>
+
+            <line class="cs-edge" x1="360" y1="80" x2="360" y2="130"/>
+            <line class="cs-edge" x1="60" y1="130" x2="660" y2="130"/>
+
+            <g>
+              <line class="cs-edge" x1="100" y1="130" x2="100" y2="170"/>
+              <rect class="cs-node" x="40" y="170" width="120" height="40"/>
+              <text class="cs-label" x="100" y="195" text-anchor="middle">design.*</text>
+              <text class="cs-label-tag" x="100" y="230" text-anchor="middle">3 tools</text>
+            </g>
+            <g>
+              <line class="cs-edge" x1="230" y1="130" x2="230" y2="170"/>
+              <rect class="cs-node" x="170" y="170" width="120" height="40"/>
+              <text class="cs-label" x="230" y="195" text-anchor="middle">frontend.*</text>
+              <text class="cs-label-tag" x="230" y="230" text-anchor="middle">2 tools</text>
+            </g>
+            <g>
+              <line class="cs-edge" x1="360" y1="130" x2="360" y2="170"/>
+              <rect class="cs-node" x="300" y="170" width="120" height="40"/>
+              <text class="cs-label" x="360" y="195" text-anchor="middle">backend.*</text>
+              <text class="cs-label-tag" x="360" y="230" text-anchor="middle">3 tools</text>
+            </g>
+            <g>
+              <line class="cs-edge" x1="490" y1="130" x2="490" y2="170"/>
+              <rect class="cs-node" x="430" y="170" width="120" height="40"/>
+              <text class="cs-label" x="490" y="195" text-anchor="middle">infra.*</text>
+              <text class="cs-label-tag" x="490" y="230" text-anchor="middle">2 tools</text>
+            </g>
+            <g>
+              <line class="cs-edge" x1="620" y1="130" x2="620" y2="170"/>
+              <rect class="cs-node" x="560" y="170" width="120" height="40"/>
+              <text class="cs-label" x="620" y="195" text-anchor="middle">docs.*</text>
+              <text class="cs-label-tag" x="620" y="230" text-anchor="middle">2 tools</text>
+            </g>
+
+            <line class="cs-edge" x1="100" y1="240" x2="620" y2="240"/>
+            <line class="cs-edge" x1="360" y1="240" x2="360" y2="290"/>
+            <rect class="cs-node" x="270" y="290" width="180" height="50"/>
+            <text class="cs-label-tag" x="360" y="282" text-anchor="middle">DOMAIN AGENTS</text>
+            <text class="cs-label" x="360" y="322" text-anchor="middle">mixed human + LLM teams</text>
+          </svg>
+          <p class="case-schematic-label">Fig. atelier-mcp · orchestrator fans to 12 tools across 5 domain namespaces</p>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>02 — Approach</h2>
+        <h3>The three load-bearing patterns.</h3>
+        <p>Every design choice in atelier resolves to one of three patterns. Together they make mixed-team coordination tractable; without them every workflow re-invents the same primitives.</p>
+
+        <div class="case-readout-grid">
+          <article class="case-readout">
+            <p class="case-readout-tag">Pattern 01</p>
+            <p class="case-readout-title">Inspectable handoffs</p>
+            <p class="case-readout-body">Cross-team calls go through MCP tools, not direct agent invocations. The tool call IS the contract — argument schema, return type, latency budget — and the call appears in the trace for every downstream consumer.</p>
+          </article>
+          <article class="case-readout">
+            <p class="case-readout-tag">Pattern 02</p>
+            <p class="case-readout-title">Self-hostable runtime</p>
+            <p class="case-readout-body">No vendor lock to a managed agent platform. The MCP server runs locally or in any CF Workers / Vercel function. Teams can stand up atelier inside their own perimeter without granting external dependencies a vote in their architecture.</p>
+          </article>
+          <article class="case-readout">
+            <p class="case-readout-tag">Pattern 03</p>
+            <p class="case-readout-title">Reference prototype, not framework</p>
+            <p class="case-readout-body">Atelier ships as a working starter, not as a library to import. Forks are encouraged — the value is in the protocol pattern, not in adopting a dependency that constrains future architecture choices.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>03 — Quotable artifact</h2>
+        <h3>From the README.</h3>
+        <div class="case-quotable">
+          <blockquote>"Atelier is the studio. Twelve tools, five domain namespaces, one MCP surface. Bring your own orchestrator — or fork ours."</blockquote>
+          <cite>github.com/nino-chavez/atelier · <a href="https://github.com/nino-chavez/atelier" target="_blank" rel="noopener">README</a></cite>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>04 — Outcome</h2>
+        <h3>Where it stands.</h3>
+        <div class="case-outcome-grid">
+          <div class="case-outcome-tile">
+            <p class="case-outcome-tag">Visibility</p>
+            <p class="case-outcome-value">PUBLIC</p>
+            <p class="case-outcome-note">github · MIT</p>
+          </div>
+          <div class="case-outcome-tile">
+            <p class="case-outcome-tag">Tool count</p>
+            <p class="case-outcome-value">12</p>
+            <p class="case-outcome-note">across 5 domains</p>
+          </div>
+          <div class="case-outcome-tile">
+            <p class="case-outcome-tag">Runtime</p>
+            <p class="case-outcome-value">Self-host</p>
+            <p class="case-outcome-note">CF Workers / local</p>
+          </div>
+          <div class="case-outcome-tile">
+            <p class="case-outcome-tag">Position</p>
+            <p class="case-outcome-value">Lead</p>
+            <p class="case-outcome-note">AI-products cluster anchor</p>
+          </div>
+        </div>
+      </section>
+
     </main>
   </section>
+
   <script>
     window.PROTO_PAGE = { id: 'case-atelier' };
   </script>

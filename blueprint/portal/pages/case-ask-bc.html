@@ -12,17 +12,121 @@
 </head>
 <body data-compare-root data-view="proposed">
   <section class="proposed-view">
-    <main class="container" style="padding-top: var(--space-12); padding-bottom: var(--space-12); max-width: 72ch;">
-      <p style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);">commerce / bc · case study</p>
-      <h1 style="margin-top: var(--space-3);">Ask BC</h1>
-      <p style="margin-top: var(--space-4);"><span style="font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; color: var(--text-muted); margin-right: var(--space-2);">private</span><code>askbc.ninochavez.co</code></p>
-      <p style="margin-top: var(--space-6); color: var(--text-secondary);">Prototype in authoring. Hybrid: Next.js + Vercel (OAuth + admin) · Cloudflare Worker as Durable Object per store (agent runtime) · Codemode sandbox (read tools) · two-turn confirmation gate (write tools). Deep dive lands Phase 2. See <strong>strategy drawer</strong> for the deploy-status verification question.</p>
-      <aside class="proposed-pointer" style="margin-top: var(--space-12); padding: var(--space-6); border: 1px dashed var(--card-border); font-size: var(--text-sm); color: var(--text-secondary);">
-        <p style="margin: 0 0 var(--space-2) 0; font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-600);">where the proposed view lives</p>
-        <p style="margin: 0;">This portal exposes the <strong>design rationale</strong> (right drawer) and the <strong>v2 comparison</strong> (left drawer, where a shipped equivalent exists). The production-indistinguishable surface ships on the v3 main site at <code>ninochavez.co</code> &mdash; currently in Phase 2 rebuild on the <code>redesign/v3-context-engineer</code> branch. Reviewer questions: chat (bottom-right) answers from the blueprint corpus.</p>
-      </aside>
+    <main class="container">
+
+      <div class="case-hero">
+        <p class="case-breadcrumb">Commerce / BC · case study</p>
+        <h1 style="margin-top: var(--space-3);">Ask BC</h1>
+        <p style="margin-top: var(--space-4);"><span class="case-pill private">private</span><code>askbc.ninochavez.co</code></p>
+        <p class="case-lede">The most ambitious agentic-software architecture in the cluster. Hybrid runtime: Next.js + Vercel for OAuth and admin; Cloudflare Worker as a Durable Object per store for the agent runtime; a Codemode sandbox for read tools; a two-turn confirmation gate before any write tool fires. Every layer earns its place against an explicit alternative.</p>
+      </div>
+
+      <section class="case-section">
+        <h2>01 — Architecture</h2>
+        <h3>Four layers. Each justified against an alternative.</h3>
+        <p>The split between Vercel and Cloudflare isn't arbitrary. Vercel handles OAuth + admin because Next.js + the Marketplace integration is the canonical pattern. The agent runtime is Cloudflare because Durable Objects give per-store strong consistency that Vercel functions can't match — every store gets its own DO instance, addressable by store-hash. Read tools run in Codemode's sandboxed runtime; write tools require an explicit two-turn confirmation from the operator before they fire.</p>
+
+        <figure class="case-schematic" aria-label="Ask BC hybrid agent runtime">
+          <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="askbc-diagram-title">
+            <title id="askbc-diagram-title">Ask BC — Vercel OAuth surface + CF Worker DO agent runtime + write-gate</title>
+
+            <rect class="cs-node" x="40" y="40" width="160" height="60"/>
+            <text class="cs-label-tag" x="120" y="32" text-anchor="middle">LAYER 01 · ADMIN</text>
+            <text class="cs-label" x="120" y="68" text-anchor="middle">Next.js · Vercel</text>
+            <text class="cs-label-tag" x="120" y="88" text-anchor="middle">oauth · marketplace</text>
+
+            <line class="cs-edge" x1="200" y1="70" x2="260" y2="70"/>
+
+            <rect class="cs-node-pub" x="260" y="40" width="200" height="60"/>
+            <text class="cs-label-tag" x="360" y="32" text-anchor="middle">LAYER 02 · AGENT RUNTIME</text>
+            <text class="cs-label-pub" x="360" y="68" text-anchor="middle">CF Worker · Durable Object</text>
+            <text class="cs-label-tag" x="360" y="88" text-anchor="middle">one DO per store · strongly consistent</text>
+
+            <line class="cs-edge" x1="460" y1="70" x2="520" y2="70"/>
+
+            <rect class="cs-node" x="520" y="40" width="160" height="60"/>
+            <text class="cs-label-tag" x="600" y="32" text-anchor="middle">LAYER 03 · TOOLS</text>
+            <text class="cs-label" x="600" y="68" text-anchor="middle">Codemode</text>
+            <text class="cs-label-tag" x="600" y="88" text-anchor="middle">sandboxed · read-only</text>
+
+            <line class="cs-edge" x1="360" y1="100" x2="360" y2="160"/>
+
+            <rect class="cs-node-pub" x="240" y="160" width="240" height="60"/>
+            <text class="cs-label-tag" x="360" y="152" text-anchor="middle">WRITE GATE</text>
+            <text class="cs-label-pub" x="360" y="188" text-anchor="middle">two-turn confirmation</text>
+            <text class="cs-label-tag" x="360" y="208" text-anchor="middle">operator approves before any write tool fires</text>
+
+            <line class="cs-edge" x1="360" y1="220" x2="360" y2="270"/>
+
+            <rect class="cs-node" x="240" y="270" width="240" height="50"/>
+            <text class="cs-label-tag" x="360" y="262" text-anchor="middle">DOWNSTREAM</text>
+            <text class="cs-label" x="360" y="298" text-anchor="middle">BigCommerce API · store state</text>
+          </svg>
+          <p class="case-schematic-label">Fig. ask-bc · Vercel admin + CF Worker DO runtime + Codemode read tools + two-turn write gate</p>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>02 — Approach</h2>
+        <h3>Three architecture moves that aren't accidental.</h3>
+        <div class="case-readout-grid">
+          <article class="case-readout">
+            <p class="case-readout-tag">Move 01</p>
+            <p class="case-readout-title">DO per store, not shared</p>
+            <p class="case-readout-body">Cloudflare Durable Objects give one strongly-consistent actor per store. Shared databases would have required pessimistic locking around every write to keep concurrent agent runs from stepping on each other. DOs make that disappear.</p>
+          </article>
+          <article class="case-readout">
+            <p class="case-readout-tag">Move 02</p>
+            <p class="case-readout-title">Read tools in a sandbox</p>
+            <p class="case-readout-body">Codemode lets read tools execute against the live BigCommerce API without granting them shell, filesystem, or network access beyond their declared targets. The sandbox is what makes "let the agent query freely" tolerable.</p>
+          </article>
+          <article class="case-readout">
+            <p class="case-readout-tag">Move 03</p>
+            <p class="case-readout-title">Writes wait for a human</p>
+            <p class="case-readout-body">Every write tool — anything that mutates store state — pauses for explicit operator confirmation. Two turns: the agent proposes, the operator approves, then the write fires. No autonomous mutations against a live commerce surface.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>03 — Quotable artifact</h2>
+        <h3>From the Ask BC design doc.</h3>
+        <div class="case-quotable">
+          <blockquote>"Agents propose. Operators approve. Stores mutate. Anything else is a story about how the demo fell over on day one."</blockquote>
+          <cite>ask-bc · architecture.md · §write-gate</cite>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>04 — Outcome</h2>
+        <h3>Where it stands.</h3>
+        <div class="case-outcome-grid">
+          <div class="case-outcome-tile">
+            <p class="case-outcome-tag">Status</p>
+            <p class="case-outcome-value">PRIVATE</p>
+            <p class="case-outcome-note">askbc.ninochavez.co</p>
+          </div>
+          <div class="case-outcome-tile">
+            <p class="case-outcome-tag">Runtime</p>
+            <p class="case-outcome-value">Hybrid</p>
+            <p class="case-outcome-note">Vercel + CF DO</p>
+          </div>
+          <div class="case-outcome-tile">
+            <p class="case-outcome-tag">Write gate</p>
+            <p class="case-outcome-value">2-turn</p>
+            <p class="case-outcome-note">operator approves</p>
+          </div>
+          <div class="case-outcome-tile">
+            <p class="case-outcome-tag">Position</p>
+            <p class="case-outcome-value">Lead</p>
+            <p class="case-outcome-note">commerce-bc cluster</p>
+          </div>
+        </div>
+      </section>
+
     </main>
   </section>
+
   <script>
     window.PROTO_PAGE = { id: 'case-ask-bc' };
   </script>
