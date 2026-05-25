@@ -1,302 +1,357 @@
-# ninochavez.co v3 — Stage 3: Prescription
-# Per tools/forge-site/playbook/3-prescribe.md
-# Filled from tools/forge-site/templates/portfolio-brand.yml
+# ninochavez.co v3 — Stage 3: Prescription (refreshed 2026-05-25)
+#
+# Supersedes the original 2026-05-24 prescription. Reason: original locked a
+# flat 5-case-study slate IA and "site-as-prototype" review model. Both
+# changed — cluster IA per ADR-0009 and paired blueprint portal per ADR-0008.
+# The v3 SvelteKit app was nuked 2026-05-25 (ask-dad RAG backend + blueprint
+# substrate preserved); rebuild is from prescription output, not from
+# in-place refactor.
 
 client:
   name: "Nino Chavez"
   domain: "ninochavez.co"
+  paired_blueprint_domain: "blueprint.ninochavez.co"
   archetype: "portfolio-brand"
   variant: "consulting-personal-portfolio"
   positioning: "context-engineer-hirable-and-known"
 
 stack:
-  framework: "sveltekit"          # SvelteKit 2 + Svelte 5 runes, kept from v2
-  database: "none"                # Static work-data.ts; no dynamic content at v3
-  cms: "markdown"                 # Nino is the editor; code is source of truth
+  framework_main: "sveltekit"        # SvelteKit 2 + Svelte 5 runes
+  framework_blueprint: "static-html-pages-functions"  # big-blueprint portal/ template v2
+  database: "none"                   # Static data; ask-dad RAG uses Vectorize (already shipped)
+  cms: "markdown"                    # Nino is editor; code = source of truth
   auth: "none"
   payments: "none"
-  email: "resend"                 # For contact-form notification only
-  video: "none"
-  analytics: "cloudflare-web"     # NOT vercel — Phase 3 completes CF Pages migration
-  deployment: "cloudflare-pages"  # Migrating off Vercel per in-flight 9afac0f commit
+  email: "resend"
+  analytics: "cloudflare-web"
+  deployment: "cloudflare-pages"
+  rag_storage: "cloudflare-vectorize"  # askdad-corpus index — already live (ADR-0007)
 
 modules:
   required:
-    - "seo-structured-data"       # JSON-LD discoverability is critical
-    - "cloudflare-web-analytics"  # Replaces analytics-vercel post-migration
+    - "seo-structured-data"
+    - "cloudflare-web-analytics"
+    - "portal-shell"                 # big-blueprint v2 template (ADR-0008) — stamped at blueprint/portal/
+    - "pages-function-chat"          # portal chat backed by shared askdad-corpus
   recommended:
-    - "contact-forms"             # One form on /contact
-    - "email-resend"              # Sends contact-form notification
+    - "contact-forms"
+    - "email-resend"
   deferred:
-    - "cms-sanity — Nino is the editor; code is source of truth; revisit only if non-developer editor joins"
-    - "analytics-posthog — CF Web Analytics enough at launch; add when traffic warrants segmentation"
+    - "cms-sanity — defer until non-developer editor joins"
+    - "analytics-posthog — defer until traffic warrants segmentation"
+    - "state-derive-counts — defer until cluster counts drift becomes a real maintenance problem"
   cut:
-    - "booking-calcom — transactional framing contradicts credibility positioning (load-bearing cut)"
-    - "ai-learn-course-platform — competing course-seller framing; delete /ai/learn/*"
-    - "rag-chat-ai-ask — chatbot novelty dilutes seriousness; delete /ai/ask"
+    - "booking-calcom — transactional framing contradicts positioning"
 
-sitemap:
+sitemap_main:
   - path: "/"
-    purpose: "Homepage — claim + credibility ribbon + 5 case-study cards + practice teaser + writing teaser + contact line"
+    purpose: "Hero + credibility ribbon + compressed cluster ribbon + practice teaser + writing teaser + chat entry"
     compositions: 6
-  - path: "/work"
-    purpose: "Case-study index — 5 lead studies + honorable-mentions strip"
-    compositions: 3
-  - path: "/work/[slug]"
-    purpose: "Case-study deep dive — problem → agentic approach → quotable artifacts → outcome"
-    compositions: 5
-    instances:
-      - "rally-hq"           # paired card: live product + blueprint methodology
-      - "atelier"            # ai-hive evolved, methodology-as-software
-      - "ask-bc"             # most ambitious agentic-software arch
-      - "photography"        # production craft + scale + AAA accessibility
-      - "bc-subscriptions"   # methodology recursively applied, ADR discipline
-  - path: "/practice"
-    purpose: "NEW — 'this is how I work.' Three sub-sections: toolchain, operating rules, instrumentation"
-    compositions: 4
-    sub_sections:
-      - "toolchain"          # forge family + specchain + claude-recall-cli + ai-champions-kit + big-blueprint
-      - "operating-rules"    # canonical-pattern-first / default-to-action / worktree-isolation / voice-stack
-      - "instrumentation"    # three-layer hesitation fold + Poe corpus stats + adversarial test plan + router worker
-  - path: "/writing"
-    purpose: "Signal Dispatch teaser + 3-5 flagship essays. Links out to ninochavez.co/blog (existing Astro app)"
-    compositions: 3
   - path: "/about"
     purpose: "Narrative — who, where, the practice, photography subdomain link"
     compositions: 3
+  - path: "/practice"
+    purpose: "Toolchain + substrate + operating rules + instrumentation evidence"
+    compositions: 4
+    sub_sections:
+      - "production-line"     # forge family (8 repos, 1 PUB umbrella)
+      - "substrate"           # hooks + skills/subagents + session mining + Hive
+      - "operating-rules"     # 4 rules from ~/.claude/CLAUDE.md
+      - "instrumentation"     # hesitation fold + corpus stats + adversarial tests
+  - path: "/work"
+    purpose: "Cluster surfacing per ADR-0009 — hero + cluster ribbon + 8 per-cluster editorial sections"
+    compositions: 10
+    cluster_sections:
+      - "forge-production-line"     # schematic composition (lead — load-bearing for positioning)
+      - "agent-infrastructure"      # repo card grid
+      - "ai-products"               # case-study deep dives + compact tail
+      - "commerce-bc"               # case-study deep dives + compact tail
+      - "volleyball-630"            # rally-hq hero deep dive + compact tail
+      - "personal-orbit"            # live URLs list
+      - "client-work"               # compact list (4 items)
+      - "writing"                   # pointer composition → /writing
+  - path: "/work/[cluster]/[slug]"
+    purpose: "Per-project deep dive — hero → schematic → approach → quotable artifact → outcome"
+    compositions: 5
+    lead_slugs:
+      - "ai-products/atelier"        # PUBLIC
+      - "ai-products/ask-dad"
+      - "ai-products/cortex"         # PUBLIC
+      - "commerce-bc/bc-subscriptions"
+      - "commerce-bc/ask-bc"
+      - "volleyball-630/rally-hq"    # paired with blueprint.rallyhq.app
+  - path: "/writing"
+    purpose: "All 7 collections surfaced — blog / whitepapers / series / fiction / presentations / counterpoints / tutorials. Counts + flagships per."
+    compositions: 4
   - path: "/contact"
-    purpose: "Single line: email + GitHub + LinkedIn + a minimal form for ad-hoc inquiries"
+    purpose: "Single form + email/GitHub/LinkedIn lines"
     compositions: 2
-  - path: "/privacy"
-    purpose: "Privacy policy"
-    compositions: 1
   - path: "/api/person.json"
-    purpose: "AEO endpoint — Schema.org Person. Lead with 'context engineer' not 'SAP Commerce Cloud'."
+    purpose: "AEO — Schema.org Person, leads with context-engineer"
   - path: "/api/expertise.json"
-    purpose: "AEO endpoint — Schema.org ItemList. Lead with toolchain + practice."
+    purpose: "AEO — Schema.org ItemList, leads with toolchain"
   - path: "/api/experience.json"
-    purpose: "AEO endpoint — work history. Reframed for context-engineer narrative."
+    purpose: "AEO — work history, context-engineer narrative"
   - path: "/api/contact.json"
-    purpose: "AEO endpoint — ContactPoint."
-
-# Routes from current site that get CUT
-cut_routes:
-  - path: "/v1"
-    reason: "Parallel old homepage with custom font-rival typography. Dead route."
-  - path: "/ai/build"
-    reason: "Part of /ai/ scaffolding being collapsed."
-  - path: "/ai/reference"
-    reason: "Part of /ai/ scaffolding being collapsed."
-  - path: "/api/cal/*"
-    reason: "Cal.com booking funnel. Transactional framing — explicit cut per Diagnose."
-    instances: [event-types, availability, webhooks]
-    status: "CUT 2026-05-25 — files deleted, privacy page updated, no references remain"
-
-# Routes preserved (originally proposed for cut, direction reversed 2026-05-25):
-preserved_routes:
-  - path: "/ai/learn"
-    reason: "8-track curriculum is the mechanism for sharing the practice publicly without sharing the lathes. Per Nino: 'share the concepts of the agentic workflows and principles without having to share the repo entirely.' Direction reversed; DESIGN-PRINCIPLES.md §5 revised."
-    instances: [architect, builder, strategist, enterprise, corpus, author, explorer, voice]
-  - path: "/ai/ask"
-    reason: "RAG surface preserved as supplementary interface, not primary credibility. DESIGN-PRINCIPLES.md §6 revised — RAG is allowed when grounded in published artifacts and not headline."
+    purpose: "AEO — ContactPoint"
   - path: "/api/ask/chat"
-    reason: "Backend for /ai/ask — preserved with it."
-  - path: "/links"
-    reason: "Bio-link landing — preserved per Nino direction, refactored to v3 design system rather than consolidated into /contact."
-  - path: "/now"
-    reason: "Keep but rewrite. Reframe to lead with practice work."
-    rewrite: "DONE — commit 870566c"
+    purpose: "PRESERVED — ask-dad RAG endpoint. Already shipped + working. UI surfacing decision deferred per cluster IA."
+    status: "kept from pre-nuke; do not redeploy"
+
+sitemap_blueprint_portal:
+  # Per blueprint/portal/CONVENTIONS.md — one prototype page per main-site route + cluster pages
+  - path: "/"
+    purpose: "Studio catalog — slice cards + flow links + corpus chat entry"
+  - path: "/pages/home.html"
+    purpose: "Prototype of main-site / with strategy + current-state drawers"
+    slice: "marketing"
+  - path: "/pages/work-cluster.html"
+    purpose: "Prototype of /work cluster surfacing — exposes cluster ribbon + 8 sections"
+    slice: "case-studies"
+  - path: "/pages/practice.html"
+    purpose: "Prototype of /practice"
+    slice: "operator"
+  - path: "/pages/writing-index.html"
+    purpose: "Prototype of /writing with all 7 collections"
+    slice: "writing"
+  - path: "/pages/about.html"
+    purpose: "Prototype of /about"
+    slice: "about"
+  - path: "/pages/contact.html"
+    purpose: "Prototype of /contact"
+    slice: "contact"
+  - path: "/docs/"
+    purpose: "Markdown viewer for blueprint/*.md (ADRs, design principles, research)"
+  - path: "/functions/api/chat.js"
+    purpose: "Pages Function — chat backed by askdad-corpus Vectorize index (shared with main site /api/ask/chat)"
+
+# Cluster surface — the heart of the IA per ADR-0009
+clusters:
+  forge-production-line:
+    repos_total: 8
+    repos_public: 1                  # forge (umbrella)
+    public_anchor: "forge"
+    composition: "production-line-schematic"
+    lead_repos: ["forge", "specchain", "big-blueprint", "forge-brand", "forge-signal", "forge-site", "image-gen"]
+    rationale: "Load-bearing for 'context engineer codified a working practice' positioning. Schematic prominence."
+  agent-infrastructure:
+    repos_total: 10
+    repos_public: 1                  # ai-champions-kit
+    composition: "repo-card-grid"
+    lead_repos: ["ai-hive", "ai-champions-kit", "claude-recall-cli", "claude-orchestrator", "worktree-orchestrator", "browse-tool"]
+  ai-products:
+    repos_total: 18
+    repos_public: 6                  # atelier, cortex, ai-analyst-academy, quantifai-sync, quantifai-homebrew-tap, venue-aurora
+    composition: "case-study-deep-dive + compact-tail"
+    deep_dive_repos: ["atelier", "cortex", "ask-dad"]
+    paused: ["quantifai-platform"]
+  commerce-bc:
+    repos_total: 10
+    repos_public: 1                  # commerce-prompt-analyzer
+    composition: "case-study-deep-dive + compact-tail"
+    deep_dive_repos: ["bc-subscriptions", "ask-bc", "aisles"]
+  volleyball-630:
+    repos_total: 9
+    repos_public: 1                  # letspepper
+    composition: "hero-case-study + compact-tail"
+    hero_repo: "rally-hq"
+    hero_paired_deploy: "blueprint.rallyhq.app"
+  personal-orbit:
+    repos_total: 7
+    composition: "live-url-list"
+    surfaces: ["ninochavez.co", "blog.ninochavez.co", "photography.ninochavez.co", "signalx.studio", "flickdaymedia.com"]
+  client-work:
+    repos_total: 4
+    composition: "compact-list"
+  writing:
+    artifacts_total: 275
+    collections:
+      blog: 229
+      whitepapers: 12
+      series: 8
+      fiction: 10
+      presentations: 9
+      counterpoints: 3
+      tutorials: 3
+      research-notes: 1
+    composition: "pointer-to-writing-route"
+    canonical_voice_guide: "~/Workspace/dev/apps/blog/docs/signal-dispatch-voice-guide.md"
+
+# Deployment topology
+deployment:
+  main_site:
+    cf_pages_project: "ninochavez-main"
+    custom_domain: "ninochavez.co (in transition — currently routes through ninochavez-router worker)"
+    build: "SvelteKit + @sveltejs/adapter-cloudflare"
+    status: "project exists; v3 src will be rebuilt from prescription"
+  blueprint_portal:
+    cf_pages_project: "ninochavez-blueprint"
+    custom_domain_target: "blueprint.ninochavez.co"
+    build: "no build — static HTML + Pages Functions (wrangler pages deploy)"
+    deploy_command: "cd blueprint/portal && wrangler pages deploy . --project-name ninochavez-blueprint --branch main"
+    status: "needs provisioning"
+  blog:
+    cf_pages_project: "ninochavez-blog"
+    custom_domain: "blog.ninochavez.co"
+    status: "live"
+  photography:
+    surface: "photography.ninochavez.co"
+    status: "live (separate app)"
+  router:
+    cf_workers_project: "ninochavez-router"
+    purpose: "Routes ninochavez.co + subdomains. Will need update for blueprint.ninochavez.co subdomain bind."
 
 environment_variables:
   - name: "RESEND_API_KEY"
-    source: "resend.com dashboard"
+    purpose: "Contact form notification"
     required: true
-    purpose: "Contact form notification email"
   - name: "CONTACT_FORM_TO_EMAIL"
-    source: "abelino.chavez@gmail.com or similar"
+    purpose: "Notification recipient"
     required: true
   - name: "CF_TURNSTILE_SITE_KEY"
-    source: "Cloudflare dashboard"
-    required: true
     purpose: "Bot protection on contact form"
+    required: true
   - name: "CF_TURNSTILE_SECRET_KEY"
-    source: "Cloudflare dashboard"
     required: true
   - name: "PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN"
-    source: "Cloudflare Web Analytics dashboard"
+    purpose: "CF Web Analytics"
     required: true
-    purpose: "Replaces Vercel Analytics + Speed Insights"
-  - name: "CF_IMAGES_ACCOUNT_HASH"
-    source: "Cloudflare Images dashboard"
-    required: false
-    purpose: "Already in v2 — keep for hero image and OG card delivery"
+  - name: "OPENROUTER_API_KEY"
+    purpose: "Blueprint portal chat function"
+    required: true
+    pages_project: "ninochavez-blueprint"
+  - name: "OPENAI_API_KEY"
+    purpose: "Existing — derive-corpus embedding pipeline"
+    required: true
+    status: "wired via GitHub Actions + 1Password"
+  - name: "VECTORIZE binding"
+    purpose: "Existing — askdad-corpus index access"
+    required: true
+    status: "wired in wrangler.toml at repo root"
 
 external_accounts:
   - service: "Cloudflare Pages"
-    status: "has account — ninochavez-main project already deploys"
+    status: "active — needs new project ninochavez-blueprint provisioned"
   - service: "Cloudflare Workers"
-    status: "has account — ninochavez-router already deploys"
+    status: "active — ninochavez-router needs subdomain rule for blueprint.ninochavez.co"
   - service: "Cloudflare Web Analytics"
-    status: "has account — enable token for ninochavez.co property"
+    status: "needs token enabled for ninochavez.co property"
+  - service: "Cloudflare Vectorize"
+    status: "active — askdad-corpus index live with 114 vectors (ADR-0007)"
   - service: "Cloudflare Images"
-    status: "has account — variants already configured"
+    status: "active — variants configured"
   - service: "Resend"
-    status: "needs account — provision before contact form ships"
+    status: "needs account provisioned for contact form"
   - service: "Cloudflare Turnstile"
-    status: "needs site/secret keys for contact form bot protection"
+    status: "needs site/secret keys"
+  - service: "OpenRouter"
+    status: "needs account for blueprint portal chat function"
   - service: "GitHub"
-    status: "has account — repo at github.com/[user]/website-nc"
-  - service: "Vercel"
-    status: "in-progress migration AWAY. Drop vercel.json + @vercel/analytics imports. Vercel project decommissioned post-launch."
+    status: "active — repo at github.com/nino-chavez/nino-chavez-site"
 
 content_inventory:
-  existing:
-    - "src/lib/work-data.ts — 10 WorkProject entries. Re-rank to surface 5 lead studies; rewrite approach text for AEGIS spine."
-    - "DESIGN.md — token system is correct; build conforms to it (currently violated by live homepage)"
-    - "AEO API payloads — JSON-LD schema right, content wrong. Full rewrite."
-    - "Photography subdomain content — stays at /photography. Linked from /about only."
-    - "Signal Dispatch (blog) content — stays at /blog. Linked from /writing."
-  needs_creation_by_nino:
-    - "Hero claim — pick from the three options in 03-design-brief.md §1"
-    - "About narrative — first-person, leads with practice, mentions photography only after"
-    - "/contact body copy — 'I'm not selling services; I respond to interesting work' framing"
-    - "Final go/no-go on the signature visual move (schematic-diagram per brief)"
-    - "5 case-study /work/[slug] pages — outline below"
-  needs_external_signoff:
-    - "630 Volleyball — confirm OK being named publicly for the 630-apps mention on /work index (honorable mention only, not a deep slug)"
-    - "Travis Poole / Alex (TNA) — confirm what surfaces about TNA on ninochavez.co given pre-launch status"
-  agent_generated:
-    - "Schematic SVGs (3-layer hesitation fold, forge pipeline, Poe corpus loop, router-worker topology, atelier 12-tool MCP) — hand-drafted per the brief's no-AI-imagery rule"
-    - "OG cards per case-study page — image-gen with the brand's design tokens"
-    - "Hero OG card for / — image-gen"
-    - "/practice page copy — signal-forge fed quotable artifacts from agent C audit + sanitization agent output"
-
-# Case-study slate (locked from refined-evidence pass)
-case_studies:
-  lead:
-    - slug: "rally-hq"
-      surfaces: ["rallyhq.app", "blueprint.rallyhq.app"]
-      pull_quote: "Product and methodology shipped to two surfaces of one offering — the live product and the big-blueprint methodology applied to it. Live URL evidence on both."
-      schematic: "rally-hq-blueprint-pipeline.svg"
-    - slug: "atelier"
-      surfaces: ["atelier.ninochavez.co (in setup)", "github.com/[user]/atelier"]
-      pull_quote: "Atelier is the spine that connects existing best-in-class tools around one project so mixed teams can work concurrently without drift."
-      lineage_note: "Independent evolution of an ai-hive project Nino started at Commerce Inc"
-      schematic: "atelier-12-tool-mcp.svg"
-    - slug: "ask-bc"
-      surfaces: ["askbc.ninochavez.co (in setup)", "github.com/[user]/ask-bc"]
-      pull_quote: "Hybrid: Next.js on Vercel handles OAuth and the admin shell. The agent runtime runs in a Cloudflare Worker as a Durable Object per store. Read tools execute inside a Codemode sandbox; write tools run outside with a two-turn confirmation gate."
-      schematic: "ask-bc-hybrid-arch.svg"
-    - slug: "photography"
-      surfaces: ["ninochavez.co/photography"]
-      pull_quote: "20K-photo gallery on SvelteKit + Supabase + Cloudflare R2/Images/Workers, AAA accessibility, custom album-zip worker, AI semantic search via Gemini enrichment."
-      schematic: "photography-cf-pipeline.svg"
-    - slug: "bc-subscriptions"
-      surfaces: ["github.com/[user]/bc-subscriptions"]
-      pull_quote: "Dual-track agile coexists in one repo: 38 ADRs, 5-persona journey template, mechanical state derivation, runnable prototype as the design oracle, and shipping code under apps/."
-      no_deploy_reason: "GitHub repo is the artifact; the spec discipline is the case study, not a running UI"
-      quotable_adrs:
-        - "ADR-0001 — Hive workflow and layered methodology"
-        - "ADR-0029 — Marketplace-first, native-ready (evidence-driven posture reversal)"
-        - "ADR-0030 — Convention-catalog pattern alignment with CI gates"
-        - "ADR-0037 — Stored-instruments vault as canonical recurring-charge rail"
-        - "ADR-0038 — Charge capture timing (cheap-config-now / expensive-behavior-later)"
-  honorable_mention_strip:
-    - "signalx.studio — holding company"
-    - "letspepper.com — tournament-series brand"
-    - "www.flickdaymedia.com — sports media brand"
-    - "quantifai.app — internal AI FinOps (product paused)"
-    - "www.volleyrx.com — brand work"
-    - "630 Volleyball suite — Coach Competency Index (617 tests), AAU 5-algorithm ranking, e-signatures"
-    - "Client work: Urvil Performance, Allen Wellness Center, Creative Floors"
+  preserved_from_pre_nuke:
+    - "ask-dad RAG backend (src/lib/server/askdad/, src/routes/api/ask/) — wired to Vectorize, working"
+    - "derive-corpus pipeline (tools/derive-corpus/, .github/workflows/ingest-askdad-corpus.yml) — auto-rebuilds RAG on push to main"
+    - "blueprint substrate (blueprint/*.md, decisions/, content/, research/) — Stage 1 + Stage 2 outputs"
+    - "Framework config (svelte.config.js, package.json, wrangler.toml, postcss/tailwind/playwright configs)"
+    - "Static essentials (favicons, fonts, sitemap.xml, robots.txt)"
+  needs_creation:
+    - "Main site src/ — everything (rebuilt from prescription)"
+    - "Cluster IA components per ADR-0009 (ClusterRibbon, ClusterSection, per-cluster compositions)"
+    - "Per-cluster deep-dive content for 6 lead slugs"
+    - "/writing collection surfacing for all 7 collections"
+    - "Hand-drafted schematic SVGs (forge production line, hesitation fold, paired-deploy diagram, etc.)"
+    - "Blueprint portal pages (one per main-site route) with strategy + current-state drawers"
+    - "v2 current-state screenshots (1440px + 390px per route) for portal's Shipped drawer"
+    - "Refreshed AEO endpoints (/api/person.json, expertise.json, experience.json, contact.json) reflecting cluster IA"
+    - "Hero claim copy + about narrative + practice copy + contact copy (regenerated from blueprint/content/ drafts)"
+  voice_discipline:
+    - "Load apps/blog/docs/signal-dispatch-voice-guide.md BEFORE drafting prose (canonical 913-line guide)"
+    - "Run architects-protocol-auditor on changed prose before shipping"
+    - "Never fabricate Nino's interior state — see ~/.claude/CLAUDE.md"
 
 task_groups:
-  - name: "Phase 0 — Sanitization & Deploys (parallel)"
-    blocking_on: ["agent reports", "Nino review"]
+  - name: "Phase 0 — Restart (this work product)"
+    status: "in flight"
     tasks:
-      - "[done] Sanitize Atelier README — kill broken URL"
-      - "[done] Sanitize Ask BC README — tech-led lede + placeholder URL replaced"
-      - "[done] Sanitize bc-subscriptions README — methodology-led lede + 5 ADRs shortlisted"
-      - "[in flight] Atelier deploy runbook — agent reporting back"
-      - "[in flight] Ask BC custom domain runbook — agent reporting back"
-      - "[deferred] DNS work — Nino runs in CF dashboard after seeing runbooks"
+      - "[done] Nuke v3 site (ask-dad backend + blueprint substrate preserved)"
+      - "[done] Stage 1 Research substrate (research/synthesis.md + 3 current-state inventories)"
+      - "[done] Stamp blueprint/portal/ from big-blueprint template, customize wrangler.toml"
+      - "[done] ADR-0008 — adopt portal shell"
+      - "[done] ADR-0009 — cluster ribbon + per-cluster editorial sections"
+      - "[done] Refresh 01-diagnose.md"
+      - "[done] Refresh 02-prescription.yml (this file)"
+      - "[pending] Refresh 03-design-brief.md — recast composition table for cluster IA"
+      - "[pending] Re-run Stage 2 fact-check on DESIGN-PRINCIPLES.md"
 
-  - name: "Phase 1 — Foundation (this work product)"
+  - name: "Phase 1 — Blueprint portal build"
+    blocking_on: ["Phase 0 complete"]
     tasks:
-      - "[done] Worktree at apps/website-nc-v3 on redesign/v3-context-engineer"
-      - "[done] Stage 2 Diagnose — 01-diagnose.md"
-      - "[done] Stage 3 Prescribe — 02-prescription.yml (this file)"
-      - "[done] Stage 3.5 Design Brief — 03-design-brief.md"
+      - "Author _meta/slices/*.json — one per cluster + meta-slices (marketing, about, contact)"
+      - "Author _meta/<page-id>.json — one per prototype page with strategy + currentState"
+      - "Author portal index.html — studio catalog rendering"
+      - "Author per-page HTML files in pages/"
+      - "Customize shared.css tokens — violet accent, Inter, JetBrains Mono per ADR-0004 signature"
+      - "Capture v2 screenshots (1440 + 390) for every route into portal/current-state/"
+      - "Configure portal chat function — point at askdad-corpus Vectorize index"
+      - "Provision ninochavez-blueprint CF Pages project"
+      - "Bind blueprint.ninochavez.co custom domain"
+      - "First deploy + smoke test"
 
-  - name: "Phase 2 — Content rewrite"
+  - name: "Phase 2 — Main site rebuild"
+    blocking_on: ["Phase 1 portal deployed (so reviewers can see strategy alongside build)"]
     tasks:
-      - "Rewrite /api/person.json payload — lead context-engineer, demote SAP Commerce"
-      - "Rewrite /api/expertise.json payload — lead toolchain"
-      - "Rewrite /api/experience.json payload — context-engineer narrative"
-      - "Rewrite /about narrative"
-      - "Rewrite hero claim + credibility ribbon"
-      - "Re-rank + rewrite src/lib/work-data.ts entries — 5 lead studies, AEGIS as spine"
-      - "Draft /practice page copy — toolchain + operating rules + instrumentation"
-      - "Draft 5 case-study /work/[slug] pages from sanitized README quotes"
+      - "Rebuild src/lib/styles/tokens.css from DESIGN.md + signature ADR"
+      - "Author ClusterRibbon + ClusterSection primitives"
+      - "Author per-cluster compositions (ProductionLineSchematic, RepoGrid, CaseStudyDeepDive, etc.)"
+      - "Author /, /about, /practice, /work, /work/[cluster]/[slug], /writing, /contact routes"
+      - "Author 6 lead case-study deep dives (atelier, cortex, ask-dad, bc-subscriptions, ask-bc, rally-hq)"
+      - "Author /writing surfacing — all 7 collections with counts"
+      - "Author AEO endpoints (/api/{person,expertise,experience,contact}.json)"
+      - "Wire ask-dad to UI (decision: include on /work/ai-products/ask-dad slug + chat FAB on /, or only one of those)"
+      - "Implement contact form — Resend + Turnstile"
+      - "Author hand-drafted schematic SVGs (forge production line is the load-bearing one)"
+      - "Configure CF Web Analytics"
+      - "First deploy of v3 main site"
 
-  - name: "Phase 3 — Build (Stage 4 Renovate)"
+  - name: "Phase 3 — Fact-check + integration"
     tasks:
-      - "Compile site-generation-prompt.md from brief"
-      - "Run renovate against compiled prompt"
-      - "Hand-draft schematic SVGs per brief §3 (5 diagrams)"
-      - "Port surviving components (work case-study template, AEO endpoints, CF Images util)"
-      - "Drop vercel.json, swap @vercel/analytics → CF Web Analytics, port /links + subdomain redirects to _redirects or worker"
-      - "Implement contact form with Resend + Turnstile"
-      - "Restore DESIGN.md conformance (violet accent, Inter, content-first)"
+      - "Stage 4 fact-check sweep per DESIGN-PRINCIPLES.md §'Stage 4 (Fact-Check) discipline'"
+      - "Verify cluster counts match research/current-state/repos-inventory.md"
+      - "Verify all 6 lead case-study URLs resolve"
+      - "Verify writing collection counts match apps/blog/astro-build/src/content/"
+      - "Run architects-protocol-auditor on all prose"
+      - "Run Lighthouse — target >90 perf, >95 a11y"
+      - "Run accessibility audit (axe-core or equivalent)"
 
-  - name: "Phase 4 — Prune (DESTRUCTIVE — needs explicit go)"
-    blocked_on: "Nino sign-off per route"
+  - name: "Phase 4 — Cutover"
     tasks:
-      - "Delete src/routes/v1/"
-      - "Delete src/routes/ai/learn/"
-      - "Delete src/routes/ai/ask/, src/routes/api/ask/"
-      - "Delete src/lib/components/cal/, src/routes/api/cal/, all Cal.com docs"
-      - "Delete duplicate Header.svelte (resolve to single canonical)"
-      - "Delete unused section components (HeroSection / FocusSection / FrameSection / ExposureSection / GallerySection / ConsultationSection)"
-      - "Delete src/routes/links/ (consolidated into /contact)"
-      - "Archive ~20 stale docs to docs/_archive/ or delete"
-
-  - name: "Phase 5 — Handoff"
-    tasks:
-      - "Lighthouse audit (target: >90 perf, >95 a11y)"
-      - "Mobile responsiveness pass"
-      - "Verify all 5 case-study URLs resolve (rallyhq.app, blueprint.rallyhq.app, atelier.ninochavez.co, askbc.ninochavez.co, /photography)"
-      - "Verify AEO endpoints serve valid JSON-LD"
-      - "Verify CF Web Analytics receiving"
-      - "Document the build at tools/forge-site/applications/ninochavez-co.md as the reference portfolio-brand instantiation"
+      - "Update ninochavez-router worker — route blueprint.ninochavez.co subdomain"
+      - "Verify blueprint portal + main site both live on custom domains"
+      - "Verify ask-dad backend serving from production"
       - "Merge redesign/v3-context-engineer → main"
-      - "Verify production deploy via curl + browser"
+      - "Decommission Vercel project for ninochavez.co (deps already removed)"
+      - "Verify CF Web Analytics receiving"
+      - "Post-deploy smoke test"
 
 verification:
-  - "5 case-study cards on / link to live URLs (or marked '(redeploying)' / '(in setup)')"
-  - "Hero claim, credibility ribbon, and one schematic visible above the fold on /"
-  - "/practice page renders all three sub-sections with quotable artifacts and GitHub links"
-  - "AEO endpoints return valid Schema.org JSON-LD; /api/person.json leads with context-engineer role"
-  - "All cut routes return 404 (or 301 to a sensible replacement)"
-  - "Contact form sends email via Resend; Turnstile gate works"
-  - "Cloudflare Pages serves; vercel.json absent; @vercel/* imports removed"
-  - "Design brief conformance: signature appears on /, /work, /practice, /about, /contact (>= 5 pages)"
+  - "Cluster ribbon on /work shows 8 clusters with counts matching repos-inventory.md"
+  - "All 6 lead case-study URLs return 200 (or marked '(in setup)' with planned date)"
+  - "Hero claim + signature schematic visible above fold on /"
+  - "/practice renders 4 sub-sections with citable artifacts"
+  - "/writing surfaces all 7 collections with counts"
+  - "AEO endpoints return valid JSON-LD, lead with context-engineer"
+  - "Blueprint portal at blueprint.ninochavez.co renders studio catalog + all prototype pages"
+  - "Per-page strategy + current-state drawers populate from _meta/*.json"
+  - "Portal chat returns RAG-grounded responses from askdad-corpus"
+  - "Comparison toggle (PROPOSED / COMPARE / SHIPPED) works on all prototype pages with shipped equivalents"
+  - "vercel.json absent from repo; no @vercel/* imports in main site src"
   - "Lighthouse perf >90, a11y >95"
-  - "Reduced-motion verified — all entrance animations gated on prefers-reduced-motion: no-preference"
+  - "Reduced-motion verified across all entrance animations"
 
-# Ramsay-check (cuts already applied)
-ramsay_cuts:
-  - "Removed Cal.com booking — 4 components + 3 API routes + 5 docs"
-  - "Removed /ai/learn course platform — 8 sub-pages"
-  - "Removed /ai/ask chat — UI + backend API + Rive avatar"
-  - "Removed /v1 parallel homepage"
-  - "Removed /links bio-link page (folded into /contact)"
-  - "Removed bento + lime + Bebas Neue aesthetic — restored DESIGN.md discipline"
-  - "Demoted photography from homepage hero to subdomain link"
-  - "Demoted interests grid (4-way polymath split) — replaced with single positioning claim"
-
-ramsay_kept_with_reason:
-  - "/now page — kept and rewritten because the personal-brand pattern is load-bearing and existing visitors check it; reframe to lead with practice work"
-  - "AEO endpoints — kept because they're free inbound that compounds and the schema is right"
-  - "/work case-study system — kept because the schema is rich and reusable"
-  - "Photography subdomain — kept because the production craft is a load-bearing proof artifact"
+# Pending forks (not blocking Phase 1)
+pending_forks:
+  - "ADR-0010 (TBD) — Whether /work uses /work/[cluster]/[slug] nested routes or flat /work/[slug] with cluster metadata. Tradeoff: URL semantics vs sitemap simplicity. Defaulting to nested unless overridden."
+  - "Repo visibility flips — deferred per Nino direction (2026-05-25). Revisit if cluster surfacing exposes a credibility gap where a public umbrella would close it."
+  - "Whether ask-dad chat surfaces as a homepage FAB or only on its own /work case-study page. Defaulting to FAB on / + /work/ai-products/ask-dad (cluster-IA-consistent)."

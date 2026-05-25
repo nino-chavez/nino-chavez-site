@@ -29,8 +29,7 @@ Each row is a document the agent should be able to retrieve. `source_type` is th
 | /about page | site-page | `https://ninochavez.co/about` |
 | blueprint/DESIGN-PRINCIPLES.md | doc | `https://github.com/nino-chavez/nino-chavez-site/blob/redesign/v3-context-engineer/blueprint/DESIGN-PRINCIPLES.md` |
 | blueprint/03-design-brief.md | doc | `…/blueprint/03-design-brief.md` |
-| blueprint/decisions/0001..0005 — five ADRs | adr | `…/blueprint/decisions/` |
-| blueprint/HANDOFF.md (operating discipline section only — skip volatile commit list) | doc | `…/blueprint/HANDOFF.md` |
+| blueprint/decisions/0001-0004, 0006-0007 — six ADRs | adr | `…/blueprint/decisions/` |
 
 ### Case studies (the agent should quote these when asked about specific projects)
 

@@ -22,7 +22,7 @@ Three short paragraphs. No bullet lists in this composition (per brief — edito
 
 > The chain is the lathe: `specchain` (intent → spec → tasks) → `big-blueprint` (archetype routing) → `forge-brand` (typed design system) → `forge-signal` (voiced prose) → `gen-images` (visuals). Five links, each consuming the prior link's output. The single public piece is [`ai-champions-kit`](https://github.com/nino-chavez/ai-champions-kit) — the practice packaged for others. `/practice` has the full inventory.
 
-> The shorthand for that is _context engineer_. The work isn't novel prompts or clever models — it's the surrounding system: the rules a session inherits, the artifacts it produces, the hooks that catch failure modes, the corpus that pulls forward what worked before. Most engineers configure Claude. I instrument it. That's the line; the rest of this site is the proof.
+> The shorthand for that is _context engineer_. The work isn't novel prompts or clever models — it's the surrounding system: the rules a session inherits, the artifacts it produces, the hooks that catch failure modes, the corpus that pulls forward what worked before. OpenAI [calls this harness engineering](https://openai.com/index/harness-engineering/); the canon predates the term by about eighteen months. Most engineers configure Claude. I instrument it. The harnesses make personal software possible — single-user, single-purpose, built in an afternoon, dissolves when done. That's the line; the rest of this site is the proof.
 
 ## Composition 3 — `closing-pointer-row`
 

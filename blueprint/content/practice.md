@@ -2,19 +2,29 @@
 
 The differentiator page. Per `blueprint/03-design-brief.md` Compositions 1 → 4.
 
+## Composition 0 — anchor citation (above the fold)
+
+Small mono pill row, single line. Anchors the page in the published canon and third-party validation.
+
+> **Production line · chassis · lathe.** Pattern named in [The A/B Test That Built the Lathe](https://blog.ninochavez.co/the-backport-i-didnt-make) (May 2026) + [Big Blueprint: A Production Line for Agent-Assisted Product Work](https://blog.ninochavez.co/whitepapers/big-blueprint-methodology) (May 2026). Same discipline OpenAI calls [harness engineering](https://openai.com/index/harness-engineering/) (Feb 2026), made operational here ~18 months earlier.
+
+Treatment: mono, smaller scale than thesis. The pill row sets the citation frame before the page makes its claims; readers landing cold see "this is published + validated" before they see the toolchain.
+
 ## Composition 1 — `hero-with-thesis`
 
 > This is _how_ I work.
 
-Italic violet emphasis on **how**. The page makes the *how* legible — toolchain artifacts (open repos), operating rules (the literal CLAUDE.md text), and instrumentation (hooks, classifiers, corpus).
+Italic violet emphasis on **how**. The page makes the *how* legible — the chassis (toolchain artifacts in open repos), the invariants (operating rules from CLAUDE.md), and the control systems (hooks, classifiers, corpus). Chassis + invariants + control systems is harness engineering's three-part frame; lathe is the published canon's name for the chassis at work; both apply here.
 
 Mono caption:
 
-> Every claim on this page links to a public artifact. No methodology that isn't running. No tool that hasn't shipped. No rule that hasn't caught a real failure.
+> Every claim on this page links to a public artifact. No methodology that isn't running. No tool that hasn't shipped. No rule that hasn't caught a real failure. **The harness exists because the lathe needs a smith.**
 
 ## Composition 2 — `toolchain-readout-grid` (#toolchain anchor)
 
-Six instrument-readout cards in a 2-column grid (3 rows). Each card: title (bold) + one-line description + mono "what it enforces" caption + GitHub link pill.
+The production line. Six instrument-readout cards in a 2-column grid (3 rows). Each card is a lathe — one specific transformation the chassis performs. Together they form the forge: the production unit that makes one bespoke item per use (per ADR-0010 forge framework). The `forge` umbrella repo is PUBLIC; the individual lathes named below are private by design.
+
+Each card: title (bold) + one-line description + mono "what it enforces" caption + GitHub link pill (with PUBLIC/private visibility badge per ADR-0009).
 
 ### 1. forge family — `forge-brand` · `forge-signal` · `forge-site` · `gen-images`
 

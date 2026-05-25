@@ -85,4 +85,3 @@ with read access to the "Developer Secrets" vault).
 - `src/lib/server/askdad/embeddings.ts` — embedding generation (reused by the ingester)
 - `src/lib/server/askdad/supabase.ts` — `ContentChunk` shape (the row schema the ingester upserts into)
 - `wip/bc-subscriptions/tools/state-derive/` — the philosophical reference; derive don't narrate
-- `blueprint/decisions/0005-site-as-prototype-review-model.md` — the prior ADR that adopted the bc-subscriptions pattern for the site; this ADR extends it to ask-dad's substrate

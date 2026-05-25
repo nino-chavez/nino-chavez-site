@@ -9,11 +9,24 @@ Per `blueprint/03-design-brief.md` §1 (signature) and Composition 1 (`hero-with
 
 Treatment: the word **instrument** renders in italic violet (per brief §1 supporting pattern `editorial-italic` — one human moment per page). All other words in default white (Inter, no italic).
 
-## Subhead (one line, mono pill row treatment optional)
+## Lede sub-claim (per ADR-0010)
+
+> I build the harnesses that make personal software possible — and the threshold between buying and building moves up the stack every quarter.
+
+Treatment: single line below the hero, smaller scale, default white Inter. Words "harnesses" and "personal software" carry the meaning load — keep them in normal weight (no italic, no color emphasis); the italic-violet treatment is reserved for the hero's "instrument" per brief §1 (one human moment per page).
+
+The sub-claim does three jobs (per ADR-0010 §5):
+1. Names what's built (harnesses) and what it makes possible (personal software) — sharper than the abstract "instrument systems" claim alone
+2. References the OpenAI-coined "harness engineering" vocabulary without abandoning the locked hero
+3. Sets up the buy-vs-build threshold thesis as a citable, defensible empirical claim
+
+## Subhead — three-noun spine (one line, mono pill row treatment optional)
 
 > Working practice + open toolchain + production software. Built solo with agents at volume.
 
 Three nouns separated by `+` marks — sets the spine that the rest of the page proves (practice, toolchain, software). Optional treatment: each noun as a mono pill, matching the credibility-readout-row register below.
+
+**Ordering note:** lede sub-claim comes immediately under the hero; three-noun spine comes below the sub-claim (or absorbed into the credibility ribbon caption if the hero region needs to stay scannable in 5 seconds — verify in Stage 4 fact-check).
 
 ## Credibility ribbon (three instrument-readout cards)
 
