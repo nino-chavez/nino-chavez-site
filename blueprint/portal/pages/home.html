@@ -9,19 +9,262 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/shared.css">
+  <style>
+    .home-hero { padding-top: var(--space-12); padding-bottom: var(--space-6); max-width: 64ch; }
+    .home-lede { color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.6; margin-top: var(--space-4); }
+
+    /* Compressed cluster ribbon — same as /work but tighter spacing */
+    .home-ribbon {
+      display: flex; gap: var(--space-2); flex-wrap: wrap;
+      padding: var(--space-4) 0;
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-8);
+    }
+    .home-ribbon-chip {
+      display: inline-flex; align-items: baseline; gap: var(--space-2);
+      padding: 4px 10px;
+      border: 1px solid var(--card-border);
+      background: var(--surface-2);
+      color: var(--text-primary);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      transition: var(--transition-base);
+    }
+    .home-ribbon-chip:hover { border-color: var(--brand-500); transform: translateY(-1px); }
+    .home-ribbon-chip .count { color: var(--brand-600); font-weight: 700; }
+
+    /* Signature diagram embed */
+    .home-signature {
+      padding: var(--space-8) 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .home-signature-frame {
+      padding: var(--space-6);
+      border: 1px solid var(--card-border);
+      background: var(--surface-2);
+      max-width: 720px;
+      margin: var(--space-4) auto;
+    }
+    .home-signature-frame svg { display: block; width: 100%; height: auto; }
+    .home-signature-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: var(--space-3);
+    }
+
+    /* Teaser panels */
+    .home-teasers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-4);
+      padding: var(--space-8) 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .teaser-panel {
+      padding: var(--space-6);
+      border: 1px solid var(--card-border);
+      background: var(--surface-1);
+      display: flex;
+      flex-direction: column;
+    }
+    .teaser-panel:hover { border-color: var(--brand-500); }
+    .teaser-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-600);
+      margin-bottom: var(--space-2);
+    }
+    .teaser-title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      margin-bottom: var(--space-3);
+    }
+    .teaser-body {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: 1.5;
+      flex: 1;
+      margin-bottom: var(--space-3);
+    }
+    .teaser-link {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand-700);
+      text-decoration: none;
+      align-self: flex-start;
+      padding-bottom: 2px;
+      border-bottom: 1px solid var(--brand-500);
+    }
+
+    /* Closing thesis panel */
+    .home-closing {
+      padding: var(--space-12) 0;
+      max-width: 64ch;
+    }
+    .home-closing-title {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      margin-bottom: var(--space-3);
+    }
+    .home-closing-title em { color: var(--brand-500); font-style: italic; }
+    .home-closing-body {
+      color: var(--text-secondary);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      margin-bottom: var(--space-4);
+    }
+    .home-cta-row { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+    .home-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-5);
+      border: 1px solid var(--card-border);
+      background: var(--surface-1);
+      color: var(--text-primary);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      transition: var(--transition-base);
+    }
+    .home-cta:hover {
+      border-color: var(--brand-500);
+      color: var(--brand-700);
+    }
+    .home-cta.primary {
+      background: var(--brand-500);
+      color: white;
+      border-color: var(--brand-500);
+    }
+    .home-cta.primary:hover {
+      background: var(--brand-700);
+      border-color: var(--brand-700);
+      color: white;
+    }
+  </style>
 </head>
 <body data-compare-root data-view="proposed">
   <section class="proposed-view">
-    <main class="container" style="padding-top: var(--space-12); padding-bottom: var(--space-12);">
-      <p style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);">ninochavez.co · v3</p>
-      <h1 style="margin-top: var(--space-4);">Context engineer. I <em style="color: var(--brand-500); font-style: italic;">instrument</em> the systems that build the systems.</h1>
-      <p style="margin-top: var(--space-6); color: var(--text-secondary);">Prototype in authoring. The hero claim is locked (ADR-0003). Compressed cluster ribbon, practice teaser, writing teaser, and chat entry land in Phase 2. See <strong>strategy drawer</strong> (right) for the design rationale.</p>
-      <aside class="proposed-pointer" style="margin-top: var(--space-12); padding: var(--space-6); border: 1px dashed var(--card-border); font-size: var(--text-sm); color: var(--text-secondary);">
-        <p style="margin: 0 0 var(--space-2) 0; font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-600);">where the proposed view lives</p>
-        <p style="margin: 0;">This portal exposes the <strong>design rationale</strong> (right drawer) and the <strong>v2 comparison</strong> (left drawer, where a shipped equivalent exists). The production-indistinguishable surface ships on the v3 main site at <code>ninochavez.co</code> &mdash; currently in Phase 2 rebuild on the <code>redesign/v3-context-engineer</code> branch. Reviewer questions: chat (bottom-right) answers from the blueprint corpus.</p>
-      </aside>
+    <main class="container">
+
+      <div class="home-hero">
+        <p style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);">ninochavez.co · v3</p>
+        <h1 style="margin-top: var(--space-3);">Context engineer. I <em style="color: var(--brand-500); font-style: italic;">instrument</em> the systems that build the systems.</h1>
+        <p class="home-lede">Product Architect at commerce.com. A six-lathe production line, a documented methodology (<code>blueprint</code>), a 275-artifact writing corpus, and a portfolio of agent-assisted side projects. The site is the catalog; the orbit below quantifies the receipts.</p>
+      </div>
+
+      <nav class="home-ribbon" aria-label="Work clusters">
+        <a class="home-ribbon-chip" href="/pages/work-cluster.html#forge-production-line">Forge <span class="count">8</span></a>
+        <a class="home-ribbon-chip" href="/pages/work-cluster.html#agent-infrastructure">Agent infra <span class="count">10</span></a>
+        <a class="home-ribbon-chip" href="/pages/work-cluster.html#ai-products">AI products <span class="count">18</span></a>
+        <a class="home-ribbon-chip" href="/pages/work-cluster.html#commerce-bc">Commerce / BC <span class="count">10</span></a>
+        <a class="home-ribbon-chip" href="/pages/work-cluster.html#volleyball-630">630 / volleyball <span class="count">9</span></a>
+        <a class="home-ribbon-chip" href="/pages/work-cluster.html#personal-orbit">Personal orbit <span class="count">7</span></a>
+        <a class="home-ribbon-chip" href="/pages/work-cluster.html#client-work">Client <span class="count">4</span></a>
+        <a class="home-ribbon-chip" href="/pages/writing-index.html">Writing <span class="count">275</span></a>
+      </nav>
+
+      <section class="home-signature">
+        <p style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-600);">The production line</p>
+        <p style="color: var(--text-secondary); margin-top: var(--space-2); max-width: 64ch;">The schematic below is the toolchain that produced every site under <a href="/pages/work-cluster.html">/work</a> — including this portal you're reading. One PUBLIC umbrella, six private lathes, every artifact downstream.</p>
+
+        <div class="home-signature-frame">
+          <svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="home-forge-title">
+            <title id="home-forge-title">Forge production line — umbrella + 6 lathes</title>
+            <rect class="cs-node-pub" x="290" y="20" width="140" height="50"/>
+            <text class="cs-label-tag" x="360" y="12" text-anchor="middle">UMBRELLA · PUBLIC</text>
+            <text class="cs-label-pub" x="360" y="52" text-anchor="middle">forge</text>
+
+            <line class="cs-edge" x1="360" y1="70" x2="360" y2="110"/>
+            <line class="cs-edge" x1="80" y1="110" x2="640" y2="110"/>
+
+            <line class="cs-edge" x1="105" y1="110" x2="105" y2="140"/>
+            <rect class="cs-node" x="50" y="140" width="110" height="40"/>
+            <text class="cs-label" x="105" y="165" text-anchor="middle">specchain</text>
+
+            <line class="cs-edge" x1="220" y1="110" x2="220" y2="140"/>
+            <rect class="cs-node" x="175" y="140" width="90" height="40"/>
+            <text class="cs-label" x="220" y="165" text-anchor="middle">blueprint</text>
+
+            <line class="cs-edge" x1="320" y1="110" x2="320" y2="140"/>
+            <rect class="cs-node" x="275" y="140" width="90" height="40"/>
+            <text class="cs-label" x="320" y="165" text-anchor="middle">forge-brand</text>
+
+            <line class="cs-edge" x1="420" y1="110" x2="420" y2="140"/>
+            <rect class="cs-node" x="375" y="140" width="90" height="40"/>
+            <text class="cs-label" x="420" y="165" text-anchor="middle">forge-signal</text>
+
+            <line class="cs-edge" x1="520" y1="110" x2="520" y2="140"/>
+            <rect class="cs-node" x="475" y="140" width="90" height="40"/>
+            <text class="cs-label" x="520" y="165" text-anchor="middle">forge-site</text>
+
+            <line class="cs-edge" x1="620" y1="110" x2="620" y2="140"/>
+            <rect class="cs-node" x="575" y="140" width="90" height="40"/>
+            <text class="cs-label" x="620" y="165" text-anchor="middle">image-gen</text>
+
+            <line class="cs-edge" x1="105" y1="180" x2="620" y2="180"/>
+            <line class="cs-edge" x1="360" y1="180" x2="360" y2="220"/>
+            <rect class="cs-node" x="270" y="220" width="180" height="40"/>
+            <text class="cs-label" x="360" y="245" text-anchor="middle">downstream artifacts</text>
+          </svg>
+          <p class="home-signature-label">Fig. forge · the production line. See <a href="/pages/practice.html#production-line">/practice</a> for the full breakdown.</p>
+        </div>
+      </section>
+
+      <section class="home-teasers">
+
+        <article class="teaser-panel">
+          <p class="teaser-tag">/practice</p>
+          <p class="teaser-title">How the work happens.</p>
+          <p class="teaser-body">Four sections: production line · substrate · operating rules · instrumentation evidence. Every claim grounds to a real file or repo path. The hesitation-fold diagram catches the "ending with a question" failure mode in three layers.</p>
+          <a class="teaser-link" href="/pages/practice.html">Walk the practice →</a>
+        </article>
+
+        <article class="teaser-panel">
+          <p class="teaser-tag">/work</p>
+          <p class="teaser-title">Eight clusters. Sixty-nine repos.</p>
+          <p class="teaser-body">The cluster ribbon above is the at-a-glance form. The full /work page anchors each cluster with its declared composition — schematic for forge, card grid for agent infra, case-study deep-dives for AI products and commerce, hero deep dive for rally-hq.</p>
+          <a class="teaser-link" href="/pages/work-cluster.html">See the catalog →</a>
+        </article>
+
+        <article class="teaser-panel">
+          <p class="teaser-tag">/writing</p>
+          <p class="teaser-title">~275 artifacts. Seven collections.</p>
+          <p class="teaser-body">Signal Dispatch — blog (229) · whitepapers (12) · series (8) · fiction (10) · presentations (9) · counterpoints (3) · tutorials (3) · research-notes (1). The v2 site surfaced 3 flagships; v3 exposes every collection.</p>
+          <a class="teaser-link" href="/pages/writing-index.html">Open the corpus →</a>
+        </article>
+
+      </section>
+
+      <section class="home-closing">
+        <p style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: var(--space-3);">closing thesis</p>
+        <p class="home-closing-title">The orbit is the <em>receipt</em>. The site is the catalog of the orbit.</p>
+        <p class="home-closing-body">Every claim on this site grounds to a real file path, commit, or shipped deploy. That's the only positioning that survives contact with someone evaluating whether the receipts are real — and it's why the catalog above quantifies scope instead of curating it down to a highlights reel.</p>
+        <div class="home-cta-row">
+          <a class="home-cta primary" href="/pages/contact.html">Make contact</a>
+          <a class="home-cta" href="/pages/about.html">About</a>
+          <a class="home-cta" href="https://github.com/nino-chavez" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </section>
+
     </main>
   </section>
+
   <script>
     window.PROTO_PAGE = { id: 'home' };
   </script>
