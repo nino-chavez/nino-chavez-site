@@ -1,0 +1,71 @@
+# Event-triggered ask-dad corpus ingestion. Per ADR-0006 + ADR-0007.
+#
+# Storage backend is Cloudflare Vectorize (index: askdad-corpus). Triggers
+# ONLY on push to main and on workflow_dispatch. NO `schedule:` — scheduled
+# background agents are refused per prior Nino direction; the artifact
+# change is the event.
+#
+# Secrets pull from 1Password at runtime via 1password/load-secrets-action.
+# Only one static GH Actions secret required: OP_SERVICE_ACCOUNT_TOKEN.
+#
+# 1Password items referenced:
+#   OpenAI labs                 → credential (embeddings)
+#   Vectorize ask-dad           → account_id, api_token, index_name
+#
+# Pre-launch setup (one-time):
+#   1. wrangler vectorize create askdad-corpus --dimensions=1536 --metric=cosine
+#   2. Create CF API token with Vectorize:Edit scope, save in 1Password as
+#      "Vectorize ask-dad" with fields: account_id, index_name, api_token
+#   3. Create 1Password service account token with read access to
+#      "Developer Secrets" vault, save as GH Actions secret
+#      OP_SERVICE_ACCOUNT_TOKEN
+#
+# If this file ever grows a `schedule:` trigger, that PR contradicts
+# ADR-0006 and ADR-0007 and should be reverted.
+
+name: ingest-askdad-corpus
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'blueprint/**'
+      - 'src/lib/server/askdad/**'
+      - 'tools/derive-corpus/**'
+  workflow_dispatch:
+
+concurrency:
+  group: askdad-corpus
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Load secrets from 1Password
+        uses: 1password/load-secrets-action@v2
+        with:
+          export-env: true
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+          OPENAI_API_KEY: op://Developer Secrets/OpenAI labs/credential
+          CLOUDFLARE_ACCOUNT_ID: op://Developer Secrets/Vectorize ask-dad/account_id
+          CLOUDFLARE_API_TOKEN: op://Developer Secrets/Vectorize ask-dad/api_token
+          VECTORIZE_INDEX: op://Developer Secrets/Vectorize ask-dad/index_name
+
+      - name: Run derive-corpus
+        env:
+          GITHUB_WORKSPACE: ${{ github.workspace }}
+        run: npx tsx tools/derive-corpus/derive-corpus.ts
