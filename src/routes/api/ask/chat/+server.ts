@@ -25,7 +25,7 @@ function getAnthropic() {
 // Response token limit to control costs
 const MAX_RESPONSE_TOKENS = 1024;
 
-export const POST: RequestHandler = async ({ request }) => {
+export const POST: RequestHandler = async ({ request, platform }) => {
   const clientIP = getClientIP(request);
 
   // 1. Rate limiting
@@ -100,7 +100,8 @@ export const POST: RequestHandler = async ({ request }) => {
     try {
       const { formattedContext, chunks } = await retrieveContext(query, {
         maxChunks: 5,
-        minSimilarity: 0.65
+        minSimilarity: 0.65,
+        platform: platform as { env?: Record<string, unknown> } | undefined
       });
 
       if (chunks.length > 0) {

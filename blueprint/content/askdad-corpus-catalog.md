@@ -1,18 +1,18 @@
 # Ask-Dad RAG Corpus Catalog
 
-**Purpose:** the static snapshot in `src/lib/server/askdad/system-prompt.ts` gives the agent baseline knowledge of v3 artifacts without needing RAG. This catalog is the next layer — the documents that should be ingested into the `askdad.content_chunks` Supabase table so the agent can quote source material with citation links and similarity scoring.
+**Purpose:** the static snapshot in `src/lib/server/askdad/system-prompt.ts` gives the agent baseline knowledge of v3 artifacts without needing RAG. This catalog is the next layer — the documents that get ingested into the Cloudflare Vectorize index `askdad-corpus` (per ADR-0007, replacing the earlier Supabase plan) so the agent can quote source material with citation links and similarity scoring.
 
-**Owner:** Nino runs the ingestion pipeline (this repo doesn't ship the embedder). This file is the brief.
+**Owner:** the GH Actions workflow `ingest-askdad-corpus` runs on every push to main; the executable spec is `tools/derive-corpus/sources.ts`. This file is the human-readable companion.
 
-**Last updated:** 2026-05-25 after the v3 redesign session.
+**Last updated:** 2026-05-25 — migrated from Supabase to Cloudflare Vectorize per ADR-0007.
 
 ---
 
 ## Status of current ingestion
 
-Unknown to this repo. The Supabase table sits in the `askdad` schema; `rag.ts` queries it via `match_content` RPC. Whatever's currently there was ingested before v3 — likely just the Signal Dispatch blog archive. The v3 work below needs to land in the corpus for the agent to retrieve it.
+Empty — verified 2026-05-25. The Vectorize index doesn't exist yet (one-time `wrangler vectorize create` step pending per HANDOFF.md). The deployed `/api/ask/chat` has been silently degrading to no-RAG since launch because the storage layer was never created. Once the index lands + GH Actions secrets are set, the next push to main re-derives the full corpus automatically via `tools/derive-corpus/derive-corpus.ts`.
 
-If `gh repo list` finds an ingestion script, run it against the source set below. If not, the embedding step is a one-time scripted task: chunk each document, generate embeddings via `embeddings.ts`, insert into `askdad.content_chunks` with appropriate `source_type` / `source_id` / `source_title` / `source_url` per row.
+The catalog below is the source-of-truth document for what should be in the corpus. The executable spec is `tools/derive-corpus/sources.ts` — if you add a row here, mirror it in the TS file (or the ingester won't pick it up).
 
 ---
 
@@ -76,12 +76,12 @@ Each row is a document the agent should be able to retrieve. `source_type` is th
 
 ---
 
-## Ingestion notes for whoever runs it
+## Ingestion notes
 
-- **Chunk size:** the `match_content` RPC implies the existing ingestion uses some fixed chunk size (likely 500–1000 tokens). Match it for new sources so similarity scores stay calibrated against existing corpus.
-- **Source dedup:** Signal Dispatch posts may already be ingested. Diff before re-embedding to avoid duplicate chunks bloating the index.
-- **HTML vs markdown:** site pages are SvelteKit-rendered. Either grab the raw markdown source from this repo (`blueprint/content/*.md`, `src/routes/*/+page.svelte` after stripping Svelte boilerplate) or render to plain text via the prerendered HTML in `.svelte-kit/output/prerendered/`. The latter captures the as-shipped narrative.
-- **Re-run cadence:** every push to `redesign/v3-context-engineer` after content edits. Or set up a webhook from CF Pages deploy → ingestion run.
+- **Storage:** Cloudflare Vectorize index `askdad-corpus`, 1536 dimensions, cosine metric. Per ADR-0007.
+- **Chunk size:** 1500 chars max, 150-char overlap, sentence-boundary-aware. Same chunker for every source (see `tools/derive-corpus/derive-corpus.ts` `chunkText`).
+- **Deterministic IDs:** `${source_id}-${chunk_index:0000}` so re-runs upsert in place. Orphan chunks from a shrinking source remain — accepted v1 trade-off per ADR-0007.
+- **Re-run cadence:** automatic on every push to `main` via `.github/workflows/ingest-askdad-corpus.yml`. Path-filtered to `blueprint/**`, `src/lib/server/askdad/**`, and `tools/derive-corpus/**` so unrelated commits don't re-derive. Manual re-runs via the Actions tab → "Run workflow."
 
 ---
 

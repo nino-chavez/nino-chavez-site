@@ -1,27 +1,27 @@
-# Event-triggered ask-dad corpus ingestion. Per ADR-0006.
+# Event-triggered ask-dad corpus ingestion. Per ADR-0006 + ADR-0007.
 #
-# Triggers ONLY on push to main (content lands) and on workflow_dispatch
-# (manual re-run from the Actions tab). Explicitly NOT a `schedule:` —
-# scheduled background agents are refused per prior Nino direction; the
-# artifact change is the event.
+# Storage backend is Cloudflare Vectorize (index: askdad-corpus). Triggers
+# ONLY on push to main and on workflow_dispatch. NO `schedule:` — scheduled
+# background agents are refused per prior Nino direction; the artifact
+# change is the event.
 #
-# Secrets are pulled from 1Password at runtime via the official
-# 1password/load-secrets-action — matches the global convention recorded
-# in ~/.claude/CLAUDE.md ("save sensitive data in 1Password as the
-# standard convention going forward"). The ONLY GitHub Actions repo
-# secret required is OP_SERVICE_ACCOUNT_TOKEN (1Password service account
-# token with read access to the "Developer Secrets" vault).
+# Secrets pull from 1Password at runtime via 1password/load-secrets-action.
+# Only one static GH Actions secret required: OP_SERVICE_ACCOUNT_TOKEN.
 #
 # 1Password items referenced:
-#   - Supabase ask-dad → service_role_key, url
-#   - OpenAI labs      → credential
+#   OpenAI labs                 → credential (embeddings)
+#   Vectorize ask-dad           → account_id, api_token, index_name
 #
-# Production-URL warning: the "Supabase ask-dad" item's `url` field
-# currently resolves to http://127.0.0.1:54521 (local-dev). Before this
-# workflow can succeed against the deployed corpus, that field needs to
-# hold the cloud Supabase URL (https://<project>.supabase.co). Nino's
-# call to update the 1Password item; the workflow will fail with a
-# meaningful error until then.
+# Pre-launch setup (one-time):
+#   1. wrangler vectorize create askdad-corpus --dimensions=1536 --metric=cosine
+#   2. Create CF API token with Vectorize:Edit scope, save in 1Password as
+#      "Vectorize ask-dad" with fields: account_id, index_name, api_token
+#   3. Create 1Password service account token with read access to
+#      "Developer Secrets" vault, save as GH Actions secret
+#      OP_SERVICE_ACCOUNT_TOKEN
+#
+# If this file ever grows a `schedule:` trigger, that PR contradicts
+# ADR-0006 and ADR-0007 and should be reverted.
 
 name: ingest-askdad-corpus
 
@@ -61,8 +61,9 @@ jobs:
         env:
           OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
           OPENAI_API_KEY: op://Developer Secrets/OpenAI labs/credential
-          SUPABASE_URL: op://Developer Secrets/Supabase ask-dad/url
-          SUPABASE_SERVICE_KEY: op://Developer Secrets/Supabase ask-dad/service_role_key
+          CLOUDFLARE_ACCOUNT_ID: op://Developer Secrets/Vectorize ask-dad/account_id
+          CLOUDFLARE_API_TOKEN: op://Developer Secrets/Vectorize ask-dad/api_token
+          VECTORIZE_INDEX: op://Developer Secrets/Vectorize ask-dad/index_name
 
       - name: Run derive-corpus
         env:
