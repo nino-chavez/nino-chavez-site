@@ -112,13 +112,13 @@ copy in the redesign and the source corpus for the Pattern B chat FAB.
 
 | Reference | Why | Stage 1 treatment |
 |---|---|---|
-| **https://aurvia.io/** | Friend's site (Nino's peer). Treat as peer reference, not adversarial competitor. Useful for "what does a peer architect's site look like" calibration. | `research/competitive/peer-aurvia.md` — capture screenshots, IA, voice. Frame in `01-diagnose.md` as "peer reference, not benchmark." |
-| **Brian Lovin** (brian.lovin.io) | Designer-engineer portfolio. Reference for personality-forward, opinionated single-author site. | `research/competitive/peer-designer-portfolios.md` — group with Singer / Freiberg. |
-| **Jordan Singer** (jsngr.co) | Designer-engineer portfolio with strong experimental surface. | Same group. |
-| **Rauno Freiberg** (rauno.me) | Designer with high motion / micro-interaction polish. | Same group. Reference for the motion language `MODERN_ANIMATION_SYSTEM.md` already gestures at. |
-| **Julian Lehr** (julian.digital) | Designer with strong written POV — closest analog to "writer's portfolio." | `research/competitive/peer-writer-portfolios.md`. |
-| **Patrick Collison** (patrickcollison.com) | Minimalist authority-by-receipt portfolio (CEO, but the structure travels). | Same group as Lehr. |
-| **Ryan Lopopolo** (https://lopopolo.io/) | Cited in stack signals as influence on "buy-vs-build threshold" / harness-engineering. Reference the actual published material. | `research/competitive/peer-engineering-portfolios.md`. |
+| **https://aurvia.io/** | Friend's site (Jen Anderson). 2026-05-25 audit revised the framing: Aurvia is a **fractional CTO services site**, not a peer-architect personal portfolio. Use as INVERSE calibration — recognize when v3 drifts toward services-shape and pull back. | `research/competitive/peer-cohort.md` § Archetype C. |
+| **Brian Lovin** (**brianlovin.com** — NOT brian.lovin.io) | Capability sentence + named receipt list. Primary archetype B reference. | `research/competitive/peer-cohort.md` § Archetype B. |
+| **Jordan Singer** (**jsngr.com → ibuildmyideas.com** via 302 — NOT jsngr.co) | Designer-engineer portfolio with interactive-demo surfaces. Partial audit only — text-only fetch insufficient. Stage 4 follow-up logged. | `research/competitive/peer-cohort.md` § Archetype D (provisional). |
+| **Rauno Freiberg** (rauno.me) | Capability + named projects + Field Notes. Archetype B. Yearly-archive subdomains (2022.rauno.me, 2023.rauno.me) are an interesting evolution pattern. | `research/competitive/peer-cohort.md` § Archetype B. |
+| **Julian Lehr** (julian.digital) | "Lifelog" framing; terminal-styled intro + flat list of essays. Archetype A (extreme minimalism). | `research/competitive/peer-cohort.md` § Archetype A. |
+| **Patrick Collison** (patrickcollison.com) | Extreme minimalism — no hero, no h1, no capability sentence. Just nav links. Archetype A. The 2026-05-25 audit corrected v0.1's wrong claim that Collison has a Stripe capability paragraph. | `research/competitive/peer-cohort.md` § Archetype A. |
+| **Ryan Lopopolo** (**hyperbo.la** — NOT lopopolo.io; that domain is unreachable and lopopolo.com is parked) | Closest direct analog. Capability framed as plural learnings, "lifestream" nav, Featured-Work-by-topic. OpenAI harness-engineering work makes Lopopolo the primary public-thinker on that discipline. | `research/competitive/peer-cohort.md` § Archetype B. |
 
 ## Reference materials to avoid
 

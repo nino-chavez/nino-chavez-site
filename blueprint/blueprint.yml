@@ -74,12 +74,16 @@ prototype:
 # Research scope — brownfield audit
 research:
   competitors:
-    - "https://aurvia.io/"            # Friend's site — peer reference, not adversarial
+    # 2026-05-25 audit corrected the framing: Aurvia is Jen's services site,
+    # not a personal portfolio. See research/competitive/peer-cohort.md § Archetype C.
+    - "https://aurvia.io/"            # INVERSE calibration only (services-business shape)
     - "Personal portfolios of practicing architects (peer cohort)"
     - "Signal Dispatch authors / similar voice cohort"
   analogous_industries:
-    - "Designer portfolios (Brian Lovin, Jordan Singer, Rauno Freiberg)"
-    - "Architecture/POV sites (Patrick Collison, Julian Lehr)"
+    # URLs verified 2026-05-25 against research/competitive/peer-cohort.md v0.2.
+    - "brianlovin.com (Brian Lovin), ibuildmyideas.com (Jordan Singer via jsngr.com 302), rauno.me (Rauno Freiberg)"
+    - "patrickcollison.com (Patrick Collison), julian.digital (Julian Lehr)"
+    - "hyperbo.la (Ryan Lopopolo — closest direct analog)"
   codebase_path: "."                  # Current site source is the project root
   screenshots_path: "docs/agency/"    # Existing audit screenshots if any; populate during Stage 1
   external_corpus:
