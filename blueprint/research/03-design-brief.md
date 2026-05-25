@@ -4,7 +4,8 @@ stage: 3
 status: draft
 last_updated: 2026-05-25
 voice_mode: solution-architecture
-version: 0.1
+version: 0.2
+supersedes: v0.1 (same date, earlier session). v0.1 cohort-followed and produced AI-default visual tells (charcoal canvas + copper accent + sticky-blur-header + Source Serif h1 + mono-uppercase section labels + grid-aligned receipt cards). The 8 differentiation moves in v0.1 are STRUCTURAL — they did not produce visual differentiation. v0.2 carries the structural moves forward and reworks the visual direction against an explicit anti-slop test, learning posture from Nino's prior anti-slop fights on letspepper.com + flickdaymedia.com (without replicating their forms — different genre).
 ---
 
 # 03 — Design Brief
@@ -56,7 +57,110 @@ deviates intentionally along these axes:
 | 7 | Show the kitchen | Receipts link to methodology repos (Blueprint, Atelier) alongside products. Surfaces the operating system, not just the meals. |
 | 8 | Editorial serif | Serif for capability sentence + post titles + h1/h2; workhorse sans for body. Cohort is sans-only. Codes "writer" identity in the type system. |
 
-## Visual direction — Editorial-warm
+## v0.1 → v0.2 — what changed and why
+
+v0.1 of this brief committed to 8 structural differentiation moves (capability
+sentence, receipt list, /speaking, chat FAB, meta-receipt, etc.) and a visual
+direction called "Editorial-warm" (charcoal canvas + copper accent + Source
+Serif h1). The prototype rendered. Looking at it without defending:
+
+- Charcoal canvas + single warm accent = every Cursor/Linear/Vercel clone
+- Mono uppercase tracking-wide section labels = single most overused AI-portfolio tell
+- Hairline section dividers + grid-aligned receipt cards = generic spacing rhythm
+- Editorial serif used only for h1 + post titles = exact cohort-default serif placement
+- CTA button with → arrow = universal SaaS template
+- Sticky header with backdrop blur = Vercel-template default
+
+The 8 structural moves were real but the visual layer underneath defaulted to
+2025 AI-portfolio templates. **Structural differentiation does not substitute
+for visual personality.** The cohort calibration told me what the cohort does;
+I built a cohort-aligned site with structural footnotes about why it's different.
+
+v0.2 carries the 8 structural moves forward unchanged (capability sentence,
+receipt list, /speaking, /colophon, chat FAB, live signals, etc.) and reworks
+the visual direction against an explicit anti-slop test.
+
+### Anti-slop commitments (v0.2)
+
+Per the 2026-05-25 anti-slop question pair, v3 commits to 7 anti-slop moves:
+
+| # | Move | Specifics |
+|---|---|---|
+| A | Real photography as structural identity | One specific photo from the 20k-photo gallery corpus used as permanent structural element (left rail, page-top sliver, or anchor mark). NOT decoration. NOT a rotation. Final photo TBD by Nino; prototype uses placeholder. |
+| B | Off-convention layout | No hero-centered-above-fold. Page opens with prose paragraph that contains the capability claim woven in (not staged as a hero). Two-column desktop with permanent right rail for live state. Single-column journal-entry mobile. |
+| C | Color that reads "intentional" not "tasteful" | Drop copper. Adopt **cyanotype blueprint blue** — direct material reference to Blueprint methodology + architectural drafting. Color IS the positioning. |
+| D | Type personality with character | Drop Source Serif Pro / GT Sectra (AI defaults). Use a working slab / drafting serif at body scale AS WELL AS display. Body prose in serif (radical for cohort). |
+| F | Specificity in copy + IA labels | Replace generic groupings ("Commerce Architecture" / "What I'm building") with time-bound and state-specific labels ("On the desk this week" / "Shipping now" / "In the harness"). |
+| G | Embedded artifacts from actual work | Live signals strip surfaces real-feeling content: real commit titles, real Blueprint stage status, real Rally HQ uptime. Footer carries a "Last commit" mono hash. |
+| H | Hand-built mark / iconography | Custom mark in header (drafting-cross or initial ligature). Prototype uses placeholder mark; final commissioned by Nino. |
+
+NOT committed: E (marginalia / footnotes / pull-quotes) — Nino opted out;
+maximum-design-statement risk vs. reading-comfort tradeoff didn't justify.
+
+### Reinvention direction — Blueprint blue + drafting type (D3)
+
+Per the 2026-05-25 direction question:
+
+> *"D3 — Blueprint blue + drafting type (architect-leaning). Drafting-style display + working text body + cyanotype blueprint blue accent (or reverse: cream type on blueprint canvas). Color IS the positioning. Architectural drawing / drafting room aesthetic."*
+
+Posture borrowed from letspepper.com + flickdaymedia.com (big confident
+type + saturated color + not-muted-tasteful + type-driven, not image-driven).
+Form reinvented because architect-who-writes is a different genre than
+sport-cultural-brand. The Bebas Neue + safety yellow shape doesn't transplant;
+the posture does.
+
+## Visual direction (v0.2) — Blueprint blue + drafting room
+
+Cream type on deep cyanotype-blueprint canvas. Working serif throughout
+(display AND body). Counter-saturated proof-mark red for high-emphasis
+moments only. Drafting-room aesthetic — "this is engineering documentation
+made beautiful." Color is positioning.
+
+### Color tokens
+
+| Token | Value | Use |
+|---|---|---|
+| `--v3-canvas` | `#1e3a5e` | Page background. Deep cyanotype blueprint blue. Prussian-blue-adjacent; not aggressive royal blue, not muted teal. Historical drafting reference. |
+| `--v3-surface-1` | `#26446a` | Elevated surfaces (right rail, footer band). |
+| `--v3-text-primary` | `#f4ecd8` | Body text. Warm cream — paper-aged, not pure white. Direct cyanotype-on-paper reference. |
+| `--v3-text-secondary` | `#d4c9a8` | Meta text, secondary prose. |
+| `--v3-text-muted` | `#a89e80` | Dates, captions, mono labels. |
+| `--v3-accent-red` | `#c84529` | Counter-saturated proof-mark red. Used SPARINGLY: live signals dots, single CTA, the one number that needs emphasis. NEVER as a link color. |
+| `--v3-link` | `#f4ecd8` | Links inherit text-primary with underline. Underline serves as the link signal; no separate link color. Cohort-divergent. |
+| `--v3-border` | `rgba(244, 236, 216, 0.22)` | Hairlines — slightly more visible than cohort default (rgba 0.08) to read drafting-paper grid. |
+
+**Rationale**: The cyanotype reference is historically specific (Sir John
+Herschel, 1842 — architectural drafting reproduction process before
+photocopiers). Color-as-positioning ties the visual identity to Blueprint
+methodology AND to architectural practice. Counter-saturated red recalls
+proofreader's marks — small, intentional, only where emphasis is earned.
+
+**v0.1 retired**: charcoal canvas, copper accent, separate link color.
+
+### Type system
+
+| Role | Family | Use | Why |
+|---|---|---|---|
+| Display serif | **Bree Serif** (prototype) / specific drafting face TBD (production) | Capability prose, h1, h2 throughout. Used at confident scale (4–6rem) — poster posture borrowed from Pepper/Flickday, form reinvented. | Working slab; reads as engineering-textbook + drafting-room. NOT the cohort-default display serif (Source Serif / GT Sectra / Tiempos). |
+| Body serif | **Crimson Pro** (prototype) / specific text face TBD (production) | Body prose throughout — receipts, descriptions, /about, /speaking, /colophon, blog excerpts | **Body in serif is the radical move for this cohort.** Every audited L1/L2 cohort site uses sans for body. Serif body codes "this is a writer's site" in every sentence the visitor reads. |
+| UI sans | **Inter** | Nav items only, live signals labels, mono-adjacent UI | Workhorse for the structural chrome. Sans confined to UI; never escapes into prose. |
+| Mono | **JetBrains Mono** | Code, timestamps, commit hashes, live-signal labels | Carry from earlier. |
+
+**Type scale** (fluid `clamp()`):
+
+| Step | Value | Use |
+|---|---|---|
+| `--v3-text-display` | `clamp(2.5rem, 5.5vw, 4.5rem)` | Capability woven into prose intro; max h1 size. |
+| `--v3-text-h2` | `clamp(1.75rem, 3vw, 2.5rem)` | Section headers in display serif. |
+| `--v3-text-h3` | `1.5rem` | Subsection / receipt name. Body serif weight 500. |
+| `--v3-text-lead` | `1.25rem` | Lead paragraphs. |
+| `--v3-text-body` | `1.125rem` | Body prose. SLIGHTLY larger than v0.1's 1rem — body-serif benefits from more size. |
+| `--v3-text-meta` | `0.9375rem` | Secondary prose. |
+| `--v3-text-micro` | `0.8125rem` | Mono labels, footer fine print. |
+
+**v0.1 retired**: Source Serif Pro (used for h1 only), Inter for body.
+
+## (legacy v0.1 visual direction — superseded, kept for traceability) — Editorial-warm
 
 Canvas-and-type system tuned for an architect-who-writes identity. Warm
 neutrals + a distinctive copper accent + serif editorial moments + sans

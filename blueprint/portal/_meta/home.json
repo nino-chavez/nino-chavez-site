@@ -1,0 +1,23 @@
+{
+  "id": "home",
+  "title": "Home (v3)",
+  "group": "marketing",
+  "slice": "v3-home",
+  "surface": "src/routes/+page.svelte",
+  "phase": "MVP",
+  "route": "/pages/home.html",
+  "summary": "Architect-primary home composition demonstrating all 8 differentiation moves from the design brief: capability sentence naming the commerce × harness-engineering intersection, live signals strip, 11 CURRENT receipts topic-grouped, Signal Dispatch surfacing, topic anchors, footer with methodology meta-receipt.",
+  "strategy": {
+    "decision": "Replace v2's four-pursuit creative-polymath bento grid with a single architect-primary composition: editorial-serif capability sentence + live runtime signals strip + topic-grouped receipt list (Lopopolo pattern) + recent Signal Dispatch + proto-framework topic anchors + meta-receipt footer.",
+    "why": "Closes D1 (home tells wrong story), D2 (/ai unreachable — surfaces via nav), D4 (no scoped contact path — single Cal.com CTA), D5 (DESIGN.md and live / divergent — fresh editorial-warm direction), and D8 (receipt density hidden). Implements P0-1 + P1-1 + P1-4 from 02-prescription.yml. Demonstrates all 8 differentiation moves per the 2026-05-25 user decision: subject intersection (1), receipt volume (2), methodology meta-receipt (3, footer), live runtime signals (4), speaking nav (5 — page lives at /speaking), AI chat FAB (6, persistent), show-the-kitchen (7, methodology repos linked alongside products), editorial serif (8, GT Sectra for capability + post titles).",
+    "shipped": "src/routes/+page.svelte currently renders a bento grid with 4 equal-weight pursuits (Photography / Music / Writing / Building), volleyball hero-photo rotation, lime accent, mailto contact. Pre-existing copy still says 'hosted on Vercel' (drift — site is on Cloudflare).",
+    "gap": "v2 reads hobbyist polymath; v3 reads practicing architect with shipped breadth. Bento → topic-grouped receipt list. Hero photo → no photo. Lime → copper. mailto → Cal.com. 4 surfaces → 11 surfaces.",
+    "question": "Does the editorial serif treatment land as 'architect-who-writes' or read as overdesigned? Stage 4 fact-check + stakeholder review answers."
+  },
+  "currentState": {
+    "route": "/",
+    "summary": "v2 home: bento grid with 4 creative pursuits, hero photo rotation, lime accent, unstructured mailto.",
+    "sourceFiles": ["src/routes/+page.svelte", "src/lib/constants.ts"],
+    "annotation": "v3 retires bento + hero rotation + lime + mailto entirely. Editorial-warm system from clean slate (per resolved Q2)."
+  }
+}
