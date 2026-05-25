@@ -1,8 +1,8 @@
 {
   "name": "Nino Chavez Blueprint",
-  "tagline": "Brownfield audit + redesign of ninochavez.co. Diagnosed, prescribed, designed, now prototyped — Stage 4 of 7.",
+  "tagline": "Brownfield audit + redesign of ninochavez.co — reframed as Nino Chavez ⊕ studio surface. Stage 4: Prototype (4 pages, 3 persona flows).",
   "slices": [
-    "v3-home"
+    "v3"
   ],
   "groups": [
     { "id": "marketing", "label": "Marketing",  "color": "brand" },
@@ -10,20 +10,29 @@
     { "id": "operator",  "label": "Operator",   "color": "neutral" }
   ],
   "pages": [
-    "home"
+    "home",
+    "speaking",
+    "colophon",
+    "now"
   ],
   "flows": [
     {
       "id": "architect-arrival",
       "label": "Peer Architect arrival",
-      "summary": "P1 lands on / via referral or Signal Dispatch post → scans capability sentence + live signals → opens /ai or a building receipt → bookmarks / RSS-subscribes.",
-      "pages": ["home"]
+      "summary": "P1 lands on home via referral or Signal Dispatch post → scans capability + live signals + receipts → opens /colophon to verify methodology depth → bookmarks or RSS-subscribes. Authority verification path.",
+      "pages": ["home", "colophon"]
     },
     {
       "id": "buyer-arrival",
       "label": "Prospective Client arrival",
-      "summary": "P2 lands on / via LinkedIn or referral → scans capability sentence in buyer language → clicks 'Schedule a conversation' → enters Cal.com booking flow.",
-      "pages": ["home"]
+      "summary": "P2 lands on home via LinkedIn or referral → scans capability sentence in practitioner language → clicks /speaking to verify legitimacy → returns to home → clicks Schedule a conversation. Commercial-trust verification path.",
+      "pages": ["home", "speaking"]
+    },
+    {
+      "id": "curator-arrival",
+      "label": "Conference Circuit arrival",
+      "summary": "P3 lands directly on /speaking via referral or search → reads bio variants + scans topic list + downloads headshot → checks /now for currency signal → emails with subject template pre-filled.",
+      "pages": ["speaking", "now"]
     }
   ]
 }

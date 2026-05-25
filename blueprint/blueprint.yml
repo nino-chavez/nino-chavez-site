@@ -11,7 +11,7 @@ portal_pattern: B                     # redesign-review-portal (drawers + COMPAR
 
 project:
   name: "ninochavez.co"
-  description: "Brownfield audit + redesign of the personal site. Diagnose v2, prescribe v3, prototype the new state alongside the live product."
+  description: "Brownfield audit + redesign of ninochavez.co — reframed 2026-05-25 as a practitioner studio surface (Nino Chavez ⊕ studio), not a personal site. Diagnose v2, prescribe v3, prototype the new state alongside the live product."
   product: "ninochavez.co (SvelteKit on Cloudflare Pages)"
   slug: "ninochavez"                  # Used in CF Pages project name: ninochavez-blueprint
   audience:

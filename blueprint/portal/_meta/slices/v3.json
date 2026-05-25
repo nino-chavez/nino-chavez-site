@@ -1,0 +1,13 @@
+{
+  "id": "v3",
+  "label": "v3 redesign — Studio surface",
+  "color": "accent",
+  "summary": "Brownfield Pattern B prototype for ninochavez.co v3. Reframes the site as a practitioner studio surface (Nino Chavez ⊕ studio) rather than a personal site. Four primary pages: Home (architect-primary composition), Speaking (Conference Circuit funnel), Colophon (methodology meta-receipt), Now (live state mirror). All 8 structural differentiation moves + all 7 anti-slop commitments demonstrated.",
+  "production_surface": "src/routes/+page.svelte, src/routes/speaking/, src/routes/colophon/, src/routes/now/",
+  "primary_persona": "P1 Peer Architect + P2 Prospective Client + P3 Conference Circuit",
+  "findings_cited": ["D1", "D2", "D3", "D4", "D5", "D8"],
+  "principles_cited": ["P0-1", "P0-2", "P1-1", "P1-2", "P1-3", "P1-4"],
+  "phase": "MVP",
+  "pages": ["home", "speaking", "colophon", "now"],
+  "flows_touching_this_slice": ["architect-arrival", "buyer-arrival", "curator-arrival"]
+}

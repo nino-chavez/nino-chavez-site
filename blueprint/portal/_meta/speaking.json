@@ -1,0 +1,23 @@
+{
+  "id": "speaking",
+  "title": "Speaking (v3)",
+  "group": "audience",
+  "slice": "v3",
+  "surface": "src/routes/speaking/+page.svelte (new — does not exist in v2)",
+  "phase": "MVP",
+  "route": "/pages/speaking.html",
+  "summary": "New /speaking surface for the Conference Circuit persona. Bio variants (50/100/250), headshot library, topic list (5 talks), past-talks credit with honest 'writing-first' floor, routes to single general inquiry path.",
+  "strategy": {
+    "decision": "Build a dedicated /speaking surface (none exists in v2). Three copy-pasteable bio variants + two-aspect headshot library + 5 named topics with format hints + on-the-record credits + general inquiry CTA with subject template.",
+    "why": "Closes D3 (Conference Circuit persona has no funnel today). Implements P0-2 prescription. Cohort-differentiator per peer-cohort.md § Cross-cohort observations — NONE of the 7 audited peer sites has a /speaking page; building one differentiates this funnel completely. Curators can slate without leaving the site.",
+    "shipped": "No equivalent. v2's /about does not provide bio variants, headshot, or topic list. Conference Circuit visitors bounce.",
+    "gap": "v2: persona has no funnel. v3: full slate-ready surface.",
+    "question": "Are 5 topics the right number? Stage 4 fact-check verifies each topic anchors to 2+ existing Signal Dispatch posts; thinner topics get cut or get posts written before launch."
+  },
+  "currentState": {
+    "route": "(no equivalent)",
+    "summary": "v2 has no speaking surface. /about is the closest analog.",
+    "sourceFiles": ["src/routes/about/+page.svelte"],
+    "annotation": "v3 introduces a wholly new surface."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "colophon",
+  "title": "Colophon (v3)",
+  "group": "operator",
+  "slice": "v3",
+  "surface": "src/routes/colophon/+page.svelte (new — does not exist in v2)",
+  "phase": "MVP",
+  "route": "/pages/colophon.html",
+  "summary": "Methodology meta-receipt page. How this site was built — Blueprint pipeline applied to v3, stack details, predecessors and influences (Lovin, Lopopolo, Litt, Larson), deltas from v2, what's next.",
+  "strategy": {
+    "decision": "Build a /colophon as the meta-receipt for the methodology that produced the site. Surfaces the Blueprint 7-stage pipeline applied to v3, names predecessors and influences explicitly, lists v3-vs-v2 deltas.",
+    "why": "Implements differentiation move 3 (methodology meta-receipt). No cohort site has self-referential methodology citation; building it is a cheap-to-execute trust signal that the practice walks its own talk. Per market-cohort.md, citing influences (Lopopolo, Willison, Larson) is a low-cost authority move in this cohort.",
+    "shipped": "No equivalent. v2 has no colophon.",
+    "gap": "v3 introduces a wholly new surface implementing differentiation move 3.",
+    "question": "Footer placement of meta-receipt is per resolved choice (footer, not above the fold). The /colophon link in footer is consistent with that. Verify in Stage 4 that visitors who click into /colophon don't get a hard sell — the page should read as documentation, not marketing."
+  },
+  "currentState": {
+    "route": "(no equivalent)",
+    "summary": "v2 has no colophon or methodology meta-receipt surface.",
+    "sourceFiles": [],
+    "annotation": "v3 introduces wholly new surface."
+  }
+}
