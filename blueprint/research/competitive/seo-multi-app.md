@@ -1,0 +1,1 @@
+../../../docs/SEO-MULTI-APP-STRATEGY.md
