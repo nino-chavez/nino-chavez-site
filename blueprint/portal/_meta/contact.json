@@ -1,0 +1,23 @@
+{
+  "id": "contact",
+  "title": "Contact",
+  "group": "contact",
+  "slice": "contact-surface",
+  "surface": "src/routes/contact/+page.svelte",
+  "phase": "Phase 2",
+  "route": "/pages/contact.html",
+  "summary": "Engage-hero (single line: 'I'm not selling services. I respond to interesting work.') + receipts row (email + GitHub + LinkedIn as mono row) + minimal form (name + email + message + Turnstile + Resend).",
+  "strategy": {
+    "decision": "Single form + receipts row + one-line copy that explicitly disclaims the sales-funnel framing.",
+    "why": "ADR-0001 positioning + R1 categorical refusal both ban transactional framing. The 'I'm not selling services' line directly closes the inference 'this is a contact form, therefore I'm selling something.' Receipts row gives reviewers the channels they actually use (email / GitHub / LinkedIn) instead of forcing the form.",
+    "shipped": "v2 /contact — form-only, generic 'Get in touch' framing that reads as service-funnel.",
+    "gap": "Proposed = explicit disclaim of sales-funnel + receipts row + minimal form; Shipped = generic form with sales-funnel framing.",
+    "question": "Does the disclaim ('I'm not selling services') read as confident or as performative? Voice-guide check before ship."
+  },
+  "currentState": {
+    "route": "/contact",
+    "summary": "v2 /contact — form only, sales-funnel framing.",
+    "sourceFiles": ["v2 ninochavez-main CF Pages deploy /contact"],
+    "annotation": "Reframe copy explicitly (R1 enforcement); add receipts row above form."
+  }
+}

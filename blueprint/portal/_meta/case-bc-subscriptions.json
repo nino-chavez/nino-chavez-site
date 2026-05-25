@@ -1,0 +1,23 @@
+{
+  "id": "case-bc-subscriptions",
+  "title": "Case study — bc-subscriptions",
+  "group": "scope",
+  "slice": "commerce-bc",
+  "surface": "src/routes/work/commerce-bc/bc-subscriptions/+page.svelte",
+  "phase": "Phase 2",
+  "route": "/pages/case-bc-subscriptions.html",
+  "summary": "BC-native subscription platform — methodology recursively applied. 38+ ADRs, 5-persona journey template, mechanical state derivation, runnable prototype as the design oracle, shipping code under apps/.",
+  "strategy": {
+    "decision": "Lead the commerce-bc cluster with bc-subscriptions — it's the methodology recursion play (big-blueprint applied to itself to drive its own ADR discipline). Five compositions following the standard template: hero + schematic (dual-track agile: spec ↔ prototype ↔ code) + approach (cite ADR-0001 Hive workflow + ADR-0029 marketplace-first reversal + ADR-0030 convention catalog) + quotable (one ADR pull) + outcome (38 ADRs, state-derive, prototype-as-oracle).",
+    "why": "ADR-0009 cluster IA lists bc-subscriptions as the commerce-bc lead. It's the load-bearing example of 'methodology produces shipping code' — directly proves the production-line claim by counter-example (this is what happens when the methodology is applied recursively to itself). Repo is private but the artifacts (ADRs, methodology docs) are citable.",
+    "shipped": "v2 /work/bc-subscriptions — case page with prose + GitHub link (private repo, so no clickable preview).",
+    "gap": "Proposed = nested route + dual-track schematic + ADR quote pulls; Shipped = prose + private GitHub link.",
+    "question": "How do we cite specific ADRs (ADR-0001, ADR-0029, ADR-0030, ADR-0037, ADR-0038) when the repo is private? Reviewer can't click through to verify. Decide: paraphrase + GitHub-permalink (auth-gated), or pull excerpts directly into the page copy."
+  },
+  "currentState": {
+    "route": "/work/bc-subscriptions",
+    "summary": "v2 case page with prose + private GitHub link (no clickable preview).",
+    "sourceFiles": ["v2 ninochavez-main CF Pages deploy /work/bc-subscriptions"],
+    "annotation": "Route changes from flat to nested. private badge made explicit. Schematic introduced. Decide ADR-citation policy."
+  }
+}

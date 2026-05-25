@@ -1,0 +1,70 @@
+{
+  "name": "ninochavez.co Blueprint",
+  "tagline": "Stakeholder review portal for the v3 redesign of ninochavez.co. Each prototype page renders the proposed surface alongside what exists today, with the design rationale in the strategy drawer.",
+  "slices": [
+    "marketing",
+    "forge-production-line",
+    "agent-infrastructure",
+    "ai-products",
+    "commerce-bc",
+    "volleyball-630",
+    "personal-orbit",
+    "client-work",
+    "writing",
+    "practice-surface",
+    "contact-surface"
+  ],
+  "groups": [
+    { "id": "marketing", "label": "Marketing",     "color": "brand" },
+    { "id": "scope",     "label": "Scope (work)",  "color": "accent" },
+    { "id": "practice",  "label": "Practice",      "color": "brand" },
+    { "id": "writing",   "label": "Writing",       "color": "brand" },
+    { "id": "contact",   "label": "Contact",       "color": "neutral" }
+  ],
+  "pages": [
+    "home",
+    "about",
+    "work-cluster",
+    "practice",
+    "writing-index",
+    "contact",
+    "case-atelier",
+    "case-cortex",
+    "case-ask-dad",
+    "case-bc-subscriptions",
+    "case-ask-bc",
+    "case-rally-hq"
+  ],
+  "flows": [
+    {
+      "id": "cold-landing",
+      "label": "Cold landing — first viewport to scope discovery",
+      "summary": "P1 reviewer lands on / cold. Hero → cluster ribbon (compressed) → /work (full ribbon) → cluster section deep dive.",
+      "pages": ["home", "work-cluster"]
+    },
+    {
+      "id": "scope-discovery",
+      "label": "Scope discovery — exposing breadth",
+      "summary": "Reviewer walks the 8 cluster sections on /work to see the full surface area (69 repos, 17 deploys, 275 published artifacts) rather than the v2 9-item curated slate.",
+      "pages": ["work-cluster", "writing-index"]
+    },
+    {
+      "id": "case-study-deep-dive",
+      "label": "Case-study deep dive",
+      "summary": "Reviewer drills into a lead case study (atelier, cortex, ask-dad, bc-subscriptions, ask-bc, rally-hq) — schematic + approach + quotable artifact + outcome.",
+      "pages": ["work-cluster", "case-atelier", "case-cortex", "case-ask-dad", "case-bc-subscriptions", "case-ask-bc", "case-rally-hq"]
+    },
+    {
+      "id": "practice-deep-read",
+      "label": "Practice deep read",
+      "summary": "Reviewer reads /practice end-to-end — production line, substrate, operating rules, instrumentation evidence.",
+      "pages": ["practice"]
+    },
+    {
+      "id": "reach-out",
+      "label": "Reach out",
+      "summary": "Reviewer decides to contact — single form + receipts row, no sales-funnel framing.",
+      "pages": ["contact"]
+    }
+  ]
+}

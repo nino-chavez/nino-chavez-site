@@ -1,0 +1,23 @@
+{
+  "id": "case-cortex",
+  "title": "Case study — Cortex",
+  "group": "scope",
+  "slice": "ai-products",
+  "surface": "src/routes/work/ai-products/cortex/+page.svelte",
+  "phase": "Phase 2",
+  "route": "/pages/case-cortex.html",
+  "summary": "Local-first Mac app for continuous screen/audio capture with on-device AI search and chat. Tauri v2 + SvelteKit + Rust + MLX. PUBLIC (github.com/nino-chavez/cortex).",
+  "strategy": {
+    "decision": "Second AI-products deep-dive — cortex is PUBLIC, externally verifiable, and demonstrates range beyond agentic-software (local-first, on-device AI, Rust + MLX). Five compositions following the standard case-study template: hero → schematic (cortex-local-pipeline showing capture → MLX → search) → approach → quotable → outcome.",
+    "why": "Pairs with atelier as the second PUBLIC AI-products case study. Shows on-device + local-first depth that contrasts with the agent-orchestration work — important for not collapsing all AI work into one tone.",
+    "shipped": "v2 did not surface cortex at all (not in the original 5-case slate).",
+    "gap": "Proposed = surface cortex with PUBLIC badge + local-pipeline schematic; Shipped = invisible.",
+    "question": "Is the local-pipeline schematic representative or oversimplified? cortex has Tauri + SvelteKit + Rust + MLX — pick the load-bearing 4-5 nodes."
+  },
+  "currentState": {
+    "route": "(not in v2)",
+    "summary": "cortex was not in v2's case-study slate.",
+    "sourceFiles": [],
+    "annotation": "New case-study surfacing for v3. Cluster IA enabled discovery — cortex is PUBLIC and load-bearing for the AI-products cluster's credibility."
+  }
+}

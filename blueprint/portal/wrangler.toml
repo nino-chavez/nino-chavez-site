@@ -1,0 +1,9 @@
+name = "ninochavez-blueprint"
+compatibility_date = "2026-03-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "."
+
+# Deploys to ninochavez-blueprint.pages.dev; custom-domain target is
+# blueprint.ninochavez.co (DNS bind in Cloudflare Pages dashboard).
+# This wrangler.toml must live at the deploy root so wrangler detects
+# functions/ and compiles them as Pages Functions.

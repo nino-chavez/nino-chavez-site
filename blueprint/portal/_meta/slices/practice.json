@@ -1,0 +1,13 @@
+{
+  "id": "practice-surface",
+  "label": "Practice — substrate doc",
+  "color": "brand",
+  "summary": "How the work gets done — 4 sections: 01 production line (forge family) → 02 substrate (hooks, skills/subagents, session mining, Hive coordination) → 03 operating rules (4 rules from ~/.claude/CLAUDE.md) → 04 instrumentation evidence (hesitation fold, corpus stats, adversarial test plan).",
+  "production_surface": "src/routes/practice/+page.svelte",
+  "primary_persona": "P1 Reviewer + P2 Developer wanting to see the practice catalogued, not narrated",
+  "findings_cited": ["DESIGN-PRINCIPLES.md §Stage 4 fact-check — '/practice four sections' row"],
+  "principles_cited": ["R7 — no prescriptive-authority voice", "R9 — no templated provisionality"],
+  "phase": "Phase 1",
+  "pages": ["practice"],
+  "flows_touching_this_slice": ["practice-deep-read"]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "practice",
+  "title": "Practice",
+  "group": "practice",
+  "slice": "practice-surface",
+  "surface": "src/routes/practice/+page.svelte",
+  "phase": "Phase 2",
+  "route": "/pages/practice.html",
+  "summary": "Four sections: production line → substrate → operating rules → instrumentation evidence. Every claim grounds to a real file or repo path.",
+  "strategy": {
+    "decision": "Four sections in execution order — 01 production line (forge family lead with PUBLIC `forge` umbrella) → 02 substrate (hooks + skills/subagents + session mining + Hive coordination) → 03 operating rules (4 rules quoted verbatim from ~/.claude/CLAUDE.md) → 04 instrumentation evidence (hesitation fold diagram + Poe corpus stats + adversarial test plan + GitHub-link footer per artifact).",
+    "why": "DESIGN-PRINCIPLES.md §Stage 4 fact-check '/practice four sections' row locks this structure. The original 3-section brief conflated substrate with instrumentation and missed the agent/skill/Hive coordination layer entirely. Production-line section uses the schematic signature (ADR-0004) for the visual register.",
+    "shipped": "v2 had no /practice page. The toolchain claim existed only as scattered references in /about and individual case-study copy — no catalog surface, no grounded artifacts.",
+    "gap": "Proposed = standalone catalog page with 4 sections + grounded artifacts; Shipped = nothing.",
+    "question": "Does the 4-section structure read as catalog-of-evidence or as essay-about-process? The brief's composition-order rule says slot-2 must be readout-bearing, not editorial."
+  },
+  "currentState": {
+    "route": "(does not exist in v2)",
+    "summary": "v2 has no /practice route.",
+    "sourceFiles": [],
+    "annotation": "New page introduced in v3. No proposed/shipped toggle needed — this slice has no shipped equivalent. Comparison view auto-omits per CONVENTIONS.md."
+  }
+}

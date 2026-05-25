@@ -1,0 +1,13 @@
+{
+  "id": "volleyball-630",
+  "label": "630 / volleyball platform",
+  "color": "accent",
+  "summary": "Longest-running build cluster — 9 repos including the rally-hq flagship (paired with blueprint.rallyhq.app — the canonical big-blueprint v2 portal deploy that this redesign replicates). letspepper.com is PUBLIC.",
+  "production_surface": "src/routes/work/+page.svelte#volleyball-630-section, src/routes/work/volleyball-630/[slug]/+page.svelte",
+  "primary_persona": "P1 Reviewer + P4 Domain-specific stakeholder (volleyball org / coach) assessing long-running platform competence",
+  "findings_cited": ["Synthesis §Paired-deploy pattern is canonical"],
+  "principles_cited": ["R3 — no volleyball action photography on main surface"],
+  "phase": "Phase 1",
+  "pages": ["work-cluster", "case-rally-hq"],
+  "flows_touching_this_slice": ["case-study-deep-dive"]
+}

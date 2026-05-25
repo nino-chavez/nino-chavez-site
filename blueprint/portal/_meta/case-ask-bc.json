@@ -1,0 +1,23 @@
+{
+  "id": "case-ask-bc",
+  "title": "Case study — Ask BC",
+  "group": "scope",
+  "slice": "commerce-bc",
+  "surface": "src/routes/work/commerce-bc/ask-bc/+page.svelte",
+  "phase": "Phase 2",
+  "route": "/pages/case-ask-bc.html",
+  "summary": "BigCommerce knowledge agent. Hybrid: Next.js on Vercel handles OAuth + admin shell; agent runtime runs in a Cloudflare Worker as a Durable Object per store. Read tools execute inside Codemode sandbox; write tools require two-turn confirmation gate. Subdomain: askbc.ninochavez.co.",
+  "strategy": {
+    "decision": "Second commerce-bc deep-dive — ask-bc is the most ambitious agentic-software architecture in the cluster. Five compositions: hero (with live subdomain pill) → schematic (ask-bc-hybrid-arch: Vercel admin + CF Worker DO + Codemode sandbox + write-gate) → approach (hybrid-host rationale, per-store Durable Object isolation, read/write tool split) → quotable (the architecture decision quote) → outcome.",
+    "why": "ADR-0009 cluster IA lists ask-bc as the second commerce-bc deep-dive. Its hybrid architecture is genuinely differentiated — most chat tools are single-stack; ask-bc's split (Vercel OAuth + CF Worker agent + Codemode sandbox + confirmation gate) is load-bearing for the 'context engineer instruments systems' claim.",
+    "shipped": "v2 /work/ask-bc — prose case page + subdomain link.",
+    "gap": "Proposed = nested route + hybrid-arch schematic + write-gate detail; Shipped = prose + subdomain link.",
+    "question": "Is the subdomain askbc.ninochavez.co serving the current build? Prior HANDOFF flagged TEAM_ACCESS_REQUIRED block on Vercel deploys — still blocked? If so, mark '(redeploying)' on the hero pill."
+  },
+  "currentState": {
+    "route": "/work/ask-bc",
+    "summary": "v2 case page + subdomain link (askbc.ninochavez.co).",
+    "sourceFiles": ["v2 ninochavez-main CF Pages deploy /work/ask-bc"],
+    "annotation": "Route nests under commerce-bc. Hybrid-arch schematic introduced. Verify subdomain deploy status before ship."
+  }
+}

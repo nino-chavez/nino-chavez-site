@@ -1,0 +1,23 @@
+{
+  "id": "about",
+  "title": "About",
+  "group": "marketing",
+  "slice": "marketing",
+  "surface": "src/routes/about/+page.svelte",
+  "phase": "Phase 2",
+  "route": "/pages/about.html",
+  "summary": "First-person narrative leading with the practice. Photography subdomain mentioned as one-line pointer, not co-equal interest.",
+  "strategy": {
+    "decision": "Three-paragraph narrative — who / what changed / what now — leading with the codified practice, ending with pointers to photography subdomain + Signal Dispatch + contact.",
+    "why": "ADR-0001 positioning bans the 4-way polymath framing. Photography is real but lives at photography.ninochavez.co — duplicating it on /about repositions the main site as photographer-first. The 'what changed' paragraph grounds the context-engineer claim in an evidence anchor (a real shift in approach, not a confessional fabrication per ~/.claude/CLAUDE.md 'Never fabricate Nino's interior state').",
+    "shipped": "v2 about page — polymath narrative with photography / music / writing as co-equal interests, no anchored 'what changed' moment.",
+    "gap": "Proposed = practice-led + grounded inflection point + pointers; Shipped = polymath co-equal interests with no anchor.",
+    "question": "Is the 'what changed' paragraph specific enough to be credible without inventing internal admissions?"
+  },
+  "currentState": {
+    "route": "/about",
+    "summary": "v2 about — polymath narrative, equal-weight photography / music / writing framing.",
+    "sourceFiles": ["v2 ninochavez-main CF Pages deploy"],
+    "annotation": "Reframe lead from polymath to practice-led (R4 refusal). Photography becomes pointer not co-equal. Add one grounded inflection-point moment, scanned against ~/Workspace/dev to ensure it's a real shift, not a fabrication."
+  }
+}

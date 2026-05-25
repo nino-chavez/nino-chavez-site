@@ -1,0 +1,23 @@
+{
+  "id": "case-rally-hq",
+  "title": "Case study — Rally HQ (paired with blueprint.rallyhq.app)",
+  "group": "scope",
+  "slice": "volleyball-630",
+  "surface": "src/routes/work/volleyball-630/rally-hq/+page.svelte",
+  "phase": "Phase 2",
+  "route": "/pages/case-rally-hq.html",
+  "summary": "Tournament management platform paired with a separate blueprint portal at blueprint.rallyhq.app — the canonical big-blueprint v2 portal deploy that this v3 redesign replicates for blueprint.ninochavez.co.",
+  "strategy": {
+    "decision": "Hero deep-dive for the volleyball-630 cluster. Five compositions: hero (with TWO live URL pills — rallyhq.app product + blueprint.rallyhq.app methodology) → schematic (rally-hq-blueprint-pipeline: the paired-deploy diagram) → approach (paired-deploy pattern + portal as design oracle) → quotable (the methodology applied) → outcome (live product + live methodology surface).",
+    "why": "ADR-0009 cluster IA lists rally-hq as the hero for volleyball-630. It's the canonical reference for ADR-0008 (this site's paired-deploy adoption is modeled on rally-hq's). The two-surface presentation directly demonstrates the pattern this v3 redesign IS implementing — meta-reference works as positioning proof.",
+    "shipped": "v2 /work/rally-hq — single live URL surfaced (rallyhq.app), blueprint surface (blueprint.rallyhq.app) mentioned in prose but not surfaced as a co-equal deploy.",
+    "gap": "Proposed = TWO co-equal URL pills + paired-deploy schematic + meta-reference to v3's adoption of the same pattern; Shipped = single URL + prose mention of blueprint.",
+    "question": "Does the meta-reference ('we built v3 using this same pattern') strengthen the case study or read as self-aggrandizing? Voice-guide check."
+  },
+  "currentState": {
+    "route": "/work/rally-hq",
+    "summary": "v2 case page + single rallyhq.app link.",
+    "sourceFiles": ["v2 ninochavez-main CF Pages deploy /work/rally-hq"],
+    "annotation": "Route nests under volleyball-630. Surface BOTH live URLs (product + blueprint) as co-equal. Add paired-deploy schematic that doubles as the meta-reference to v3's pattern adoption."
+  }
+}

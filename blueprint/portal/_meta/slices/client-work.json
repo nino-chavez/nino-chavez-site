@@ -1,0 +1,13 @@
+{
+  "id": "client-work",
+  "label": "Client work",
+  "color": "neutral",
+  "summary": "Compact services posture — 4 client sites (allen-wellness-center, urvil-performance, creative-floors, lake-mathews-retreat). Present, not selling. Honors ADR-0001 'hirable, not sellable' positioning.",
+  "production_surface": "src/routes/work/+page.svelte#client-work-section",
+  "primary_persona": "P1 Reviewer assessing whether the operator does paid client work (yes) without making the main site a services-funnel (also yes)",
+  "findings_cited": ["Synthesis §What the inventory revealed"],
+  "principles_cited": ["R1 — no transactional framing"],
+  "phase": "Phase 1",
+  "pages": ["work-cluster"],
+  "flows_touching_this_slice": ["scope-discovery"]
+}

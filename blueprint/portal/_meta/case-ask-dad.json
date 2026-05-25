@@ -1,0 +1,23 @@
+{
+  "id": "case-ask-dad",
+  "title": "Case study — Ask Dad (RAG)",
+  "group": "scope",
+  "slice": "ai-products",
+  "surface": "src/routes/work/ai-products/ask-dad/+page.svelte",
+  "phase": "Phase 2",
+  "route": "/pages/case-ask-dad.html",
+  "summary": "RAG chatbot backed by the Signal Dispatch corpus + blueprint docs + voice stack. Mechanically-derived corpus (ADR-0006), Cloudflare Vectorize storage (ADR-0007), already shipped and serving from /api/ask/chat.",
+  "strategy": {
+    "decision": "Third AI-products deep-dive — ask-dad is the RAG case study. Five compositions: hero (with the corpus stats — 15 sources, 114 vectors, $0.0007/full-rebuild) → schematic (ask-dad-rag showing derive-corpus → embeddings → Vectorize → chat function) → approach (cite ADR-0006 derive-don't-narrate + ADR-0007 storage choice) → quotable (a real exchange or the architecture quote) → outcome (live endpoint, working RAG, paired use in blueprint portal).",
+    "why": "The ask-dad backend is the only piece of the v3 surface that survived the nuke and is currently live. Its case study legitimizes that survival — it's not v2 residue, it's load-bearing infrastructure for both the v3 site (chat FAB if surfaced) and the blueprint portal (this very portal's chat function). Honors R6 by framing the chat as supplementary surface.",
+    "shipped": "v2 surfaced ask-dad as the 'Ask — Nino Chavez' page (originally 'Ask Dad — Virtual Nino' before the §6 personality-framing refusal landed). UI was a Rive avatar + chat. The Rive personality framing was refused; the backend was preserved.",
+    "gap": "Proposed = case study explaining the RAG architecture + derive-corpus substrate + Vectorize choice; Shipped = personality-framed chat UI.",
+    "question": "Does surfacing ask-dad as a case study + a chat FAB (per ADR-0009 plan) keep it supplementary, or does double-surfacing tip it past R6 toward primary?"
+  },
+  "currentState": {
+    "route": "/ai/ask (v2)",
+    "summary": "v2 chat UI with Rive avatar + 'Virtual Nino' personality framing. Backend at /api/ask/chat preserved post-nuke; UI was deleted 2026-05-25.",
+    "sourceFiles": ["v2 ninochavez-main CF Pages deploy /ai/ask (deleted in nuke)", "src/lib/server/askdad/ (preserved)", "src/routes/api/ask/ (preserved)"],
+    "annotation": "Reframe from chat-UI surface to case-study-about-RAG-architecture. Avatar killed per R6; chat re-surfaces as a FAB only if cluster IA decision keeps it."
+  }
+}

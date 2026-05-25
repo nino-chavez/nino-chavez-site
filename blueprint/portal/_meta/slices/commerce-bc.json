@@ -1,0 +1,13 @@
+{
+  "id": "commerce-bc",
+  "label": "Commerce / BigCommerce",
+  "color": "accent",
+  "summary": "Day-job-adjacent + side-project commerce work — 10 repos, 1 PUBLIC (commerce-prompt-analyzer). Lead deep dives: bc-subscriptions (methodology recursively applied), ask-bc (most ambitious agentic-software architecture), aisles (AI-native headless storefront).",
+  "production_surface": "src/routes/work/+page.svelte#commerce-bc-section, src/routes/work/commerce-bc/[slug]/+page.svelte",
+  "primary_persona": "P1 Reviewer + P3 Commerce hiring manager assessing depth in commerce platform engineering",
+  "findings_cited": ["Synthesis §Thematic clusters change the IA"],
+  "principles_cited": ["R1 — no transactional framing"],
+  "phase": "Phase 1",
+  "pages": ["work-cluster", "case-bc-subscriptions", "case-ask-bc"],
+  "flows_touching_this_slice": ["case-study-deep-dive"]
+}

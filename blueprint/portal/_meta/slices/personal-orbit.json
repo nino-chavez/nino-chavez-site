@@ -1,0 +1,13 @@
+{
+  "id": "personal-orbit",
+  "label": "Personal sites / brand orbit",
+  "color": "neutral",
+  "summary": "Live URLs around the personal brand — ninochavez.co (this redesign), blog.ninochavez.co, photography.ninochavez.co, signalx.studio, flickdaymedia.com. The orbit IS part of the receipts; THIS redesign is in this cluster.",
+  "production_surface": "src/routes/work/+page.svelte#personal-orbit-section",
+  "primary_persona": "P1 Reviewer assessing the operator's range across personal-brand surfaces",
+  "findings_cited": ["Synthesis §Scale-mismatch finding"],
+  "principles_cited": ["R10 — no bento/lime/Bebas tells"],
+  "phase": "Phase 1",
+  "pages": ["work-cluster"],
+  "flows_touching_this_slice": ["scope-discovery"]
+}

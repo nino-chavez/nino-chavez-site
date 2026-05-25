@@ -1,0 +1,23 @@
+{
+  "id": "work-cluster",
+  "title": "Work — cluster surfacing",
+  "group": "scope",
+  "slice": "forge-production-line",
+  "surface": "src/routes/work/+page.svelte",
+  "phase": "Phase 2",
+  "route": "/pages/work-cluster.html",
+  "summary": "Hero thesis + full cluster ribbon (8 chips with counts) + 8 anchored per-cluster editorial sections. Per ADR-0009. Replaces v2's flat 9-item slate.",
+  "strategy": {
+    "decision": "Hero + cluster ribbon (8 chips, full form, label + count + anchor) + 8 anchored sections (one per cluster, each using its declared composition per ADR-0009 — schematic for forge, card grid for agent-infra, case-study deep-dive for AI-products + commerce + 630, live-URL list for personal-orbit, compact list for client-work, pointer for writing). Footer transition to /practice + /about.",
+    "why": "ADR-0009 picked this pattern over bento (categorically refused R10), tabs (hides breadth), filterable matrix (utilitarian), and pure stacked sections (no at-a-glance). The hybrid combines scanning (ribbon) + depth (sections). Counts come from research/current-state/repos-inventory.md — must match.",
+    "shipped": "v2 /work — flat 9-item slate: 5 lead case studies + 4 honorable mentions. Hides 60+ repos and the cluster structure entirely.",
+    "gap": "Proposed = 8 cluster sections exposing 69 repos + 17 deploys + 275 published artifacts with PUBLIC/private badges per repo; Shipped = 9-item curated slate.",
+    "question": "Is the cluster ribbon scannable on mobile (390px) or does it horizontal-scroll into uselessness? Test in current-state capture pass."
+  },
+  "currentState": {
+    "route": "/work",
+    "summary": "v2 /work — flat slate, 5 lead case studies + 4 honorable mentions.",
+    "sourceFiles": ["v2 ninochavez-main CF Pages deploy /work"],
+    "annotation": "Major IA change: flat slate → 8 cluster ribbon + 8 anchored sections. The page becomes long-scroll editorial; the scroll IS the proof of scope."
+  }
+}

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Work — ninochavez.co Blueprint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared.css">
+  <style>
+    /* Page-specific styles for /work cluster ribbon + sections */
+    .work-hero { padding-top: var(--space-12); padding-bottom: var(--space-8); }
+    .cluster-ribbon {
+      display: flex; gap: var(--space-3); flex-wrap: wrap;
+      padding: var(--space-6) 0;
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: var(--space-12);
+    }
+    .cluster-chip {
+      display: inline-flex; align-items: baseline; gap: var(--space-2);
+      padding: var(--space-2) var(--space-4);
+      border: 1px solid var(--card-border);
+      background: var(--surface-2);
+      color: var(--text-primary);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      transition: var(--transition-base);
+    }
+    .cluster-chip:hover {
+      border-color: var(--brand-500);
+      transform: translateY(-2px);
+    }
+    .cluster-chip .label { color: var(--text-primary); }
+    .cluster-chip .count { color: var(--brand-600); }
+    .cluster-section {
+      padding: var(--space-12) 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .cluster-section h2 {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-600);
+      margin-bottom: var(--space-2);
+    }
+    .cluster-section h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      margin-bottom: var(--space-4);
+    }
+    .visibility-badge {
+      display: inline-block;
+      padding: 2px 6px;
+      margin-right: var(--space-2);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .visibility-badge.public { color: var(--brand-600); }
+    .visibility-badge.private { color: var(--text-muted); }
+  </style>
+</head>
+<body data-compare-root data-view="proposed">
+  <section class="proposed-view">
+    <main class="container">
+      <div class="work-hero">
+        <p style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);">scope</p>
+        <h1 style="margin-top: var(--space-3);">Eight clusters. Sixty-nine repos. Seventeen live deploys.</h1>
+        <p style="margin-top: var(--space-4); color: var(--text-secondary); max-width: 64ch;">The breadth IS the receipts. Walk the cluster ribbon below for at-a-glance scope; scroll for depth.</p>
+      </div>
+
+      <!-- Cluster ribbon — 8 chips, label + count + anchor -->
+      <nav class="cluster-ribbon" aria-label="Work clusters">
+        <a class="cluster-chip" href="#forge-production-line"><span class="label">Forge production line</span><span class="count">8</span></a>
+        <a class="cluster-chip" href="#agent-infrastructure"><span class="label">Agent infrastructure</span><span class="count">10</span></a>
+        <a class="cluster-chip" href="#ai-products"><span class="label">AI products</span><span class="count">18</span></a>
+        <a class="cluster-chip" href="#commerce-bc"><span class="label">Commerce / BC</span><span class="count">10</span></a>
+        <a class="cluster-chip" href="#volleyball-630"><span class="label">630 / volleyball</span><span class="count">9</span></a>
+        <a class="cluster-chip" href="#personal-orbit"><span class="label">Personal orbit</span><span class="count">7</span></a>
+        <a class="cluster-chip" href="#client-work"><span class="label">Client work</span><span class="count">4</span></a>
+        <a class="cluster-chip" href="#writing"><span class="label">Writing</span><span class="count">275</span></a>
+      </nav>
+
+      <!-- Per-cluster editorial sections (placeholder content — schematic + deep dives land in Phase 2) -->
+      <section id="forge-production-line" class="cluster-section">
+        <h2>01 — Forge production line</h2>
+        <h3>The toolchain that built everything below.</h3>
+        <p style="color: var(--text-secondary);"><span class="visibility-badge public">public</span><code>forge</code> — the umbrella. 5 private lathes (specchain, big-blueprint, forge-brand, forge-signal, image-gen). <em>Schematic composition lands Phase 2.</em></p>
+      </section>
+
+      <section id="agent-infrastructure" class="cluster-section">
+        <h2>02 — Agent infrastructure</h2>
+        <h3>Coordination, recall, parallel orchestration.</h3>
+        <p style="color: var(--text-secondary);"><span class="visibility-badge public">public</span><code>ai-champions-kit</code> — the tiered installer. ai-hive, claude-recall-cli, claude-orchestrator, worktree-orchestrator, browse-tool, claude-docs-toolkit (private). <em>Card grid composition lands Phase 2.</em></p>
+      </section>
+
+      <section id="ai-products" class="cluster-section">
+        <h2>03 — AI products</h2>
+        <h3>Shipped bets across the inference surface.</h3>
+        <p style="color: var(--text-secondary);">18 repos · 6 PUBLIC. Lead deep dives: atelier, cortex, ask-dad. <em>Case-study deep-dives + compact tail land Phase 2.</em></p>
+      </section>
+
+      <section id="commerce-bc" class="cluster-section">
+        <h2>04 — Commerce / BigCommerce</h2>
+        <h3>Day-job-adjacent + side-project commerce engineering.</h3>
+        <p style="color: var(--text-secondary);">10 repos · 1 PUBLIC. Lead deep dives: bc-subscriptions, ask-bc, aisles. <em>Case-study deep-dives + compact tail land Phase 2.</em></p>
+      </section>
+
+      <section id="volleyball-630" class="cluster-section">
+        <h2>05 — 630 / volleyball platform</h2>
+        <h3>Longest-running build cluster.</h3>
+        <p style="color: var(--text-secondary);">9 repos · 1 PUBLIC. Hero deep dive: rally-hq (paired with blueprint.rallyhq.app — the canonical big-blueprint v2 portal deploy that this very blueprint mirrors). <em>Hero composition + compact tail land Phase 2.</em></p>
+      </section>
+
+      <section id="personal-orbit" class="cluster-section">
+        <h2>06 — Personal sites / brand orbit</h2>
+        <h3>Live URLs around the personal brand.</h3>
+        <p style="color: var(--text-secondary);">7 repos. ninochavez.co (this redesign) · blog.ninochavez.co · photography.ninochavez.co · signalx.studio · flickdaymedia.com. <em>Live-URL list composition lands Phase 2.</em></p>
+      </section>
+
+      <section id="client-work" class="cluster-section">
+        <h2>07 — Client work</h2>
+        <h3>Present, not selling.</h3>
+        <p style="color: var(--text-secondary);">4 repos. allen-wellness-center · urvil-performance · creative-floors · lake-mathews-retreat. <em>Compact list lands Phase 2.</em></p>
+      </section>
+
+      <section id="writing" class="cluster-section">
+        <h2>08 — Writing — Signal Dispatch corpus</h2>
+        <h3>~275 published artifacts across 7 collections.</h3>
+        <p style="color: var(--text-secondary);">blog 229 · whitepapers 12 · series 8 · fiction 10 · presentations 9 · counterpoints 3 · tutorials 3 · research-notes 1. <em>Full collection surfacing on <a href="/pages/writing-index.html">/writing</a>; this slot is a pointer composition.</em></p>
+      </section>
+    </main>
+  </section>
+
+  <script>
+    window.PROTO_PAGE = { id: 'work-cluster' };
+  </script>
+  <script src="/_portal-shell.js"></script>
+  <script src="/proto-nav.js"></script>
+  <script src="/chat-widget.js" defer></script>
+  <script src="/proto-annotate.js" defer></script>
+</body>
+</html>

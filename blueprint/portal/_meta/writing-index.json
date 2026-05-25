@@ -1,0 +1,23 @@
+{
+  "id": "writing-index",
+  "title": "Writing — all 7 collections",
+  "group": "writing",
+  "slice": "writing",
+  "surface": "src/routes/writing/+page.svelte",
+  "phase": "Phase 2",
+  "route": "/pages/writing-index.html",
+  "summary": "Editorial lede + collection grid (7 collections with counts + 2 flagship titles each) + recent-pieces list + archive pointer to blog.ninochavez.co.",
+  "strategy": {
+    "decision": "Surface all 7 Signal Dispatch collections with counts (blog 229 / whitepapers 12 / series 8 / fiction 10 / presentations 9 / counterpoints 3 / tutorials 3 / research-notes 1) + 2 flagship titles per. Recent-pieces chronological list pulls from the blog's RSS. Archive pointer for full browse.",
+    "why": "Synthesis §Writing corpus is the heaviest under-represented surface — v2 surfaced 3 flagships out of ~275 published artifacts. The whitepapers and series and fiction collections were entirely invisible. Per ADR-0009 cluster IA, writing IS a cluster; surfacing all 7 collections is what makes the cluster honest.",
+    "shipped": "v2 /writing — editorial lede + 3 flagship whitepaper pointers + 'view archive' link. No surfacing of the other 6 collections.",
+    "gap": "Proposed = 7-collection grid with counts and flagships; Shipped = 3 flagships pointing to blog.ninochavez.co.",
+    "question": "Does the 7-collection grid feel proportional or does it dilute the thought-leadership signal by treating fiction + tutorials as equal-weight to blog + whitepapers? Consider visual hierarchy within the grid."
+  },
+  "currentState": {
+    "route": "/writing",
+    "summary": "v2 /writing — editorial lede + 3 flagship whitepaper teasers + archive pointer.",
+    "sourceFiles": ["v2 ninochavez-main CF Pages deploy /writing"],
+    "annotation": "Expand from 3-flagship view to 7-collection surfacing. Counts source from `apps/blog/astro-build/src/content/<collection>` filesystem — refresh before every push."
+  }
+}

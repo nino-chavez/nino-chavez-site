@@ -1,0 +1,23 @@
+{
+  "id": "home",
+  "title": "Homepage",
+  "group": "marketing",
+  "slice": "marketing",
+  "surface": "src/routes/+page.svelte",
+  "phase": "Phase 2",
+  "route": "/pages/home.html",
+  "summary": "Hero claim + compressed cluster ribbon + practice teaser + writing teaser + chat entry. Replaces v2's polymath grid + bento hero.",
+  "strategy": {
+    "decision": "Replace v2's 4-way polymath grid with a single positioning thesis hero + a compressed cluster ribbon that exposes scope (8 clusters with counts) in the first viewport.",
+    "why": "ADR-0001 locks 'context engineer' positioning over polymath framing. ADR-0009 introduces the cluster ribbon to expose the 88% of surface the v2 site hides (per synthesis §Scale-mismatch finding). The compressed ribbon brings breadth into the hero zone without falling into bento territory (R10 categorical refusal).",
+    "shipped": "v2 ninochavez.co renders a polymath grid with 4 equal-weight interests (Software / Photography / Music / Writing) and a bento-card hero with lime + Bebas Neue display font. No scope visibility — reviewers must navigate to find depth.",
+    "gap": "Proposed = single thesis + 8-cluster compressed ribbon + practice/writing teasers; Shipped = 4-way polymath grid + bento + lime + Bebas.",
+    "question": "Does the compressed cluster ribbon hold attention or does it bury the hero claim? Test with 5-second-test against the proposed-view."
+  },
+  "currentState": {
+    "route": "/",
+    "summary": "v2 homepage — polymath grid, bento hero, lime accent, Bebas Neue display font, no cluster visibility.",
+    "sourceFiles": ["v2 ninochavez-main CF Pages deploy (pre-redesign branch)"],
+    "annotation": "Visual reset: kill bento + lime + Bebas (R10); replace polymath grid (R4) with cluster ribbon + thesis hero (ADR-0003 hero claim, ADR-0009 cluster pattern)."
+  }
+}

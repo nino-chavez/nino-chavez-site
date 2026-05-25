@@ -1,0 +1,77 @@
+# BigBlueprint Configuration — ninochavez.co v3 Brownfield Audit
+#
+# This blueprint formalizes the audit-first three-stage variant
+# (01-diagnose / 02-prescription / 03-design-brief) that this initiative
+# pioneered informally. As of 2026-05-25, that pattern is canonical
+# brownfield per wip/big-blueprint/docs/variant-selection.md and gets
+# enforced by the reviewer agents at template/.claude/agents/blueprint/reviewers/.
+
+project:
+  name: "ninochavez.co v3 — Personal Site Audit & Redesign"
+  description: "Brownfield audit of the existing personal site, with prescription + design brief driving a separate redesign branch. Surface inventory at v3 scale (69 repos, 17 deploys, 275 published artifacts) drives a cluster-IA prescription."
+  product: "ninochavez.co (the personal site + photography subdomain + blog subdomain + new blueprint subdomain per ADR-0008)"
+  live_url: "https://ninochavez.co/"
+  audience:
+    leadership: ["Nino Chavez"]
+    engineering: ["Solo development; AI-assisted"]
+    broader: ["Hiring decision-makers", "Engineering peers", "Adjacent consultants/architects"]
+
+# Variant: brownfield (canonical taxonomy, formalized 2026-05-25)
+variant: brownfield
+
+execution:
+  depth: standard
+  mode: synthetic
+  # Synthetic mode: research derived from live-site captures, sibling-project
+  # signals, and the published artifact corpus itself (the receipts ARE the
+  # evidence).
+
+# Stage gating per brownfield variant — reviewer agents enforce these
+stages:
+  stage_1_diagnose:
+    output: "01-diagnose.md"
+    requires:
+      - "research/current-state/ — browse-tool captures of every distinct surface"
+      - "research/personas/ — hiring-DM / eng-peer / adjacent-architect"
+      - "research/funnel/ — per-persona × stage observations"
+      - "research/competitive/ — peer portfolio + content-platform analysis"
+
+  stage_2_prescription:
+    output: "02-prescription.yml"
+    requires: ["01-diagnose.md"]
+    gated_until: "diagnose complete"
+
+  stage_3_design_brief:
+    output: "03-design-brief.md"
+    requires: ["02-prescription.yml"]
+    gated_until: "prescription complete"
+
+  stage_4_prototype:
+    output: "portal/ (static HTML)"
+    requires: ["03-design-brief.md"]
+    gated_until: "design brief complete"
+    deploy_target: "cloudflare-pages-preview"
+    note: "Optional per brownfield variant. Run only if the design brief justifies a tangible artifact. The brief itself can be the share-link if a prototype isn't needed."
+
+# Disabled flags — personal portfolio doesn't need most of these
+signal_forge: { enabled: false }
+specchain:    { enabled: false }
+b2b_edition:  { enabled: false }
+hive:         { enabled: false }
+cloudflare:   { enabled: true }   # Existing CF Pages deploy + ADR-0008 blueprint subdomain
+archaeology:  { enabled: false }
+
+# Voice — audit-first
+voices:
+  diagnose: "internal-strategy"
+  prescription: "solution-architecture"
+  design_brief: "solution-architecture"
+  research: "evidence-led"
+
+# Reviewer agents — declared explicitly so the reviewers know which gates fire
+reviewers:
+  stage_1_to_2: "research-completeness-reviewer"
+  stage_2_to_3: "prescription-evidence-reviewer"
+  stage_4_convergence: "fact-check-loop-reviewer"
+  stage_5_to_6: ["doc-quality-auditor", "terminology-linter"]
+  stage_6_ship: "prototype-smoke-runner"  # only fires if Stage 4 prototype exists

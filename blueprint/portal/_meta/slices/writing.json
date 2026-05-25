@@ -1,0 +1,13 @@
+{
+  "id": "writing",
+  "label": "Writing — Signal Dispatch corpus",
+  "color": "brand",
+  "summary": "Thought-leadership corpus on apps/blog (deployed at blog.ninochavez.co). 7 collections totaling ~275 published artifacts — blog 229, whitepapers 12, series 8, fiction 10, presentations 9, counterpoints 3, tutorials 3, research-notes 1. v2 surfaced only 3 flagships; v3 surfaces all collections.",
+  "production_surface": "src/routes/work/+page.svelte#writing-section (pointer), src/routes/writing/+page.svelte (collection grid + flagships)",
+  "primary_persona": "P1 Reviewer assessing voice + thought-leadership breadth + sustained writing cadence",
+  "findings_cited": ["Synthesis §Writing corpus is the heaviest under-represented surface", "current-state/writing-corpus.md"],
+  "principles_cited": ["R7 — no prescriptive-authority voice", "R9 — no templated provisionality"],
+  "phase": "Phase 1",
+  "pages": ["work-cluster", "writing-index"],
+  "flows_touching_this_slice": ["scope-discovery"]
+}

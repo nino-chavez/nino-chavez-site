@@ -1,0 +1,13 @@
+{
+  "id": "marketing",
+  "label": "Marketing — / and /about",
+  "color": "brand",
+  "summary": "Top-of-funnel surfaces — homepage hero + cluster ribbon (compressed) + practice + writing teasers; about narrative leading with practice not polymath. Honors the 'hirable + known, not sellable' positioning.",
+  "production_surface": "src/routes/+page.svelte, src/routes/about/+page.svelte",
+  "primary_persona": "P1 Reviewer landing cold — establishes positioning thesis in the first viewport",
+  "findings_cited": ["Synthesis §Scale-mismatch finding"],
+  "principles_cited": ["R1, R4, R7, R8, R10"],
+  "phase": "Phase 1",
+  "pages": ["home", "about"],
+  "flows_touching_this_slice": ["cold-landing"]
+}

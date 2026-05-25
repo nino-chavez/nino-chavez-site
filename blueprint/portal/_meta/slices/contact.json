@@ -1,0 +1,13 @@
+{
+  "id": "contact-surface",
+  "label": "Contact",
+  "color": "neutral",
+  "summary": "Single contact form + email/GitHub/LinkedIn mono row. Copy: 'I'm not selling services. I respond to interesting work.' Resend for delivery, Turnstile for bot protection.",
+  "production_surface": "src/routes/contact/+page.svelte, src/routes/api/contact.json/+server.ts",
+  "primary_persona": "P1 Reviewer who decides to reach out — needs a low-friction path that doesn't read as a sales funnel",
+  "findings_cited": ["ADR-0001 — context-engineer positioning"],
+  "principles_cited": ["R1 — no transactional framing"],
+  "phase": "Phase 1",
+  "pages": ["contact"],
+  "flows_touching_this_slice": ["reach-out"]
+}

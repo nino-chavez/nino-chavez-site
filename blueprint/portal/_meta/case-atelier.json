@@ -1,0 +1,23 @@
+{
+  "id": "case-atelier",
+  "title": "Case study — Atelier",
+  "group": "scope",
+  "slice": "ai-products",
+  "surface": "src/routes/work/ai-products/atelier/+page.svelte",
+  "phase": "Phase 2",
+  "route": "/pages/case-atelier.html",
+  "summary": "Self-hostable OSS project template + agent interop protocol + reference prototype for mixed human/agent teams. PUBLIC repo (github.com/nino-chavez/atelier).",
+  "strategy": {
+    "decision": "Lead the AI-products cluster with atelier — it's PUBLIC, externally verifiable, and embodies the 'methodology-as-software' thesis. Five compositions: hero-case-study (problem + live link) → schematic (atelier-12-tool-mcp radial) → agentic-approach-readout (3 cards on protocol design / agent coordination / reference prototype) → quotable-artifact-block (pulled directly from the README or ADR) → outcome-readout.",
+    "why": "ADR-0009 cluster IA lists atelier as the lead deep-dive for ai-products (its PUBLIC status makes it the credibility anchor). The schematic-diagram signature (ADR-0004) requires per-case schematics — atelier's 12-tool MCP architecture is the load-bearing visual for this slug.",
+    "shipped": "v2 /work/atelier — same case-study schema but flat (no cluster nesting), no schematic, no PUBLIC visibility badge surfaced.",
+    "gap": "Proposed = nested /work/ai-products/atelier route + PUBLIC badge in hero + 12-tool MCP schematic; Shipped = flat /work/atelier with prose + outbound link only.",
+    "question": "Is the 12-tool MCP schematic accurate against the current atelier codebase, or has it drifted? Verify against github.com/nino-chavez/atelier before ship."
+  },
+  "currentState": {
+    "route": "/work/atelier (v2 flat route)",
+    "summary": "v2 case page with prose + outbound link to atelier.ninochavez.co. No schematic, no cluster nesting, no visibility badge.",
+    "sourceFiles": ["v2 ninochavez-main CF Pages deploy /work/atelier"],
+    "annotation": "Route changes from flat to nested. PUBLIC badge added per ADR-0009 enforcement. Schematic introduced per signature (ADR-0004)."
+  }
+}

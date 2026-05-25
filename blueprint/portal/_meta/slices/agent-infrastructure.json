@@ -1,0 +1,13 @@
+{
+  "id": "agent-infrastructure",
+  "label": "Agent infrastructure",
+  "color": "brand",
+  "summary": "Coordination, recall, and parallel-orchestration tooling for working with coding agents — 10 repos. `ai-champions-kit` is the PUBLIC tiered installer; ai-hive, claude-recall-cli, claude-orchestrator, worktree-orchestrator, browse-tool, and claude-docs-toolkit are the private substrate.",
+  "production_surface": "src/routes/work/+page.svelte#agent-infrastructure-section, src/routes/practice/+page.svelte#substrate",
+  "primary_persona": "P1 Reviewer + P2 Developer evaluating whether the substrate is real, working, and citable",
+  "findings_cited": ["Synthesis §What the inventory revealed", "Synthesis §Thematic clusters change the IA"],
+  "principles_cited": ["R1 — no transactional framing"],
+  "phase": "Phase 1",
+  "pages": ["work-cluster", "practice"],
+  "flows_touching_this_slice": ["scope-discovery"]
+}
