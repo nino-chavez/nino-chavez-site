@@ -358,6 +358,8 @@
         </div>
         <div class="top-bar-actions">
           ${chipHtml}
+          ${currentPageMeta?.currentState ? `<button class="drawer-toggle drawer-toggle-shipped" type="button" data-drawer="current-state" title="Open v2 shipped comparison drawer">◀ Shipped</button>` : ''}
+          ${currentPageMeta?.strategy ? `<button class="drawer-toggle drawer-toggle-strategy" type="button" data-drawer="strategy" title="Open strategy rationale drawer">Strategy ▶</button>` : ''}
           ${currentPageMeta?.chrome && currentPageMeta.chrome !== 'specialized' ? `<button class="chrome-toggle" type="button" title="Toggle production-chrome preview"><span class="toggle-dot"></span>production chrome</button>` : ''}
           <nav class="top-bar-nav" aria-label="Primary">
             ${navHtml}
@@ -373,6 +375,17 @@
       document.body.appendChild(overlayWrap.firstElementChild);
       wireCitationChip();
     }
+
+    // Wire drawer toggles (strategy + shipped). Buttons live in .top-bar-actions
+    // and call into togglePanel() defined below. Panels themselves are built by
+    // buildStrategyPanel / buildCurrentStatePanel from currentPageMeta.
+    bar.querySelectorAll('.drawer-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const which = btn.dataset.drawer;
+        if (which === 'strategy') togglePanel('strategy');
+        else if (which === 'current-state') togglePanel('current-state');
+      });
+    });
 
     // Wire chrome toggle (sticky preference in localStorage)
     const toggle = bar.querySelector('.chrome-toggle');
@@ -484,10 +497,27 @@
   function buildCurrentStatePanel(meta) {
     if (!meta || !meta.currentState) return;
     const cs = meta.currentState;
+    // Screenshot path is relative to the portal root. Pages live under /pages/
+    // so prefix with /. The reference capture lives under current-state/.
+    const screenshotEl = cs.screenshot
+      ? el('div', { class: 'panel-screenshot' },
+          el('a', { href: `/${cs.screenshot}`, target: '_blank', rel: 'noopener', title: 'Open full-size capture' },
+            el('img', {
+              src: `/${cs.screenshot}`,
+              alt: `v2 ${cs.route || 'route'} — full-page capture`,
+              loading: 'lazy'
+            })
+          ),
+          cs.screenshotCaption
+            ? el('p', { class: 'panel-screenshot-caption' }, cs.screenshotCaption)
+            : null
+        )
+      : null;
     const panel = el('aside', { class: 'current-state-panel', id: 'current-state-panel' },
       el('button', { class: 'panel-close', onclick: () => togglePanel('current-state') }, '×'),
       el('h3', {}, 'Shipped state'),
       el('p', { class: 'tiny muted mt-4' }, cs.route ? `Route: ${cs.route}` : 'No equivalent surface today'),
+      screenshotEl,
       el('div', { class: 'panel-section' },
         el('h4', {}, 'What exists today'),
         el('p', { html: cs.summary || '<em>No equivalent surface in shipped v2 ninochavez.co.</em>' })

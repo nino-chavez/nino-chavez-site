@@ -17,6 +17,8 @@
   "currentState": {
     "route": "/",
     "summary": "v2 homepage — polymath grid, bento hero, lime accent, Bebas Neue display font, no cluster visibility.",
+    "screenshot": "current-state/home.full.png",
+    "screenshotCaption": "v2 ninochavez.co full-page capture — pre-redesign branch.",
     "sourceFiles": ["v2 ninochavez-main CF Pages deploy (pre-redesign branch)"],
     "annotation": "Visual reset: kill bento + lime + Bebas (R10); replace polymath grid (R4) with cluster ribbon + thesis hero (ADR-0003 hero claim, ADR-0009 cluster pattern)."
   }

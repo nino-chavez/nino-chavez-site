@@ -1343,3 +1343,154 @@ body:has(.proto-slice-header):not(:has(.proto-brand-bar)) { padding-top: 44px; }
 .proto-top-bar .citation-chip {
   display: none;
 }
+
+/* ─────────────── Drawer toggles (Strategy + Shipped) ─────────────── */
+/* Lives in .top-bar-actions on every prototype page that has strategy or
+   currentState meta. Visual register matches .chrome-toggle (mono-pill, 9999
+   border-radius, 10px uppercase mono label) so the top-bar action cluster
+   reads as a coherent row of pills. */
+
+.drawer-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid var(--card-border);
+  border-radius: 9999px;
+  background: var(--surface-1);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease, background-color 160ms ease;
+}
+
+.drawer-toggle:hover {
+  border-color: var(--brand-500);
+  color: var(--brand-700);
+  background: var(--brand-50, #f5f3ff);
+}
+
+.drawer-toggle:focus-visible {
+  outline: 2px solid var(--brand-500);
+  outline-offset: 2px;
+}
+
+/* When the corresponding panel is open, mark the toggle as active. */
+.strategy-panel.open ~ .proto-top-bar .drawer-toggle-strategy,
+body:has(.strategy-panel.open) .drawer-toggle-strategy {
+  border-color: var(--brand-500);
+  color: var(--brand-700);
+}
+
+.current-state-panel.open ~ .proto-top-bar .drawer-toggle-shipped,
+body:has(.current-state-panel.open) .drawer-toggle-shipped {
+  border-color: var(--brand-500);
+  color: var(--brand-700);
+}
+
+/* ─────────────── Page footer (built by proto-nav.js) ─────────────── */
+/* Until now this rendered as bare default-styled text at viewport-left because
+   .proto-footer + child classes had zero CSS coverage. That's the textbook
+   I-5 failure (JS-emitted classes without matching CSS). Per
+   docs/case-study-v3-portal-css-gap.md, every JS-emitted class needs CSS. */
+
+.proto-footer {
+  margin-top: var(--space-16);
+  padding: var(--space-6) var(--space-8);
+  border-top: 1px solid var(--card-border);
+  background: var(--surface-2, var(--surface-1));
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.proto-footer-inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.proto-has-sidebar .proto-footer-inner {
+  max-width: none;
+  padding-left: 240px;
+}
+
+.proto-footer-mark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.proto-footer-product {
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+}
+
+.proto-footer-version {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.proto-footer-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.proto-footer-meta .sep {
+  color: var(--card-border);
+}
+
+.proto-footer-build,
+.proto-footer-context {
+  color: var(--text-muted);
+}
+
+/* ─────────────── Shipped-drawer screenshot ─────────────── */
+/* Reference capture of the v2 route, embedded inside .current-state-panel so
+   the reviewer sees "what exists today" without context-switching. The image
+   is clickable for full-size inspection in a new tab. */
+
+.panel-screenshot {
+  margin: var(--space-4) 0 var(--space-2);
+  border: 1px solid var(--card-border);
+  background: var(--surface-1);
+}
+
+.panel-screenshot a {
+  display: block;
+  line-height: 0;
+}
+
+.panel-screenshot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.panel-screenshot-caption {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  border-top: 1px solid var(--card-border);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
