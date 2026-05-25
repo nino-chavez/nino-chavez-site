@@ -1,8 +1,8 @@
 {
   "name": "Nino Chavez Blueprint",
-  "tagline": "Brownfield audit + redesign of ninochavez.co — diagnose, prescribe, prototype the new state.",
+  "tagline": "Brownfield audit + redesign of ninochavez.co. Diagnosed, prescribed, designed, now prototyped — Stage 4 of 7.",
   "slices": [
-    "example-slice"
+    "v3-home"
   ],
   "groups": [
     { "id": "marketing", "label": "Marketing",  "color": "brand" },
@@ -10,14 +10,20 @@
     { "id": "operator",  "label": "Operator",   "color": "neutral" }
   ],
   "pages": [
-    "example"
+    "home"
   ],
   "flows": [
     {
-      "id": "main-journey",
-      "label": "Main journey",
-      "summary": "Replace with your primary persona's end-to-end flow across pages.",
-      "pages": ["example"]
+      "id": "architect-arrival",
+      "label": "Peer Architect arrival",
+      "summary": "P1 lands on / via referral or Signal Dispatch post → scans capability sentence + live signals → opens /ai or a building receipt → bookmarks / RSS-subscribes.",
+      "pages": ["home"]
+    },
+    {
+      "id": "buyer-arrival",
+      "label": "Prospective Client arrival",
+      "summary": "P2 lands on / via LinkedIn or referral → scans capability sentence in buyer language → clicks 'Schedule a conversation' → enters Cal.com booking flow.",
+      "pages": ["home"]
     }
   ]
 }
