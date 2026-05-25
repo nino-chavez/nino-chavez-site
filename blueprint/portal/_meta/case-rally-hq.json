@@ -6,7 +6,7 @@
   "surface": "src/routes/work/volleyball-630/rally-hq/+page.svelte",
   "phase": "Phase 2",
   "route": "/pages/case-rally-hq.html",
-  "summary": "Tournament management platform paired with a separate blueprint portal at blueprint.rallyhq.app — the canonical big-blueprint v2 portal deploy that this v3 redesign replicates for blueprint.ninochavez.co.",
+  "summary": "Tournament management platform paired with a separate blueprint portal at blueprint.rallyhq.app — the canonical blueprint v2 portal deploy that this v3 redesign replicates for blueprint.ninochavez.co.",
   "strategy": {
     "decision": "Hero deep-dive for the volleyball-630 cluster. Five compositions: hero (with TWO live URL pills — rallyhq.app product + blueprint.rallyhq.app methodology) → schematic (rally-hq-blueprint-pipeline: the paired-deploy diagram) → approach (paired-deploy pattern + portal as design oracle) → quotable (the methodology applied) → outcome (live product + live methodology surface).",
     "why": "ADR-0009 cluster IA lists rally-hq as the hero for volleyball-630. It's the canonical reference for ADR-0008 (this site's paired-deploy adoption is modeled on rally-hq's). The two-surface presentation directly demonstrates the pattern this v3 redesign IS implementing — meta-reference works as positioning proof.",

@@ -76,12 +76,12 @@
         "description": "Spec → tasks → implementation methodology and tooling for AI-assisted coding. Mechanical state derivation, ADR discipline, dual-track agile in one repo.",
         "subjectOf": [
           { "@type": "SoftwareSourceCode", "url": "https://github.com/nino-chavez/specchain" },
-          { "@type": "SoftwareSourceCode", "url": "https://github.com/nino-chavez/big-blueprint" },
+          { "@type": "SoftwareSourceCode", "url": "https://github.com/nino-chavez/blueprint" },
           { "@type": "SoftwareSourceCode", "url": "https://github.com/nino-chavez/bc-subscriptions" }
         ],
         "additionalProperty": [
           { "@type": "PropertyValue", "name": "Reference Case Study", "value": "bc-subscriptions — 38 ADRs, 5-persona journey template, runnable prototype as design oracle" },
-          { "@type": "PropertyValue", "name": "Planning Methodology", "value": "big-blueprint — 7-stage pipeline (research → principles → prototype → fact-check → docs → deploy → iterate)" }
+          { "@type": "PropertyValue", "name": "Planning Methodology", "value": "blueprint — 7-stage pipeline (research → principles → prototype → fact-check → docs → deploy → iterate)" }
         ]
       }
     },

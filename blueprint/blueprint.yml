@@ -1,9 +1,9 @@
-# BigBlueprint Configuration — ninochavez.co v3 Brownfield Audit
+# Blueprint Configuration — ninochavez.co v3 Brownfield Audit
 #
 # This blueprint formalizes the audit-first three-stage variant
 # (01-diagnose / 02-prescription / 03-design-brief) that this initiative
 # pioneered informally. As of 2026-05-25, that pattern is canonical
-# brownfield per wip/big-blueprint/docs/variant-selection.md and gets
+# brownfield per wip/blueprint/docs/variant-selection.md and gets
 # enforced by the reviewer agents at template/.claude/agents/blueprint/reviewers/.
 
 project:

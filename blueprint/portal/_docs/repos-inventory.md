@@ -12,7 +12,7 @@ The signal-x-studio LLC entity does not own a separate GitHub org; all work live
 | Visibility | Repo | Description |
 |---|---|---|
 | PUBLIC | `forge` | An opinionated toolchain for building applications with coding agents. 12-factor principles for production-ready AI agents. |
-| priv | `big-blueprint` | Agent-assisted jig for product planning, prototyping, and stakeholder alignment |
+| priv | `blueprint` | Agent-assisted jig for product planning, prototyping, and stakeholder alignment |
 | priv | `specchain` | Spec-driven development workflow system for Claude Code |
 | priv | `forge-brand` | CLI-first design agency toolkit — brand kits, style guides, media assets, components |
 | priv | `forge-signal` | Strategic content generation with voice taxonomy and quality validation |
@@ -20,7 +20,7 @@ The signal-x-studio LLC entity does not own a separate GitHub org; all work live
 | priv | `image-gen` | Image generation tool |
 | ARCH | `forge-design` | Visual identity layer of the forge-family (archived 2026-05-17) |
 
-**Production line ordering** (Signal Dispatch "The Backport I Didn't Make"): specchain → big-blueprint → forge-brand → forge-signal → image-gen. The PUBLIC `forge` repo is the umbrella manifesto / toolchain entry point.
+**Production line ordering** (Signal Dispatch "The Backport I Didn't Make"): specchain → blueprint → forge-brand → forge-signal → image-gen. The PUBLIC `forge` repo is the umbrella manifesto / toolchain entry point.
 
 ### Agent infrastructure & coordination (10)
 

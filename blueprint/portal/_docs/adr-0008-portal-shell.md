@@ -1,4 +1,4 @@
-# ADR-0008 — Adopt the big-blueprint `portal/` shell (supersedes deleted ADR-0005)
+# ADR-0008 — Adopt the blueprint `portal/` shell (supersedes deleted ADR-0005)
 
 **Status:** Accepted
 **Date:** 2026-05-25
@@ -11,7 +11,7 @@ The v3 redesign initially adopted a "site-as-prototype" review model: blueprint 
 
 The diagnosis was wrong on two counts:
 
-1. **Rally-hq IS the canonical big-blueprint portal pattern.** Per `~/Workspace/dev/wip/big-blueprint/METHODOLOGY.md` and the v2 (2026-05-23) template documentation, the static-HTML `portal/` shell is the default for non-BC projects, with `blueprint.rallyhq.app` named as the reference deploy. Rejecting rally-hq as the model meant rejecting the methodology's own canonical Stage 6 output shape.
+1. **Rally-hq IS the canonical blueprint portal pattern.** Per `~/Workspace/dev/wip/blueprint/METHODOLOGY.md` and the v2 (2026-05-23) template documentation, the static-HTML `portal/` shell is the default for non-BC projects, with `blueprint.rallyhq.app` named as the reference deploy. Rejecting rally-hq as the model meant rejecting the methodology's own canonical Stage 6 output shape.
 
 2. **The bc-subscriptions deliverables-index pattern alone doesn't cover the load-bearing primitives.** That pattern is one component (a structured doc index), not a replacement for the strategy panels, current-state panels, proposed/shipped toggle, and stakeholder chat that make the portal pattern reviewable async. Adopting "bc-subs deliverables-index" without the portal shell produced a sparse `/blueprint` route that read as a directory listing — captured in the 2026-05-25 design-violation correction.
 
@@ -19,11 +19,11 @@ The result was a v3 site that hid its own design rationale, gave reviewers no pe
 
 ## Decision
 
-**Adopt the big-blueprint `portal/` shell as a separate deployable Cloudflare Pages project at `blueprint.ninochavez.co`.**
+**Adopt the blueprint `portal/` shell as a separate deployable Cloudflare Pages project at `blueprint.ninochavez.co`.**
 
 Concrete shape:
 
-1. **`blueprint/portal/`** — stamped from `~/Workspace/dev/wip/big-blueprint/template/portal/` 2026-05-23 v2. Static HTML + Cloudflare Pages Functions. Zero build pipeline.
+1. **`blueprint/portal/`** — stamped from `~/Workspace/dev/wip/blueprint/template/portal/` 2026-05-23 v2. Static HTML + Cloudflare Pages Functions. Zero build pipeline.
 2. **Separate Cloudflare Pages project** — `ninochavez-blueprint` (paired with `ninochavez-main` for the v3 site itself). Deploys from the same repo under a path-scoped GitHub Action.
 3. **Custom domain** — `blueprint.ninochavez.co` (CNAME to `ninochavez-blueprint.pages.dev`).
 4. **Slice + page metadata** — `_meta/slices/<slice-id>.json` per slice; `_meta/<page-id>.json` per prototype page. Pages declare only `window.PROTO_PAGE = { id: '<page-id>' };` in HTML; all other state lives in JSON.
@@ -40,7 +40,7 @@ Concrete shape:
 | **Re-fix the in-app `/blueprint` markdown index** | Treats a symptom (sparse TOC) without addressing the architectural drift (no strategy drawers, no toggle, no chat, no per-route review path). Bandaid. |
 | **Keep "site-as-prototype" + add a `/blueprint` masthead link** | Same problem at a smaller surface — still no strategy panel exposure, still no proposed/shipped comparison, still requires reviewers to tab-switch to v2 to see what's changing. |
 | **Stamp the React `prototype/` shell instead of `portal/`** | The React `prototype/` shell is BC-specific (BigDesign coupling). The `portal/` shell is the methodology's default for non-BC projects, including this one. |
-| **Build a custom portal shell from scratch** | Reinvents what the big-blueprint template already solves. The rally-hq deploy is the proof the template works. |
+| **Build a custom portal shell from scratch** | Reinvents what the blueprint template already solves. The rally-hq deploy is the proof the template works. |
 
 ## Consequences
 
@@ -63,8 +63,8 @@ Concrete shape:
 
 ## References
 
-- `~/Workspace/dev/wip/big-blueprint/METHODOLOGY.md` — the 7-stage methodology this ADR implements
-- `~/Workspace/dev/wip/big-blueprint/template/portal/CONVENTIONS.md` — the contract this portal will follow
+- `~/Workspace/dev/wip/blueprint/METHODOLOGY.md` — the 7-stage methodology this ADR implements
+- `~/Workspace/dev/wip/blueprint/template/portal/CONVENTIONS.md` — the contract this portal will follow
 - `~/Workspace/dev/apps/rally-hq/blueprint/` — the canonical reference deploy (`blueprint.rallyhq.app`)
 - `blueprint/research/synthesis.md` — the Stage 1 finding that drove the supersession
 - `blueprint/portal/` — the stamped portal (this repo, post-2026-05-25)

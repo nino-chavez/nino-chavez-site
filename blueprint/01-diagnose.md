@@ -2,7 +2,7 @@
 
 Per `tools/forge-site/playbook/2-diagnose.md`. Pattern-match the project to an archetype and lock the module list before prescribing.
 
-**This version supersedes the original 2026-05-24 diagnose.** Reason: the original was authored without a full surface inventory. Stage 1 Research (`research/synthesis.md`, 2026-05-25) revealed a scale-mismatch finding that materially changes the prescription — 9 case-study representation versus 69-repo / 17-deploy / 275-artifact footprint. The refresh absorbs that finding plus the methodology correction in ADR-0008 (adopt big-blueprint `portal/` shell).
+**This version supersedes the original 2026-05-24 diagnose.** Reason: the original was authored without a full surface inventory. Stage 1 Research (`research/synthesis.md`, 2026-05-25) revealed a scale-mismatch finding that materially changes the prescription — 9 case-study representation versus 69-repo / 17-deploy / 275-artifact footprint. The refresh absorbs that finding plus the methodology correction in ADR-0008 (adopt blueprint `portal/` shell).
 
 ## What changed since the original diagnose
 
@@ -51,14 +51,14 @@ Against `tools/forge-site/playbook/2-diagnose.md` §"Module Selection Checklist"
 | Local SEO? | No (national/remote, not location-specific) | Skip local-specific JSON-LD, keep general SEO. |
 | Product analytics? | Not at v3 launch | Defer `analytics-posthog`. |
 | Deploying on Cloudflare Pages? | **Yes — Cloudflare-first.** | Skip `analytics-vercel`. Use **Cloudflare Web Analytics**. |
-| **NEW: Paired blueprint surface?** | **Yes — `blueprint.ninochavez.co`.** | **Include `portal-shell` (big-blueprint v2 `portal/` template).** Already stamped at `blueprint/portal/`. |
+| **NEW: Paired blueprint surface?** | **Yes — `blueprint.ninochavez.co`.** | **Include `portal-shell` (blueprint v2 `portal/` template).** Already stamped at `blueprint/portal/`. |
 | **NEW: Vectorize RAG backend for chat?** | **Yes — reuse existing `askdad-corpus` index.** | **Include `pages-function-chat` (portal `functions/api/chat.js`).** Shared corpus between v3 site chat surface (if surfaced) and blueprint portal chat. |
 
 ### Required modules
 
 - `seo-structured-data` — JSON-LD AEO endpoints
 - `cloudflare-web-analytics` — replaces Vercel analytics
-- **`portal-shell`** — stamped from big-blueprint v2 `template/portal/` (ADR-0008)
+- **`portal-shell`** — stamped from blueprint v2 `template/portal/` (ADR-0008)
 - **`pages-function-chat`** — portal chat backed by `askdad-corpus` Vectorize index
 
 ### Recommended modules

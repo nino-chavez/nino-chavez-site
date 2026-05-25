@@ -6,7 +6,7 @@ The differentiator page. Per `blueprint/03-design-brief.md` Compositions 1 → 4
 
 Small mono pill row, single line. Anchors the page in the published canon and third-party validation.
 
-> **Production line · chassis · lathe.** Pattern named in [The A/B Test That Built the Lathe](https://blog.ninochavez.co/the-backport-i-didnt-make) (May 2026) + [Big Blueprint: A Production Line for Agent-Assisted Product Work](https://blog.ninochavez.co/whitepapers/big-blueprint-methodology) (May 2026). Same discipline OpenAI calls [harness engineering](https://openai.com/index/harness-engineering/) (Feb 2026), made operational here ~18 months earlier.
+> **Production line · chassis · lathe.** Pattern named in [The A/B Test That Built the Lathe](https://blog.ninochavez.co/the-backport-i-didnt-make) (May 2026) + [Big Blueprint: A Production Line for Agent-Assisted Product Work](https://blog.ninochavez.co/whitepapers/blueprint-methodology) (May 2026). Same discipline OpenAI calls [harness engineering](https://openai.com/index/harness-engineering/) (Feb 2026), made operational here ~18 months earlier.
 
 Treatment: mono, smaller scale than thesis. The pill row sets the citation frame before the page makes its claims; readers landing cold see "this is published + validated" before they see the toolchain.
 
@@ -46,7 +46,7 @@ Spec-driven development workflow for AI-assisted coding. Execution profiles, cra
      signal-x-studio/aegis-framework returns GraphQL "Could not resolve to
      a Repository" — i.e., it does not exist. The /practice toolchain now
      leads with the canonical 5-link production line from the post
-     "The Backport I Didn't Make" (specchain → big-blueprint → forge-brand
+     "The Backport I Didn't Make" (specchain → blueprint → forge-brand
      → forge-signal → gen-images). AI code governance is a separate concern
      and will get its own card only if a real artifact exists to back it. -->
 
@@ -66,13 +66,13 @@ Shared Claude Code skills + subagents packaged for installation by others. 9 ski
 
 → `github.com/nino-chavez/ai-champions-kit`
 
-### 6. big-blueprint
+### 6. blueprint
 
 7-stage agent-assisted methodology for product-planning initiatives. Research → design principles → prototype → fact-check → docs → deploy → iterate. Extracted March 2026 from a 48-hour P&P initiative; A/B-tested at 70–80% quality in 10–15× less time, with six template gaps caught and re-tested. Used on Rally HQ (`blueprint.rallyhq.app`), `bc-subscriptions`, and the redesign of this site.
 
 > **Enforces:** every product decision has a recorded source in the synthesis layer; planning state derives from artifacts, not whiteboard memory.
 
-→ `github.com/nino-chavez/big-blueprint`
+→ `github.com/nino-chavez/blueprint`
 
 ## Composition 3 — `operating-rules-stack` (#rules anchor)
 

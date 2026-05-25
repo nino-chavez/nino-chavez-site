@@ -62,7 +62,7 @@ Lead 1 (rally-hq) and Lead 4 (photography) get this line in the `approach` field
   slug: 'rally-hq',
   title: 'Rally HQ + Blueprint',
   tagline: 'A tournament management product and the methodology that produced it — both live, two surfaces',
-  description: 'Real-time tournament management platform for volleyball and similar sports. Mobile-first scorekeeper, multi-tenant architecture, capability-based permissions, drag-and-drop scheduling, white-label branding. Paired with a public blueprint surface that documents the big-blueprint methodology applied to build it.',
+  description: 'Real-time tournament management platform for volleyball and similar sports. Mobile-first scorekeeper, multi-tenant architecture, capability-based permissions, drag-and-drop scheduling, white-label branding. Paired with a public blueprint surface that documents the blueprint methodology applied to build it.',
   category: 'zero-to-one',
   status: 'production',
   visibility: 'public',
@@ -89,12 +89,12 @@ Lead 1 (rally-hq) and Lead 4 (photography) get this line in the `approach` field
   ],
   outcomes: [
     'Production multi-tenant SaaS with real users',
-    'Public methodology surface — blueprint outputs from the 7-stage big-blueprint pipeline',
+    'Public methodology surface — blueprint outputs from the 7-stage blueprint pipeline',
     'Demo mode for evaluator access',
     'White-label branding for tournament operators'
   ],
   problem: 'Tournament management is fragmented across spreadsheets, group chats, and outdated desktop software. Directors need a modern platform for registration, scheduling, brackets, and scoring — mobile-first because scorekeeping happens at the court.',
-  approach: 'Built solo using the big-blueprint methodology — 7-stage pipeline (research → design principles → prototype → fact-check → docs → deploy → iterate). The blueprint outputs ship as a public surface at blueprint.rallyhq.app, separate from the product itself. Built using the AEGIS governance framework (plan gating + drift detection + evolution-story tracking) to keep AI-generated changes consistent across the codebase.',
+  approach: 'Built solo using the blueprint methodology — 7-stage pipeline (research → design principles → prototype → fact-check → docs → deploy → iterate). The blueprint outputs ship as a public surface at blueprint.rallyhq.app, separate from the product itself. Built using the AEGIS governance framework (plan gating + drift detection + evolution-story tracking) to keep AI-generated changes consistent across the codebase.',
   learned: [
     'Capability-based auth is worth the upfront complexity for organizer-facing products',
     'Real-time needs to be core infrastructure, not an afterthought — retrofitting is more work than designing for it',

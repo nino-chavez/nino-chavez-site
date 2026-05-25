@@ -17,7 +17,7 @@ client:
 
 stack:
   framework_main: "sveltekit"        # SvelteKit 2 + Svelte 5 runes
-  framework_blueprint: "static-html-pages-functions"  # big-blueprint portal/ template v2
+  framework_blueprint: "static-html-pages-functions"  # blueprint portal/ template v2
   database: "none"                   # Static data; ask-dad RAG uses Vectorize (already shipped)
   cms: "markdown"                    # Nino is editor; code = source of truth
   auth: "none"
@@ -31,7 +31,7 @@ modules:
   required:
     - "seo-structured-data"
     - "cloudflare-web-analytics"
-    - "portal-shell"                 # big-blueprint v2 template (ADR-0008) — stamped at blueprint/portal/
+    - "portal-shell"                 # blueprint v2 template (ADR-0008) — stamped at blueprint/portal/
     - "pages-function-chat"          # portal chat backed by shared askdad-corpus
   recommended:
     - "contact-forms"
@@ -132,7 +132,7 @@ clusters:
     repos_public: 1                  # forge (umbrella)
     public_anchor: "forge"
     composition: "production-line-schematic"
-    lead_repos: ["forge", "specchain", "big-blueprint", "forge-brand", "forge-signal", "forge-site", "image-gen"]
+    lead_repos: ["forge", "specchain", "blueprint", "forge-brand", "forge-signal", "forge-site", "image-gen"]
     rationale: "Load-bearing for 'context engineer codified a working practice' positioning. Schematic prominence."
   agent-infrastructure:
     repos_total: 10
@@ -277,7 +277,7 @@ task_groups:
     tasks:
       - "[done] Nuke v3 site (ask-dad backend + blueprint substrate preserved)"
       - "[done] Stage 1 Research substrate (research/synthesis.md + 3 current-state inventories)"
-      - "[done] Stamp blueprint/portal/ from big-blueprint template, customize wrangler.toml"
+      - "[done] Stamp blueprint/portal/ from blueprint template, customize wrangler.toml"
       - "[done] ADR-0008 — adopt portal shell"
       - "[done] ADR-0009 — cluster ribbon + per-cluster editorial sections"
       - "[done] Refresh 01-diagnose.md"

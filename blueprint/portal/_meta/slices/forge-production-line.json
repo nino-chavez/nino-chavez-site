@@ -2,7 +2,7 @@
   "id": "forge-production-line",
   "label": "Forge production line",
   "color": "brand",
-  "summary": "The agent-assisted toolchain that produces the case studies. `forge` is the PUBLIC umbrella; 5 private lathes (specchain, big-blueprint, forge-brand, forge-signal, image-gen) are the underlying tools. Load-bearing for the 'context engineer codified a working practice' positioning.",
+  "summary": "The agent-assisted toolchain that produces the case studies. `forge` is the PUBLIC umbrella; 5 private lathes (specchain, blueprint, forge-brand, forge-signal, image-gen) are the underlying tools. Load-bearing for the 'context engineer codified a working practice' positioning.",
   "production_surface": "src/routes/work/+page.svelte#forge-production-line-section, src/routes/practice/+page.svelte#production-line",
   "primary_persona": "P1 Reviewer assessing whether the production-line claim has verifiable receipts",
   "findings_cited": ["Synthesis §The forge-public finding", "Synthesis §Scale-mismatch finding"],

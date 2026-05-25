@@ -45,7 +45,7 @@
 - `rallyhq.app` (the product)
 - `blueprint.rallyhq.app` (the methodology surface, separately deployed)
 
-This is the canonical big-blueprint Stage 6 deploy pattern. The v3 redesign currently lacks the paired blueprint surface — that's the gap this restart fixes.
+This is the canonical blueprint Stage 6 deploy pattern. The v3 redesign currently lacks the paired blueprint surface — that's the gap this restart fixes.
 
 **Domain conventions:**
 - Products own their own apex (rallyhq.app, letspepper.com, quantifai.app, flickdaymedia.com, zerospecs.app, signalx.studio)

@@ -56,7 +56,7 @@
       "additionalProperty": {
         "@type": "PropertyValue",
         "name": "Tooling Authored",
-        "value": "forge-brand · forge-signal · forge-site · specchain · claude-recall-cli · ai-champions-kit · big-blueprint · AEGIS"
+        "value": "forge-brand · forge-signal · forge-site · specchain · claude-recall-cli · ai-champions-kit · blueprint · AEGIS"
       }
     },
     {
@@ -72,7 +72,7 @@
     {
       "@type": "Thing",
       "name": "Spec-Driven Development",
-      "description": "Methodology + tooling for spec → tasks → implementation flows in AI-assisted coding. Author of specchain (workflow + crash recovery + traceability) and big-blueprint (7-stage planning methodology).",
+      "description": "Methodology + tooling for spec → tasks → implementation flows in AI-assisted coding. Author of specchain (workflow + crash recovery + traceability) and blueprint (7-stage planning methodology).",
       "additionalProperty": {
         "@type": "PropertyValue",
         "name": "Reference Case Study",
@@ -104,7 +104,7 @@
       "skills": [
         "Claude Code instrumentation (hooks, classifiers, subagents, skills)",
         "Agentic software architecture (MCP, Durable Objects, multi-model routing)",
-        "Spec-driven development (specchain, big-blueprint)",
+        "Spec-driven development (specchain, blueprint)",
         "AI governance frameworks (AEGIS — plan gating, drift detection)",
         "Brand-to-site pipelines (forge family)",
         "Voice-corpus engineering (claude-recall-cli + Poe stack)"

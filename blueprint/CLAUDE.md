@@ -1,6 +1,6 @@
 # website-nc-v3 Blueprint — Agent Instructions
 
-This is the BigBlueprint initiative paired with ninochavez.co v3. The live SvelteKit app lives in `../src/`; its parent CLAUDE.md (`../CLAUDE.md`) governs app work. *This* CLAUDE.md governs blueprint work only: portal shell, design briefs, prescriptions, diagnose docs, decisions, and the strategy/current-state panels.
+This is the Blueprint initiative paired with ninochavez.co v3. The live SvelteKit app lives in `../src/`; its parent CLAUDE.md (`../CLAUDE.md`) governs app work. *This* CLAUDE.md governs blueprint work only: portal shell, design briefs, prescriptions, diagnose docs, decisions, and the strategy/current-state panels.
 
 Scope boundary: never touch `../src/`, `../static/`, or any non-blueprint surface from this initiative. The blueprint is a *paired* artifact at `blueprint.ninochavez.co` — it ships alongside the main site, not as part of it.
 
@@ -94,4 +94,4 @@ Do not patch prompts session-by-session. Every encoded capability multiplies acr
 
 ## Origin
 
-Stage 0 added 2026-05-25 as the second live application of the BigBlueprint v2 patch (`~/Workspace/dev/wip/big-blueprint/METHODOLOGY-v2-harness-engineering-patch.md`). Rally HQ was the first; website-nc-v3 follows the same portal shell pattern, so the recipe transfers directly with only URL/path adjustments. The SvelteKit v3 rebuild itself (post 2026-05-25 nuke) is governed by `../CLAUDE.md`, not this file.
+Stage 0 added 2026-05-25 as the second live application of the Blueprint v2 patch (`~/Workspace/dev/wip/blueprint/METHODOLOGY-v2-harness-engineering-patch.md`). Rally HQ was the first; website-nc-v3 follows the same portal shell pattern, so the recipe transfers directly with only URL/path adjustments. The SvelteKit v3 rebuild itself (post 2026-05-25 nuke) is governed by `../CLAUDE.md`, not this file.

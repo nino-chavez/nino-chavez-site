@@ -20,13 +20,13 @@ The "context engineer who codified a working practice" positioning is defensible
 
 ## The forge-public finding
 
-**The "all 5 lathes are private" framing is partially wrong.** The PUBLIC `nino-chavez/forge` repo — "An opinionated toolchain for building applications with coding agents. 12-factor principles for production-ready AI agents." — IS the production line entry point. The specific lathes (specchain, big-blueprint, forge-brand, forge-signal, image-gen) are private, but `forge` itself is the public umbrella.
+**The "all 5 lathes are private" framing is partially wrong.** The PUBLIC `nino-chavez/forge` repo — "An opinionated toolchain for building applications with coding agents. 12-factor principles for production-ready AI agents." — IS the production line entry point. The specific lathes (specchain, blueprint, forge-brand, forge-signal, image-gen) are private, but `forge` itself is the public umbrella.
 
 This changes the launch decision in the old HANDOFF: it's not "make 5 lathes public OR keep mixed-visibility framing." It's "the umbrella IS public — point at `forge`; the lathes are deliberately private as the underlying toolchain." That's a different, cleaner credibility play.
 
 ## The paired-deploy pattern is canonical (and we lack it)
 
-Rally HQ ships the canonical big-blueprint Stage 6 shape: `rallyhq.app` (the product) + `blueprint.rallyhq.app` (the methodology surface). Both auto-deploy from the same repo; the blueprint surface has strategy panels, current-state panels, AI chat, proposed/shipped toggle.
+Rally HQ ships the canonical blueprint Stage 6 shape: `rallyhq.app` (the product) + `blueprint.rallyhq.app` (the methodology surface). Both auto-deploy from the same repo; the blueprint surface has strategy panels, current-state panels, AI chat, proposed/shipped toggle.
 
 The v3 redesign currently does NOT have a paired blueprint surface — that's the gap this restart fixes. Target: `blueprint.ninochavez.co` deployed as a separate CF Pages project from `apps/website-nc-v3/blueprint/portal/`.
 
@@ -65,9 +65,9 @@ The case-study slate framing collapses these into a flat list. A cluster framing
 
 | Artifact | Status |
 |---|---|
-| **ADR-0008** (new) | Adopt big-blueprint `portal/` shell — supersedes the deleted ADR-0005 thinking |
+| **ADR-0008** (new) | Adopt blueprint `portal/` shell — supersedes the deleted ADR-0005 thinking |
 | **ADR-0009** (new — TBD) | Cluster IA decision — pick the surfacing pattern (Bento / Tabs / Matrix) |
-| **`blueprint/portal/`** (new) | Static HTML + Pages Functions stamp from big-blueprint template |
+| **`blueprint/portal/`** (new) | Static HTML + Pages Functions stamp from blueprint template |
 | **`blueprint.ninochavez.co`** (new) | Separate CF Pages project paired with the main site |
 | **Refreshed `01-diagnose.md`** | Cluster-aware diagnose |
 | **Refreshed `02-prescription.yml`** | Cluster IA + paired-deploy in the plan |
@@ -76,7 +76,7 @@ The case-study slate framing collapses these into a flat list. A cluster framing
 
 ## Next moves in order
 
-1. Stamp the `template/portal/` shell from `~/Workspace/dev/wip/big-blueprint/template/portal/` into `blueprint/portal/`. Configure `blueprint.yml`.
+1. Stamp the `template/portal/` shell from `~/Workspace/dev/wip/blueprint/template/portal/` into `blueprint/portal/`. Configure `blueprint.yml`.
 2. Write ADR-0008 documenting the portal-shell adoption (replaces the deleted ADR-0005).
 3. Refresh `01-diagnose.md` to absorb the cluster finding.
 4. Refresh `02-prescription.yml` to add paired-deploy + cluster IA.

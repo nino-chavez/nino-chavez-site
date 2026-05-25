@@ -10,7 +10,7 @@ Three developments converged in late May 2026 that change how the v3 redesign sh
 
 ### Already published in Nino's canon (May 24, 2026)
 
-- **Whitepaper:** "Big Blueprint: A Production Line for Agent-Assisted Product Work" (`~/Workspace/dev/apps/blog/astro-build/src/content/whitepapers/big-blueprint-methodology.mdx`). Names: production line · chassis · composable tool chains (specchain → big-blueprint → forge-brand → forge-signal → gen-images) · compounding mechanism · "the artifacts the agent reads getting more precise."
+- **Whitepaper:** "Big Blueprint: A Production Line for Agent-Assisted Product Work" (`~/Workspace/dev/apps/blog/astro-build/src/content/whitepapers/blueprint-methodology.mdx`). Names: production line · chassis · composable tool chains (specchain → blueprint → forge-brand → forge-signal → gen-images) · compounding mechanism · "the artifacts the agent reads getting more precise."
 - **Blog companion:** "The A/B Test That Built the Lathe" (`the-backport-i-didnt-make.mdx`). The metaphor anchor: Industrial Revolution = steam (LLM) + lathe (chassis); "the chassis is the lathe"; "the work that compounds is building the lathes"; closing call: "the engineers who win the next cycle are the ones who notice they're being asked to do lathe work and accept the assignment."
 - **Related blog:** "The Scaffolding the Agent Doesn't Build." Anchors "scaffolding" as the work-around-the-LLM frame; cites Adam Bender's "directionless amplifier" thesis.
 
@@ -69,7 +69,7 @@ The integrated metaphor stack:
 - **Forge = the just-in-time / personal / on-demand / bespoke-per-instance unit of software production.**
 - Distinguished from the **factory** (mass production, identical units, productization layer amortized across many customers).
 - Pre-industrial craft register: smith + raw stock + heat + intention = one custom object per heat.
-- Maps directly to Nino's existing forge family (`forge` umbrella PUBLIC, plus specchain, big-blueprint, forge-brand, forge-signal, image-gen as private lathes).
+- Maps directly to Nino's existing forge family (`forge` umbrella PUBLIC, plus specchain, blueprint, forge-brand, forge-signal, image-gen as private lathes).
 - Vocabulary reconciliation: in Nino's tool naming, "forge" is a family of lathes — the production line. In the new positioning layer, "forge" is also the metaphor for the production unit itself (smith's forge, not factory). Both readings are coherent: the forge family IS the production line that makes personal software possible.
 
 **The thesis the AI industrial revolution actually represents:** not faster factories, but the **collapse of the factory's monopoly on cheap production**. Mass production was a specific solution to a specific constraint (humans expensive, machines fixed-tool, distribution slow). When the cost of production approaches zero and tooling becomes general-purpose, productization loses its advantage to instance-production.
@@ -169,17 +169,17 @@ The subhead does three jobs:
 
 ### Nino's published canon (predates the OpenAI piece's public surfacing by ~18 months on the WORK level)
 
-- **`apps/blog/astro-build/src/content/whitepapers/big-blueprint-methodology.mdx`** (May 24 2026) — "Big Blueprint: A Production Line for Agent-Assisted Product Work." Names production line + chassis + composable tool chains + compounding mechanism.
+- **`apps/blog/astro-build/src/content/whitepapers/blueprint-methodology.mdx`** (May 24 2026) — "Big Blueprint: A Production Line for Agent-Assisted Product Work." Names production line + chassis + composable tool chains + compounding mechanism.
 - **`apps/blog/astro-build/src/content/blog/the-backport-i-didnt-make.mdx`** (May 24 2026, published as "The A/B Test That Built the Lathe") — the metaphor anchor: industrial revolution + steam (LLM) + lathe (chassis); load-bearing positioning claim ("the work that compounds is building the lathes").
 - **`apps/blog/astro-build/src/content/blog/the-scaffolding-the-agent-doesnt-build.mdx`** (May 24 2026) — anchors "scaffolding" + cites Bender's "directionless amplifier" thesis.
 
 ### Methodology layer companion (parallel to this ADR)
 
-- **`wip/big-blueprint/METHODOLOGY-v2-harness-engineering-patch.md`** (May 25 2026) — the methodology-level adoption of OpenAI harness primitives into BigBlueprint. Status: Increment 1 (Stage 0: Application Legibility) LANDED + validated on Rally HQ + website-nc-v3. Increments 2 (Ralph Wiggum Loop with 5 reviewer agents) + 3 (Map-not-manual + janitor + invariants) NOT STARTED.
-- **`wip/big-blueprint/HANDOFF-v2-patch.md`** — operational handoff for v2 patch work
-- **`wip/big-blueprint/docs/browser-legibility.md`** — canonical Stage 0 reference (browse-tool default + four-trigger MCP escalation rubric)
+- **`wip/blueprint/METHODOLOGY-v2-harness-engineering-patch.md`** (May 25 2026) — the methodology-level adoption of OpenAI harness primitives into Blueprint. Status: Increment 1 (Stage 0: Application Legibility) LANDED + validated on Rally HQ + website-nc-v3. Increments 2 (Ralph Wiggum Loop with 5 reviewer agents) + 3 (Map-not-manual + janitor + invariants) NOT STARTED.
+- **`wip/blueprint/HANDOFF-v2-patch.md`** — operational handoff for v2 patch work
+- **`wip/blueprint/docs/browser-legibility.md`** — canonical Stage 0 reference (browse-tool default + four-trigger MCP escalation rubric)
 
-**Layer separation:** the v2 patch operates at the METHODOLOGY level (how BigBlueprint adopts harness primitives across all initiatives). This ADR operates at the POSITIONING level (how the v3 site articulates the practice). Both can co-exist because:
+**Layer separation:** the v2 patch operates at the METHODOLOGY level (how Blueprint adopts harness primitives across all initiatives). This ADR operates at the POSITIONING level (how the v3 site articulates the practice). Both can co-exist because:
 - The v2 patch's "Stage 0 Application Legibility" gives v3 blueprint the browser sensor it uses to validate the portal
 - ADR-0010 references the v2 patch as the operational substrate that makes Nino's harness-engineering claim defensible — the v3 site claims "I build harnesses"; the v2 patch's Stage 0 recipe is one of those harnesses in action
 

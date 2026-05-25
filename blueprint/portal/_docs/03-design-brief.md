@@ -14,7 +14,7 @@ Reason: the positioning is *"Nino does not configure Claude. He instruments it."
 
 **Anchor diagrams** (recur across pages for visual continuity):
 
-- **forge-production-line-diagram** — `forge` umbrella (PUBLIC, violet-accent node) feeding 5 lathes (specchain → big-blueprint → forge-brand → forge-signal → image-gen). **Load-bearing for the forge-production-line cluster section on `/work` per ADR-0009.** Also appears on `/` (compressed) and `/practice` (toolchain section).
+- **forge-production-line-diagram** — `forge` umbrella (PUBLIC, violet-accent node) feeding 5 lathes (specchain → blueprint → forge-brand → forge-signal → image-gen). **Load-bearing for the forge-production-line cluster section on `/work` per ADR-0009.** Also appears on `/` (compressed) and `/practice` (toolchain section).
 - **hesitation-fold-diagram** — declarative-rule (CLAUDE.md) ↦ prompt-hook (predict) ↦ stop-hook (correct), three boxes sharing one classifier rendered as the violet-accent node. Appears on `/practice` (instrumentation section) and `/about` (small inline variant).
 - **paired-deploy-diagram** — main-site CF Pages project (`ninochavez-main`) + blueprint portal CF Pages project (`ninochavez-blueprint`) sharing repo + Vectorize index. Appears on the blueprint portal `/` landing as the meta-signature for the paired-deploy pattern itself.
 
