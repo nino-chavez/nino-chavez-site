@@ -1,0 +1,66 @@
+{
+  "id": "nino-chavez-studio",
+  "name": "Nino Chavez ⊕ studio",
+  "description": "Commerce architecture grounded in reality",
+  "dimensions": {
+    "width": 13.33,
+    "height": 7.5
+  },
+  "colors": {
+    "primary": "e86c5d",
+    "secondary": "4a90bb",
+    "dark": "0f1419",
+    "light": "111827",
+    "highlight": "d4a574",
+    "textPrimary": "e8eaed",
+    "textSecondary": "e8eaed",
+    "textBody": "e8eaed",
+    "textMuted": "9ca3af",
+    "textInverse": "0f1419",
+    "backgroundWhite": "fafafa",
+    "backgroundLight": "f5f5f5",
+    "backgroundAccent": "e86c5d",
+    "backgroundDark": "0f1419",
+    "tableHeaderBg": "e86c5d",
+    "tableHeaderText": "0f1419",
+    "tableStripeBg": "f5f5f5",
+    "tableBorderColor": "374151",
+    "success": "22c55e",
+    "warning": "f59e0b",
+    "error": "ef4444"
+  },
+  "typography": {
+    "fontPrimary": "Roboto Slab",
+    "fontSecondary": "Inter",
+    "fontBold": "Inter Bold",
+    "sizes": {
+      "hero": 44,
+      "slideTitle": 28,
+      "sectionTitle": 36,
+      "subtitle": 18,
+      "body": 14,
+      "small": 11,
+      "footer": 8
+    }
+  },
+  "spacing": {
+    "marginLeft": 0.75,
+    "marginRight": 0.75,
+    "marginTop": 0.75,
+    "marginBottom": 0.5,
+    "contentWidth": 11.83,
+    "contentGap": 0.25,
+    "columnGutter": 0.4
+  },
+  "shapes": {
+    "showAccentLine": true,
+    "accentLineHeight": 0.04,
+    "showTitleDivider": false,
+    "titleDividerHeight": 0.02,
+    "pillRadius": 0.1
+  },
+  "footer": {
+    "template": "Nino Chavez ⊕ studio | Confidential",
+    "showSlideNumbers": true
+  }
+}

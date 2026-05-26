@@ -1,0 +1,52 @@
+{
+  "openingPatterns": {
+    "questionFirst": false,
+    "uncomfortableTruth": true,
+    "avoidAcademic": [
+      "framework for",
+      "methodology to",
+      "approach that enables",
+      "comprehensive solution"
+    ],
+    "avoidCasual": []
+  },
+  "structuralPatterns": {
+    "evolution": false,
+    "compareContrast": false,
+    "provisional": false,
+    "boldHeaders": true
+  },
+  "tonalElements": {
+    "selfInterrogation": true,
+    "culturalTouchstones": false,
+    "technicalDepth": false,
+    "conversational": true
+  },
+  "avoid": {
+    "corporateJargon": [
+      "unlock potential",
+      "drive innovation",
+      "leverage synergies",
+      "digital transformation journey",
+      "best practices",
+      "always",
+      "never",
+      "the key is",
+      "simply",
+      "just need to",
+      "obviously",
+      "leading platform",
+      "industry-standard",
+      "enterprise-grade",
+      "scalable solution"
+    ],
+    "academicDistance": [
+      "framework for",
+      "methodology to",
+      "approach that enables",
+      "comprehensive solution"
+    ],
+    "humbleBragging": [],
+    "prescriptiveAuthority": []
+  }
+}

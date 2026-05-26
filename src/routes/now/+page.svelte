@@ -36,7 +36,7 @@
 			</a>
 			<nav class="v3-nav">
 				<a href="/#writing">Writing</a>
-				<a href="/#desk">On the desk</a>
+				<a href="/#building">On the desk</a>
 				<a href="/#threads">Threads</a>
 				<a href="/speaking">Speaking</a>
 				<a href="/about">About</a>
