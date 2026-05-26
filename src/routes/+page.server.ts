@@ -1,30 +1,39 @@
 import type { PageServerLoad } from './$types';
-import { getLatestRssInsights } from '$lib/adapters/rssAdapter';
-import { FALLBACK_BLOG_POSTS } from '$lib/adapters/blogAdapter';
+import { getFeaturedInsights, getLatestInsights, FALLBACK_BLOG_POSTS } from '$lib/adapters/blogAdapter';
 
-export const load: PageServerLoad = async ({ setHeaders }) => {
+export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
   // Set cache headers for edge optimization
   setHeaders({
     'cache-control': 'public, max-age=300, stale-while-revalidate=600'
   });
 
-  // W6 — primary path is Signal Dispatch RSS (which is live).
-  // blogAdapter.ts manifest endpoints currently 404; RSS is the
-  // canonical source. Fallback to static FALLBACK_BLOG_POSTS keeps
-  // the page rendering even if RSS is temporarily unreachable.
-  const rssPosts = await getLatestRssInsights(5);
+  try {
+    // Fetch blog data during SSR
+    const [featured, latest] = await Promise.all([
+      getFeaturedInsights(1),
+      getLatestInsights(6)
+    ]);
 
-  if (rssPosts.length > 0) {
+    // Combine and deduplicate
+    const combined = [
+      ...featured,
+      ...latest.filter(post => !featured.some(f => f.id === post.id))
+    ];
+
     return {
-      blogPosts: rssPosts,
+      blogPosts: combined,
       blogStatus: 'success' as const
     };
-  }
+  } catch (error) {
+    console.error('[SSR] Blog fetch failed:', error);
 
-  return {
-    blogPosts: FALLBACK_BLOG_POSTS,
-    blogStatus: 'fallback' as const
-  };
+    // Graceful fallback to static content from blogAdapter
+    return {
+      blogPosts: FALLBACK_BLOG_POSTS,
+      blogStatus: 'error' as const,
+      errorMessage: 'Unable to load latest posts. Showing archived content.'
+    };
+  }
 };
 
 // Enable prerendering for static generation

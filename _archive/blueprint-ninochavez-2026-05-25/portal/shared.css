@@ -2005,6 +2005,16 @@ body.show-production-chrome .proto-top-bar .chrome-toggle .toggle-dot {
 	font-family: var(--v3-font-display);
 	font-size: 24px; letter-spacing: 0.02em;
 	color: var(--v3-fg);
+	display: inline-flex; align-items: center; gap: 12px;
+}
+.v3-wordmark-avatar {
+	width: 36px; height: 36px;
+	border-radius: 50%;
+	background: var(--v3-fg);
+	border: 1px solid var(--v3-border);
+	display: block;
+}
+.v3-wordmark-text {
 	display: inline-flex; align-items: baseline; gap: 8px;
 }
 .v3-wordmark-mark { color: var(--v3-yellow); }
@@ -2061,7 +2071,24 @@ body.show-production-chrome .proto-top-bar .chrome-toggle .toggle-dot {
 .v3-hero-content {
 	position: relative; z-index: 10;
 	max-width: 1280px; margin: 0 auto; width: 100%;
+	display: grid; gap: 32px;
 }
+@media (min-width: 768px) {
+	.v3-hero-content { grid-template-columns: auto 1fr; align-items: end; }
+}
+.v3-hero-portrait {
+	width: 140px; height: 140px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid var(--v3-yellow);
+	box-shadow: 0 0 0 8px rgba(245, 185, 26, 0.12);
+	justify-self: start;
+	display: block;
+}
+@media (min-width: 768px) {
+	.v3-hero-portrait { width: 180px; height: 180px; }
+}
+.v3-hero-text { min-width: 0; }
 .v3-hero-eyebrow {
 	font-family: var(--v3-font-mono);
 	font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;

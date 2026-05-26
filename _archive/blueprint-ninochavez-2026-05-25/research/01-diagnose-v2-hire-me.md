@@ -1,15 +1,62 @@
 ---
-canonical: true
+canonical: false
 stage: 1
-status: draft
+status: RETIRED — overcorrected
 last_updated: 2026-05-25
 voice_mode: internal-strategy
 version: 2.0
-supersedes: 01-diagnose.md v0.1 (three-persona balanced framing)
-primary_goal: hire-me
+supersedes: nothing (this doc is itself superseded — see retirement note below)
+primary_goal: hire-me (retired — wrong framing)
+retired_at: 2026-05-25
+retired_reason: Misread "Prospective Client reaches contact surface" as "Prospective Client converts to sale." They're different. Reaching out = curiosity/discovery; buying = transaction. Nino's actual goal is authority/discovery positioning ("a person to be listened to and sought out"), not sales conversion. The peer-cohort calibration's authority-cohort (Lopopolo/Lovin/Litt/Larson) was always the right model; I over-weighted Aurvia (the explicit inverse-calibration / services-shape site) as if it were a positive model.
+canonical_replacement: 01-diagnose.md (original three-persona authority framing — restored as canonical)
+salvaged: B3 (no photo of Nino) is the only diagnosis that survives. Authority/discovery surfaces show the person — Lopopolo's hyperbo.la has a photo, Lovin's site has one, Litt's site has one. Carry forward as a single-item addition to the original Stage 1 + prototype.
 ---
 
-# 01 — Diagnose (v2, hire-me pivot)
+# 01 — Diagnose (v2, hire-me pivot) — RETIRED
+
+**STATUS**: Considered and rejected 2026-05-25. Kept in tree for
+methodology traceability. The canonical Stage 1 diagnose is
+`01-diagnose.md` (original three-persona authority framing).
+
+## Why this doc exists
+
+It documents a wrong turn the methodology took on 2026-05-25 when I
+attempted to pivot Stage 1 toward a "hire me" sales-conversion goal.
+That pivot misread the Prospective Client persona's job. Retiring
+publicly (rather than deleting) so the methodology's failure mode is
+visible — same pattern as `peer-cohort.md` v0.1 → v0.2.
+
+## What survives
+
+Only **B3** (No photo of Nino). Authority/discovery surfaces show the
+person. Carry forward as a single addition to the canonical Stage 1 +
+the family-aesthetic prototype.
+
+## What dies (everything else)
+
+- ❌ B1 named services
+- ❌ B2 named clients strip (partial — commerce.com day-job context survives as authority framing, not sales credibility)
+- ❌ B4 availability indicator
+- ❌ B5 engagement-typed CTAs
+- ❌ B6 receipts ordered by buyer-relevance (re-considered: ordering can still favor commerce/architecture work to match positioning claim, but not because buyers are scanning to purchase — because authority demands relevance)
+- ❌ B7 speaking as service
+- ❌ B8 pricing/scope shape
+
+The original Stage 1 diagnosed IA / copy / receipt density issues that
+were correct. The hire-me pivot added a sales layer on top that the
+goal doesn't actually need.
+
+## Reading order
+
+1. `01-diagnose.md` (canonical — three-persona authority framing)
+2. This file (historical — what we considered and rejected)
+3. `02-prescription.yml` (canonical, still applies)
+4. Family-aesthetic prototype at `blueprint/portal/pages/home.html` (correct direction, needs Nino photo addition)
+
+---
+
+# Original content below (historical — do not act on)
 
 The original Stage 1 diagnose framed v3 as a balanced three-persona
 practitioner studio surface (Peer Architect + Prospective Client +
