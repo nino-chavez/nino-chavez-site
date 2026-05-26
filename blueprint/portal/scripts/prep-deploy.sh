@@ -15,15 +15,20 @@ DOCS_OUT="$PORTAL_DIR/_docs"
 
 mkdir -p "$DOCS_OUT"
 
-# Edit this table to map your blueprint's docs into the portal _docs/ folder.
+# Customized for ninochavez.co v3 brownfield Pattern B initiative.
 # Format: <source-path-relative-to-BLUEPRINT_DIR> -> <slug-without-.md>
 declare -a SOURCES=(
-  "research/synthesis.md:research-synthesis"
-  "DESIGN-PRINCIPLES.md:design-principles"
-  "docs/cx-strategy.md:cx-strategy"
-  "docs/roadmap.md:roadmap"
-  "docs/gaps.md:gaps"
-  "docs/feasibility.md:feasibility"
+  "research/01-diagnose.md:01-diagnose"
+  "research/03-design-brief.md:03-design-brief"
+  "research/_inventory.md:inventory"
+  "research/_external-corpus.md:external-corpus"
+  "research/competitive/peer-cohort.md:peer-cohort"
+  "research/competitive/market-cohort.md:market-cohort"
+  "research/personas/_index.md:personas-index"
+  "research/personas/peer-architect.md:persona-peer-architect"
+  "research/personas/prospective-client.md:persona-prospective-client"
+  "research/personas/conference-circuit.md:persona-conference-circuit"
+  "research/funnel/funnel-current-state.md:funnel-current-state"
 )
 
 count=0
