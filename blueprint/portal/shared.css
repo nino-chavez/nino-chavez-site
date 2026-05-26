@@ -1939,8 +1939,6 @@ body.show-production-chrome .proto-top-bar .chrome-toggle .toggle-dot {
 .icon-svg.xl { width: 2.25em; height: 2.25em; }
 
 /* ============================================================
-
-/* ============================================================
  * DIVERGENCE FLAG (2026-05-25)
  * Lines 1108-1939 above are a STOPGAP — pulled from
  * blueprint.rallyhq.app/shared.css (1939 lines) because the
@@ -1953,8 +1951,8 @@ body.show-production-chrome .proto-top-bar .chrome-toggle .toggle-dot {
  * When the canonical template is patched to match what its
  * proto-nav.js emits, RESYNC this file: replace lines 1-1939
  * from canonical, keep the v3 token block below.
- * ============================================================ */
-
+ *
+ * ----
  * v3 prototype tokens — Blueprint blue + drafting room (v0.2)
  * Scope: applied only to `.proposed-view[data-v3]` and descendants.
  * Source: blueprint/research/03-design-brief.md v0.2
