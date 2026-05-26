@@ -647,7 +647,7 @@ The Stage 4 reviewer should verify (against this brief):
 - **Not the implementation.** Stage 6 deploy carries the actual SvelteKit + CSS work.
 - **Not a finalized copy doc.** Capability sentence ships verbatim from this brief; everything else (subtext, receipt descriptions, /speaking topic positioning, /about expansion) gets a Stage 4 copy pass against the Signal Dispatch voice guide.
 - **Not exhaustive.** Edge surfaces (`/privacy`, `/api`) keep current treatment; this brief only addresses the architected surfaces.
-- **Not a graphic design document.** A Stage 3.5 visual spec (or direct Figma) would render the brief in pixels. The brief commits to tokens + composition; pixel-fidelity is the next step.
+- **Not a graphic design document.** A Stage 3.5 visual spec (or direct Figma) would render the brief in pixels. The brief commits to tokens + composition; pixel-fidelity is the next step. **Stage 3.5 spec landed 2026-05-25 at `03.5-visual-spec/`** via Google Stitch output for all 4 pages (home, speaking, colophon, now). Use for composition + density calibration, NOT as authoritative spec — Stitch hallucinated content. See `03.5-visual-spec/README.md` § "Comparison findings."
 
 ## Open follow-ups for Stage 4
 
