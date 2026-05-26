@@ -1,209 +1,269 @@
 ---
-# Nino Chavez Portfolio (SvelteKit) — ninochavez.com
-# Personal brand surface. Answer Engine Optimization (AEO) proof-of-concept.
-schemaVersion: 1
-name: Nino Chavez Portfolio
-tagline: Personal portfolio — Nino Chavez, Chicago
+# Nino Chavez ⊕ studio — ninochavez.co v3
+# Practitioner studio surface. Architect-primary identity, receipt density,
+# methodology-as-meta-receipt. Authored from blueprint/research/03-design-brief.md v0.2.
+#
+# v2 design doc (violet + content-forward + AEO-thesis) archived at
+# docs/_archive/DESIGN-v2.md. Do not amend; v3 starts clean.
+schemaVersion: 2
+name: Nino Chavez ⊕ studio
+tagline: Practitioner studio surface — architect-who-directs-agents at production scale
 mode: dark
+direction: cyanotype-drafting-room
 
 colors:
-  brand:
-    dark:   "#0a0a0f"     # near-black, 2% hue shift toward blue
-    violet: "#8b5cf6"     # primary accent — Tailwind violet-500
-    light:  "#f0f0f5"     # near-white, matched hue to dark
+  canvas: '#1e3a5e'           # Deep cyanotype blueprint blue. Sir John Herschel, 1842 — architectural drafting reproduction. Color IS positioning.
+  surface-1: '#26446a'         # Elevated surfaces (rail cards, footer)
+  surface-2: '#2e4f78'         # Hover / pressed
+  text-primary: '#f6efdb'      # Warm cream — paper-aged, ~10.2:1 contrast against canvas
+  text-secondary: '#e3d8b6'    # ~8.0:1 contrast
+  text-muted: '#c4b894'        # ~6.4:1 — passes WCAG AA normal text
+  accent-red: '#e8623f'        # Counter-saturated proof-mark red. Used SPARINGLY: live signal dots, single CTA, single emphasis word. NEVER a link color.
+  accent-red-hover: '#f47a5b'
+  border: 'rgba(244, 236, 216, 0.28)'
+  border-strong: 'rgba(244, 236, 216, 0.5)'
 
-  # Shadcn-style neutral ramp expressed as Tailwind neutral.
-  neutral:
-    "50":  "#fafafa"
-    "100": "#f5f5f5"
-    "200": "#e5e5e5"
-    "300": "#d4d4d4"
-    "400": "#a3a3a3"
-    "500": "#737373"
-    "600": "#525252"
-    "700": "#404040"
-    "800": "#262626"
-    "900": "#171717"
-    "950": "#0a0a0a"
-
-  semantic:
-    success: "#22c55e"
-    warning: "#f59e0b"
-    error:   "#ef4444"
-    info:    "#3b82f6"
-
-  surfaces:
-    background: "{colors.brand.dark}"
-    surface:    "{colors.neutral.900}"
-    card:       "{colors.neutral.900}"
-    elevated:   "{colors.neutral.800}"
-    border:     "{colors.neutral.800}"
-
-  text:
-    primary:   "{colors.brand.light}"
-    secondary: "{colors.neutral.300}"
-    muted:     "{colors.neutral.400}"
-    link:      "{colors.brand.violet}"
-    linkHover: "#a78bfa"              # violet-400
+  # Link convention — cohort-divergent. Links use text-primary color with
+  # underline; the underline IS the signal. No separate link color.
+  link: '{colors.text-primary}'
 
 typography:
   fonts:
     display:
-      family: Inter
-      fallbacks: [ui-sans-serif, system-ui, "-apple-system", sans-serif]
-      weights: [500, 600, 700, 800]
+      family: Bree Serif
+      fallbacks: [Tiempos Headline, Georgia, serif]
+      weights: [400]
+      note: Drafting-room display serif. Used at confident scale (h1, h2, capability prose).
     body:
-      family: Inter
-      fallbacks: [ui-sans-serif, system-ui, "-apple-system", sans-serif]
+      family: Crimson Pro
+      fallbacks: [Tiempos Text, Charter, 'Iowan Old Style', serif]
       weights: [400, 500, 600]
+      note: |
+        Body in serif is the RADICAL move for this cohort. Every audited
+        L1/L2 cohort site uses sans for body. Serif body codes "writer's
+        site" in every sentence the visitor reads. Do not substitute.
+    ui:
+      family: Inter
+      fallbacks: [ui-sans-serif, system-ui, sans-serif]
+      weights: [400, 500, 600]
+      note: |
+        UI ONLY — nav items, live-signal text-secondary labels, footer
+        labels. Sans must NEVER escape into prose. If you find yourself
+        applying Inter to a paragraph or h2, you've drifted.
     mono:
-      family: "JetBrains Mono"
-      fallbacks: [ui-monospace, monospace]
+      family: JetBrains Mono
+      fallbacks: [ui-monospace, 'SF Mono', monospace]
       weights: [400, 500, 700]
+      note: Code, timestamps, commit hashes, live-signal labels, mono section prefixes (§).
 
   scale:
-    hero:    "clamp(3rem, 2.25rem + 3.75vw, 5rem)"
-    display: "clamp(2.25rem, 1.75rem + 2.5vw, 3.75rem)"
-    h1:      "clamp(1.875rem, 1.5rem + 1.875vw, 2.75rem)"
-    h2:      "clamp(1.5rem, 1.3rem + 1vw, 2rem)"
-    h3:      "1.25rem"
-    lead:    "1.125rem"
-    body:    "1rem"
-    sm:      "0.875rem"
-    xs:      "0.75rem"
+    display: 'clamp(2.5rem, 5.5vw, 4.5rem)'   # Capability prose intro; max h1
+    h2:      'clamp(1.75rem, 3vw, 2.5rem)'    # Section headers
+    h3:      '1.5rem'                         # Subsection / receipt name
+    lead:    '1.25rem'                        # Lead paragraphs
+    body:    '1.125rem'                       # Body prose (larger than typical — serif body benefits)
+    meta:    '0.9375rem'                      # Secondary prose, URLs in receipt list
+    micro:   '0.8125rem'                      # Mono labels, footer fine print
 
   leading:
-    hero:    1.05
-    heading: 1.2
-    body:    1.6                      # generous for AEO content — long-form
+    display: 1.15
+    h2:      1.15
+    body:    1.65                             # generous for serif comfort
     relaxed: 1.75
 
   tracking:
-    tighter: "-0.03em"
-    tight:   "-0.02em"
-    normal:  "0"
-    wide:    "0.02em"
-
-spacing:
-  "1": 0.25rem
-  "2": 0.5rem
-  "3": 0.75rem
-  "4": 1rem
-  "6": 1.5rem
-  "8": 2rem
-  "12": 3rem
-  "16": 4rem
-  "24": 6rem
-  "32": 8rem
-
-rounded:
-  sm:   0.375rem
-  md:   0.5rem
-  lg:   0.75rem
-  xl:   1rem
-  "2xl": 1.5rem
-  full: 9999px
-
-elevation:
-  sm:    "0 2px 8px rgb(0 0 0 / 0.4)"
-  md:    "0 12px 32px rgb(0 0 0 / 0.5)"
-  focus: "0 0 0 3px rgb(139 92 246 / 0.4)"
-
-motion:
-  duration: { fast: 150ms, base: 250ms, slow: 500ms, hero: 800ms }
-  easing:
-    out:   "cubic-bezier(0.16, 1, 0.3, 1)"
-    inOut: "cubic-bezier(0.65, 0, 0.35, 1)"
-  note: "modernAnimations.css provides scroll-linked reveal + entrance timing."
+    display: '-0.025em'
+    h2:      '-0.015em'
+    body:    '0'
+    mono-label: 'normal'                      # lowercase mono — letterspacing zero
 
 layout:
-  containerMax:   72rem               # narrower than flashy portfolios — content-first
-  contentMax:     44rem               # reading comfort for AEO long-form
-  proseMax:       42rem
-  headerHeight:   4rem
-  heroMinHeight:  36rem
-  touchTargetMin: 2.75rem
-  gutter:   "{spacing.4}"
-  gutterMd: "{spacing.6}"
-  gutterLg: "{spacing.8}"
+  containerMax:   80rem                       # Wider than v2's 72rem; narrower than the current asymmetric live /
+  readingColumn:  42rem                       # ~65ch for prose comfort
+  mainColumn:     2.2                         # Two-column desktop ratio: mainColumn vs railColumn
+  railColumn:     1
+  columnGap:      'clamp(2rem, 5vw, 5rem)'
+  sectionY:       'clamp(4rem, 8vw, 8rem)'
+  gutter:         'clamp(1.25rem, 2vw, 2rem)'
+  baseUnit:       4px
+  headerHeight:   ~4.5rem                     # Slightly taller than v2's 4rem for the wordmark + studio subtitle
+
+  # Subtle drafting-paper grid texture on canvas
+  canvasGrid:
+    size:    32px
+    opacity: 0.025
+    color:   '{colors.text-primary}'
+
+motion:
+  reveal:
+    direction: up                             # Single direction only
+    distance:  8px
+    duration:  320ms
+    easing:    'cubic-bezier(0.16, 1, 0.3, 1)'
+  hover:
+    duration:  180ms
+    easing:    ease-out
+    interactions:
+      - receipt-list-name → accent-red underline reveal
+      - link → border-bottom transition
+      - cta → background shift accent-red → accent-red-hover
+  ambient: none                               # NO ambient animation
+  heroRotation: none                          # NO hero photo rotation (retired)
+
+wordmark:
+  format: 'Nino Chavez ⊕ studio'
+  composition: |
+    Two-line stack:
+      Line 1: "Nino Chavez" in Bree Serif at 1.75rem + "⊕" glyph in JetBrains Mono red at 1.25rem (translated -2px)
+      Line 2: "studio" in JetBrains Mono at 0.6875rem, text-muted, +0.12em tracking, lowercase
+  custom: ⊕ symbol is the practice mark. Final commission TBD; current symbol is placeholder.
 ---
 
-# Nino Chavez Portfolio — Design System
+# Nino Chavez ⊕ studio — Design System
 
 ## Overview
 
-Personal portfolio + AEO (Answer Engine Optimization) proof-of-concept. The site is a working demonstration of structured content that AI models (ChatGPT, Claude, Gemini) can definitively answer from — so the visual system is deliberately **content-forward** rather than spectacle-driven. Dark default with a single violet accent; Inter throughout; generous reading measure.
+This design system supports **Nino Chavez ⊕ studio** — the practitioner
+studio surface at `ninochavez.co`. Authored from
+`blueprint/research/03-design-brief.md` v0.2 (the anti-slop reinvention).
+Cyanotype blueprint blue canvas + cream Crimson Pro serif body + Bree
+Serif display + counter-saturated proof-mark red emphasis.
 
-This is the authoritative "who is Nino" surface. The sibling properties are:
+The previous v2 system (violet + Inter + content-forward + AEO thesis) is
+archived at `docs/_archive/DESIGN-v2.md`. Do not amend v2; v3 starts
+from the brief, not from a diff.
 
-- **`nino-chavez-gallery`** — volleyball action-sports photography (charcoal + gold, Montserrat)
-- **`nino-chavez-labs`** — experimental apps hub (purple + DM Sans, gradient-heavy)
+## Identity claim
 
-Each has its own visual system; they share "dark default" but are **not** visually cousin-ish. Links between them use the active site's accent color, not the destination's.
+The site identifies as a **practitioner studio surface** — Nino as
+software architect directing AI agents to ship enterprise commerce,
+plus the corpus of shipped products + 277-essay Signal Dispatch
+archive that backs the claim. NOT a personal portfolio, NOT a creative-
+brand surface, NOT a multi-pursuit polymath site.
 
-## Colors
+The wordmark formalizes this: `Nino Chavez ⊕` with a small mono
+`studio` subtitle. Smallest possible delta from "Nino Chavez" personal
+identity; framing without rename.
 
-- **`{colors.brand.dark}` (#0a0a0f)** — the canvas. 2% hue shift toward blue from pure black — subtle cool cast.
-- **`{colors.brand.violet}` (#8b5cf6 / violet-500)** — the single saturated accent. Links, primary CTA, focus ring, accent graphics. Do not introduce a second brand color.
-- **`{colors.brand.light}` (#f0f0f5)** — body text. Not pure white; hue-matched to the dark canvas for less optical glare.
-- **Neutral ramp** carries the entire surface hierarchy between background and text.
+## Color = positioning
 
-## Typography
+Cyanotype blueprint blue is a **direct material reference** to Sir John
+Herschel's 1842 architectural drafting reproduction process. Color
+choice ties to:
+- **Blueprint methodology** — the methodology the site documents and
+  was produced by
+- **Architectural practice** — the architect identity the capability
+  statement claims
+- **Cohort divergence** — every audited peer-cohort site uses charcoal
+  or pure neutrals; cyanotype is unowned in this market
 
-**Inter everywhere** — display, body, UI. Display weights go up to 800; body stays at 400–600. No secondary display font; Inter has enough weight range to carry both roles.
+Counter-saturated proof-mark red (`accent-red`) recalls a proofreader's
+mark. Used SPARINGLY: live-signal dots, single CTA emphasis, the rare
+emphasis word in body prose (e.g., "harness" in the capability sentence).
 
-### Scale
+**Never use red as a link color.** Links inherit text-primary with
+underline as the signal.
 
-Fluid `clamp()` across all steps. Hero tops at 5rem on widest viewport — not the 8rem a portfolio-brand archetype would allow. This is content-first; the hero is a statement, not a spectacle.
+## Type = identity
 
-### Leading rules
+The serif body is the cohort-divergent move. Every audited L1/L2 peer
+site (Lovin, Lopopolo, Litt, Larson, Majors, Böckeler, Klein, Thompson)
+uses sans for body. Serif body codes "writer's site" in every sentence
+the visitor reads — the 277-essay Signal Dispatch archive is the
+authority anchor, and the type system mirrors it.
 
-- **Hero** 1.05 — tight, to make the statement land
-- **Headings** 1.2
-- **Body** 1.6 — generous for AEO-style long-form
-- **Relaxed** 1.75 — for pull quotes and featured prose
+Bree Serif (display) is a working slab — drafting-room textbook feel,
+NOT the cohort-default Source Serif Pro / GT Sectra / Tiempos. Picked
+deliberately to avoid the AI-portfolio template default.
 
-### Tracking
+Inter is **UI ONLY** — nav items, live-signal labels, footer
+microcopy. Sans never escapes into prose. If you find yourself reaching
+for Inter on a paragraph or h2, you've drifted into vibe-coded-tailwind
+territory.
 
-Hero display: `-0.03em`. Body: `0`. All-caps section tags: `+0.02em`. No decorative tracking.
+## Layout — prose-led, no hero, two-column
 
-## Layout
+The home page **opens with prose**, not a centered hero. The capability
+claim is woven into the first prose paragraph, not staged. This is the
+single most anti-template move in the system — every AI-generated
+portfolio defaults to hero-centered-above-fold.
 
-- **Container 72rem** — narrower than the 80rem portfolio-brand archetype. This site prioritizes reading over spectacle.
-- **Content 44rem** — ~65ch target for comfortable prose reading.
-- **Header 4rem** — tight. Logo + 4–5 nav links + resume-link tail.
+Desktop is two-column: main column (~2.2 / 1) + permanent right rail
+for live state, photography anchor, adjacent surfaces. Mobile collapses
+to single-column journal-entry flow.
 
-## Motion
+## Anti-slop discipline
 
-`modernAnimations.css` provides scroll-linked reveal timing and entrance animations. Default easing is expo-out (`{motion.easing.out}`) — characteristic of portfolio animation languages. Hero entrance runs 800ms.
+This system was authored against an explicit anti-slop test. Forbidden
+patterns (these are the AI-default tells that v0.1 of the brief
+produced and v0.2 retired):
 
-Continuous/ambient animation is not used. Motion exists for reveal transitions on scroll, not for decoration.
+**Do NOT**:
+- Use charcoal canvas (`#0e1014`-ish) with a "tasteful warm accent" — that's the Cursor/Linear/Vercel-clone shape
+- Use copper / amber accent — same family, same trap
+- Mono uppercase tracking-wide section labels — single most-overused AI-portfolio tell
+- Stick a sticky-blur header on the page
+- Use hairline section dividers + grid-aligned receipt cards
+- Center a hero above the fold
+- Rotate a hero photo
+- Use the four-pursuit framing (Photography / Music / Writing / Building)
+- Default to Source Serif Pro / GT Sectra / Tiempos for h1 — those are cohort defaults
+- Use Inter for body prose — sans body is cohort-default for this audience
 
-## Structured Content Discipline (AEO)
+**Do**:
+- Open with prose (capability claim in the first paragraph)
+- Receipt list flat and dense (Lovin pattern: name + 1-line description per row)
+- Body in serif (cohort-divergent; codes "writer")
+- One color (cyanotype canvas + cream type); a single counter-saturated emphasis (proof-mark red)
+- Mono lowercase labels with `§` prefix; tracking 0
+- Subtle drafting-paper grid texture on canvas at 2.5% opacity
+- Custom mark in the wordmark (⊕ in red)
 
-This site is the proof-of-concept for AEO. The *visual* system must not undermine the *content* structure that makes AI answer-readable:
+## Receipt-bucket discipline
 
-- **Headings are semantic.** `h1`/`h2`/`h3` carry meaning. Don't use an `h2` class on a `div` just to get the visual treatment.
-- **Lists are lists.** Bulleted/numbered lists in prose should be `<ul>`/`<ol>`, not styled paragraphs.
-- **Data gets `<dl>`.** Facts like "Role: Product Architect" or "Years: 20+" use `<dl>`/`<dt>`/`<dd>` so AI models can parse the entity.
-- **Schema.org markup is required** on bio, work history, project descriptions, and long-form posts.
+Per `blueprint/research/_external-corpus.md`: the site cites 11 CURRENT
+receipts as live. 2 EVOLUTION items (AI Hive, Labs hub) mention only as
+"where I started." 1 CLIENT-CONTEXT (630-volleyball) mention only.
+14 ADJACENT/EXPERIMENT items DO NOT cite. Receipt fidelity is the
+central battle of v3 — every claim must be verifiable.
 
-The DESIGN.md token system supports this by keeping visual hierarchy aligned with semantic hierarchy: `h1` always reads larger than `h2` regardless of container.
+## Per-surface composition
 
-## Do's and Don'ts
+- **`/`** — Header (wordmark + nav) → prose intro w/ capability claim
+  → CTA → live signals strip → "On the desk this week" (11 receipts
+  topic-grouped) → "Recent dispatches" (5 + 277-archive callout) →
+  "Threads I keep pulling on" (4 named topic anchors) → footer
+- **`/speaking`** — bio variants (50/100/250) → headshot library →
+  topic list → past-talks credits → single inquiry CTA
+- **`/colophon`** — methodology meta-receipt with Blueprint pipeline
+  stages + stack + influences + v3-vs-v2 deltas (Stage 7 candidate:
+  rework to stat-tile + receipt-line treatment per
+  `blueprint/research/08-stage-7-candidates.md § C1`)
+- **`/now`** — live state mirror: in-flight initiatives + Blueprint
+  stage status + recent writing + reading/listening rotation
+- **`/about`** — bio + role + influences + selected client context
+- **`/work`, `/work/[slug]`** — preserved from v2 (per-project depth)
+- **`/ai/{ask,build,learn,reference}`** — preserved 5-page subsection;
+  surfaced from nav per resolved Q1 (`/ai/` is shipped, not experimental)
+- **`/v1`** — archived to `_archive/` (per `02-prescription.yml § P3-1`)
 
-**Do**
-- Reference tokens in all component CSS.
-- Reserve `{colors.brand.violet}` for links, focus ring, and the single primary CTA per viewport.
-- Use Inter for everything. Do not introduce a serif for "prose" moments.
-- Respect the content-first measure. 44rem prose column, period.
+## Chat surface
 
-**Don't**
-- Introduce a second accent color.
-- Use hero display sizes on content-interior pages. Hero is for the landing.
-- Let a visual treatment override semantic markup (a styled `div` in place of `h2`).
-- Add continuous/ambient motion.
+Persistent chat FAB on every page, labeled "Ask Signal Dispatch."
+Grounded in the 277-essay corpus via Cloudflare Vectorize binding.
+Streaming responses with cited post excerpts. Cohort-divergent — no
+audited peer site has this surface.
 
----
+## Provenance
 
-*Derived from `src/styles/globals.css` and `src/lib/styles/`. The runtime CSS is thin (Tailwind + custom vars) — this DESIGN.md carries the discipline that Tailwind alone can't enforce.*
+Authored from `blueprint/research/03-design-brief.md` v0.2 — the
+anti-slop reinvention after v0.1 cohort-followed and produced AI-default
+tells. Stage 4 prototype lives at `blueprint.ninochavez.co` and
+demonstrates this system. Stage 5 fact-check (`blueprint/research/05-fact-check.md`)
+verified 6 anchors pass, 5 defer to production deploy (this is part of
+that production deploy).
+
+For the full methodology trail: `blueprint/research/01-diagnose.md`
+through `blueprint/research/08-stage-7-candidates.md`. The site is the
+methodology's latest output; the methodology is itself a receipt the
+site cites.

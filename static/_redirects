@@ -1,0 +1,7 @@
+# Cloudflare Pages redirects for ninochavez.co
+# Format: <source> <destination> <status>
+
+# /v1 legacy route — archived 2026-05-25 (W8 of production deploy plan)
+# Source: src/_archive/v1/+page.svelte. See blueprint/research/02-prescription.yml § P3-1.
+/v1 / 301
+/v1/* / 301

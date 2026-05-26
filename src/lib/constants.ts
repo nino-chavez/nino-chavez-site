@@ -6,11 +6,11 @@ export const PROJECTS: Project[] = [
 	{
 		id: 'ai-native-portfolio',
 		title: 'Portfolio',
-		subtitle: 'This site — SvelteKit, hosted on Vercel',
+		subtitle: 'This site — SvelteKit on Cloudflare Pages',
 		description:
 			'Personal portfolio. SvelteKit, centralized copy, lazy-loaded sections, EXIF photo modals, Playwright visual checks.',
 		category: 'ai-native-systems',
-		technologies: ['SvelteKit', 'Svelte 4', 'TypeScript', 'Tailwind CSS', 'Playwright', 'Vercel'],
+		technologies: ['SvelteKit', 'Svelte 4', 'TypeScript', 'Tailwind CSS', 'Playwright', 'Cloudflare Pages'],
 		featured: true,
 		isShowcase: true,
 		demo: 'https://ninochavez.co',
@@ -38,7 +38,7 @@ export const PROJECTS: Project[] = [
 		description:
 			'Long-form writing on craft, code, and the process of building. Designed for clarity and speed with an emphasis on accessibility and reading experience.',
 		category: 'ai-native-systems',
-		technologies: ['React', 'Vite', 'MDX', 'Tailwind CSS', 'Vercel'],
+		technologies: ['Astro', 'MDX', 'Tailwind CSS', 'Cloudflare Pages'],
 		featured: false,
 		imageUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=800&fit=crop&q=80',
 		demo: 'https://blog.ninochavez.co',
