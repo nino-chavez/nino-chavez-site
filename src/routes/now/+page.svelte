@@ -1,205 +1,343 @@
 <script>
-	// v3 /now — live state mirror of in-flight work
-	// Source: blueprint/research/03-design-brief.md § /now page composition
-	// Promotes /now from v2 lateral surface to v3 primary live-state mirror.
-	// Implements differentiation move 4 (live runtime signals).
-	// Updates weekly+.
+	import { onMount } from 'svelte';
+	import { fly, fade, slide } from 'svelte/transition';
 
-	export let data;
-	$: latestPosts = (data?.blogPosts ?? []).slice(0, 5);
-	$: latestPost = latestPosts[0];
+	let mounted = false;
+	let cvExpanded = false;
 
-	function formatRelative(dateStr) {
-		if (!dateStr) return '';
-		const d = new Date(dateStr);
-		const days = Math.floor((Date.now() - d.getTime()) / 86400000);
-		if (days === 0) return 'today';
-		if (days === 1) return '1d ago';
-		if (days < 30) return `${days}d ago`;
-		if (days < 365) return `${Math.floor(days / 30)}mo ago`;
-		return `${Math.floor(days / 365)}y ago`;
+	const currentFocus = [
+		{
+			title: "Let's Pepper",
+			description: 'Running the grassroots 3v3 volleyball tournament series.',
+			link: 'https://letspepper.com'
+		},
+		{
+			title: 'Flickday Media',
+			description: 'Tournament photography and same-day photo drops.',
+			link: 'https://flickdaymedia.com'
+		},
+		{
+			title: 'Rally HQ',
+			description: 'Tournament management platform in open beta.',
+			link: 'https://rallyhq.app'
+		}
+	];
+
+	const thinkingAbout = [
+		'Growing grassroots volleyball in Chicago',
+		'How AI changes the way we build software',
+		'Photography as a way of seeing',
+		'The gap between demos and production'
+	];
+
+	const cvTimeline = [
+		{
+			year: '2026',
+			role: 'Product Architect',
+			company: 'commerce.com',
+			location: 'Chicago, IL'
+		},
+		{
+			year: '2023-2026',
+			role: 'Enterprise Architect',
+			company: 'Accenture Song',
+			location: 'Chicago, IL'
+		},
+		{
+			year: '2021-2023',
+			role: 'Managing Delivery Architect',
+			company: 'Capgemini',
+			location: 'Chicago, IL'
+		},
+		{
+			year: '2020-2021',
+			role: 'Domain Architect',
+			company: 'Peapod Digital Labs',
+			location: 'Chicago, IL'
+		},
+		{
+			year: '2018-2020',
+			role: 'Managing Enterprise Architect',
+			company: 'Accenture Interactive',
+			location: 'Chicago, IL'
+		},
+		{
+			year: '2015-2018',
+			role: 'Managing Enterprise Architect',
+			company: 'Gorilla Group',
+			location: 'Chicago, IL'
+		},
+		{
+			year: '1999-2015',
+			role: 'Software Engineer → Engineering Lead',
+			company: 'Various Companies',
+			location: 'Chicago, IL'
+		}
+	];
+
+	onMount(() => {
+		mounted = true;
+
+		// Check if URL has #cv hash
+		if (typeof window !== 'undefined' && window.location.hash === '#cv') {
+			cvExpanded = true;
+		}
+	});
+
+	function toggleCV() {
+		cvExpanded = !cvExpanded;
+		if (cvExpanded && typeof window !== 'undefined') {
+			window.history.replaceState(null, '', '#cv');
+		} else if (typeof window !== 'undefined') {
+			window.history.replaceState(null, '', window.location.pathname);
+		}
 	}
 </script>
 
 <svelte:head>
-	<title>Now — Nino Chavez ⊕ studio</title>
-	<meta name="description" content="Live state mirror of what's actually happening this week. In-flight initiatives, Blueprint stage status, recent writing, reading queue." />
-	<link rel="canonical" href="https://ninochavez.co/now" />
+	<title>Now - Nino Chavez</title>
+	<meta name="description" content="What I'm working on, thinking about, and building right now." />
+	<meta name="robots" content="noindex, nofollow" />
+	<!-- Open Graph -->
+	<meta property="og:title" content="Now - Nino Chavez" />
+	<meta property="og:description" content="What I'm working on, thinking about, and building right now." />
+	<meta property="og:type" content="profile" />
+	<meta property="og:url" content="https://ninochavez.co/now" />
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Now - Nino Chavez" />
+	<meta name="twitter:description" content="What I'm working on, thinking about, and building right now." />
 </svelte:head>
 
-<div class="v3">
-	<header class="v3-header">
-		<div class="v3-header-inner">
-			<a href="/" class="v3-wordmark">
-				<span class="v3-wordmark-name">Nino Chavez<span class="v3-mark-glyph">⊕</span></span>
-				<span class="v3-wordmark-tag">studio</span>
-			</a>
-			<nav class="v3-nav">
-				<a href="/#writing">Writing</a>
-				<a href="/#building">On the desk</a>
-				<a href="/#threads">Threads</a>
-				<a href="/speaking">Speaking</a>
-				<a href="/about">About</a>
-				<a href="/now" class="v3-now-link">→ now</a>
-			</nav>
-		</div>
-	</header>
-
-	<div class="v3-main">
-		<div class="v3-column-main">
-
-			<p class="v3-prose-intro">
-				What's <span class="v3-emphasis-red">actually</span> happening this week.
-			</p>
-
-			<p class="v3-prose-body">
-				Live mirror of in-flight work. Updates weekly+. The site reads its
-				own Blueprint stage; the writing strip pulls from Signal Dispatch
-				RSS; the shipping signals tail Rally HQ's actual status. This is
-				what's on the desk right now — not a roadmap, not a marketing page.
-				The cyanotype dries while it's being printed.
-			</p>
-
-			<section class="v3-block" id="in-flight">
-				<span class="v3-block-label">in flight</span>
-				<h2 class="v3-block-title">What I'm actively working on this week.</h2>
-
-				<div class="v3-receipt-group">
-					<div class="v3-receipt">
-						<div class="v3-receipt-name">ninochavez.co v3</div>
-						<div class="v3-receipt-desc">Blueprint Stage 6 (Documents + Deploy) — production cutover. Anti-slop rework after v0.1 cohort-followed too closely. Four routes shipped from prototype to production.<span class="v3-receipt-url">apps/website-nc · stage 6</span></div>
+<div class="min-h-screen bg-black text-white">
+	<!-- Hero Section -->
+	<section class="pt-16 pb-12 md:pt-24 md:pb-16 px-6 md:px-12">
+		<div class="max-w-4xl mx-auto">
+			{#if mounted}
+				<!-- Name Card -->
+				<div
+					in:fly={{ y: 20, duration: 800, delay: 100 }}
+					class="flex items-center gap-4 mb-10"
+				>
+					<div class="w-14 h-14 bg-lime-400 text-black flex items-center justify-center text-xl font-display">
+						NC
 					</div>
-					<div class="v3-receipt">
-						<div class="v3-receipt-name">Blueprint methodology</div>
-						<div class="v3-receipt-desc">Stage 7 — iterating template/.claude hooks. Receipt-bucket discipline encoded; market-cohort sweep added.<span class="v3-receipt-url">wip/blueprint · active</span></div>
-					</div>
-					<div class="v3-receipt">
-						<div class="v3-receipt-name">Rally HQ</div>
-						<div class="v3-receipt-desc">Production. Tournament brackets live this weekend.<span class="v3-receipt-url">apps/rally-hq · production</span></div>
-					</div>
-					<div class="v3-receipt">
-						<div class="v3-receipt-name">Atelier dashboard</div>
-						<div class="v3-receipt-desc">Active development. State-derive parser fix mirrored from template.<span class="v3-receipt-url">wip/atelier · in flight</span></div>
+					<div>
+						<div class="text-lg font-semibold">Nino Chavez</div>
+						<div class="text-neutral-500 text-sm">Chicago, IL</div>
 					</div>
 				</div>
-			</section>
 
-			<section class="v3-block" id="writing-now">
-				<span class="v3-block-label">writing this week</span>
-				<h2 class="v3-block-title">Recent dispatches.</h2>
+				<!-- The Hook -->
+				<h1
+					in:fly={{ y: 20, duration: 800, delay: 200 }}
+					class="font-display text-5xl md:text-7xl tracking-tight mb-6 leading-[0.9]"
+				>
+					NOW
+				</h1>
 
-				{#if latestPosts.length > 0}
-					{#each latestPosts as post (post.id)}
-						<article class="v3-post">
-							<a href={post.link} class="v3-post-title">{post.title}</a>
-							<span class="v3-post-date">{formatRelative(post.date)}</span>
-						</article>
+				<p
+					in:fly={{ y: 20, duration: 800, delay: 300 }}
+					class="text-xl md:text-2xl text-neutral-400 mb-10 max-w-2xl leading-relaxed"
+				>
+					What I'm working on, thinking about, and where my attention is going.
+				</p>
+
+				<!-- Last updated -->
+				<div
+					in:fly={{ y: 20, duration: 800, delay: 400 }}
+					class="text-neutral-600 text-sm font-mono"
+				>
+					Updated February 2026
+				</div>
+			{/if}
+		</div>
+	</section>
+
+	<!-- Current Focus -->
+	<section class="py-12 px-6 md:px-12 border-t border-neutral-800">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-lime-400 font-mono text-xs tracking-widest uppercase mb-8">What I'm Working On</h2>
+
+			<div class="grid md:grid-cols-3 gap-6">
+				{#each currentFocus as item}
+					<a
+						href={item.link}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="border border-neutral-800 p-6 hover:border-lime-400/50 transition-colors group"
+					>
+						<h3 class="text-lg font-display text-white mb-3 tracking-wide group-hover:text-lime-400 transition-colors">{item.title.toUpperCase()}</h3>
+						<p class="text-sm text-neutral-400 leading-relaxed">{item.description}</p>
+					</a>
+				{/each}
+			</div>
+		</div>
+	</section>
+
+	<!-- Thinking About -->
+	<section class="py-12 px-6 md:px-12 border-t border-neutral-800">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-lime-400 font-mono text-xs tracking-widest uppercase mb-8">What I'm Thinking About</h2>
+
+			<div class="grid md:grid-cols-2 gap-4">
+				{#each thinkingAbout as item}
+					<div class="flex items-start gap-3">
+						<svg class="w-5 h-5 text-neutral-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+						</svg>
+						<span class="text-neutral-300">{item}</span>
+					</div>
+				{/each}
+			</div>
+		</div>
+	</section>
+
+	<!-- Brief Background -->
+	<section class="py-12 px-6 md:px-12 border-t border-neutral-800">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-lime-400 font-mono text-xs tracking-widest uppercase mb-8">Background</h2>
+
+			<p class="text-neutral-300 leading-relaxed max-w-2xl mb-6">
+				I've been writing code for 25 years—the day job is Product Architect at commerce.com.
+				But this site is about everything else I create: photography, music, writing, volleyball ventures,
+				and whatever I'm building on the side.
+			</p>
+
+			<p class="text-neutral-400 leading-relaxed max-w-2xl">
+				The professional history is below if you're curious, but it's not the point of being here.
+			</p>
+		</div>
+	</section>
+
+	<!-- Expandable CV Section -->
+	<section id="cv" class="py-12 px-6 md:px-12 border-t border-neutral-800">
+		<div class="max-w-4xl mx-auto">
+			<button
+				on:click={toggleCV}
+				class="flex items-center gap-3 text-neutral-500 hover:text-lime-400 transition-colors group w-full"
+			>
+				<h2 class="font-mono text-xs tracking-widest uppercase">Professional Timeline</h2>
+				<svg
+					class="w-4 h-4 transition-transform duration-300 {cvExpanded ? 'rotate-180' : ''}"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+				</svg>
+				<span class="text-xs text-neutral-600 ml-auto">
+					{cvExpanded ? 'Collapse' : 'Expand'}
+				</span>
+			</button>
+
+			{#if cvExpanded}
+				<div transition:slide={{ duration: 300 }} class="mt-8 space-y-4">
+					{#each cvTimeline as item}
+						<div class="border-l-2 border-neutral-800 pl-6 py-2 hover:border-lime-400/30 transition-colors">
+							<div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+								<span class="text-lime-400 font-mono text-sm">{item.year}</span>
+								<span class="text-neutral-600 hidden md:inline">•</span>
+								<span class="text-neutral-500 text-sm">{item.location}</span>
+							</div>
+							<h3 class="text-white font-medium mt-1">{item.role}</h3>
+							<p class="text-neutral-400 text-sm">{item.company}</p>
+						</div>
 					{/each}
-				{:else}
-					<article class="v3-post">
-						<a href="https://blog.ninochavez.co" class="v3-post-title">Latest from Signal Dispatch →</a>
-						<span class="v3-post-date">live feed</span>
-					</article>
-				{/if}
-
-				<p style="margin-top: 1.5rem;"><a href="https://blog.ninochavez.co">Full archive — 277 essays since 2018 →</a></p>
-			</section>
-
-			<section class="v3-block" id="reading">
-				<span class="v3-block-label">reading + listening</span>
-				<h2 class="v3-block-title">What's in the rotation this week.</h2>
-
-				<div class="v3-receipt-group">
-					<div class="v3-receipt">
-						<div class="v3-receipt-name">"Harness engineering" (Lopopolo)</div>
-						<div class="v3-receipt-desc">OpenAI Feb 2026 piece + Latent Space interview. Re-reading for /colophon influence cites.<span class="v3-receipt-url">openai.com/index/harness-engineering</span></div>
-					</div>
-					<div class="v3-receipt">
-						<div class="v3-receipt-name">"Memos on AI-assisted delivery" (Böckeler)</div>
-						<div class="v3-receipt-desc">ThoughtWorks/Martin Fowler series. The "memos" framing as informal-iterative is influencing how I'll surface Signal Dispatch sub-modes.<span class="v3-receipt-url">martinfowler.com/articles/exploring-gen-ai</span></div>
-					</div>
 				</div>
-			</section>
-
+			{/if}
 		</div>
+	</section>
 
-		<aside class="v3-column-rail">
+	<!-- Connect -->
+	<section class="py-16 px-6 md:px-12 border-t border-neutral-800">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-lime-400 font-mono text-xs tracking-widest uppercase mb-8">Say Hi</h2>
 
-			<div class="v3-rail-card">
-				<div class="v3-rail-label">live signals</div>
-				<div class="v3-live-row">
-					<span class="v3-live-tag">writing</span>
-					{#if latestPost}
-						<a href={latestPost.link} class="v3-live-text" style="border-bottom: none;">{latestPost.title}</a>
-						<span class="v3-live-age">{formatRelative(latestPost.date)} · blog.ninochavez.co</span>
-					{:else}
-						<span class="v3-live-text">Latest dispatch loading…</span>
-						<span class="v3-live-age">→ blog.ninochavez.co</span>
-					{/if}
-				</div>
-				<div class="v3-live-row">
-					<span class="v3-live-tag">shipping</span>
-					<a href="https://rallyhq.app" class="v3-live-text" style="border-bottom: none;">Rally HQ — production</a>
-					<span class="v3-live-age">→ rallyhq.app</span>
-				</div>
-				<div class="v3-live-row">
-					<span class="v3-live-tag">in flight</span>
-					<a href="/colophon" class="v3-live-text" style="border-bottom: none;">ninochavez.co v3 — Stage 6 deploy</a>
-					<span class="v3-live-age">→ /colophon</span>
-				</div>
-			</div>
+			<p class="text-neutral-400 mb-8 max-w-xl">
+				Always happy to chat about photography, music, volleyball, building things, or whatever's interesting.
+			</p>
 
-			<div class="v3-rail-card">
-				<div class="v3-rail-label">stage status — blueprint initiatives</div>
-				<div class="v3-live-row">
-					<span class="v3-live-tag">stage 6</span>
-					<span class="v3-live-text">ninochavez.co v3</span>
-					<span class="v3-live-age">deploy · 4 routes live</span>
-				</div>
-				<div class="v3-live-row">
-					<span class="v3-live-tag">stage 7</span>
-					<span class="v3-live-text">Blueprint methodology</span>
-					<span class="v3-live-age">iterating template hooks</span>
-				</div>
-			</div>
-
-			<div class="v3-rail-card">
-				<div class="v3-rail-label">last updated</div>
-				<div class="v3-live-row">
-					<span class="v3-live-text">2026-05-25</span>
-					<span class="v3-live-age">manual until Stage 7 lifestream automation lands</span>
-				</div>
-			</div>
-
-		</aside>
-	</div>
-
-	<footer class="v3-footer">
-		<div class="v3-footer-inner">
-			<div>
-				<h4>navigate</h4>
-				<ul>
-					<li><a href="/">Home</a></li>
-					<li><a href="/speaking">Speaking</a></li>
-					<li><a href="/colophon">Colophon</a></li>
-				</ul>
-			</div>
-			<div>
-				<h4>subscribe</h4>
-				<ul>
-					<li><a href="https://blog.ninochavez.co">Signal Dispatch RSS</a></li>
-				</ul>
-			</div>
-			<div>
-				<h4>contact</h4>
-				<ul>
-					<li><a href="mailto:nino@ninochavez.co">nino@ninochavez.co</a></li>
-					<li><a href="https://github.com/nino-chavez">GitHub</a></li>
-				</ul>
+			<div class="flex flex-wrap gap-4">
+				<a
+					href="mailto:nino@ninochavez.co"
+					class="inline-flex items-center gap-2 px-6 py-3 bg-lime-400 text-black font-semibold hover:bg-white transition-colors"
+				>
+					Email
+				</a>
+				<a
+					href="https://www.linkedin.com/in/nino-chavez/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 px-6 py-3 border border-neutral-700 text-white font-semibold hover:border-lime-400 hover:text-lime-400 transition-colors"
+				>
+					LinkedIn
+				</a>
+				<a
+					href="https://x.com/PhotoByNino"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 px-6 py-3 border border-neutral-800 text-neutral-400 font-semibold hover:border-neutral-700 hover:text-white transition-colors"
+				>
+					X / Twitter
+				</a>
+				<a
+					href="https://soundcloud.com/ni-no-cha-vez"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 px-6 py-3 border border-neutral-800 text-neutral-400 font-semibold hover:border-neutral-700 hover:text-white transition-colors"
+				>
+					SoundCloud
+				</a>
 			</div>
 		</div>
-		<div class="v3-footer-meta">
-			<span>v3 · 2026-05-25 · cyanotype edition</span>
+	</section>
+
+	<!-- Footer -->
+	<footer class="py-8 px-6 md:px-12 border-t border-neutral-800">
+		<div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+			<p class="text-sm text-neutral-600 font-mono">
+				© 2026 NINO CHAVEZ
+			</p>
+			<div class="flex items-center gap-6">
+				<a href="https://blog.ninochavez.co" class="text-sm text-neutral-500 hover:text-lime-400 transition-colors">
+					Blog
+				</a>
+				<a href="https://photography.ninochavez.co" class="text-sm text-neutral-500 hover:text-lime-400 transition-colors">
+					Photography
+				</a>
+				<a href="/" class="text-sm text-neutral-500 hover:text-lime-400 transition-colors">
+					Home
+				</a>
+			</div>
 		</div>
 	</footer>
 </div>
+
+<style>
+	.font-display {
+		font-family: 'Bebas Neue', sans-serif;
+	}
+
+	/* Print styles */
+	@media print {
+		.bg-black {
+			background: white !important;
+			color: black !important;
+		}
+
+		.text-lime-400 {
+			color: #65a30d !important;
+		}
+
+		.text-neutral-400,
+		.text-neutral-500 {
+			color: #374151 !important;
+		}
+
+		.border-neutral-800 {
+			border-color: #e5e7eb !important;
+		}
+	}
+</style>
