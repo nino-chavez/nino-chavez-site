@@ -1,361 +1,313 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, nofollow" />
-  <title>Home (v3) — Nino Chavez Blueprint</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Crimson+Pro:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/shared.css?v=20260525-v04">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="noindex, nofollow" />
+	<title>Home (v3) — Nino Chavez Blueprint</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/shared.css?v=20260525-family">
 </head>
 <body data-compare-root data-view="proposed">
 
-  <!-- PROPOSED VIEW: v3 home as specified in 03-design-brief.md v0.2 -->
-  <section class="proposed-view" data-v3>
+	<section class="proposed-view">
+		<div class="v3">
 
-    <!-- ===== HEADER with hand-built mark (anti-slop H) ===== -->
-    <header class="v3-header">
-      <div class="v3-header-inner">
-        <a href="/pages/home.html" class="v3-wordmark">
-          <span class="v3-wordmark-name">Nino Chavez<span class="v3-mark-glyph">⊕</span></span>
-          <span class="v3-wordmark-tag">studio</span>
-        </a>
-        <nav class="v3-nav">
-          <a href="#writing">Writing</a>
-          <a href="#desk">On the desk</a>
-          <a href="#threads">Threads</a>
-          <a href="#speaking">Speaking</a>
-          <a href="#about">About</a>
-        </nav>
-      </div>
-    </header>
+			<!-- HEADER -->
+			<header class="v3-header">
+				<div class="v3-header-inner">
+					<a href="/pages/home.html" class="v3-wordmark">
+						Nino Chavez<span class="v3-wordmark-mark">⊕</span>
+						<span class="v3-wordmark-tag">studio</span>
+					</a>
+					<nav class="v3-nav">
+						<a href="#building">Building</a>
+						<a href="#writing">Writing</a>
+						<a href="#threads">Threads</a>
+						<a href="/pages/speaking.html">Speaking</a>
+						<a href="/pages/colophon.html">Colophon</a>
+						<a href="/pages/now.html">Now</a>
+					</nav>
+					<a href="mailto:nino@ninochavez.co?subject=Conversation%20%E2%80%94%20[topic]" class="v3-header-cta">Schedule →</a>
+				</div>
+			</header>
 
-    <!-- ===== MAIN TWO-COLUMN (anti-slop B — no hero, prose-led) ===== -->
-    <div class="v3-main">
+			<!-- HERO — family aesthetic carry (full-bleed photo + Bebas Neue massive type) -->
+			<section class="v3-hero">
+				<div class="v3-hero-bg">
+					<img src="https://imagedelivery.net/PLACEHOLDER/portfolio-20/large" alt="" onerror="this.style.display='none'" />
+				</div>
+				<div class="v3-grid-overlay"></div>
+				<div class="v3-hero-content">
+					<div class="v3-hero-eyebrow">§ Nino Chavez · studio · 2026</div>
+					<h1 class="v3-hero-headline">
+						I DIRECT AGENTS<br>
+						<span class="v3-line-2">TO SHIP COMMERCE.</span>
+					</h1>
+					<div class="v3-hero-sub">
+						<p>
+							Product Architect at commerce.com. I write the harness that makes agents safe to ship enterprise commerce.<br>
+							Methodology at <a href="https://github.com/nino-chavez/blueprint">Blueprint</a>. Writing at <a href="https://blog.ninochavez.co">Signal Dispatch</a> — 277 essays since 2018.
+						</p>
+						<div class="v3-hero-ctas">
+							<a href="#building" class="v3-cta-primary">See the work</a>
+							<a href="mailto:nino@ninochavez.co?subject=Conversation%20%E2%80%94%20[topic]" class="v3-cta-secondary">Schedule a conversation</a>
+						</div>
+					</div>
+				</div>
+				<div class="v3-hero-scroll">
+					<div class="v3-hero-scroll-line"></div>
+					<span class="v3-hero-scroll-text">Scroll</span>
+				</div>
+			</section>
 
-      <!-- Left column: prose-led intro + receipts + writing + threads -->
-      <div class="v3-column-main">
+			<!-- BUILDING — bento grid (carry pattern from v2) — flagship 3 large, supporting 4 standard -->
+			<section class="v3-section" id="building">
+				<div class="v3-section-inner">
+					<div class="v3-section-header">
+						<div>
+							<div class="v3-section-eyebrow">01 / What's shipping</div>
+							<h2 class="v3-section-title">Things I'm<br>making</h2>
+						</div>
+						<p class="v3-section-sub">
+							Eleven shipped surfaces — production platforms, methodology, brand work, writing, photography. The receipts behind the practice.
+						</p>
+					</div>
 
-        <!-- Prose intro replaces hero entirely. Capability woven in. -->
-        <p class="v3-prose-intro">
-          I direct agents to ship commerce. I write the
-          <span class="v3-emphasis-red">harness</span> that makes them
-          safe to ship it.
-        </p>
+					<!-- Bento — flagship items get larger cards -->
+					<div class="v3-bento">
 
-        <p class="v3-prose-body">
-          Product Architect at commerce.com. Methodology at
-          <a href="https://github.com/ninochavez/blueprint">Blueprint</a>.
-          Writing at <a href="https://blog.ninochavez.co">Signal Dispatch</a>
-          — 277 essays since 2018. This page is the cyanotype print of how I
-          think about the work right now.
-        </p>
+						<!-- Flagship: Rally HQ (LARGE) -->
+						<a href="https://rallyhq.app" class="v3-bento-card is-large" target="_blank" rel="noopener">
+							<div>
+								<div class="v3-bento-status is-shipping">● Production · live now</div>
+								<h3 class="v3-bento-name">Rally HQ</h3>
+								<p class="v3-bento-desc">Tournament platform serving 17 brackets this weekend. Real-time scoring, capability-based permissions, drag-and-drop bracket management. Blueprint Pattern B reference implementation.</p>
+							</div>
+							<div class="v3-bento-url">→ rallyhq.app</div>
+						</a>
 
-        <a href="#contact" class="v3-prose-cta">Schedule a conversation</a>
+						<!-- Signal Dispatch -->
+						<a href="https://blog.ninochavez.co" class="v3-bento-card" target="_blank" rel="noopener">
+							<div>
+								<div class="v3-bento-status is-shipping">● 277 essays · live</div>
+								<h3 class="v3-bento-name">Signal Dispatch</h3>
+								<p class="v3-bento-desc">Long-form writing on architecture, AI-native delivery, the practice of building. Since 2018.</p>
+							</div>
+							<div class="v3-bento-url">→ blog.ninochavez.co</div>
+						</a>
 
-        <!-- On the desk this week (anti-slop F — specific labels) -->
-        <section class="v3-block" id="desk">
-          <span class="v3-block-label">on the desk this week</span>
-          <h2 class="v3-block-title">The shipping work and the in-the-harness work.</h2>
+						<!-- Blueprint (methodology meta-receipt) -->
+						<a href="/pages/colophon.html" class="v3-bento-card">
+							<div>
+								<div class="v3-bento-status is-flight">● Methodology · this site</div>
+								<h3 class="v3-bento-name">Blueprint</h3>
+								<p class="v3-bento-desc">Brownfield audit-driven methodology for AI-native delivery. This site is its latest output — read the colophon.</p>
+							</div>
+							<div class="v3-bento-url">→ how this site was built</div>
+						</a>
 
-          <div class="v3-receipt-group">
-            <div class="v3-receipt-group-label">shipping now</div>
+						<!-- Signal X Studio -->
+						<a href="https://signalx.studio" class="v3-bento-card" target="_blank" rel="noopener">
+							<div>
+								<div class="v3-bento-status is-shipping">● Live</div>
+								<h3 class="v3-bento-name">Signal X Studio</h3>
+								<p class="v3-bento-desc">Studio identity surface — home of the AI-native delivery work.</p>
+							</div>
+							<div class="v3-bento-url">→ signalx.studio</div>
+						</a>
 
-            <div class="v3-receipt">
-              <div class="v3-receipt-name">Rally HQ</div>
-              <div class="v3-receipt-desc">
-                Tournament platform; 17 brackets running this weekend.
-                <a href="https://rallyhq.app" class="v3-receipt-url">rallyhq.app</a>
-                <span class="v3-receipt-kitchen">built with → Blueprint Pattern B</span>
-              </div>
-            </div>
+						<!-- Quantifai (WIDE) -->
+						<div class="v3-bento-card is-wide">
+							<div>
+								<div class="v3-bento-status is-flight">● In flight</div>
+								<h3 class="v3-bento-name">Quantifai</h3>
+								<p class="v3-bento-desc">AI FinOps platform — cost attribution and adoption metrics across model providers. Landing live; platform in active development.</p>
+							</div>
+							<div class="v3-bento-url">quantifai.io</div>
+						</div>
 
-            <div class="v3-receipt">
-              <div class="v3-receipt-name">Signal X Studio</div>
-              <div class="v3-receipt-desc">
-                Studio identity surface — the home of the AI-native delivery work.
-                <a href="https://signalx.studio" class="v3-receipt-url">signalx.studio</a>
-              </div>
-            </div>
+						<!-- Photography -->
+						<a href="https://photography.ninochavez.co" class="v3-bento-card" target="_blank" rel="noopener">
+							<div>
+								<div class="v3-bento-status is-shipping">● 20,000+ photos · live</div>
+								<h3 class="v3-bento-name">Photography</h3>
+								<p class="v3-bento-desc">Action-sports gallery; volleyball-first. Cloudflare Images, AI-powered search.</p>
+							</div>
+							<div class="v3-bento-url">→ photography.ninochavez.co</div>
+						</a>
 
-            <div class="v3-receipt">
-              <div class="v3-receipt-name">Quantifai</div>
-              <div class="v3-receipt-desc">
-                AI FinOps — cost attribution and adoption metrics across model providers.
-                <a href="#" class="v3-receipt-url">quantifai.io</a>
-              </div>
-            </div>
+					</div>
 
-            <div class="v3-receipt">
-              <div class="v3-receipt-name">BC Subscriptions</div>
-              <div class="v3-receipt-desc">
-                Client engagement; active B2B subscription work.
-                <span class="v3-receipt-url">client — under NDA</span>
-              </div>
-            </div>
-          </div>
+					<!-- Supporting receipts (compact list) -->
+					<div class="v3-receipts">
+						<div class="v3-receipt-row">
+							<div class="v3-receipt-name">BC Subscriptions</div>
+							<div class="v3-receipt-desc">Active B2B subscription engagement; client work under NDA.</div>
+							<span class="v3-receipt-url">client · NDA</span>
+						</div>
+						<div class="v3-receipt-row">
+							<div class="v3-receipt-name">Atelier</div>
+							<div class="v3-receipt-desc">OSS template + interop protocol for mixed human/agent teams.</div>
+							<span class="v3-receipt-url">wip/atelier</span>
+						</div>
+						<div class="v3-receipt-row">
+							<div class="v3-receipt-name">Atelier Dashboard</div>
+							<div class="v3-receipt-desc">Active dashboard surface paired with the Atelier template.</div>
+							<span class="v3-receipt-url">in flight</span>
+						</div>
+						<div class="v3-receipt-row">
+							<a class="v3-receipt-name" href="https://letspepper.com" target="_blank">Let's Pepper</a>
+							<div class="v3-receipt-desc">Volleyball cultural surface; brand voice exemplar in the Nino family.</div>
+							<a class="v3-receipt-url" href="https://letspepper.com" target="_blank">→ letspepper.com</a>
+						</div>
+						<div class="v3-receipt-row">
+							<a class="v3-receipt-name" href="https://flickdaymedia.com" target="_blank">Flickday Media</a>
+							<div class="v3-receipt-desc">Photography subcontractor brand.</div>
+							<a class="v3-receipt-url" href="https://flickdaymedia.com" target="_blank">→ flickdaymedia.com</a>
+						</div>
+					</div>
+				</div>
+			</section>
 
-          <div class="v3-receipt-group">
-            <div class="v3-receipt-group-label">in the harness</div>
+			<!-- WRITING — recent dispatches (placeholder; SvelteKit version wires live RSS) -->
+			<section class="v3-section" id="writing">
+				<div class="v3-section-inner">
+					<div class="v3-section-header">
+						<div>
+							<div class="v3-section-eyebrow">02 / Recent dispatches</div>
+							<h2 class="v3-section-title">What I sent<br>this month</h2>
+						</div>
+						<p class="v3-section-sub">Pulled live from Signal Dispatch RSS in the production build. Prototype shows representative titles.</p>
+					</div>
+					<div>
+						<article class="v3-post-row">
+							<a href="#" class="v3-post-title">The A/B Test That Built the Lathe</a>
+							<span class="v3-post-date">2d ago</span>
+						</article>
+						<article class="v3-post-row">
+							<a href="#" class="v3-post-title">The Scaffolding the Agent Doesn't Build</a>
+							<span class="v3-post-date">6d ago</span>
+						</article>
+						<article class="v3-post-row">
+							<a href="#" class="v3-post-title">I Don't Write Any Code</a>
+							<span class="v3-post-date">11d ago</span>
+						</article>
+						<article class="v3-post-row">
+							<a href="#" class="v3-post-title">The Question That Isn't a Question</a>
+							<span class="v3-post-date">18d ago</span>
+						</article>
+						<article class="v3-post-row">
+							<a href="#" class="v3-post-title">The Side Project Is Pottery</a>
+							<span class="v3-post-date">24d ago</span>
+						</article>
+					</div>
+					<p style="margin-top: 32px;">
+						<a href="https://blog.ninochavez.co" style="font-family: var(--v3-font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--v3-yellow); border-bottom: 1px solid var(--v3-yellow); padding-bottom: 2px;">Full archive — 277 essays since 2018 →</a>
+					</p>
+				</div>
+			</section>
 
-            <div class="v3-receipt">
-              <div class="v3-receipt-name">Blueprint</div>
-              <div class="v3-receipt-desc">
-                Brownfield audit-driven methodology for AI-native delivery. This site is its latest output.
-                <a href="/colophon" class="v3-receipt-url">→ how this site was built</a>
-              </div>
-            </div>
+			<!-- THREADS — proto-frameworks -->
+			<section class="v3-section" id="threads">
+				<div class="v3-section-inner">
+					<div class="v3-section-header">
+						<div>
+							<div class="v3-section-eyebrow">03 / Threads I keep pulling on</div>
+							<h2 class="v3-section-title">Proto-<br>frameworks</h2>
+						</div>
+						<p class="v3-section-sub">The named topics the writing keeps returning to. Each links to its tag page on the blog.</p>
+					</div>
+					<div class="v3-topics-grid">
+						<div class="v3-topic-card">
+							<a href="https://blog.ninochavez.co/tag/harness" class="v3-topic-name">Harness engineering</a>
+							<span class="v3-topic-count">7 posts</span>
+							<p class="v3-topic-desc">Why the harness — not the agent — is the load-bearing engineering work.</p>
+						</div>
+						<div class="v3-topic-card">
+							<a href="https://blog.ninochavez.co/tag/agentic-workflows" class="v3-topic-name">Agentic workflows</a>
+							<span class="v3-topic-count">18 posts</span>
+							<p class="v3-topic-desc">How the architect's job changed and the patterns that survived production.</p>
+						</div>
+						<div class="v3-topic-card">
+							<a href="https://blog.ninochavez.co/tag/commerce" class="v3-topic-name">Commerce in the agent era</a>
+							<span class="v3-topic-count">40 posts</span>
+							<p class="v3-topic-desc">Patterns for commerce platforms moving from human-driven to agent-driven flows.</p>
+						</div>
+						<div class="v3-topic-card">
+							<a href="https://blog.ninochavez.co/tag/brownfield" class="v3-topic-name">Brownfield over greenfield</a>
+							<span class="v3-topic-count">7 posts</span>
+							<p class="v3-topic-desc">Auditing what you have before designing what you wish you had.</p>
+						</div>
+					</div>
+				</div>
+			</section>
 
-            <div class="v3-receipt">
-              <div class="v3-receipt-name">Atelier</div>
-              <div class="v3-receipt-desc">
-                OSS template + interop protocol for mixed human/agent teams.
-                <span class="v3-receipt-url">wip/atelier · in flight</span>
-              </div>
-            </div>
+			<!-- FOOTER -->
+			<footer class="v3-footer">
+				<div class="v3-footer-inner">
+					<div>
+						<h4>Contact</h4>
+						<ul>
+							<li><a href="mailto:nino@ninochavez.co">nino@ninochavez.co</a></li>
+							<li><a href="https://www.linkedin.com/in/nino-chavez/">LinkedIn</a></li>
+							<li><a href="https://github.com/nino-chavez">GitHub</a></li>
+							<li><a href="https://x.com/PhotoByNino">X / PhotoByNino</a></li>
+						</ul>
+					</div>
+					<div>
+						<h4>Adjacent</h4>
+						<ul>
+							<li><a href="https://blog.ninochavez.co">blog.ninochavez.co</a></li>
+							<li><a href="https://photography.ninochavez.co">photography.ninochavez.co</a></li>
+							<li><a href="https://signalx.studio">signalx.studio</a></li>
+							<li><a href="https://labs.ninochavez.co">labs.ninochavez.co</a></li>
+							<li><a href="https://letspepper.com">letspepper.com</a></li>
+							<li><a href="https://flickdaymedia.com">flickdaymedia.com</a></li>
+						</ul>
+					</div>
+					<div>
+						<h4>Studio</h4>
+						<ul>
+							<li><a href="/pages/speaking.html">Speaking</a></li>
+							<li><a href="/pages/now.html">Now</a></li>
+							<li><a href="/pages/colophon.html">Colophon</a></li>
+						</ul>
+					</div>
+					<div>
+						<h4>Built with</h4>
+						<ul>
+							<li>Blueprint methodology</li>
+							<li>brand-forge tokens (letspepper family)</li>
+							<li>SvelteKit · Cloudflare Pages</li>
+							<li><a href="/pages/colophon.html">→ how this site was built</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="v3-footer-meta">
+					<span>v3 · 2026-05-25 · family-aesthetic prototype</span>
+					<span><a href="https://blog.ninochavez.co/rss.xml">RSS</a> · © 2026 Nino Chavez</span>
+				</div>
+			</footer>
 
-            <div class="v3-receipt">
-              <div class="v3-receipt-name">Atelier Dashboard</div>
-              <div class="v3-receipt-desc">
-                Active dashboard surface paired with the template.
-                <span class="v3-receipt-url">wip/atelier-dashboard-blueprint</span>
-              </div>
-            </div>
-          </div>
+		</div>
+	</section>
 
-          <div class="v3-receipt-group">
-            <div class="v3-receipt-group-label">cultural surfaces I run</div>
+	<!-- SHIPPED VIEW: v2 mock -->
+	<section class="shipped-view container mt-8">
+		<div class="card">
+			<h3>v2 home as shipped</h3>
+			<p class="mt-4">Bento grid with 4 creative pursuits, hero photo rotation, lime accent, "Cut the Noise" framing. /ai (5 pages) hidden. No /speaking surface. Receipt density at 4. <code>src/lib/constants.ts:9</code> says "hosted on Vercel" (drift — site is on Cloudflare).</p>
+		</div>
+	</section>
 
-            <div class="v3-receipt">
-              <div class="v3-receipt-name">Let's Pepper</div>
-              <div class="v3-receipt-desc">
-                Volleyball cultural surface; brand voice exemplar.
-                <a href="https://letspepper.com" class="v3-receipt-url">letspepper.com</a>
-              </div>
-            </div>
-
-            <div class="v3-receipt">
-              <div class="v3-receipt-name">Flickday Media</div>
-              <div class="v3-receipt-desc">
-                Photography subcontractor brand.
-                <a href="https://flickdaymedia.com" class="v3-receipt-url">flickdaymedia.com</a>
-              </div>
-            </div>
-
-            <div class="v3-receipt">
-              <div class="v3-receipt-name">Photography</div>
-              <div class="v3-receipt-desc">
-                20,000+ action-sports photos; volleyball-first.
-                <a href="https://photography.ninochavez.co" class="v3-receipt-url">photography.ninochavez.co</a>
-              </div>
-            </div>
-
-            <div class="v3-receipt">
-              <div class="v3-receipt-name">Signal Dispatch</div>
-              <div class="v3-receipt-desc">
-                277 essays since 2018 — architecture, AI-native delivery, the practice of building.
-                <a href="https://blog.ninochavez.co" class="v3-receipt-url">blog.ninochavez.co</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Recent dispatches -->
-        <section class="v3-block" id="writing">
-          <span class="v3-block-label">recent dispatches</span>
-          <h2 class="v3-block-title">What I sent to Signal Dispatch this month.</h2>
-
-          <article class="v3-post">
-            <a href="#" class="v3-post-title">Why blueprint won't be a SaaS</a>
-            <span class="v3-post-date">2d ago</span>
-          </article>
-
-          <article class="v3-post">
-            <a href="#" class="v3-post-title">The harness was always the point</a>
-            <span class="v3-post-date">6d ago</span>
-          </article>
-
-          <article class="v3-post">
-            <a href="#" class="v3-post-title">Buy-vs-build in the agent era</a>
-            <span class="v3-post-date">11d ago</span>
-          </article>
-
-          <article class="v3-post">
-            <a href="#" class="v3-post-title">Architect-directs-agents, three months in</a>
-            <span class="v3-post-date">18d ago</span>
-          </article>
-
-          <article class="v3-post">
-            <a href="#" class="v3-post-title">Notes from a brownfield audit</a>
-            <span class="v3-post-date">24d ago</span>
-          </article>
-
-          <p style="margin-top: 1.5rem;">
-            <a href="https://blog.ninochavez.co">Full archive — 277 essays since 2018 →</a>
-          </p>
-        </section>
-
-        <!-- Threads (anti-slop F — specific instead of "What I think about") -->
-        <section class="v3-block" id="threads">
-          <span class="v3-block-label">threads I keep pulling on</span>
-          <h2 class="v3-block-title">The proto-frameworks the writing keeps returning to.</h2>
-
-          <div class="v3-topic">
-            <a href="https://blog.ninochavez.co/tag/harness" class="v3-topic-name">Harness engineering</a>
-            <p class="v3-topic-desc">Why the harness — not the agent — is the load-bearing engineering work. <span style="opacity:0.6;font-size:0.85em;">7 posts</span></p>
-          </div>
-
-          <div class="v3-topic">
-            <a href="https://blog.ninochavez.co/tag/agentic-workflows" class="v3-topic-name">Agentic workflows in practice</a>
-            <p class="v3-topic-desc">How the architect's job changed and the patterns that survived contact with production. <span style="opacity:0.6;font-size:0.85em;">18 posts</span></p>
-          </div>
-
-          <div class="v3-topic">
-            <a href="https://blog.ninochavez.co/tag/commerce" class="v3-topic-name">Commerce in the agent era</a>
-            <p class="v3-topic-desc">Specific patterns for commerce platforms moving from human-driven to agent-driven flows. <span style="opacity:0.6;font-size:0.85em;">40 posts</span></p>
-          </div>
-
-          <div class="v3-topic">
-            <a href="https://blog.ninochavez.co/tag/brownfield" class="v3-topic-name">Brownfield over greenfield</a>
-            <p class="v3-topic-desc">Auditing the system you have before designing the one you wish you had. <span style="opacity:0.6;font-size:0.85em;">7 posts</span></p>
-          </div>
-        </section>
-
-      </div>
-
-      <!-- Right rail: photo anchor + live signals + topic shortcuts -->
-      <aside class="v3-column-rail">
-
-        <!-- Photography anchor (anti-slop A) -->
-        <div class="v3-photo-anchor"></div>
-        <div class="v3-photo-caption">
-          USA NATIONALS 2024 · ATTACK AT NET<br>
-          NIKON Z9, 70-200/2.8, 1/2000, ISO 6400
-        </div>
-
-        <!-- Live signals (anti-slop G — embedded artifacts) -->
-        <div class="v3-rail-card">
-          <div class="v3-rail-label">live signals</div>
-
-          <div class="v3-live-row">
-            <span class="v3-live-tag">writing</span>
-            <span class="v3-live-text">Why blueprint won't be a SaaS</span>
-            <span class="v3-live-age">draft pushed 2d ago · 1,840 words</span>
-          </div>
-
-          <div class="v3-live-row">
-            <span class="v3-live-tag">shipping</span>
-            <span class="v3-live-text">Rally HQ — 17 tournaments live this weekend</span>
-            <span class="v3-live-age">uptime 99.97% · last incident 11d</span>
-          </div>
-
-          <div class="v3-live-row">
-            <span class="v3-live-tag">in flight</span>
-            <span class="v3-live-text">ninochavez.co v3 — Blueprint Stage 4 (Prototype)</span>
-            <span class="v3-live-age">81fb035 + 4 unpushed · last commit 14m</span>
-          </div>
-
-          <div class="v3-live-row">
-            <span class="v3-live-tag">commit</span>
-            <span class="v3-live-text">rally-hq: fix bracket regen race when 2 admins concurrent</span>
-            <span class="v3-live-age">b3a4f12 · 47m</span>
-          </div>
-        </div>
-
-        <!-- Adjacent surfaces in rail -->
-        <div class="v3-rail-card">
-          <div class="v3-rail-label">adjacent surfaces</div>
-          <div class="v3-live-row">
-            <a href="https://blog.ninochavez.co" style="color: var(--v3-text-primary); border-bottom: none;">blog.ninochavez.co</a>
-            <span class="v3-live-age">Signal Dispatch · 277 essays</span>
-          </div>
-          <div class="v3-live-row">
-            <a href="https://photography.ninochavez.co" style="color: var(--v3-text-primary); border-bottom: none;">photography.ninochavez.co</a>
-            <span class="v3-live-age">action sports gallery · 20k+ photos</span>
-          </div>
-          <div class="v3-live-row">
-            <a href="https://signalx.studio" style="color: var(--v3-text-primary); border-bottom: none;">signalx.studio</a>
-            <span class="v3-live-age">studio identity</span>
-          </div>
-          <div class="v3-live-row">
-            <a href="https://labs.ninochavez.co" style="color: var(--v3-text-primary); border-bottom: none;">labs.ninochavez.co</a>
-            <span class="v3-live-age">experimental apps hub</span>
-          </div>
-        </div>
-
-      </aside>
-    </div>
-
-    <!-- ===== Footer ===== -->
-    <footer class="v3-footer">
-      <div class="v3-footer-inner">
-        <div>
-          <h4>contact</h4>
-          <ul>
-            <li><a href="mailto:nino@ninochavez.co">nino@ninochavez.co</a></li>
-            <li><a href="https://www.linkedin.com/in/nino-chavez/">LinkedIn</a></li>
-            <li><a href="https://github.com/nino-chavez">GitHub</a></li>
-            <li><a href="https://x.com/PhotoByNino">X (PhotoByNino)</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>adjacent properties</h4>
-          <ul>
-            <li><a href="https://blog.ninochavez.co">blog.ninochavez.co</a></li>
-            <li><a href="https://photography.ninochavez.co">photography.ninochavez.co</a></li>
-            <li><a href="https://signalx.studio">signalx.studio</a></li>
-            <li><a href="https://labs.ninochavez.co">labs.ninochavez.co</a></li>
-            <li><a href="https://letspepper.com">letspepper.com</a></li>
-            <li><a href="https://flickdaymedia.com">flickdaymedia.com</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>built with</h4>
-          <ul>
-            <li>Blueprint methodology.</li>
-            <li><a href="/colophon">→ how this site was built</a></li>
-            <li>SvelteKit on Cloudflare Pages.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="v3-footer-meta">
-        <span>last commit <span class="v3-commit-hash">81fb035</span> · 2026-05-25</span>
-        <span>cyanotype edition · v0.2 prototype</span>
-        <span><a href="https://ninochavez.co/rss.xml" style="color: var(--v3-text-muted); border-bottom: none;">RSS</a> · © 2026 Nino Chavez</span>
-      </div>
-    </footer>
-
-  </section>
-
-  <!-- SHIPPED VIEW: mock of v2 home for COMPARE toggle -->
-  <section class="shipped-view container mt-8">
-    <div class="card">
-      <h3>v2 home as shipped (2026-05-25)</h3>
-      <p class="mt-4">
-        Bento grid with 4 equal-weight pursuits (Photography / Music / Writing /
-        Building). Hero photo rotation across 8 volleyball action shots. Brand
-        line: "Cut the Noise, Follow the Signal." Lime accent used throughout.
-        Unstructured <code>mailto:nino@ninochavez.co</code> contact path.
-        <code>/ai/</code> subsection (5 pages, 1,377 lines) not linked from
-        <code>/</code>. <code>src/lib/constants.ts:9</code> still says "hosted
-        on Vercel" — site is on Cloudflare Pages.
-      </p>
-      <p class="mt-4">
-        See <code>src/routes/+page.svelte</code> for the live source.
-      </p>
-    </div>
-  </section>
-
-  <script>
-    window.PROTO_PAGE = { id: 'home' };
-  </script>
-  <script src="/proto-nav.js"></script>
-  <script src="/chat-widget.js" defer></script>
-  <script src="/proto-annotate.js" defer></script>
+	<script>
+		window.PROTO_PAGE = { id: 'home' };
+	</script>
+	<script src="/proto-nav.js"></script>
+	<script src="/chat-widget.js" defer></script>
+	<script src="/proto-annotate.js" defer></script>
 </body>
 </html>

@@ -1,24 +1,30 @@
 {
   "name": "nino-chavez-studio",
-  "description": "Nino Chavez ⊕ studio brand style — Commerce architecture grounded in reality",
-  "basePrompt": "BRAND: Signal Dispatch — a strategic technology newsletter by Nino Chavez.\nAESTHETIC: Dark, professional, tech-focused. Minimalist with purpose.\n\nVISUAL LANGUAGE:\n- Signal waveforms, circuit-like patterns, geometric nodes\n- Abstract data visualization, flowing lines\n- Network topology patterns, subtle grid systems\n- Near-black backgrounds with coral/cyan accent highlights\n- Clean lines, no ornamental flourishes",
+  "description": "Nino Chavez ⊕ studio brand style — I direct agents to ship commerce. I write the harness.",
+  "basePrompt": "BRAND: Let's Pepper — grass triples volleyball tournament series, Chicago IL.\nAESTHETIC: Playful mascot-driven brand with anthropomorphic pepper characters.\n\nKEY VISUAL LANGUAGE:\n- Anthropomorphic pepper mascots with expressive cartoon faces\n- Volleyball as a central prop (green and cream striped)\n- Heat levels as tournament tiers (Bell Pepper → Ghost Pepper)\n- Dark backgrounds with heat-colored accent lighting\n- Clean vector mascot illustration style\n- Athletic energy, celebration poses, sports action\n\nMASCOT SYSTEM:\n- Bell Pepper (yellow, round, friendly) — entry level\n- Jalapeño (green, elongated, competitive) — mid tier\n- Poblano (dark green, gritty) — defensive focus\n- Ghost Pepper (red-orange, gnarly, intense) — elite\n- Carolina Reaper (deep red, scorpion tail) — max intensity\n\nCRITICAL:\n- Mascots MUST have expressive cartoon faces (eyes, eyebrows, mouth)\n- NO text, words, or typography in AI-generated images\n- Bold black outlines, solid color fills, professional mascot quality\n- NOT sketch/doodle style — clean polished vector illustration",
   "styles": {},
   "default": {
-    "background": "Dark background (#0f1419)",
-    "lineColor": "Critical Orange (#e86c5d) with Blueprint Steel (#4a90bb) accents",
-    "style": "Evidence-driven: backs every recommendation with data and real-world examples, Self-critical: openly acknowledges limitations and questions own assumptions, Implementation-focused: prioritizes what works over what sounds impressive, Transparently direct: delivers uncomfortable truths without corporate sugar-coating, Process-methodical: breaks complex problems into systematic, repeatable approaches, Skeptically practical: challenges conventional wisdom with hands-on experience aesthetic",
-    "elements": "dark, minimal, technical, geometric, signal, network",
-    "personality": "Evidence-driven: backs every recommendation with data and real-world examples, Self-critical: openly acknowledges limitations and questions own assumptions, Implementation-focused: prioritizes what works over what sounds impressive, Transparently direct: delivers uncomfortable truths without corporate sugar-coating, Process-methodical: breaks complex problems into systematic, repeatable approaches, Skeptically practical: challenges conventional wisdom with hands-on experience"
+    "background": "Dark background (#0a0a0a)",
+    "lineColor": "Pepper Yellow (#f5b91a) with Pepper Green (#5a9a4e) accents",
+    "style": "receipts-first, direct, energetic, grassroots-builder, sport-culture-adjacent, practitioner-not-pundit aesthetic",
+    "elements": "mascot, pepper, volleyball, cartoon, athletic, heat-levels, grass",
+    "personality": "receipts-first, direct, energetic, grassroots-builder, sport-culture-adjacent, practitioner-not-pundit"
   },
   "conceptMap": {
-    "signal": "abstract signal waveform, frequency pattern, data stream",
-    "network": "network topology nodes and edges, connected systems",
-    "circuit": "circuit board patterns, technical traces, PCB aesthetic",
-    "data": "data visualization, flowing lines, abstract charts",
-    "grid": "subtle background grid, technical graph paper"
+    "bell": "round bulbous bell pepper, yellow (#F5B91A), friendly welcoming",
+    "jalapeno": "elongated tapered jalapeño, bright green (#4CAF50), competitive",
+    "poblano": "wide dark green (#1B5E20) poblano, gritty determined",
+    "ghost": "wrinkled gnarly ghost pepper, red-orange (#E64A19), intense elite",
+    "reaper": "gnarly carolina reaper, deep red (#C62828), scorpion tail, max intensity",
+    "spike": "jumping volleyball spike, arm raised, excited face",
+    "celebrate": "victory pose, fists raised, huge smile",
+    "volleyball": "green and cream striped volleyball, grass volleyball brand",
+    "dark": "dark background (#0a0a0a) with heat-colored glow and ember effects"
   },
   "formatModifiers": {
-    "web": "Standard web resolution. 1200x675px. Landscape format.",
-    "banner": "Newsletter banner. 1200x200px. Horizontal strip."
+    "web": "High detail, transparent PNG, crisp at 400px+",
+    "sticker": "Die-cut friendly silhouette, extra bold outlines",
+    "instagram-story": "Vertical 1080x1920, dark background, heat-colored accents",
+    "instagram-post": "Square 1080x1080, dark background, centered mascot"
   }
 }

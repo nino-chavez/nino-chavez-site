@@ -2,12 +2,7 @@
   "openingPatterns": {
     "questionFirst": false,
     "uncomfortableTruth": true,
-    "avoidAcademic": [
-      "framework for",
-      "methodology to",
-      "approach that enables",
-      "comprehensive solution"
-    ],
+    "avoidAcademic": [],
     "avoidCasual": []
   },
   "structuralPatterns": {
@@ -17,35 +12,22 @@
     "boldHeaders": true
   },
   "tonalElements": {
-    "selfInterrogation": true,
-    "culturalTouchstones": false,
+    "selfInterrogation": false,
+    "culturalTouchstones": true,
     "technicalDepth": false,
     "conversational": true
   },
   "avoid": {
     "corporateJargon": [
-      "unlock potential",
-      "drive innovation",
-      "leverage synergies",
-      "digital transformation journey",
-      "best practices",
-      "always",
-      "never",
-      "the key is",
-      "simply",
-      "just need to",
-      "obviously",
-      "leading platform",
-      "industry-standard",
-      "enterprise-grade",
-      "scalable solution"
+      "exciting opportunity",
+      "amazing community",
+      "we're thrilled to announce",
+      "register today for an unforgettable experience",
+      "grass triples is a format where",
+      "for those who don't know",
+      "in case you're wondering"
     ],
-    "academicDistance": [
-      "framework for",
-      "methodology to",
-      "approach that enables",
-      "comprehensive solution"
-    ],
+    "academicDistance": [],
     "humbleBragging": [],
     "prescriptiveAuthority": []
   }

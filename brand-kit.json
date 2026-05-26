@@ -3,111 +3,117 @@
     "schemaVersion": 1,
     "id": "nino-chavez-studio",
     "created": "2026-05-25T00:00:00.000Z",
-    "updated": "2026-05-26T01:46:38.693Z",
+    "updated": "2026-05-25T00:00:00.000Z",
     "author": "Nino Chavez",
-    "version": "0.1.0"
+    "version": "0.2.0",
+    "forkedFrom": "letspepper",
+    "family": "nino-chavez-family",
+    "notes": "Studio surface inherits family visual aesthetic (Bebas Neue + saturated + sport-poster energy) from letspepper + flickdaymedia + v2 ninochavez.co. Identity tuned for architect-who-directs-agents; family aesthetic preserved deliberately to match the cohesive Nino-family of properties."
   },
   "identity": {
     "name": "Nino Chavez ⊕ studio",
-    "tagline": "Commerce architecture grounded in reality",
-    "mission": "We transform fragmented enterprise commerce systems into coherent architectures by combining deep technical analysis with proven harness engineering principles that actually work in production environments.",
+    "tagline": "I direct agents to ship commerce. I write the harness.",
+    "mission": "Practitioner studio surface for the architect-who-directs-agents practice. Front-of-house for 11 shipped products, 277-essay Signal Dispatch archive, Blueprint methodology, speaking surface.",
     "audience": [
-      "VP/Director-level commerce platform leaders managing complex technical debt",
-      "Senior enterprise architects tasked with commerce system modernization",
-      "Engineering managers struggling with distributed commerce infrastructure",
-      "CTO/Head of Engineering at mid-to-large retailers facing scalability challenges",
-      "Technical product managers overseeing commerce platform evolution"
+      "peer architects",
+      "prospective clients evaluating advisory or methodology engagements",
+      "conference + podcast curators",
+      "Signal Dispatch readers"
     ],
     "personality": [
-      "Evidence-driven: backs every recommendation with data and real-world examples",
-      "Self-critical: openly acknowledges limitations and questions own assumptions",
-      "Implementation-focused: prioritizes what works over what sounds impressive",
-      "Transparently direct: delivers uncomfortable truths without corporate sugar-coating",
-      "Process-methodical: breaks complex problems into systematic, repeatable approaches",
-      "Skeptically practical: challenges conventional wisdom with hands-on experience"
+      "receipts-first",
+      "direct",
+      "energetic",
+      "grassroots-builder",
+      "sport-culture-adjacent",
+      "practitioner-not-pundit"
     ],
-    "positioning": "Unlike consultancies that deliver theoretical frameworks or agencies that focus on front-end experiences, we architect commerce systems using harness engineering discipline—where failure isn't an option and every decision must withstand real-world operational stress.",
+    "positioning": "Architect-who-directs-agents practitioner studio — same family as letspepper + flickdaymedia (Chicago grassroots-builder cultural surfaces), positioned for enterprise commerce × harness engineering.",
     "domain": "enterprise commerce architecture × harness engineering",
-    "links": {}
+    "links": {
+      "site": "https://ninochavez.co",
+      "blog": "https://blog.ninochavez.co",
+      "studio": "https://signalx.studio",
+      "gallery": "https://photography.ninochavez.co"
+    }
   },
   "colors": {
     "primary": {
-      "hex": "#e86c5d",
-      "name": "Critical Orange",
-      "usage": "Primary accent"
+      "hex": "#f5b91a",
+      "name": "Pepper Yellow",
+      "usage": "Primary accent, CTA buttons, mascot highlight color"
     },
     "secondary": {
-      "hex": "#4a90bb",
-      "name": "Blueprint Steel",
-      "usage": "Secondary accent"
+      "hex": "#5a9a4e",
+      "name": "Pepper Green",
+      "usage": "Secondary accent, grass/nature association, stem color"
     },
     "accent": {
-      "hex": "#d4a574",
-      "name": "Process Amber",
-      "usage": "Accent"
+      "hex": "#d94c35",
+      "name": "Hot Red",
+      "usage": "Spicy elements, heat indicators, intensity markers"
     },
     "neutral": {
       "50": "#fafafa",
       "100": "#f5f5f5",
       "200": "#e5e5e5",
-      "300": "#d1d5db",
+      "300": "#d4d4d4",
       "400": "#a3a3a3",
-      "500": "#6b7280",
+      "500": "#737373",
       "600": "#525252",
-      "700": "#374151",
+      "700": "#404040",
       "800": "#262626",
-      "900": "#111827",
-      "950": "#0a0a0f"
+      "900": "#171717",
+      "950": "#0a0a0a"
     },
     "semantic": {
       "success": {
-        "hex": "#22c55e",
-        "name": "Success",
-        "usage": "Positive states"
+        "hex": "#4a7c3f",
+        "name": "Pepper Green",
+        "usage": "Available, open registration"
       },
       "warning": {
-        "hex": "#f59e0b",
-        "name": "Warning",
-        "usage": "Caution states"
+        "hex": "#f97316",
+        "name": "Heat Orange",
+        "usage": "Filling up, limited spots"
       },
       "error": {
         "hex": "#ef4444",
-        "name": "Error",
-        "usage": "Error states"
+        "name": "Sold Out Red",
+        "usage": "Full, closed registration"
       },
       "info": {
         "hex": "#3b82f6",
-        "name": "Info",
-        "usage": "Informational states"
+        "name": "Info Blue",
+        "usage": "Tournament info, schedules"
       }
     },
     "surfaces": {
-      "background": "#0f1419",
-      "foreground": "#e8eaed",
-      "card": "#111827",
-      "cardForeground": "#e8eaed",
-      "muted": "#1f2937",
-      "mutedForeground": "#9ca3af",
-      "border": "#374151"
+      "background": "#0a0a0a",
+      "foreground": "#fafafa",
+      "card": "#171717",
+      "cardForeground": "#fafafa",
+      "muted": "#262626",
+      "mutedForeground": "#a3a3a3",
+      "border": "#404040"
     }
   },
   "typography": {
     "display": {
-      "family": "Roboto Slab",
+      "family": "Bebas Neue",
       "fallbacks": [
-        "system-ui",
+        "Impact",
         "sans-serif"
       ],
-      "classification": "slab-serif",
+      "classification": "display",
       "weights": [
-        400,
-        700
+        400
       ],
       "variable": false,
-      "googleFonts": "Roboto+Slab:wght@400;700",
+      "googleFonts": "Bebas+Neue",
       "cssVariable": "--font-display",
-      "textTransform": "none",
-      "letterSpacing": 0
+      "textTransform": "uppercase",
+      "letterSpacing": 0.02
     },
     "body": {
       "family": "Inter",
@@ -129,7 +135,7 @@
       "letterSpacing": 0
     },
     "mono": {
-      "family": "JetBrains Mono",
+      "family": "Space Mono",
       "fallbacks": [
         "Menlo",
         "monospace"
@@ -140,10 +146,10 @@
         700
       ],
       "variable": false,
-      "googleFonts": "JetBrains+Mono:wght@400;700",
+      "googleFonts": "Space+Mono:wght@400;700",
       "cssVariable": "--font-mono",
-      "textTransform": "none",
-      "letterSpacing": 0
+      "textTransform": "uppercase",
+      "letterSpacing": 0.05
     },
     "scale": {
       "baseSizePx": 16,
@@ -151,17 +157,17 @@
       "steps": [
         {
           "name": "hero",
-          "sizeRem": 4,
-          "sizeMobileRem": 2.5,
-          "lineHeight": 1.1,
-          "weight": 700,
+          "sizeRem": 6,
+          "sizeMobileRem": 3.5,
+          "lineHeight": 0.9,
+          "weight": 400,
           "font": "display"
         },
         {
           "name": "h2",
-          "sizeRem": 2.25,
-          "sizeMobileRem": 1.75,
-          "lineHeight": 1.2,
+          "sizeRem": 3.5,
+          "sizeMobileRem": 2.25,
+          "lineHeight": 1,
           "weight": 400,
           "font": "display"
         },
@@ -169,13 +175,14 @@
           "name": "h3",
           "sizeRem": 1.5,
           "sizeMobileRem": 1.25,
-          "lineHeight": 1.3,
+          "lineHeight": 1.2,
           "weight": 600,
           "font": "body"
         },
         {
           "name": "body-lg",
           "sizeRem": 1.125,
+          "sizeMobileRem": 1,
           "lineHeight": 1.6,
           "weight": 400,
           "font": "body"
@@ -183,13 +190,7 @@
         {
           "name": "body",
           "sizeRem": 1,
-          "lineHeight": 1.5,
-          "weight": 400,
-          "font": "body"
-        },
-        {
-          "name": "caption",
-          "sizeRem": 0.875,
+          "sizeMobileRem": 0.875,
           "lineHeight": 1.5,
           "weight": 400,
           "font": "body"
@@ -197,8 +198,9 @@
         {
           "name": "label",
           "sizeRem": 0.75,
+          "sizeMobileRem": 0.75,
           "lineHeight": 1.4,
-          "weight": 400,
+          "weight": 700,
           "font": "mono"
         }
       ]
@@ -217,15 +219,15 @@
   },
   "radius": {
     "none": 0,
-    "sm": 0.125,
-    "md": 0.375,
-    "lg": 0.5,
-    "xl": 0.75,
-    "2xl": 1,
+    "sm": 0.25,
+    "md": 0.5,
+    "lg": 0.75,
+    "xl": 1,
+    "2xl": 1.5,
     "full": 9999
   },
   "layout": {
-    "maxContentWidth": 48,
+    "maxContentWidth": 80,
     "breakpoints": {
       "sm": 640,
       "md": 768,
@@ -233,147 +235,88 @@
       "xl": 1280,
       "2xl": 1536
     },
-    "sectionPadding": "16",
+    "sectionPadding": "24",
     "containerPadding": "6"
   },
   "voice": {
     "attributes": [
       {
-        "trait": "receipt-anchored",
-        "description": "Grounds claims in specific project outcomes and measurable results rather than theory",
-        "example": "We reduced deployment frequency from 6 weeks to 2 hours — but customer complaints actually went up 23%."
+        "trait": "playful",
+        "description": "Fun-first but competitive — never corny",
+        "example": "Bring your friends. Leave your egos. Play some grass volleyball."
       },
       {
-        "trait": "self-interrogating",
-        "description": "Questions its own assumptions mid-argument and exposes reasoning process",
-        "example": "I'm calling this a failure, but hold on — maybe I'm measuring the wrong thing entirely."
+        "trait": "heat-themed",
+        "description": "Uses pepper/spice metaphors consistently",
+        "example": "This tournament is a Jalapeño — not too hot, not too mild."
       },
       {
-        "trait": "practitioner-candid",
-        "description": "Admits mistakes, uncertainty, and the messy reality of implementation without defensiveness",
-        "example": "Three clients fired us for this approach. The fourth one promoted their entire team."
+        "trait": "community-driven",
+        "description": "Celebrates the players, not the organizers",
+        "example": "12 teams showed up. Nobody went home disappointed."
       },
       {
-        "trait": "architecturally-direct",
-        "description": "Cuts through enterprise jargon to expose actual technical and organizational constraints",
-        "example": "Your 'microservices transformation' is really about avoiding your database team."
-      },
-      {
-        "trait": "pattern-obsessed",
-        "description": "Identifies recurring structures across domains, connecting commerce patterns to broader systems thinking",
-        "example": "Inventory allocation works exactly like Kubernetes resource scheduling — and fails for identical reasons."
+        "trait": "direct",
+        "description": "Short, punchy, no corporate filler",
+        "example": "3v3. Grass. $150/team. Let's go."
       }
     ],
     "antiPatterns": [
       {
-        "category": "thought-leadership-speak",
+        "category": "corporate-sports",
         "patterns": [
-          "unlock potential",
-          "drive innovation",
-          "leverage synergies",
-          "digital transformation journey",
-          "best practices"
+          "exciting opportunity",
+          "amazing community",
+          "we're thrilled to announce",
+          "register today for an unforgettable experience"
         ],
         "severity": "error",
-        "suggestion": "Replace with specific outcomes or concrete constraints"
+        "suggestion": "Talk like a player, not a marketing department."
       },
       {
-        "category": "consultant-certainty",
+        "category": "over-explaining",
         "patterns": [
-          "always",
-          "never",
-          "the key is",
-          "simply",
-          "just need to",
-          "obviously"
-        ],
-        "severity": "error",
-        "suggestion": "Add provisional language and acknowledge complexity"
-      },
-      {
-        "category": "academic-abstraction",
-        "patterns": [
-          "framework for",
-          "methodology to",
-          "approach that enables",
-          "comprehensive solution"
+          "grass triples is a format where",
+          "for those who don't know",
+          "in case you're wondering"
         ],
         "severity": "warning",
-        "suggestion": "Ground in specific project examples and measurable outcomes"
-      },
-      {
-        "category": "vendor-neutrality",
-        "patterns": [
-          "leading platform",
-          "industry-standard",
-          "enterprise-grade",
-          "scalable solution"
-        ],
-        "severity": "error",
-        "suggestion": "Name specific tools, costs, and trade-offs"
+        "suggestion": "The audience knows volleyball. Don't explain the basics."
       }
     ],
     "structuralPatterns": [
       {
-        "name": "assumption-interrupt",
-        "description": "Mid-argument pause to question the premise or reveal hidden assumptions",
+        "name": "heat-level-framing",
+        "description": "Frame tournament difficulty using pepper heat levels",
         "required": false,
-        "example": "But wait — why am I assuming faster is better here?"
-      },
-      {
-        "name": "receipt-first",
-        "description": "Lead with concrete project outcome before explaining the approach",
-        "required": true,
-        "example": "Client saved $2M in integration costs. Here's what we actually did..."
-      },
-      {
-        "name": "failure-inclusion",
-        "description": "Explicitly mention what didn't work or where the approach breaks down",
-        "required": true,
-        "example": "This completely fails when your order volume exceeds 50k/day."
-      },
-      {
-        "name": "peer-positioning",
-        "description": "Write as if addressing another practitioner who will implement, not a decision-maker who will approve",
-        "required": true,
-        "example": "You'll hit this problem in your third sprint when the product team realizes..."
+        "example": "Bell Pepper (chill) → Jalapeño (competitive) → Ghost Pepper (elite)"
       }
     ],
     "examples": [
       {
-        "intent": "Explaining microservices architecture benefits",
-        "good": "We split checkout into 12 services — deployments dropped from 4 hours to 8 minutes, but debugging customer issues now takes 3x longer. Worth it? Depends if you value developer velocity over support team sanity.",
-        "bad": "Microservices architecture enables teams to deploy independently and scale components based on demand, driving innovation through decoupled systems."
+        "intent": "Announce a tournament",
+        "good": "New drop: Jalapeño Series, April 12th. 3v3 grass. Waveland Park. $150/team. Limited to 16 teams.",
+        "bad": "We're excited to announce our next amazing grass volleyball tournament! Join us for an incredible day of competition and community!"
       },
       {
-        "intent": "Positioning advisory services",
-        "good": "I've designed commerce platforms for 47 companies. 12 of them fired me. The other 35 processed $2.3B last year using patterns I'm still refining.",
-        "bad": "Our proven methodology leverages industry best practices to deliver scalable commerce solutions that drive business transformation."
-      },
-      {
-        "intent": "Critiquing platform team effectiveness",
-        "good": "Your platform team built 23 internal tools. Developers use 3 of them — and only because deployments literally won't work otherwise. The other 20 exist to justify next year's headcount.",
-        "bad": "Many platform teams struggle to achieve developer adoption due to insufficient stakeholder alignment and unclear value propositions."
-      },
-      {
-        "intent": "Describing technical trade-offs",
-        "good": "Event sourcing solved our audit requirements but destroyed our junior developers' productivity. Six months later, only two people could debug production issues — and one of them quit.",
-        "bad": "Event sourcing provides comprehensive audit trails and enables powerful analytical capabilities, though it requires careful consideration of complexity trade-offs."
+        "intent": "Describe a heat level",
+        "good": "Ghost Pepper is invite-only. If you have to ask, you're not ready yet.",
+        "bad": "Our Ghost Pepper tier is designed for advanced competitive players seeking a challenging tournament environment."
       }
     ],
-    "minimumScore": 75
+    "minimumScore": 70
   },
   "media": {
     "logos": {
       "variations": [],
       "clearSpace": 0.25,
-      "minSizePx": 24
+      "minSizePx": 32
     },
     "templates": [
       {
         "id": "social-card",
-        "name": "Blog Social Card",
-        "description": "OG image for blog posts",
+        "name": "Tournament Social Card",
+        "description": "OG image for tournament announcements",
         "sizes": [
           {
             "width": 1200,
@@ -390,7 +333,38 @@
             "required": true
           },
           {
-            "name": "category",
+            "name": "subtitle",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "story",
+        "name": "Tournament Story",
+        "description": "Instagram story for tournament drops",
+        "sizes": [
+          {
+            "width": 1080,
+            "height": 1920,
+            "dpi": 72,
+            "label": "IG Story"
+          }
+        ],
+        "format": "png",
+        "dataFields": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "date",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "location",
             "type": "string",
             "required": false
           }
@@ -398,32 +372,40 @@
       }
     ],
     "creative": {
-      "basePrompt": "BRAND: Signal Dispatch — a strategic technology newsletter by Nino Chavez.\nAESTHETIC: Dark, professional, tech-focused. Minimalist with purpose.\n\nVISUAL LANGUAGE:\n- Signal waveforms, circuit-like patterns, geometric nodes\n- Abstract data visualization, flowing lines\n- Network topology patterns, subtle grid systems\n- Near-black backgrounds with coral/cyan accent highlights\n- Clean lines, no ornamental flourishes",
+      "basePrompt": "BRAND: Let's Pepper — grass triples volleyball tournament series, Chicago IL.\nAESTHETIC: Playful mascot-driven brand with anthropomorphic pepper characters.\n\nKEY VISUAL LANGUAGE:\n- Anthropomorphic pepper mascots with expressive cartoon faces\n- Volleyball as a central prop (green and cream striped)\n- Heat levels as tournament tiers (Bell Pepper → Ghost Pepper)\n- Dark backgrounds with heat-colored accent lighting\n- Clean vector mascot illustration style\n- Athletic energy, celebration poses, sports action\n\nMASCOT SYSTEM:\n- Bell Pepper (yellow, round, friendly) — entry level\n- Jalapeño (green, elongated, competitive) — mid tier\n- Poblano (dark green, gritty) — defensive focus\n- Ghost Pepper (red-orange, gnarly, intense) — elite\n- Carolina Reaper (deep red, scorpion tail) — max intensity\n\nCRITICAL:\n- Mascots MUST have expressive cartoon faces (eyes, eyebrows, mouth)\n- NO text, words, or typography in AI-generated images\n- Bold black outlines, solid color fills, professional mascot quality\n- NOT sketch/doodle style — clean polished vector illustration",
       "conceptMap": {
-        "signal": "abstract signal waveform, frequency pattern, data stream",
-        "network": "network topology nodes and edges, connected systems",
-        "circuit": "circuit board patterns, technical traces, PCB aesthetic",
-        "data": "data visualization, flowing lines, abstract charts",
-        "grid": "subtle background grid, technical graph paper"
+        "bell": "round bulbous bell pepper, yellow (#F5B91A), friendly welcoming",
+        "jalapeno": "elongated tapered jalapeño, bright green (#4CAF50), competitive",
+        "poblano": "wide dark green (#1B5E20) poblano, gritty determined",
+        "ghost": "wrinkled gnarly ghost pepper, red-orange (#E64A19), intense elite",
+        "reaper": "gnarly carolina reaper, deep red (#C62828), scorpion tail, max intensity",
+        "spike": "jumping volleyball spike, arm raised, excited face",
+        "celebrate": "victory pose, fists raised, huge smile",
+        "volleyball": "green and cream striped volleyball, grass volleyball brand",
+        "dark": "dark background (#0a0a0a) with heat-colored glow and ember effects"
       },
       "formatModifiers": {
-        "web": "Standard web resolution. 1200x675px. Landscape format.",
-        "banner": "Newsletter banner. 1200x200px. Horizontal strip."
+        "web": "High detail, transparent PNG, crisp at 400px+",
+        "sticker": "Die-cut friendly silhouette, extra bold outlines",
+        "instagram-story": "Vertical 1080x1920, dark background, heat-colored accents",
+        "instagram-post": "Square 1080x1080, dark background, centered mascot"
       },
       "visualKeywords": [
-        "dark",
-        "minimal",
-        "technical",
-        "geometric",
-        "signal",
-        "network"
+        "mascot",
+        "pepper",
+        "volleyball",
+        "cartoon",
+        "athletic",
+        "heat-levels",
+        "grass"
       ],
       "avoid": [
         "text in AI-generated images",
-        "stock photo aesthetics",
-        "bright/cheerful colors",
-        "corporate clip art",
-        "gratuitous gradients"
+        "faceless peppers",
+        "sketch/doodle style",
+        "bodybuilder muscles",
+        "realistic rendering",
+        "angry expressions"
       ]
     },
     "assets": []
