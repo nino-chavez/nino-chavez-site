@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600&amp;family=Inter:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Literata:opsz,wght@6..72,400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#e3e2e5",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed": "#3c0800",
+                    "secondary-fixed-dim": "#ccc6b3",
+                    "inverse-primary": "#455f86",
+                    "surface-container": "#1e2022",
+                    "on-tertiary": "#611300",
+                    "on-primary-fixed": "#001c3a",
+                    "tertiary": "#ffb4a1",
+                    "on-secondary-fixed-variant": "#4a4738",
+                    "surface-container-highest": "#343538",
+                    "on-error": "#690005",
+                    "tertiary-container": "#711700",
+                    "primary-fixed": "#d4e3ff",
+                    "on-surface-variant": "#c4c6cf",
+                    "surface": "#121316",
+                    "on-tertiary-container": "#ff7d5b",
+                    "surface-container-low": "#1a1c1e",
+                    "secondary-fixed": "#e9e2cf",
+                    "primary": "#adc8f4",
+                    "secondary-container": "#4a4738",
+                    "grid-line": "rgba(246, 239, 219, 0.025)",
+                    "surface-variant": "#343538",
+                    "primary-fixed-dim": "#adc8f4",
+                    "on-secondary-fixed": "#1e1c10",
+                    "on-primary-fixed-variant": "#2d486c",
+                    "secondary": "#ccc6b3",
+                    "tertiary-fixed-dim": "#ffb4a1",
+                    "on-surface": "#e3e2e5",
+                    "drafting-cream": "#f6efdb",
+                    "surface-bright": "#38393c",
+                    "primary-container": "#1e3a5e",
+                    "inverse-surface": "#e3e2e5",
+                    "proof-red": "#e8623f",
+                    "on-primary": "#133155",
+                    "tertiary-fixed": "#ffdbd2",
+                    "surface-container-lowest": "#0d0e11",
+                    "on-primary-container": "#8aa4ce",
+                    "blueprint-blue": "#1e3a5e",
+                    "surface-dim": "#121316",
+                    "inverse-on-surface": "#2f3033",
+                    "surface-tint": "#adc8f4",
+                    "outline": "#8e9199",
+                    "surface-container-high": "#292a2d",
+                    "error-container": "#93000a",
+                    "outline-variant": "#43474e",
+                    "on-secondary-container": "#bbb5a3",
+                    "on-error-container": "#ffdad6",
+                    "background": "#121316",
+                    "on-tertiary-fixed-variant": "#891e00",
+                    "on-secondary": "#333023"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "grid-unit": "32px",
+                    "rail-col": "30%",
+                    "max-width": "80rem",
+                    "main-col": "60%",
+                    "gutter": "5rem",
+                    "margin-sm": "1rem",
+                    "margin-lg": "4rem",
+                    "margin-md": "2rem"
+            },
+            "fontFamily": {
+                    "body-secondary": ["Literata"],
+                    "ui-nav": ["Inter"],
+                    "body-main": ["Literata"],
+                    "display-lg": ["Bricolage Grotesque"],
+                    "display-lg-mobile": ["Bricolage Grotesque"],
+                    "section-prefix": ["Inter"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "label-mono": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "body-secondary": ["1rem", {"lineHeight": "1.65", "fontWeight": "400"}],
+                    "ui-nav": ["0.875rem", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-main": ["1.125rem", {"lineHeight": "1.65", "fontWeight": "400"}],
+                    "display-lg": ["4rem", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["2.5rem", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "section-prefix": ["1.25rem", {"fontWeight": "700"}],
+                    "headline-md": ["2rem", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "label-mono": ["0.75rem", {"lineHeight": "1.4", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-image: 
+                linear-gradient(to right, rgba(246, 239, 219, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(246, 239, 219, 0.03) 1px, transparent 1px);
+            background-size: 32px 32px;
+            scroll-behavior: smooth;
+        }
+        .rail-border { border-left: 1px solid #f6efdb; }
+        .underline-hover:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #e8623f; }
+        .sharp-transition { transition: all 0.1s cubic-bezier(0.19, 1, 0.22, 1); }
+        .grid-mask { mask-image: linear-gradient(to bottom, black, transparent); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-main selection:bg-proof-red selection:text-white">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-background dark:bg-background border-b border-drafting-cream">
+<div class="flex justify-between items-center max-w-max-width mx-auto px-margin-lg h-grid-unit">
+<div class="font-display-lg text-[1.5rem] text-on-surface uppercase tracking-tight">
+                Nino Chavez<span class="text-proof-red">⊕</span>
+</div>
+<nav class="hidden md:flex gap-margin-md">
+<a class="font-ui-nav text-ui-nav text-on-surface hover:text-proof-red transition-colors duration-150" href="#">Archive</a>
+<a class="font-ui-nav text-ui-nav text-on-surface hover:text-proof-red transition-colors duration-150" href="#">Methodology</a>
+<a class="font-ui-nav text-ui-nav text-on-surface hover:text-proof-red transition-colors duration-150" href="#">Signal Dispatch</a>
+<a class="font-ui-nav text-ui-nav text-proof-red border-b border-proof-red" href="#">Studio</a>
+</nav>
+</div>
+</header>
+<!-- Side Rail (Desktop) -->
+<aside class="fixed right-0 top-0 h-full w-rail-col border-l border-drafting-cream hidden md:flex flex-col gap-grid-unit p-margin-md pt-[128px] bg-transparent z-40">
+<div class="flex flex-col gap-4">
+<span class="font-label-mono text-label-mono text-proof-red">§ NOTATION RAIL</span>
+<div class="w-full aspect-[4/5] bg-surface-container overflow-hidden border border-drafting-cream grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Studio Anchor" class="w-full h-full object-cover opacity-80" data-alt="A high-contrast, moody architectural photograph of a brutalist concrete structure with sharp shadows and geometric precision. The lighting is dramatic and directional, highlighting the raw textures of the building. The image is presented in a deep, desaturated blueprint aesthetic with subtle drafting lines overlaid, evoking a sense of disciplined professional design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGFU7D5gFJEHlv57xwxUW1cEC_XMrf-2Hy6d8G-gqfZbBaCAVFwKIF5pRDWIQeFdjhM4KQ-7_3uhLcmAR9NjkCgyYgrJ_gGDvmAckk4atayX4ztCF3YzJYm5vtjzay0GflxxZbW05UoNJ3fy0qM4FTK1hqDrPyzbBcU11eEwiciy4U0JkDS5obfQcAKZ_vzdfl8_NgHy3WGHJ5HFdKwSmEI7_Lxa-oDNfMEo2Go4iz0Dy92r1j7C5uDaK_xNnxuEQoglJ_cvWzVR4"/>
+</div>
+</div>
+<!-- Live Signals Card -->
+<div class="border border-drafting-cream p-4 flex flex-col gap-4">
+<span class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant">Live Signals</span>
+<div class="flex flex-col gap-3">
+<div class="flex flex-col">
+<span class="font-label-mono text-[10px] text-proof-red">LATEST_DISPATCH</span>
+<p class="font-body-secondary text-body-secondary text-sm">The Erosion of Deterministic Interfaces</p>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono text-[10px] text-proof-red">PRODUCT_STATUS</span>
+<p class="font-body-secondary text-body-secondary text-sm">Deploying V4 Engine</p>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono text-[10px] text-proof-red">METHODOLOGY_STAGE</span>
+<p class="font-body-secondary text-body-secondary text-sm">Stage 03: Stress Testing</p>
+</div>
+</div>
+</div>
+<!-- Adjacent Properties -->
+<div class="flex flex-col gap-2">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Adjacent Properties</span>
+<ul class="flex flex-col gap-1">
+<li class="font-label-mono text-label-mono flex items-center gap-2">
+<span class="text-proof-red">⊕</span> <a class="hover:text-proof-red underline decoration-drafting-cream/20" href="#">Methodology.zip</a>
+</li>
+<li class="font-label-mono text-label-mono flex items-center gap-2">
+<span class="text-proof-red">⊕</span> <a class="hover:text-proof-red underline decoration-drafting-cream/20" href="#">Commerce.log</a>
+</li>
+<li class="font-label-mono text-label-mono flex items-center gap-2">
+<span class="text-proof-red">⊕</span> <a class="hover:text-proof-red underline decoration-drafting-cream/20" href="#">Agentic.ops</a>
+</li>
+</ul>
+</div>
+</aside>
+<!-- Main Content Shell -->
+<main class="max-w-max-width mx-auto px-margin-lg pt-[160px] pb-margin-lg flex flex-col md:flex-row gap-gutter">
+<!-- Main Column -->
+<section class="w-full md:w-main-col flex flex-col gap-[64px]">
+<!-- Hero Prose -->
+<div class="flex flex-col gap-6">
+<h1 class="font-body-main text-[2.5rem] md:text-[3.5rem] leading-tight italic text-on-surface max-w-2xl">
+                    "I direct agents to ship commerce. I write the harness that makes them safe to ship it."
+                </h1>
+<div class="max-w-xl">
+<p class="font-body-secondary text-body-secondary text-on-surface-variant">
+                        Product Architect at a global commerce platform, developer of the 
+                        <span class="text-on-surface font-medium border-b border-proof-red">Blueprint methodology</span>, 
+                        and writer of technical narratives at Signal Dispatch. I focus on the intersection of agentic orchestration and industrial-scale commerce.
+                    </p>
+</div>
+</div>
+<!-- Shipped Products Section -->
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-4">
+<span class="text-proof-red font-label-mono text-lg">§</span>
+<h2 class="font-label-mono text-label-mono uppercase tracking-widest">Shipped Products</h2>
+<div class="h-px bg-drafting-cream flex-grow opacity-20"></div>
+</div>
+<div class="grid gap-12">
+<!-- Category: Commerce Architecture -->
+<div class="flex flex-col gap-4">
+<span class="font-label-mono text-[10px] text-on-surface-variant">01 / COMMERCE ARCHITECTURE</span>
+<ul class="flex flex-col gap-4">
+<li class="group border-l-2 border-transparent hover:border-proof-red pl-4 transition-all">
+<a class="flex flex-col gap-1" href="#">
+<div class="flex justify-between items-baseline">
+<span class="font-body-main text-lg font-medium group-hover:text-proof-red">Nexus Engine</span>
+<span class="font-label-mono text-[10px] text-on-surface-variant">LINK ↗</span>
+</div>
+<p class="font-label-mono text-on-surface-variant text-xs">The underlying orchestration layer for high-volume flash sales.</p>
+</a>
+</li>
+<li class="group border-l-2 border-transparent hover:border-proof-red pl-4 transition-all">
+<a class="flex flex-col gap-1" href="#">
+<div class="flex justify-between items-baseline">
+<span class="font-body-main text-lg font-medium group-hover:text-proof-red">Global Ledger V4</span>
+<span class="font-label-mono text-[10px] text-on-surface-variant">LINK ↗</span>
+</div>
+<p class="font-label-mono text-on-surface-variant text-xs">A unified immutable state machine for cross-border transactions.</p>
+</a>
+</li>
+<li class="group border-l-2 border-transparent hover:border-proof-red pl-4 transition-all">
+<a class="flex flex-col gap-1" href="#">
+<div class="flex justify-between items-baseline">
+<span class="font-body-main text-lg font-medium group-hover:text-proof-red">Cartography Protocol</span>
+<span class="font-label-mono text-[10px] text-on-surface-variant">LINK ↗</span>
+</div>
+<p class="font-label-mono text-on-surface-variant text-xs">Dynamic routing logic for multi-node logistics fulfillment.</p>
+</a>
+</li>
+</ul>
+</div>
+<!-- Category: Methodology and Agents -->
+<div class="flex flex-col gap-4">
+<span class="font-label-mono text-[10px] text-on-surface-variant">02 / METHODOLOGY &amp; AGENTS</span>
+<ul class="flex flex-col gap-4">
+<li class="group border-l-2 border-transparent hover:border-proof-red pl-4 transition-all">
+<a class="flex flex-col gap-1" href="#">
+<div class="flex justify-between items-baseline">
+<span class="font-body-main text-lg font-medium group-hover:text-proof-red">Blueprint Core</span>
+<span class="font-label-mono text-[10px] text-on-surface-variant">LINK ↗</span>
+</div>
+<p class="font-label-mono text-on-surface-variant text-xs">The definitive documentation framework for architectural intent.</p>
+</a>
+</li>
+<li class="group border-l-2 border-transparent hover:border-proof-red pl-4 transition-all">
+<a class="flex flex-col gap-1" href="#">
+<div class="flex justify-between items-baseline">
+<span class="font-body-main text-lg font-medium group-hover:text-proof-red">Agentic Harness</span>
+<span class="font-label-mono text-[10px] text-on-surface-variant">LINK ↗</span>
+</div>
+<p class="font-label-mono text-on-surface-variant text-xs">Safety and boundary protocols for autonomous LLM agents.</p>
+</a>
+</li>
+<li class="group border-l-2 border-transparent hover:border-proof-red pl-4 transition-all">
+<a class="flex flex-col gap-1" href="#">
+<div class="flex justify-between items-baseline">
+<span class="font-body-main text-lg font-medium group-hover:text-proof-red">Decision Matrix CLI</span>
+<span class="font-label-mono text-[10px] text-on-surface-variant">LINK ↗</span>
+</div>
+<p class="font-label-mono text-on-surface-variant text-xs">A command line tool for quantifiable product prioritizing.</p>
+</a>
+</li>
+<li class="group border-l-2 border-transparent hover:border-proof-red pl-4 transition-all">
+<a class="flex flex-col gap-1" href="#">
+<div class="flex justify-between items-baseline">
+<span class="font-body-main text-lg font-medium group-hover:text-proof-red">Omen Observer</span>
+<span class="font-label-mono text-[10px] text-on-surface-variant">LINK ↗</span>
+</div>
+<p class="font-label-mono text-on-surface-variant text-xs">Real-time observability for non-deterministic AI outputs.</p>
+</a>
+</li>
+</ul>
+</div>
+<!-- Category: Brand/Cultural -->
+<div class="flex flex-col gap-4">
+<span class="font-label-mono text-[10px] text-on-surface-variant">03 / BRAND &amp; CULTURAL</span>
+<ul class="flex flex-col gap-4">
+<li class="group border-l-2 border-transparent hover:border-proof-red pl-4 transition-all">
+<a class="flex flex-col gap-1" href="#">
+<div class="flex justify-between items-baseline">
+<span class="font-body-main text-lg font-medium group-hover:text-proof-red">Signal Dispatch</span>
+<span class="font-label-mono text-[10px] text-on-surface-variant">LINK ↗</span>
+</div>
+<p class="font-label-mono text-on-surface-variant text-xs">A publication exploring the friction between tech and culture.</p>
+</a>
+</li>
+<li class="group border-l-2 border-transparent hover:border-proof-red pl-4 transition-all">
+<a class="flex flex-col gap-1" href="#">
+<div class="flex justify-between items-baseline">
+<span class="font-body-main text-lg font-medium group-hover:text-proof-red">Monolith Typeface</span>
+<span class="font-label-mono text-[10px] text-on-surface-variant">LINK ↗</span>
+</div>
+<p class="font-label-mono text-on-surface-variant text-xs">A heavy display face designed for structural legibility.</p>
+</a>
+</li>
+<li class="group border-l-2 border-transparent hover:border-proof-red pl-4 transition-all">
+<a class="flex flex-col gap-1" href="#">
+<div class="flex justify-between items-baseline">
+<span class="font-body-main text-lg font-medium group-hover:text-proof-red">Archive_01</span>
+<span class="font-label-mono text-[10px] text-on-surface-variant">LINK ↗</span>
+</div>
+<p class="font-label-mono text-on-surface-variant text-xs">Experimental documentation of the 2023 design cycle.</p>
+</a>
+</li>
+<li class="group border-l-2 border-transparent hover:border-proof-red pl-4 transition-all">
+<a class="flex flex-col gap-1" href="#">
+<div class="flex justify-between items-baseline">
+<span class="font-body-main text-lg font-medium group-hover:text-proof-red">Blueprint Shop</span>
+<span class="font-label-mono text-[10px] text-on-surface-variant">LINK ↗</span>
+</div>
+<p class="font-label-mono text-on-surface-variant text-xs">Physical artifacts of the digital methodology.</p>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Recent Essays -->
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-4">
+<span class="text-proof-red font-label-mono text-lg">§</span>
+<h2 class="font-label-mono text-label-mono uppercase tracking-widest">Recent Essays</h2>
+<div class="h-px bg-drafting-cream flex-grow opacity-20"></div>
+</div>
+<div class="flex flex-col gap-0 border-t border-drafting-cream/10">
+<a class="group py-6 border-b border-drafting-cream/10 flex justify-between items-center" href="#">
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-[10px] text-on-surface-variant">NOV 24</span>
+<h3 class="font-body-main text-xl group-hover:text-proof-red transition-colors">The Logistics of Abstraction</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-proof-red">north_east</span>
+</a>
+<a class="group py-6 border-b border-drafting-cream/10 flex justify-between items-center" href="#">
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-[10px] text-on-surface-variant">OCT 12</span>
+<h3 class="font-body-main text-xl group-hover:text-proof-red transition-colors">Building for the Agentic Shift</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-proof-red">north_east</span>
+</a>
+<a class="group py-6 border-b border-drafting-cream/10 flex justify-between items-center" href="#">
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-[10px] text-on-surface-variant">SEP 05</span>
+<h3 class="font-body-main text-xl group-hover:text-proof-red transition-colors">Why Precision Matters in Chaos</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-proof-red">north_east</span>
+</a>
+<a class="group py-6 border-b border-drafting-cream/10 flex justify-between items-center" href="#">
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-[10px] text-on-surface-variant">AUG 28</span>
+<h3 class="font-body-main text-xl group-hover:text-proof-red transition-colors">The Death of the Dashboard</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-proof-red">north_east</span>
+</a>
+<a class="group py-6 border-b border-drafting-cream/10 flex justify-between items-center" href="#">
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-[10px] text-on-surface-variant">JUL 15</span>
+<h3 class="font-body-main text-xl group-hover:text-proof-red transition-colors">Standardizing Spontaneity</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-proof-red">north_east</span>
+</a>
+</div>
+<a class="font-label-mono text-label-mono text-proof-red uppercase tracking-widest self-start border-b border-proof-red pb-1 hover:pb-2 transition-all" href="#">Full Archive ⊕</a>
+</div>
+<!-- Threads I keep pulling on -->
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-4">
+<span class="text-proof-red font-label-mono text-lg">§</span>
+<h2 class="font-label-mono text-label-mono uppercase tracking-widest">Threads I keep pulling on</h2>
+<div class="h-px bg-drafting-cream flex-grow opacity-20"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex flex-col gap-2 p-6 border border-drafting-cream/10 bg-surface-container-lowest">
+<span class="font-label-mono text-[10px] text-proof-red">01_DETERMINISM</span>
+<p class="font-body-secondary text-body-secondary text-on-surface">How we maintain reliability in systems that are fundamentally non-deterministic.</p>
+</div>
+<div class="flex flex-col gap-2 p-6 border border-drafting-cream/10 bg-surface-container-lowest">
+<span class="font-label-mono text-[10px] text-proof-red">02_MAPPING</span>
+<p class="font-body-secondary text-body-secondary text-on-surface">The translation of physical supply chains into high-fidelity digital twins.</p>
+</div>
+<div class="flex flex-col gap-2 p-6 border border-drafting-cream/10 bg-surface-container-lowest">
+<span class="font-label-mono text-[10px] text-proof-red">03_NOTATION</span>
+<p class="font-body-secondary text-body-secondary text-on-surface">Developing a visual language for complex systems that humans and agents can both read.</p>
+</div>
+<div class="flex flex-col gap-2 p-6 border border-drafting-cream/10 bg-surface-container-lowest">
+<span class="font-label-mono text-[10px] text-proof-red">04_VELOCITY</span>
+<p class="font-body-secondary text-body-secondary text-on-surface">The psychological impact of near-instantaneous global shipping and automated labor.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Rail (Mobile Only - will hide on MD up because of the fixed aside) -->
+<section class="md:hidden w-full flex flex-col gap-12 mt-12 border-t border-drafting-cream pt-12">
+<!-- Mobile replica of rail content if needed, but per design usually side rail is sufficient -->
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-drafting-cream mt-margin-lg bg-surface-container-lowest">
+<div class="max-w-max-width mx-auto px-margin-lg py-grid-unit flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Built with <span class="text-on-surface">Blueprint methodology</span>.</span>
+<a class="font-label-mono text-label-mono text-proof-red hover:underline decoration-proof-red transition-all" href="#">How this site was built →</a>
+</div>
+<div class="font-label-mono text-label-mono text-on-surface-variant text-center md:text-right">
+                © Nino Chavez⊕ Studio — 2024
+                <div class="flex gap-4 mt-2 justify-center md:justify-end">
+<a class="hover:text-proof-red" href="#">Privacy</a>
+<a class="hover:text-proof-red" href="#">Terms</a>
+<a class="hover:text-proof-red" href="#">Colophon</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Chat Surface -->
+<div class="fixed bottom-margin-md right-margin-md z-50 flex flex-col items-end gap-3" id="chat-surface">
+<div class="hidden w-[320px] bg-blueprint-blue border border-drafting-cream p-6 flex flex-col gap-4 shadow-2xl" id="chat-box">
+<div class="flex justify-between items-start">
+<span class="font-label-mono text-[10px] uppercase tracking-widest text-drafting-cream">Signal Dispatch AI</span>
+<button class="text-drafting-cream/50 hover:text-proof-red" onclick="toggleChat()">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<p class="font-label-mono text-xs text-drafting-cream/80">I am the repository of the Blueprint Methodology. Ask me anything about the Studio's output.</p>
+<input class="bg-transparent border-0 border-b border-drafting-cream text-drafting-cream font-label-mono text-xs focus:ring-0 focus:border-proof-red placeholder:text-drafting-cream/30" placeholder="QUERY_SYSTEM..." type="text"/>
+</div>
+<button class="bg-blueprint-blue border border-drafting-cream px-6 py-3 font-label-mono text-label-mono text-drafting-cream hover:bg-proof-red hover:text-white transition-colors flex items-center gap-2 group" onclick="toggleChat()">
+<span class="material-symbols-outlined text-sm group-hover:rotate-12 transition-transform">bolt</span>
+            Ask Signal Dispatch
+        </button>
+</div>
+<script>
+        function toggleChat() {
+            const box = document.getElementById('chat-box');
+            box.classList.toggle('hidden');
+        }
+
+        // Simple parallax or reveal effects
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const hero = document.querySelector('h1');
+            if(hero) {
+                hero.style.transform = `translateY(${scrolled * 0.1}px)`;
+                hero.style.opacity = 1 - (scrolled / 500);
+            }
+        });
+    </script>
+</body></html>
