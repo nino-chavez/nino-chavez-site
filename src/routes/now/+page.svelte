@@ -4,6 +4,21 @@
 	// Promotes /now from v2 lateral surface to v3 primary live-state mirror.
 	// Implements differentiation move 4 (live runtime signals).
 	// Updates weekly+.
+
+	export let data;
+	$: latestPosts = (data?.blogPosts ?? []).slice(0, 5);
+	$: latestPost = latestPosts[0];
+
+	function formatRelative(dateStr) {
+		if (!dateStr) return '';
+		const d = new Date(dateStr);
+		const days = Math.floor((Date.now() - d.getTime()) / 86400000);
+		if (days === 0) return 'today';
+		if (days === 1) return '1d ago';
+		if (days < 30) return `${days}d ago`;
+		if (days < 365) return `${Math.floor(days / 30)}mo ago`;
+		return `${Math.floor(days / 365)}y ago`;
+	}
 </script>
 
 <svelte:head>
@@ -71,13 +86,21 @@
 
 			<section class="v3-block" id="writing-now">
 				<span class="v3-block-label">writing this week</span>
-				<h2 class="v3-block-title">Recent dispatches and the drafts on the desk.</h2>
+				<h2 class="v3-block-title">Recent dispatches.</h2>
 
-				<!-- TODO W6: pull from blog RSS at build time -->
-				<article class="v3-post">
-					<a href="https://blog.ninochavez.co" class="v3-post-title">Latest from Signal Dispatch →</a>
-					<span class="v3-post-date">live feed</span>
-				</article>
+				{#if latestPosts.length > 0}
+					{#each latestPosts as post (post.id)}
+						<article class="v3-post">
+							<a href={post.link} class="v3-post-title">{post.title}</a>
+							<span class="v3-post-date">{formatRelative(post.date)}</span>
+						</article>
+					{/each}
+				{:else}
+					<article class="v3-post">
+						<a href="https://blog.ninochavez.co" class="v3-post-title">Latest from Signal Dispatch →</a>
+						<span class="v3-post-date">live feed</span>
+					</article>
+				{/if}
 
 				<p style="margin-top: 1.5rem;"><a href="https://blog.ninochavez.co">Full archive — 277 essays since 2018 →</a></p>
 			</section>
@@ -104,20 +127,24 @@
 
 			<div class="v3-rail-card">
 				<div class="v3-rail-label">live signals</div>
-				<!-- TODO W6: replace with live data sources -->
 				<div class="v3-live-row">
 					<span class="v3-live-tag">writing</span>
-					<span class="v3-live-text">Latest dispatch loading…</span>
-					<span class="v3-live-age">→ blog.ninochavez.co</span>
+					{#if latestPost}
+						<a href={latestPost.link} class="v3-live-text" style="border-bottom: none;">{latestPost.title}</a>
+						<span class="v3-live-age">{formatRelative(latestPost.date)} · blog.ninochavez.co</span>
+					{:else}
+						<span class="v3-live-text">Latest dispatch loading…</span>
+						<span class="v3-live-age">→ blog.ninochavez.co</span>
+					{/if}
 				</div>
 				<div class="v3-live-row">
 					<span class="v3-live-tag">shipping</span>
-					<span class="v3-live-text">Rally HQ — production</span>
+					<a href="https://rallyhq.app" class="v3-live-text" style="border-bottom: none;">Rally HQ — production</a>
 					<span class="v3-live-age">→ rallyhq.app</span>
 				</div>
 				<div class="v3-live-row">
 					<span class="v3-live-tag">in flight</span>
-					<span class="v3-live-text">ninochavez.co v3 — Stage 6 deploy</span>
+					<a href="/colophon" class="v3-live-text" style="border-bottom: none;">ninochavez.co v3 — Stage 6 deploy</a>
 					<span class="v3-live-age">→ /colophon</span>
 				</div>
 			</div>
