@@ -12,14 +12,14 @@
 	import '@fontsource/space-grotesk/500.css';
 	import '@fontsource/space-grotesk/600.css';
 	import '@fontsource/space-grotesk/700.css';
-	// v3 fonts — added 2026-05-25 for studio surface routes (/, /speaking, /colophon, /now)
-	import '@fontsource/bree-serif/400.css';
-	import '@fontsource/crimson-pro/400.css';
-	import '@fontsource/crimson-pro/500.css';
-	import '@fontsource/crimson-pro/600.css';
+	// v3 fonts — forge-brand validated palette (Roboto Slab + Inter + JetBrains Mono)
+	// Replaces the hand-picked Bree Serif + Crimson Pro from v3 v0.2 (bypassed forge pipeline).
+	import '@fontsource/roboto-slab/400.css';
+	import '@fontsource/roboto-slab/700.css';
 	import '@fontsource/jetbrains-mono/400.css';
-	import '@fontsource/jetbrains-mono/500.css';
 	import '@fontsource/jetbrains-mono/700.css';
+	// brand-forge generated CSS tokens — single source of truth for v3 visual system
+	import '../brand/nino-chavez-studio.css';
 
 	import { onMount } from 'svelte';
 	import { dev } from '$app/environment';

@@ -1,0 +1,24 @@
+{
+  "name": "nino-chavez-studio",
+  "description": "Nino Chavez ⊕ studio brand style — Commerce architecture grounded in reality",
+  "basePrompt": "BRAND: Signal Dispatch — a strategic technology newsletter by Nino Chavez.\nAESTHETIC: Dark, professional, tech-focused. Minimalist with purpose.\n\nVISUAL LANGUAGE:\n- Signal waveforms, circuit-like patterns, geometric nodes\n- Abstract data visualization, flowing lines\n- Network topology patterns, subtle grid systems\n- Near-black backgrounds with coral/cyan accent highlights\n- Clean lines, no ornamental flourishes",
+  "styles": {},
+  "default": {
+    "background": "Dark background (#0f1419)",
+    "lineColor": "Critical Orange (#e86c5d) with Blueprint Steel (#4a90bb) accents",
+    "style": "Evidence-driven: backs every recommendation with data and real-world examples, Self-critical: openly acknowledges limitations and questions own assumptions, Implementation-focused: prioritizes what works over what sounds impressive, Transparently direct: delivers uncomfortable truths without corporate sugar-coating, Process-methodical: breaks complex problems into systematic, repeatable approaches, Skeptically practical: challenges conventional wisdom with hands-on experience aesthetic",
+    "elements": "dark, minimal, technical, geometric, signal, network",
+    "personality": "Evidence-driven: backs every recommendation with data and real-world examples, Self-critical: openly acknowledges limitations and questions own assumptions, Implementation-focused: prioritizes what works over what sounds impressive, Transparently direct: delivers uncomfortable truths without corporate sugar-coating, Process-methodical: breaks complex problems into systematic, repeatable approaches, Skeptically practical: challenges conventional wisdom with hands-on experience"
+  },
+  "conceptMap": {
+    "signal": "abstract signal waveform, frequency pattern, data stream",
+    "network": "network topology nodes and edges, connected systems",
+    "circuit": "circuit board patterns, technical traces, PCB aesthetic",
+    "data": "data visualization, flowing lines, abstract charts",
+    "grid": "subtle background grid, technical graph paper"
+  },
+  "formatModifiers": {
+    "web": "Standard web resolution. 1200x675px. Landscape format.",
+    "banner": "Newsletter banner. 1200x200px. Horizontal strip."
+  }
+}

@@ -30,7 +30,7 @@
 			</a>
 			<nav class="v3-nav">
 				<a href="/#writing">Writing</a>
-				<a href="/#desk">On the desk</a>
+				<a href="/#building">On the desk</a>
 				<a href="/#threads">Threads</a>
 				<a href="/speaking">Speaking</a>
 				<a href="/about">About</a>
@@ -168,7 +168,7 @@
 				<h4>navigate</h4>
 				<ul>
 					<li><a href="/">Home</a></li>
-					<li><a href="/#desk">On the desk</a></li>
+					<li><a href="/#building">On the desk</a></li>
 					<li><a href="/#writing">Writing</a></li>
 					<li><a href="/colophon">Colophon</a></li>
 					<li><a href="/now">Now</a></li>
