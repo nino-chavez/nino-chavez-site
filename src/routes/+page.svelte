@@ -3,6 +3,23 @@
 	// Source: blueprint/research/03-design-brief.md v0.2
 	// Replaces v2 bento + 4-pursuit + lime composition.
 	// See blueprint/research/06-strategy-summary.md for the why.
+
+	export let data;
+	// data.blogPosts is from src/lib/adapters/blogAdapter.ts (fetched at build)
+	// Format: InsightArticle[] — { id, title, excerpt, link, date, ... }
+	$: latestPosts = (data?.blogPosts ?? []).slice(0, 5);
+	$: latestPost = latestPosts[0];
+
+	function formatRelative(dateStr) {
+		if (!dateStr) return '';
+		const d = new Date(dateStr);
+		const days = Math.floor((Date.now() - d.getTime()) / 86400000);
+		if (days === 0) return 'today';
+		if (days === 1) return '1d ago';
+		if (days < 30) return `${days}d ago`;
+		if (days < 365) return `${Math.floor(days / 30)}mo ago`;
+		return `${Math.floor(days / 365)}y ago`;
+	}
 </script>
 
 <svelte:head>
@@ -157,13 +174,21 @@
 
 			<section class="v3-block" id="writing">
 				<span class="v3-block-label">recent dispatches</span>
-				<h2 class="v3-block-title">What I sent to Signal Dispatch this month.</h2>
+				<h2 class="v3-block-title">What I sent to Signal Dispatch recently.</h2>
 
-				<!-- TODO W6: pull live from blog.ninochavez.co RSS at build time -->
-				<article class="v3-post">
-					<a href="https://blog.ninochavez.co" class="v3-post-title">Latest from Signal Dispatch →</a>
-					<span class="v3-post-date">live feed</span>
-				</article>
+				{#if latestPosts.length > 0}
+					{#each latestPosts as post (post.id)}
+						<article class="v3-post">
+							<a href={post.link} class="v3-post-title">{post.title}</a>
+							<span class="v3-post-date">{formatRelative(post.date)}</span>
+						</article>
+					{/each}
+				{:else}
+					<article class="v3-post">
+						<a href="https://blog.ninochavez.co" class="v3-post-title">Latest from Signal Dispatch →</a>
+						<span class="v3-post-date">live feed</span>
+					</article>
+				{/if}
 
 				<p style="margin-top: 1.5rem;">
 					<a href="https://blog.ninochavez.co">Full archive — 277 essays since 2018 →</a>
@@ -208,22 +233,26 @@
 			<div class="v3-rail-card">
 				<div class="v3-rail-label">live signals</div>
 
-				<!-- TODO W6: replace placeholders with live RSS + Rally HQ status + Blueprint stage -->
 				<div class="v3-live-row">
 					<span class="v3-live-tag">writing</span>
-					<span class="v3-live-text">Latest dispatch loading…</span>
-					<span class="v3-live-age">→ blog.ninochavez.co</span>
+					{#if latestPost}
+						<a href={latestPost.link} class="v3-live-text" style="border-bottom: none;">{latestPost.title}</a>
+						<span class="v3-live-age">{formatRelative(latestPost.date)} · blog.ninochavez.co</span>
+					{:else}
+						<span class="v3-live-text">Latest dispatch loading…</span>
+						<span class="v3-live-age">→ blog.ninochavez.co</span>
+					{/if}
 				</div>
 
 				<div class="v3-live-row">
 					<span class="v3-live-tag">shipping</span>
-					<span class="v3-live-text">Rally HQ — live</span>
+					<a href="https://rallyhq.app" class="v3-live-text" style="border-bottom: none;">Rally HQ — production</a>
 					<span class="v3-live-age">→ rallyhq.app</span>
 				</div>
 
 				<div class="v3-live-row">
 					<span class="v3-live-tag">in flight</span>
-					<span class="v3-live-text">ninochavez.co v3 — shipped</span>
+					<a href="/colophon" class="v3-live-text" style="border-bottom: none;">ninochavez.co v3 — shipped</a>
 					<span class="v3-live-age">→ /colophon</span>
 				</div>
 			</div>
