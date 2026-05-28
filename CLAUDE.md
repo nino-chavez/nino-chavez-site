@@ -9,10 +9,10 @@ product; the live site keeps shipping at the repo root.
 `blueprint/` is a Pattern B (redesign-review-portal) initiative declared at `blueprint/blueprint.yml`:
 - **Variant**: brownfield (live product + audit + prescribe + prototype the new state)
 - **Tier**: 1 (portal exists; product surfaces from the redesign not yet shipped)
-- **Pattern**: B (per `~/Workspace/dev/wip/blueprint/docs/portal-and-tier-ladder.md`)
+- **Pattern**: B (per `~/Workspace/dev/tools/blueprint/docs/portal-and-tier-ladder.md`)
 
 The canonical Blueprint operating instructions live in the methodology repo, not here:
-**`~/Workspace/dev/wip/blueprint/template/CLAUDE.md`** is the canonical source — read it
+**`~/Workspace/dev/tools/blueprint/template/CLAUDE.md`** is the canonical source — read it
 before doing any Blueprint-shaped work. Stage 0 recipes, voice rules, citation rules,
 reviewer-agent gates, OWNER-SPEC conventions all load on demand from there. Do not
 inline them here. This file is a map, not a manual.
@@ -25,9 +25,9 @@ when working in any directory under a `blueprint.yml` ancestor.
 ### Manual fallback if the hook isn't installed
 
 Open the three canonical docs in order before reasoning about Blueprint shape:
-1. `~/Workspace/dev/wip/blueprint/METHODOLOGY.md` (§ "First Principle" + § "Variant Selection")
-2. `~/Workspace/dev/wip/blueprint/docs/variant-selection.md`
-3. `~/Workspace/dev/wip/blueprint/docs/portal-and-tier-ladder.md`
+1. `~/Workspace/dev/tools/blueprint/METHODOLOGY.md` (§ "First Principle" + § "Variant Selection")
+2. `~/Workspace/dev/tools/blueprint/docs/variant-selection.md`
+3. `~/Workspace/dev/tools/blueprint/docs/portal-and-tier-ladder.md`
 
 ## Browser automation: use browse-tool, not MCP
 
