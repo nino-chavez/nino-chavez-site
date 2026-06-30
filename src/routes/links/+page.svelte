@@ -61,6 +61,11 @@
 	<meta property="og:description" content="Code, cameras, sound, words. All the links in one place." />
 	<meta property="og:type" content="profile" />
 	<meta property="og:url" content="https://ninochavez.co/links" />
+	<meta property="og:image" content="https://ninochavez.co/images/og-image.jpeg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content="https://ninochavez.co/images/og-image.jpeg" />
 </svelte:head>
 
 <main class="bg-black text-white min-h-dvh flex flex-col items-center justify-start px-5 py-12 relative overflow-hidden">

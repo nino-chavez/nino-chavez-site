@@ -103,11 +103,15 @@
 	<meta property="og:description" content="What I'm working on, thinking about, and building right now." />
 	<meta property="og:type" content="profile" />
 	<meta property="og:url" content="https://ninochavez.co/now" />
+	<meta property="og:image" content="https://ninochavez.co/images/og-image.jpeg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Now - Nino Chavez" />
 	<meta name="twitter:description" content="What I'm working on, thinking about, and building right now." />
+	<meta name="twitter:image" content="https://ninochavez.co/images/og-image.jpeg" />
 </svelte:head>
 
 <div class="min-h-screen bg-black text-white">

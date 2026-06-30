@@ -44,6 +44,10 @@
 <svelte:head>
 	 <title>Nino Chavez</title>
 	 <meta name="description" content="Photography, music, writing, and software. Nino Chavez, Chicago." />
+	 <meta property="og:image" content="https://ninochavez.co/images/og-image.jpeg" />
+	 <meta property="og:image:width" content="1200" />
+	 <meta property="og:image:height" content="630" />
+	 <meta name="twitter:image" content="https://ninochavez.co/images/og-image.jpeg" />
 </svelte:head>
 
 <div class="min-h-screen bg-neutral-900 text-white" class:mounted>

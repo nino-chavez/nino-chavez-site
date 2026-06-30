@@ -54,11 +54,15 @@
 	<meta property="og:description" content="Things I've built — production platforms, AI tools, side projects." />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://ninochavez.co/work" />
+	<meta property="og:image" content="https://ninochavez.co/images/og-image.jpeg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Work - Nino Chavez" />
 	<meta name="twitter:description" content="Projects I've built. Production applications, AI experiments, and things I'm tinkering with." />
+	<meta name="twitter:image" content="https://ninochavez.co/images/og-image.jpeg" />
 </svelte:head>
 
 <div class="min-h-screen bg-gray-950 text-white">
