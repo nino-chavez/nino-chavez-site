@@ -8,6 +8,14 @@ read, or a live-URL probe with status. All probes run 2026-07-08.
 
 ## Headline findings (read first)
 
+> **SUPERSEDED IN PART (2026-07-08 evening).** After this survey, the operator authorized
+> publication and a sanitation scan cleared four repos: `specchain`, `claude-recall-cli`,
+> `forge-brand`, `forge-site` are **now PUBLIC** (gitleaks full-history clean, no
+> family/client/env leakage). `forge-signal` remains PRIVATE — held because its git
+> history contains client deliverables and a GCP API key. Finding 1 below reflects the
+> survey-time state; the current matrix delta is recorded in `01-diagnose.md` § D4
+> addendum.
+
 1. **Three of the goal doc's hypothesized grounding repos are PRIVATE** — a visitor
    clicking through would 404. `gh repo view` returns `"visibility":"PRIVATE"` for
    `specchain` (Builder), `claude-recall-cli` (Voice), `forge-signal` (Author/Strategist).

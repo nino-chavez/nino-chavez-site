@@ -100,6 +100,20 @@ private tools, or re-ground three tracks on what is already public** (or per-tra
 The surface must not promise "install this" where the honest action is "read the method
 and copy the pattern" — the old corpus's over-promising failure in a new form.
 
+**Addendum (2026-07-08 evening) — publication decision partially resolved.** The operator
+authorized publishing non-BigCommerce repos after a sanitation scan. Scanned (gitleaks
+full-history + family/client/env greps): `specchain`, `claude-recall-cli`, `forge-brand`,
+`forge-site` all clean → **now PUBLIC**. Effect on the matrix: Builder gains a genuine
+self-serve tool (`npx create-specchain`); Voice's "method public, tool private" gap closes
+(the recall/Poe tooling is now inspectable and installable); Author/Strategist gain
+secondary forge-chain evidence. **`forge-signal` stays PRIVATE — held, not cleared**: its
+git history (not HEAD) contains client project deliverables (`projects/signet/`,
+`projects/internal/geo-playbook/`, infoverity/authoritas references) and a GCP API key
+(`refs/sig-feedo.html`, commit 0270efe0); publishing exposes full history. Author/Strategist
+therefore stay re-grounded on Blueprint's doc stages per the matrix; a future
+fresh-cut public release of forge-signal (new repo from HEAD, no history) remains open
+to Stage 2 but is not assumed. The leaked GCP key should be revoked regardless.
+
 The narrative layer is the healthiest input: 237 posts, 75% AI-relevant, publishing
 active through 2026-06-16, Builder/Architect best-served; derivation is feasible today
 via the live `/blog/rss.xml`, though the richer `posts.json` and `/llms.txt` 404 on the
