@@ -1,0 +1,70 @@
+# Blueprint Configuration — stamped by template/tools/blueprint-init on 2026-07-08
+# Seed: docs/AI-INITIATIVE-GOAL.md § blueprint.yml seed (merged over the stamped default)
+
+project:
+  name: "AI Practice Surface Rebuild"
+  description: "Rebuild ninochavez.co/ai into an evidence-backed enablement surface: personas, paths, and tools a practitioner can apply to their own work, proven by Nino's shipped artifacts"
+  product: "ninochavez.co"
+  audience:
+    leadership: ["Nino (owner)"]
+    engineering: ["peer practitioners evaluating the tools"]
+    broader: ["prospective clients / employers"]
+
+product_type: ""            # end-user marketing surface, not a dev tool
+
+# Pipeline shape — see Blueprint docs/variant-selection.md (methodology source)
+variant: brownfield
+
+# Deliverable sophistication — see Blueprint docs/portal-and-tier-ladder.md (methodology source)
+# Variant × Tier matrix codified in that doc; do not deviate without an ADR.
+# Promotion to Tier 2 when the rebuilt /ai surfaces ship into the live SvelteKit app.
+tier: 1
+
+# Portal type — which portal harness this initiative uses
+# review = Review Portal (static HTML + drawers, brownfield audit/redesign)
+portal_type: review
+
+pilot_profile:
+  slug: "craft-practitioner"
+  display_name: "Practitioner applying AI to the craft they already have, using Nino's demonstrated paths and tools as the map"
+  pain_point: "They know AI matters for their work, but generic tutorials teach tools rather than their craft; they need an entry path grounded in someone's real, demonstrated practice — personas to locate themselves, paths to follow, tools they can pick up self-serve, and shipped evidence that the path actually works."
+  monetization_side: "operator"  # the practitioner operating their own work with AI;
+                                 # downstream buyers (clients/employers impressed by the
+                                 # surface) are a byproduct, not the pilot
+  walkthrough_citation: "docs/AI-INITIATIVE-GOAL.md § Appendix (2026-07-08 audit: every claim probed against live URLs, repo code, and workspace/GitHub surveys) + the old corpus's own persona taxonomy (src/routes/ai/learn/**), which encodes the same visitor"
+  competitors_in_scope: []     # derive in Stage 1 FROM this pilot; candidates to test:
+                               # where this practitioner currently goes to learn applied
+                               # AI practice (simonwillison.net, promptingguide.ai,
+                               # Every / "how I use AI" essays, ai-analyst-academy
+                               # comparables, vendor academies)
+  out_of_scope_pilots:
+    - "Evaluator judging whether Nino's AI-native claim is real (client/employer) — served as a byproduct: the evidence that enables the practitioner also proves the claim; it is not the organizing lens"
+    - "Family/Zoey (Ask Dad) — private artifact, off the public surface entirely"
+
+# Initiative artifacts live under blueprint/ (this repo's prior-initiative convention);
+# the reviewer gates read these paths.
+stages:
+  stage_1:
+    output: "blueprint/01-diagnose.md"
+    requires:
+      - "blueprint/research/current-state/"
+      - "blueprint/research/personas/"
+      - "blueprint/research/funnel/"
+      - "blueprint/research/competitive/"
+      - "blueprint/01-diagnose.md"
+  stage_2:
+    output: "blueprint/02-prescription.yml"
+  stage_3:
+    output: "blueprint/03-design-brief.md"
+
+prototype:
+  portal_dir: "blueprint/portal"
+  chrome_profile: methodology-themed   # Profile A: canonical shared.css, brand in project-tokens.css
+
+portal:
+  repo_url: "https://github.com/nino-chavez/nino-chavez-site"
+  decisions:
+    dir: "blueprint/decisions"     # NNNN-slug.md decision records (ADRs)
+
+execution:
+  depth: standard
