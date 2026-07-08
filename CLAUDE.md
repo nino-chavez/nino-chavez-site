@@ -1,15 +1,18 @@
 # website-nc
 
-This repo houses the live `ninochavez.co` site (SvelteKit on Cloudflare Pages) and a
-brownfield Blueprint redesign at `blueprint/`. The redesign sits alongside the live
-product; the live site keeps shipping at the repo root.
+This repo houses the live `ninochavez.co` site (SvelteKit on Cloudflare Pages).
+The live site ships at the repo root. Note: `ninochavez.co` traffic is fronted by
+the `~/Workspace/dev/apps/router` Worker, which dispatches to this site's Pages
+project (`ninochavez-main`), the blog, and photography — routing bugs live there,
+not in this repo (see DEPLOY.md).
 
 ## Blueprint initiative
 
-`blueprint/` is a Pattern B (redesign-review-portal) initiative declared at `blueprint/blueprint.yml`:
-- **Variant**: brownfield (live product + audit + prescribe + prototype the new state)
-- **Tier**: 1 (portal exists; product surfaces from the redesign not yet shipped)
-- **Pattern**: B (per `~/Workspace/dev/tools/blueprint/docs/portal-and-tier-ladder.md`)
+The prior brownfield redesign (`blueprint/`, v3 "camera-metaphor") was abandoned and
+removed (c5754ed). The next initiative — rebuilding the /ai section into an
+evidence-backed enablement surface — is seeded by `docs/AI-INITIATIVE-GOAL.md`
+(brownfield, Pattern B, Tier 1) and runs in its own worktree; declare it there
+per that doc's blueprint.yml seed, and update this section when it exists.
 
 The canonical Blueprint operating instructions live in the methodology repo, not here:
 **`~/Workspace/dev/tools/blueprint/template/CLAUDE.md`** is the canonical source — read it

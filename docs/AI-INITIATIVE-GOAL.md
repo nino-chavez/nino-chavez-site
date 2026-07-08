@@ -195,11 +195,13 @@ execution:
 
 ## Prerequisites that live in the main repo, outside the initiative
 
-1. `svelte.config.js:11` `routes: { exclude: ['<all>'] }` disables the CF Worker for
-   every server route sitewide — all `/api/*` 404 in production (Ask chat, Cal.com,
-   contact). Bigger than /ai; fix in the live repo regardless.
+1. ~~`svelte.config.js` route exclusion~~ FIXED in diagnosis 2026-07-08: the real
+   cause of the sitewide `/api/*` 404s was the `apps/router` Worker forwarding
+   `/api/*` to the blog (`router/src/index.ts:43`, dead config — the blog has no
+   API routes). Fixed by removing `'/api'` from the router's blog prefixes; the
+   Pages origin already served the APIs correctly.
 2. Dead `signaldispatch.co` links (domain has no DNS) on /ai and /ai/learn footers;
-   the blog lives at /blog.
+   the blog lives at /blog. FIXED 2026-07-08.
 3. Repo CLAUDE.md references a `blueprint/` initiative directory that was removed
    (c5754ed) — update when the new initiative is declared.
 
@@ -241,7 +243,7 @@ plus direct probes of live URLs and repo code. All probes run 2026-07-08.
 
 | # | Finding | Evidence |
 |---|---|---|
-| 1 | "Ask" badged **Live**; dead in prod | `/api/ask/chat` 404 live (as do `/api/person.json`, `/api/contact.json`); cause `svelte.config.js:11` excludes all routes from the Worker |
+| 1 | "Ask" badged **Live**; dead in prod | `/api/ask/chat` 404 live (as do `/api/person.json`, `/api/contact.json`). Root cause (verified 2026-07-08 evening): the `apps/router` Worker forwarded ALL `/api/*` to the blog Pages project (`router/src/index.ts:43`), which has no API routes. The Pages origin itself serves the APIs correctly (`ninochavez-main.pages.dev/api/person.json` 200; ask/chat returns validation JSON, env keys configured). Earlier attribution to `svelte.config.js:11` was falsified by a local `wrangler pages dev` smoke test — the adapter config is harmless |
 | 2 | Public "Virtual Nino" is the private Ask Dad prompt | `src/lib/server/askdad/system-prompt.ts:22` hardcodes "You're talking to Zoey, Nino's 19-year-old daughter" |
 | 3 | Second Build project also dead | `/ai/build` → `/code-to-cognition` 404s (route absent from repo); real home labs.ninochavez.co has an expired SSL cert |
 | 4 | Dead footer link | "Read my writing" → signaldispatch.co, domain has no DNS; blog is live at /blog |

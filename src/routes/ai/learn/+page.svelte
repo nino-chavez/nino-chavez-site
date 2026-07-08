@@ -326,9 +326,7 @@
 			Learning Gateway
 		</p>
 		<a
-			href="https://signaldispatch.co"
-			target="_blank"
-			rel="noopener noreferrer"
+			href="/blog"
 			class="text-xs transition-colors"
 			style="color: var(--ai-text-muted);"
 		>
