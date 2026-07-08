@@ -23,7 +23,7 @@ The pilot is grounded in real artifacts, not imagined research:
 
 1. The 2026-07-08 /ai audit (goal doc § Appendix) — every claim probed against
    live URLs, repo code, and workspace/GitHub surveys; re-probed at Stage 0
-   (`blueprint/research/current-state/00-capture-manifest.md`).
+   (`research/current-state/00-capture-manifest.md`).
 2. The old corpus's own persona taxonomy (`src/routes/ai/learn/**`) — seven
    personas that encode exactly this visitor; the taxonomy is judged sound even
    though its pages assert rather than show the AI application.

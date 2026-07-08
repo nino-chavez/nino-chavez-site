@@ -11,11 +11,13 @@ not in this repo (see DEPLOY.md).
 Declared 2026-07-08 on branch `blueprint/ai-enablement` (own worktree per the
 worktree rule below). Goal + mandate: `docs/AI-INITIATIVE-GOAL.md`. Config:
 `blueprint.yml` at repo root (brownfield, Pattern B Review Portal, Tier 1,
-pilot: craft-practitioner). Evidence artifacts live under `blueprint/`
-(`research/`, `decisions/`, numbered stage files, `portal/`); methodology
-learnings in `METHODOLOGY-AMENDMENTS.md` at repo root. The prior v3
-"camera-metaphor" redesign was abandoned and removed (c5754ed) — its
-`blueprint/` directory is unrelated to the current one.
+pilot: craft-practitioner). Artifact layout is the variant default the reviewer
+gates enforce: `research/`, `decisions/`, and the numbered stage files
+(`01-diagnose.md`, `02-prescription.yml`, `03-design-brief.md`) at repo root;
+only the review portal lives at `blueprint/portal/`. Methodology learnings in
+`METHODOLOGY-AMENDMENTS.md` at repo root. The prior v3 "camera-metaphor"
+redesign was abandoned and removed (c5754ed) — its `blueprint/` directory is
+unrelated to the current one.
 
 The canonical Blueprint operating instructions live in the methodology repo, not here:
 **`~/Workspace/dev/tools/blueprint/template/CLAUDE.md`** is the canonical source — read it

@@ -35,7 +35,7 @@ pilot_profile:
   # ^ specifically § Appendix — the 2026-07-08 audit: every claim probed against
   #   live URLs, repo code, and workspace/GitHub surveys — plus the old corpus's
   #   own persona taxonomy (src/routes/ai/learn/**), which encodes the same
-  #   visitor. Stage 0 re-probe: blueprint/research/current-state/00-capture-manifest.md
+  #   visitor. Stage 0 re-probe: research/current-state/00-capture-manifest.md
   competitors_in_scope:        # where this pilot currently goes to learn applied AI
                                # practice; declared as Stage 1 walk targets, derived
                                # FROM the pilot (goal doc § blueprint.yml seed)
@@ -48,21 +48,10 @@ pilot_profile:
     - "Evaluator judging whether Nino's AI-native claim is real (client/employer) — served as a byproduct: the evidence that enables the practitioner also proves the claim; it is not the organizing lens"
     - "Family/Zoey (Ask Dad) — private artifact, off the public surface entirely"
 
-# Initiative artifacts live under blueprint/ (this repo's prior-initiative convention);
-# the reviewer gates read these paths.
-stages:
-  stage_1:
-    output: "blueprint/01-diagnose.md"
-    requires:
-      - "blueprint/research/current-state/"
-      - "blueprint/research/personas/"
-      - "blueprint/research/funnel/"
-      - "blueprint/research/competitive/"
-      - "blueprint/01-diagnose.md"
-  stage_2:
-    output: "blueprint/02-prescription.yml"
-  stage_3:
-    output: "blueprint/03-design-brief.md"
+# Artifact layout is the variant default (research/, decisions/, numbered stage files
+# at the initiative root; the mechanical reviewers enforce these fixed paths — see
+# METHODOLOGY-AMENDMENTS.md 2026-07-08 layout entries). Only the portal lives under
+# blueprint/ (auto-resolved by the tooling's candidate list).
 
 prototype:
   portal_dir: "blueprint/portal"
@@ -71,7 +60,7 @@ prototype:
 portal:
   repo_url: "https://github.com/nino-chavez/nino-chavez-site"
   decisions:
-    dir: "blueprint/decisions"     # NNNN-slug.md decision records (ADRs)
+    dir: "decisions"               # NNNN-slug.md decision records (ADRs)
 
 execution:
   depth: standard

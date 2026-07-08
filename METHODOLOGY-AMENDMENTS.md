@@ -3,11 +3,23 @@
 Append-only, reverse-chronological. Convention:
 `$BLUEPRINT_HOME/template/docs/methodology/methodology-amendments-convention.md`.
 
+## 2026-07-08 — Layout reverted to variant defaults: the mechanical gates enforce fixed root paths
+
+**Trigger**: `research-completeness-reviewer` BLOCKs on the variant default legs at fixed paths (`research/current-state/` …, `01-diagnose.md` at the initiative root) and treats a `stages:` override as advisory INFO only; `prescription-evidence-reviewer` and `prescription-jtbd-traceability-reviewer` likewise resolve `02-prescription.yml` at the root. The `blueprint/`-contained layout (previous entry) can never pass them.
+**Scope**: Candidate for methodology promotion (the gap, not the layout)
+**Status**: Active — supersedes the same-day layout entry below
+
+Moved `research/` and `decisions/` to the initiative root and dropped the `stages:` override; only `blueprint/portal/` stays nested (the portal tooling's candidate list resolves it). Promotion candidate for the methodology: either the reviewers honor the `stages:` block they already parse, or the docs should state plainly that the artifact layout is fixed and the `stages:` block is informational — the current half-state (schema suggests configurability, gates ignore it) invites exactly this misstep. rally-hq's nested layout predates these gates, which is why the sibling scan didn't flag it.
+
+**References**:
+- `research-completeness-reviewer.mjs` (variant default legs; INFO on override)
+- Superseded entry below (same day)
+
 ## 2026-07-08 — Initiative artifacts live under `blueprint/`, with explicit stage paths in `blueprint.yml`
 
 **Trigger**: This repo is a live product site; the standard initiative layout (research/, decisions/, 01-diagnose.md at the blueprint.yml root) would scatter audit artifacts across the product repo root.
 **Scope**: Per-initiative
-**Status**: Active
+**Status**: Superseded by 2026-07-08 layout-revert entry above
 
 `blueprint.yml` stays at the repo root (so the SessionStart hook detects the initiative from any cwd in the repo), but all evidence artifacts live under `blueprint/` — `blueprint/research/`, `blueprint/decisions/`, `blueprint/01-diagnose.md`, `blueprint/portal/`. The `stages:` block in `blueprint.yml` declares the `blueprint/`-prefixed paths explicitly so reviewer gates resolve them. This matches the repo's prior-initiative convention (the removed v3 `blueprint/` directory, c5754ed) and rally-hq's layout.
 
