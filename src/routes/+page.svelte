@@ -334,6 +334,28 @@
 					<div class="absolute bottom-0 left-0 w-full h-1 bg-lime-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
 				</a>
 
+				<!-- AI Practice — the enablement surface (initiative P1: first inbound link) -->
+				<a
+					href="/ai"
+					class="bento-card group relative overflow-hidden cursor-pointer"
+				>
+					<div class="absolute inset-0 bg-gradient-to-br from-lime-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+					<div class="relative z-10 h-full flex flex-col justify-between p-6">
+						<div>
+							<div class="flex items-center gap-3 mb-3">
+								<span class="w-2 h-2 bg-lime-400 rounded-full"></span>
+								<span class="text-lime-400 font-mono text-[10px] tracking-widest">AI PRACTICE</span>
+							</div>
+							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">WORK THIS WAY</h3>
+							<p class="text-neutral-500 text-sm">Apply AI to your craft</p>
+						</div>
+						<p class="text-neutral-500 text-sm leading-relaxed">
+							Seven paths in, each demonstrated by shipped work — Rally HQ, Blueprint, this site.
+						</p>
+					</div>
+					<div class="absolute bottom-0 left-0 w-full h-1 bg-lime-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+				</a>
+
 				<!-- Signal Dispatch Blog -->
 				<a
 					href="https://blog.ninochavez.co"
@@ -539,6 +561,7 @@
 				<!-- Text links -->
 				<a href="https://blog.ninochavez.co" class="text-neutral-600 text-sm hover:text-lime-400 transition-colors">BLOG</a>
 				<a href="https://photography.ninochavez.co" class="text-neutral-600 text-sm hover:text-lime-400 transition-colors">PHOTOGRAPHY</a>
+				<a href="/ai" class="text-neutral-600 text-sm hover:text-lime-400 transition-colors">AI</a>
 				<a href="/about" class="text-neutral-600 text-sm hover:text-lime-400 transition-colors">ABOUT</a>
 
 				<!-- Social icons -->

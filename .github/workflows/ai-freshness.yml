@@ -1,0 +1,62 @@
+# /ai freshness architecture (02-prescription.yml P6; goal doc § Freshness).
+# Lane 1 (derive): scheduled job refreshes derived data and opens a PR.
+# Lane 2 (sense): probes + claim lint run on every /ai-touching PR AND on the
+#   schedule — the surface fails loudly before a visitor meets a dead link.
+# Lane 3 (agentic refresh): the derive-PR loop is the scaffold; the full
+#   audit-agent job (survey deltas → draft content updates → PR) extends this
+#   workflow post-launch (success criterion: ≥1 merged refresh PR).
+name: ai-freshness
+
+on:
+  schedule:
+    - cron: '0 13 * * 1,4' # Mon + Thu 13:00 UTC — builds run on a schedule, not only on push
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'src/routes/ai/**'
+      - 'src/lib/data/ai/**'
+      - 'scripts/ai-freshness/**'
+
+jobs:
+  sense:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Claim lint (no volatile facts in prose)
+        run: node scripts/ai-freshness/claim-lint.mjs
+      - name: Liveness + staleness probes
+        run: node scripts/ai-freshness/probe.mjs
+
+  refresh:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    needs: sense
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Derive (GitHub pushedAt + verified stamps + blog feed)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/ai-freshness/derive.mjs || [ $? -eq 2 ]
+      - name: Open refresh PR when derived data changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: ai-freshness/derived
+          commit-message: 'chore(ai): scheduled freshness derive'
+          title: 'chore(ai): scheduled freshness derive'
+          body: >
+            Automated lane-1 derive: pushedAt from the GitHub API, verified
+            stamps from liveness probes, writing strip from the blog feed.
+            Merging triggers the Pages rebuild — derived content refreshes
+            without a human remembering to update it.
+          add-paths: |
+            src/lib/data/ai/derived.json
+            src/lib/data/ai/writing.json

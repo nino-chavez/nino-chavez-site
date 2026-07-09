@@ -9,13 +9,19 @@ not in this repo (see DEPLOY.md).
 ## Blueprint initiative — AI Practice Surface Rebuild (active)
 
 Declared 2026-07-08 on branch `blueprint/ai-enablement` (own worktree per the
-worktree rule below). Goal + mandate: `docs/AI-INITIATIVE-GOAL.md`. Config:
-`blueprint.yml` at repo root (brownfield, Pattern B Review Portal, Tier 1,
+worktree rule below); **Tier 2 as of 2026-07-09** — the rebuilt /ai shipped into
+the SvelteKit app on that branch. Goal + mandate: `docs/AI-INITIATIVE-GOAL.md`.
+Config: `blueprint.yml` at repo root (brownfield, Pattern B Review Portal,
 pilot: craft-practitioner). Artifact layout is the variant default the reviewer
 gates enforce: `research/`, `decisions/`, and the numbered stage files
-(`01-diagnose.md`, `02-prescription.yml`, `03-design-brief.md`) at repo root;
-only the review portal lives at `blueprint/portal/`. Methodology learnings in
-`METHODOLOGY-AMENDMENTS.md` at repo root. The prior v3 "camera-metaphor"
+(`01-diagnose.md` … `06-triage.md`) at repo root; the review portal lives at
+`blueprint/portal/` (deployed: ai-enablement-blueprint.pages.dev). Methodology
+learnings in `METHODOLOGY-AMENDMENTS.md` at repo root (8 Pattern B defects
+logged for upstream). The rebuilt surface: data layer at `src/lib/data/ai/`
+(tracks + artifact registry + derived.json overlay), components at
+`src/lib/components/ai/`, freshness sensors at `scripts/ai-freshness/` wired
+into `.github/workflows/ai-freshness.yml` — volatile facts live in dated data
+files; the claim lint forbids them in prose. The prior v3 "camera-metaphor"
 redesign was abandoned and removed (c5754ed) — its `blueprint/` directory is
 unrelated to the current one.
 

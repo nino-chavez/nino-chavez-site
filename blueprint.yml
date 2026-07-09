@@ -17,8 +17,9 @@ variant: brownfield
 
 # Deliverable sophistication — see Blueprint docs/portal-and-tier-ladder.md (methodology source)
 # Variant × Tier matrix codified in that doc; do not deviate without an ADR.
-# Promotion to Tier 2 when the rebuilt /ai surfaces ship into the live SvelteKit app.
-tier: 1
+# Promoted 1 -> 2 on 2026-07-09: the rebuilt /ai surfaces shipped into the live
+# SvelteKit app (P1-P8 implemented; the review portal remains alongside).
+tier: 2
 
 # Portal type — which portal harness this initiative uses
 # review = Review Portal (static HTML + drawers, brownfield audit/redesign)

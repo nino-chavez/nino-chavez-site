@@ -9,5 +9,18 @@ export const handle: Handle = async ({ event, resolve }) => {
 		throw redirect(301, pathname.replace('/learn', '/ai/learn'));
 	}
 
+	// /ai rebuild (02-prescription.yml P2/P5/P8): retired routes redirect to
+	// their successors. Ask is killed per ADR-0003; build → work; the
+	// reference tab and corpus stub fold into learn.
+	if (pathname === '/ai/ask' || pathname.startsWith('/ai/ask/')) {
+		throw redirect(301, '/ai');
+	}
+	if (pathname === '/ai/build' || pathname.startsWith('/ai/build/')) {
+		throw redirect(301, '/ai/work');
+	}
+	if (pathname === '/ai/reference' || pathname === '/ai/learn/corpus') {
+		throw redirect(301, '/ai/learn');
+	}
+
 	return resolve(event);
 };
