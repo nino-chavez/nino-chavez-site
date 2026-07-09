@@ -1,0 +1,90 @@
+# 02 — Prescription: AI Practice Surface Rebuild (Stage 2, brownfield)
+# Impact-ordered (descending). Every item cites Stage 1 evidence and traces to a
+# Stage 1 JTBD (refs: <persona>/<surface>/<job-slug> per the traceability gate).
+# Decisions this file executes: ADR-0002 (placement), ADR-0003 (public Ask kill).
+# Diagnose findings D1-D8: D1→P1, D2→P2+P9, D3→P4+P7, D4→P4, D5→P4+P5+P6,
+# D6→Stage 3 design input (no change item), D7→P3, D8→no action needed.
+
+items:
+  - id: "P1"
+    what: "Make the surface reachable: drop noindex/nofollow on all pages, add /ai to main nav and the homepage property-showcase pattern, and add inbound links from the two live external channels (GitHub profile README, blog)"
+    why: "Every inbound channel is mechanically severed — 13/13 pages noindex, zero internal links, profile README and blog link only root and /blog; the section serves direct-URL visitors only, which is how the old corpus died"
+    impact: "critical"
+    evidence: "research/funnel/funnel.md §1 (per-channel probe table); research/current-state/appendix-validation.md 'Structurally misaligned' (grep: zero inbound links); research/current-state/00-capture-manifest.md (13/13 noindex)"
+    monetization_side: "operator"
+    serves_jtbd:
+      - "craft-practitioner//ai/learn/find-my-craft-persona-follow"
+
+  - id: "P2"
+    what: "Restore evidence integrity: remove the public Ask surface per ADR-0003 (route removed, redirect to /ai), cut the dead Code-to-Cognition card and its 404 link, and remove every false or unverifiable stat ('Live' badges, '70+ terms' vs actual 33, '603 agents', corpus-stub stats)"
+    why: "The evidence layer fails at first click — Ask 500s on a well-formed request, /code-to-cognition 404s — and for the evaluating client a dead 'Live' badge actively falsifies the AI-native claim; a checked-and-wrong stat costs all remaining trust"
+    impact: "critical"
+    evidence: "research/current-state/00-capture-manifest.md (Ask 500 probe, /code-to-cognition 404); research/current-state/old-corpus-inventory.md §1 ('70+ terms' false), §3 ('603 agents' unverifiable), §11 (corpus-stub stats); decisions/0003-public-ask-kill-for-launch.md"
+    monetization_side: "buyer"
+    serves_jtbd:
+      - "evaluating-client//ai evidence layer/verify-the-ai-native-positioning-claim"
+
+  - id: "P3"
+    what: "Execute placement per ADR-0002: rebuilt surface ships at ninochavez.co/ai integrated into the site; ai-analyst-academy is absorbed (Phase-1/labs content mined for Explorer) and superseded (repo README pointed at /ai when the surface ships)"
+    why: "Placement is a mandate question, not an inherited fact; the evidence shows the corpus died of placement-as-configured, not placement-as-URL, and the apex is where all three live channels already point"
+    impact: "critical"
+    evidence: "decisions/0002-placement-ai-on-apex.md; research/funnel/funnel.md §3; research/competitive/walkthroughs.md §5 (academy: zero reach, CSR stub, aspiration framing)"
+    monetization_side: "operator"
+    serves_jtbd:
+      - "craft-practitioner//ai/learn/find-my-craft-persona-follow"
+      - "evaluating-client//ai evidence layer/verify-the-ai-native-positioning-claim"
+
+  - id: "P4"
+    what: "Rebuild /ai/learn as the primary surface: keep the 7-persona taxonomy verbatim as the diagnosis instrument, collapse the seven copy-pasted pages into one data-driven TrackPage over a typed data layer, and bind every track to its demonstrated grounding — Architect: Blueprint npx; Builder: specchain npx + Atelier/Ask BC as shipped proof; Voice: claude-recall-cli + the public voice guide; Enterprise: ai-champions-kit install; Strategist/Author: Blueprint doc stages + Signal Dispatch essays; Explorer: built on-ramp mining academy Phase 1 — with honest per-track verbs (install / clone-and-read / read-and-copy), never asserting an application without a linked artifact"
+    why: "The taxonomy is sound but the tracks assert instead of show (Strategist has zero AI content; Explorer's only artifact is fabricated), and ~40% of the 4,822 track lines are duplicated template markup with no data layer — the structural root of the rot"
+    impact: "high"
+    evidence: "research/current-state/old-corpus-inventory.md §2 (taxonomy verbatim + verdicts), §4-10 (asserted-vs-shown per track); research/current-state/surface-audit.md §b (duplication quantified; TrackPage spec), §c (content shapes); research/current-state/evidence-base-public.md (track-grounding matrix); 01-diagnose.md D4 addendum (specchain, claude-recall-cli, forge-brand, forge-site now public; forge-signal held)"
+    monetization_side: "operator"
+    serves_jtbd:
+      - "craft-practitioner//ai/learn/find-my-craft-persona-follow"
+
+  - id: "P5"
+    what: "Replace /ai/build with /ai/work: the evidence surface, rendered from one data array (GitHub API at build time: description, pushedAt, README excerpt) covering the real artifact set (Blueprint, Atelier, Ask BC, ai-champions-kit, agentic-ways-of-working, specchain, claude-recall-cli, forge-brand, forge-site, cortex, academy content), with per-artifact honest access labels (live / clone / gated) and links into the tracks each grounds"
+    why: "The current build page shows 2 projects (one dead, one mislabeled Vercel) while ~12 live artifacts exist unreferenced; evidence must support the paths as worked examples, not headline alone"
+    impact: "high"
+    evidence: "research/current-state/old-corpus-inventory.md §3 (verdicts incl. two-project inventory); docs/AI-INITIATIVE-GOAL.md § Appendix 'Missing'; research/current-state/evidence-base-public.md (per-artifact register with access reality); research/current-state/evidence-base-local.md (depth verdicts)"
+    monetization_side: "operator"
+    serves_jtbd:
+      - "craft-practitioner//ai/learn/find-my-craft-persona-follow"
+      - "evaluating-client//ai evidence layer/verify-the-ai-native-positioning-claim"
+
+  - id: "P6"
+    what: "Ship the freshness pipeline as part of the build, three lanes: derived (project cards from GitHub API, writing from the live blog RSS, method content from agentic-ways-of-working; builds on a schedule, not only on push), sensed (scheduled link checker; live-demo + cert-expiry probes for every 'live' claim; claim lint forbidding volatile facts in prose — volatile facts live in data files with verified: dates and a staleness CI gate; honest last-verified stamps rendered), and agentic refresh (scheduled job re-running this initiative's audit shape: survey GitHub/workspace deltas, draft updates, open a PR)"
+    why: "Every D2 failure maps to a missing sensor (cert probe → labs, endpoint probe → Ask, link check → code-to-cognition, claim lint → stale models and stats); the surface tracks a moving practice and a design needing a human to remember updates fails acceptance"
+    impact: "high"
+    evidence: "docs/AI-INITIATIVE-GOAL.md § Freshness architecture; 01-diagnose.md D2 (per-failure sensor map), D5 (no data layer); research/current-state/blog-corpus.md §4 (rss.xml live and sufficient for build-time derivation); research/current-state/surface-audit.md §c shape 10 (Stat Claim = the claim-lint target)"
+    monetization_side: "operator"
+    serves_jtbd:
+      - "craft-practitioner//ai/learn/find-my-craft-persona-follow"
+
+  - id: "P7"
+    what: "Replace all seven mailto-your-homework CTAs with self-serve next actions per track (the P4 verbs), and make every capstone reference a public linkable artifact"
+    why: "The mailto model implies a review service that is not operated, and self-serve is the pilot's Adopt-stage requirement"
+    impact: "medium"
+    evidence: "research/current-state/old-corpus-inventory.md corpus-wide facts (seven mailto cites); docs/AI-INITIATIVE-GOAL.md § Prescription priors 3; research/personas/craft-practitioner.md (Adopt row)"
+    monetization_side: "operator"
+    serves_jtbd:
+      - "craft-practitioner//ai/learn/find-my-craft-persona-follow"
+
+  - id: "P8"
+    what: "Cut the corpus-stub page, the standalone 25-term glossary tab (fold the 3 architectures + 5 patterns into tracks as worked patterns), the fabricated Explorer version log, and every 'Ask Dad' naming leak on public surfaces"
+    why: "Seven months of 'Coming Soon' fronted by unverifiable precision, a commerce-framed glossary off-thesis for the pilot, illustrative fiction violating show-don't-assert, and a private family artifact leaking into public naming"
+    impact: "medium"
+    evidence: "research/current-state/old-corpus-inventory.md §11 (stub + stats), §12 (glossary verdicts), §4 (fabricated version log :75-80), corpus-wide facts + §13 (Ask Dad naming); docs/AI-INITIATIVE-GOAL.md § Prescription priors 5"
+    monetization_side: "operator"
+    serves_jtbd:
+      - "craft-practitioner//ai/learn/find-my-craft-persona-follow"
+
+  - id: "P9"
+    what: "External-repo prerequisites, tracked here and executed in their own repos: blog exposes its rich feed under the /blog prefix the router forwards (move posts.json; restore /llms.txt reachability), labs.ninochavez.co cert is fixed or the property is retired from all references, ai-analyst-academy README pointer per ADR-0002, and the leaked GCP key in forge-signal history is revoked (operator action, flagged 2026-07-08)"
+    why: "P5 and P6 derivation and sensing depend on the blog feed and on no dead property being linkable; these changes live outside this repo and must not be lost as untracked assumptions"
+    impact: "medium"
+    evidence: "research/current-state/blog-corpus.md §4 (posts.json + /llms.txt 404 on apex, router collateral); research/current-state/evidence-base-local.md § apps/labs (cert expired, code real); 01-diagnose.md D4 addendum (forge-signal held; GCP key)"
+    monetization_side: "operator"
+    serves_jtbd: "none-deferred"
+    serves_jtbd_reason: "These are infrastructure prerequisites living in sibling repositories (blog, labs, academy, forge-signal); they unblock P5 derivation and P6 sensors but change no visitor-facing surface in this repository during this round."

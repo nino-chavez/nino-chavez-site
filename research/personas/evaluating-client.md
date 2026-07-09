@@ -2,10 +2,10 @@
 persona: evaluating-client
 role: secondary (served as byproduct only — explicitly not the organizing lens)
 jtbd:
-  surface: "/ai evidence layer (project cards, linked artifacts) reached from profile/referral"
-  time_budget: "minutes — a scan during referral or profile diligence, not a study session"
-  job: "Verify that the 'AI-native engineer; agents are how the work gets done' positioning is real by checking it against shipped work"
-  acceptance: "Every credibility claim resolves to a live artifact — a loading repo, demo, or essay; zero dead 'Live' badges; no claim I check turns out false"
+  - surface: "/ai evidence layer"
+    time_budget: "minutes — a scan during referral or profile diligence, not a study session"
+    job: "Verify the AI-native positioning claim against real shipped work"
+    acceptance: "Every credibility claim resolves to a live artifact — a loading repo, demo, or essay; zero dead 'Live' badges; no claim I check turns out false"
 ---
 
 # Evaluating client / employer (SECONDARY — byproduct)

@@ -2,10 +2,10 @@
 persona: craft-practitioner
 role: pilot
 jtbd:
-  surface: "/ai front door + /ai/learn (persona diagnosis and track entry)"
-  time_budget: "two minutes from landing to a concrete next action (goal-doc success criterion)"
-  job: "Locate the persona for the craft I already have and follow a demonstrated, self-serve path to apply AI to my own work"
-  acceptance: "I leave with a persona match, a track entry, and a self-serve action (install / clone / read-and-copy) whose demonstrating shipped artifact is one click deep and actually loads"
+  - surface: "/ai/learn"
+    time_budget: "two minutes from landing to a concrete next action (goal-doc success criterion)"
+    job: "Find my craft persona, follow its demonstrated path, adopt the tools self-serve"
+    acceptance: "I leave with a persona match, a track entry, and a self-serve action (install / clone / read-and-copy) whose demonstrating shipped artifact is one click deep and actually loads"
 ---
 
 # Craft practitioner (PILOT)
