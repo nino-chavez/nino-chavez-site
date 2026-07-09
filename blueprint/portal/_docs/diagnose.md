@@ -114,6 +114,16 @@ therefore stay re-grounded on Blueprint's doc stages per the matrix; a future
 fresh-cut public release of forge-signal (new repo from HEAD, no history) remains open
 to Stage 2 but is not assumed. The leaked GCP key should be revoked regardless.
 
+**Operator correction (2026-07-08, portal triage) — the shipped-product tier.** Atelier
+is not a live product (its public URL is an OAuth-walled docs index; the survey's own
+qualification, now made binding): it grounds Builder as clone-and-read only, never
+with a live badge. The real shipped products — **Rally HQ (rallyhq.app, live), the
+photography site (ninochavez.co/photography, live), and Blueprint (npm + live
+self-demo)** — are the evidence tier that demonstrates knowledge work and building
+with AI, and they lead every proof surface. Rally HQ's repo is private, so its card
+derives from the live probe (same rule as Ask BC); the photography repo is public
+(pushed 2026-06-24).
+
 The narrative layer is the healthiest input: 237 posts, 75% AI-relevant, publishing
 active through 2026-06-16, Builder/Architect best-served; derivation is feasible today
 via the live `/blog/rss.xml`, though the richer `posts.json` and `/llms.txt` 404 on the
