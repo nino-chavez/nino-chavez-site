@@ -57,6 +57,10 @@ prototype:
   portal_dir: "blueprint/portal"
   chrome_profile: methodology-themed   # Profile A: canonical shared.css, brand in project-tokens.css
 
+forge_pipeline:
+  skip: true
+  reason: "The prototype's design language is the live site's shipped system (dark ground, Bebas Neue/Inter, brand-violet from tailwind.config.cjs) per 03-design-brief.md §4 — a brand kit already exists in production code, so running forge-brand/gen-images would generate a second source of truth for tokens the rebuild must inherit, not invent."
+
 portal:
   repo_url: "https://github.com/nino-chavez/nino-chavez-site"
   decisions:

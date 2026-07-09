@@ -51,7 +51,6 @@ Returns perfectly structured JSON-LD that any AI can consume to answer "Who is N
 
 **"This is how you win in the AI-native web. I can architect this for your entire product catalog."**
 
-See [AEO Architecture Documentation](./docs/AEO-ARCHITECTURE.md) for full technical specification.
 
 ### Photography-Inspired Navigation
 
@@ -187,9 +186,6 @@ portfolio-sveltekit/
 - <10s time from page load to booking
 - 60% reduction in booking friction
 
-**Documentation:**
-- [Quick Start Guide](./docs/CAL-COM-QUICK-START.md) - Get running in 5 minutes
-- [Full Integration Docs](./docs/CAL-COM-INTEGRATION.md) - Complete technical reference
 
 ### Performance Optimization
 
@@ -296,7 +292,6 @@ vercel
 
 - **[Agency Audit Report](./e2e/audit/AGENCY_AUDIT_V2_REPORT.md)** - Performance and accessibility audit results
 - **[Agent Collaboration Guide](./AGENTS.md)** - AI development methodology (if ported)
-- **[Testing Strategy](./e2e/README.md)** - E2E and visual testing approach
 
 ### Component Documentation
 

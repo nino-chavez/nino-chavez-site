@@ -223,3 +223,32 @@
 @media (prefers-reduced-motion: reduce) {
   .nc-mock * { transition: none !important; }
 }
+
+/* ── Chrome-gap styles (template proto-nav.js emits these classes; the canonical
+ * shared.css currently ships no rules for them — consumer overlay fills the gap;
+ * upstream candidate, see METHODOLOGY-AMENDMENTS.md 2026-07-08 stamp entry). ── */
+
+.proto-footer { background: #0f1117; border-top: 1px solid #262a36; padding: 14px clamp(16px, 4vw, 40px); }
+.proto-footer-inner { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; max-width: 1200px; margin: 0 auto; }
+.proto-footer-mark { display: flex; align-items: baseline; gap: 8px; }
+.proto-footer-product { font-weight: 700; font-size: 13px; color: #e6e8ef; }
+.proto-footer-version { font-family: var(--font-mono, monospace); font-size: 11px; color: #8b90a1; }
+.proto-footer-meta { margin-left: auto; display: flex; align-items: baseline; gap: 8px; font-size: 12px; color: #8b90a1; }
+.proto-footer-build { font-family: var(--font-mono, monospace); font-size: 11px; }
+.proto-footer-context { font-size: 12px; }
+.proto-footer .sep { color: #4a4f5e; }
+
+.proto-lifecycle-strip, .lifecycle-strip { display: flex; align-items: center; gap: 8px; padding: 6px clamp(16px, 4vw, 40px); background: #f6f7f9; border-bottom: 1px solid #e3e5ea; font-size: 11px; }
+.lifecycle-inner { display: flex; align-items: center; gap: 8px; max-width: 1200px; margin: 0 auto; width: 100%; }
+.lifecycle-dot { width: 8px; height: 8px; border-radius: 50%; background: #c3c7d1; flex-shrink: 0; }
+.lifecycle-dot.active, .lifecycle-dot[data-active="true"] { background: #6d5ef5; }
+.lifecycle-label { font-family: var(--font-mono, monospace); letter-spacing: 0.06em; text-transform: uppercase; color: #5b6070; }
+.lifecycle-leader { flex: 1; border-top: 1px dashed #d5d8e0; }
+.lifecycle-sep { color: #c3c7d1; }
+
+/* mock_frame: "phone" bezel (unused by this initiative's pages; styled so the
+ * chrome never renders bare if a future page declares it) */
+.phone, .mock-frame-phone { max-width: 420px; margin: 0 auto; border: 1px solid #d5d8e0; border-radius: 24px; overflow: hidden; box-shadow: 0 8px 28px rgba(15, 17, 23, 0.12); }
+.proto-lifecycle-inner { display: flex; align-items: center; gap: 8px; max-width: 1200px; margin: 0 auto; width: 100%; }
+.proto-shell-light { background: #fbfbfd; color: #1c1f27; }
+.show-production-chrome .nc-sitenav { display: flex; }

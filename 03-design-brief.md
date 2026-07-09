@@ -193,7 +193,7 @@ portal; the portal is scaffolding, the SvelteKit implementation is the product.
 - P1/P3 → §1; P4 → §2 (TrackPage, GroundingBanner); P5 → §2 (ArtifactCard, one
   array); P6 → §2 stamps + §5 claim rules; P7 → §2 TrackCTA; P8 → §1 removals + §5
   rule 2; P2 → §1 removals + §4 sensor-backed-badge anti-pattern.
-- craft-practitioner//ai/learn/find-my-craft-persona-follow → §1 entry contract,
+- craft-practitioner/ai-learn-builder/find-my-craft-persona-follow → §1 entry contract,
   §2 TrackPage/GroundingBanner, §5 Documentation mode.
-- evaluating-client//ai evidence layer/verify-the-ai-native-positioning-claim →
+- evaluating-client/ai-work/verify-the-ai-native-positioning-claim →
   §2 ArtifactCard/VerifiedStamp, §4 stamps-as-signature, §5 rule 3.

@@ -2,7 +2,7 @@
 persona: evaluating-client
 role: secondary (served as byproduct only — explicitly not the organizing lens)
 jtbd:
-  - surface: "/ai evidence layer"
+  - surface: ai-work
     time_budget: "minutes — a scan during referral or profile diligence, not a study session"
     job: "Verify the AI-native positioning claim against real shipped work"
     acceptance: "Every credibility claim resolves to a live artifact — a loading repo, demo, or essay; zero dead 'Live' badges; no claim I check turns out false"

@@ -3,7 +3,7 @@
 - **Status**: Accepted
 - **Date**: 2026-07-08
 - **Stage**: Stage 2 (mandate question 3 — "where it should live")
-- **serves**: craft-practitioner//ai/learn/find-my-craft-persona-follow; evaluating-client//ai evidence layer/verify-the-ai-native-positioning
+- **serves**: craft-practitioner/ai-learn-builder/find-my-craft-persona-follow; evaluating-client/ai-work/verify-the-ai-native-positioning-claim
 
 ## Decision
 

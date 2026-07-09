@@ -3,7 +3,7 @@
 - **Status**: Accepted
 - **Date**: 2026-07-08
 - **Stage**: Stage 2 (prescription prior 4: "kill or relaunch, no middle")
-- **serves**: evaluating-client//ai evidence layer/verify-the-ai-native-positioning
+- **serves**: evaluating-client/ai-work/verify-the-ai-native-positioning-claim
 
 ## Decision
 
