@@ -3,6 +3,29 @@
 Append-only, reverse-chronological. Convention:
 `$BLUEPRINT_HOME/template/docs/methodology/methodology-amendments-convention.md`.
 
+## 2026-07-09 — Pattern B front door ships the source project's content AND a script-killing bug (defects #7–8)
+
+**Trigger**: Operator opened the deployed portal and asked "this states five paths — what are they?" The stamped `index.html` hero reads "One front door, five paths in." with a hardcoded `PATHS` array carrying the SOURCE project's content wholesale — another initiative's doc slugs (`cx-strategy`, `business-model`, `validation-plan`), phase-hour estimates ("Phase 1 ~17 hrs"), "19 hypotheses", and a link to the deleted `/pages/example`. Worse: `renderPaths()` references an undeclared `MANIFEST` (`MANIFEST?.audience_switcher` — optional chaining does not guard an undeclared identifier), which throws and kills the entire script, so the stat tiles freeze at "…", the path grid renders empty, and the manifest-driven footer never populates.
+**Scope**: Candidate for methodology promotion
+**Status**: Active
+
+The 2026-05-25 leak class ("template ships files that mix canonical chrome with project data"), still alive on the Pattern B front door: the docs viewer and footer were refactored to render from `_meta/index.json`, but the hero, lede, stat tiles, and path grid stayed hardcoded. **Proposed upstream fix, same shape as the docs-viewer refactor**: extend the manifest with a `front_door:` block and render from it —
+
+```json
+"front_door": {
+  "h1": "Current vs proposed,\nside by side.",
+  "lede": "…",
+  "tiles": [{ "label": "Diagnose findings", "value": "8", "sub": "…" }],
+  "paths": [{ "id": "compare", "title": "Compare", "status": "ready", "description": "…", "links_html": "…" }]
+}
+```
+
+with derived tiles (`pages`/`slices`/`docs` counts) computed, not authored. And fix the `MANIFEST` ReferenceError regardless. Fixed consumer-side here (index.html is project-owned surface); the stamp-then-gate smoke test proposed in the 2026-07-08 entry would have caught the crash, though not the leak — the post-stamp grep should add the source project's doc slugs to its tripwire list.
+
+**References**:
+- `blueprint/portal/index.html` (consumer-side fix, commit this date)
+- Leak-class precedent: methodology `docs/case-studies/case-study-v3-portal-css-gap.md` § docs-viewer follow-up
+
 ## 2026-07-08 — Pattern B stamp output fails its own chrome/conformance gates in two more places
 
 **Trigger**: First `portal-review-conformance-reviewer` + `portal-chrome-canonical-reviewer` runs against the freshly stamped portal BLOCKed on stamper-created state: (1) the stamp places `canonical-primitives.css` at the portal root, which the conformance reviewer rejects as an orphan top-level stylesheet under the default Profile A (the file is the Profile B import); (2) the stamp applies the `data-theme` substitution to `docs/index.html`, which the chrome manifest requires byte-identical to template canonical — the gate reports 1-line drift on an untouched consumer.
