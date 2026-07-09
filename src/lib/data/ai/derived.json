@@ -2,18 +2,55 @@
 	"_comment": "Machine-derived overlay — written by scripts/ai-freshness/derive.mjs (GitHub API pushedAt + liveness-probe verified dates). Hand edits are overwritten on the next scheduled run. Baseline: 2026-07-09.",
 	"derived": "2026-07-09",
 	"artifacts": {
-		"blueprint": { "pushedAt": "2026-07-08", "verified": "2026-07-09" },
-		"rally-hq": { "verified": "2026-07-09" },
-		"photography": { "pushedAt": "2026-06-24", "verified": "2026-07-09" },
-		"specchain": { "pushedAt": "2026-07-05", "verified": "2026-07-09" },
-		"ask-bc": { "verified": "2026-07-09" },
-		"agentic-ways-of-working": { "pushedAt": "2026-07-03", "verified": "2026-07-09" },
-		"ai-champions-kit": { "pushedAt": "2026-04-17", "verified": "2026-07-09" },
-		"claude-recall-cli": { "pushedAt": "2026-07-03", "verified": "2026-07-09" },
-		"atelier": { "pushedAt": "2026-07-03", "verified": "2026-07-09" },
-		"cortex": { "pushedAt": "2026-03-17", "verified": "2026-07-09" },
-		"forge-brand": { "pushedAt": "2026-05-23", "verified": "2026-07-09" },
-		"forge-site": { "pushedAt": "2026-06-10", "verified": "2026-07-09" },
-		"voice-guide": { "verified": "2026-07-09" }
+		"blueprint": {
+			"pushedAt": "2026-07-09",
+			"verified": "2026-07-09"
+		},
+		"rally-hq": {
+			"verified": "2026-07-09"
+		},
+		"photography": {
+			"pushedAt": "2026-06-24",
+			"verified": "2026-07-09"
+		},
+		"specchain": {
+			"pushedAt": "2026-07-05",
+			"verified": "2026-07-09"
+		},
+		"ask-bc": {
+			"verified": "2026-07-09"
+		},
+		"agentic-ways-of-working": {
+			"pushedAt": "2026-07-03",
+			"verified": "2026-07-09"
+		},
+		"ai-champions-kit": {
+			"pushedAt": "2026-04-17",
+			"verified": "2026-07-09"
+		},
+		"claude-recall-cli": {
+			"pushedAt": "2026-07-03",
+			"verified": "2026-07-09"
+		},
+		"atelier": {
+			"pushedAt": "2026-07-03",
+			"verified": "2026-07-09"
+		},
+		"cortex": {
+			"pushedAt": "2026-03-17",
+			"verified": "2026-07-09"
+		},
+		"forge-brand": {
+			"pushedAt": "2026-05-23",
+			"verified": "2026-07-09"
+		},
+		"forge-site": {
+			"pushedAt": "2026-06-10",
+			"verified": "2026-07-09"
+		},
+		"voice-guide": {
+			"pushedAt": "2026-06-17",
+			"verified": "2026-07-09"
+		}
 	}
 }
