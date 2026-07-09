@@ -1,0 +1,13 @@
+{
+  "id": "ai-enablement",
+  "label": "AI Enablement Surface",
+  "color": "brand",
+  "summary": "Rebuild of ninochavez.co/ai: persona-diagnosed paths grounded in shipped artifacts, on a surface that maintains its own freshness.",
+  "production_surface": "src/routes/ai/+page.svelte, src/routes/ai/learn/**, src/routes/ai/work (new)",
+  "primary_persona": "P1 Craft Practitioner (S2 Diagnose)",
+  "findings_cited": ["D1 unreachable-by-construction", "D2 evidence-fails-first-click", "D3 asserts-not-shows", "D4 publication-gap", "D5 no-data-layer", "D6 fused-position-gap"],
+  "principles_cited": ["P1", "P2", "P4", "P5", "P6", "P7"],
+  "phase": "MVP",
+  "pages": ["ai-front-door", "ai-learn-builder", "ai-work"],
+  "flows_touching_this_slice": ["two-minute-path"]
+}

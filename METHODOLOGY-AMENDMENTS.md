@@ -3,6 +3,19 @@
 Append-only, reverse-chronological. Convention:
 `$BLUEPRINT_HOME/template/docs/methodology/methodology-amendments-convention.md`.
 
+## 2026-07-08 — Pattern B stamp output fails its own chrome/conformance gates in two more places
+
+**Trigger**: First `portal-review-conformance-reviewer` + `portal-chrome-canonical-reviewer` runs against the freshly stamped portal BLOCKed on stamper-created state: (1) the stamp places `canonical-primitives.css` at the portal root, which the conformance reviewer rejects as an orphan top-level stylesheet under the default Profile A (the file is the Profile B import); (2) the stamp applies the `data-theme` substitution to `docs/index.html`, which the chrome manifest requires byte-identical to template canonical — the gate reports 1-line drift on an untouched consumer.
+**Scope**: Candidate for methodology promotion
+**Status**: Active
+
+Fixed locally by deleting `canonical-primitives.css` (Profile A) and restoring `docs/index.html` byte-identical from `template/portal/`. Upstream fix candidates: the stamp should place `canonical-primitives.css` only when `chrome_profile: consumer-themed`, and `docs/index.html` should be copied verbatim (it is chrome, not project surface). Together with the two scaffold-time bugs below, all four Pattern B defects share one root: the Pattern B path has no smoke test that stamps into a temp dir and runs the Pattern B gates against the result.
+
+**References**:
+- `stamp.mjs` `stampPatternB` (copyTree applies substitutions to the whole tree incl. docs/index.html)
+- `portal-review-conformance-reviewer` orphan-stylesheet check; `portal-chrome-canonical-reviewer` byte-diff
+- This initiative's Stage 4 commit
+
 ## 2026-07-08 — Layout reverted to variant defaults: the mechanical gates enforce fixed root paths
 
 **Trigger**: `research-completeness-reviewer` BLOCKs on the variant default legs at fixed paths (`research/current-state/` …, `01-diagnose.md` at the initiative root) and treats a `stages:` override as advisory INFO only; `prescription-evidence-reviewer` and `prescription-jtbd-traceability-reviewer` likewise resolve `02-prescription.yml` at the root. The `blueprint/`-contained layout (previous entry) can never pass them.

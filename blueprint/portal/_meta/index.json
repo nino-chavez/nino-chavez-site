@@ -1,44 +1,53 @@
 {
-  "name": "PROJECT_NAME Blueprint",
-  "tagline": "Synthetic design study for PROJECT_NAME — replace this string in _meta/index.json",
+  "name": "AI Practice Surface Rebuild Blueprint",
+  "tagline": "Rebuilding ninochavez.co/ai into an evidence-backed enablement surface — persona-diagnosed paths, shipped proof one click deep, freshness as architecture.",
   "slices": [
-    "example-slice"
+    "ai-enablement"
   ],
   "groups": [
-    { "id": "marketing", "label": "Marketing",  "color": "brand" },
-    { "id": "audience",  "label": "Audience",   "color": "accent" },
-    { "id": "operator",  "label": "Operator",   "color": "neutral" }
+    { "id": "entry",    "label": "Entry",    "color": "brand" },
+    { "id": "learn",    "label": "Learn",    "color": "accent" },
+    { "id": "evidence", "label": "Evidence", "color": "neutral" }
   ],
   "pages": [
-    "example"
+    "ai-front-door",
+    "ai-learn-builder",
+    "ai-work"
   ],
   "flows": [
     {
-      "id": "main-journey",
-      "label": "Main journey",
-      "summary": "Replace with your primary persona's end-to-end flow across pages.",
-      "pages": ["example"]
+      "id": "two-minute-path",
+      "label": "The two-minute path",
+      "summary": "The craft practitioner's entry contract: land on the front door, locate a persona, open the track, leave with a self-serve action.",
+      "pages": ["ai-front-door", "ai-learn-builder", "ai-work"]
     }
   ],
   "docs": {
     "tiers": [
       {
         "label": "Strategic artifacts",
-        "blurb": "Positional briefs — the thinking that justifies the prototype. Read these to understand <em>why</em>.",
+        "blurb": "The stage documents that justify the prototype — read these to understand <em>why</em>.",
         "designed": true,
-        "docs": []
+        "docs": [
+          { "id": "diagnose", "title": "01 — Diagnose", "source": "../01-diagnose.md" },
+          { "id": "design-brief", "title": "03 — Design Brief", "source": "../03-design-brief.md" },
+          { "id": "adr-placement", "title": "ADR-0002 — Placement", "source": "../decisions/0002-placement-ai-on-apex.md" },
+          { "id": "adr-ask", "title": "ADR-0003 — Public Ask", "source": "../decisions/0003-public-ask-kill-for-launch.md" }
+        ]
       },
       {
         "label": "Working documents",
-        "blurb": "Operational scaffolds — tracked, edited, queried. Read these to understand <em>how the work happens</em>.",
+        "blurb": "Operational scaffolds — read these to understand <em>how the work happens</em>.",
         "designed": false,
-        "docs": []
+        "docs": [
+          { "id": "goal", "title": "Initiative Goal", "source": "../docs/AI-INITIATIVE-GOAL.md" }
+        ]
       }
     ],
-    "default": null
+    "default": "diagnose"
   },
   "footer": {
-    "line": "",
-    "repo_url": ""
+    "line": "AI Practice Surface Rebuild — a Blueprint initiative on ninochavez.co",
+    "repo_url": "https://github.com/nino-chavez/nino-chavez-site"
   }
 }

@@ -1,0 +1,25 @@
+{
+  "id": "ai-work",
+  "title": "/ai/work Evidence Surface",
+  "group": "evidence",
+  "slice": "ai-enablement",
+  "destination": "product",
+  "surface": "src/routes/ai/work/+page.svelte (new route; replaces src/routes/ai/build/+page.svelte)",
+  "phase": "MVP",
+  "route": "/pages/ai-work.html",
+  "summary": "The derived artifact registry: ten real cards from one build-time array, honest access labels, sensor-backed verified stamps — replacing the two-project accordion with dead Live badges.",
+  "mock_frame": "desktop",
+  "strategy": {
+    "decision": "Render the whole evidence surface from ONE derived array (GitHub API at build time), with per-card access labels (live/install/clone/read/gated) and mono-face verified stamps as the signature visual element.",
+    "why": "The current build page shows 2 projects (one dead, one mislabeled) while ~12 live artifacts exist unreferenced (goal doc § Missing; P5). The evaluating client's JTBD is claim-verification in minutes — every card must resolve to a loading artifact (`research/personas/evaluating-client.md`). Access labels never overpromise: Ask BC renders 'gated', Atelier 'live' per probe reality (`research/current-state/evidence-base-public.md`). Stamps make the freshness architecture legible (03-design-brief.md §4).",
+    "shipped": "Two-project accordion: Ask Dad badged Live (500s in use, stack tag claims Vercel on a Cloudflare site) and Code to Cognition badged Live (links a 404 route; real home is behind an expired cert).",
+    "gap": "Hand-maintained accordion of 2 (both broken) → derived registry of 10 (all probed), with track chips linking evidence back into paths.",
+    "question": "Do access labels read instantly to a non-engineer evaluator, or do 'clone'/'gated' need a hover gloss? Check in stakeholder review."
+  },
+  "currentState": {
+    "route": "/ai/build",
+    "summary": "Two hardcoded project cards, both badged Live, both failing their claims; none of the real artifact set appears.",
+    "sourceFiles": ["src/routes/ai/build/+page.svelte"],
+    "annotation": "Proposed is data-derived end to end: a repo push updates a card on the next scheduled build; a failed liveness probe fails the build before a visitor meets the dead link."
+  }
+}
