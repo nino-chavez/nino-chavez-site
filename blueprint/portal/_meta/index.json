@@ -1,0 +1,53 @@
+{
+  "name": "AI Practice Surface Rebuild Blueprint",
+  "tagline": "Rebuilding ninochavez.co/ai into an evidence-backed enablement surface — persona-diagnosed paths, shipped proof one click deep, freshness as architecture.",
+  "slices": [
+    "ai-enablement"
+  ],
+  "groups": [
+    { "id": "entry",    "label": "Entry",    "color": "brand" },
+    { "id": "learn",    "label": "Learn",    "color": "accent" },
+    { "id": "evidence", "label": "Evidence", "color": "neutral" }
+  ],
+  "pages": [
+    "ai-front-door",
+    "ai-learn-builder",
+    "ai-work"
+  ],
+  "flows": [
+    {
+      "id": "two-minute-path",
+      "label": "The two-minute path",
+      "summary": "The craft practitioner's entry contract: land on the front door, locate a persona, open the track, leave with a self-serve action.",
+      "pages": ["ai-front-door", "ai-learn-builder", "ai-work"]
+    }
+  ],
+  "docs": {
+    "tiers": [
+      {
+        "label": "Strategic artifacts",
+        "blurb": "The stage documents that justify the prototype — read these to understand <em>why</em>.",
+        "designed": true,
+        "docs": [
+          { "id": "diagnose", "title": "01 — Diagnose", "source": "../01-diagnose.md" },
+          { "id": "design-brief", "title": "03 — Design Brief", "source": "../03-design-brief.md" },
+          { "id": "adr-placement", "title": "ADR-0002 — Placement", "source": "../decisions/0002-placement-ai-on-apex.md" },
+          { "id": "adr-ask", "title": "ADR-0003 — Public Ask", "source": "../decisions/0003-public-ask-kill-for-launch.md" }
+        ]
+      },
+      {
+        "label": "Working documents",
+        "blurb": "Operational scaffolds — read these to understand <em>how the work happens</em>.",
+        "designed": false,
+        "docs": [
+          { "id": "goal", "title": "Initiative Goal", "source": "../docs/AI-INITIATIVE-GOAL.md" }
+        ]
+      }
+    ],
+    "default": "diagnose"
+  },
+  "footer": {
+    "line": "AI Practice Surface Rebuild — a Blueprint initiative on ninochavez.co",
+    "repo_url": "https://github.com/nino-chavez/nino-chavez-site"
+  }
+}

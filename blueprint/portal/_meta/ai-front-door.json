@@ -1,0 +1,25 @@
+{
+  "id": "ai-front-door",
+  "title": "/ai Front Door",
+  "group": "entry",
+  "slice": "ai-enablement",
+  "destination": "product",
+  "surface": "src/routes/ai/+page.svelte",
+  "phase": "MVP",
+  "route": "/pages/ai-front-door.html",
+  "summary": "The visitor's question leads: persona strip, sensor-backed proof strip, derived writing — replacing the owner-diary hub with two dead Live badges.",
+  "mock_frame": "desktop",
+  "strategy": {
+    "decision": "Frame the front door as the visitor's question ('Work this way') with three derived strips — personas (diagnose), proof (evidence), writing (freshness) — instead of the owner-centric four-card academy hub.",
+    "why": "The pilot's job is *find my craft persona, follow its demonstrated path* within two minutes (JTBD, `research/personas/craft-practitioner.md`). The old hero is owner's-diary voice — Cut verdict in `research/current-state/old-corpus-inventory.md` §1. Persona-diagnosis-by-existing-craft is the underserved step no competitor fuses with evidence (`01-diagnose.md` D6). Implements P1/P2/P4 of `02-prescription.yml` and 03-design-brief.md §1.",
+    "shipped": "Light-purple academy hub: 'Working with AI' framed as Nino's documentation; four pathway cards (Learn/Build/Reference/Ask) with a false '70+ terms' stat and two 'Live' badges — one 500s in use, one 404s.",
+    "gap": "Owner's diary with broken proof → visitor's map with sensor-backed proof; four doors collapse to Learn (primary) + Work (evidence) + Blog (derived).",
+    "question": "Does the persona strip beat a single 'Start here' path for first-visit comprehension? Validate with 2-3 cold viewers at deploy review."
+  },
+  "currentState": {
+    "route": "/ai",
+    "summary": "13-page section, all noindex, zero inbound links; front door badges two dead projects Live and inflates the reference count.",
+    "sourceFiles": ["src/routes/ai/+page.svelte"],
+    "annotation": "Proposed integrates the site nav (dark site system, not the ai-theme microsite skin), leads with the persona strip, and every stat/badge is derived or sensor-backed — nothing hand-asserted."
+  }
+}

@@ -6,24 +6,36 @@ the `~/Workspace/dev/apps/router` Worker, which dispatches to this site's Pages
 project (`ninochavez-main`), the blog, and photography — routing bugs live there,
 not in this repo (see DEPLOY.md).
 
-## Blueprint initiative
+## Blueprint initiative — AI Practice Surface Rebuild (active)
 
-The prior brownfield redesign (`blueprint/`, v3 "camera-metaphor") was abandoned and
-removed (c5754ed). The next initiative — rebuilding the /ai section into an
-evidence-backed enablement surface — is seeded by `docs/AI-INITIATIVE-GOAL.md`
-(brownfield, Pattern B, Tier 1) and runs in its own worktree; declare it there
-per that doc's blueprint.yml seed, and update this section when it exists.
+Declared 2026-07-08 on branch `blueprint/ai-enablement` (own worktree per the
+worktree rule below); **Tier 2 as of 2026-07-09** — the rebuilt /ai shipped into
+the SvelteKit app on that branch. Goal + mandate: `docs/AI-INITIATIVE-GOAL.md`.
+Config: `blueprint.yml` at repo root (brownfield, Pattern B Review Portal,
+pilot: craft-practitioner). Artifact layout is the variant default the reviewer
+gates enforce: `research/`, `decisions/`, and the numbered stage files
+(`01-diagnose.md` … `06-triage.md`) at repo root; the review portal lives at
+`blueprint/portal/` (deployed: ai-enablement-blueprint.pages.dev). Methodology
+learnings in `METHODOLOGY-AMENDMENTS.md` at repo root (8 Pattern B defects
+logged for upstream). The rebuilt surface: data layer at `src/lib/data/ai/`
+(tracks + artifact registry + derived.json overlay), components at
+`src/lib/components/ai/`, freshness sensors at `scripts/ai-freshness/` wired
+into `.github/workflows/ai-freshness.yml` — volatile facts live in dated data
+files; the claim lint forbids them in prose. The prior v3 "camera-metaphor"
+redesign was abandoned and removed (c5754ed) — its `blueprint/` directory is
+unrelated to the current one.
 
 The canonical Blueprint operating instructions live in the methodology repo, not here:
 **`~/Workspace/dev/tools/blueprint/template/CLAUDE.md`** is the canonical source — read it
-before doing any Blueprint-shaped work. Stage 0 recipes, voice rules, citation rules,
-reviewer-agent gates, OWNER-SPEC conventions all load on demand from there. Do not
-inline them here. This file is a map, not a manual.
+before doing any Blueprint-shaped work (a copy ships at `blueprint/CLAUDE.md`). Stage 0
+recipes, voice rules, citation rules, reviewer-agent gates, OWNER-SPEC conventions all
+load on demand from there. Do not inline them here. This file is a map, not a manual.
 
-Once the SessionStart hook is installed (`~/.claude/hooks/blueprint-session-start.py`
-+ merge from `template/.claude/settings.json.example`), future sessions auto-load
-`METHODOLOGY.md` + `docs/variant-selection.md` + `docs/portal-and-tier-ladder.md`
-when working in any directory under a `blueprint.yml` ancestor.
+The SessionStart hook (`~/.claude/hooks/blueprint-session-start.py`, installed and
+wired in `~/.claude/settings.json`) auto-loads `METHODOLOGY.md` +
+`docs/variant-selection.md` + `docs/portal-and-tier-ladder.md` when working in any
+directory under a `blueprint.yml` ancestor — which, with `blueprint.yml` at repo
+root, is every session in this repo.
 
 ### Manual fallback if the hook isn't installed
 

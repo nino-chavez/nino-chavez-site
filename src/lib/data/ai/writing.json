@@ -1,0 +1,21 @@
+{
+	"_comment": "Derived from https://ninochavez.co/blog/rss.xml by scripts/ai-freshness/derive.mjs on the scheduled build — hand edits are overwritten. Baseline: 2026-07-09.",
+	"derived": "2026-07-09",
+	"posts": [
+		{
+			"title": "The Migration That Ate Two Columns",
+			"url": "https://ninochavez.co/blog/the-migration-that-ate-two-columns",
+			"date": "2026-06-16"
+		},
+		{
+			"title": "Red Is the Good News",
+			"url": "https://ninochavez.co/blog/red-is-the-good-news",
+			"date": "2026-06-16"
+		},
+		{
+			"title": "The Gate Verifies the Work. It Never Looks at the Plan.",
+			"url": "https://ninochavez.co/blog/the-gate-verifies-the-work-not-the-plan",
+			"date": "2026-06-16"
+		}
+	]
+}

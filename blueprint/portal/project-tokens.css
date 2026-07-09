@@ -1,0 +1,254 @@
+/* Blueprint Portal — Project Tokens Overlay
+ *
+ * This file is the consumer-editable seam over `shared.css`. Override design
+ * tokens, add project-specific component variants, and define any
+ * brand-specific chrome here. The cascade loads this file AFTER shared.css,
+ * so any `:root` override below wins over the default.
+ *
+ * Why this file exists: shared.css is canonical chrome — it must remain
+ * byte-identical to the template so `portal-chrome-canonical-reviewer` can
+ * mechanically detect drift. Project-specific styling belongs here so the
+ * canonical can be re-stamped (`stamp.mjs --mode=restamp-chrome --pattern=B`)
+ * without losing your overrides.
+ *
+ * Rule of thumb:
+ *   - Token override (color, spacing, font, radius) → :root block below
+ *   - New component (project-specific UI not in chrome) → component block below
+ *   - Variation on an existing chrome component (button hover color, badge
+ *     palette extension, etc.) → component-override block below
+ *   - Anything that should ship in the chrome for ALL Blueprint consumers →
+ *     upstream into template/portal/shared.css via a methodology PR, not here
+ *
+ * Examples (commented; uncomment + adapt for your project):
+ */
+
+:root {
+  /* Brand override — replace with your project palette */
+  /* --brand-50:  hsl(...);
+     --brand-100: hsl(...);
+     --brand-500: hsl(...);
+     --brand-600: hsl(...);
+     --brand-700: hsl(...);
+     --brand-900: hsl(...); */
+
+  /* Type override — replace with your project type stack */
+  /* --font-hero:    'YourHero', 'Impact', sans-serif;
+     --font-display: 'YourDisplay', ui-sans-serif, system-ui, sans-serif;
+     --font-body:    'YourBody', ui-sans-serif, system-ui, sans-serif; */
+
+  /* Surface override — replace if your brand is dark-mode-default or
+     uses a non-warm-neutral background system */
+  /* --bg:        hsl(...);
+     --surface-1: hsl(...);
+     --surface-2: hsl(...); */
+}
+
+/* ─────────────── project components ─────────────── *
+ * Net-new components specific to this initiative. If a component would be
+ * useful to every Blueprint consumer, upstream it into shared.css instead.
+ */
+
+/* (none yet) */
+
+/* ─────────────── component overrides ─────────────── *
+ * Variations on chrome components (button hover, badge color extensions,
+ * card border-radius bump). Use sparingly — the more you override, the
+ * more your portal visually diverges from peer Blueprint deploys.
+ */
+
+/* (none yet) */
+
+/* ── AI Practice Surface Rebuild — mock component system ──────────────────
+ * Scoped to .nc-mock (the proposed-surface root inside .proposed-view).
+ * The mock carries ninochavez.co's shipped design language (dark ground,
+ * Bebas Neue display, Inter body, brand-violet accent) per 03-design-brief.md
+ * §4. Canvas rule honored: theme lives on .nc-mock, never on body.
+ */
+
+.nc-mock {
+  --nc-bg: #0a0a0f;
+  --nc-surface: #14141c;
+  --nc-surface-2: #1c1c26;
+  --nc-border: #2a2a38;
+  --nc-text: #f0f0f5;
+  --nc-text-2: #a8a8bc;
+  --nc-text-3: #74748a;
+  --nc-violet: #8b5cf6;
+  --nc-violet-soft: rgba(139, 92, 246, 0.14);
+  --nc-live: #34d399;
+  --nc-font-display: 'Bebas Neue', 'Inter', sans-serif;
+  --nc-font-body: 'Inter', sans-serif;
+  --nc-font-mono: 'JetBrains Mono', monospace;
+
+  background: var(--nc-bg);
+  color: var(--nc-text);
+  font-family: var(--nc-font-body);
+  padding: 48px clamp(20px, 5vw, 72px) 72px;
+  min-height: 70vh;
+}
+
+.nc-mock a { color: inherit; text-decoration: none; }
+.nc-mock a:focus-visible { outline: 2px solid var(--nc-violet); outline-offset: 2px; }
+
+/* Site header strip (mock of the integrated main-site nav, P1) */
+.nc-sitenav {
+  display: flex; align-items: center; gap: 28px;
+  font-size: 13px; color: var(--nc-text-2);
+  padding-bottom: 40px; border-bottom: 1px solid var(--nc-border);
+  margin-bottom: 48px;
+}
+.nc-sitenav .nc-wordmark { font-family: var(--nc-font-mono); font-size: 14px; color: var(--nc-text); letter-spacing: 0.02em; }
+.nc-sitenav .nc-nav-active { color: var(--nc-violet); font-weight: 600; }
+.nc-sitenav .nc-nav-right { margin-left: auto; }
+
+.nc-hero-h1 {
+  font-family: var(--nc-font-display);
+  font-size: clamp(48px, 8vw, 104px);
+  line-height: 0.95; letter-spacing: 0.01em;
+  margin: 0 0 20px; text-transform: uppercase;
+  /* explicit: shared.css chrome sets heading colors by element selector,
+     which beats inheritance from .nc-mock on the dark ground */
+  color: var(--nc-text);
+}
+.nc-hero-sub { font-size: clamp(16px, 2vw, 19px); color: var(--nc-text-2); max-width: 640px; line-height: 1.6; margin: 0 0 12px; }
+
+.nc-kicker {
+  font-family: var(--nc-font-mono); font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--nc-violet); margin: 56px 0 20px;
+}
+
+/* Persona strip */
+.nc-personas { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; padding: 0; margin: 0; list-style: none; }
+.nc-persona {
+  background: var(--nc-surface); border: 1px solid var(--nc-border); border-radius: 10px;
+  padding: 18px 18px 16px;
+  transition: border-color 150ms ease-out;
+}
+.nc-persona > a { display: flex; flex-direction: column; gap: 6px; }
+.nc-persona:hover { border-color: var(--nc-violet); }
+.nc-persona .nc-persona-name { font-weight: 700; font-size: 15px; }
+.nc-persona .nc-persona-tag { font-size: 13px; color: var(--nc-text-2); line-height: 1.45; }
+.nc-persona .nc-persona-go { font-family: var(--nc-font-mono); font-size: 11px; color: var(--nc-violet); margin-top: 6px; }
+
+/* Artifact cards */
+.nc-artifacts { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; padding: 0; margin: 0; list-style: none; }
+.nc-artifact {
+  background: var(--nc-surface); border: 1px solid var(--nc-border); border-radius: 10px;
+  padding: 20px; display: flex; flex-direction: column; gap: 10px;
+}
+.nc-artifact .nc-artifact-head { display: flex; align-items: baseline; gap: 10px; }
+.nc-artifact .nc-artifact-name { font-weight: 700; font-size: 16px; }
+.nc-artifact .nc-artifact-gloss { font-size: 13.5px; color: var(--nc-text-2); line-height: 1.5; flex: 1; }
+.nc-artifact .nc-artifact-foot { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+/* Access labels + verified stamps — the signature element (brief §4) */
+.nc-label {
+  font-family: var(--nc-font-mono); font-size: 10.5px; letter-spacing: 0.06em;
+  text-transform: uppercase; padding: 3px 8px; border-radius: 4px;
+  border: 1px solid var(--nc-border); color: var(--nc-text-2);
+}
+.nc-label-live { color: var(--nc-live); border-color: rgba(52, 211, 153, 0.35); }
+.nc-label-install { color: var(--nc-violet); border-color: rgba(139, 92, 246, 0.4); }
+.nc-stamp { font-family: var(--nc-font-mono); font-size: 10.5px; color: var(--nc-text-3); }
+.nc-track-chip {
+  font-size: 11px; padding: 3px 8px; border-radius: 999px;
+  background: var(--nc-violet-soft); color: var(--nc-violet); font-weight: 600;
+}
+
+/* Writing strip */
+.nc-writing { display: flex; flex-direction: column; gap: 0; padding: 0; margin: 0; list-style: none; }
+.nc-post { display: flex; justify-content: space-between; gap: 16px; padding: 14px 2px; border-bottom: 1px solid var(--nc-border); font-size: 14.5px; }
+.nc-post .nc-post-date { font-family: var(--nc-font-mono); font-size: 11.5px; color: var(--nc-text-3); white-space: nowrap; }
+
+/* Track page (builder) */
+.nc-crumb { font-family: var(--nc-font-mono); font-size: 12px; color: var(--nc-text-3); margin-bottom: 28px; }
+.nc-meta-pills { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 0; }
+.nc-pill { font-family: var(--nc-font-mono); font-size: 11.5px; padding: 5px 12px; border: 1px solid var(--nc-border); border-radius: 999px; color: var(--nc-text-2); }
+
+.nc-grounding {
+  margin: 40px 0 0; padding: 20px 22px; border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 10px; background: var(--nc-violet-soft);
+}
+.nc-grounding h2 { font-size: 13px; font-family: var(--nc-font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--nc-violet); margin: 0 0 12px; }
+.nc-grounding ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.nc-grounding li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; font-size: 14px; }
+.nc-grounding .nc-ground-name { font-weight: 700; }
+.nc-grounding .nc-ground-what { color: var(--nc-text-2); }
+.nc-grounding code { font-family: var(--nc-font-mono); font-size: 12.5px; background: var(--nc-surface); padding: 2px 7px; border-radius: 4px; }
+
+.nc-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 720px) { .nc-two-col { grid-template-columns: 1fr; } }
+.nc-for-card { background: var(--nc-surface); border: 1px solid var(--nc-border); border-radius: 10px; padding: 20px; }
+.nc-for-card h3 { font-size: 13px; font-family: var(--nc-font-mono); letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 12px; color: var(--nc-text-2); }
+.nc-for-card ul { margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--nc-text-2); line-height: 1.5; }
+
+.nc-levels { display: flex; flex-direction: column; gap: 10px; }
+.nc-level { background: var(--nc-surface); border: 1px solid var(--nc-border); border-radius: 10px; }
+.nc-level summary {
+  display: flex; align-items: center; gap: 14px; padding: 16px 20px; cursor: pointer;
+  list-style: none; font-size: 15px;
+}
+.nc-level summary::-webkit-details-marker { display: none; }
+.nc-level summary:focus-visible { outline: 2px solid var(--nc-violet); outline-offset: -2px; border-radius: 10px; }
+.nc-level .nc-level-num {
+  font-family: var(--nc-font-mono); font-size: 12px; color: var(--nc-violet);
+  border: 1px solid rgba(139, 92, 246, 0.4); border-radius: 6px; width: 28px; height: 28px;
+  display: grid; place-items: center; flex-shrink: 0;
+}
+.nc-level .nc-level-title { font-weight: 700; }
+.nc-level .nc-level-dur { margin-left: auto; font-family: var(--nc-font-mono); font-size: 11px; color: var(--nc-text-3); }
+.nc-level .nc-level-body { padding: 0 20px 18px 62px; color: var(--nc-text-2); font-size: 14px; line-height: 1.55; }
+.nc-level .nc-level-body p { margin: 0 0 8px; }
+
+.nc-cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 48px; }
+.nc-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 8px;
+  font-weight: 600; font-size: 14.5px; border: 1px solid transparent; min-height: 44px;
+}
+.nc-btn-primary { background: var(--nc-violet); color: #fff; }
+.nc-btn-secondary { border-color: var(--nc-border); color: var(--nc-text); background: transparent; }
+.nc-btn code { font-family: var(--nc-font-mono); font-size: 12.5px; }
+
+/* Work page filter row (static in mock) */
+.nc-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; }
+.nc-filter { font-family: var(--nc-font-mono); font-size: 11.5px; letter-spacing: 0.05em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--nc-border); color: var(--nc-text-2); }
+.nc-filter[aria-pressed="true"] { border-color: var(--nc-violet); color: var(--nc-violet); background: var(--nc-violet-soft); }
+
+.nc-foot-note { margin-top: 40px; font-family: var(--nc-font-mono); font-size: 11.5px; color: var(--nc-text-3); line-height: 1.6; max-width: 620px; }
+
+/* Shipped-view capture presentation */
+.nc-shipped-capture { margin: 0; }
+.nc-shipped-capture img { display: block; width: 100%; height: auto; border-radius: 6px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .nc-mock * { transition: none !important; }
+}
+
+/* ── Chrome-gap styles (template proto-nav.js emits these classes; the canonical
+ * shared.css currently ships no rules for them — consumer overlay fills the gap;
+ * upstream candidate, see METHODOLOGY-AMENDMENTS.md 2026-07-08 stamp entry). ── */
+
+.proto-footer { background: #0f1117; border-top: 1px solid #262a36; padding: 14px clamp(16px, 4vw, 40px); }
+.proto-footer-inner { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; max-width: 1200px; margin: 0 auto; }
+.proto-footer-mark { display: flex; align-items: baseline; gap: 8px; }
+.proto-footer-product { font-weight: 700; font-size: 13px; color: #e6e8ef; }
+.proto-footer-version { font-family: var(--font-mono, monospace); font-size: 11px; color: #8b90a1; }
+.proto-footer-meta { margin-left: auto; display: flex; align-items: baseline; gap: 8px; font-size: 12px; color: #8b90a1; }
+.proto-footer-build { font-family: var(--font-mono, monospace); font-size: 11px; }
+.proto-footer-context { font-size: 12px; }
+.proto-footer .sep { color: #4a4f5e; }
+
+.proto-lifecycle-strip, .lifecycle-strip { display: flex; align-items: center; gap: 8px; padding: 6px clamp(16px, 4vw, 40px); background: #f6f7f9; border-bottom: 1px solid #e3e5ea; font-size: 11px; }
+.lifecycle-inner { display: flex; align-items: center; gap: 8px; max-width: 1200px; margin: 0 auto; width: 100%; }
+.lifecycle-dot { width: 8px; height: 8px; border-radius: 50%; background: #c3c7d1; flex-shrink: 0; }
+.lifecycle-dot.active, .lifecycle-dot[data-active="true"] { background: #6d5ef5; }
+.lifecycle-label { font-family: var(--font-mono, monospace); letter-spacing: 0.06em; text-transform: uppercase; color: #5b6070; }
+.lifecycle-leader { flex: 1; border-top: 1px dashed #d5d8e0; }
+.lifecycle-sep { color: #c3c7d1; }
+
+/* mock_frame: "phone" bezel (unused by this initiative's pages; styled so the
+ * chrome never renders bare if a future page declares it) */
+.phone, .mock-frame-phone { max-width: 420px; margin: 0 auto; border: 1px solid #d5d8e0; border-radius: 24px; overflow: hidden; box-shadow: 0 8px 28px rgba(15, 17, 23, 0.12); }
+.proto-lifecycle-inner { display: flex; align-items: center; gap: 8px; max-width: 1200px; margin: 0 auto; width: 100%; }
+.proto-shell-light { background: #fbfbfd; color: #1c1f27; }
+.show-production-chrome .nc-sitenav { display: flex; }

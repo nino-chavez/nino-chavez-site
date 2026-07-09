@@ -1,0 +1,71 @@
+# Blueprint Configuration — stamped by template/tools/blueprint-init on 2026-07-08
+# Seed: docs/AI-INITIATIVE-GOAL.md § blueprint.yml seed (merged over the stamped default)
+
+project:
+  name: "AI Practice Surface Rebuild"
+  description: "Rebuild ninochavez.co/ai into an evidence-backed enablement surface: personas, paths, and tools a practitioner can apply to their own work, proven by Nino's shipped artifacts"
+  product: "ninochavez.co"
+  audience:
+    leadership: ["Nino (owner)"]
+    engineering: ["peer practitioners evaluating the tools"]
+    broader: ["prospective clients / employers"]
+
+product_type: ""            # end-user marketing surface, not a dev tool
+
+# Pipeline shape — see Blueprint docs/variant-selection.md (methodology source)
+variant: brownfield
+
+# Deliverable sophistication — see Blueprint docs/portal-and-tier-ladder.md (methodology source)
+# Variant × Tier matrix codified in that doc; do not deviate without an ADR.
+# Promoted 1 -> 2 on 2026-07-09: the rebuilt /ai surfaces shipped into the live
+# SvelteKit app (P1-P8 implemented; the review portal remains alongside).
+tier: 2
+
+# Portal type — which portal harness this initiative uses
+# review = Review Portal (static HTML + drawers, brownfield audit/redesign)
+portal_type: review
+
+pilot_profile:
+  slug: "craft-practitioner"
+  display_name: "Practitioner applying AI to the craft they already have, using Nino's demonstrated paths and tools as the map"
+  pain_point: "They know AI matters for their work, but generic tutorials teach tools rather than their craft; they need an entry path grounded in someone's real, demonstrated practice — personas to locate themselves, paths to follow, tools they can pick up self-serve, and shipped evidence that the path actually works."
+  monetization_side: "operator"  # the practitioner operating their own work with AI;
+                                 # downstream buyers (clients/employers impressed by the
+                                 # surface) are a byproduct, not the pilot
+  walkthrough_citation: "docs/AI-INITIATIVE-GOAL.md"
+  # ^ specifically § Appendix — the 2026-07-08 audit: every claim probed against
+  #   live URLs, repo code, and workspace/GitHub surveys — plus the old corpus's
+  #   own persona taxonomy (src/routes/ai/learn/**), which encodes the same
+  #   visitor. Stage 0 re-probe: research/current-state/00-capture-manifest.md
+  competitors_in_scope:        # where this pilot currently goes to learn applied AI
+                               # practice; declared as Stage 1 walk targets, derived
+                               # FROM the pilot (goal doc § blueprint.yml seed)
+    - "simonwillison.net — practitioner-diary genre; where this pilot reads applied LLM practice today"
+    - "promptingguide.ai — tool-first tutorial corpus; the generic-tutorial mode the pilot bounces off"
+    - "Every.to 'how I use AI' essay genre — practice-narrative comparables"
+    - "vendor academies (Anthropic Academy et al.) — vendor curriculum baseline"
+    - "ai-analyst-academy (github.com/nino-chavez) — Nino's own curriculum repo; comparable AND placement candidate"
+  out_of_scope_pilots:
+    - "Evaluator judging whether Nino's AI-native claim is real (client/employer) — served as a byproduct: the evidence that enables the practitioner also proves the claim; it is not the organizing lens"
+    - "Family/Zoey (Ask Dad) — private artifact, off the public surface entirely"
+
+# Artifact layout is the variant default (research/, decisions/, numbered stage files
+# at the initiative root; the mechanical reviewers enforce these fixed paths — see
+# METHODOLOGY-AMENDMENTS.md 2026-07-08 layout entries). Only the portal lives under
+# blueprint/ (auto-resolved by the tooling's candidate list).
+
+prototype:
+  portal_dir: "blueprint/portal"
+  chrome_profile: methodology-themed   # Profile A: canonical shared.css, brand in project-tokens.css
+
+forge_pipeline:
+  skip: true
+  reason: "The prototype's design language is the live site's shipped system (dark ground, Bebas Neue/Inter, brand-violet from tailwind.config.cjs) per 03-design-brief.md §4 — a brand kit already exists in production code, so running forge-brand/gen-images would generate a second source of truth for tokens the rebuild must inherit, not invent."
+
+portal:
+  repo_url: "https://github.com/nino-chavez/nino-chavez-site"
+  decisions:
+    dir: "decisions"               # NNNN-slug.md decision records (ADRs)
+
+execution:
+  depth: standard

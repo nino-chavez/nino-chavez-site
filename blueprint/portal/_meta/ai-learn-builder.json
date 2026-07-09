@@ -1,0 +1,27 @@
+{
+  "id": "ai-learn-builder",
+  "title": "Builder Track (TrackPage template)",
+  "group": "learn",
+  "slice": "ai-enablement",
+  "destination": "product",
+  "surface": "src/routes/ai/learn/builder/+page.svelte",
+  "phase": "MVP",
+  "route": "/pages/ai-learn-builder.html",
+  "summary": "The single data-driven TrackPage rendered as the Builder instance: grounding banner up top, verbatim taxonomy voice, honest self-serve CTAs.",
+  "mock_frame": "desktop",
+  "strategy": {
+    "decision": "One TrackPage template renders all seven tracks from data; the page leads with a GroundingBanner binding the track to shipped artifacts (specchain install, Rally HQ as the live shipped-product destination, Ask BC as gated proof) before any pedagogy.",
+    "why": "The seven current tracks are one copy-pasted template — ~40% of 4,822 lines mechanically duplicated (`research/current-state/surface-audit.md` §b, incl. the TrackPage field spec this mock renders). Tracks assert their AI application; the grounding banner is the show-don't-assert fix (P4). CTAs go self-serve per P7. Builder chosen as the reference instance because it has the richest current content. Operator correction 2026-07-08 (triage): lead the evidence with real shipped products (Rally HQ, Blueprint, photography site); Atelier is clone-and-read, not live — its OAuth-walled docs index must never carry a live badge.",
+    "shipped": "825-line hand-authored page: five levels of curriculum text, stale tool URLs inline in markup (two now 404 or mislabeled), an 'Email Me Your Build' mailto CTA, no linked artifact anywhere.",
+    "gap": "Curriculum that asserts → path that demonstrates: same taxonomy voice, same level spine, plus grounding banner, dated/sensed links, and install-verb CTAs.",
+    "question": "Is the grounding banner above who-this-is-for the right order, or should diagnosis precede proof on track pages? Cheap A/B at review."
+  },
+  "currentState": {
+    "route": "/ai/learn/builder",
+    "summary": "Largest of the seven duplicated track pages; concrete mechanics but every application asserted, links stale, CTA is mailto-your-homework.",
+    "sourceFiles": [
+      "src/routes/ai/learn/builder/+page.svelte"
+    ],
+    "annotation": "Proposed keeps the level spine and the 'for you if' filter verbatim where they were judged sound (Mine verdicts, old-corpus-inventory §5) and replaces every asserted claim with a bound artifact."
+  }
+}
