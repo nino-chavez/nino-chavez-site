@@ -46,6 +46,15 @@ Not run (not applicable): portal-initiative-conformance (Pattern A; running both
 conformance reviewers is a configuration error per the reviewer README),
 design-principles (greenfield-only), persona-fit/defrag (research/continuous).
 
+**Stage 6 doc gates**: terminology-linter reports one BLOCK — "engineering jargon
+'schema'" at `README.md:33-35` — overridden as a false positive: the term is the
+Schema.org proper noun (JSON-LD structured data), and replacing it would make the
+doc technically wrong. Acronym WARNs (WCAG, AA, IP, …) are the linter's own
+flagged-heuristic class; all appear in engineering-register docs, not visitor
+copy. doc-quality-auditor is agent-run: the five checks (so-what first, no mental
+math, no logic gaps, scannable, methodology statement) were applied in authoring
+`05-strategy.md`; final judgment is the operator's at package review.
+
 ## Chrome-gap remediation (recorded)
 
 The canonical chrome JS emits ~17 class names `shared.css` ships no rules for
