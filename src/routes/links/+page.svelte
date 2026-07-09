@@ -1,9 +1,24 @@
 <script>
-	const links = [
+	import { page } from '$app/state';
+
+	// The gallery logs ?src= arrivals for acquisition attribution (photography
+	// PR #74). This page is the IG-bio hop, so it forwards its own ?src= — put
+	// e.g. ninochavez.co/links?src=ig-photo in an account bio and that channel
+	// carries through to the gallery link. Bare /links visits attribute as
+	// 'links'. Pattern mirrors the gallery's server-side validator.
+	const SRC_PATTERN = /^[a-z0-9_-]{1,32}$/;
+	const gallerySrc = $derived.by(() => {
+		const src = page.url.searchParams.get('src');
+		return src && SRC_PATTERN.test(src) ? src : 'links';
+	});
+
+	const links = $derived([
 		{
 			label: 'Photography',
 			detail: 'Action sports & volleyball',
-			href: 'https://photography.ninochavez.co',
+			// Canonical host, not the photography.ninochavez.co subdomain — skips
+			// a 301 hop and keeps traffic on ninochavez.co.
+			href: `https://ninochavez.co/photography?src=${gallerySrc}`,
 			icon: 'camera',
 			accent: 'lime'
 		},
@@ -35,7 +50,7 @@
 			icon: 'zap',
 			accent: 'blue'
 		}
-	];
+	]);
 
 	const socials = [
 		{ label: 'Instagram', href: 'https://instagram.com/ninochavez', icon: 'instagram' },
