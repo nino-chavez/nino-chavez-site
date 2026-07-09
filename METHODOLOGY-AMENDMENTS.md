@@ -7,7 +7,7 @@ Append-only, reverse-chronological. Convention:
 
 **Trigger**: Operator opened the deployed portal and asked "this states five paths — what are they?" The stamped `index.html` hero reads "One front door, five paths in." with a hardcoded `PATHS` array carrying the SOURCE project's content wholesale — another initiative's doc slugs (`cx-strategy`, `business-model`, `validation-plan`), phase-hour estimates ("Phase 1 ~17 hrs"), "19 hypotheses", and a link to the deleted `/pages/example`. Worse: `renderPaths()` references an undeclared `MANIFEST` (`MANIFEST?.audience_switcher` — optional chaining does not guard an undeclared identifier), which throws and kills the entire script, so the stat tiles freeze at "…", the path grid renders empty, and the manifest-driven footer never populates.
 **Scope**: Candidate for methodology promotion
-**Status**: Active
+**Status**: Promoted to methodology — wave 85 (blueprint PR #29, 2026-07-09)
 
 The 2026-05-25 leak class ("template ships files that mix canonical chrome with project data"), still alive on the Pattern B front door: the docs viewer and footer were refactored to render from `_meta/index.json`, but the hero, lede, stat tiles, and path grid stayed hardcoded. **Proposed upstream fix, same shape as the docs-viewer refactor**: extend the manifest with a `front_door:` block and render from it —
 
@@ -30,7 +30,7 @@ with derived tiles (`pages`/`slices`/`docs` counts) computed, not authored. And 
 
 **Trigger**: First `portal-review-conformance-reviewer` + `portal-chrome-canonical-reviewer` runs against the freshly stamped portal BLOCKed on stamper-created state: (1) the stamp places `canonical-primitives.css` at the portal root, which the conformance reviewer rejects as an orphan top-level stylesheet under the default Profile A (the file is the Profile B import); (2) the stamp applies the `data-theme` substitution to `docs/index.html`, which the chrome manifest requires byte-identical to template canonical — the gate reports 1-line drift on an untouched consumer.
 **Scope**: Candidate for methodology promotion
-**Status**: Active
+**Status**: Promoted to methodology — wave 85 (blueprint PR #29, 2026-07-09)
 
 Fixed locally by deleting `canonical-primitives.css` (Profile A) and restoring `docs/index.html` byte-identical from `template/portal/`. Upstream fix candidates: the stamp should place `canonical-primitives.css` only when `chrome_profile: consumer-themed`, and `docs/index.html` should be copied verbatim (it is chrome, not project surface). Together with the two scaffold-time bugs below, all four Pattern B defects share one root: the Pattern B path has no smoke test that stamps into a temp dir and runs the Pattern B gates against the result.
 
@@ -71,7 +71,7 @@ Moved `research/` and `decisions/` to the initiative root and dropped the `stage
 
 **Trigger**: After the (patched) Pattern B stamp ran, the initiative had no reviewer agents — the `portalType === "review"` branch in `stamp.mjs` returns before the `template/.claude` and `template/tools/lib` copyTree calls that the Pattern A flow labels "installed into EVERY stamped initiative so the SessionStart hook + reviewer agents are present (fixes the install gap; see METHODOLOGY-AMENDMENTS 2026-06-16)".
 **Scope**: Candidate for methodology promotion
-**Status**: Active
+**Status**: Promoted to methodology — wave 85 (blueprint PR #29, 2026-07-09)
 
 Pattern B consumers get a portal but no stage gates: no `.claude/agents/blueprint/` (workhorses + 15 reviewers), no `.claude/agents/lib/initiative-root.mjs`, no `tools/lib/` (cost-dial, reviewer-registry, doctor — reviewer `.mjs` files import these via relative paths), no `tools/run-reviewers.mjs`. The 2026-06-16 install-gap fix covered Pattern A only. Backfilled by hand in this initiative (skills/ and hooks/ deliberately not copied — both are installed machine-globally here). Upstream fix: move the imposition-layer copy above the Pattern B early return, or call it from `stampPatternB`.
 
@@ -83,7 +83,7 @@ Pattern B consumers get a portal but no stage gates: no `.claude/agents/blueprin
 
 **Trigger**: First run of the documented Pattern B one-liner (`--mode=stamp --portal-type=review`) threw `ReferenceError: Cannot access 'log' before initialization` at `stamp.mjs:1033` — the Pattern B branch uses `log` declared by the Pattern A flow further down the same function scope.
 **Scope**: Candidate for methodology promotion
-**Status**: Active
+**Status**: Promoted to methodology — wave 85 (blueprint PR #29, 2026-07-09)
 
 The Pattern B initial-stamp path (amendment 1, 2026-06-27) appears to have never been executed end-to-end: the branch at `main()` references the function-scoped `const log` before its declaration. Every fresh Pattern B stamp fails. Worked around by running a scratchpad copy of `stamp.mjs` with a block-scoped `log` declared inside the branch (and `BLUEPRINT_ROOT` pinned, since the copy runs outside the repo). Fix upstream is the same one-liner; a smoke test that runs both stamp modes against a temp dir would have caught it (the mechanical check validates substitutions, not that the stamper runs).
 
