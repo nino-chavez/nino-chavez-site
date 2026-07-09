@@ -46,8 +46,8 @@ is open and this package occupies it.
 
 | Item | Owner | When |
 |---|---|---|
-| Review the 3 portal pages + drawer questions (persona strip vs single path; grounding-banner order; access-label legibility) | Nino | at portal review |
-| Deploy portal to Cloudflare Pages for the share link | next session (operator go) | Stage 7 |
+| Review the 3 portal pages + drawer questions (persona strip vs single path; grounding-banner order; access-label legibility) | Nino | at portal review — **live at https://ai-enablement-blueprint.pages.dev** |
+| ~~Deploy portal to Cloudflare Pages~~ Deployed 2026-07-08 (`ai-enablement-blueprint` Pages project; chat secret wired from 1Password `blueprint-global`) | done | Stage 7 |
 | Revoke leaked GCP key in forge-signal history | Nino | now |
 | forge-signal fresh-cut public release (optional; Author/Strategist already re-grounded on Blueprint) | Nino decision | any time |
 | Tier 2 implementation of P1–P9 in the SvelteKit app | follow-on sessions in this worktree | after portal review |

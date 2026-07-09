@@ -11,6 +11,10 @@ Append-only, reverse-chronological. Convention:
 
 Fixed locally by deleting `canonical-primitives.css` (Profile A) and restoring `docs/index.html` byte-identical from `template/portal/`. Upstream fix candidates: the stamp should place `canonical-primitives.css` only when `chrome_profile: consumer-themed`, and `docs/index.html` should be copied verbatim (it is chrome, not project surface). Together with the two scaffold-time bugs below, all four Pattern B defects share one root: the Pattern B path has no smoke test that stamps into a temp dir and runs the Pattern B gates against the result.
 
+**Deploy-time addendum (same day, defect #5)**: `wrangler pages deploy` fails on the stamped portal because `wrangler.toml` ships `name = "PROJECT_SLUG-blueprint"` — the file is copied in the stamper's binary mode, which skips substitutions, and `PROJECT_SLUG` isn't in the substitution table anyway (a comment tells the operator to hand-edit). Also of note for consumers: Pages Functions secrets set via `wrangler pages secret put` only bind on the NEXT deployment — set the secret, then deploy (or redeploy). Both belong in the CONVENTIONS.md § Deploy steps.
+
+**Chrome-CSS gap (defect #6, found at Stage 5)**: canonical `proto-nav.js` emits ~17 class names (`proto-footer-*`, lifecycle strip, phone bezel) that canonical `shared.css` ships no rules for — every Pattern B consumer renders an unstyled footer until they notice. Styled in this initiative's `project-tokens.css`; the rules belong upstream in `shared.css`.
+
 **References**:
 - `stamp.mjs` `stampPatternB` (copyTree applies substitutions to the whole tree incl. docs/index.html)
 - `portal-review-conformance-reviewer` orphan-stylesheet check; `portal-chrome-canonical-reviewer` byte-diff
