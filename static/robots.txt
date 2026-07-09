@@ -115,8 +115,8 @@ Allow: /
 Sitemap: https://ninochavez.co/sitemap.xml
 # Blog sitemap (served via rewrite from signal-dispatch-blog project)
 Sitemap: https://ninochavez.co/blog/sitemap.xml
-# Photography sitemap (served via rewrite from photography project)
-Sitemap: https://ninochavez.co/gallery/sitemap.xml
+# Photography sitemap (served under the /photography base path via the CF router)
+Sitemap: https://ninochavez.co/photography/sitemap.xml
 
 # ============================================================================
 # RATIONALE & DOCUMENTATION
