@@ -1,56 +1,60 @@
 {
 	"_comment": "Machine-derived overlay — written by scripts/ai-freshness/derive.mjs (GitHub API pushedAt + liveness-probe verified dates). Hand edits are overwritten on the next scheduled run. Baseline: 2026-07-09.",
-	"derived": "2026-07-09",
+	"derived": "2026-07-15",
 	"artifacts": {
 		"blueprint": {
-			"pushedAt": "2026-07-09",
-			"verified": "2026-07-09"
+			"pushedAt": "2026-07-13",
+			"verified": "2026-07-15"
 		},
 		"rally-hq": {
-			"verified": "2026-07-09"
+			"verified": "2026-07-15"
 		},
 		"photography": {
-			"pushedAt": "2026-06-24",
-			"verified": "2026-07-09"
+			"pushedAt": "2026-07-14",
+			"verified": "2026-07-15"
 		},
 		"specchain": {
 			"pushedAt": "2026-07-05",
-			"verified": "2026-07-09"
+			"verified": "2026-07-15"
 		},
 		"ask-bc": {
-			"verified": "2026-07-09"
+			"verified": "2026-07-15"
 		},
 		"agentic-ways-of-working": {
-			"pushedAt": "2026-07-03",
-			"verified": "2026-07-09"
+			"pushedAt": "2026-07-10",
+			"verified": "2026-07-15"
+		},
+		"ways-of-working": {
+			"pushedAt": "2026-07-15",
+			"verified": "2026-07-15"
 		},
 		"ai-champions-kit": {
 			"pushedAt": "2026-04-17",
-			"verified": "2026-07-09"
+			"verified": "2026-07-15"
 		},
 		"claude-recall-cli": {
 			"pushedAt": "2026-07-03",
-			"verified": "2026-07-09"
+			"verified": "2026-07-15"
 		},
 		"atelier": {
 			"pushedAt": "2026-07-03",
-			"verified": "2026-07-09"
+			"verified": "2026-07-15"
 		},
 		"cortex": {
-			"pushedAt": "2026-03-17",
-			"verified": "2026-07-09"
+			"pushedAt": "2026-07-13",
+			"verified": "2026-07-15"
 		},
 		"forge-brand": {
 			"pushedAt": "2026-05-23",
-			"verified": "2026-07-09"
+			"verified": "2026-07-15"
 		},
 		"forge-site": {
 			"pushedAt": "2026-06-10",
-			"verified": "2026-07-09"
+			"verified": "2026-07-15"
 		},
 		"voice-guide": {
-			"pushedAt": "2026-06-17",
-			"verified": "2026-07-09"
+			"pushedAt": "2026-07-14",
+			"verified": "2026-07-15"
 		}
 	}
 }

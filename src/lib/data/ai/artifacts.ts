@@ -87,6 +87,17 @@ const authored: Omit<Artifact, 'verified' | 'pushedAt'>[] = [
 		tracks: ['method']
 	},
 	{
+		id: 'ways-of-working',
+		name: 'ways of working',
+		gloss:
+			'Eight interactive demos, one real agent session each — the working method shown, not asserted: verbatim prompts, real production systems, honest failures.',
+		access: 'live',
+		href: 'https://demos.ninochavez.co',
+		liveUrl: 'https://demos.ninochavez.co',
+		repo: 'nino-chavez/nc-demos',
+		tracks: ['method']
+	},
+	{
 		id: 'ai-champions-kit',
 		name: 'ai-champions-kit',
 		gloss:
