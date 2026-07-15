@@ -9,6 +9,16 @@ export const handle: Handle = async ({ event, resolve }) => {
 		throw redirect(301, pathname.replace('/learn', '/ai/learn'));
 	}
 
+	// Legacy redirects migrated from the retired vercel.json — Cloudflare Pages
+	// never read that file, so these are honored here instead. The cross-origin
+	// rewrites vercel.json also declared are served by the `apps/router` Worker.
+	if (pathname === '/cv') {
+		throw redirect(301, '/about');
+	}
+	if (pathname === '/photo' || pathname.startsWith('/photo/')) {
+		throw redirect(301, pathname.replace('/photo', '/photography'));
+	}
+
 	// /ai rebuild (02-prescription.yml P2/P5/P8): retired routes redirect to
 	// their successors. Ask is killed per ADR-0003; build → work; the
 	// reference tab and corpus stub fold into learn.

@@ -3,8 +3,8 @@
 ## Host
 - **Platform**: **Cloudflare Pages, git-integrated** (project `ninochavez-main`).
   `svelte.config.js` uses `@sveltejs/adapter-cloudflare`; the "Cloudflare Pages"
-  status check on every PR/commit is the CF build. `vercel.json` is **vestigial**
-  (CF Pages does not read it — see Open issues) and should not be treated as canonical.
+  status check on every PR/commit is the CF build. (The old `vercel.json` was
+  deleted 2026-07-15 — CF Pages never read it; see Open issues for what moved where.)
 - **Production URL**: https://ninochavez.co (served via the `apps/router` Worker)
 - **Preview URL pattern**: CF Pages per-branch preview (`<branch>.ninochavez-main.pages.dev`)
 
@@ -41,12 +41,14 @@
 - Playwright smoke (`npm run test:smoke`) against prod
 
 ## Open issues
-- **`vercel.json` is dead config on CF Pages.** Its `redirects` (`/cv` → `/about`,
-  `/photo/*` → `/photography/*`) and `rewrites` (gallery/photography sitemap proxies)
-  are NOT honored by Cloudflare Pages. Either these are handled by the `apps/router`
-  Worker, or they are silently broken in production. Port to `static/_redirects`
-  (CF Pages syntax) or confirm the router covers them, then delete `vercel.json`.
-  Tracked as separate scope from the build fix.
+- _(resolved 2026-07-15)_ `vercel.json` was deleted as vestigial cruft — its rules
+  were dead on CF (`/cv` and `/photo/*` both 404'd live). Its two legacy `redirects`
+  (`/cv` → `/about`, `/photo/*` → `/photography/*`) moved to `src/hooks.server.ts`,
+  where CF honors them; the cross-origin `rewrites` are served by the `apps/router`
+  Worker. The `/images` and `/brand` **immutable cache headers were NOT restored** —
+  applying `immutable` to those (possibly unhashed) asset paths risks serving stale
+  assets forever. That's a caching-strategy decision, tracked separately, not part of
+  the Vercel cleanup.
 
 ## Notes
 - See PLATFORM.md for workspace-level platform decisions (note: PLATFORM.md's

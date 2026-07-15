@@ -79,7 +79,7 @@ The UI follows a camera-inspired workflow with sections representing the photogr
 - **Playwright** - End-to-end testing with visual regression support
 - **axe-core** - Automated accessibility testing
 - **PostCSS** - Advanced CSS processing and optimization
-- **Vercel Adapter** - Optimized deployment for serverless environments
+- **Cloudflare Adapter** - `@sveltejs/adapter-cloudflare` for Cloudflare Pages
 
 ### Performance & Accessibility
 
@@ -126,7 +126,7 @@ portfolio-sveltekit/
 ├── svelte.config.js      # SvelteKit configuration
 ├── vite.config.js        # Vite build configuration
 ├── tailwind.config.cjs   # Tailwind CSS configuration
-├── vercel.json           # Vercel deployment configuration
+├── wrangler.toml         # Cloudflare Pages configuration
 └── playwright.config.ts  # Playwright test configuration
 ```
 
@@ -269,21 +269,18 @@ This codebase maintains enterprise-grade quality through:
 
 ## Deployment
 
-This project is optimized for deployment on Vercel with the following configuration:
+Deployed on **Cloudflare Pages** (git-integrated, project `ninochavez-main`). See [DEPLOY.md](./DEPLOY.md) for the full runbook.
 
-- **Adapter** - `@sveltejs/adapter-vercel` for serverless deployment
-- **Static Assets** - CDN-optimized with long-lived caching
-- **Build Output** - Pre-rendered pages with hybrid SSR/CSR
-- **Environment** - Node.js 18+ runtime
+- **Adapter** - `@sveltejs/adapter-cloudflare` for Cloudflare Pages
+- **Trigger** - push to `main` builds and deploys automatically (no `wrangler` step)
+- **Build** - `npm run build` (`svelte-kit sync && vite build`)
+- **Node** - pinned to 22 via `.nvmrc` (required — an older Node fails the CF build)
 
-### Deploy to Vercel
+### Deploy
 
 ```bash
-# Install Vercel CLI
-pnpm add -g vercel
-
-# Deploy
-vercel
+# Deployment is automatic on push to main.
+git push origin main
 ```
 
 ## Documentation

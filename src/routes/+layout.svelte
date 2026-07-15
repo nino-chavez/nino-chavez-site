@@ -24,11 +24,6 @@
 
 		// Initialize performance monitoring (production only)
 		if (!dev && typeof window !== 'undefined') {
-			// Vercel Analytics
-			import('@vercel/analytics').then(({ inject }) => inject());
-			// Vercel Speed Insights
-			import('@vercel/speed-insights/sveltekit').then(({ injectSpeedInsights }) => injectSpeedInsights());
-
 			// Web Vitals monitoring
 			import('web-vitals').then(({ onCLS, onFID, onLCP, onFCP, onTTFB }) => {
 				onCLS((metric) => console.log('CLS:', metric));
