@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "project": "Nino Chavez Portfolio",
+  "defaults": {
+    "reader": "a prospective collaborator, client, employer, or reader encountering Nino's work",
+    "job": "understand what Nino makes, decide what to explore, and know how to get in touch",
+    "assumedKnowledge": [],
+    "plainness": "lay",
+    "precisionLocks": [
+      "project names and links",
+      "contact details",
+      "published work titles",
+      "deliberate personal voice"
+    ]
+  },
+  "surfaces": [
+    {
+      "name": "public portfolio",
+      "renderedRoots": [
+        ".svelte-kit/output/prerendered/pages"
+      ],
+      "sourceRoots": [
+        "src/routes",
+        "src/lib/copy.ts",
+        "src/lib/work-data.ts"
+      ],
+      "allowTerms": [
+        "AI",
+        "API",
+        "Signal Dispatch",
+        "GitHub",
+        "LinkedIn",
+        "CUT",
+        "THE",
+        "NOISE",
+        "FOLLOW",
+        "SIGNAL",
+        "SEE",
+        "SAY",
+        "HI",
+        "LET",
+        "PEPPER",
+        "MEDIA",
+        "RALLY",
+        "HQ",
+        "NINO",
+        "CHAVEZ",
+        "SCROLL",
+        "THINGS",
+        "MAKING",
+        "SERIES",
+        "MUSIC",
+        "DJ",
+        "GPT",
+        "SETS",
+        "OPEN"
+      ],
+      "denyTerms": [],
+      "maxWordsPerText": 70
+    }
+  ]
+}
