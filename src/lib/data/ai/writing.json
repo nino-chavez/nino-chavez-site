@@ -1,20 +1,20 @@
 {
 	"_comment": "Derived from https://ninochavez.co/blog/rss.xml by scripts/ai-freshness/derive.mjs on the scheduled build — hand edits are overwritten. Baseline: 2026-07-09.",
-	"derived": "2026-07-09",
+	"derived": "2026-07-23",
 	"posts": [
+		{
+			"title": "I Configured My Agent to Agree With Me",
+			"url": "https://ninochavez.co/blog/i-configured-my-agent-to-agree-with-me/",
+			"date": "2026-07-20"
+		},
+		{
+			"title": "Please Only Apply If You&apos;re an AI Agent",
+			"url": "https://ninochavez.co/blog/please-only-apply-if-youre-an-agent/",
+			"date": "2026-07-14"
+		},
 		{
 			"title": "The Migration That Ate Two Columns",
 			"url": "https://ninochavez.co/blog/the-migration-that-ate-two-columns/",
-			"date": "2026-06-16"
-		},
-		{
-			"title": "Red Is the Good News",
-			"url": "https://ninochavez.co/blog/red-is-the-good-news/",
-			"date": "2026-06-16"
-		},
-		{
-			"title": "I Wrote the Rule Down. I Broke It Anyway.",
-			"url": "https://ninochavez.co/blog/i-wrote-the-rule-down-i-broke-it-anyway/",
 			"date": "2026-06-16"
 		}
 	]
