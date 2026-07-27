@@ -27,10 +27,10 @@ can be said for it.
 | id | verdict | device | cites the thesis by | rules |
 |---|---|---|---|---|
 | `numbered-sections` | authorized | `01 / PROJECTS`, `02 / ABOUT`, `03 / CONTACT` in tracked mono caps | A contact sheet is indexed, not narrated. Numbering says "here is everything" where a portfolio would say "here is my best work" | `repeated-section-kickers` |
-| `craft-kickers` | authorized | A mono, tracked, uppercase label above each project naming its craft — MEDIA, MUSIC, PHOTOGRAPHY, OPEN BETA, AI PRACTICE, WRITING, AI VISIBILITY — each in its own color with a matching dot | The taxonomy *is* the argument. Four crafts presented flat need a way to say which is which that does not rank them; a color per craft ranks nothing | `undersized-ui-text` |
+| `craft-kickers` | authorized | A mono, tracked, uppercase label above each project naming its craft — TOURNAMENT SERIES, MEDIA, MUSIC, PHOTOGRAPHY, OPEN BETA, AI PRACTICE, WRITING, AI VISIBILITY — each with a matching dot | The taxonomy *is* the argument. Four crafts presented flat need a way to say which is which that does not rank them; a label per craft ranks nothing | `undersized-ui-text` |
 | `lime-accent` | authorized | `lime-400` as the site's single accent — hero kicker, the one filled CTA (`bg-lime-400 text-black`), every section number, every card-title hover (42 usages on this surface, 111 repo-wide) | A contact sheet is printed in one ink. One high-contrast accent marks what you can *act on* without ranking the crafts around it — which a second brand color would immediately start doing | — |
 | `hero-grid-wash` | removed | An 80×80px lime hairline grid at 10% alpha, `opacity-20`, absolutely positioned over the **hero** (`+page.svelte:127`) | **Could not cite it.** A contact sheet's grid holds frames — it is product structure. This one sat behind the hero statement, not behind the project index, so it organized nothing and read as the generated-dev-tool backdrop the detector names. Its own rule prescribes the thesis's answer: "reserve grid overlays for actual canvas, map, blueprint or measurement surfaces; elsewhere use product structure or a plain surface" | `codex-grid-background` |
-| `craft-palette` | undecided | Seven craft kickers across five colors — pink (MEDIA), purple (MUSIC), lime (PHOTOGRAPHY, OPEN BETA, AI PRACTICE), cyan (WRITING), indigo (AI VISIBILITY) — hardcoded per card in `src/routes/+page.svelte`, each with a matching dot, tint wash and hover underline | The *device* cites the thesis: four flat crafts need a way to say which is which that does not rank them. The specific palette cannot. Three crafts share lime **with the site accent**, so the coding is not one-to-one and the accent no longer means only "actionable"; and no declared system anywhere contains pink, cyan or indigo | `ai-color-palette` |
+| `craft-palette` | undecided | **Eight** kickers across **six** colors, each hardcoded as a Tailwind class in `src/routes/+page.svelte` with a matching dot, tint wash and hover underline: orange `:199` TOURNAMENT SERIES, pink `:230` MEDIA, purple `:260` MUSIC, lime `:293` PHOTOGRAPHY, lime `:322` OPEN BETA, lime `:344` AI PRACTICE, cyan `:367` WRITING, indigo `:403` AI VISIBILITY. **Not** `focusArea.color` in `src/lib/constants.ts` — that field holds five entries across three unrelated values (cyan ×2, violet ×2, green) and renders no kicker at all | The *device* cites the thesis: crafts presented flat need a way to say which is which that does not rank them. The specific palette cannot. Three crafts share lime **with the site accent**, so the coding is not one-to-one and the accent stops meaning only "actionable"; and no declared system anywhere contains orange, pink, cyan or indigo | `ai-color-palette` |
 
 ## What was fixed
 
@@ -96,6 +96,18 @@ querying the site. That is the same failure as the blog record's `gradient-text`
 it is the failure this layer is supposed to catch in others — a record asserting a design
 intent that no shipped pixel supports. Corrected against `grep` counts and the live scan's
 own snippets.
+
+**A fourth was found only because a second session went looking independently.** Both this
+record and that session's uncommitted correction described `craft-palette` as *seven*
+kickers across *five* colors. There are **eight** across **six**: the LET'S PEPPER card's
+orange `TOURNAMENT SERIES` kicker (`+page.svelte:199`) was missed by both, because it sits
+in the featured card's markup rather than the repeating grid, and neither pass enumerated
+the labels — both counted from the same remembered list. The row now carries a line number
+per kicker so the next reader counts from the file instead of from the record.
+
+Two independent passes converging on the same wrong number is worth more than the number
+itself. Agreement between records is not evidence; both can inherit the same error from
+the same source, and here both did.
 
 **The `design-system-color` rule — the one that checks this page against this kit — has
 never run here.** impeccable's `addColorObject` reads only string values one level under
