@@ -12,7 +12,7 @@
 				class="flex items-baseline justify-between gap-4 py-4 group"
 			>
 				<span class="group-hover:text-lime-400 transition-colors">{post.title}</span>
-				<span class="font-mono text-[11px] text-neutral-500 shrink-0">{post.date}</span>
+				<span class="font-mono text-[11px] text-neutral-400 shrink-0">{post.date}</span>
 			</a>
 		</li>
 	{/each}

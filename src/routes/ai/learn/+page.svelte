@@ -40,11 +40,11 @@
 						<h2 class="text-2xl font-display font-bold group-hover:text-lime-400 transition-colors">
 							{track.title}
 						</h2>
-						<span class="font-mono text-[11px] text-neutral-500 shrink-0">{track.timeline}</span>
+						<span class="font-mono text-[11px] text-neutral-400 shrink-0">{track.timeline}</span>
 					</div>
 					<p class="text-lime-400/90 text-sm font-medium">{track.tagline}</p>
 					<p class="text-neutral-400 text-sm leading-relaxed flex-1">{track.description}</p>
-					<p class="font-mono text-[11px] text-neutral-500">
+					<p class="font-mono text-[11px] text-neutral-400">
 						artifact: {track.finalArtifact}
 					</p>
 				</a>

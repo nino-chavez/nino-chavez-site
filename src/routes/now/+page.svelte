@@ -129,7 +129,7 @@
 					</div>
 					<div>
 						<div class="text-lg font-semibold">Nino Chavez</div>
-						<div class="text-neutral-500 text-sm">Chicago, IL</div>
+						<div class="text-neutral-400 text-sm">Chicago, IL</div>
 					</div>
 				</div>
 
@@ -220,7 +220,7 @@
 		<div class="max-w-4xl mx-auto">
 			<button
 				on:click={toggleCV}
-				class="flex items-center gap-3 text-neutral-500 hover:text-lime-400 transition-colors group w-full"
+				class="flex items-center gap-3 text-neutral-400 hover:text-lime-400 transition-colors group w-full"
 			>
 				<h2 class="font-mono text-xs tracking-widest uppercase">Professional Timeline</h2>
 				<svg
@@ -243,7 +243,7 @@
 							<div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
 								<span class="text-lime-400 font-mono text-sm">{item.year}</span>
 								<span class="text-neutral-600 hidden md:inline">•</span>
-								<span class="text-neutral-500 text-sm">{item.location}</span>
+								<span class="text-neutral-400 text-sm">{item.location}</span>
 							</div>
 							<h3 class="text-white font-medium mt-1">{item.role}</h3>
 							<p class="text-neutral-400 text-sm">{item.company}</p>
@@ -305,13 +305,13 @@
 				© 2026 NINO CHAVEZ
 			</p>
 			<div class="flex items-center gap-6">
-				<a href="https://blog.ninochavez.co" class="text-sm text-neutral-500 hover:text-lime-400 transition-colors">
+				<a href="https://blog.ninochavez.co" class="text-sm text-neutral-400 hover:text-lime-400 transition-colors">
 					Blog
 				</a>
-				<a href="https://photography.ninochavez.co" class="text-sm text-neutral-500 hover:text-lime-400 transition-colors">
+				<a href="https://photography.ninochavez.co" class="text-sm text-neutral-400 hover:text-lime-400 transition-colors">
 					Photography
 				</a>
-				<a href="/" class="text-sm text-neutral-500 hover:text-lime-400 transition-colors">
+				<a href="/" class="text-sm text-neutral-400 hover:text-lime-400 transition-colors">
 					Home
 				</a>
 			</div>
@@ -336,7 +336,7 @@
 		}
 
 		.text-neutral-400,
-		.text-neutral-500 {
+		.text-neutral-400 {
 			color: #374151 !important;
 		}
 
