@@ -266,7 +266,7 @@
 	<!-- Back to Home -->
 	<section class="px-6 py-12 border-t border-neutral-800">
 		<div class="max-w-4xl mx-auto">
-			<a href="/" class="text-neutral-500 hover:text-lime-400 transition-colors text-sm">
+			<a href="/" class="text-neutral-400 hover:text-lime-400 transition-colors text-sm">
 				← Back to Home
 			</a>
 		</div>

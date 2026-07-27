@@ -16,7 +16,7 @@
 </svelte:head>
 
 <main class="px-6 lg:px-12 py-16 lg:py-24 max-w-5xl mx-auto">
-	<nav aria-label="Breadcrumb" class="font-mono text-xs text-neutral-500 mb-10">
+	<nav aria-label="Breadcrumb" class="font-mono text-xs text-neutral-400 mb-10">
 		<a href="/ai/learn" class="hover:text-lime-400 transition-colors">← all tracks</a>
 	</nav>
 

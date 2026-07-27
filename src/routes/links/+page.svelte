@@ -160,7 +160,7 @@
 
 		<!-- Brands grid -->
 		<div class="mb-8">
-			<span class="block font-mono text-[10px] tracking-[0.08em] uppercase text-neutral-600 mb-3">Signal X Studio Brands</span>
+			<span class="block font-mono text-[11px] tracking-[0.08em] uppercase text-neutral-600 mb-3">Signal X Studio Brands</span>
 			<div class="grid grid-cols-3 gap-1.5">
 				{#each brands as brand}
 					<a
@@ -178,8 +178,8 @@
 
 		<!-- Footer -->
 		<footer class="text-center">
-			<p class="font-mono text-[10px] text-neutral-700 tracking-wider">
-				&copy; 2025 <a href="https://signalx.studio" class="underline underline-offset-2 hover:text-neutral-500 transition-colors">Signal X Studio, LLC</a>
+			<p class="font-mono text-[11px] text-neutral-700 tracking-wider">
+				&copy; 2025 <a href="https://signalx.studio" class="underline underline-offset-2 hover:text-neutral-400 transition-colors">Signal X Studio, LLC</a>
 			</p>
 		</footer>
 	</div>

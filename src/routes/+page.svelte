@@ -156,7 +156,7 @@
 		<!-- Scroll indicator -->
 		<div class="absolute bottom-6 left-6 lg:left-12 flex items-center gap-3 z-20">
 			<div class="w-px h-16 bg-gradient-to-b from-lime-400 to-transparent"></div>
-			<span class="text-xs font-mono text-neutral-500 tracking-widest -rotate-90 origin-left translate-y-6">SCROLL</span>
+			<span class="text-xs font-mono text-neutral-400 tracking-widest -rotate-90 origin-left translate-y-6">SCROLL</span>
 		</div>
 	</section>
 
@@ -203,15 +203,15 @@
 							</div>
 							<h3 class="text-4xl lg:text-5xl font-display font-bold mb-3 group-hover:text-lime-400 transition-colors">LET'S PEPPER</h3>
 							<p class="text-neutral-400 text-lg mb-6">Grassroots 3v3 Volleyball</p>
-							<p class="text-neutral-500 leading-relaxed max-w-md">
+							<p class="text-neutral-400 leading-relaxed max-w-md">
 								Competitive grass volleyball without the over-organization.
 								Cash prizes, real photography, runs on weekends.
 							</p>
 						</div>
 						<div class="flex flex-wrap gap-2 mt-6">
 							<span class="px-3 py-1 border border-orange-400/30 text-orange-400/80 text-xs">Chicago</span>
-							<span class="px-3 py-1 border border-neutral-700 text-neutral-500 text-xs">Grass Volleyball</span>
-							<span class="px-3 py-1 border border-neutral-700 text-neutral-500 text-xs">3v3</span>
+							<span class="px-3 py-1 border border-neutral-700 text-neutral-400 text-xs">Grass Volleyball</span>
+							<span class="px-3 py-1 border border-neutral-700 text-neutral-400 text-xs">3v3</span>
 						</div>
 					</div>
 					<!-- Corner accent -->
@@ -230,12 +230,12 @@
 						<div>
 							<div class="flex items-center gap-3 mb-3">
 								<span class="w-2 h-2 bg-pink-400 rounded-full"></span>
-								<span class="text-pink-400 font-mono text-[10px] tracking-widest">MEDIA</span>
+								<span class="text-pink-400 font-mono text-[11px] tracking-widest">MEDIA</span>
 							</div>
 							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">FLICKDAY</h3>
-							<p class="text-neutral-500 text-sm">Sports Media Company</p>
+							<p class="text-neutral-400 text-sm">Sports Media Company</p>
 						</div>
-						<p class="text-neutral-500 text-sm leading-relaxed">
+						<p class="text-neutral-400 text-sm leading-relaxed max-w-lg">
 							Tournament coverage and same-day photo drops for grassroots volleyball.
 						</p>
 					</div>
@@ -260,10 +260,10 @@
 						<div>
 							<div class="flex items-center gap-3 mb-3">
 								<span class="w-2 h-2 bg-purple-400 rounded-full"></span>
-								<span class="text-purple-400 font-mono text-[10px] tracking-widest">MUSIC</span>
+								<span class="text-purple-400 font-mono text-[11px] tracking-widest">MUSIC</span>
 							</div>
 							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">DJ SETS</h3>
-							<p class="text-neutral-500 text-sm">House, disco, and whatever moves</p>
+							<p class="text-neutral-400 text-sm">House, disco, and whatever moves</p>
 						</div>
 						<div class="flex items-center gap-4 text-neutral-600 text-xs">
 							<span class="group-hover:text-lime-400 transition-colors">SoundCloud</span>
@@ -293,12 +293,12 @@
 						<div>
 							<div class="flex items-center gap-3 mb-3">
 								<span class="w-2 h-2 bg-lime-400 rounded-full"></span>
-								<span class="text-lime-400 font-mono text-[10px] tracking-widest">PHOTOGRAPHY</span>
+								<span class="text-lime-400 font-mono text-[11px] tracking-widest">PHOTOGRAPHY</span>
 							</div>
 							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">GALLERY</h3>
 							<p class="text-neutral-400 text-sm">Action Sports & Volleyball</p>
 						</div>
-						<div class="flex items-center gap-2 text-neutral-500 text-sm group-hover:text-lime-400 transition-colors">
+						<div class="flex items-center gap-2 text-neutral-400 text-sm group-hover:text-lime-400 transition-colors">
 							<span>View gallery</span>
 							<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -322,12 +322,12 @@
 									<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
 									<span class="relative inline-flex rounded-full h-2 w-2 bg-lime-400"></span>
 								</span>
-								<span class="text-lime-400 font-mono text-[10px] tracking-widest">OPEN BETA</span>
+								<span class="text-lime-400 font-mono text-[11px] tracking-widest">OPEN BETA</span>
 							</div>
 							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">RALLY HQ</h3>
-							<p class="text-neutral-500 text-sm">Tournament Management Platform</p>
+							<p class="text-neutral-400 text-sm">Tournament Management Platform</p>
 						</div>
-						<p class="text-neutral-500 text-sm leading-relaxed">
+						<p class="text-neutral-400 text-sm leading-relaxed max-w-lg">
 							Real-time brackets, registration, payments. Built because tournament software was terrible.
 						</p>
 					</div>
@@ -344,12 +344,12 @@
 						<div>
 							<div class="flex items-center gap-3 mb-3">
 								<span class="w-2 h-2 bg-lime-400 rounded-full"></span>
-								<span class="text-lime-400 font-mono text-[10px] tracking-widest">AI PRACTICE</span>
+								<span class="text-lime-400 font-mono text-[11px] tracking-widest">AI PRACTICE</span>
 							</div>
 							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">WORK THIS WAY</h3>
-							<p class="text-neutral-500 text-sm">Apply AI to your craft</p>
+							<p class="text-neutral-400 text-sm">Apply AI to your craft</p>
 						</div>
-						<p class="text-neutral-500 text-sm leading-relaxed">
+						<p class="text-neutral-400 text-sm leading-relaxed max-w-lg">
 							Seven paths in, each demonstrated by shipped work — Rally HQ, Blueprint, this site.
 						</p>
 					</div>
@@ -367,10 +367,10 @@
 						<div>
 							<div class="flex items-center gap-3 mb-3">
 								<span class="w-2 h-2 bg-cyan-400 rounded-full"></span>
-								<span class="text-cyan-400 font-mono text-[10px] tracking-widest">WRITING</span>
+								<span class="text-cyan-400 font-mono text-[11px] tracking-widest">WRITING</span>
 							</div>
 							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">SIGNAL DISPATCH</h3>
-							<p class="text-neutral-500 text-sm">Essays on making things</p>
+							<p class="text-neutral-400 text-sm">Essays on making things</p>
 						</div>
 						<div class="flex items-center gap-2 text-neutral-600 text-xs group-hover:text-lime-400 transition-colors">
 							<span>Read blog</span>
@@ -403,12 +403,12 @@
 									<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
 									<span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-400"></span>
 								</span>
-								<span class="text-indigo-400 font-mono text-[10px] tracking-widest">AI VISIBILITY</span>
+								<span class="text-indigo-400 font-mono text-[11px] tracking-widest">AI VISIBILITY</span>
 							</div>
 							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">SIGNAL X STUDIO</h3>
-							<p class="text-neutral-500 text-sm">Answer Engine Optimization</p>
+							<p class="text-neutral-400 text-sm">Answer Engine Optimization</p>
 						</div>
-						<p class="text-neutral-500 text-sm leading-relaxed">
+						<p class="text-neutral-400 text-sm leading-relaxed max-w-lg">
 							Platform infrastructure for AI visibility. Track how brands appear across LLMs—Claude, GPT-4, Gemini, Perplexity.
 						</p>
 					</div>
@@ -608,10 +608,18 @@
 
 <!-- Photo Lightbox Modal -->
 {#if lightboxOpen}
+	<!--
+		Click-outside-to-dismiss is a pointer affordance on the backdrop, not a control.
+		Its keyboard equivalent is Escape, handled for the whole lightbox by the
+		svelte:window listener above (handleKeydown, which also drives arrow-key
+		navigation) — the linter cannot see a handler on another element. Guarding on
+		currentTarget is what lets the inner containers drop their stopPropagation
+		click handlers, which WERE flagged and could not be justified.
+	-->
+	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<div
 		class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex flex-col"
-		on:click={closeLightbox}
-		on:keydown={(e) => e.key === 'Escape' && closeLightbox()}
+		on:click={(e) => { if (e.target === e.currentTarget) closeLightbox(); }}
 		role="dialog"
 		aria-modal="true"
 		aria-label="Photo lightbox"
@@ -629,7 +637,7 @@
 		</button>
 
 		<!-- Main image area -->
-		<div class="flex-1 flex items-center justify-center p-8" on:click|stopPropagation>
+		<div class="flex-1 flex items-center justify-center p-8">
 			<!-- Previous button -->
 			<button
 				class="absolute left-4 lg:left-8 w-12 h-12 flex items-center justify-center text-white/40 hover:text-white transition-colors"
@@ -666,7 +674,7 @@
 		</div>
 
 		<!-- Thumbnail strip - shows range around current photo -->
-		<div class="flex-shrink-0 px-4 pb-6" on:click|stopPropagation>
+		<div class="flex-shrink-0 px-4 pb-6">
 			<div class="flex justify-center gap-1 overflow-x-auto py-2 max-w-full">
 				{#each Array(Math.min(TOTAL_PHOTOS, 20)) as _, i}
 					{@const thumbIndex = Math.max(0, Math.min(lightboxIndex - 10 + i, TOTAL_PHOTOS - 1))}
