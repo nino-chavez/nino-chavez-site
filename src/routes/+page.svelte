@@ -124,9 +124,6 @@
 			</div>
 		</div>
 
-		<!-- Grid lines overlay -->
-		<div class="absolute inset-0 z-10 pointer-events-none grid-lines opacity-20"></div>
-
 		<!-- Content -->
 		<div class="relative z-20">
 			<!-- Massive headline - improved mobile scaling -->
@@ -230,7 +227,7 @@
 						<div>
 							<div class="flex items-center gap-3 mb-3">
 								<span class="w-2 h-2 bg-pink-400 rounded-full"></span>
-								<span class="text-pink-400 font-mono text-[11px] tracking-widest">MEDIA</span>
+								<span class="text-pink-400 font-mono text-xs tracking-widest">MEDIA</span>
 							</div>
 							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">FLICKDAY</h3>
 							<p class="text-neutral-400 text-sm">Sports Media Company</p>
@@ -260,7 +257,7 @@
 						<div>
 							<div class="flex items-center gap-3 mb-3">
 								<span class="w-2 h-2 bg-purple-400 rounded-full"></span>
-								<span class="text-purple-400 font-mono text-[11px] tracking-widest">MUSIC</span>
+								<span class="text-purple-400 font-mono text-xs tracking-widest">MUSIC</span>
 							</div>
 							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">DJ SETS</h3>
 							<p class="text-neutral-400 text-sm">House, disco, and whatever moves</p>
@@ -293,7 +290,7 @@
 						<div>
 							<div class="flex items-center gap-3 mb-3">
 								<span class="w-2 h-2 bg-lime-400 rounded-full"></span>
-								<span class="text-lime-400 font-mono text-[11px] tracking-widest">PHOTOGRAPHY</span>
+								<span class="text-lime-400 font-mono text-xs tracking-widest">PHOTOGRAPHY</span>
 							</div>
 							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">GALLERY</h3>
 							<p class="text-neutral-400 text-sm">Action Sports & Volleyball</p>
@@ -322,7 +319,7 @@
 									<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
 									<span class="relative inline-flex rounded-full h-2 w-2 bg-lime-400"></span>
 								</span>
-								<span class="text-lime-400 font-mono text-[11px] tracking-widest">OPEN BETA</span>
+								<span class="text-lime-400 font-mono text-xs tracking-widest">OPEN BETA</span>
 							</div>
 							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">RALLY HQ</h3>
 							<p class="text-neutral-400 text-sm">Tournament Management Platform</p>
@@ -344,7 +341,7 @@
 						<div>
 							<div class="flex items-center gap-3 mb-3">
 								<span class="w-2 h-2 bg-lime-400 rounded-full"></span>
-								<span class="text-lime-400 font-mono text-[11px] tracking-widest">AI PRACTICE</span>
+								<span class="text-lime-400 font-mono text-xs tracking-widest">AI PRACTICE</span>
 							</div>
 							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">WORK THIS WAY</h3>
 							<p class="text-neutral-400 text-sm">Apply AI to your craft</p>
@@ -367,7 +364,7 @@
 						<div>
 							<div class="flex items-center gap-3 mb-3">
 								<span class="w-2 h-2 bg-cyan-400 rounded-full"></span>
-								<span class="text-cyan-400 font-mono text-[11px] tracking-widest">WRITING</span>
+								<span class="text-cyan-400 font-mono text-xs tracking-widest">WRITING</span>
 							</div>
 							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">SIGNAL DISPATCH</h3>
 							<p class="text-neutral-400 text-sm">Essays on making things</p>
@@ -403,7 +400,7 @@
 									<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
 									<span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-400"></span>
 								</span>
-								<span class="text-indigo-400 font-mono text-[11px] tracking-widest">AI VISIBILITY</span>
+								<span class="text-indigo-400 font-mono text-xs tracking-widest">AI VISIBILITY</span>
 							</div>
 							<h3 class="text-2xl font-display font-bold mb-2 group-hover:text-lime-400 transition-colors">SIGNAL X STUDIO</h3>
 							<p class="text-neutral-400 text-sm">Answer Engine Optimization</p>
@@ -713,14 +710,6 @@
 		font-family: 'Bebas Neue', sans-serif;
 		font-size: clamp(3rem, 15vw, 14rem);
 		font-weight: 400;
-	}
-
-	/* Grid lines */
-	.grid-lines {
-		background-image:
-			linear-gradient(rgba(163, 230, 53, 0.1) 1px, transparent 1px),
-			linear-gradient(90deg, rgba(163, 230, 53, 0.1) 1px, transparent 1px);
-		background-size: 80px 80px;
 	}
 
 	/* Bento grid */

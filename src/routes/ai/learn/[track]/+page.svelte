@@ -28,13 +28,13 @@
 			{track.hero.subhead}
 		</p>
 		<div class="flex flex-wrap gap-2">
-			<span class="px-3 py-1 border border-neutral-700 font-mono text-[11px] text-neutral-400"
+			<span class="px-3 py-1 border border-neutral-700 font-mono text-xs text-neutral-400"
 				>{track.levels.length} levels</span
 			>
-			<span class="px-3 py-1 border border-neutral-700 font-mono text-[11px] text-neutral-400"
+			<span class="px-3 py-1 border border-neutral-700 font-mono text-xs text-neutral-400"
 				>{track.timeline}</span
 			>
-			<span class="px-3 py-1 border border-neutral-700 font-mono text-[11px] text-neutral-400"
+			<span class="px-3 py-1 border border-neutral-700 font-mono text-xs text-neutral-400"
 				>artifact: {track.finalArtifact}</span
 			>
 		</div>
@@ -50,7 +50,7 @@
 		</h2>
 		<div class="grid md:grid-cols-2 gap-4">
 			<div class="border border-neutral-800 bg-neutral-950 p-6">
-				<h3 class="font-mono text-[11px] tracking-widest uppercase text-neutral-400 mb-4">
+				<h3 class="font-mono text-xs tracking-widest uppercase text-neutral-400 mb-4">
 					This path is for you if
 				</h3>
 				<ul class="flex flex-col gap-2.5 text-sm text-neutral-300">
@@ -60,7 +60,7 @@
 				</ul>
 			</div>
 			<div class="border border-neutral-800 bg-neutral-950 p-6">
-				<h3 class="font-mono text-[11px] tracking-widest uppercase text-neutral-400 mb-4">
+				<h3 class="font-mono text-xs tracking-widest uppercase text-neutral-400 mb-4">
 					Probably not if
 				</h3>
 				<ul class="flex flex-col gap-2.5 text-sm text-neutral-400">
@@ -108,7 +108,7 @@
 		{/if}
 	</div>
 
-	<p class="mt-12 font-mono text-[11px] text-neutral-600 max-w-xl leading-relaxed">
+	<p class="mt-12 font-mono text-xs text-neutral-600 max-w-xl leading-relaxed">
 		Tool links and level references live in a dated data file checked by the link sensor
 		on every build — this page can't silently point at a moved doc or a dead demo.
 	</p>

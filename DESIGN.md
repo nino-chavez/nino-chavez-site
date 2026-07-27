@@ -6,63 +6,76 @@ name: Nino Chavez Portfolio
 tagline: Personal portfolio — Nino Chavez, Chicago
 mode: dark
 
+# FLAT BY REQUIREMENT, not by preference. impeccable's design-system reader
+# (`addColorObject`) takes only string values one level under `colors:` — it does
+# not recurse. Nesting these under brand:/neutral:/semantic: parses to ZERO colors
+# and `design-system-color` abstains silently, which is what happened here from
+# 2026-04-22 until 2026-07-27. Human grouping lives in comments and in `roles:`.
 colors:
-  brand:
-    dark:   "#0a0a0f"     # near-black, 2% hue shift toward blue
-    violet: "#8b5cf6"     # primary accent — Tailwind violet-500
-    light:  "#f0f0f5"     # near-white, matched hue to dark
+  # Ground
+  brandDark:   "#0a0a0f"    # near-black, 2% hue shift toward blue
+  brandLight:  "#f0f0f5"    # near-white, matched hue to dark
 
-  # Shadcn-style neutral ramp expressed as Tailwind neutral.
-  neutral:
-    "50":  "#fafafa"
-    "100": "#f5f5f5"
-    "200": "#e5e5e5"
-    "300": "#d4d4d4"
-    "400": "#a3a3a3"
-    "500": "#737373"
-    "600": "#525252"
-    "700": "#404040"
-    "800": "#262626"
-    "900": "#171717"
-    "950": "#0a0a0a"
+  # Accent — one ink. See DIRECTION.md ledger, `lime-accent`.
+  brandLime:   "#a3e635"    # THE accent — Tailwind lime-400
+  brandLimeHi: "#84cc16"    # lime-500, pressed/active only
 
-  semantic:
-    success: "#22c55e"
-    warning: "#f59e0b"
-    error:   "#ef4444"
-    info:    "#3b82f6"
+  # Neutral ramp (Tailwind neutral).
+  neutral50:  "#fafafa"
+  neutral100: "#f5f5f5"
+  neutral200: "#e5e5e5"
+  neutral300: "#d4d4d4"
+  neutral400: "#a3a3a3"
+  neutral500: "#737373"
+  neutral600: "#525252"
+  neutral700: "#404040"
+  neutral800: "#262626"
+  neutral900: "#171717"
+  neutral950: "#0a0a0a"
 
+  # Semantic
+  success: "#22c55e"
+  warning: "#f59e0b"
+  error:   "#ef4444"
+  info:    "#3b82f6"
+
+# Role bindings. Documentary — impeccable does not read this block.
+roles:
   surfaces:
-    background: "{colors.brand.dark}"
-    surface:    "{colors.neutral.900}"
-    card:       "{colors.neutral.900}"
-    elevated:   "{colors.neutral.800}"
-    border:     "{colors.neutral.800}"
-
+    background: "{colors.brandDark}"
+    surface:    "{colors.neutral900}"
+    card:       "{colors.neutral900}"
+    elevated:   "{colors.neutral800}"
+    border:     "{colors.neutral800}"
   text:
-    primary:   "{colors.brand.light}"
-    secondary: "{colors.neutral.300}"
-    muted:     "{colors.neutral.400}"
-    link:      "{colors.brand.violet}"
-    linkHover: "#a78bfa"              # violet-400
+    primary:   "{colors.brandLight}"
+    secondary: "{colors.neutral300}"
+    muted:     "{colors.neutral400}"
+    link:      "{colors.brandLime}"
+    linkHover: "{colors.brandLimeHi}"
 
+# Roles sit directly under `typography:` and name the stack in `fontFamily`, because
+# impeccable's `addTypographyFonts` walks `typography.<role>.fontFamily` and ignores
+# anything else. Nested under a `fonts:` key with a `family:` field it parsed to zero
+# fonts, so `design-system-font` abstained the same way `design-system-color` did.
 typography:
-  fonts:
-    display:
-      family: Inter
-      fallbacks: [ui-sans-serif, system-ui, "-apple-system", sans-serif]
-      weights: [500, 600, 700, 800]
-    body:
-      family: Inter
-      fallbacks: [ui-sans-serif, system-ui, "-apple-system", sans-serif]
-      weights: [400, 500, 600]
-    mono:
-      family: "JetBrains Mono"
-      fallbacks: [ui-monospace, monospace]
-      weights: [400, 500, 700]
+  display:
+    fontFamily: '"Bebas Neue", ui-sans-serif, system-ui, sans-serif'
+    weights: [400]
+  body:
+    fontFamily: 'Inter, ui-sans-serif, system-ui, -apple-system, sans-serif'
+    weights: [400, 500, 600]
+  mono:
+    fontFamily: '"JetBrains Mono", ui-monospace, monospace'
+    weights: [400, 500, 700]
 
   scale:
-    hero:    "clamp(3rem, 2.25rem + 3.75vw, 5rem)"
+    # Shipped value. The hero is a full-bleed Bebas statement that scales to the
+    # viewport, not a large heading — the previous "…, 5rem)" ceiling described a
+    # site that has not existed since the January 2026 redesign.
+    hero:    "clamp(3rem, 15vw, 14rem)"
+    heroMin: "3rem"       # clamp floor — enumerated so the fluid range is declared,
+    heroMax: "14rem"      # not just implied. Endpoints are the decision here.
     display: "clamp(2.25rem, 1.75rem + 2.5vw, 3.75rem)"
     h1:      "clamp(1.875rem, 1.5rem + 1.875vw, 2.75rem)"
     h2:      "clamp(1.5rem, 1.3rem + 1vw, 2rem)"
@@ -132,7 +145,14 @@ layout:
 
 ## Overview
 
-Personal portfolio + AEO (Answer Engine Optimization) proof-of-concept. The site is a working demonstration of structured content that AI models (ChatGPT, Claude, Gemini) can definitively answer from — so the visual system is deliberately **content-forward** rather than spectacle-driven. Dark default with a single violet accent; Inter throughout; generous reading measure.
+Personal portfolio + AEO (Answer Engine Optimization) proof-of-concept. The site is a working demonstration of structured content that AI models (ChatGPT, Claude, Gemini) can definitively answer from — so the visual system is deliberately **content-forward** rather than spectacle-driven. Dark default with a single lime accent; Inter throughout; generous reading measure.
+
+> **Accent history.** This document declared violet (`#8b5cf6`) from 2026-04-22 to
+> 2026-07-27. The site had shipped lime since 2026-01-30 (`c4f859e`, *"Redesign one-pager
+> with lime/black color scheme"*), so the declaration never described the running site; the
+> 2026-05-25 v3 archive re-canonized it while restoring lime code. Corrected to match the
+> decision that was actually made. Violet survives on `/work`, `/privacy` and in the footer
+> — 18 usages on surfaces that have no direction record yet, and off-system as of this edit.
 
 This is the authoritative "who is Nino" surface. The sibling properties are:
 
@@ -143,14 +163,23 @@ Each has its own visual system; they share "dark default" but are **not** visual
 
 ## Colors
 
-- **`{colors.brand.dark}` (#0a0a0f)** — the canvas. 2% hue shift toward blue from pure black — subtle cool cast.
-- **`{colors.brand.violet}` (#8b5cf6 / violet-500)** — the single saturated accent. Links, primary CTA, focus ring, accent graphics. Do not introduce a second brand color.
-- **`{colors.brand.light}` (#f0f0f5)** — body text. Not pure white; hue-matched to the dark canvas for less optical glare.
+- **`{colors.brandDark}` (#0a0a0f)** — the canvas. 2% hue shift toward blue from pure black — subtle cool cast.
+- **`{colors.brandLime}` (#a3e635 / lime-400)** — the single saturated accent. Links, primary CTA, focus ring, accent graphics. Do not introduce a second brand color.
+- **`{colors.brandLight}` (#f0f0f5)** — body text. Not pure white; hue-matched to the dark canvas for less optical glare.
 - **Neutral ramp** carries the entire surface hierarchy between background and text.
 
 ## Typography
 
-**Inter everywhere** — display, body, UI. Display weights go up to 800; body stays at 400–600. No secondary display font; Inter has enough weight range to carry both roles.
+**Bebas Neue for display, Inter for everything else.** Bebas carries the hero and every card
+title (`.font-display`, `.hero-text`); it is self-hosted in `static/fonts` with
+`font-display: optional` specifically because swapping into it at hero size measured ~0.138
+CLS. Inter runs body and UI at 400–600. JetBrains Mono is the third face, reserved for the
+tracked micro-labels. Three faces, one job each — do not add a fourth.
+
+*(This section previously read "Inter everywhere… no secondary display font," which was
+never true of the shipped site: Bebas has been the display face across `/`, `/about`,
+`/now` and `/links`. Corrected 2026-07-27 when `design-system-font` ran for the first time
+and reported it.)*
 
 ### Scale
 
@@ -194,8 +223,8 @@ The DESIGN.md token system supports this by keeping visual hierarchy aligned wit
 
 **Do**
 - Reference tokens in all component CSS.
-- Reserve `{colors.brand.violet}` for links, focus ring, and the single primary CTA per viewport.
-- Use Inter for everything. Do not introduce a serif for "prose" moments.
+- Reserve `{colors.brandLime}` for links, focus ring, and the single primary CTA per viewport.
+- Keep to the three declared faces: Bebas Neue (display), Inter (body/UI), JetBrains Mono (micro-labels). Do not introduce a fourth, and do not reach for a serif for "prose" moments.
 - Respect the content-first measure. 44rem prose column, period.
 
 **Don't**

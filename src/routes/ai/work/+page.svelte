@@ -41,7 +41,7 @@
 			<button
 				on:click={() => (active = f)}
 				aria-pressed={active === f}
-				class="px-4 py-2 font-mono text-[11px] tracking-widest uppercase border transition-colors {active === f
+				class="px-4 py-2 font-mono text-xs tracking-widest uppercase border transition-colors {active === f
 					? 'border-lime-400 text-lime-400 bg-lime-400/10'
 					: 'border-neutral-700 text-neutral-400 hover:border-neutral-500'}">{f}</button
 			>
@@ -54,7 +54,7 @@
 		{/each}
 	</div>
 
-	<p class="font-mono text-[11px] text-neutral-600 max-w-xl leading-relaxed">
+	<p class="font-mono text-xs text-neutral-600 max-w-xl leading-relaxed">
 		This page is one derived array. A repository push updates its card on the next
 		scheduled build; a failed liveness probe fails the build before a visitor can meet
 		the dead link. Access labels say what you can actually do today — "live" is
