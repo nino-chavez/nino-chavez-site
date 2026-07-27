@@ -19,7 +19,7 @@
 					>{lvl.level}</span
 				>
 				<span class="font-bold">{lvl.title}</span>
-				<span class="ml-auto font-mono text-[11px] text-neutral-400 shrink-0">{lvl.duration}</span>
+				<span class="ml-auto font-mono text-xs text-neutral-400 shrink-0">{lvl.duration}</span>
 				<span
 					class="text-neutral-600 transition-transform group-open:rotate-90 shrink-0"
 					aria-hidden="true">→</span
@@ -31,7 +31,7 @@
 
 				{#each lvl.sections as section}
 					<div>
-						<h4 class="font-mono text-[11px] tracking-widest uppercase text-neutral-400 mb-2">
+						<h4 class="font-mono text-xs tracking-widest uppercase text-neutral-400 mb-2">
 							{section.label}
 						</h4>
 						{#if section.kind === 'flow'}
@@ -56,7 +56,7 @@
 				{/each}
 
 				<p class="text-sm text-neutral-400 border-t border-neutral-800/60 pt-3">
-					<span class="font-mono text-[11px] tracking-widest uppercase">Done when</span> — {lvl.checkpoint}
+					<span class="font-mono text-xs tracking-widest uppercase">Done when</span> — {lvl.checkpoint}
 				</p>
 			</div>
 		</details>

@@ -6,6 +6,6 @@
 	export let pushedAt = '';
 </script>
 
-<span class="font-mono text-[11px] text-neutral-400 tracking-wide">
+<span class="font-mono text-xs text-neutral-400 tracking-wide">
 	{#if pushedAt}pushed {pushedAt} · {/if}verified {verified}
 </span>

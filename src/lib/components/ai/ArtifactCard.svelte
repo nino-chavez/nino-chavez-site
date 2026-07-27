@@ -34,7 +34,7 @@
 	<div class="flex items-center gap-3 flex-wrap">
 		{#if !compact}
 			{#each artifact.tracks as t}
-				<span class="px-2 py-0.5 text-[11px] font-mono tracking-widest uppercase border border-neutral-800 text-neutral-400"
+				<span class="px-2 py-0.5 text-xs font-mono tracking-widest uppercase border border-neutral-800 text-neutral-400"
 					>{t}</span
 				>
 			{/each}

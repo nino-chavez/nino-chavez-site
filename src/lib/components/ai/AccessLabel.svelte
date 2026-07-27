@@ -14,7 +14,7 @@
 </script>
 
 <span
-	class="inline-flex items-center gap-1 px-2 py-0.5 border text-[11px] font-mono tracking-widest uppercase {styles[access] ?? styles.clone}"
+	class="inline-flex items-center gap-1 px-2 py-0.5 border text-xs font-mono tracking-widest uppercase {styles[access] ?? styles.clone}"
 >
 	{access}{#if note}<span class="normal-case tracking-normal text-neutral-400">· {note}</span>{/if}
 </span>

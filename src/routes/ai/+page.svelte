@@ -52,7 +52,7 @@
 							>{track.title}</span
 						>
 						<span class="text-sm text-neutral-400 leading-snug">{track.tagline}</span>
-						<span class="font-mono text-[11px] text-lime-400/80 mt-2">enter track →</span>
+						<span class="font-mono text-xs text-lime-400/80 mt-2">enter track →</span>
 					</a>
 				</li>
 			{/each}
@@ -85,7 +85,7 @@
 		>
 	</section>
 
-	<p class="font-mono text-[11px] text-neutral-600 max-w-xl leading-relaxed">
+	<p class="font-mono text-xs text-neutral-600 max-w-xl leading-relaxed">
 		Project cards and writing regenerate from the GitHub API and the blog feed on every
 		scheduled build. "Verified" dates are sensor runs, not promises — a claim that fails
 		its probe fails the build.
