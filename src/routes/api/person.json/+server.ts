@@ -12,6 +12,17 @@ import type { RequestHandler } from './$types';
  *
  * This endpoint serves as the canonical source of truth for entity information.
  * AI crawlers can consume this to train models with accurate, structured data.
+ *
+ * KEEP THIS IN STEP WITH /about AND /links.
+ *
+ * Those two pages are where this person is described for humans, and this file
+ * drifted behind both. It described a consulting practice — enterprise
+ * architecture, Fortune 500 delivery — and published two profile links, while
+ * /links published fifteen URLs and six brands under a named holding company,
+ * and /about opened with "I make things across a few mediums" and called the
+ * résumé the *less* useful window. Nothing here was false; it was the previous
+ * positioning, left behind when the site moved on. Adding a venture or a
+ * profile to /links means adding it here too.
  */
 
 export const GET: RequestHandler = async () => {
@@ -20,9 +31,11 @@ export const GET: RequestHandler = async () => {
 		'@type': 'Person',
 		name: 'Nino Chavez',
 		alternateName: 'Antonino Chavez',
-		jobTitle: ['Product Architect', 'Action Sports Photographer'],
+		// /links introduces him as "Photographer. DJ. Writer. Builder." The day
+		// job stays first — it is still the day job — but it was the whole list.
+		jobTitle: ['Product Architect', 'Action Sports Photographer', 'Writer', 'DJ'],
 		description:
-			'Product Architect at commerce.com with 25+ years building commerce platforms. Specializes in product architecture, AI-native systems, and building systems that scale. Action sports photographer capturing tournament and event coverage.',
+			'Chicago-based maker working across software, photography, music, and writing. Writing code since 1999; day job is product architect at commerce.com. Runs Signal X Studio, the holding company behind Let’s Pepper, Rally HQ, Flickday Media, VolleyRX, QuantifAI, and Zero Specs. Shoots action sports and volleyball with a 20,000+ image archive, writes the Signal Dispatch blog, and DJs house and disco.',
 		url: 'https://ninochavez.co',
 		email: 'nino@ninochavez.co',
 
@@ -33,6 +46,24 @@ export const GET: RequestHandler = async () => {
 			url: 'https://commerce.com'
 		},
 
+		// The ventures, from the brand list on /links. `affiliation` rather than
+		// a founder/owner claim: the site says he runs these, not how they are
+		// held, and this file should not invent a corporate structure.
+		affiliation: [
+			{
+				'@type': 'Organization',
+				name: 'Signal X Studio',
+				url: 'https://signalx.studio',
+				description: 'Holding company'
+			},
+			{ '@type': 'Organization', name: 'Let’s Pepper', url: 'https://letspepper.com' },
+			{ '@type': 'Organization', name: 'Rally HQ', url: 'https://rallyhq.app' },
+			{ '@type': 'Organization', name: 'Flickday Media', url: 'https://flickdaymedia.com' },
+			{ '@type': 'Organization', name: 'VolleyRX', url: 'https://volleyrx.com' },
+			{ '@type': 'Organization', name: 'QuantifAI', url: 'https://quantifai.app' },
+			{ '@type': 'Organization', name: 'Zero Specs', url: 'https://zerospecs.app' }
+		],
+
 		// Location
 		address: {
 			'@type': 'PostalAddress',
@@ -41,10 +72,20 @@ export const GET: RequestHandler = async () => {
 			addressCountry: 'US'
 		},
 
-		// Professional Profiles
+		// Profiles that identify this person. `sameAs` is what an answer engine
+		// uses to resolve one entity across the web, and it listed two of the
+		// eight the site itself publishes on /links — the DJ, writing, photography
+		// and Instagram/X presences were all invisible here. Company sites are
+		// deliberately NOT in this list; they identify the ventures, not him, and
+		// belong under `affiliation` above.
 		sameAs: [
 			'https://www.linkedin.com/in/nino-chavez/',
-			'https://github.com/nino-chavez'
+			'https://github.com/nino-chavez',
+			'https://x.com/ninochavez',
+			'https://instagram.com/ninochavez',
+			'https://soundcloud.com/ni-no-cha-vez',
+			'https://blog.ninochavez.co',
+			'https://ninochavez.co/photography'
 		],
 
 		// Areas of Expertise
@@ -143,50 +184,24 @@ export const GET: RequestHandler = async () => {
 			}
 		],
 
-		// Professional Experience Timeline
+		// Past employers. The dates that used to sit on each entry here were
+		// startDate/endDate on a bare Organization, which schema.org does not
+		// define — a conforming parser drops them, so the timeline read as six
+		// undated employers. The dated version is /api/experience.json, which
+		// carries all six as EmployeeRole plus the 1999-2015 span before them.
 		alumniOf: [
-			{
-				'@type': 'Organization',
-				name: 'commerce.com',
-				startDate: '2026',
-				description: 'Product Architect - Current role'
-			},
-			{
-				'@type': 'Organization',
-				name: 'Accenture Song',
-				startDate: '2023',
-				endDate: '2026',
-				description: 'Enterprise Architect & Strategic Advisor'
-			},
-			{
-				'@type': 'Organization',
-				name: 'Capgemini',
-				startDate: '2021',
-				endDate: '2023',
-				description: 'Managing Delivery Architect'
-			},
-			{
-				'@type': 'Organization',
-				name: 'Peapod Digital Labs',
-				startDate: '2020',
-				endDate: '2021',
-				description: 'Domain Architect'
-			},
-			{
-				'@type': 'Organization',
-				name: 'Accenture Interactive',
-				startDate: '2018',
-				endDate: '2020',
-				description: 'Managing Enterprise Architect'
-			},
-			{
-				'@type': 'Organization',
-				name: 'Gorilla Group',
-				startDate: '2015',
-				endDate: '2018',
-				description: 'Managing Enterprise Architect'
-			}
+			{ '@type': 'Organization', name: 'commerce.com' },
+			{ '@type': 'Organization', name: 'Accenture Song' },
+			{ '@type': 'Organization', name: 'Capgemini' },
+			{ '@type': 'Organization', name: 'Peapod Digital Labs' },
+			{ '@type': 'Organization', name: 'Accenture Interactive' },
+			{ '@type': 'Organization', name: 'Gorilla Group' }
 		],
+		subjectOf: {
+			'@type': 'DataFeed',
+			name: 'Nino Chavez - Professional Experience',
+			url: 'https://ninochavez.co/api/experience.json'
+		},
 
 		// Key Statistics
 		additionalProperty: [

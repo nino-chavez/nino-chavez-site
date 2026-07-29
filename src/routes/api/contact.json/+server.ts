@@ -23,15 +23,25 @@ export const GET: RequestHandler = async () => {
 		// Email (Primary)
 		email: 'nino@ninochavez.co',
 
-		// Professional Profiles
+		// Professional Profiles. Kept in step with /api/person.json and /links.
 		url: 'https://ninochavez.co',
 		sameAs: [
 			'https://www.linkedin.com/in/nino-chavez/',
-			'https://github.com/nino-chavez'
+			'https://github.com/nino-chavez',
+			'https://x.com/ninochavez',
+			'https://instagram.com/ninochavez',
+			'https://soundcloud.com/ni-no-cha-vez',
+			'https://blog.ninochavez.co',
+			'https://ninochavez.co/photography'
 		],
 
-		// Contact Types
-		contactType: ['Customer Service', 'Sales', 'Technical Support'],
+		// What this contact point is FOR. Schema.org's own examples for this
+		// property are "customer service" and "technical support", so the old
+		// values were valid schema — they were just untrue. There is no support
+		// desk and no sales team; this is one person's inbox. The two things it
+		// actually receives are the two already spelled out in additionalProperty
+		// below, so they are named here where a consumer reads them.
+		contactType: ['Consulting inquiries', 'Photography bookings'],
 
 		// Availability
 		availableLanguage: ['English'],
@@ -47,7 +57,9 @@ export const GET: RequestHandler = async () => {
 		about: {
 			'@type': 'Person',
 			name: 'Nino Chavez',
-			jobTitle: ['Product Architect', 'Action Sports Photographer'],
+			// Same list as /api/person.json — these two disagreeing is the drift
+			// this endpoint pair is prone to.
+			jobTitle: ['Product Architect', 'Action Sports Photographer', 'Writer', 'DJ'],
 			worksFor: {
 				'@type': 'Organization',
 				name: 'commerce.com'

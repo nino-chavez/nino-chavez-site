@@ -20,7 +20,7 @@ export const GET: RequestHandler = async () => {
 		name: 'Nino Chavez - Areas of Expertise',
 		description:
 			'Core competencies and specializations across enterprise architecture, AI transformation, and photography',
-		numberOfItems: 6,
+		numberOfItems: 7,
 		itemListElement: [
 			{
 				'@type': 'ListItem',
@@ -191,6 +191,35 @@ export const GET: RequestHandler = async () => {
 						}
 					]
 				}
+			},
+			{
+				'@type': 'ListItem',
+				position: 7,
+				item: {
+					'@type': 'Thing',
+					// The list `description` above has always claimed to span
+					// "enterprise architecture, AI transformation, and photography",
+					// then listed six enterprise skills and no photography. /about
+					// leads with it, and /api/person.json already carries the same
+					// archive figure under knowsAbout.
+					name: 'Action Sports Photography',
+					description:
+						'Tournament and event coverage of action sports, primarily volleyball — shooting, same-day delivery, and the archive and search tooling behind it',
+					additionalType: 'Skill',
+					additionalProperty: [
+						{
+							'@type': 'PropertyValue',
+							name: 'Evidence',
+							value:
+								'Runs Flickday Media; 20,000+ image archive published at ninochavez.co/photography'
+						},
+						{
+							'@type': 'PropertyValue',
+							name: 'Specialization',
+							value: 'Volleyball and action sports'
+						}
+					]
+				}
 			}
 		],
 
@@ -199,7 +228,7 @@ export const GET: RequestHandler = async () => {
 			'@type': 'Person',
 			name: 'Nino Chavez',
 			url: 'https://ninochavez.co',
-			jobTitle: ['Product Architect']
+			jobTitle: ['Product Architect', 'Action Sports Photographer', 'Writer', 'DJ']
 		}
 	};
 
