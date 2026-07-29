@@ -4,6 +4,15 @@
 
 # Nino Chavez Portfolio: SvelteKit Edition
 
+## Redesign foundation
+
+- [ADR-0004: one public site, one navigation, multiple runtimes](decisions/0004-unified-apex-information-architecture.md)
+- [Information architecture and navigation contract](docs/IA-NAVIGATION.md)
+
+The redesign is currently at the product-structure stage. These documents supersede
+the existing homepage's information architecture; visual art direction and production
+implementation follow approval of a route-complete prototype.
+
 A high-performance personal portfolio website built with SvelteKit, demonstrating production-grade web development through AI-assisted methodology and modern web technologies.
 
 ## About This Project

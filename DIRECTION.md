@@ -1,5 +1,12 @@
 # Direction — ninochavez.co, home
 
+> **Historical visual record as of 2026-07-29.** The contact-sheet thesis, flat
+> four-craft homepage, and no-headshot rule below are superseded for the redesign's
+> structure by `decisions/0004-unified-apex-information-architecture.md` and
+> `docs/IA-NAVIGATION.md`. Keep the measured accessibility findings as evidence, but
+> do not use this document as the redesign's IA or art-direction brief. New visual
+> direction will be decided after the IA prototype is accepted.
+
 Art direction for this surface. Sits above the brand kit (`DESIGN.md`, which says what the
 colors *are*) and above the defect scanner (which says what is broken). This says what the
 page is *arguing*, and which devices are allowed to trip a slop rule because they carry
