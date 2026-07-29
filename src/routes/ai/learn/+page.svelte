@@ -2,20 +2,6 @@
 	import { tracks } from '$lib/data/ai/tracks';
 </script>
 
-<svelte:head>
-	<title>Learn — find your track | Nino Chavez</title>
-	<meta
-		name="description"
-		content="Seven persona-based tracks for applying AI to the craft you already have — each demonstrated by shipped work, each self-serve."
-	/>
-	<meta property="og:title" content="Learn — find your track" />
-	<meta
-		property="og:description"
-		content="Seven persona-based tracks for applying AI to the craft you already have."
-	/>
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://ninochavez.co/ai/learn" />
-</svelte:head>
 
 <main class="px-6 lg:px-12 py-16 lg:py-24 max-w-7xl mx-auto">
 	<header class="mb-16 max-w-3xl">

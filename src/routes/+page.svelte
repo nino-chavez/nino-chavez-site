@@ -81,17 +81,10 @@
 </script>
 
 <svelte:head>
-	<title>Nino Chavez — Cut the Noise, Follow the Signal</title>
-	<meta name="description" content="Photography, music, writing, and software. Nino Chavez, Chicago." />
-	<meta property="og:title" content="Nino Chavez — Cut the Noise, Follow the Signal" />
-	<meta property="og:description" content="Photography, music, writing, and software. Nino Chavez, Chicago." />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://ninochavez.co/" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Nino Chavez — Cut the Noise, Follow the Signal" />
-	<meta name="twitter:description" content="Photography, music, writing, and software. Nino Chavez, Chicago." />
+	<!-- LCP: the hero is the largest paint on this page; SEO meta lives in $lib/seo. -->
 	<link rel="preload" as="image" href={heroImageUrl} fetchpriority="high" />
 </svelte:head>
+
 
 <svelte:window on:keydown={handleKeydown} />
 

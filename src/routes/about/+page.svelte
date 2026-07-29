@@ -44,35 +44,6 @@
 	];
 </script>
 
-<svelte:head>
-	<title>About - Nino Chavez</title>
-	<meta
-		name="description"
-		content="Photography, music, writing, and software. Nino Chavez, Chicago."
-	/>
-
-	<!-- Open Graph -->
-	<meta property="og:title" content="About - Nino Chavez" />
-	<meta
-		property="og:description"
-		content="Photography, music, writing, and software. Nino Chavez, Chicago."
-	/>
-	<meta property="og:type" content="profile" />
-	<meta property="og:url" content="https://ninochavez.co/about" />
-	<meta property="og:image" content="https://ninochavez.co/images/og-about-image.jpeg" />
-	<meta property="og:image:width" content="1200" />
-	<meta property="og:image:height" content="630" />
-
-	<!-- Twitter Card -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="About - Nino Chavez" />
-	<meta
-		name="twitter:description"
-		content="Photography, music, writing, and software. Nino Chavez, Chicago."
-	/>
-	<meta name="twitter:image" content="https://ninochavez.co/images/og-about-image.jpeg" />
-
-</svelte:head>
 
 <main class="min-h-screen bg-black text-white">
 	<!-- Hero Section -->

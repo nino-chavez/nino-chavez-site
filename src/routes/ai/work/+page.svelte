@@ -8,20 +8,6 @@
 	$: visible = active === 'all' ? artifacts : artifacts.filter((a) => a.access === active);
 </script>
 
-<svelte:head>
-	<title>Shipped work — the evidence behind every path | Nino Chavez</title>
-	<meta
-		name="description"
-		content="The artifact registry behind the AI practice paths: live products, installable tools, and public method repos — every card derived and probed at build time."
-	/>
-	<meta property="og:title" content="Shipped work — the evidence behind every path" />
-	<meta
-		property="og:description"
-		content="Live products, installable tools, and public method repos — every card derived and probed at build time."
-	/>
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://ninochavez.co/ai/work" />
-</svelte:head>
 
 <main class="px-6 lg:px-12 py-16 lg:py-24 max-w-7xl mx-auto">
 	<header class="mb-14">

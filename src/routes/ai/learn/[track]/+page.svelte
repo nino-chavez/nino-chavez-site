@@ -6,14 +6,6 @@
 	$: track = data.track;
 </script>
 
-<svelte:head>
-	<title>{track.title} — {track.tagline} | Nino Chavez</title>
-	<meta name="description" content="{track.description} Demonstrated by shipped work; self-serve." />
-	<meta property="og:title" content="{track.title} — {track.tagline}" />
-	<meta property="og:description" content={track.description} />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://ninochavez.co/ai/learn/{track.id}" />
-</svelte:head>
 
 <main class="px-6 lg:px-12 py-16 lg:py-24 max-w-5xl mx-auto">
 	<nav aria-label="Breadcrumb" class="font-mono text-xs text-neutral-400 mb-10">

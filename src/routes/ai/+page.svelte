@@ -6,20 +6,6 @@
 	import writing from '$lib/data/ai/writing.json';
 </script>
 
-<svelte:head>
-	<title>Work this way — AI practice, demonstrated | Nino Chavez</title>
-	<meta
-		name="description"
-		content="Apply AI to the craft you already have: seven persona-based paths, self-serve tools, and the shipped work that proves each one."
-	/>
-	<meta property="og:title" content="Work this way — AI practice, demonstrated" />
-	<meta
-		property="og:description"
-		content="Personas to locate yourself, paths to follow, tools you can pick up today, and the shipped work that proves each one."
-	/>
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://ninochavez.co/ai" />
-</svelte:head>
 
 <main class="px-6 lg:px-12 py-16 lg:py-24 max-w-7xl mx-auto">
 	<header class="mb-20">

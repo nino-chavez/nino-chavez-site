@@ -30,8 +30,7 @@
     "@fontsource/roboto-slab": "^5.2.8",
     "@fontsource/space-grotesk": "^5.2.10",
     "@supabase/supabase-js": "^2.87.1",
-    "ai": "^5.0.112",
-    "web-vitals": "^3.5.0"
+    "ai": "^5.0.112"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",
