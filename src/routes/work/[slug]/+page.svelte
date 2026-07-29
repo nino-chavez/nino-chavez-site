@@ -36,23 +36,6 @@
 	});
 </script>
 
-<svelte:head>
-	<title>{project.title} - Nino Chavez | Work</title>
-	<meta name="description" content="{project.tagline}. {project.description}" />
-
-	<!-- Open Graph -->
-	<meta property="og:title" content="{project.title} - Nino Chavez | Work" />
-	<meta property="og:description" content="{project.tagline}" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://ninochavez.co/work/{project.slug}" />
-	<meta property="og:image" content="{project.heroImage}" />
-
-	<!-- Twitter Card -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="{project.title} - Nino Chavez" />
-	<meta name="twitter:description" content="{project.tagline}" />
-	<meta name="twitter:image" content="{project.heroImage}" />
-</svelte:head>
 
 <div class="min-h-screen bg-gray-950 text-white">
 	<!-- Hero -->

@@ -1,10 +1,6 @@
 <script lang="ts">
 </script>
 
-<svelte:head>
-  <title>Privacy Policy | Nino Chavez</title>
-  <meta name="description" content="Privacy Policy for ninochavez.com" />
-</svelte:head>
 
 <div class="min-h-screen bg-neutral-900 pt-24 pb-12">
   <div class="max-w-4xl mx-auto px-6">

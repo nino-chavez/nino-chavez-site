@@ -12,6 +12,18 @@ export const load: PageLoad = ({ params }) => {
 	}
 
 	return {
-		project
+		project,
+		// The layout owns every head tag; a dynamic route contributes its copy here.
+		// No imageWidth/imageHeight: heroImage is a remote 1200x800 crop, and the old
+		// page inherited the layout's 1200x630 claim over it.
+		seo: {
+			title: `${project.title} - Nino Chavez | Work`,
+			description: `${project.tagline}. ${project.description}`,
+			ogTitle: `${project.title} - Nino Chavez | Work`,
+			ogDescription: project.tagline,
+			type: 'article' as const,
+			image: project.heroImage,
+			imageAlt: project.title
+		}
 	};
 };
