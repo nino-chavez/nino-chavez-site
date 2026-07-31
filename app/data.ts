@@ -85,6 +85,10 @@ export const workItems: WorkItem[] = [
     state: "source",
     form: "cli",
     updatedAt: "2026-07-22",
+    destination: {
+      label: "Read the source",
+      href: "https://github.com/nino-chavez/specchain",
+    },
   },
   {
     slug: "claude-recall",
@@ -95,6 +99,10 @@ export const workItems: WorkItem[] = [
     state: "source",
     form: "cli",
     updatedAt: "2026-07-19",
+    destination: {
+      label: "Read the source",
+      href: "https://github.com/nino-chavez/claude-recall-cli",
+    },
   },
   {
     slug: "agentic-ways-of-working",
@@ -105,17 +113,11 @@ export const workItems: WorkItem[] = [
     state: "source",
     form: "docs",
     updatedAt: "2026-07-18",
+    destination: {
+      label: "Read the source",
+      href: "https://github.com/nino-chavez/agentic-ways-of-working",
+    },
     related: ["ways-of-working", "blueprint"],
-  },
-  {
-    slug: "ai-champions-kit",
-    name: "AI Champions Kit",
-    claim:
-      "A practical enablement kit for teams turning scattered AI use into repeatable practice.",
-    domain: "Practice",
-    state: "source",
-    form: "docs",
-    updatedAt: "2026-07-14",
   },
   {
     slug: "fleet-observability",
@@ -133,19 +135,27 @@ export const workItems: WorkItem[] = [
     claim:
       "An internal audit that found stale links and abandoned deployment records across active repositories.",
     domain: "Practice",
-    state: "internal",
+    state: "source",
     form: "cli",
     updatedAt: "2026-07-11",
+    destination: {
+      label: "Read the source",
+      href: "https://github.com/nino-chavez/repo-health-check",
+    },
   },
   {
     slug: "gha-minutes",
     name: "GHA Minutes",
     claim:
-      "An internal monitor that exposed avoidable CI spend and made the reduction measurable.",
+      "A portable diagnostic for finding GitHub Actions minute burn and applying safe concurrency cancellation.",
     domain: "Practice",
-    state: "internal",
+    state: "source",
     form: "service",
     updatedAt: "2026-07-10",
+    destination: {
+      label: "Read the source",
+      href: "https://github.com/nino-chavez/gha-minutes",
+    },
   },
   {
     slug: "design-qa",
@@ -181,26 +191,24 @@ export const workItems: WorkItem[] = [
     state: "source",
     form: "app",
     updatedAt: "2026-07-27",
+    destination: {
+      label: "Read the source",
+      href: "https://github.com/nino-chavez/local-dictation",
+    },
   },
   {
     slug: "local-meeting-notes",
     name: "Local Meeting Notes",
     claim:
-      "A private meeting-capture workflow that turns local audio into reviewable notes.",
+      "A local meeting-capture workflow that turns on-device audio into reviewable notes.",
     domain: "Local-first",
     state: "building",
     form: "app",
     updatedAt: "2026-07-23",
-  },
-  {
-    slug: "cortex",
-    name: "Cortex",
-    claim:
-      "A local-first context system for retrieving working knowledge without sending it to a hosted service.",
-    domain: "Local-first",
-    state: "building",
-    form: "app",
-    updatedAt: "2026-07-16",
+    destination: {
+      label: "Read the research source",
+      href: "https://github.com/nino-chavez/meeting-notes-local",
+    },
   },
   {
     slug: "rally-hq",
@@ -243,23 +251,31 @@ export const workItems: WorkItem[] = [
   },
   {
     slug: "flickday",
-    name: "FlickDay",
+    name: "Flickday Media",
     claim:
-      "A working photography delivery experience organized around players and events.",
+      "Grassroots sports media with on-site tournament photography, quick-turn reels, and same-day photo drops.",
     domain: "Volleyball",
-    state: "building",
+    state: "live",
     form: "site",
-    updatedAt: "2026-07-15",
+    updatedAt: "2026-07-31",
+    destination: {
+      label: "Visit Flickday Media",
+      href: "https://www.flickdaymedia.com/",
+    },
   },
   {
     slug: "volleyrx",
-    name: "VolleyRX",
+    name: "Volley Rx",
     claim:
-      "A volleyball practice concept that turns development goals into specific training work.",
+      "Professionally organized volleyball tournaments across the Chicagoland area.",
     domain: "Volleyball",
-    state: "paused",
-    form: "app",
-    updatedAt: "2026-06-30",
+    state: "live",
+    form: "site",
+    updatedAt: "2026-07-31",
+    destination: {
+      label: "Browse Volley Rx events",
+      href: "https://www.volleyrx.com/",
+    },
   },
   {
     slug: "commerce-practice",
@@ -272,84 +288,60 @@ export const workItems: WorkItem[] = [
     updatedAt: "2026-07-20",
   },
   {
-    slug: "commerce-prompt-analyzer",
-    name: "Commerce Prompt Analyzer",
-    claim:
-      "An internal diagnostic for testing whether commerce prompts contain the context an agent needs.",
-    domain: "Commerce",
-    state: "internal",
-    form: "app",
-    updatedAt: "2026-07-13",
-  },
-  {
-    slug: "theme-migrator",
-    name: "Theme Migrator",
-    claim:
-      "A private migration utility for translating storefront theme structures with explicit review points.",
-    domain: "Commerce",
-    state: "internal",
-    form: "cli",
-    updatedAt: "2026-07-07",
-  },
-  {
-    slug: "quantifai",
-    name: "QuantifAI",
-    claim:
-      "An AI instrumentation experiment retained as a reference after active development stopped.",
-    domain: "Commerce",
-    state: "paused",
-    form: "app",
-    updatedAt: "2026-06-18",
-  },
-  {
     slug: "forge-brand",
     name: "Forge Brand",
     claim:
       "A system for turning approved brand direction into reusable, testable design tokens and assets.",
     domain: "Media & assets",
-    state: "internal",
+    state: "source",
     form: "cli",
     updatedAt: "2026-07-17",
+    destination: {
+      label: "Read the source",
+      href: "https://github.com/nino-chavez/forge-brand",
+    },
   },
   {
     slug: "forge-site",
     name: "Forge Site",
     claim:
-      "A portfolio and product-site workflow that carries a visual brief into implementation and review.",
+      "A site-building playbook that matches client needs to proven archetypes, modules, and delivery steps.",
     domain: "Media & assets",
-    state: "internal",
+    state: "source",
     form: "cli",
     updatedAt: "2026-07-06",
-  },
-  {
-    slug: "forge-design",
-    name: "Forge Design",
-    claim:
-      "A design-system workflow for producing and validating interface direction across projects.",
-    domain: "Media & assets",
-    state: "internal",
-    form: "cli",
-    updatedAt: "2026-07-05",
+    destination: {
+      label: "Read the source",
+      href: "https://github.com/nino-chavez/forge-site",
+    },
   },
   {
     slug: "image-gen",
     name: "Image Gen",
     claim:
-      "A private image-generation pipeline used to create, compare, and retain visual assets.",
+      "A public toolkit for model-generated imagery and deterministic HTML-to-image rendering.",
     domain: "Media & assets",
-    state: "internal",
+    state: "source",
     form: "service",
     updatedAt: "2026-07-04",
+    destination: {
+      label: "Read the source",
+      href: "https://github.com/nino-chavez/image-gen",
+    },
   },
   {
     slug: "render-kit",
     name: "Render Kit",
     claim:
-      "A private rendering toolkit for consistent media export across sites, decks, and campaigns.",
+      "A public rendering toolkit for consistent media export across sites, walkthroughs, and campaigns.",
     domain: "Media & assets",
-    state: "internal",
+    state: "source",
     form: "cli",
     updatedAt: "2026-07-03",
+    destination: {
+      label: "Read the source",
+      href: "https://github.com/nino-chavez/render-kit",
+    },
   },
   {
     slug: "nino-chavez-photography",
@@ -362,7 +354,7 @@ export const workItems: WorkItem[] = [
     updatedAt: "2026-07-02",
     destination: {
       label: "Open the photography collection",
-      href: "/photography",
+      href: "https://photography.ninochavez.co",
     },
     related: ["lets-pepper"],
   },
@@ -391,7 +383,7 @@ export const workItems: WorkItem[] = [
     updatedAt: "2026-06-28",
     destination: {
       label: "Browse whitepapers",
-      href: "/blog",
+      href: "/blog?type=Whitepaper",
     },
   },
   {
@@ -405,7 +397,7 @@ export const workItems: WorkItem[] = [
     updatedAt: "2026-06-26",
     destination: {
       label: "Browse presentations",
-      href: "/blog",
+      href: "/blog?type=Presentation",
     },
   },
 ];

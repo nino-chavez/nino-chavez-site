@@ -3,7 +3,7 @@
 
 import type { Metadata } from "next";
 
-const archiveRoot = "https://ninochavez.co/photography";
+const archiveRoot = "https://photography.ninochavez.co";
 const sourcePattern = /^[a-z0-9_-]{1,32}$/;
 
 const collectionRoutes = [

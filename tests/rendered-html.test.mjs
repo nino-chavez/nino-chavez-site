@@ -64,7 +64,7 @@ test("server-renders the Open Practice entrance and global navigation", async ()
   assert.match(html, /Read about Blueprint/);
   assert.match(html, /Read Signal Dispatch/);
   assert.match(html, /Browse photography/);
-  assert.match(html, /32 records across 6 domains/);
+  assert.match(html, /26 records across 6 domains/);
   assert.match(html, /Signal Dispatch/);
   assert.match(html, /Operating record/);
   assert.match(html, /Ways of Working · Session 02/);
@@ -114,7 +114,7 @@ test("preserves the canonical entity endpoints and generated root sitemap", asyn
     /^application\/xml/i,
   );
   const sitemapXml = await sitemap.text();
-  assert.equal((sitemapXml.match(/<url>/g) ?? []).length, 67);
+  assert.equal((sitemapXml.match(/<url>/g) ?? []).length, 61);
   assert.match(sitemapXml, /https:\/\/ninochavez\.co\/work\/film-room/);
   assert.match(sitemapXml, /https:\/\/ninochavez\.co\/demos\/browse-tool/);
   assert.match(sitemapXml, /https:\/\/ninochavez\.co\/learn\/enterprise/);
@@ -149,7 +149,7 @@ test("renders the full-volume work and demos collections", async () => {
 
   assert.match(workHtml, /Complete working record/);
   assert.match(workHtml, /<h1>Work<\/h1>/);
-  assert.match(workHtml, /Browse all 32 records/);
+  assert.match(workHtml, /Browse all 26 records/);
   assert.equal(
     (workHtml.match(/class="work-field__domain work-field__domain--[1-6]"/g) ??
       []).length,
@@ -163,7 +163,7 @@ test("renders the full-volume work and demos collections", async () => {
   assert.match(workHtml, /Rally HQ/);
   assert.match(workHtml, /Commerce practice/);
   assert.match(workHtml, /internal/);
-  assert.match(workHtml, /paused/);
+  assert.match(workHtml, /source/);
   assert.match(workHtml, /28 Jul/);
   const filteredDocument = filteredWorkHtml.split('<script id="_R_">')[0];
   assert.match(filteredDocument, /2 active filters/);
@@ -657,7 +657,7 @@ test("renders Photography as an owned image collection with live archive paths",
   );
   assert.match(
     photographyDocument,
-    /action="https:\/\/ninochavez\.co\/photography\/explore"/,
+    /action="https:\/\/photography\.ninochavez\.co\/explore"/,
   );
   assert.match(photographyDocument, /name="src" value="profile"/);
   assert.match(
@@ -666,7 +666,7 @@ test("renders Photography as an owned image collection with live archive paths",
   );
   assert.match(
     attributedHtml,
-    /https:\/\/ninochavez\.co\/photography\/albums\?src=ig-photo/,
+    /https:\/\/photography\.ninochavez\.co\/albums\?src=ig-photo/,
   );
   assert.match(photographyDocument, /Search[\s\S]*Albums/);
   assert.match(photographyDocument, /Timeline[\s\S]*Collections/);
@@ -689,7 +689,7 @@ test("renders Photography as an owned image collection with live archive paths",
   );
   assert.match(
     photographyDocument,
-    /https:\/\/ninochavez\.co\/photography\/og\.png/,
+    /https:\/\/photography\.ninochavez\.co\/og\.png/,
   );
   assert.doesNotMatch(
     photographyDocument,
@@ -867,6 +867,71 @@ test("representative records show evidence and remove prototype placeholders", a
     signalHtml,
     /\/work\/signal-dispatch\.webp\?v=372a9501/,
   );
+});
+
+test("grounds Work pages in public proof or an explicit private record", async () => {
+  const [flickdayHtml, volleyHtml, filmRoomHtml, specchainHtml] =
+    await Promise.all([
+      htmlFor("/work/flickday"),
+      htmlFor("/work/volleyrx"),
+      htmlFor("/work/film-room"),
+      htmlFor("/work/specchain"),
+    ]);
+
+  assert.match(flickdayHtml, /Flickday Media/);
+  assert.match(flickdayHtml, /Tournament coverage/);
+  assert.ok(flickdayHtml.includes("/work/flickday.jpg"));
+  assert.match(
+    flickdayHtml,
+    new RegExp('href="https://www\\.flickdaymedia\\.com/" target="_blank" rel="noopener noreferrer"'),
+  );
+  assert.match(
+    flickdayHtml,
+    /href="https:\/\/github\.com\/nino-chavez\/flickdaymedia"[^>]*target="_blank"/,
+  );
+
+  assert.match(volleyHtml, /Professionally organized volleyball tournaments/);
+  assert.match(volleyHtml, /Upcoming tournaments/);
+  assert.ok(volleyHtml.includes("/work/volleyrx.webp"));
+  assert.match(
+    volleyHtml,
+    new RegExp('href="https://www\\.volleyrx\\.com/" target="_blank" rel="noopener noreferrer"'),
+  );
+
+  assert.match(filmRoomHtml, /Private product baseline/);
+  assert.match(filmRoomHtml, /private record/);
+  assert.match(filmRoomHtml, /Ask about this work/);
+  assert.match(specchainHtml, /Public README and source/);
+  assert.match(specchainHtml, /Recovery and remediation/);
+  assert.match(
+    specchainHtml,
+    new RegExp('href="https://github\\.com/nino-chavez/specchain" target="_blank" rel="noopener noreferrer"'),
+  );
+
+  const unsupported = await render("/work/cortex");
+  assert.equal(unsupported.status, 404);
+});
+
+test("opens every external surface in a new tab across the complete route set", async () => {
+  const sitemap = await render("/sitemap.xml");
+  const sitemapXml = await sitemap.text();
+  const paths = [...sitemapXml.matchAll(/<loc>https:\/\/ninochavez\.co([^<]*)<\/loc>/g)]
+    .map((match) => match[1] || "/");
+
+  for (const path of paths) {
+    const html = await htmlFor(path);
+    const externalAnchors =
+      html.match(/<a\b[^>]*href="https?:\/\/[^"]+"[^>]*>/g) ?? [];
+
+    for (const anchor of externalAnchors) {
+      assert.match(anchor, /target="_blank"/, `${path}: ${anchor}`);
+      assert.match(
+        anchor,
+        /rel="noopener noreferrer"/,
+        `${path}: ${anchor}`,
+      );
+    }
+  }
 });
 
 test("keeps retired AI routes connected to their canonical destinations", async () => {

@@ -217,5 +217,16 @@ export function renderDemoStoryHtml(story: DemoStory, html: string) {
 
         return `href=${quote}${destination}${suffix}${quote}`;
       },
+    )
+    .replace(
+      /<a\b[^>]*\bhref=(["'])https?:\/\/[^"']+\1[^>]*>/gi,
+      (tag) =>
+        tag
+          .replace(/\s+target=(["'])[^"']*\1/gi, "")
+          .replace(/\s+rel=(["'])[^"']*\1/gi, "")
+          .replace(
+            /^<a\b/i,
+            '<a target="_blank" rel="noopener noreferrer"',
+          ),
     );
 }
