@@ -54,7 +54,7 @@ must not produce a separate public identity.
 
 | Route | Visitor question | Required content | Must not become |
 |---|---|---|---|
-| `/` | Who is this, and where should I go? | identity, practice claim, six-domain map, current activity, entrances to Work, Demos, Learn, Writing, Photography, and About | the full portfolio, a services funnel, or a seven-way persona chooser |
+| `/` | Who is this, and where should I go? | identity, practice claim, three unlike forms of public work, six-domain map, a direct link to current activity, and entrances to Work, Demos, Learn, Writing, Photography, and About | the full portfolio, a second Now page, a services funnel, or a seven-way persona chooser |
 | `/work` | What has Nino actually made? | complete authorized registry, counts, domain groups, search, state and form filters | a selected-work grid or a list split into tools/apps/sites |
 | `/work/:slug` | What is this object and what is its honest state? | concise claim, state, form, provenance or receipts when useful, one primary destination, related demos/writing | a required template for every object or an invented case study |
 | `/demos` | What can I watch or step through? | all numbered sessions and all applied techniques, with the distinction explained | a marketing teaser for an external subdomain |
