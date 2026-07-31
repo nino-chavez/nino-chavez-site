@@ -1,29 +1,24 @@
 # website-nc
 
-This repo houses the live `ninochavez.co` site (SvelteKit on Cloudflare Pages).
+This repo houses the live `ninochavez.co` site (Next-compatible React through
+VineNext on Cloudflare).
 The live site ships at the repo root. Note: `ninochavez.co` traffic is fronted by
 the `~/Workspace/dev/apps/router` Worker, which dispatches to this site's Pages
 project (`ninochavez-main`), the blog, and photography — routing bugs live there,
 not in this repo (see DEPLOY.md).
 
-## Blueprint initiative — AI Practice Surface Rebuild (active)
+## Unified public site
 
-Declared 2026-07-08 on branch `blueprint/ai-enablement` (own worktree per the
-worktree rule below); **Tier 2 as of 2026-07-09** — the rebuilt /ai shipped into
-the SvelteKit app on that branch. Goal + mandate: `docs/AI-INITIATIVE-GOAL.md`.
-Config: `blueprint.yml` at repo root (brownfield, Pattern B Review Portal,
-pilot: craft-practitioner). Artifact layout is the variant default the reviewer
-gates enforce: `research/`, `decisions/`, and the numbered stage files
-(`01-diagnose.md` … `06-triage.md`) at repo root; the review portal lives at
-`blueprint/portal/` (deployed: ai-enablement-blueprint.pages.dev). Methodology
-learnings in `METHODOLOGY-AMENDMENTS.md` at repo root (8 Pattern B defects
-logged for upstream). The rebuilt surface: data layer at `src/lib/data/ai/`
-(tracks + artifact registry + derived.json overlay), components at
-`src/lib/components/ai/`, freshness sensors at `scripts/ai-freshness/` wired
-into `.github/workflows/ai-freshness.yml` — volatile facts live in dated data
-files; the claim lint forbids them in prose. The prior v3 "camera-metaphor"
-redesign was abandoned and removed (c5754ed) — its `blueprint/` directory is
-unrelated to the current one.
+The former `/ai` front door is retired. `/ai`, `/ai/learn`, and `/ai/work`
+remain only as permanent redirects into `/`, `/learn`, and `/work`. The old
+Svelte data layer and its scheduled freshness workflow no longer exist in the
+live application. Do not recreate or update their generated files.
+
+The current application lives under `app/`. Work records and shared taxonomy
+live in `app/data.ts` and `app/facets.ts`. Writing data is generated into
+`app/writing-data.json` from the separate blog source; do not edit that file
+directly. Demo data follows the same generated-content boundary through the
+`sync:demos` scripts.
 
 The canonical Blueprint operating instructions live in the methodology repo, not here:
 **`~/Workspace/dev/tools/blueprint/template/CLAUDE.md`** is the canonical source — read it

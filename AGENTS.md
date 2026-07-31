@@ -1,45 +1,39 @@
 # Nino Chavez Website
 > Personal portfolio and landing page
 
-## Docs Index
+## Stack
 
-### Framework
-- [SvelteKit](https://svelte.dev/docs/kit): Routing, SSG
-- [Svelte 4](https://svelte.dev/docs): Reactive stores ($:), components
-
-### AI
-- [Anthropic SDK](https://docs.anthropic.com/en/api): Claude API integration
-
-### Styling
-- [Tailwind CSS](https://tailwindcss.com/docs): Utility classes
-- Custom CSS with design tokens
+- Next-compatible React routes under `app/`, built through VineNext.
+- Cloudflare Worker deployment through the repository's VineNext commands.
+- Shared CSS and design tokens in `app/globals.css`.
 
 ## Project Index
 
 ### Entry Points
-- `src/routes/+layout.svelte`: App shell
-- `src/routes/+page.svelte`: Landing page
-- `src/lib/components/`: UI components organized by domain
+- `app/layout.tsx`: App shell
+- `app/page.tsx`: Homepage
+- `app/components/`: Shared UI components
 
-### Key Directories
-- `src/lib/components/layout/`: Header, Sidebar
-- `src/lib/components/util/`: Lazy loading, IntersectionObserver
-- `src/lib/actions/`: Custom Svelte actions (inView)
-- `src/lib/stores/`: Reactive state management
+### Key Files
+- `app/data.ts`: Work records and public destinations
+- `app/facets.ts`: Shared naming and taxonomy normalization
+- `app/writing-data.json`: Generated writing index; never edit directly
+- `app/demo-data.json` and `app/demo-stories.json`: Generated demo content
 
 ## Quick Commands
 ```bash
-npm run check && npm run build   # Verify before commit
+npm run check && npm run lint    # Static verification
+npm test                         # Production build and rendered HTML checks
+npm run test:audit               # Audit regression checks
 npm run dev                      # Development server
 ```
 
 ## Boundaries
 - `.env*` - Environment configuration (never commit)
 
-## Stack Notes
-- Svelte 4 conventions (not Svelte 5 runes)
-- Uses `$:` for reactive declarations
-- Uses `export let` for component props
-- Lazy-load below-fold components for performance
-- Mouse-tracking spotlight effect on hero section
-- Hardware-accelerated transforms for animations
+## Content boundaries
+
+- Blog-source corrections belong in `/Users/nino/Workspace/dev/apps/blog/astro-build`.
+- Refresh writing with `npm run sync:writing`; do not hand-edit `app/writing-data.json`.
+- Refresh demos with `npm run sync:demos`; the source remains in `apps/nc-demos`.
+- `/ai` is a retired namespace retained only for redirects.
