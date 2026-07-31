@@ -19,6 +19,9 @@
   },
   "env": {
     "preview": {
+      "images": {
+        "binding": "IMAGES"
+      },
       "vars": {
         "SITE_VISIBILITY": "private"
       }
