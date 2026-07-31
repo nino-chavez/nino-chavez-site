@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "source": "apps/nc-demos",
+  "sourceRevision": "c81cdd02522713a6aeec1741f2754e0b9ec99830",
+  "generatedAt": "2026-07-31T03:44:24.135Z",
+  "sessionCount": 12,
+  "techniqueCount": 8,
+  "sessions": [
+    {
+      "number": "01",
+      "slug": "twelve-messages",
+      "title": "Twelve Messages",
+      "summary": "Everything typed to take a live event from spreadsheet chaos to published social content — and the method that made the other 99% happen.",
+      "audience": "Anyone delegating real work to an AI agent — functional through deeply technical.",
+      "evidence": "The verbatim conversation, a five-principle method, the pipeline that runs it, and two honest failures.",
+      "practice": "Steal the shape: templates over outputs, constraints in the repo, judgment kept human.",
+      "date": "2026-07",
+      "theme": "delegation",
+      "accent": "#f97316",
+      "artifact": {
+        "src": "/work/demo-twelve-messages.jpg",
+        "alt": "Published Instagram story rendered by the demo's pipeline"
+      },
+      "href": "https://ninochavez.co/demos/twelve-messages",
+      "storyHref": "https://nc-demos.pages.dev/content/sessions/twelve-messages.json"
+    },
+    {
+      "number": "02",
+      "slug": "browse-tool",
+      "title": "The Browser Is a Shell Command",
+      "summary": "Replacing 18,000 tokens of always-loaded browser-automation schema with ten shell commands and a README — and why the agent gets sharper, not weaker.",
+      "audience": "Agent users paying token tax for tools they barely touch; builders choosing between MCP and CLIs.",
+      "evidence": "The cost math, four design choices that make a tool agent-friendly, live transcripts, and where MCP still wins.",
+      "practice": "Audit your always-loaded schemas, then wrap the five operations you actually use as small composable commands.",
+      "date": "2026-07",
+      "theme": "tools",
+      "accent": "#f2b13d",
+      "artifact": {
+        "src": "/work/demo-browse-tool.jpg",
+        "alt": "Demo 02 title slide: the browser is a shell command, with a real browse-shot transcript"
+      },
+      "href": "https://ninochavez.co/demos/browse-tool",
+      "storyHref": "https://nc-demos.pages.dev/content/sessions/browse-tool.json"
+    },
+    {
+      "number": "03",
+      "slug": "enforced-forever",
+      "title": "Taught Once, Enforced Forever",
+      "summary": "Corrections given in chat decay when the session ends. The fix is changing the agent's environment — helpers, deny-hooks, and CI ratchets that carry the rule forever.",
+      "audience": "Anyone tired of re-teaching their agent the same rule every session.",
+      "evidence": "Four real guards with their origin audits, verbatim deny messages, and the five properties that keep guardrails from getting ripped out.",
+      "practice": "Count your repeated corrections, then promote them up the ladder: wrapper, hook, CI gate — stopping at the lowest level that holds.",
+      "date": "2026-07",
+      "theme": "enforcement",
+      "accent": "#c2382f",
+      "artifact": {
+        "src": "/work/demo-enforced-forever.jpg",
+        "alt": "Demo 03 title slide, featuring a real read-guard denial of an oversized screenshot"
+      },
+      "relatedTechniqueSlug": "guardrails",
+      "href": "https://ninochavez.co/demos/enforced-forever",
+      "storyHref": "https://nc-demos.pages.dev/content/sessions/enforced-forever.json"
+    },
+    {
+      "number": "04",
+      "slug": "session-corpus",
+      "title": "Your Sessions Are a Corpus",
+      "summary": "2,747 agent-session transcripts, mined: reusable prompts, your corrections as standing priors, and an honest ledger of what the agent built that survived.",
+      "audience": "Anyone who has corrected an AI twice and watched the correction evaporate with the session.",
+      "evidence": "The mining loop end to end — waste audits, voice priors, graded sessions — plus the tool's own confession that it was rebuilt 12 times before being made durable.",
+      "practice": "Grep your transcripts for one counted waste number before building anything; save corrections where the next session reads them.",
+      "date": "2026-07",
+      "theme": "memory",
+      "accent": "#46c395",
+      "artifact": {
+        "src": "/work/demo-session-corpus.jpg",
+        "alt": "Demo 04 title slide: a real artifact-miner run over 2,747 transcripts"
+      },
+      "relatedTechniqueSlug": "corpus",
+      "href": "https://ninochavez.co/demos/session-corpus",
+      "storyHref": "https://nc-demos.pages.dev/content/sessions/session-corpus.json"
+    },
+    {
+      "number": "05",
+      "slug": "feedback-loop",
+      "title": "The Product That Files Its Own Tickets",
+      "summary": "End users file feedback, an LLM judge triages it into GitHub Issues, an agent implements the safe ones — with the autonomy boundary in deterministic code and a human holding the only merge key.",
+      "audience": "Anyone deciding how much of an incoming-work queue to hand to an agent.",
+      "evidence": "The four-stage loop, the allowlist gate read from live source, six real tickets sorted by lane, and a run ledger whose best result was declining to fabricate a fix.",
+      "practice": "Let the model classify, never authorize: write the autonomy boundary as a small tested allowlist, and keep merging human.",
+      "date": "2026-07",
+      "theme": "autonomy",
+      "accent": "#5b9dff",
+      "artifact": {
+        "src": "/work/demo-feedback-loop.jpg",
+        "alt": "Demo 05 title slide with a real agent-lane ticket and its labels"
+      },
+      "href": "https://ninochavez.co/demos/feedback-loop",
+      "storyHref": "https://nc-demos.pages.dev/content/sessions/feedback-loop.json"
+    },
+    {
+      "number": "06",
+      "slug": "landmine-registry",
+      "title": "The Registry of Landmines",
+      "summary": "Some load-bearing facts are invisible to search — the code compiles and the behavior is still wrong. One registry file holds them, a derive catalog enforces them in CI, and a meta-test keeps the registry from lying about itself.",
+      "audience": "Anyone whose agent (or teammate) keeps re-learning the same expensive lesson.",
+      "evidence": "The bug that shipped twice, the token economics of pre-paid conclusions, the why/decided/currently-true split, and the registry-about-the-registry.",
+      "practice": "Start the file the second time something breaks for the same reason; derive the status, never hand-edit it.",
+      "date": "2026-07",
+      "theme": "knowledge",
+      "accent": "#b8940c",
+      "artifact": {
+        "src": "/work/demo-landmine-registry.jpg",
+        "alt": "Demo 06 title slide with the shipped-twice landmine exhibit"
+      },
+      "relatedTechniqueSlug": "registry",
+      "href": "https://ninochavez.co/demos/landmine-registry",
+      "storyHref": "https://nc-demos.pages.dev/content/sessions/landmine-registry.json"
+    },
+    {
+      "number": "07",
+      "slug": "said-it-checked",
+      "title": "The Agent Said It Checked",
+      "summary": "\"Verified\" is a sentence, not a fact. A security migration passed its audit while production was broken — and the discipline that came out of it caught three more false claims building this very series.",
+      "audience": "Anyone who has accepted an AI's (or a doc's, or their own) claim that something was checked.",
+      "evidence": "The circular-audit failure mode, a prod-broke-twice case study peeled layer by layer, and the re-derivation discipline with its real budget.",
+      "practice": "Ask \"checked how?\" — then run that check yourself: grep the file, run the command, end at the runtime.",
+      "date": "2026-07",
+      "theme": "verification",
+      "accent": "#a78bfa",
+      "artifact": {
+        "src": "/work/demo-said-it-checked.jpg",
+        "alt": "Demo 07 title slide with a claim-versus-runtime-check exhibit"
+      },
+      "href": "https://ninochavez.co/demos/said-it-checked",
+      "storyHref": "https://nc-demos.pages.dev/content/sessions/said-it-checked.json"
+    },
+    {
+      "number": "08",
+      "slug": "agentic-gates",
+      "title": "Gates Between Agentic Stages",
+      "summary": "Agents are strong inside a stage and unreliable at the boundaries. A delivery methodology built on that: deterministic gates between agentic stages — 88 versioned revisions, 14 running initiatives, and the day production published fiction.",
+      "audience": "Anyone chaining AI work across stages — draft to review, analysis to deck, prototype to production.",
+      "evidence": "The deterministic-core/agentic-shell shape, the migration-sweep incident and the inverted check it left behind, and a methodology versioned like a product.",
+      "practice": "Make artifacts declare what they are; gate every hand-off mechanically; version your process with a changelog.",
+      "date": "2026-07",
+      "theme": "process",
+      "accent": "#7dd3fc",
+      "artifact": {
+        "src": "/work/demo-agentic-gates.jpg",
+        "alt": "Demo 08 title slide: the staged pipeline with gate posts between every stage"
+      },
+      "relatedTechniqueSlug": "gates",
+      "href": "https://ninochavez.co/demos/agentic-gates",
+      "storyHref": "https://nc-demos.pages.dev/content/sessions/agentic-gates.json"
+    },
+    {
+      "number": "09",
+      "slug": "beautifier",
+      "title": "The Beautifier Was an Auditor",
+      "summary": "A skill built to make a README prettier turned out to be a drift detector. Across five repos it flagged a deploy doc still pointing at a platform the project left months ago, a command list that no longer matched the actual commands, and capabilities the code had grown that nobody had written down. The visual polish was the smallest thing it did.",
+      "audience": "Anyone about to run a 'polish' or 'cleanup' pass on their docs — and anyone who trusts a cosmetic tool to stay in its lane.",
+      "evidence": "Why a beautifier's real payload is its inspect step, five repos' worth of drift it surfaced, and one honest failure — claiming checked when the check was only partial.",
+      "practice": "Run the audit pass first: fix what's wrong before polishing what's already fine — and verify the render where it actually ships, not just locally.",
+      "date": "2026-07",
+      "theme": "documentation",
+      "accent": "#fb7185",
+      "artifact": {
+        "src": "/work/demo-beautifier.jpg",
+        "alt": "Demo 09 title slide: a README claim beside the code fact that contradicts it"
+      },
+      "href": "https://ninochavez.co/demos/beautifier",
+      "storyHref": "https://nc-demos.pages.dev/content/sessions/beautifier.json"
+    },
+    {
+      "number": "10",
+      "slug": "four-questions",
+      "title": "The Chiropractor's Four Questions",
+      "summary": "A sports chiropractor asked four plain questions about selling rehab programs from his website. The AI's answer was confident, tabulated, sourced — and its evidence was marketing all the way down. Twice.",
+      "audience": "Anyone who asks an AI to research a real decision — especially when the answer goes to someone who can't check the work.",
+      "evidence": "A first pass built on vendors ranking themselves, a 'correction' that swapped in a competitor's stat, three refuted claims with the fetches that killed them, and the confidence-label system that came out the other side.",
+      "practice": "Ask \"did you read the source, or a search result about it?\" — then make the answer a visible label on every number that ships.",
+      "date": "2026-07",
+      "theme": "applied-advisory",
+      "accent": "#e8556b",
+      "artifact": {
+        "src": "/work/demo-four-questions.jpg",
+        "alt": "Demo 10 title slide with a confidence tag being downgraded from verified to search-derived"
+      },
+      "relatedTechniqueSlug": "provenance",
+      "href": "https://ninochavez.co/demos/four-questions",
+      "storyHref": "https://nc-demos.pages.dev/content/sessions/four-questions.json"
+    },
+    {
+      "number": "11",
+      "slug": "config-probe",
+      "title": "The Sycophancy Was in the Config",
+      "summary": "A rival model reviewing my agent's work looked sharper — it demanded competing candidates and restraint. So my agent A/B tested its own harness: same model, same prompt, config on and off. The vanilla arm pushed back on me twice. The configured arm never did.",
+      "audience": "Anyone who compares AI tools and concludes one model is smarter — and anyone whose agent config has grown by accretion.",
+      "evidence": "A twelve-run experiment on a live harness: the bare-mode control arm, a self-contaminating probe, a scorecard separating model habits from config damage, and one validated sentence that flipped the behavior 2/2.",
+      "practice": "Before blaming the model, run the bare arm — then test candidate rules as experiment arms and promote only what the grid validates.",
+      "date": "2026-07",
+      "theme": "config-experiment",
+      "accent": "#a78bfa",
+      "artifact": {
+        "src": "/work/demo-config-probe.jpg",
+        "alt": "Demo 11 title slide: the sycophancy was in the config, with the operator's verbatim question about model versus configuration"
+      },
+      "relatedTechniqueSlug": "config-probe",
+      "href": "https://ninochavez.co/demos/config-probe",
+      "storyHref": "https://nc-demos.pages.dev/content/sessions/config-probe.json"
+    },
+    {
+      "number": "12",
+      "slug": "adopt-or-skip",
+      "title": "One Component I Didn't Already Have",
+      "summary": "A plugin advertising eleven agents and fifty-four hooks, measured against the setup I already run. Of the eight components that could land on my machine, three were already going, one was the wrong platform, one was broken upstream, two were costs. The delta was one.",
+      "audience": "Anyone handed a feature list and asked whether to adopt it — especially with a year of accumulated hooks, rules, and helpers already loaded.",
+      "evidence": "A component-by-component subtraction against a real machine, three mechanical queries against the part of a repo nobody curates, a retracted recommendation, and the correction that produced all of it.",
+      "practice": "Write your baseline down, sort the tool's list into native, new, and blocked, then search its tracker for the uninstall before you run the install.",
+      "date": "2026-07",
+      "theme": "tool-adoption",
+      "accent": "#2dd4bf",
+      "artifact": {
+        "src": "/work/demo-adopt-or-skip.jpg",
+        "alt": "Demo 12 title slide: one component I didn't already have, with the operator's verbatim request to compare the tool against what he already runs"
+      },
+      "relatedTechniqueSlug": "adopt-or-skip",
+      "href": "https://ninochavez.co/demos/adopt-or-skip",
+      "storyHref": "https://nc-demos.pages.dev/content/sessions/adopt-or-skip.json"
+    }
+  ],
+  "techniques": [
+    {
+      "slug": "adopt-or-skip",
+      "title": "Run the Subtraction Before You Install",
+      "summary": "A feature list is half a subtraction. Enumerate your baseline, sort the tool's list into three buckets, then search its tracker for the uninstall.",
+      "description": "Four checks that run before anything touches your machine: enumerate what you already have, subtract it from what the tool ships into native, new, and blocked, query the part of the repository nobody curates, and confirm the uninstall actually works. The technique behind demo 12.",
+      "principles": [
+        "A feature list is half a subtraction.",
+        "Sort the result into native, new, and blocked.",
+        "Treat the issue tracker as the half nobody curates.",
+        "Check the exit before the entrance."
+      ],
+      "relatedSessionSlugs": [
+        "adopt-or-skip"
+      ],
+      "href": "https://ninochavez.co/demos/applied/adopt-or-skip",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/adopt-or-skip.json"
+    },
+    {
+      "slug": "config-probe",
+      "title": "Bare-Arm Test Your Agent Config",
+      "summary": "A control arm for your own harness: bare mode, isolation arms, and rules validated before adoption.",
+      "description": "How to tell whether an AI behavior gap is the model or your harness: run the same model bare as a control arm, isolate suspect config blocks, validate candidate rules as experiment arms, and promote only what the grid confirms. The technique behind demo 11.",
+      "principles": [
+        "Run the control arm before drawing conclusions.",
+        "Score behaviors, not vibes.",
+        "Pin the worktree and fence the reads.",
+        "Promote a rule only after the experiment validates it."
+      ],
+      "relatedSessionSlugs": [
+        "config-probe"
+      ],
+      "href": "https://ninochavez.co/demos/applied/config-probe",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/config-probe.json"
+    },
+    {
+      "slug": "corpus",
+      "title": "Mine Your Own Transcripts",
+      "summary": "Treat your agent sessions as a searchable corpus — corrections become priors the next session reads.",
+      "description": "Every agent session is a transcript you usually throw away. Mine them instead: reusable prompts, your corrections as standing priors, and counted waste numbers that justify the next fix. The loop, from 614 real sessions.",
+      "principles": [
+        "Treat past sessions as your best reference.",
+        "Turn repeated corrections into priors the next session reads.",
+        "Re-derive important numbers when you use them."
+      ],
+      "relatedSessionSlugs": [
+        "session-corpus"
+      ],
+      "href": "https://ninochavez.co/demos/applied/corpus",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/corpus.json"
+    },
+    {
+      "slug": "gates",
+      "title": "Gate Every Hand-Off",
+      "summary": "Agents work inside a stage; deterministic gates verify between. Gate the seam, not the middle.",
+      "description": "An AI agent is strong inside a stage and weak at the seams between them. The fix is a deterministic gate on every hand-off — a non-AI check the agent can't talk its way past. The shape, and the day production published fiction.",
+      "principles": [
+        "Keep agents inside stages and deterministic gates between them.",
+        "Derive the stage from disk instead of trusting the claim.",
+        "Do not mistake a second agent for a gate."
+      ],
+      "relatedSessionSlugs": [
+        "agentic-gates"
+      ],
+      "href": "https://ninochavez.co/demos/applied/gates",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/gates.json"
+    },
+    {
+      "slug": "guardrails",
+      "title": "Promote a Correction to a Guardrail",
+      "summary": "Wrapper → deny-hook → CI ratchet: promote a repeated correction to the lowest rung that holds.",
+      "description": "A correction you give an AI in chat dies with the session. The fix is changing its environment — a wrapper, a deny-hook, or a CI ratchet — so the rule holds forever. The three-rung ladder, with real deny-hooks firing.",
+      "principles": [
+        "Promote a correction on the second repeat, not the first.",
+        "Use the lowest enforcement rung that holds.",
+        "Ship every guardrail with an escape hatch."
+      ],
+      "relatedSessionSlugs": [
+        "enforced-forever"
+      ],
+      "href": "https://ninochavez.co/demos/applied/guardrails",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/guardrails.json"
+    },
+    {
+      "slug": "provenance",
+      "title": "Put Provenance Labels on AI Research",
+      "summary": "Three label tiers, an adversarial re-derivation loop, and the honest downgrade — shown working.",
+      "description": "How to make AI-assisted research trustworthy for a reader who can't check it: a three-tier confidence label on every number, an adversarial audit loop that re-derives claims at their sources, and the honest downgrade when a source can't be read. The technique behind demo 10.",
+      "principles": [
+        "Distinguish a source you read from a search result about it.",
+        "Check who owns the domain behind every claim.",
+        "Prefer an honest downgrade to a false confirmation."
+      ],
+      "relatedSessionSlugs": [
+        "four-questions"
+      ],
+      "href": "https://ninochavez.co/demos/applied/provenance",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/provenance.json"
+    },
+    {
+      "slug": "registry",
+      "title": "A Registry for What Grep Can't Find",
+      "summary": "Facts grep can't surface, held in one registry and enforced in CI — the conclusion, pre-paid once.",
+      "description": "Some load-bearing facts are invisible to search — the code compiles and the behavior is still wrong. Hold them in one registry, enforce the mechanical ones in CI, and split why / decided / currently-true. The technique, quoted from a real 25-entry registry.",
+      "principles": [
+        "Write the conclusion, not the search.",
+        "Trust test-backed facts and re-confirm verified-against claims.",
+        "Start the registry the second time the same hidden fact causes a failure."
+      ],
+      "relatedSessionSlugs": [
+        "landmine-registry"
+      ],
+      "href": "https://ninochavez.co/demos/applied/registry",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/registry.json"
+    },
+    {
+      "slug": "two-ways",
+      "title": "Two Ways to Draw a System",
+      "summary": "Hand-authored SVG vs themed Mermaid — chosen per diagram, both shown working.",
+      "description": "How an AI agent draws a technical diagram that looks like your project and doesn't go stale — hand-authored SVG vs themed Mermaid, chosen per diagram. The first Applied technique companion to the ways-of-working session demos.",
+      "principles": [
+        "Choose the diagram form instead of defaulting to one.",
+        "Make the visual system native to the project, not the tool.",
+        "Read the system before drawing it."
+      ],
+      "relatedSessionSlugs": [],
+      "href": "https://ninochavez.co/demos/applied/two-ways",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/two-ways.json"
+    }
+  ]
+}

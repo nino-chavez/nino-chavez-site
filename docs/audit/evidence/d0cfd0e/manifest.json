@@ -1,0 +1,261 @@
+[
+  {
+    "url": "/",
+    "status": 200,
+    "kb": 29.1,
+    "tags": 264,
+    "loc": ""
+  },
+  {
+    "url": "/work",
+    "status": 200,
+    "kb": 45.9,
+    "tags": 596,
+    "loc": ""
+  },
+  {
+    "url": "/demos",
+    "status": 200,
+    "kb": 49.8,
+    "tags": 363,
+    "loc": ""
+  },
+  {
+    "url": "/learn",
+    "status": 200,
+    "kb": 23.9,
+    "tags": 211,
+    "loc": ""
+  },
+  {
+    "url": "/blog",
+    "status": 200,
+    "kb": 353.5,
+    "tags": 3155,
+    "loc": ""
+  },
+  {
+    "url": "/about",
+    "status": 200,
+    "kb": 26.7,
+    "tags": 219,
+    "loc": ""
+  },
+  {
+    "url": "/now",
+    "status": 200,
+    "kb": 20.4,
+    "tags": 184,
+    "loc": ""
+  },
+  {
+    "url": "/links",
+    "status": 200,
+    "kb": 24,
+    "tags": 234,
+    "loc": ""
+  },
+  {
+    "url": "/search",
+    "status": 200,
+    "kb": 12.1,
+    "tags": 115,
+    "loc": ""
+  },
+  {
+    "url": "/privacy",
+    "status": 200,
+    "kb": 29.7,
+    "tags": 216,
+    "loc": ""
+  },
+  {
+    "url": "/photography",
+    "status": 200,
+    "kb": 26.6,
+    "tags": 211,
+    "loc": ""
+  },
+  {
+    "url": "/work/rally-hq",
+    "status": 200,
+    "kb": 14.7,
+    "tags": 145,
+    "loc": ""
+  },
+  {
+    "url": "/work/browse-tool",
+    "status": 200,
+    "kb": 15,
+    "tags": 146,
+    "loc": ""
+  },
+  {
+    "url": "/work/fleet-observability",
+    "status": 200,
+    "kb": 14,
+    "tags": 137,
+    "loc": ""
+  },
+  {
+    "url": "/work/volleyrx",
+    "status": 200,
+    "kb": 13.9,
+    "tags": 137,
+    "loc": ""
+  },
+  {
+    "url": "/demos/twelve-messages",
+    "status": 200,
+    "kb": 15.7,
+    "tags": 151,
+    "loc": ""
+  },
+  {
+    "url": "/demos/adopt-or-skip",
+    "status": 200,
+    "kb": 17.4,
+    "tags": 155,
+    "loc": ""
+  },
+  {
+    "url": "/demos/applied/adopt-or-skip",
+    "status": 200,
+    "kb": 16.4,
+    "tags": 149,
+    "loc": ""
+  },
+  {
+    "url": "/demos/applied/config-probe",
+    "status": 200,
+    "kb": 16.3,
+    "tags": 149,
+    "loc": ""
+  },
+  {
+    "url": "/learn/explorer",
+    "status": 200,
+    "kb": 26.4,
+    "tags": 247,
+    "loc": ""
+  },
+  {
+    "url": "/learn/builder",
+    "status": 200,
+    "kb": 26.7,
+    "tags": 247,
+    "loc": ""
+  },
+  {
+    "url": "/learn/architect",
+    "status": 200,
+    "kb": 26.9,
+    "tags": 247,
+    "loc": ""
+  },
+  {
+    "url": "/learn/strategist",
+    "status": 200,
+    "kb": 26.7,
+    "tags": 247,
+    "loc": ""
+  },
+  {
+    "url": "/learn/author",
+    "status": 200,
+    "kb": 26.7,
+    "tags": 247,
+    "loc": ""
+  },
+  {
+    "url": "/learn/voice",
+    "status": 200,
+    "kb": 26.4,
+    "tags": 247,
+    "loc": ""
+  },
+  {
+    "url": "/learn/enterprise",
+    "status": 200,
+    "kb": 26.7,
+    "tags": 247,
+    "loc": ""
+  },
+  {
+    "url": "/demos/applied",
+    "status": 404,
+    "kb": 0,
+    "tags": 0,
+    "loc": ""
+  },
+  {
+    "url": "/ai",
+    "status": 308,
+    "kb": 0,
+    "tags": 0,
+    "loc": "http://localhost/"
+  },
+  {
+    "url": "/ai/learn",
+    "status": 308,
+    "kb": 0,
+    "tags": 0,
+    "loc": "http://localhost/learn"
+  },
+  {
+    "url": "/ai/work",
+    "status": 308,
+    "kb": 0,
+    "tags": 0,
+    "loc": "http://localhost/work"
+  },
+  {
+    "url": "/work?domain=commerce",
+    "status": 200,
+    "kb": 30.2,
+    "tags": 206,
+    "loc": ""
+  },
+  {
+    "url": "/work?q=agent&state=live",
+    "status": 200,
+    "kb": 30.6,
+    "tags": 219,
+    "loc": ""
+  },
+  {
+    "url": "/blog?type=essay",
+    "status": 200,
+    "kb": 171,
+    "tags": 269,
+    "loc": ""
+  },
+  {
+    "url": "/blog?q=agents&year=2026",
+    "status": 200,
+    "kb": 177,
+    "tags": 353,
+    "loc": ""
+  },
+  {
+    "url": "/demos?type=technique",
+    "status": 200,
+    "kb": 39.6,
+    "tags": 230,
+    "loc": ""
+  },
+  {
+    "url": "/demos?q=corpus",
+    "status": 200,
+    "kb": 38.1,
+    "tags": 198,
+    "loc": ""
+  },
+  {
+    "url": "/nonexistent-route-check",
+    "status": 404,
+    "kb": 0,
+    "tags": 0,
+    "loc": ""
+  }
+]

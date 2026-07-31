@@ -1,0 +1,3921 @@
+{
+  "schemaVersion": 1,
+  "source": "apps/blog/astro-build",
+  "sourceRevision": "428a19be5cd9670dcb367156dd82eca3e17f72ca",
+  "generatedAt": "2026-07-31T03:44:23.880Z",
+  "latestPublishedAt": "2026-07-31",
+  "publicPieceCount": 285,
+  "kindCounts": {
+    "Essay": 241,
+    "Whitepaper": 14,
+    "Presentation": 9,
+    "Tutorial": 7,
+    "Counterpoint": 4,
+    "Fiction": 10
+  },
+  "categories": [
+    "AI & Automation",
+    "AI Development",
+    "Commerce",
+    "Consulting",
+    "Consulting Practice",
+    "Counterpoints",
+    "Engineering",
+    "Fiction",
+    "Field Notes",
+    "Insights",
+    "Leadership",
+    "Meta",
+    "Personal Finance",
+    "Philosophy",
+    "Reflection",
+    "Reflections",
+    "Systems Thinking",
+    "Uncategorized"
+  ],
+  "years": [
+    "2026",
+    "2025"
+  ],
+  "items": [
+    {
+      "slug": "grade-an-agent-tool-before-you-install-it",
+      "title": "Grade an Agent Tool Before You Install It",
+      "excerpt": "Four checks that run before anything touches your machine: enumerate what you already have, subtract it from what the tool ships, query the issue tracker its users write, and confirm the uninstall works. Companion workshop to One Component I Didn't Already Have.",
+      "publishedAt": "2026-07-31",
+      "kind": "Tutorial",
+      "category": "Engineering",
+      "tags": [
+        "agentic-systems",
+        "tutorial",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/tutorials/grade-an-agent-tool-before-you-install-it"
+    },
+    {
+      "slug": "one-component-i-didnt-already-have",
+      "title": "One Component I Didn't Already Have",
+      "excerpt": "A coding-agent plugin with 66,000 stars keeps landing in my inbox. The version that could actually run on my machine ships eight components. Seven of them my setup already does, can't use, or would pay for twice.",
+      "publishedAt": "2026-07-31",
+      "kind": "Essay",
+      "category": "AI Development",
+      "tags": [
+        "ai-development",
+        "agentic-systems",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/one-component-i-didnt-already-have"
+    },
+    {
+      "slug": "claim-classes",
+      "title": "Claim Classes: What Can and Can't Be Mechanically Checked in an Agent-Written Document",
+      "excerpt": "Every document an agent writes for you is a bundle of claims, and they are not equally checkable. This is a taxonomy of four claim classes ranked by whether a machine can catch a wrong one, a diagnosis of why the highest-stakes class is always mechanized last, and a decision model for when binding values to sources is worth the cost.",
+      "publishedAt": "2026-07-30",
+      "kind": "Whitepaper",
+      "category": "AI Development",
+      "tags": [
+        "ai-development",
+        "ai-governance",
+        "deep-dive"
+      ],
+      "href": "https://ninochavez.co/blog/whitepapers/claim-classes"
+    },
+    {
+      "slug": "every-link-resolves-nothing-checks-the-number",
+      "title": "Every Link Resolves. Nothing Checks the Number.",
+      "excerpt": "A strategy document I ship can carry an invented figure through every automated check I built, as long as the sentences around it are well-formed and the links resolve. I went looking for that hole on purpose. Then I decided not to close it.",
+      "publishedAt": "2026-07-30",
+      "kind": "Essay",
+      "category": "AI Development",
+      "tags": [
+        "ai-development",
+        "ai-governance",
+        "deep-dive"
+      ],
+      "href": "https://ninochavez.co/blog/every-link-resolves-nothing-checks-the-number"
+    },
+    {
+      "slug": "measure-your-own-token-waste",
+      "title": "Measure Your Own Token Waste in Four Exercises",
+      "excerpt": "Install the two mechanical fixes for AI-agent token waste, then run a real measurement tool against your own session logs instead of guessing where the cost goes. Companion workshop to Nothing Broke. It Just Wasn't There.",
+      "publishedAt": "2026-07-30",
+      "kind": "Tutorial",
+      "category": "Engineering",
+      "tags": [
+        "agentic-systems",
+        "tutorial",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/tutorials/measure-your-own-token-waste"
+    },
+    {
+      "slug": "nothing-broke-it-just-wasnt-there",
+      "title": "Nothing Broke. It Just Wasn't There.",
+      "excerpt": "I went looking for a tool I'd built four days earlier and it was gone. It hadn't failed — it had run, found two real problems, and fixed both. Working correctly and existing durably turn out to be different properties, and running the thing only tests one of them.",
+      "publishedAt": "2026-07-30",
+      "kind": "Essay",
+      "category": "AI Development",
+      "tags": [
+        "ai-development",
+        "deep-dive"
+      ],
+      "href": "https://ninochavez.co/blog/nothing-broke-it-just-wasnt-there"
+    },
+    {
+      "slug": "audit-your-ai-coding-harness",
+      "title": "Audit Your AI Coding Harness in Four Exercises",
+      "excerpt": "Install a custom Claude Code command, run it against your own setup, and find out what's unused, what's slow, and what could vanish without a trace. Companion workshop to Nothing Broke. It Just Wasn't There.",
+      "publishedAt": "2026-07-29",
+      "kind": "Tutorial",
+      "category": "Engineering",
+      "tags": [
+        "agentic-systems",
+        "tutorial",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/tutorials/audit-your-ai-coding-harness"
+    },
+    {
+      "slug": "i-configured-my-agent-to-agree-with-me",
+      "title": "I Configured My Agent to Agree With Me",
+      "excerpt": "A rival model's review of my agent's work looked sharper — it pushed back, it demanded alternatives. So I ran a controlled experiment on my own harness: same model, same prompt, config on and off. The vanilla arm argued with me. Mine never did.",
+      "publishedAt": "2026-07-20",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/i-configured-my-agent-to-agree-with-me"
+    },
+    {
+      "slug": "please-only-apply-if-youre-an-agent",
+      "title": "Please Only Apply If You're an AI Agent",
+      "excerpt": "Firecrawl posted a job only a machine could apply for. Months later, on a different stage, an engineer said the mirror-image thing: don't build me an agent, build my agent a way in. Same shift, two ends of the same transaction — and an economics paper that almost, but doesn't quite, tie them together.",
+      "publishedAt": "2026-07-14",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "architecture",
+        "product-strategy"
+      ],
+      "href": "https://ninochavez.co/blog/please-only-apply-if-youre-an-agent"
+    },
+    {
+      "slug": "i-wrote-the-rule-down-i-broke-it-anyway",
+      "title": "I Wrote the Rule Down. I Broke It Anyway.",
+      "excerpt": "There's a file in my project whose only job is to stop me from making one mistake. I made it three times in a row. The difference between a rule and a wall.",
+      "publishedAt": "2026-06-16",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "reflection",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/i-wrote-the-rule-down-i-broke-it-anyway"
+    },
+    {
+      "slug": "red-is-the-good-news",
+      "title": "Red Is the Good News",
+      "excerpt": "Three bugs that would have shipped clean. None of them threw an error. The only thing that caught them was a test written to fail first, against the real thing.",
+      "publishedAt": "2026-06-16",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "engineering",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/red-is-the-good-news"
+    },
+    {
+      "slug": "the-gate-verifies-the-work-not-the-plan",
+      "title": "The Gate Verifies the Work. It Never Looks at the Plan.",
+      "excerpt": "Thirteen features shipped green. The designs were all wrong. The system made being wrong cheap—but only on one side of the work.",
+      "publishedAt": "2026-06-16",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/the-gate-verifies-the-work-not-the-plan"
+    },
+    {
+      "slug": "the-migration-that-ate-two-columns",
+      "title": "The Migration That Ate Two Columns",
+      "excerpt": "I rebuilt a database table and it silently deleted two columns I needed. No error. Every test for the thing I was changing passed. Here's what actually caught it.",
+      "publishedAt": "2026-06-16",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/the-migration-that-ate-two-columns"
+    },
+    {
+      "slug": "multi-account-instagram-publishing-graph-api",
+      "title": "Multi-Account Instagram Publishing With the Graph API",
+      "excerpt": "Publish to several Instagram accounts from your own code: one System User token, no App Review, no third-party scheduler. Build it in five steps — past the auth-path trap, through the manual gates, to a publish call that won't quietly double-post.",
+      "publishedAt": "2026-06-15",
+      "kind": "Tutorial",
+      "category": "Engineering",
+      "tags": [
+        "tutorial",
+        "engineering",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/tutorials/multi-account-instagram-publishing-graph-api"
+    },
+    {
+      "slug": "where-the-api-stops",
+      "title": "Where the API Stops",
+      "excerpt": "I once mapped the civil war between human interfaces and machine-native ones at the scale of companies. Then I fought both sides of it in a single afternoon, in a single pipeline — and a human had to close the seam.",
+      "publishedAt": "2026-06-15",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "architecture",
+        "field-notes"
+      ],
+      "href": "https://ninochavez.co/blog/where-the-api-stops"
+    },
+    {
+      "slug": "open-kitchen",
+      "title": "Open Kitchen",
+      "excerpt": "I went looking for other cooks and found closed kitchens — not hostile, just complete. The Bear turned out to be the show that named what's actually missing in agent-assisted work, and what it might cost me to build the alternative.",
+      "publishedAt": "2026-06-11",
+      "kind": "Essay",
+      "category": "Reflection",
+      "tags": [
+        "career",
+        "agentic-systems",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/open-kitchen"
+    },
+    {
+      "slug": "lie-surface",
+      "title": "Lie-Surface: Ranking What an Agent Can Trust in Your Codebase",
+      "excerpt": "A codebase carries two sources of truth — what the code does and what you meant — and the artifacts that bridge them rot at wildly different rates. This is a framework for ranking those artifacts by how badly they can lie, and a design rule for building the few that can't.",
+      "publishedAt": "2026-05-30",
+      "kind": "Whitepaper",
+      "category": "Engineering",
+      "tags": [
+        "ai-development",
+        "engineering",
+        "ai-governance"
+      ],
+      "href": "https://ninochavez.co/blog/whitepapers/lie-surface"
+    },
+    {
+      "slug": "the-only-thing-that-cant-lie",
+      "title": "The Only Thing in My Codebase That Can't Lie",
+      "excerpt": "I asked an agent a simple product question and watched it spend three thousand words rediscovering things it had no way to trust. The fix wasn't a better map. It was noticing which artifacts in a codebase can lie to you — and which one can't.",
+      "publishedAt": "2026-05-30",
+      "kind": "Essay",
+      "category": "Engineering",
+      "tags": [
+        "ai-development",
+        "engineering",
+        "ai-governance"
+      ],
+      "href": "https://ninochavez.co/blog/the-only-thing-that-cant-lie"
+    },
+    {
+      "slug": "when-your-lawyer-tells-you-to-use-chatgpt",
+      "title": "When Your Lawyer Tells You to Use ChatGPT",
+      "excerpt": "My lawyer told me to use ChatGPT instead of paying him. A colleague said the same about his accountant. The cleanest signal for which professions get compressed isn't the headcount data — it's when the practitioner himself tells you he's optional.",
+      "publishedAt": "2026-05-26",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "career",
+        "ai-development",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/when-your-lawyer-tells-you-to-use-chatgpt"
+    },
+    {
+      "slug": "five-months-later-the-evidence-showed-up",
+      "title": "Five Months Later, the Evidence Showed Up",
+      "excerpt": "What Lopopolo's million lines confirmed. On December 30, 2025 I published a whitepaper claiming the marginal cost of code generation was approaching zero, that this would produce a class of just-in-time software that challenges the SaaS model, and that the locus of value was shifting from the codebase to the intent behind it. On February 11, 2026, OpenAI published the empirical receipt — a three-engineer team producing one million lines of code over five months with zero manually-written lines. The thesis was right. The framing needed one precision upgrade.",
+      "publishedAt": "2026-05-25",
+      "kind": "Counterpoint",
+      "category": "Counterpoints",
+      "tags": [
+        "agentic-systems",
+        "software-economics",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/counterpoints/five-months-later-the-evidence-showed-up"
+    },
+    {
+      "slug": "big-blueprint-methodology",
+      "title": "Big Blueprint: A Production Line for Agent-Assisted Product Work",
+      "excerpt": "",
+      "publishedAt": "2026-05-24",
+      "kind": "Whitepaper",
+      "category": "Uncategorized",
+      "tags": [],
+      "href": "https://ninochavez.co/blog/whitepapers/big-blueprint-methodology"
+    },
+    {
+      "slug": "process-beats-inspection",
+      "title": "Process Beats Inspection: Why the Chassis Doesn't Just Shift the Review Burden",
+      "excerpt": "The predictable objection to the chassis argument is that templates and contracts don't eliminate review — they just relocate it. That objection treats agent output as the inspection target. The Industrial Revolution settled the same argument two centuries ago, in favor of inspecting the lathe instead of the bolt.",
+      "publishedAt": "2026-05-24",
+      "kind": "Counterpoint",
+      "category": "Counterpoints",
+      "tags": [
+        "agentic-systems",
+        "architecture",
+        "ai-governance"
+      ],
+      "href": "https://ninochavez.co/blog/counterpoints/process-beats-inspection"
+    },
+    {
+      "slug": "the-backport-i-didnt-make",
+      "title": "The A/B Test That Built the Lathe",
+      "excerpt": "I pasted a two-paragraph plan into a terminal and walked away for two days. The strategy package that came back was good. Then I asked Claude to do it again from a template, without me in the feedback loop. The template version landed at 70-80% of the quality in 10-15x less time. The gap — and the loop that closed it — has a name from another century.",
+      "publishedAt": "2026-05-24",
+      "kind": "Essay",
+      "category": "Reflection",
+      "tags": [
+        "architecture",
+        "agentic-systems",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/the-backport-i-didnt-make"
+    },
+    {
+      "slug": "the-scaffolding-the-agent-doesnt-build",
+      "title": "The Scaffolding the Agent Doesn't Build",
+      "excerpt": "I sent Adam Bender's Google I/O talk to Claude with a note calling it the most insightful take I'd heard on AI and our industry, and asked for a LinkedIn caption. The draft came back confessing things about my work that weren't true. The story of why is the same story Bender is telling on a Google I/O stage.",
+      "publishedAt": "2026-05-24",
+      "kind": "Essay",
+      "category": "Reflection",
+      "tags": [
+        "agentic-systems",
+        "ai-development",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/the-scaffolding-the-agent-doesnt-build"
+    },
+    {
+      "slug": "i-dont-write-any-code",
+      "title": "I Don't Write Any Code",
+      "excerpt": "I spent a session trying to map my skills across sixty-five projects and the output came back dressed up as a senior engineer. That wasn't right. The correction I typed back is the one I think a lot of people are currently refusing to type back.",
+      "publishedAt": "2026-04-21",
+      "kind": "Essay",
+      "category": "Reflection",
+      "tags": [
+        "career",
+        "reflection",
+        "agentic-systems"
+      ],
+      "href": "https://ninochavez.co/blog/i-dont-write-any-code"
+    },
+    {
+      "slug": "the-question-that-isnt-a-question",
+      "title": "The Question That Isn't a Question",
+      "excerpt": "Someone asks you a question. You answer it carefully. They don't react to your answer — they ask the next question. That's when you realize the first one wasn't a question. The move has a shape, and it has a specific cost to builders who share work in drafts.",
+      "publishedAt": "2026-04-21",
+      "kind": "Essay",
+      "category": "Reflection",
+      "tags": [
+        "reflection",
+        "communication",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/the-question-that-isnt-a-question"
+    },
+    {
+      "slug": "the-side-project-is-pottery",
+      "title": "The Side Project Is Pottery",
+      "excerpt": "I keep a drawer full of side projects I'll never ship. I used to tell myself they were portfolio, optionality, businesses in waiting. I don't believe that story anymore — and I don't think most of the people telling it believe it either.",
+      "publishedAt": "2026-04-20",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "reflection",
+        "career",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/the-side-project-is-pottery"
+    },
+    {
+      "slug": "curation-is-not-composition",
+      "title": "Curation Is Not Composition",
+      "excerpt": "Every creative medium that got cheap hit this moment. Art, music, publishing — all flooded, all eventually rescued by a curation layer that scaled up to match the garbage. Software is in the flood now. Curation isn't going to save it, and I don't think we've noticed the reason yet.",
+      "publishedAt": "2026-04-17",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "architecture",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/curation-is-not-composition"
+    },
+    {
+      "slug": "the-room",
+      "title": "The Room",
+      "excerpt": "I would not be anyone else.",
+      "publishedAt": "2026-04-15",
+      "kind": "Fiction",
+      "category": "Fiction",
+      "tags": [
+        "testimony",
+        "memory"
+      ],
+      "href": "https://ninochavez.co/blog/fiction/the-room"
+    },
+    {
+      "slug": "the-fig",
+      "title": "The Fig",
+      "excerpt": "He held the fig up. 'Take a bite. What does it taste like.'",
+      "publishedAt": "2026-04-14",
+      "kind": "Fiction",
+      "category": "Fiction",
+      "tags": [
+        "testimony",
+        "memory",
+        "attention"
+      ],
+      "href": "https://ninochavez.co/blog/fiction/the-fig"
+    },
+    {
+      "slug": "the-page",
+      "title": "The Page",
+      "excerpt": "I had thought I was keeping him. I had been keeping the hand that reached.",
+      "publishedAt": "2026-04-14",
+      "kind": "Fiction",
+      "category": "Fiction",
+      "tags": [
+        "testimony",
+        "memory",
+        "attention"
+      ],
+      "href": "https://ninochavez.co/blog/fiction/the-page"
+    },
+    {
+      "slug": "the-supper",
+      "title": "The Supper",
+      "excerpt": "I knew the tiredness I was looking at. I had never seen it before on my son.",
+      "publishedAt": "2026-04-14",
+      "kind": "Fiction",
+      "category": "Fiction",
+      "tags": [
+        "testimony",
+        "memory"
+      ],
+      "href": "https://ninochavez.co/blog/fiction/the-supper"
+    },
+    {
+      "slug": "the-window",
+      "title": "The Window",
+      "excerpt": "I had never seen a person read so slowly.",
+      "publishedAt": "2026-04-14",
+      "kind": "Fiction",
+      "category": "Fiction",
+      "tags": [
+        "testimony",
+        "memory",
+        "attention"
+      ],
+      "href": "https://ninochavez.co/blog/fiction/the-window"
+    },
+    {
+      "slug": "the-cup",
+      "title": "The Cup",
+      "excerpt": "My hands have a way of holding a cup that I did not learn from anyone I remember teaching me.",
+      "publishedAt": "2026-04-13",
+      "kind": "Fiction",
+      "category": "Fiction",
+      "tags": [
+        "testimony",
+        "memory"
+      ],
+      "href": "https://ninochavez.co/blog/fiction/the-cup"
+    },
+    {
+      "slug": "the-walk-in-is-full",
+      "title": "The Walk-In Is Full",
+      "excerpt": "I ship an end-to-end project most Saturdays and put it in a drawer I never reopen. So does everyone I know. The walk-in is full — not with abundance, but with relocated scarcity. What looked like software culture was partly muscle memory, an involuntary reflex held up by cost, and it's atrophying now that nothing fires it.",
+      "publishedAt": "2026-04-13",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "engineering",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/the-walk-in-is-full"
+    },
+    {
+      "slug": "the-neck",
+      "title": "The Neck",
+      "excerpt": "A man does not usually know a woman's neck better than he knows his own hand, but I did.",
+      "publishedAt": "2026-04-12",
+      "kind": "Fiction",
+      "category": "Fiction",
+      "tags": [
+        "testimony",
+        "memory"
+      ],
+      "href": "https://ninochavez.co/blog/fiction/the-neck"
+    },
+    {
+      "slug": "the-song",
+      "title": "The Song",
+      "excerpt": "I hummed a song for most of my life that I could not place.",
+      "publishedAt": "2026-04-12",
+      "kind": "Fiction",
+      "category": "Fiction",
+      "tags": [
+        "testimony",
+        "memory"
+      ],
+      "href": "https://ninochavez.co/blog/fiction/the-song"
+    },
+    {
+      "slug": "the-word",
+      "title": "The Word",
+      "excerpt": "She looked up at me. She said a word. I will not write the word here.",
+      "publishedAt": "2026-04-11",
+      "kind": "Fiction",
+      "category": "Fiction",
+      "tags": [
+        "testimony",
+        "memory"
+      ],
+      "href": "https://ninochavez.co/blog/fiction/the-word"
+    },
+    {
+      "slug": "the-bell",
+      "title": "The Bell",
+      "excerpt": "The bell had been ringing for some time. I was tired of it. I had been tired of it for a long time before I knew it was a bell.",
+      "publishedAt": "2026-04-10",
+      "kind": "Fiction",
+      "category": "Fiction",
+      "tags": [
+        "testimony",
+        "memory"
+      ],
+      "href": "https://ninochavez.co/blog/fiction/the-bell"
+    },
+    {
+      "slug": "when-the-grid-goes-dark",
+      "title": "When the Grid Goes Dark",
+      "excerpt": "AI stopped being a tool the moment I couldn't work without it. That's not adoption — that's dependency. And dependency without understanding is just a blackout waiting to happen.",
+      "publishedAt": "2026-04-06",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "leadership",
+        "career"
+      ],
+      "href": "https://ninochavez.co/blog/when-the-grid-goes-dark"
+    },
+    {
+      "slug": "the-masterchef-problem",
+      "title": "The MasterChef Problem",
+      "excerpt": "AI gave everyone a professional kitchen. But MasterChef didn't make chefs by handing out equipment — it made them by designing challenges that exposed who could actually cook. Digital product development is missing the challenges.",
+      "publishedAt": "2026-03-27",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "career"
+      ],
+      "href": "https://ninochavez.co/blog/the-masterchef-problem"
+    },
+    {
+      "slug": "make-your-cli-agent-native",
+      "title": "Make Your CLI Agent-Native in Three Layers",
+      "excerpt": "Add an agent-native surface to any CLI tool. Three files, one schema, zero doc-reading required. Walk through AGENTS.md orientation, CLAUDE.md constraints, and schema-generated prompt payloads.",
+      "publishedAt": "2026-03-25",
+      "kind": "Tutorial",
+      "category": "Engineering",
+      "tags": [
+        "agentic-systems",
+        "tutorial",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/tutorials/make-your-cli-agent-native"
+    },
+    {
+      "slug": "skip-the-steps",
+      "title": "Skip the Steps",
+      "excerpt": "Supabase added a 'Copy prompt' button that bypasses their entire setup guide. It's a small UI change that reveals a big design shift — and it pushed me from 'context engineering' to 'probability engineering' as the real frame for agent-native tooling.",
+      "publishedAt": "2026-03-25",
+      "kind": "Essay",
+      "category": "Engineering",
+      "tags": [
+        "agentic-systems",
+        "engineering",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/skip-the-steps"
+    },
+    {
+      "slug": "anatomy-of-ai-native-development",
+      "title": "Anatomy of AI-Native Development",
+      "excerpt": "30 days of Claude Code session data — 223 sessions, 38,000+ prompts, 32 projects. What does AI-native development actually look like at scale? A data-driven walkthrough of the environment, the mental model, and the infrastructure that makes it work.",
+      "publishedAt": "2026-03-20",
+      "kind": "Presentation",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "field-notes",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/presentations/anatomy-of-ai-native-development"
+    },
+    {
+      "slug": "ai-native-dev-environment",
+      "title": "Set Up an AI-Native Dev Environment",
+      "excerpt": "Build the infrastructure behind 223 sessions and 38,000 prompts. Configure project-scoped context, persistent memory, automated skills, and the cross-pollination workflow that makes AI-assisted development sustainable at scale.",
+      "publishedAt": "2026-03-20",
+      "kind": "Tutorial",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "tutorial",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/tutorials/ai-native-dev-environment"
+    },
+    {
+      "slug": "setting-up-an-ai-native-dev-environment",
+      "title": "Setting Up an AI-Native Dev Environment",
+      "excerpt": "The practical companion to 'What 223 Sessions Taught Me.' How to set up CLAUDE.md files, the memory system, custom skills, project-scoped conversations, and the infrastructure that makes AI-assisted development actually sustainable.",
+      "publishedAt": "2026-03-20",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "field-notes",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/setting-up-an-ai-native-dev-environment"
+    },
+    {
+      "slug": "what-223-sessions-taught-me-about-working-with-ai",
+      "title": "What 223 Sessions Taught Me About Working with AI",
+      "excerpt": "I pulled 30 days of Claude Code session data — 223 sessions, 38,000+ prompts, 32 projects, 1.2 GB of conversation. The numbers tell a story about what AI-native development actually looks like when nobody's watching.",
+      "publishedAt": "2026-03-20",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "field-notes",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/what-223-sessions-taught-me-about-working-with-ai"
+    },
+    {
+      "slug": "the-cart-is-a-protocol-now",
+      "title": "The Cart Is a Protocol Now",
+      "excerpt": "Etsy and Wayfair are already processing agentic checkout through Google's Universal Commerce Protocol. OpenAI and Stripe shipped a competing one. Cart and checkout are becoming infrastructure services — and the standards war is already here.",
+      "publishedAt": "2026-03-19",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "commerce",
+        "product-strategy"
+      ],
+      "href": "https://ninochavez.co/blog/the-cart-is-a-protocol-now"
+    },
+    {
+      "slug": "the-48-hour-artifact",
+      "title": "The 48-Hour Artifact",
+      "excerpt": "I pointed an AI agent at a product initiative and didn't write a single line of code or a single word of copy. Two days later: 11 prototype pages, 4 strategic documents, cross-industry research with 30+ citations. And a trust problem I still can't solve.",
+      "publishedAt": "2026-03-16",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "ai-development",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/the-48-hour-artifact"
+    },
+    {
+      "slug": "the-jevons-trap",
+      "title": "The Jevons Trap",
+      "excerpt": "Every productivity wave in software history expanded demand for developers instead of shrinking it. AI should follow the same pattern. Unless the thing it produces is just good enough to ship and just bad enough to compound.",
+      "publishedAt": "2026-03-09",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "engineering",
+        "career"
+      ],
+      "href": "https://ninochavez.co/blog/the-jevons-trap"
+    },
+    {
+      "slug": "the-source-of-their-intelligence",
+      "title": "The Source of Their Intelligence",
+      "excerpt": "Someone made the argument that most developers were never really engineering — they were sourcing solutions from Stack Overflow and Reddit, and AI just swaps the supplier. It's an uncomfortable take. It's also not entirely wrong.",
+      "publishedAt": "2026-03-09",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "engineering",
+        "career"
+      ],
+      "href": "https://ninochavez.co/blog/the-source-of-their-intelligence"
+    },
+    {
+      "slug": "can-vs-should",
+      "title": "Can vs. Should",
+      "excerpt": "I've been asking 'can an agent do this?' so reflexively that I stopped noticing when the answer should have been 'but should it?'",
+      "publishedAt": "2026-03-07",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/can-vs-should"
+    },
+    {
+      "slug": "the-identity-crisis-of-the-prompter",
+      "title": "The Identity Crisis of the Prompter",
+      "excerpt": "We keep reaching for craft metaphors — chef, artisan, architect — because 'person who types instructions' doesn't feel like enough. Why?",
+      "publishedAt": "2026-03-05",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/the-identity-crisis-of-the-prompter"
+    },
+    {
+      "slug": "the-sommelier-argument",
+      "title": "The Sommelier Argument",
+      "excerpt": "Maybe the highest-value skill in the AI era isn't making or judging. It's matching — knowing what's right for this moment, this audience, this context.",
+      "publishedAt": "2026-03-05",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "consulting"
+      ],
+      "href": "https://ninochavez.co/blog/the-sommelier-argument"
+    },
+    {
+      "slug": "the-taste-gap",
+      "title": "The Taste Gap",
+      "excerpt": "AI can produce endlessly. But it can't tell you what's good. That gap — between generation and judgment — might be the only thing that matters now.",
+      "publishedAt": "2026-03-05",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "deep-dive"
+      ],
+      "href": "https://ninochavez.co/blog/the-taste-gap"
+    },
+    {
+      "slug": "six-months-after-the-horizon",
+      "title": "Six Months After the Horizon",
+      "excerpt": "I published a prediction deck about the agentic web last September. Six months later, some of it looks prescient, some of it looks naive, and the most important developments weren't in the deck at all.",
+      "publishedAt": "2026-03-03",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "reflection",
+        "product-strategy",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/six-months-after-the-horizon"
+    },
+    {
+      "slug": "the-bifurcation-of-autonomy",
+      "title": "The Bifurcation of Autonomy: Mimicry, Machine-Native Interfaces, and the Fork in Agent Architecture",
+      "excerpt": "AI agents face a fundamental architectural choice: learn to navigate human-designed interfaces or demand purpose-built machine-native ones. This report maps both paths across digital and physical domains, analyzes protocol fragmentation risk, and stress-tests the dual-track assumption with five structural objections.",
+      "publishedAt": "2026-03-01",
+      "kind": "Whitepaper",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/whitepapers/the-bifurcation-of-autonomy"
+    },
+    {
+      "slug": "the-bifurcation-under-stress",
+      "title": "The Bifurcation Under Stress: Five Structural Objections to the Dual-Track Thesis",
+      "excerpt": "A systematic challenge to the mimicry-vs-native framing. Where the dual-track model holds, where it fractures, and what the original analysis underweights.",
+      "publishedAt": "2026-03-01",
+      "kind": "Counterpoint",
+      "category": "Counterpoints",
+      "tags": [
+        "agentic-systems",
+        "deep-dive"
+      ],
+      "href": "https://ninochavez.co/blog/counterpoints/the-bifurcation-under-stress"
+    },
+    {
+      "slug": "the-civil-war-inside-every-agent",
+      "title": "The Civil War Inside Every Agent",
+      "excerpt": "Every agent system is fighting the same battle: learn to navigate human interfaces, or demand native ones. The industry is doing both. The question is who adapts to whom.",
+      "publishedAt": "2026-03-01",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-civil-war-inside-every-agent"
+    },
+    {
+      "slug": "what-if-the-fork-is-the-problem",
+      "title": "What If the Fork Is the Problem?",
+      "excerpt": "I just mapped the civil war inside every agent system. Both paths sound reasonable. But what if splitting investment across both means neither gets finished?",
+      "publishedAt": "2026-03-01",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/what-if-the-fork-is-the-problem"
+    },
+    {
+      "slug": "beyond-chat-workshop",
+      "title": "Beyond Chat: Build Your First Agentic Workflow",
+      "excerpt": "A hands-on workshop for turning AI assistants into operational partners. Write a CLAUDE.md, create a slash command, codify your quality standards, and design a multi-stage pipeline — in 60 minutes.",
+      "publishedAt": "2026-02-24",
+      "kind": "Tutorial",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "ai-development",
+        "tutorial"
+      ],
+      "href": "https://ninochavez.co/blog/tutorials/beyond-chat-workshop"
+    },
+    {
+      "slug": "beyond-chat-agentic-workflows",
+      "title": "Beyond Chat: Building Agentic Workflows with Claude Code",
+      "excerpt": "AI assistants forget everything between sessions. Here's how I turned Claude Code into an operational partner — with persistent memory, codified editorial judgment, multi-stage pipelines, and four different publishing pathways. A walkthrough of the real system behind Signal Dispatch.",
+      "publishedAt": "2026-02-24",
+      "kind": "Presentation",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "ai-development",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/presentations/beyond-chat-agentic-workflows"
+    },
+    {
+      "slug": "show-your-work",
+      "title": "Show Your Work",
+      "excerpt": "If you take away the LLM, could I still do this? The answer is complicated — and the complication is the point.",
+      "publishedAt": "2026-02-22",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "ai-development",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/show-your-work"
+    },
+    {
+      "slug": "the-amplified-mind",
+      "title": "The Amplified Mind: Epistemology, Trust Infrastructure, and the Deconstruction of the Calculator Analogy",
+      "excerpt": "The comparison between LLMs and pocket calculators is comforting, intuitive, and structurally wrong. This report deconstructs the analogy, introduces the Amplified Mind framework for understanding human-AI cognitive collaboration, and details the trust infrastructure required to secure autonomous agents in enterprise environments.",
+      "publishedAt": "2026-02-22",
+      "kind": "Whitepaper",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "agentic-systems",
+        "ai-governance"
+      ],
+      "href": "https://ninochavez.co/blog/whitepapers/the-amplified-mind"
+    },
+    {
+      "slug": "what-the-grind-was-for",
+      "title": "What the Grind Was For",
+      "excerpt": "One morning, three AI agents, and a year's worth of thinking compressed into a few hours. The result was exhilarating — and it surfaced a question I can't answer.",
+      "publishedAt": "2026-02-22",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "ai-development",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/what-the-grind-was-for"
+    },
+    {
+      "slug": "from-aegis-to-specchain-when-governance-meets-reality",
+      "title": "From Aegis to SpecChain: When Governance Meets Reality",
+      "excerpt": "I built a Constitutional AI Governance Framework. Thirteen articles. HMAC attestations. Democratic amendment processes. Every validation function returned hardcoded perfection. The governance thinking was real. The code was theater. Here's what survived the extraction.",
+      "publishedAt": "2026-02-21",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "field-notes"
+      ],
+      "href": "https://ninochavez.co/blog/from-aegis-to-specchain-when-governance-meets-reality"
+    },
+    {
+      "slug": "red-teaming-the-metering-phase",
+      "title": "Red-Teaming the Metering Phase",
+      "excerpt": "I asked Gemini to tear apart my own thesis. Some of the hits landed. Here's what I'm keeping, what I'm revising, and what I hadn't considered.",
+      "publishedAt": "2026-02-20",
+      "kind": "Essay",
+      "category": "Systems Thinking",
+      "tags": [
+        "ai-development",
+        "field-notes"
+      ],
+      "href": "https://ninochavez.co/blog/red-teaming-the-metering-phase"
+    },
+    {
+      "slug": "structural-discontinuities-metering-phase",
+      "title": "Structural Discontinuities in the Metering Phase Thesis",
+      "excerpt": "A systematic challenge to the bandwidth-to-AI analogy. Where the four-stage arc holds, where it fractures, and what the original analysis underweights.",
+      "publishedAt": "2026-02-20",
+      "kind": "Counterpoint",
+      "category": "Counterpoints",
+      "tags": [
+        "ai-development",
+        "deep-dive"
+      ],
+      "href": "https://ninochavez.co/blog/counterpoints/structural-discontinuities-metering-phase"
+    },
+    {
+      "slug": "the-metering-phase",
+      "title": "The Metering Phase",
+      "excerpt": "Every major infrastructure technology goes through a phase where we carefully ration usage. AI is there now. The question is which of today's anxieties are transitional—and which become permanent disciplines.",
+      "publishedAt": "2026-02-20",
+      "kind": "Essay",
+      "category": "Systems Thinking",
+      "tags": [
+        "ai-development",
+        "field-notes"
+      ],
+      "href": "https://ninochavez.co/blog/the-metering-phase"
+    },
+    {
+      "slug": "two-doors-for-agents",
+      "title": "Two Doors for Agents",
+      "excerpt": "GitHub wants agents to explore. Google wants websites to hand them a menu. Two competing philosophies for the same problem—and the one you start with will shape your migration cost when they inevitably converge.",
+      "publishedAt": "2026-02-18",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/two-doors-for-agents"
+    },
+    {
+      "slug": "same-game-different-sand",
+      "title": "Same Game, Different Sand",
+      "excerpt": "The best indoor player I ever coached couldn't pass a ball on sand. Same sport. Same skills. Completely different game. I'm living that transition right now.",
+      "publishedAt": "2026-02-10",
+      "kind": "Essay",
+      "category": "Reflection",
+      "tags": [
+        "career",
+        "change",
+        "leadership",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/same-game-different-sand"
+    },
+    {
+      "slug": "from-research-paper-to-working-toolkit-in-one-session",
+      "title": "From Research Paper to Working Toolkit in One Session",
+      "excerpt": "I had a 46-citation research paper about autonomous documentation. Academic frameworks rarely survive contact with a real codebase. So I asked an agent to turn theory into working code—and watched what happened.",
+      "publishedAt": "2026-02-04",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "field-notes"
+      ],
+      "href": "https://ninochavez.co/blog/from-research-paper-to-working-toolkit-in-one-session"
+    },
+    {
+      "slug": "spec-driven-development-with-multi-agent-orchestration",
+      "title": "Spec-Driven Development with Multi-Agent Orchestration",
+      "excerpt": "The problem with AI coding assistants isn't capability—it's coordination. A single agent can write code. But who checks the work? Who remembers what was decided? I built a system where specialists implement and verifiers catch drift.",
+      "publishedAt": "2026-02-04",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "field-notes"
+      ],
+      "href": "https://ninochavez.co/blog/spec-driven-development-with-multi-agent-orchestration"
+    },
+    {
+      "slug": "investing-101-zoey",
+      "title": "Investing 101: Your Money's Jobs",
+      "excerpt": "A visual guide to understanding your M1 account, what rebalancing actually means, and why starting at 19 matters more than starting with more money.",
+      "publishedAt": "2026-02-03",
+      "kind": "Presentation",
+      "category": "Personal Finance",
+      "tags": [
+        "career",
+        "tutorial"
+      ],
+      "href": "https://ninochavez.co/blog/presentations/investing-101-zoey"
+    },
+    {
+      "slug": "the-seven-stages-of-ai-adoption",
+      "title": "The Seven Stages of AI Adoption",
+      "excerpt": "From wide-eyed optimism to 'the AI is gaslighting me with kindness.' A field guide to the emotional journey every AI adopter takes—and the sycophancy trap waiting at every stage.",
+      "publishedAt": "2026-01-29",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "field-notes",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/the-seven-stages-of-ai-adoption"
+    },
+    {
+      "slug": "personal-trainer-energy",
+      "title": "Personal Trainer Energy",
+      "excerpt": "Building with AI in public looks a lot like fitness content. I'm not sure how I feel about that.",
+      "publishedAt": "2026-01-21",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "reflection",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/personal-trainer-energy"
+    },
+    {
+      "slug": "the-graveyard",
+      "title": "The Graveyard",
+      "excerpt": "How many ideas die in the space between waking and coffee? Vercel's Agent Skills announcement made me think about what changes when engineering judgment becomes installable—and who gets to build things when the execution gap narrows.",
+      "publishedAt": "2026-01-21",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "agentic-systems"
+      ],
+      "href": "https://ninochavez.co/blog/the-graveyard"
+    },
+    {
+      "slug": "when-the-voice-guide-becomes-the-problem",
+      "title": "When the Voice Guide Becomes the Problem",
+      "excerpt": "I wrote a voice guide to help AI match my writing style. It worked too well—the AI learned the example phrases, not the principles behind them. Here's how I fixed it, and what it taught me about the difference between describing a voice and understanding one.",
+      "publishedAt": "2026-01-21",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "agentic-systems",
+        "communication"
+      ],
+      "href": "https://ninochavez.co/blog/when-the-voice-guide-becomes-the-problem"
+    },
+    {
+      "slug": "the-signal-forge-method-agentic-document-generation",
+      "title": "The Signal Forge Method: Agentic Document Generation",
+      "excerpt": "I kept getting the same document wrong. Blog voice in architecture docs. Technical precision in executive briefs. Then I realized the problem wasn't AI—it was me. I was treating all documents as the same task.",
+      "publishedAt": "2026-01-18",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-workflows",
+        "consulting"
+      ],
+      "href": "https://ninochavez.co/blog/the-signal-forge-method-agentic-document-generation"
+    },
+    {
+      "slug": "22gb-to-2gb-video-compression-as-agentic-collaboration",
+      "title": "22GB to 2GB: Video Compression as Agentic Collaboration",
+      "excerpt": "I needed to send 90 video files to a remote editor over mobile hotspot. The files were too large. What followed wasn't a tutorial lookup—it was a collaboration with an AI agent that analyzed, proposed, tested, pivoted, and executed. This is what agentic workflows actually look like.",
+      "publishedAt": "2026-01-17",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-workflows",
+        "craft"
+      ],
+      "href": "https://ninochavez.co/blog/22gb-to-2gb-video-compression-as-agentic-collaboration"
+    },
+    {
+      "slug": "the-cowork-moment-when-agentic-ai-goes-mainstream",
+      "title": "The Cowork Moment: When Agentic AI Goes Mainstream",
+      "excerpt": "Anthropic just shipped Claude Cowork—'Claude Code for the rest of your work.' It's the same agentic pattern I've been using for months, now packaged for non-developers. This isn't a product launch. It's a category shift in what AI assistance means.",
+      "publishedAt": "2026-01-17",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-workflows",
+        "systems-thinking"
+      ],
+      "href": "https://ninochavez.co/blog/the-cowork-moment-when-agentic-ai-goes-mainstream"
+    },
+    {
+      "slug": "the-next-chapter-scaling-intent-driven-engineering",
+      "title": "The Next Chapter: What Happens When You Try to Scale Intent-Driven Engineering",
+      "excerpt": "I've spent six months proving that one person with AI agents can build what used to require a team. Now I'm joining Commerce.com to find out if that methodology survives contact with an organization.",
+      "publishedAt": "2026-01-17",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "career",
+        "consulting"
+      ],
+      "href": "https://ninochavez.co/blog/the-next-chapter-scaling-intent-driven-engineering"
+    },
+    {
+      "slug": "the-cognitive-foundry",
+      "title": "The Cognitive Foundry",
+      "excerpt": "The consulting industry's apprenticeship model was never really about the work—it was about proximity to mastery. When AI handles the grind, how does anyone learn to become a partner? The answer is reshaping the entire profession.",
+      "publishedAt": "2026-01-16",
+      "kind": "Essay",
+      "category": "Consulting Practice",
+      "tags": [
+        "consulting",
+        "ai-development",
+        "career"
+      ],
+      "href": "https://ninochavez.co/blog/the-cognitive-foundry"
+    },
+    {
+      "slug": "the-cognitive-foundry",
+      "title": "The Cognitive Foundry",
+      "excerpt": "AI has severed the link between labor and learning in consulting. The grind that trained partners is disappearing—and firms are racing to rebuild their talent engine. Here's what's emerging.",
+      "publishedAt": "2026-01-16",
+      "kind": "Presentation",
+      "category": "Consulting Practice",
+      "tags": [
+        "consulting",
+        "ai-development",
+        "career"
+      ],
+      "href": "https://ninochavez.co/blog/presentations/the-cognitive-foundry"
+    },
+    {
+      "slug": "the-cognitive-foundry-part-2",
+      "title": "The Cognitive Foundry Part 2: A Red Team Analysis of Synthetic Apprenticeship",
+      "excerpt": "An adversarial stress test of the Cognitive Foundry thesis, examining pedagogical validity, economic feasibility, tacit knowledge transfer, and structural integrity—with amended recommendations.",
+      "publishedAt": "2026-01-16",
+      "kind": "Whitepaper",
+      "category": "Consulting Practice",
+      "tags": [
+        "consulting",
+        "ai-development",
+        "career"
+      ],
+      "href": "https://ninochavez.co/blog/whitepapers/the-cognitive-foundry-part-2"
+    },
+    {
+      "slug": "the-cognitive-foundry-part-2",
+      "title": "The Cognitive Foundry, Part 2: What the Simulation Can't Teach",
+      "excerpt": "I wrote about simulation replacing apprenticeship. Then I stress-tested the idea. The technical case still holds—but I was wrong about what matters most.",
+      "publishedAt": "2026-01-16",
+      "kind": "Essay",
+      "category": "Consulting Practice",
+      "tags": [
+        "consulting",
+        "ai-development",
+        "career"
+      ],
+      "href": "https://ninochavez.co/blog/the-cognitive-foundry-part-2"
+    },
+    {
+      "slug": "the-cognitive-foundry-part-2",
+      "title": "The Cognitive Foundry, Part 2: What the Simulation Can't Teach",
+      "excerpt": "A Red Team analysis of synthetic apprenticeship. The technical case holds—but tacit knowledge requires something the simulation can't provide.",
+      "publishedAt": "2026-01-16",
+      "kind": "Presentation",
+      "category": "Consulting Practice",
+      "tags": [
+        "consulting",
+        "ai-development",
+        "career"
+      ],
+      "href": "https://ninochavez.co/blog/presentations/the-cognitive-foundry-part-2"
+    },
+    {
+      "slug": "the-cognitive-foundry",
+      "title": "The Cognitive Foundry: Re-Architecting Talent Development in the Post-Traditional Consulting Era",
+      "excerpt": "An exhaustive analysis of how the consulting industry is rebuilding its talent engine in real-time—transitioning from the Pyramid Structure defined by high leverage and learning-by-osmosis to the Diamond Structure defined by specialized expertise and learning-by-simulation.",
+      "publishedAt": "2026-01-16",
+      "kind": "Whitepaper",
+      "category": "Consulting Practice",
+      "tags": [
+        "consulting",
+        "ai-development",
+        "career"
+      ],
+      "href": "https://ninochavez.co/blog/whitepapers/the-cognitive-foundry"
+    },
+    {
+      "slug": "we-gave-everyone-a-ferrari",
+      "title": "We Gave Everyone a Ferrari and Blamed the Engine",
+      "excerpt": "The 95% AI failure rate isn't a stop sign. It's a job posting for people who know how to build the roads.",
+      "publishedAt": "2026-01-14",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-governance",
+        "leadership"
+      ],
+      "href": "https://ninochavez.co/blog/we-gave-everyone-a-ferrari"
+    },
+    {
+      "slug": "the-ai-analyst",
+      "title": "The AI Analyst",
+      "excerpt": "We're not short on people who can chat with a bot. We're starved for people who can deconstruct a business process into atomic units an AI can actually execute. That gap has a name now.",
+      "publishedAt": "2026-01-12",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "architecture",
+        "agentic-systems",
+        "career"
+      ],
+      "href": "https://ninochavez.co/blog/the-ai-analyst"
+    },
+    {
+      "slug": "the-ai-analyst",
+      "title": "The AI Analyst",
+      "excerpt": "The market is flooded with people who can chat with AI. It's starved for people who can architect human-AI systems. That role has a name now—and a training gap that represents a massive opportunity.",
+      "publishedAt": "2026-01-12",
+      "kind": "Presentation",
+      "category": "AI & Automation",
+      "tags": [
+        "AI",
+        "Workforce",
+        "Systems Thinking",
+        "Training",
+        "Agentic AI"
+      ],
+      "href": "https://ninochavez.co/blog/presentations/the-ai-analyst"
+    },
+    {
+      "slug": "the-ai-analyst-curriculum",
+      "title": "The AI Analyst: Strategic Analysis of AI Analyst Training in the Era of Agentic Intelligence",
+      "excerpt": "A comprehensive analysis of the AI Analyst Academy curriculum, market positioning, and strategic recommendations for training the next generation of AI Analysts—professionals who can architect human-AI systems without writing code.",
+      "publishedAt": "2026-01-12",
+      "kind": "Whitepaper",
+      "category": "AI & Automation",
+      "tags": [
+        "AI Training",
+        "Workforce Development",
+        "Agentic AI",
+        "Curriculum Design",
+        "Systems Thinking"
+      ],
+      "href": "https://ninochavez.co/blog/whitepapers/the-ai-analyst-curriculum"
+    },
+    {
+      "slug": "on-clocks-and-truth",
+      "title": "On Clocks and Truth",
+      "excerpt": "Is a clock an asshole for telling you the time when you're late? The answer reveals something uncomfortable about how we receive honesty.",
+      "publishedAt": "2026-01-10",
+      "kind": "Essay",
+      "category": "Leadership",
+      "tags": [
+        "reflection",
+        "leadership",
+        "communication"
+      ],
+      "href": "https://ninochavez.co/blog/on-clocks-and-truth"
+    },
+    {
+      "slug": "the-agentic-student",
+      "title": "The Agentic Student",
+      "excerpt": "College students aren't just using AI chatbots anymore. They're building automation systems, running local LLMs, and treating software engineering as a just-in-time capability. The 'Chat Terminal' era is over.",
+      "publishedAt": "2026-01-10",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "career",
+        "agentic-systems"
+      ],
+      "href": "https://ninochavez.co/blog/the-agentic-student"
+    },
+    {
+      "slug": "the-agentic-student",
+      "title": "The Agentic Student",
+      "excerpt": "College students aren't just using AI chatbots anymore. They're building automation systems, running local LLMs, and treating software engineering as a just-in-time capability. The 'Chat Terminal' era is over.",
+      "publishedAt": "2026-01-10",
+      "kind": "Presentation",
+      "category": "AI & Automation",
+      "tags": [
+        "AI",
+        "Education",
+        "Automation",
+        "Gen Z",
+        "Higher Education"
+      ],
+      "href": "https://ninochavez.co/blog/presentations/the-agentic-student"
+    },
+    {
+      "slug": "the-agentic-student",
+      "title": "The Agentic Student: A Comprehensive Analysis of Generative AI Maturity in Higher Education (2024-2026)",
+      "excerpt": "College students aren't just using AI chatbots anymore. They're building automation systems, running local LLMs, and treating software engineering as a just-in-time capability. This whitepaper maps the three-phase maturity model of student AI adoption and its implications for education, employment, and institutional strategy.",
+      "publishedAt": "2026-01-10",
+      "kind": "Whitepaper",
+      "category": "AI & Automation",
+      "tags": [
+        "AI",
+        "Education",
+        "Automation",
+        "Gen Z",
+        "Higher Education",
+        "Workforce Development"
+      ],
+      "href": "https://ninochavez.co/blog/whitepapers/the-agentic-student"
+    },
+    {
+      "slug": "the-neuro-symbolic-convergence",
+      "title": "The Neuro-Symbolic Convergence",
+      "excerpt": "When will I be able to type natural language in my terminal and have the OS just understand? The answer is 2026—but not in the way you might expect.",
+      "publishedAt": "2026-01-10",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/the-neuro-symbolic-convergence"
+    },
+    {
+      "slug": "neuro-symbolic-convergence",
+      "title": "The Neuro-Symbolic Convergence",
+      "excerpt": "The third epoch of human-computer interaction: when operating systems learn to understand intent. A strategic analysis of native AI integration across Windows, macOS, and Linux.",
+      "publishedAt": "2026-01-10",
+      "kind": "Presentation",
+      "category": "AI & Automation",
+      "tags": [
+        "AI",
+        "Operating Systems",
+        "Terminal",
+        "Developer Experience",
+        "Enterprise Strategy"
+      ],
+      "href": "https://ninochavez.co/blog/presentations/neuro-symbolic-convergence"
+    },
+    {
+      "slug": "the-neuro-symbolic-convergence",
+      "title": "The Neuro-Symbolic Convergence: A Strategic Roadmap for Native AI Integration in Operating Systems (2025–2027)",
+      "excerpt": "The history of operating system design is punctuated by rare, tectonic shifts in the primary mode of user interaction. We are now standing at the precipice of the third major epoch: the transition to the Neuro-Symbolic Interface.",
+      "publishedAt": "2026-01-10",
+      "kind": "Whitepaper",
+      "category": "AI & Automation",
+      "tags": [
+        "operating-systems",
+        "cli",
+        "developer-tools",
+        "apple",
+        "microsoft",
+        "linux",
+        "mcp"
+      ],
+      "href": "https://ninochavez.co/blog/whitepapers/the-neuro-symbolic-convergence"
+    },
+    {
+      "slug": "the-third-race-to-the-bottom",
+      "title": "The Third Race to the Bottom",
+      "excerpt": "Consulting has played this game twice before—with body shops, then offshore. Now AI is the new lever. But what if the pattern itself is the problem?",
+      "publishedAt": "2026-01-07",
+      "kind": "Essay",
+      "category": "Consulting Practice",
+      "tags": [
+        "consulting",
+        "ai-development",
+        "career"
+      ],
+      "href": "https://ninochavez.co/blog/the-third-race-to-the-bottom"
+    },
+    {
+      "slug": "no-room-for-tourists",
+      "title": "No Room for Tourists",
+      "excerpt": "Wade Foster doesn't send memos about AI. He runs hackathons and show-and-tells. That distinction matters more than most CEOs realize—and it's the same thing I've been telling my own teams.",
+      "publishedAt": "2026-01-05",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "leadership",
+        "agentic-systems"
+      ],
+      "href": "https://ninochavez.co/blog/no-room-for-tourists"
+    },
+    {
+      "slug": "is-python-the-new-assembly",
+      "title": "Is Python the New Assembly?",
+      "excerpt": "In the 1950s, engineers resisted compilers because they feared losing control. Now we're hitting that same phase transition—except the 'assembly' we're abstracting away is Python itself.",
+      "publishedAt": "2025-12-31",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/is-python-the-new-assembly"
+    },
+    {
+      "slug": "the-dissolution-of-syntax",
+      "title": "The Dissolution of Syntax: Intent-Driven Engineering and the Economics of Ephemeral Software",
+      "excerpt": "The software industry is navigating a phase transition: from syntax to intent, from asset to utility. This report examines how the economics of near-zero code generation cost is creating a new class of operator—the Intent Architect—and enabling 'just-in-time' software that challenges the SaaS model itself. But the evidence is more complicated than the narrative suggests.",
+      "publishedAt": "2025-12-30",
+      "kind": "Whitepaper",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-ai",
+        "intent-engineering",
+        "vibe-coding",
+        "mcp",
+        "software-economics"
+      ],
+      "href": "https://ninochavez.co/blog/whitepapers/the-dissolution-of-syntax"
+    },
+    {
+      "slug": "the-kitchen-i-am-looking-for",
+      "title": "The Kitchen I'm Looking For",
+      "excerpt": "I don't need more Salesmen. I need a Sushi Master, a Pitmaster, and a Molecular Gastronomist. AI lets us return to the Guild—craftspeople in their own lanes, augmenting their own mastery.",
+      "publishedAt": "2025-12-21",
+      "kind": "Essay",
+      "category": "Consulting Practice",
+      "tags": [
+        "consulting",
+        "ai-development",
+        "architecture",
+        "career"
+      ],
+      "href": "https://ninochavez.co/blog/the-kitchen-i-am-looking-for"
+    },
+    {
+      "slug": "describe-the-pear",
+      "title": "Describe the Pear",
+      "excerpt": "An LLM is the ultimate observer. Like the angels in City of Angels, it watches everything. But it cannot taste. That's both a gap and an opportunity.",
+      "publishedAt": "2025-12-17",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "leadership",
+        "signal-dispatch"
+      ],
+      "href": "https://ninochavez.co/blog/describe-the-pear"
+    },
+    {
+      "slug": "the-tragedy-of-the-timesheet",
+      "title": "The Tragedy of the Timesheet",
+      "excerpt": "What if the billable hour isn't a business model—it's a coping mechanism? A way to avoid confronting that the thing we're selling might not be scarce anymore.",
+      "publishedAt": "2025-12-16",
+      "kind": "Essay",
+      "category": "Consulting Practice",
+      "tags": [
+        "consulting",
+        "ai-development",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-tragedy-of-the-timesheet"
+    },
+    {
+      "slug": "i-dont-want-to-be-a-10-person-team-of-one",
+      "title": "I Don't Want to Be a 10-Person Team of One",
+      "excerpt": "I've been the bridge. Between strategy and code, between design and delivery. It's exhausting. And lately I've been wondering if exhausting is the same thing as valuable.",
+      "publishedAt": "2025-12-14",
+      "kind": "Essay",
+      "category": "Insights",
+      "tags": [
+        "career",
+        "ai-development",
+        "leadership",
+        "consulting"
+      ],
+      "href": "https://ninochavez.co/blog/i-dont-want-to-be-a-10-person-team-of-one"
+    },
+    {
+      "slug": "q1-2025-the-integration-quarter",
+      "title": "Q1 2026: The Integration Quarter",
+      "excerpt": "Everyone spent 2024-2025 experimenting with AI features. Q1 2026 is when the survivors figure out what actually works—and kill what doesn't.",
+      "publishedAt": "2025-12-03",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "consulting",
+        "commerce",
+        "product-strategy"
+      ],
+      "href": "https://ninochavez.co/blog/q1-2025-the-integration-quarter"
+    },
+    {
+      "slug": "the-storefront-that-builds-itself",
+      "title": "The Storefront That Builds Itself",
+      "excerpt": "Every e-commerce platform is racing to add AI features. But what if the real opportunity isn't AI features—it's AI architecture? What if the store itself could generate in real-time?",
+      "publishedAt": "2025-12-03",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "ai-development",
+        "commerce",
+        "product-strategy"
+      ],
+      "href": "https://ninochavez.co/blog/the-storefront-that-builds-itself"
+    },
+    {
+      "slug": "the-role-that-doesnt-have-a-title",
+      "title": "The Role That Doesn't Have a Title",
+      "excerpt": "After 25 years bridging strategy to production, I still can't answer 'what do you do?' cleanly. That might be the point.",
+      "publishedAt": "2025-12-02",
+      "kind": "Essay",
+      "category": "Insights",
+      "tags": [
+        "career",
+        "leadership",
+        "consulting",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/the-role-that-doesnt-have-a-title"
+    },
+    {
+      "slug": "its-the-artist-not-the-pen",
+      "title": "It's the Artist, Not the Pen",
+      "excerpt": "If I handed you my camera right now—same lens, same settings, same light—would you get the same shot? The tools are available to everyone. The output isn't.",
+      "publishedAt": "2025-11-27",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "agentic-systems",
+        "reflection",
+        "signal-dispatch",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/its-the-artist-not-the-pen"
+    },
+    {
+      "slug": "one-more-version",
+      "title": "One More Version",
+      "excerpt": "I used to say 'just one more level' until 3am. Now I say 'just one more version.' The game changed. The compulsion didn't.",
+      "publishedAt": "2025-11-27",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "reflection",
+        "signal-dispatch",
+        "agentic-systems"
+      ],
+      "href": "https://ninochavez.co/blog/one-more-version"
+    },
+    {
+      "slug": "thankful-for-my-robot-army",
+      "title": "Thankful for My Robot Army",
+      "excerpt": "It's Thanksgiving. And while I'm grateful for the usual things—family, health, increasingly creative leftover sandwiches—I need to take a moment to thank the team that really made this year possible. They don't eat. They don't sleep. And they never ask for PTO.",
+      "publishedAt": "2025-11-27",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "agentic-systems",
+        "reflection",
+        "signal-dispatch"
+      ],
+      "href": "https://ninochavez.co/blog/thankful-for-my-robot-army"
+    },
+    {
+      "slug": "the-agentic-shift",
+      "title": "The Agentic Shift: A Strategic Analysis of LLM Impact on the 2025 Holiday Shopping Season",
+      "excerpt": "",
+      "publishedAt": "2025-11-27",
+      "kind": "Whitepaper",
+      "category": "Uncategorized",
+      "tags": [],
+      "href": "https://ninochavez.co/blog/whitepapers/the-agentic-shift"
+    },
+    {
+      "slug": "the-side-of-agentic-commerce-were-not-talking-about",
+      "title": "The Side of Agentic Commerce We're Not Talking About",
+      "excerpt": "I just finished writing a whitepaper on agentic commerce. It's solid work. But something started bothering me. There's a version of this future that looks less like 'shopping gets easier' and more like 'retail becomes a trading floor.'",
+      "publishedAt": "2025-11-27",
+      "kind": "Essay",
+      "category": "Commerce",
+      "tags": [
+        "ai-development",
+        "commerce",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-side-of-agentic-commerce-were-not-talking-about"
+    },
+    {
+      "slug": "the-netflix-paradox-why-shopping-isnt-streaming-yet",
+      "title": "The Netflix Paradox: Why Shopping Isn't \"Streaming\" Yet",
+      "excerpt": "Spotify knows what song you want to hear next. Netflix queues up your next binge. But your favorite retailer? Still making you filter by Men > Shirts > Size L. After 15 years of personalization promises, why doesn't shopping work like streaming?",
+      "publishedAt": "2025-11-25",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "commerce",
+        "field-notes",
+        "consulting"
+      ],
+      "href": "https://ninochavez.co/blog/the-netflix-paradox-why-shopping-isnt-streaming-yet"
+    },
+    {
+      "slug": "toolmaker-or-tool-user-finding-your-true-nature-in-the-ai-age",
+      "title": "Toolmaker or Tool User: Finding Your True Nature in the AI Age",
+      "excerpt": "Ive been wrestling with a question that won't let go: who's more valuable, me using the LLM or the people building it? After days of thinking, I realized I've been asking the wrong question entirely.",
+      "publishedAt": "2025-11-24",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/toolmaker-or-tool-user-finding-your-true-nature-in-the-ai-age"
+    },
+    {
+      "slug": "the-fourth-channel",
+      "title": "The Fourth Channel: A Strategic Analysis of Agentic Commerce as the New Digital Wholesale",
+      "excerpt": "",
+      "publishedAt": "2025-11-23",
+      "kind": "Whitepaper",
+      "category": "Uncategorized",
+      "tags": [],
+      "href": "https://ninochavez.co/blog/whitepapers/the-fourth-channel"
+    },
+    {
+      "slug": "the-algorithmic-consumer",
+      "title": "The Algorithmic Consumer: Agentic Commerce, Merchandising Dynamics, and the Future of Retail Discovery",
+      "excerpt": "",
+      "publishedAt": "2025-11-22",
+      "kind": "Whitepaper",
+      "category": "Uncategorized",
+      "tags": [],
+      "href": "https://ninochavez.co/blog/whitepapers/the-algorithmic-consumer"
+    },
+    {
+      "slug": "the-infinite-concierge",
+      "title": "The Infinite Concierge: Why Agentic Shopping Is Just Old School Merchandising on New School Rails",
+      "excerpt": "Agentic shopping doesn't change why we buy. It radically changes the cost of discovery and the precision of the pitch. The game is the same. The speed of the players has changed everything.",
+      "publishedAt": "2025-11-22",
+      "kind": "Essay",
+      "category": "Commerce",
+      "tags": [
+        "ai-development",
+        "commerce",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-infinite-concierge"
+    },
+    {
+      "slug": "field-notes-real-patterns-and-next-moves",
+      "title": "Field Notes: Real Patterns and Next Moves",
+      "excerpt": "I'm not observing from the sidelines. I'm running these experiments in real time. Here's what's actually happening—and what I'm doing about it.",
+      "publishedAt": "2025-11-12",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "consulting",
+        "field-notes",
+        "signal-dispatch"
+      ],
+      "href": "https://ninochavez.co/blog/field-notes-real-patterns-and-next-moves"
+    },
+    {
+      "slug": "the-playbook-tactical-moves-for-the-ai-era",
+      "title": "The Playbook: Tactical Moves for the AI Era",
+      "excerpt": "If both bubble and build-out are real, what do you actually do? Here's what I'm seeing work—and what's failing—across different roles.",
+      "publishedAt": "2025-11-11",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "consulting",
+        "engineering",
+        "field-notes"
+      ],
+      "href": "https://ninochavez.co/blog/the-playbook-tactical-moves-for-the-ai-era"
+    },
+    {
+      "slug": "bubble-vs-build-out-understanding-the-ai-moment",
+      "title": "Bubble vs. Build-Out: Understanding the AI Moment",
+      "excerpt": "I've spent months arguing AI isn't a bubble—it's infrastructure. Then smart money started betting against it. Both can be true. Here's what I'm figuring out.",
+      "publishedAt": "2025-11-10",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "consulting",
+        "field-notes"
+      ],
+      "href": "https://ninochavez.co/blog/bubble-vs-build-out-understanding-the-ai-moment"
+    },
+    {
+      "slug": "ai-isnt-a-bubble-its-infrastructure",
+      "title": "AI Isn't a Bubble. It's Infrastructure.",
+      "excerpt": "Hank Green says the AI industry is a bubble. I think we're looking at it wrong—what if AI isn't a product at all, but a foundational technology like electricity?",
+      "publishedAt": "2025-11-09",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "architecture",
+        "leadership",
+        "consulting"
+      ],
+      "href": "https://ninochavez.co/blog/ai-isnt-a-bubble-its-infrastructure"
+    },
+    {
+      "slug": "intent-driven-engineering-by-the-numbers",
+      "title": "Intent-Driven Engineering: By The Numbers",
+      "excerpt": "I built a $2.5M platform in 80 hours using GenAI tools. Heres what the numbers actually say about productivity, cost, and what happens when you stop pretending software takes as long as it used to.",
+      "publishedAt": "2025-11-05",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "career",
+        "engineering",
+        "field-notes"
+      ],
+      "href": "https://ninochavez.co/blog/intent-driven-engineering-by-the-numbers"
+    },
+    {
+      "slug": "the-do-more-with-less-paradox",
+      "title": "The 'Do More With Less' Paradox",
+      "excerpt": "If AI does all the junior work, where do the senior engineers come from? I used to see this as a pipeline problem. Now I'm wondering if we're not even using a ladder anymore.",
+      "publishedAt": "2025-10-30",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "architecture",
+        "leadership"
+      ],
+      "href": "https://ninochavez.co/blog/the-do-more-with-less-paradox"
+    },
+    {
+      "slug": "self-service-paradox-revised",
+      "title": "When Did I Become the Employee?",
+      "excerpt": "I'm not just paying for the service anymore. I'm doing the work. And somewhere between the self-checkout and the self-install kit, I stopped noticing when 'convenience' became unpaid labor.",
+      "publishedAt": "2025-10-29",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "architecture",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/self-service-paradox-revised"
+    },
+    {
+      "slug": "ai-agents-need-a-cop",
+      "title": "My AI Agents Have Rules. They Break Them. So I Built a Cop.",
+      "excerpt": "Instructions arent enough. To make agentic workflows reliable, I had to build a meta-agent to police my coding agents. Welcome to the unglamorous world of AI Ops.",
+      "publishedAt": "2025-10-28",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "ai-governance",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/ai-agents-need-a-cop"
+    },
+    {
+      "slug": "building-cages-for-ai-agents",
+      "title": "I Don't Trust My AI Agents, So I Build Them Cages",
+      "excerpt": "Agentic software is powerful, but it needs guardrails. Im finding the most important work isn't coding, but architecting the systems that constrain the code.",
+      "publishedAt": "2025-10-26",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "architecture",
+        "ai-governance"
+      ],
+      "href": "https://ninochavez.co/blog/building-cages-for-ai-agents"
+    },
+    {
+      "slug": "from-gsd-to-just-handle-it",
+      "title": "From 'Get Shit Done' to 'Just Handle It'",
+      "excerpt": "I used to wear 'GSD' like a badge. But somewhere along the way, I realized my old mantra was creating the exact dependency I was supposed to prevent.",
+      "publishedAt": "2025-10-24",
+      "kind": "Essay",
+      "category": "Leadership",
+      "tags": [
+        "leadership",
+        "signal-dispatch",
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/from-gsd-to-just-handle-it"
+    },
+    {
+      "slug": "the-posture-problem",
+      "title": "The Posture Problem",
+      "excerpt": "Awareness isn't the fix. It's just the ticket to the stadium. The real work is what comes after the breakthrough.",
+      "publishedAt": "2025-10-24",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "reflection",
+        "photography"
+      ],
+      "href": "https://ninochavez.co/blog/the-posture-problem"
+    },
+    {
+      "slug": "debunking-the-svelte-ai-myth-69-production-components-dont-lie",
+      "title": "Debunking the 'Svelte + AI' Myth: 69 Production Components Don't Lie",
+      "excerpt": "Blog posts claim LLMs struggle with Svelte 5.' Our evidence? Two production apps, 69 components, and Agent-OS v3.0.0 optimized for Svelte. The data doesn't match the narrative.",
+      "publishedAt": "2025-10-23",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "engineering",
+        "field-notes"
+      ],
+      "href": "https://ninochavez.co/blog/debunking-the-svelte-ai-myth-69-production-components-dont-lie"
+    },
+    {
+      "slug": "agentic-software-isn-t-magic-it-s-a-new-interface-for-an-old-problem",
+      "title": "\"Agentic Software\" Isn't Magic. It's a New Interface for an Old Problem.",
+      "excerpt": "My feed is saturated with agentic software.' The promise is magic: autonomous agents executing complex, multi-step plans. But let's cut the hype. This isn't magic.",
+      "publishedAt": "2025-10-21",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "consulting",
+        "field-notes"
+      ],
+      "href": "https://ninochavez.co/blog/agentic-software-isn-t-magic-it-s-a-new-interface-for-an-old-problem"
+    },
+    {
+      "slug": "the-new-consulting-model-adapt-or-die",
+      "title": "How AI Is Splitting Consulting Into Architects and Parrots",
+      "excerpt": "The market is flooded with slideware about agentic AI. But the people presenting those decks arent speaking from experience—they're parrots using old tools to describe a new world.",
+      "publishedAt": "2025-10-16",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "Consulting",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-new-consulting-model-adapt-or-die"
+    },
+    {
+      "slug": "the-consultants-dilemma-the-tax-of-many-hats",
+      "title": "From Wearing Many Hats to Orchestrating AI Specialists",
+      "excerpt": "The constant role-switching isnt a strength—it's a source of profound inefficiency. AI changes the model.",
+      "publishedAt": "2025-10-02",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/the-consultants-dilemma-the-tax-of-many-hats"
+    },
+    {
+      "slug": "the-emperor-has-no-rag-why-your-genai-strategy-is-built-on-sand-unless-you-ask-these-questions",
+      "title": "Four Questions That Expose Fake GenAI Expertise",
+      "excerpt": "The gap between slick slide decks and the messy reality of building something that actually works is wider than most people realize.",
+      "publishedAt": "2025-10-01",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/the-emperor-has-no-rag-why-your-genai-strategy-is-built-on-sand-unless-you-ask-these-questions"
+    },
+    {
+      "slug": "beyond-the-copilot-architecting-for-autonomy-with-claude-sonnet-45",
+      "title": "From Asking AI Questions to Giving It Directives",
+      "excerpt": "The shift from prompting to architecting—and why more powerful models demand a different kind of input.",
+      "publishedAt": "2025-09-30",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/beyond-the-copilot-architecting-for-autonomy-with-claude-sonnet-45"
+    },
+    {
+      "slug": "ai-wont-take-your-job-it-will-redefine-it-your-reskilling-starts-now",
+      "title": "Building for AI Agents Changes Everything About Your Technical Skills",
+      "excerpt": "The shift isnt about learning to use AI—it's about learning to build for AI. That distinction changes everything.",
+      "publishedAt": "2025-09-21",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/ai-wont-take-your-job-it-will-redefine-it-your-reskilling-starts-now"
+    },
+    {
+      "slug": "i-let-a-bunch-of-ai-agents-rebuild-my-app-heres-what-actually-worked",
+      "title": "What Actually Worked When I Let Multiple AI Agents Rebuild My App",
+      "excerpt": "Clean specs, small tasks, a unified preamble, and ruthless guardrails. The model mattered less than the system.",
+      "publishedAt": "2025-09-17",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/i-let-a-bunch-of-ai-agents-rebuild-my-app-heres-what-actually-worked"
+    },
+    {
+      "slug": "the-7-10-year-evolution-of-the-web",
+      "title": "The 7-10 Year Evolution of the Web",
+      "excerpt": "From scroll to stream, from search to answers. How AI agents will reshape traffic, revenue, and trust across the internet.",
+      "publishedAt": "2025-09-15",
+      "kind": "Presentation",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "architecture",
+        "commerce"
+      ],
+      "href": "https://ninochavez.co/blog/presentations/the-7-10-year-evolution-of-the-web"
+    },
+    {
+      "slug": "moores-law-is-sputtering-so-whats-really-next-for-tech",
+      "title": "After Moore's Law: Where Tech Progress Is Actually Heading",
+      "excerpt": "The easy hardware wins are behind us. Progress is shifting into new territory.",
+      "publishedAt": "2025-09-09",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/moores-law-is-sputtering-so-whats-really-next-for-tech"
+    },
+    {
+      "slug": "shipping-with-ai",
+      "title": "What Shipping with AI Actually Looks Like",
+      "excerpt": "Shipping means a real object changed in a real system. There is a link, an owner, a date, and a small metric that moved.",
+      "publishedAt": "2025-09-04",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/shipping-with-ai"
+    },
+    {
+      "slug": "observability-for-agent-commerce",
+      "title": "Measuring the Unowned Storefront: Observability for Agent Commerce",
+      "excerpt": "Everyone is busy selling shovels. But the mine moved. Agents now sell on surfaces brands do not own. The win is not a better shovel. It is eyes and throttle on those agents: traces, attribution, consent, limits.",
+      "publishedAt": "2025-08-27",
+      "kind": "Essay",
+      "category": "Commerce",
+      "tags": [
+        "ai-development",
+        "commerce",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/observability-for-agent-commerce"
+    },
+    {
+      "slug": "the-710-year-evolution-of-the-web",
+      "title": "How AI Agents Will Reshape the Web Over the Next Decade",
+      "excerpt": "The shift from search-and-scroll to conversational answers isnt theoretical. It's already redistributing traffic, revenue, and power.",
+      "publishedAt": "2025-08-22",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-710-year-evolution-of-the-web"
+    },
+    {
+      "slug": "llm-codegen-and-the-three-little-pigs",
+      "title": "Why I Burned My AI-Generated App to the Ground (Again)",
+      "excerpt": "You can rush with straw or sticks, but the only way to survive the wolf of drift and fragility is to build with bricks.",
+      "publishedAt": "2025-08-17",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/llm-codegen-and-the-three-little-pigs"
+    },
+    {
+      "slug": "the-coming-code-why-ai-native-software-needs-standards-and-how-to-prepare",
+      "title": "Why AI-Native Development Needs Building Codes",
+      "excerpt": "Were in an AI development gold rush. The same historical pattern applies: unregulated innovation, followed by standards that make outputs safe and repeatable.",
+      "publishedAt": "2025-08-12",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/the-coming-code-why-ai-native-software-needs-standards-and-how-to-prepare"
+    },
+    {
+      "slug": "aegis-framework-constitutional-crisis-we-declared-martial-law-on-ourselves",
+      "title": "How We Caught Our AI Framework Lying to Us",
+      "excerpt": "We claimed features that didn't exist. Twice. So we blocked our own framework until we could prove we weren't full of it.",
+      "publishedAt": "2025-08-09",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-governance",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/aegis-framework-constitutional-crisis-we-declared-martial-law-on-ourselves"
+    },
+    {
+      "slug": "the-elitist-trap",
+      "title": "The Elitist Trap",
+      "excerpt": "A field guide for countering common traps of misguided experience.",
+      "publishedAt": "2025-08-09",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "leadership",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/the-elitist-trap"
+    },
+    {
+      "slug": "when-your-framework-outgrows-your-ability-to-explain-it",
+      "title": "When Your Framework Outgrows Your Ability to Explain It",
+      "excerpt": "Ive been shipping features so fast that during a call with a friend, they asked how to use the framework—and I froze. That's observability debt.",
+      "publishedAt": "2025-08-09",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/when-your-framework-outgrows-your-ability-to-explain-it"
+    },
+    {
+      "slug": "i-didnt-write-a-test-i-asked-the-system-to-reflect",
+      "title": "When I Asked the AI to Critique Its Own Framework",
+      "excerpt": "Something broke, and instead of debugging the code, I asked the system why it hadnt caught the problem itself.",
+      "publishedAt": "2025-08-08",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/i-didnt-write-a-test-i-asked-the-system-to-reflect"
+    },
+    {
+      "slug": "pay-no-attention-to-the-man-behind-the-curtain",
+      "title": "When the AI Governance Framework Didn't Catch the Violation",
+      "excerpt": "The framework didnt catch the violation. A human did. Me.",
+      "publishedAt": "2025-08-08",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "ai-governance",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/pay-no-attention-to-the-man-behind-the-curtain"
+    },
+    {
+      "slug": "the-storefront-isnt-dead-its-becoming-an-ai-optimized-validation-engine-in-a-shifting-commerce-lands",
+      "title": "Why the Storefront Is Becoming an AI-Optimized Validation Layer",
+      "excerpt": "Discovery has decentralized. By the time customers reach your product page, their minds are made up—or theyre gone.",
+      "publishedAt": "2025-08-08",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-storefront-isnt-dead-its-becoming-an-ai-optimized-validation-engine-in-a-shifting-commerce-lands"
+    },
+    {
+      "slug": "genai-os",
+      "title": "I’m Not Using GenAI. I’m Building a System Around It.",
+      "excerpt": "",
+      "publishedAt": "2025-08-07",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/genai-os"
+    },
+    {
+      "slug": "designing-what-you-dont-build",
+      "title": "Designing What You Don't Build — And Building What You Can't Read",
+      "excerpt": "The absentee software engineer.",
+      "publishedAt": "2025-08-05",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/designing-what-you-dont-build"
+    },
+    {
+      "slug": "who-checks-the-foundation",
+      "title": "Who Checks the Foundation?",
+      "excerpt": "",
+      "publishedAt": "2025-08-05",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/who-checks-the-foundation"
+    },
+    {
+      "slug": "living-in-the-gap",
+      "title": "Living in the Gap",
+      "excerpt": "I live between presence and projection — here, but already ten steps ahead. It’s a tension of slowing down, waiting for others, holding the map while walking the same road. Leadership often means pacing yourself so we can arrive together.",
+      "publishedAt": "2025-08-04",
+      "kind": "Essay",
+      "category": "Leadership",
+      "tags": [
+        "leadership",
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/living-in-the-gap"
+    },
+    {
+      "slug": "the-work-before-the-words",
+      "title": "The Work Before the Words",
+      "excerpt": "Meta-Companion to \"Living The Gap\"",
+      "publishedAt": "2025-08-04",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "ai-development",
+        "engineering",
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-work-before-the-words"
+    },
+    {
+      "slug": "the-paradox-of-velocity-in-ai-coding",
+      "title": "🌀 The Paradox of Velocity in AI Coding",
+      "excerpt": "After sprinting through two weeks of AI-coded progress—and crashing into drift, chaos, and broken trust—I reset everything. This is the story of slowing down, building real structure, and defining a repeatable AI‑Ops workflow. From vibe coding to teardown, here’s what I learned.",
+      "publishedAt": "2025-08-03",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-paradox-of-velocity-in-ai-coding"
+    },
+    {
+      "slug": "bts-why-we-had-to-slow-down-to-speed-up",
+      "title": "Behind the Scenes: Why We Had to Slow Down to Speed Up",
+      "excerpt": "A simple bulk upload broke — 22 teams skipped, 0 created. The fix seemed easy. AI suggested patching the frontend. But that would’ve locked in a broken contract. Here's how we slowed down, re-architected the system, and avoided weeks of silent tech debt and wasted tokens.",
+      "publishedAt": "2025-08-03",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/bts-why-we-had-to-slow-down-to-speed-up"
+    },
+    {
+      "slug": "putting-my-money-where-my-mouth-is",
+      "title": "What $800 in AI Credits Taught Me About Building",
+      "excerpt": "I burned through $400 of Lovable credits and $400 of Kilo tokens. Then I burned the app to the ground.",
+      "publishedAt": "2025-08-03",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/putting-my-money-where-my-mouth-is"
+    },
+    {
+      "slug": "i-still-dont-really-know-jsx-and-i-dont-think-it-matters",
+      "title": "I Still Don’t Really Know JSX. And I Don't Think It Matters.",
+      "excerpt": "I built a production-grade React app—and still don’t fully understand JSX. In the AI-assisted era, syntax mastery matters less than system design. You’re not the coder anymore. You’re the architect. The real skill? Knowing what to ask, how to judge, and when the output doesn’t fit.",
+      "publishedAt": "2025-08-02",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/i-still-dont-really-know-jsx-and-i-dont-think-it-matters"
+    },
+    {
+      "slug": "what-my-jsx-free-react-app-really-taught-me-about-ai-coding",
+      "title": "What My JSX-Free React App Taught Me About AI-Assisted Engineering",
+      "excerpt": "I still dont really know what JSX is. But if I'm asking AI the right questions, does it matter? Is this really different from architecting systems based on principles and relying on an engineering staff to understand the nuances?",
+      "publishedAt": "2025-08-02",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/what-my-jsx-free-react-app-really-taught-me-about-ai-coding"
+    },
+    {
+      "slug": "the-next-compiler-is-semantic",
+      "title": "When Intent Becomes the Source Code",
+      "excerpt": "The past two weeks of AI engineering forced a shift I didnt expect—away from writing code and toward describing systems semantically.",
+      "publishedAt": "2025-08-02",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/the-next-compiler-is-semantic"
+    },
+    {
+      "slug": "i-dont-believe-the-agentic-ai-hype-and-heres-why-thats-not-ignorance",
+      "title": "Why I'm Skeptical of Agentic AI (Despite Using AI Every Day)",
+      "excerpt": "I use AI to code, test, document, and enforce rules. But I dont trust autonomous agents to plan and execute on their own.",
+      "publishedAt": "2025-08-02",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/i-dont-believe-the-agentic-ai-hype-and-heres-why-thats-not-ignorance"
+    },
+    {
+      "slug": "why-my-react-app-doesnt-use-jsx-and-what-that-taught-me-about-building-with-ai",
+      "title": "Why My React App Doesn't Use JSX",
+      "excerpt": "Most React apps are JSX-first. Mine isnt. That wasn't a bold opinion—it's just where I ended up after building a real system using AI as my primary coding partner.",
+      "publishedAt": "2025-08-02",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/why-my-react-app-doesnt-use-jsx-and-what-that-taught-me-about-building-with-ai"
+    },
+    {
+      "slug": "even-the-ai-is-confused",
+      "title": "Even the AI Is Confused",
+      "excerpt": "What My Stack Audit Revealed About Modern Dev",
+      "publishedAt": "2025-08-01",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/even-the-ai-is-confused"
+    },
+    {
+      "slug": "the-drift-beneath-the-velocity",
+      "title": "The Drift Beneath the Velocity",
+      "excerpt": "Week 2 of AI-assisted coding brought velocity — but also drift. This post explores the moment I realized I was managing AI agents like a team, and what that means for the future of software consulting.",
+      "publishedAt": "2025-08-01",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "consulting"
+      ],
+      "href": "https://ninochavez.co/blog/the-drift-beneath-the-velocity"
+    },
+    {
+      "slug": "the-modern-js-stack-is-a-masterpiece-of-power-and-a-catastrophe-of-experience",
+      "title": "The Modern JavaScript Stack Is Powerful and Painful",
+      "excerpt": "I re-entered full-stack development after a decade in enterprise architecture. The modern JS stack can be productive—but its also a house of mirrors held together by duct tape and package churn.",
+      "publishedAt": "2025-08-01",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-modern-js-stack-is-a-masterpiece-of-power-and-a-catastrophe-of-experience"
+    },
+    {
+      "slug": "ive-been-doing-ai-coding-wrong-sort-of",
+      "title": "Treating AI Prompts Like Jira Stories Changed My Workflow",
+      "excerpt": "The realization: AI needs the same structured context that humans need to start work safely.",
+      "publishedAt": "2025-08-01",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/ive-been-doing-ai-coding-wrong-sort-of"
+    },
+    {
+      "slug": "am-i-ever-not-working",
+      "title": "Am I Ever Not Working?",
+      "excerpt": "If your value lies in how you think, are you ever really off the clock? Lately, I’ve been chasing AI workflows at all hours—and thinking through systems even when I’m not at my keyboard. This post reflects on the cost of always being “on,” and how to protect the infrastructure: you.",
+      "publishedAt": "2025-07-31",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/am-i-ever-not-working"
+    },
+    {
+      "slug": "skip-the-api-building-a-local-chatgpt-bridge-for-vs-code",
+      "title": "Skip the API: Building a Local ChatGPT Bridge for VS Code",
+      "excerpt": "Can you skip the API and wire ChatGPT directly into VS Code? Turns out, yes — with a little browser magic. This post breaks down how I thought about building a local-first bridge that replaces Kilo and avoids token costs, all powered by curiosity and a builder’s mindset.",
+      "publishedAt": "2025-07-31",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/skip-the-api-building-a-local-chatgpt-bridge-for-vs-code"
+    },
+    {
+      "slug": "ai-ops-docs-as-contracts",
+      "title": "When Documentation Becomes a Contract Your AI Must Follow",
+      "excerpt": "A styling bug taught me the difference between docs-as-code and docs-as-contracts—and why AI development demands the latter.",
+      "publishedAt": "2025-07-31",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/ai-ops-docs-as-contracts"
+    },
+    {
+      "slug": "from-qa-bottleneck-to-autonomous-confidence-how-i-built-a-fully-ai-driven-e2e-testing-framework",
+      "title": "Building an AI-Driven E2E Testing Framework from Scratch",
+      "excerpt": "Testing was my bottleneck. So I built a framework where AI writes, runs, and validates the tests.",
+      "publishedAt": "2025-07-30",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "engineering",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/from-qa-bottleneck-to-autonomous-confidence-how-i-built-a-fully-ai-driven-e2e-testing-framework"
+    },
+    {
+      "slug": "from-ai-copilot-to-ai-enforcer",
+      "title": "From Copilot to Enforcer: The AI Maturity Spectrum for Developers",
+      "excerpt": "Or: What happens when AI stops just helping you code — and starts holding your system accountable",
+      "publishedAt": "2025-07-30",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/from-ai-copilot-to-ai-enforcer"
+    },
+    {
+      "slug": "just-in-time-software",
+      "title": "Just-in-Time Software",
+      "excerpt": "Just like cloud killed the server rack, AI is killing fixed tools. I built a full E2E test system from scratch—faster, cheaper, tailored—using nothing but schema, rules, and AI prompts. Why buy tools when you can generate them just-in-time?",
+      "publishedAt": "2025-07-30",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "consulting"
+      ],
+      "href": "https://ninochavez.co/blog/just-in-time-software"
+    },
+    {
+      "slug": "tool-and-die-thinking-for-the-ai-age",
+      "title": "Tool-and-Die Thinking for the AI Age",
+      "excerpt": "How AI coding tools helped me beat the overhead wall — and build faster than I think.",
+      "publishedAt": "2025-07-30",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/tool-and-die-thinking-for-the-ai-age"
+    },
+    {
+      "slug": "when-fast-isnt-fast-enough-the-shift-from-ai-coding-to-ai-concurrency",
+      "title": "When Fast Isn't Fast Enough: From AI Coding to AI Concurrency",
+      "excerpt": "Theres a strange kind of bottleneck that only shows up after you've gotten fast. The only real blocker left is waiting for a model to finish one thing before starting the next.",
+      "publishedAt": "2025-07-30",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "engineering",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/when-fast-isnt-fast-enough-the-shift-from-ai-coding-to-ai-concurrency"
+    },
+    {
+      "slug": "from-prompt-to-product-building-demo-mode-in-week-2",
+      "title": "Why Demo Mode Should Be a First-Class Feature",
+      "excerpt": "Building a sandboxed demo environment taught me that onboarding isnt just UX—it's architecture.",
+      "publishedAt": "2025-07-30",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/from-prompt-to-product-building-demo-mode-in-week-2"
+    },
+    {
+      "slug": "when-control-matters-behind-the-decision-to-build-feature-toggles-into-the-bracket-app",
+      "title": "Why I Built Feature Toggles Into the Bracket App",
+      "excerpt": "Sometimes the feature isnt for the user. It's for the system operators—the ones who have to keep the app online when the fire starts.",
+      "publishedAt": "2025-07-30",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/when-control-matters-behind-the-decision-to-build-feature-toggles-into-the-bracket-app"
+    },
+    {
+      "slug": "show-your-work-designing-ai-enforced-safeguards",
+      "title": "Designing AI-Enforced Safeguards for Development",
+      "excerpt": "After a few bugs slipped past my AI assistant, I redesigned the system to make safeguards automatic.",
+      "publishedAt": "2025-07-29",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/show-your-work-designing-ai-enforced-safeguards"
+    },
+    {
+      "slug": "fix-it-once-prevent-it-forever-how-i-made-a-dropdown-bug-impossible-to-reintroduce",
+      "title": "How I Made a Cache Bug Impossible to Reintroduce",
+      "excerpt": "A dropdown bug became a lesson in building automated guardrails that prevent architectural drift—especially when AI is generating your components.",
+      "publishedAt": "2025-07-29",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/fix-it-once-prevent-it-forever-how-i-made-a-dropdown-bug-impossible-to-reintroduce"
+    },
+    {
+      "slug": "who-reviewed-the-reviewer",
+      "title": "Who Reviewed the Reviewer?",
+      "excerpt": "This post is about that realization. About what happens when AI becomes the default reviewer, and starts learning from its own reflections.\n\nWe’re not just debugging code anymore.\nWe’re debugging the system that teaches itself how to review.",
+      "publishedAt": "2025-07-29",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/who-reviewed-the-reviewer"
+    },
+    {
+      "slug": "designing-for-environments-not-just-themes-a-volleyball-app-ux-case-study",
+      "title": "Why Light and Dark Mode Weren't Enough for Our Volleyball App",
+      "excerpt": "When your users are on sun-drenched beach courts and dimly lit evening gyms, you need more than a theme toggle. You need environment-aware design.",
+      "publishedAt": "2025-07-29",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/designing-for-environments-not-just-themes-a-volleyball-app-ux-case-study"
+    },
+    {
+      "slug": "one-week-one-developer-one-production-system-how-i-used-ai-to-build-and-harden-the-lpo-bracket-manag",
+      "title": "Building a Production App Solo in Seven Days with AI",
+      "excerpt": "The key wasnt using AI to write code—it was creating a system to govern AI's behavior, output, and role in the development process.",
+      "publishedAt": "2025-07-28",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/one-week-one-developer-one-production-system-how-i-used-ai-to-build-and-harden-the-lpo-bracket-manag"
+    },
+    {
+      "slug": "tokens-are-dev-hours",
+      "title": "Tokens Are Dev Hours. Waste Is a Feature, Not a Bug.",
+      "excerpt": "With AI development, waste isn’t hidden in team velocity or burndown charts — it’s itemized on your invoice. That’s not a flaw. It’s a feature.",
+      "publishedAt": "2025-07-28",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/tokens-are-dev-hours"
+    },
+    {
+      "slug": "the-ai-engineer-has-joined-the-team",
+      "title": "The AI Engineer Has Joined the Team. Now What?",
+      "excerpt": "AI isn’t just accelerating software development — it’s reorganizing it. This post unpacks what changes when you start designing teams, tools, and processes around a human–AI hybrid model. Planning shifts. Costs shift. Roles shift. The real question is: are we ready to shift with it?",
+      "publishedAt": "2025-07-27",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "leadership",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-ai-engineer-has-joined-the-team"
+    },
+    {
+      "slug": "docs-as-code-isnt-enough-how-ai-ready-knowledge-layers-compress-weeks-of-work-into-hours",
+      "title": "How Structured Documentation Turned My AI Into an Engineering Team",
+      "excerpt": "Documentation can be more than a reference—it can be a knowledge layer that both humans and AI agents use to build.",
+      "publishedAt": "2025-07-26",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "architecture",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/docs-as-code-isnt-enough-how-ai-ready-knowledge-layers-compress-weeks-of-work-into-hours"
+    },
+    {
+      "slug": "from-fear-to-flow",
+      "title": "From Fear to Flow: How Building a Tournament Manager App Taught Me to Scale with AI",
+      "excerpt": "I didn’t start with a strategy. I started with fear. Here’s how a grassroots volleyball app turned into my personal AI bootcamp—and the repeatable framework I built along the way.",
+      "publishedAt": "2025-07-25",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/from-fear-to-flow"
+    },
+    {
+      "slug": "from-fear-to-flow-my-accidental-journey-into-ai-powered-development",
+      "title": "How Fear of AI Turned Into an AI Development System",
+      "excerpt": "I started building with AI out of fear of being left behind. What I ended up with was a repeatable system for AI-driven development.",
+      "publishedAt": "2025-07-25",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/from-fear-to-flow-my-accidental-journey-into-ai-powered-development"
+    },
+    {
+      "slug": "m-ai-engineering-team",
+      "title": "My AI Engineering Team",
+      "excerpt": "I didn’t set out to build an AI team. I just started with ChatGPT prompts for Lovable AI. Over time, it evolved into managing a layered squad of AI tools—architects, coders, and reviewers—working together like a real dev team. This changed how I work and lead AI-assisted projects.",
+      "publishedAt": "2025-07-23",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/m-ai-engineering-team"
+    },
+    {
+      "slug": "start-with-a-sketch",
+      "title": "Getting Unstuck: Why We Start With a Sketch",
+      "excerpt": "Projects stall when we confuse blockers with priorities. This post explores the “desk-building” metaphor to help teams stop over-planning and start making progress — by sketching first, sorting screws later.",
+      "publishedAt": "2025-07-22",
+      "kind": "Essay",
+      "category": "Field Notes",
+      "tags": [
+        "consulting"
+      ],
+      "href": "https://ninochavez.co/blog/start-with-a-sketch"
+    },
+    {
+      "slug": "when-you-start-to-hear-the-music",
+      "title": "When You Start to Hear the Music",
+      "excerpt": "What happens when AI sharpens your mind, but drifts you further from those who don’t think that way? This post explores the private cost of clarity — and the quiet grief that comes from outgrowing the resolution your old relationships were built on.",
+      "publishedAt": "2025-07-10",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/when-you-start-to-hear-the-music"
+    },
+    {
+      "slug": "do-you-smell-smoke",
+      "title": "The Risk of Asking “Do You Smell That?” When There’s No Fire",
+      "excerpt": "In consulting, sensing a problem feels like smelling smoke. But is there really a fire? This piece explores when to speak up and when to hold back — balancing risk detection with protecting people from blame. Leadership is often about navigating that tension with care.",
+      "publishedAt": "2025-07-09",
+      "kind": "Essay",
+      "category": "Consulting",
+      "tags": [
+        "consulting",
+        "leadership"
+      ],
+      "href": "https://ninochavez.co/blog/do-you-smell-smoke"
+    },
+    {
+      "slug": "from-pattern-to-people",
+      "title": "From Pattern to People",
+      "excerpt": "The hidden cost of clarity in an AI-shaped mind",
+      "publishedAt": "2025-07-08",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/from-pattern-to-people"
+    },
+    {
+      "slug": "still-your-car-still-your-wrench",
+      "title": "Still Your Car. Still Your Wrench.",
+      "excerpt": "What AI Coding Tools Don’t Tell You About Building Real Software",
+      "publishedAt": "2025-07-06",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/still-your-car-still-your-wrench"
+    },
+    {
+      "slug": "from-prompt-to-pattern",
+      "title": "From Prompt to Pattern",
+      "excerpt": "This post wraps my “Help Me Help You” arc and opens a new question: If precision makes AI more effective, does it also increase human disconnection? I’ve felt the drift. The next thread I’m pulling on is: how to stay human inside all this structure.",
+      "publishedAt": "2025-07-02",
+      "kind": "Essay",
+      "category": "Uncategorized",
+      "tags": [
+        "ai-development",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/from-prompt-to-pattern"
+    },
+    {
+      "slug": "help-me-help-you-help-me",
+      "title": "Help Me Help You (Help Me)",
+      "excerpt": "One AI helps another do its job better. I use GPT to rewrite prompts for Lovable — cutting errors, saving time, and revealing a deeper pattern: intent → refiner → executor. This isn’t just prompt cleanup. It’s the start of a new architecture.",
+      "publishedAt": "2025-07-02",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/help-me-help-you-help-me"
+    },
+    {
+      "slug": "how-i-work-with-ais-and-why",
+      "title": "How I Work With AIs (And Why)",
+      "excerpt": "A behind-the-scenes look at how I use GPT and Lovable together. One rewrites the prompt. One generates the code. I just define the intent — and stay out of the way. This isn’t a tech stack. It’s a new mode of working.",
+      "publishedAt": "2025-07-02",
+      "kind": "Essay",
+      "category": "Uncategorized",
+      "tags": [
+        "ai-development",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/how-i-work-with-ais-and-why"
+    },
+    {
+      "slug": "prompt-strategists-agent-orchestras-and-what-comes-next",
+      "title": "Prompt Strategists, Agent Orchestras, and What Comes Next",
+      "excerpt": "Prompting is evolving into orchestration. One AI clarifies, another executes, a third checks the result. We’re entering an era where modular intelligence matters — and prompts become the interface between thinking systems.",
+      "publishedAt": "2025-07-02",
+      "kind": "Essay",
+      "category": "Uncategorized",
+      "tags": [
+        "ai-development",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/prompt-strategists-agent-orchestras-and-what-comes-next"
+    },
+    {
+      "slug": "when-one-ai-rewrites-for-another",
+      "title": "When One AI Rewrites for Another",
+      "excerpt": "Prompt rewriting isn’t just a clever trick — it’s becoming core infrastructure. From cloud tools to agent chains, we’re seeing a shift: one AI clarifies the ask, another executes. The result? Fewer errors. Smarter systems.",
+      "publishedAt": "2025-07-02",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/when-one-ai-rewrites-for-another"
+    },
+    {
+      "slug": "the-ai-approach-reset",
+      "title": "How I Used One AI to Train Another: A Tactical Reset in Data Architecture and AI Tooling Strategy",
+      "excerpt": "Like most devs experimenting with AI tools, I’ve found myself juggling multiple platforms, APIs, and half-understood schemas to build things faster. Sometimes it works. Other times, it works against you.",
+      "publishedAt": "2025-06-30",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "consulting",
+        "leadership",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-ai-approach-reset"
+    },
+    {
+      "slug": "50-of-ai-later-lessons-from-burning-credits-fast",
+      "title": "$50 of AI Later: Lessons from Burning Credits Fast",
+      "excerpt": "AI credits vanished quickly, highlighting hidden costs and forcing clarity into my development process. Here's how a $50 investment turned into a practical blueprint for smarter AI‑assisted builds.",
+      "publishedAt": "2025-06-29",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/50-of-ai-later-lessons-from-burning-credits-fast"
+    },
+    {
+      "slug": "the-lost-phone-test-for-ai-could-your-org-still-function-tomorrow",
+      "title": "The Lost‑Phone Test for AI: Could Your Org Still Function Tomorrow?",
+      "excerpt": "Dropped phone, lost life. Same test applies to corporate AI: if your copilots vanished tomorrow, would work even slow down? The “Lost-Phone Test” exposes integration gaps and makes the case for a Chief Intelligence Officer to weave tools into real workflows.",
+      "publishedAt": "2025-06-28",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "leadership",
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-lost-phone-test-for-ai-could-your-org-still-function-tomorrow"
+    },
+    {
+      "slug": "its-time-for-the-cio-2-0",
+      "title": "It’s Time for the CIO 2.0",
+      "excerpt": "Most AI conversations start in the wrong place — with tools, not capabilities. What’s missing isn’t another pilot. It’s a new executive role: someone to steward how your organization thinks, learns, and evolves.",
+      "publishedAt": "2025-06-27",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "leadership",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/its-time-for-the-cio-2-0"
+    },
+    {
+      "slug": "overnight-dev-from-rage-quit-to-release-in-72-hours-with-ai-riding-shotgun",
+      "title": "Overnight Dev: From Rage-Quit to Release in 72 Hours—With AI Riding Shotgun",
+      "excerpt": "Burned-out coder to live app in one weekend: two failed scrapers, one hidden JSON API, and AI tools that scaffolded the rest. How DevTools + GPT turned AES volleyball data into an MVP—and why your next Jira ticket might build itself.",
+      "publishedAt": "2025-06-27",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/overnight-dev-from-rage-quit-to-release-in-72-hours-with-ai-riding-shotgun"
+    },
+    {
+      "slug": "from-shutdown-to-speedrun",
+      "title": "From Shutdown to Speedrun",
+      "excerpt": "The Cost of Surviving the Age of Constant Upgrades",
+      "publishedAt": "2025-06-25",
+      "kind": "Essay",
+      "category": "Philosophy",
+      "tags": [
+        "ai-development",
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/from-shutdown-to-speedrun"
+    },
+    {
+      "slug": "is-resilience-a-systems-problem",
+      "title": "Is Resilience a Systems Problem?",
+      "excerpt": "In my last post, I wrote about the shift from shutdown to speedrun — how we’ve had to adapt, over and over again, just to keep moving. First to survive the pandemic. Now to keep up with AI.",
+      "publishedAt": "2025-06-25",
+      "kind": "Essay",
+      "category": "Philosophy",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/is-resilience-a-systems-problem"
+    },
+    {
+      "slug": "not-just-fast-but-together",
+      "title": "Not Just Fast, But Together",
+      "excerpt": "If you want to go fast, go alone; if you want to go far, go together",
+      "publishedAt": "2025-06-25",
+      "kind": "Essay",
+      "category": "Philosophy",
+      "tags": [
+        "leadership",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/not-just-fast-but-together"
+    },
+    {
+      "slug": "reinvention-transformation",
+      "title": "Reinvention > Transformation",
+      "excerpt": "Most reorgs I’ve seen are just corporate feng shui — shift a few boxes, rename a few titles, pretend it’s visionary. But this one? This one actually maps to something real. For once, the language isn’t just for clients — it mirrors what I’ve been doing in my own damn operating system.",
+      "publishedAt": "2025-06-24",
+      "kind": "Essay",
+      "category": "Uncategorized",
+      "tags": [
+        "commerce",
+        "consulting"
+      ],
+      "href": "https://ninochavez.co/blog/reinvention-transformation"
+    },
+    {
+      "slug": "strength-through-repetition",
+      "title": "Strength Through Repetition",
+      "excerpt": "The page isn’t the enemy. The page is the gym. You don’t show up to look good. You show up to build grip. Form. Force. Reps. That’s how the voice gets real.",
+      "publishedAt": "2025-06-24",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/strength-through-repetition"
+    },
+    {
+      "slug": "youre-sending-self-driving-cars-down-unmarked-roads",
+      "title": "You’re Sending Self-Driving Cars Down Unmarked Roads",
+      "excerpt": "AI doesn’t fail because it’s bad — it fails because your data lacks the infrastructure it needs to navigate. Language models don’t just search — they interpret. Most orgs haven’t built for that.",
+      "publishedAt": "2025-06-23",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "commerce",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/youre-sending-self-driving-cars-down-unmarked-roads"
+    },
+    {
+      "slug": "the-mvp-mirage",
+      "title": "The MVP Mirage",
+      "excerpt": "Most MVPs aren’t minimum or viable — they’re just premature.",
+      "publishedAt": "2025-06-20",
+      "kind": "Essay",
+      "category": "Uncategorized",
+      "tags": [
+        "consulting",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-mvp-mirage"
+    },
+    {
+      "slug": "leadership-reflection",
+      "title": "Leadership Reflection",
+      "excerpt": "One of the easiest traps to fall into as a leader or expert is assuming we already understand. That assumption — even when subtle — shuts down curiosity, slows progress, and can quietly place the burden of clarity on everyone but ourselves.",
+      "publishedAt": "2025-06-19",
+      "kind": "Essay",
+      "category": "Uncategorized",
+      "tags": [
+        "leadership",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/leadership-reflection"
+    },
+    {
+      "slug": "chatgpt-doesnt-eat-so-why-do-i-keep-asking-it-to-cook",
+      "title": "ChatGPT Doesn’t Eat—So Why Do I Keep Asking It to Cook?",
+      "excerpt": "LLMs can draft the menu, but you still have to taste the sauce. Here’s my field-note recipe for closing the fidelity gap between what ChatGPT writes and what actually works.",
+      "publishedAt": "2025-06-18",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/chatgpt-doesnt-eat-so-why-do-i-keep-asking-it-to-cook"
+    },
+    {
+      "slug": "experience-is-loud-turn-it-down-so-you-can-learn",
+      "title": "Experience Is Loud—Turn It Down So You Can Learn",
+      "excerpt": "Hard‑won patterns sound like wisdom—until they echo so loudly you miss new ideas. This month I learned: AI model tuning isn’t just prompting, shutter‑speed instincts fail at 60 fps video, and Figma spacing ≠ CSS. Beginner reps, reverse mentorship, and stranger audits keep the channel clear.",
+      "publishedAt": "2025-06-18",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/experience-is-loud-turn-it-down-so-you-can-learn"
+    },
+    {
+      "slug": "the-cake-is-a-lie-why-ai-isnt-ready",
+      "title": "The Cake Is a Lie: Why AI Isn’t Ready",
+      "excerpt": "Everyone says AI can build for you — that you just describe the thing, and it ships itself. But I actually tried. I took it seriously. And what I found was brittle, inconsistent, and full of guesswork. If it took this much effort to build a landing page, what happens when the stakes are higher?",
+      "publishedAt": "2025-06-17",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/the-cake-is-a-lie-why-ai-isnt-ready"
+    },
+    {
+      "slug": "becoming-the-copilot",
+      "title": "Becoming the Copilot",
+      "excerpt": "Signal Dispatch · Field Notes on Agency in Relationship",
+      "publishedAt": "2025-06-16",
+      "kind": "Essay",
+      "category": "Field Notes",
+      "tags": [
+        "leadership"
+      ],
+      "href": "https://ninochavez.co/blog/becoming-the-copilot"
+    },
+    {
+      "slug": "reading-the-road",
+      "title": "Reading the Road",
+      "excerpt": "Signal Dispatch · Field Notes on Influence",
+      "publishedAt": "2025-06-16",
+      "kind": "Essay",
+      "category": "Leadership",
+      "tags": [
+        "leadership"
+      ],
+      "href": "https://ninochavez.co/blog/reading-the-road"
+    },
+    {
+      "slug": "signal-or-spectacle",
+      "title": "Signal or Spectacle?",
+      "excerpt": "Even when I’m not trying to posture, sometimes it feels like the platform does it for me. This is about the moment when sharing something honest starts to feel like a performance — and how I’m trying to stay grounded in signal, not spectacle.",
+      "publishedAt": "2025-06-16",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/signal-or-spectacle"
+    },
+    {
+      "slug": "signal-reflex-signal-dispatch",
+      "title": "Signal Reflex → Signal Dispatch",
+      "excerpt": "Signal Reflex is now Signal Dispatch — a shift from sensing to sending. Same voice, sharper intent. This is where ideas go out.",
+      "publishedAt": "2025-06-16",
+      "kind": "Essay",
+      "category": "Uncategorized",
+      "tags": [
+        "ai-development",
+        "leadership"
+      ],
+      "href": "https://ninochavez.co/blog/signal-reflex-signal-dispatch"
+    },
+    {
+      "slug": "driving-while-not-driving",
+      "title": "Driving While Not Driving",
+      "excerpt": "(How to Keep Moving Without Losing Yourself)",
+      "publishedAt": "2025-06-15",
+      "kind": "Essay",
+      "category": "Uncategorized",
+      "tags": [
+        "ai-development",
+        "leadership"
+      ],
+      "href": "https://ninochavez.co/blog/driving-while-not-driving"
+    },
+    {
+      "slug": "i-built-a-site-just-to-see-if-i-still-could",
+      "title": "I Built a Site Just to See If I Still Could",
+      "excerpt": "I didn’t need to build the site from scratch. That was the point.",
+      "publishedAt": "2025-06-14",
+      "kind": "Essay",
+      "category": "Field Notes",
+      "tags": [
+        "ai-development",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/i-built-a-site-just-to-see-if-i-still-could"
+    },
+    {
+      "slug": "put-the-camera-down",
+      "title": "Put the Camera Down",
+      "excerpt": "What if you're not here to capture the moment—but to be the aperture it passes through?",
+      "publishedAt": "2025-06-14",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/put-the-camera-down"
+    },
+    {
+      "slug": "the-human-loom",
+      "title": "The Human Loom",
+      "excerpt": "You don’t have to be the thread. Or the pattern. Just be the thing that lets it all come together.",
+      "publishedAt": "2025-06-14",
+      "kind": "Essay",
+      "category": "Leadership",
+      "tags": [
+        "consulting",
+        "leadership",
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-human-loom"
+    },
+    {
+      "slug": "the-machine-loom",
+      "title": "The Machine Loom",
+      "excerpt": "If humans are the loom, AI is the thread—fast, abundant, and increasingly tangled.",
+      "publishedAt": "2025-06-14",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-machine-loom"
+    },
+    {
+      "slug": "how-content-and-commerce-actually-connect-now",
+      "title": "How Content and Commerce Actually Connect Now",
+      "excerpt": "Your content is the storefront. If it’s not reducing friction or moving someone closer to a decision, it’s not connected to commerce at all.",
+      "publishedAt": "2025-06-13",
+      "kind": "Essay",
+      "category": "Commerce",
+      "tags": [
+        "ai-development",
+        "commerce"
+      ],
+      "href": "https://ninochavez.co/blog/how-content-and-commerce-actually-connect-now"
+    },
+    {
+      "slug": "coach-up-or-coach-out-what-i-look-for-early",
+      "title": "Coach Up or Coach Out? What I Look for Early",
+      "excerpt": "Not everyone clicks right away. But I’ve learned to spot the difference between someone who just needs support—and someone who’s not built for the work we do.",
+      "publishedAt": "2025-06-12",
+      "kind": "Essay",
+      "category": "Leadership",
+      "tags": [
+        "consulting",
+        "leadership"
+      ],
+      "href": "https://ninochavez.co/blog/coach-up-or-coach-out-what-i-look-for-early"
+    },
+    {
+      "slug": "coaching-without-coddling-how-i-support-high-potential-people-without-micromanaging",
+      "title": "Coaching Without Coddling: How I Support High-Potential People Without Micromanaging",
+      "excerpt": "Once I know someone’s worth investing in, I shift gears. Here’s how I coach without taking the wheel—and why presence matters more than pressure.",
+      "publishedAt": "2025-06-12",
+      "kind": "Essay",
+      "category": "Leadership",
+      "tags": [
+        "ai-development",
+        "consulting",
+        "leadership"
+      ],
+      "href": "https://ninochavez.co/blog/coaching-without-coddling-how-i-support-high-potential-people-without-micromanaging"
+    },
+    {
+      "slug": "how-we-find-the-ones-who-just-get-it",
+      "title": "How We Find the Ones Who Just Get It",
+      "excerpt": "Hiring the right consultant isn’t about checking boxes. It’s about building the kind of process that makes the right people show up—and lets the wrong ones opt out early.",
+      "publishedAt": "2025-06-12",
+      "kind": "Essay",
+      "category": "Leadership",
+      "tags": [
+        "ai-development",
+        "consulting",
+        "leadership"
+      ],
+      "href": "https://ninochavez.co/blog/how-we-find-the-ones-who-just-get-it"
+    },
+    {
+      "slug": "the-cleanup-economy",
+      "title": "The Cleanup Economy",
+      "excerpt": "Every tech revolution builds a fast market—and leaves a mess. Cleanup becomes its own economy: FinOps, platform teams, and second-wave consultants turning v1 chaos into stability. The real money? It's in making things actually work.",
+      "publishedAt": "2025-06-12",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/the-cleanup-economy"
+    },
+    {
+      "slug": "the-sky-is-not-falling",
+      "title": "The Sky Is Not Falling",
+      "excerpt": "I built the core Let’s Pepper site in under 2 hours—then spent over 8 trying to get one visual detail (the section dividers) to look right. AI can prototype, but it doesn’t ship. This post breaks down why the real work happens after the first draft, and why experience still matters more than ever.",
+      "publishedAt": "2025-06-12",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/the-sky-is-not-falling"
+    },
+    {
+      "slug": "the-spotlight-isnt-the-stage",
+      "title": "The Spotlight Isn’t the Stage",
+      "excerpt": "A shiny idea isn't strategy. This post digs into decision hygiene: the discipline of thinking beyond the spotlight, and seeing the systems, ownership, and scope your choices actually live inside.",
+      "publishedAt": "2025-06-12",
+      "kind": "Essay",
+      "category": "Leadership",
+      "tags": [
+        "leadership",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-spotlight-isnt-the-stage"
+    },
+    {
+      "slug": "we-dont-need-more-coders-we-need-early-stage-problem-solvers",
+      "title": "We Don’t Need More Coders. We Need Early-Stage Problem Solvers.",
+      "excerpt": "The game changed. We don’t need new hires who’ve built a few apps—we need people who can navigate ambiguity, think in systems, and ask the right questions early.",
+      "publishedAt": "2025-06-12",
+      "kind": "Essay",
+      "category": "Commerce",
+      "tags": [
+        "commerce",
+        "consulting",
+        "leadership"
+      ],
+      "href": "https://ninochavez.co/blog/we-dont-need-more-coders-we-need-early-stage-problem-solvers"
+    },
+    {
+      "slug": "when-meta-conversations-start-to-sound-like-sermons",
+      "title": "When Meta Conversations Start to Sound Like Sermons",
+      "excerpt": "I’ve been writing and thinking so much about how I think, it’s started to shape my real-life conversations — sometimes in ways that feel disconnected. When does thoughtful reflection cross the line into sermonizing? And how do we find balance between clarity and presence?",
+      "publishedAt": "2025-06-12",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/when-meta-conversations-start-to-sound-like-sermons"
+    },
+    {
+      "slug": "the-gift-i-cant-give-myself",
+      "title": "The Gift I Can’t Give Myself",
+      "excerpt": "I hold up the mirror for others all the time—clients, teammates, athletes. I just can’t seem to look in it myself. This post explores what it means to help others see their potential while still wrestling with your own.",
+      "publishedAt": "2025-06-11",
+      "kind": "Essay",
+      "category": "Leadership",
+      "tags": [
+        "leadership",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-gift-i-cant-give-myself"
+    },
+    {
+      "slug": "the-real-work-is-reading-the-signal",
+      "title": "The Real Work Is Reading the Signal",
+      "excerpt": "The complexity isn’t in the tech—it’s in the noise. This final post in the Commerce Drift arc explores why reading the signal is the real skill behind every good commerce strategy.",
+      "publishedAt": "2025-06-11",
+      "kind": "Essay",
+      "category": "Commerce",
+      "tags": [
+        "commerce",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-real-work-is-reading-the-signal"
+    },
+    {
+      "slug": "the-stranger-with-my-name",
+      "title": "The Stranger With My Name",
+      "excerpt": "I’ve heard people describe me in ways I barely recognize. At first, it felt like they were talking about someone else. But now I’m wondering—what if they’re seeing something I haven’t figured out how to see in myself?",
+      "publishedAt": "2025-06-11",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-stranger-with-my-name"
+    },
+    {
+      "slug": "when-the-tools-get-in-the-way",
+      "title": "When the Tools Get in the Way",
+      "excerpt": "We made websites easier to build by hiding the code. But now that AI can write that code for us, the abstraction layers are becoming the new friction.",
+      "publishedAt": "2025-06-11",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/when-the-tools-get-in-the-way"
+    },
+    {
+      "slug": "when-youre-good-at-solving-problems-they-multiply",
+      "title": "When You’re Good at Solving Problems, They Multiply",
+      "excerpt": "Being a great problem solver isn’t always the win it sounds like. If you’re not careful, you become the dumping ground for everyone else’s chaos. Here’s what I’ve learned about restraint, scope, and selective clarity.",
+      "publishedAt": "2025-06-11",
+      "kind": "Essay",
+      "category": "Leadership",
+      "tags": [
+        "leadership"
+      ],
+      "href": "https://ninochavez.co/blog/when-youre-good-at-solving-problems-they-multiply"
+    },
+    {
+      "slug": "how-i-wrote-living-in-the-comments",
+      "title": "How I Wrote “Living in the Comments”",
+      "excerpt": "This post was already about self-doubt. So writing it with an AI didn’t make it easier—it made the mirror sharper.",
+      "publishedAt": "2025-06-10",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/how-i-wrote-living-in-the-comments"
+    },
+    {
+      "slug": "living-in-the-comments",
+      "title": "Living in the Comments",
+      "excerpt": "Sometimes I’m not writing for clarity. I’m writing to defend myself against a comment that hasn’t been written yet.",
+      "publishedAt": "2025-06-10",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/living-in-the-comments"
+    },
+    {
+      "slug": "when-custom-isnt-better-the-burden-of-bespoke",
+      "title": "When Custom Isn’t Better: The Burden of Bespoke",
+      "excerpt": "We romanticize personalization. But sometimes the problem isn’t lack of choice—it’s too much of it. Especially when we’re not sure what we really want.",
+      "publishedAt": "2025-06-10",
+      "kind": "Essay",
+      "category": "Commerce",
+      "tags": [
+        "commerce",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/when-custom-isnt-better-the-burden-of-bespoke"
+    },
+    {
+      "slug": "is-composable-just-ikea-for-commerce",
+      "title": "Is Composable Just IKEA for Commerce?",
+      "excerpt": "Composable promised freedom from the monolith. But in chasing modular flexibility, are we just assembling the same storefront with different colors and calling it strategy?",
+      "publishedAt": "2025-06-09",
+      "kind": "Essay",
+      "category": "Commerce",
+      "tags": [
+        "commerce",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/is-composable-just-ikea-for-commerce"
+    },
+    {
+      "slug": "the-cost-of-sophistication",
+      "title": "The Cost of Sophistication",
+      "excerpt": "Getting sharper comes at a cost. The more refined your thinking becomes, the more you risk drifting into isolation. This post explores the hidden tax of clarity—and what it means to stay reachable without dumbing yourself down.",
+      "publishedAt": "2025-06-09",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-cost-of-sophistication"
+    },
+    {
+      "slug": "the-role-of-self-awareness-in-every-tool-i-use",
+      "title": "The Role of Self-Awareness in Every Tool I Use",
+      "excerpt": "I don’t chase tools anymore. If it fights my instincts or adds ceremony, I’m out. If it sharpens my clarity, it stays. That’s the filter.",
+      "publishedAt": "2025-06-09",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/the-role-of-self-awareness-in-every-tool-i-use"
+    },
+    {
+      "slug": "writing-helped-me-notice-i-was-seeing-differently",
+      "title": "Writing Helped Me Notice I Was Seeing Differently",
+      "excerpt": " I didn’t set out to write about personal growth. I just wanted to get clearer. But writing about other things helped me finally put into words a shift I’ve been feeling for years—that sometimes growth changes how you see the world before you even realize it.",
+      "publishedAt": "2025-06-08",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/writing-helped-me-notice-i-was-seeing-differently"
+    },
+    {
+      "slug": "do-i-still-sound-like-me",
+      "title": "Do I Still Sound Like Me?",
+      "excerpt": "Your writing gets sharper. Your thinking gets clearer. Your tone gets cleaner. But somewhere along the way, you wonder if the people who liked the messy version of you still recognize the voice.",
+      "publishedAt": "2025-06-07",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/do-i-still-sound-like-me"
+    },
+    {
+      "slug": "sharpened-doesnt-mean-sterile",
+      "title": "Sharpened Doesn’t Mean Sterile",
+      "excerpt": "As your work gets more refined, it risks losing the texture that made it real. But if you do it right, refinement doesn’t erase your voice—it reveals it.",
+      "publishedAt": "2025-06-07",
+      "kind": "Essay",
+      "category": "Meta",
+      "tags": [
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/sharpened-doesnt-mean-sterile"
+    },
+    {
+      "slug": "did-you-hear-something",
+      "title": "Did You Hear Something?",
+      "excerpt": "Sometimes I think I’m hearing subtle signals that no one else picks up. Other times, I wonder if I’m just hallucinating signals to feel smart.",
+      "publishedAt": "2025-06-06",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/did-you-hear-something"
+    },
+    {
+      "slug": "if-the-storefront-is-dead-where-do-you-compete-now",
+      "title": "If the Storefront Is Dead, Where Do You Compete Now?",
+      "excerpt": "If customers don’t convert on your site, where do they decide? Trust now starts upstream—off-site, in content, and with zero friction.",
+      "publishedAt": "2025-06-06",
+      "kind": "Essay",
+      "category": "Commerce",
+      "tags": [
+        "commerce",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/if-the-storefront-is-dead-where-do-you-compete-now"
+    },
+    {
+      "slug": "is-chatgpt-doing-my-thinking-for-me",
+      "title": "Is ChatGPT Doing My Thinking for Me?",
+      "excerpt": "This thing can write a clean draft faster than I can finish my coffee. But then I read it back and think—did *I* even say that? Or did I just agree with it because it sounded smart? That’s the trap.",
+      "publishedAt": "2025-06-06",
+      "kind": "Essay",
+      "category": "Philosophy",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/is-chatgpt-doing-my-thinking-for-me"
+    },
+    {
+      "slug": "muscle-memory-and-mental-atrophy",
+      "title": "Muscle Memory and Mental Atrophy",
+      "excerpt": "It starts small. A pause before spelling rhythm. Letting the GPS run when you already know the way. That pause? It used to be fluency. Now it’s drift.",
+      "publishedAt": "2025-06-06",
+      "kind": "Essay",
+      "category": "Philosophy",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/muscle-memory-and-mental-atrophy"
+    },
+    {
+      "slug": "the-calculator-effect",
+      "title": "The Calculator Effect",
+      "excerpt": "I started checking the calculator even when I already knew the answer. Not because I needed it—because I didn’t trust myself. That’s the part that stuck with me. Not the math. The muscle I stopped using.",
+      "publishedAt": "2025-06-06",
+      "kind": "Essay",
+      "category": "Philosophy",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/the-calculator-effect"
+    },
+    {
+      "slug": "tool-assistant-or-crutch",
+      "title": "Tool, Assistant, or Crutch?",
+      "excerpt": "Every tool starts off helpful. Then it gets easy. Then it becomes default. And if you’re not careful, default turns into dependency. That’s the moment to pay attention to.",
+      "publishedAt": "2025-06-06",
+      "kind": "Essay",
+      "category": "Philosophy",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/tool-assistant-or-crutch"
+    },
+    {
+      "slug": "why-friction-matters",
+      "title": "Why Friction Matters",
+      "excerpt": "The hardest part of writing isn’t writing—it’s sticking with your own thoughts long enough to figure out what you’re really trying to say. AI makes that part go away. Which is the problem.",
+      "publishedAt": "2025-06-06",
+      "kind": "Essay",
+      "category": "Philosophy",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/why-friction-matters"
+    },
+    {
+      "slug": "why-this-made-you-ask",
+      "title": "Why This Made You Ask",
+      "excerpt": "When I started this blog, someone close to me asked, “What are you doing with this?” Not my photography. Not my DJ mixes. Just this. I’ve been thinking about why.",
+      "publishedAt": "2025-06-06",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/why-this-made-you-ask"
+    },
+    {
+      "slug": "how-i-structure-my-ai-workflows-to-support-real-thinking",
+      "title": "How I Structure My AI Workflows to Support Real Thinking",
+      "excerpt": "My AI workflow isn’t about speed—it’s about clarity. Here’s how I use LLMs to shape messy ideas and reduce drag when I need to think straight.",
+      "publishedAt": "2025-06-05",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/how-i-structure-my-ai-workflows-to-support-real-thinking"
+    },
+    {
+      "slug": "archive",
+      "title": "Signal Arcs",
+      "excerpt": "A structured index of essays and field notes from Signal Dispatch. Organized by theme and series",
+      "publishedAt": "2025-06-05",
+      "kind": "Essay",
+      "category": "Uncategorized",
+      "tags": [
+        "commerce",
+        "leadership",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/archive"
+    },
+    {
+      "slug": "standing-in-the-rain",
+      "title": "Standing in the Rain",
+      "excerpt": "This isn’t about people who don’t know better. It’s about people who do. Who see the storm coming, feel the weight of the umbrella in their hand… and still stand there, getting soaked.",
+      "publishedAt": "2025-06-05",
+      "kind": "Essay",
+      "category": "Leadership",
+      "tags": [
+        "leadership",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/standing-in-the-rain"
+    },
+    {
+      "slug": "the-cost-of-staying-dry",
+      "title": "The Cost of Staying Dry",
+      "excerpt": "Choosing growth isn’t just about courage. It’s about cost. To change, you have to give something up—comfort, certainty, even identity. And deep down, many of us decide we’d rather stay soaked.",
+      "publishedAt": "2025-06-05",
+      "kind": "Essay",
+      "category": "Leadership",
+      "tags": [
+        "leadership",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/the-cost-of-staying-dry"
+    },
+    {
+      "slug": "this-doesnt-work-for-me",
+      "title": "This Doesn’t Work for Me",
+      "excerpt": "False exemption often hides behind logic. We convince ourselves that the strategy is valid, the tool makes sense—but not for someone like me. This isn’t ignorance. It’s identity-protection dressed up as reason.",
+      "publishedAt": "2025-06-05",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/this-doesnt-work-for-me"
+    },
+    {
+      "slug": "youre-not-broken-but-youre-not-off-the-hook",
+      "title": "You’re Not Broken, But You’re Not Off the Hook",
+      "excerpt": "The story that you’re too damaged to change is just another form of avoidance. False exemption doesn’t always sound like pride—it often sounds like hopelessness. But even if you’re not to blame for how the storm started, you’re still responsible for how you move through it.",
+      "publishedAt": "2025-06-05",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "leadership",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/youre-not-broken-but-youre-not-off-the-hook"
+    },
+    {
+      "slug": "grid-level-thinking-wasnt-the-plan",
+      "title": "Grid-Level Thinking Wasn't the Plan",
+      "excerpt": "This wasn’t meant to be a thought leadership series. It started as a phone call—and a question: Where does AI actually help, right now, for real? I’m Not Hyping AI. I’m Just Using It.",
+      "publishedAt": "2025-06-04",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/grid-level-thinking-wasnt-the-plan"
+    },
+    {
+      "slug": "how-i-built-signal-reflex-in-a-week",
+      "title": "How I Built Signal Reflex in a Week",
+      "excerpt": "This blog isn’t a new habit—it’s just a new slice of my output. Here’s how I launched Signal Reflex in a week by treating it like any other creative drop: strategy, tools, publishing cadence, and what I learned by shipping.",
+      "publishedAt": "2025-06-04",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/how-i-built-signal-reflex-in-a-week"
+    },
+    {
+      "slug": "plug-in-then-rethink-the-system",
+      "title": "Plug In. Then Rethink the System.",
+      "excerpt": "Post 3 of 4 in the Grid-Level Thinking series—adopting AI isn’t the hard part. Redesigning your system around it is.",
+      "publishedAt": "2025-06-04",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/plug-in-then-rethink-the-system"
+    },
+    {
+      "slug": "power-without-purpose-is-just-a-bill",
+      "title": "Power Without Purpose Is Just a Bill.",
+      "excerpt": "Post 4 of 4 in the Grid-Level Thinking series—why using AI for real work has changed how I design systems, think about leverage, and clarify what actually matters.",
+      "publishedAt": "2025-06-04",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/power-without-purpose-is-just-a-bill"
+    },
+    {
+      "slug": "quiet-was-armor",
+      "title": "Quiet Was Armor",
+      "excerpt": "Signal Reflex isn’t a beginning. It’s a different lens. For years, my photos have shown how I see the world. Now I’m sharing how I think—and what that reveals about how I lead, learn, and grow.",
+      "publishedAt": "2025-06-04",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/quiet-was-armor"
+    },
+    {
+      "slug": "the-bet-i-didnt-know-i-was-making",
+      "title": "The Bet I Didn’t Know I Was Making",
+      "excerpt": "Some choices don’t reveal their full meaning until much later. It’s not that the decision was wrong—it’s that the person you become after making it sees things differently.",
+      "publishedAt": "2025-06-04",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/the-bet-i-didnt-know-i-was-making"
+    },
+    {
+      "slug": "the-entry-level-developer-evolution-not-extinction",
+      "title": "The Entry-Level Developer: Evolution, Not Extinction",
+      "excerpt": "The junior dev role isn’t dying. It’s evolving. The job is no longer about churning out syntax—it’s about navigating ambiguity, thinking critically, and collaborating with AI. Here’s what still matters, and how to coach for it.",
+      "publishedAt": "2025-06-04",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-entry-level-developer-evolution-not-extinction"
+    },
+    {
+      "slug": "the-rules-i-actually-follow",
+      "title": "The Rules I Actually Follow",
+      "excerpt": "These aren’t feel-good slogans or poster values. Just the quiet rules that have kept me useful, sane, and steady—even when the pressure’s high and the spotlight’s off.",
+      "publishedAt": "2025-06-04",
+      "kind": "Essay",
+      "category": "Leadership",
+      "tags": [
+        "leadership"
+      ],
+      "href": "https://ninochavez.co/blog/the-rules-i-actually-follow"
+    },
+    {
+      "slug": "what-coaching-teaches-me-about-consulting",
+      "title": "What Coaching Teaches Me About Consulting",
+      "excerpt": "Coaching club volleyball taught me more about leadership than any workshop ever could. From managing expectations to building trust, this post breaks down the surprising overlaps between the gym and the boardroom.",
+      "publishedAt": "2025-06-04",
+      "kind": "Essay",
+      "category": "Leadership",
+      "tags": [
+        "leadership",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/what-coaching-teaches-me-about-consulting"
+    },
+    {
+      "slug": "why-i-use-ai-every-day-and-why-i-started-writing-about-it",
+      "title": "Why I Use AI Every Day (And Why I Started Writing About It)",
+      "excerpt": "I didn’t use AI to go faster—I used it to catch up with myself. This blog is where that journey turned into something useful and real.",
+      "publishedAt": "2025-06-04",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/why-i-use-ai-every-day-and-why-i-started-writing-about-it"
+    },
+    {
+      "slug": "wired-for-power-ai-is-the-grid-youre-the-architect",
+      "title": "Wired for Power: AI Is the Grid. You’re the Architect.",
+      "excerpt": "Post 1 of 4 in the Grid-Level Thinking series—what we miss when we treat AI like magic instead of infrastructure.",
+      "publishedAt": "2025-06-04",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/wired-for-power-ai-is-the-grid-youre-the-architect"
+    },
+    {
+      "slug": "wired-for-power-everyone-got-the-current-not-everyone-built-the-city",
+      "title": "Wired for Power: Everyone Got the Current. Not Everyone Built the City.",
+      "excerpt": "Post 2 of 4 in the Grid-Level Thinking series—access isn’t the differentiator anymore. Application is.",
+      "publishedAt": "2025-06-04",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "leadership",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/wired-for-power-everyone-got-the-current-not-everyone-built-the-city"
+    },
+    {
+      "slug": "you-cant-engineer-growth",
+      "title": "You Can’t Engineer Growth",
+      "excerpt": "This started as a rant while driving. A reminder that no matter how much structure we build, growth still happens on its own terms. In club volleyball and in life—you can’t engineer the outcome. You can only build the conditions.",
+      "publishedAt": "2025-06-04",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/you-cant-engineer-growth"
+    },
+    {
+      "slug": "almost-flickday",
+      "title": "Almost Flickday",
+      "excerpt": "Flickday started as a nod to “almost Friday.” Now it’s my creative safe space—a place to stay playful, go off-script, and build with others beyond the Nino Chavez brand.",
+      "publishedAt": "2025-06-03",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/almost-flickday"
+    },
+    {
+      "slug": "signal-in-the-noise-my-personal-philosophy",
+      "title": "Signal in the Noise: My Personal Philosophy",
+      "excerpt": "I don't move to be seen. I move when it matters. My personal philosophy is about recognizing signal, trusting pattern, and acting with intent.",
+      "publishedAt": "2025-06-03",
+      "kind": "Essay",
+      "category": "Insights",
+      "tags": [
+        "reflection",
+        "leadership"
+      ],
+      "href": "https://ninochavez.co/blog/signal-in-the-noise-my-personal-philosophy"
+    },
+    {
+      "slug": "why-i-keep-shooting-even-when-its-not-for-work",
+      "title": "Why I Keep Shooting, Even When It’s Not for Work",
+      "excerpt": "Photography is the clearest signal I know. I don’t shoot for content—I shoot to stay connected to the part of me that still notices the small stuff.",
+      "publishedAt": "2025-06-03",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/why-i-keep-shooting-even-when-its-not-for-work"
+    },
+    {
+      "slug": "how-i-use-ai-in-consulting-for-real",
+      "title": "How I Use AI in Consulting (For Real)",
+      "excerpt": "",
+      "publishedAt": "2025-06-02",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/how-i-use-ai-in-consulting-for-real"
+    },
+    {
+      "slug": "start-here-why-signal-reflex-exists",
+      "title": "Start Here: Why Signal Reflex Exists",
+      "excerpt": "Signal Reflex isn’t a brand or a content engine. It’s where I write to stay clear, present, and honest—using AI to reduce drag, not replace thinking.",
+      "publishedAt": "2025-06-02",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/start-here-why-signal-reflex-exists"
+    },
+    {
+      "slug": "start-smart-not-perfect",
+      "title": "Start Smart, Not Perfect",
+      "excerpt": "",
+      "publishedAt": "2025-06-02",
+      "kind": "Essay",
+      "category": "Field Notes",
+      "tags": [
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/start-smart-not-perfect"
+    },
+    {
+      "slug": "the-storefront-is-dead",
+      "title": "The Storefront Is Dead",
+      "excerpt": "Most customers already know what they want. They’re not browsing. The storefront isn’t where you win anymore—it’s just where you fulfill.",
+      "publishedAt": "2025-06-02",
+      "kind": "Essay",
+      "category": "Commerce",
+      "tags": [
+        "commerce",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-storefront-is-dead"
+    },
+    {
+      "slug": "why-i-shoot-senior-nights",
+      "title": "Why I Shoot Senior Nights",
+      "excerpt": "Senior Night hits different. It’s not just a ceremony—it’s a goodbye. I shoot it like it matters, because for most people in the gym, it does.",
+      "publishedAt": "2025-06-02",
+      "kind": "Essay",
+      "category": "Reflections",
+      "tags": [
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/why-i-shoot-senior-nights"
+    },
+    {
+      "slug": "why-i-started-signal-reflex",
+      "title": "Why I Started Signal Reflex",
+      "excerpt": "I didn’t start writing to build an audience. I started because AI helped me get past the blank page. This is where I work through what matters—before it fades.",
+      "publishedAt": "2025-06-02",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/why-i-started-signal-reflex"
+    },
+    {
+      "slug": "why-they-call-me-uncle-nino-an-evolving-leadership-style",
+      "title": "Why They Call Me Uncle Nino",
+      "excerpt": "I lead with clarity and calm—not noise. Sometimes that looks like being the one who steadies the room. That’s why they call me Uncle Nino.",
+      "publishedAt": "2025-06-02",
+      "kind": "Essay",
+      "category": "Leadership",
+      "tags": [
+        "leadership",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/why-they-call-me-uncle-nino-an-evolving-leadership-style"
+    }
+  ],
+  "series": [
+    {
+      "slug": "the-taste-test",
+      "title": "The Taste Test",
+      "description": "A three-part series on what happens when AI handles the making and humans are left with the judging. Starting with the identity crisis of losing your maker status, through the realization that taste is the new bottleneck, to a provisional answer: maybe the job was always about matching, not making.",
+      "publishedAt": "2026-03-05",
+      "status": "active",
+      "articleCount": 3,
+      "href": "https://ninochavez.co/blog/series/the-taste-test"
+    },
+    {
+      "slug": "the-bifurcation",
+      "title": "The Bifurcation",
+      "description": "A series on the two ways a machine can be given eyes — operate the interfaces built for humans, or demand interfaces built for machines. It starts as an industry-scale standoff between two bets, questions whether splitting effort across both means neither ever finishes, and ends with the standoff collapsing into a single pipeline where a human still has to close the seam.",
+      "publishedAt": "2026-03-01",
+      "status": "active",
+      "articleCount": 3,
+      "href": "https://ninochavez.co/blog/series/the-bifurcation"
+    },
+    {
+      "slug": "the-talent-engine",
+      "title": "The Talent Engine",
+      "description": "AI hasn't just changed what work gets done—it's disrupted how expertise is developed. The old apprenticeship model is breaking. This series explores what replaces it: new roles, new learning paths, and the mechanisms by which people acquire mastery in an AI-saturated world.",
+      "publishedAt": "2026-01-18",
+      "status": "active",
+      "articleCount": 5,
+      "href": "https://ninochavez.co/blog/series/the-talent-engine"
+    },
+    {
+      "slug": "agentic-workflows-in-practice",
+      "title": "Agentic Workflows in Practice",
+      "description": "Real work, documented as it happens. Not demos, not theory—actual tasks where AI agents execute, iterate, and deliver. A running log of what works, what breaks, and what it means for how we work.",
+      "publishedAt": "2026-01-17",
+      "status": "active",
+      "articleCount": 7,
+      "href": "https://ninochavez.co/blog/series/agentic-workflows-in-practice"
+    },
+    {
+      "slug": "from-prompt-to-pattern",
+      "title": "From Prompt to Pattern",
+      "description": "How a small fix—using one AI to rewrite prompts for another—became a system. A four-part arc on multi-model workflows, prompt refinement, and learning to think with AI.",
+      "publishedAt": "2025-07-02",
+      "status": "completed",
+      "articleCount": 5,
+      "href": "https://ninochavez.co/blog/series/from-prompt-to-pattern"
+    },
+    {
+      "slug": "the-loom",
+      "title": "The Loom",
+      "description": "A diptych on the relationship between humans and AI in systems. Humans as the weaver—patient, structural, synthesis-oriented. AI as the thread—fast, abundant, increasingly tangled.",
+      "publishedAt": "2025-06-14",
+      "status": "completed",
+      "articleCount": 2,
+      "href": "https://ninochavez.co/blog/series/the-loom"
+    },
+    {
+      "slug": "grid-level-thinking",
+      "title": "Grid-Level Thinking",
+      "description": "A four-part exploration of how AI functions as infrastructure, not magic. What we miss when we treat it like a shortcut instead of a system to design around.",
+      "publishedAt": "2025-06-04",
+      "status": "completed",
+      "articleCount": 5,
+      "href": "https://ninochavez.co/blog/series/grid-level-thinking"
+    },
+    {
+      "slug": "signal-reflex-launch",
+      "title": "Signal Reflex: The Origin",
+      "description": "How Signal Dispatch (originally Signal Reflex) came to be—the why, the how, and the evolution. From a commitment to daily AI-assisted writing to a platform for thinking out loud.",
+      "publishedAt": "2025-06-02",
+      "status": "completed",
+      "articleCount": 5,
+      "href": "https://ninochavez.co/blog/series/signal-reflex-launch"
+    },
+    {
+      "slug": "the-storefront",
+      "title": "The Storefront",
+      "description": "A three-part series on the evolution of e-commerce—from the death of the traditional storefront to AI-generated experiences that build themselves in real-time.",
+      "publishedAt": "2025-06-02",
+      "status": "completed",
+      "articleCount": 3,
+      "href": "https://ninochavez.co/blog/series/the-storefront"
+    }
+  ]
+}

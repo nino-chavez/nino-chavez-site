@@ -16,14 +16,18 @@
   "surfaces": [
     {
       "name": "public portfolio",
-      "renderedRoots": [
-        ".svelte-kit/output/prerendered/pages"
-      ],
+      "renderedRoots": [],
       "sourceRoots": [
-        "src/routes",
-        "src/lib/copy.ts",
-        "src/lib/work-data.ts"
+        "app"
       ],
+      "excludeRoots": [
+        "app/demo-data.json",
+        "app/demo-stories.json",
+        "app/writing-data.json"
+      ],
+      "manualReview": {
+        "evidencePath": "docs/audit/reader-public-portfolio.json"
+      },
       "allowTerms": [
         "AI",
         "API",

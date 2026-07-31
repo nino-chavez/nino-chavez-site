@@ -1,0 +1,1166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11100f">
+  <title>Nino Chavez — Contact System</title>
+  <style>
+    :root {
+      --ground: #11100f;
+      --paper: #f2f0e9;
+      --paper-2: #dad7ce;
+      --ink: #11100f;
+      --white: #fffefa;
+      --line: #85827b;
+      --accent: #5b50e6;
+      --sans: "Helvetica Neue", "Neue Haas Grotesk Text Pro", Helvetica, Arial, sans-serif;
+      --mono: "SFMono-Regular", "Cascadia Mono", "Roboto Mono", Menlo, Consolas, monospace;
+      --gap: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--ground);
+      color-scheme: dark;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+        var(--ground);
+      background-size: 24px 24px;
+      color: var(--white);
+      font-family: var(--sans);
+      font-synthesis: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .shell {
+      min-height: 100svh;
+      padding: 18px 22px;
+    }
+
+    .site-header {
+      height: 56px;
+      display: grid;
+      grid-template-columns: minmax(190px, 1fr) auto minmax(190px, 1fr);
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 254, 250, 0.45);
+      font-size: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: max-content;
+      font-size: 20px;
+      font-weight: 650;
+      letter-spacing: -0.045em;
+    }
+
+    .brand::before {
+      width: 9px;
+      height: 9px;
+      background: var(--accent);
+      content: "";
+    }
+
+    .primary-nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 2.2vw, 38px);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .primary-nav a {
+      position: relative;
+      padding: 10px 0;
+      color: rgba(255, 254, 250, 0.68);
+      transition: color 160ms ease;
+    }
+
+    .primary-nav a::after {
+      position: absolute;
+      right: 0;
+      bottom: 5px;
+      left: 0;
+      height: 1px;
+      background: var(--accent);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 160ms ease;
+    }
+
+    .primary-nav a:hover,
+    .primary-nav a:focus-visible {
+      color: var(--white);
+    }
+
+    .primary-nav a:hover::after,
+    .primary-nav a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .header-index {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      line-height: 1.35;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    .header-index .quiet {
+      color: rgba(255, 254, 250, 0.48);
+    }
+
+    .registration {
+      position: relative;
+      width: 22px;
+      height: 22px;
+      border: 1px solid rgba(255, 254, 250, 0.55);
+      border-radius: 50%;
+      flex: 0 0 auto;
+    }
+
+    .registration::before,
+    .registration::after {
+      position: absolute;
+      background: var(--accent);
+      content: "";
+    }
+
+    .registration::before {
+      top: 10px;
+      left: -4px;
+      width: 28px;
+      height: 1px;
+    }
+
+    .registration::after {
+      top: -4px;
+      left: 10px;
+      width: 1px;
+      height: 28px;
+    }
+
+    main {
+      height: calc(100svh - 106px);
+      min-height: 760px;
+      margin-top: 14px;
+    }
+
+    .wall {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(18, minmax(0, 1fr));
+      grid-template-rows: repeat(12, minmax(0, 1fr));
+      gap: var(--gap);
+    }
+
+    .card {
+      position: relative;
+      min-width: 0;
+      min-height: 0;
+      overflow: hidden;
+      border: 1px solid rgba(255, 254, 250, 0.6);
+      background: var(--paper);
+      color: var(--ink);
+      isolation: isolate;
+      transition:
+        border-color 180ms ease,
+        transform 180ms cubic-bezier(0.2, 0.7, 0.2, 1),
+        box-shadow 180ms ease;
+    }
+
+    .card:hover {
+      z-index: 4;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .card img {
+      filter: saturate(0.78) contrast(1.04);
+      transition:
+        filter 240ms ease,
+        transform 360ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+
+    .card:hover img {
+      filter: saturate(1) contrast(1.05);
+      transform: scale(1.025);
+    }
+
+    .card-link {
+      position: absolute;
+      inset: 0;
+      z-index: 8;
+    }
+
+    .crop {
+      position: absolute;
+      z-index: 7;
+      width: 13px;
+      height: 13px;
+      color: var(--accent);
+      pointer-events: none;
+    }
+
+    .crop::before,
+    .crop::after {
+      position: absolute;
+      background: currentColor;
+      content: "";
+    }
+
+    .crop::before {
+      top: 6px;
+      left: 0;
+      width: 13px;
+      height: 1px;
+    }
+
+    .crop::after {
+      top: 0;
+      left: 6px;
+      width: 1px;
+      height: 13px;
+    }
+
+    .crop--tl {
+      top: 8px;
+      left: 8px;
+    }
+
+    .crop--br {
+      right: 8px;
+      bottom: 8px;
+    }
+
+    .micro {
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.085em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .status::before {
+      width: 6px;
+      height: 6px;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+      content: "";
+    }
+
+    .status--active::before {
+      border-color: var(--accent);
+      background: var(--accent);
+      box-shadow: 0 0 0 2px rgba(91, 80, 230, 0.22);
+    }
+
+    .hero {
+      grid-column: 1 / 8;
+      grid-row: 1 / 8;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(28px, 2.25vw, 42px);
+      background:
+        linear-gradient(90deg, transparent calc(100% - 1px), rgba(17, 16, 15, 0.1) calc(100% - 1px)),
+        var(--paper);
+      background-size: 25% 100%;
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .hero .eyebrow {
+      max-width: 290px;
+      color: #34322f;
+    }
+
+    .hero .folio {
+      color: #66635d;
+      text-align: right;
+    }
+
+    .hero-title-wrap {
+      position: relative;
+      margin-top: auto;
+      margin-bottom: auto;
+      padding: 24px 0;
+    }
+
+    .hero h1 {
+      max-width: 660px;
+      margin: 0;
+      font-size: clamp(66px, 6vw, 110px);
+      font-weight: 650;
+      letter-spacing: -0.078em;
+      line-height: 0.82;
+      text-wrap: balance;
+    }
+
+    .hero h1 span {
+      display: block;
+      margin-left: 0.54em;
+    }
+
+    .hero-title-wrap::after {
+      display: block;
+      width: 42%;
+      height: 5px;
+      margin-top: 24px;
+      margin-left: 0.55em;
+      background: var(--accent);
+      content: "";
+    }
+
+    .hero-footer {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: end;
+      border-top: 1px solid rgba(17, 16, 15, 0.28);
+      padding-top: 18px;
+    }
+
+    .hero-copy {
+      max-width: 570px;
+      margin: 0;
+      font-size: clamp(14px, 1.05vw, 18px);
+      font-weight: 450;
+      letter-spacing: -0.02em;
+      line-height: 1.35;
+    }
+
+    .hero-coordinates {
+      color: #706d66;
+      text-align: right;
+    }
+
+    .rally {
+      grid-column: 8 / 14;
+      grid-row: 1 / 8;
+      background: #1b1a18;
+      color: var(--white);
+    }
+
+    .rally figure,
+    .photography figure {
+      height: 100%;
+      margin: 0;
+    }
+
+    .rally img {
+      object-position: 50% 44%;
+    }
+
+    .rally::after,
+    .photography::after {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(17, 16, 15, 0.05) 28%, rgba(17, 16, 15, 0.88) 100%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .frame-rail {
+      position: absolute;
+      z-index: 4;
+      top: 16px;
+      right: 18px;
+      left: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      color: rgba(255, 254, 250, 0.84);
+    }
+
+    .frame-caption {
+      position: absolute;
+      z-index: 4;
+      right: 20px;
+      bottom: 20px;
+      left: 20px;
+    }
+
+    .frame-caption h2 {
+      margin: 8px 0 8px;
+      font-size: clamp(32px, 3.15vw, 56px);
+      font-weight: 600;
+      letter-spacing: -0.06em;
+      line-height: 0.9;
+    }
+
+    .frame-caption p {
+      max-width: 410px;
+      margin: 0;
+      color: rgba(255, 254, 250, 0.76);
+      font-size: 13px;
+      letter-spacing: -0.015em;
+      line-height: 1.35;
+    }
+
+    .sequence {
+      min-width: 42px;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 4px;
+      font-family: var(--mono);
+      font-size: 10px;
+      text-align: right;
+    }
+
+    .blueprint {
+      grid-column: 14 / 19;
+      grid-row: 1 / 5;
+      display: grid;
+      grid-template-columns: 43% 57%;
+      background: var(--paper-2);
+    }
+
+    .blueprint-media {
+      position: relative;
+      overflow: hidden;
+      border-right: 1px solid rgba(17, 16, 15, 0.28);
+    }
+
+    .blueprint-media img {
+      object-position: 23% center;
+    }
+
+    .blueprint-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px 20px 20px;
+    }
+
+    .blueprint h2,
+    .ways h2,
+    .signal h2,
+    .photography h2,
+    .browse h2 {
+      margin: 0;
+      font-weight: 620;
+      letter-spacing: -0.05em;
+      line-height: 0.95;
+    }
+
+    .blueprint h2 {
+      max-width: 220px;
+      font-size: clamp(26px, 2.25vw, 39px);
+    }
+
+    .blueprint p,
+    .ways p,
+    .signal p,
+    .photography p,
+    .browse p {
+      margin: 0;
+      font-size: 12px;
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+    }
+
+    .specimen-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: #514f4a;
+    }
+
+    .specimen-foot {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: end;
+      border-top: 1px solid rgba(17, 16, 15, 0.25);
+      padding-top: 11px;
+    }
+
+    .specimen-foot p {
+      max-width: 250px;
+    }
+
+    .ways {
+      grid-column: 1 / 5;
+      grid-row: 8 / 13;
+      display: grid;
+      grid-template-rows: 48% 52%;
+      background: #d8d5cc;
+    }
+
+    .ways-media {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(17, 16, 15, 0.3);
+    }
+
+    .ways-media img {
+      object-position: center 32%;
+    }
+
+    .ways-media::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding: 6px 8px;
+      background: var(--paper);
+      color: var(--ink);
+      content: "RAW / EDITED / SHIPPED";
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: 0.08em;
+    }
+
+    .ways-info,
+    .signal-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 18px 19px 17px;
+    }
+
+    .ways h2 {
+      max-width: 270px;
+      font-size: clamp(28px, 2.3vw, 40px);
+    }
+
+    .ways .specimen-foot,
+    .signal .specimen-foot {
+      margin-top: 14px;
+    }
+
+    .signal {
+      grid-column: 5 / 9;
+      grid-row: 8 / 13;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      background: var(--paper);
+    }
+
+    .signal-info {
+      position: relative;
+      padding-top: 42px;
+    }
+
+    .signal-info::before {
+      position: absolute;
+      top: 18px;
+      left: 19px;
+      width: calc(100% - 38px);
+      height: 1px;
+      background: var(--accent);
+      content: "";
+    }
+
+    .signal h2 {
+      max-width: 270px;
+      font-size: clamp(32px, 2.75vw, 49px);
+    }
+
+    .signal-mark {
+      position: absolute;
+      right: 16px;
+      bottom: -13px;
+      color: rgba(17, 16, 15, 0.065);
+      font-size: clamp(110px, 11vw, 184px);
+      font-weight: 700;
+      letter-spacing: -0.1em;
+      line-height: 0.8;
+      pointer-events: none;
+    }
+
+    .signal-strip {
+      position: relative;
+      height: 70px;
+      overflow: hidden;
+      border-top: 1px solid rgba(17, 16, 15, 0.3);
+    }
+
+    .signal-strip img {
+      object-position: 50% 46%;
+    }
+
+    .photography {
+      grid-column: 9 / 14;
+      grid-row: 8 / 13;
+      background: #171614;
+      color: var(--white);
+    }
+
+    .photography img {
+      object-position: 50% 18%;
+    }
+
+    .photography .frame-caption h2 {
+      font-size: clamp(30px, 2.7vw, 48px);
+    }
+
+    .photography .frame-caption p {
+      max-width: 310px;
+    }
+
+    .photo-annotation {
+      position: absolute;
+      z-index: 5;
+      top: 42%;
+      right: 13px;
+      padding: 5px 7px;
+      background: var(--accent);
+      color: var(--white);
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transform: rotate(90deg) translateX(50%);
+      transform-origin: right center;
+    }
+
+    .browse {
+      grid-column: 14 / 19;
+      grid-row: 5 / 13;
+      display: grid;
+      grid-template-rows: 58% 42%;
+      border-color: #5f5d58;
+      background: #1a1917;
+      color: var(--white);
+    }
+
+    .browse-media {
+      position: relative;
+      min-height: 0;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 254, 250, 0.34);
+    }
+
+    .browse-media img {
+      object-position: center 25%;
+      filter: grayscale(0.25) saturate(0.58) contrast(1.08) brightness(0.72);
+    }
+
+    .browse-media::after {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(17, 16, 15, 0.88) 0 20%, transparent 20%),
+        linear-gradient(180deg, transparent 54%, rgba(17, 16, 15, 0.82) 100%);
+      content: "";
+    }
+
+    .terminal-index {
+      position: absolute;
+      z-index: 4;
+      top: 26px;
+      left: 17px;
+      display: grid;
+      gap: 9px;
+      color: rgba(255, 254, 250, 0.75);
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: 0.06em;
+    }
+
+    .terminal-index span {
+      display: block;
+      width: 16px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid rgba(255, 254, 250, 0.32);
+    }
+
+    .command {
+      position: absolute;
+      z-index: 4;
+      right: 16px;
+      bottom: 15px;
+      left: 17px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 254, 250, 0.86);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.04em;
+    }
+
+    .command code {
+      overflow: hidden;
+      color: var(--white);
+      font: inherit;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .command code::before {
+      margin-right: 8px;
+      color: var(--accent);
+      content: "›";
+    }
+
+    .browse-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 20px 18px;
+    }
+
+    .browse h2 {
+      font-family: var(--mono);
+      font-size: clamp(27px, 2.3vw, 40px);
+      font-weight: 500;
+      letter-spacing: -0.07em;
+    }
+
+    .browse .specimen-head {
+      color: rgba(255, 254, 250, 0.6);
+    }
+
+    .browse .specimen-foot {
+      border-color: rgba(255, 254, 250, 0.24);
+    }
+
+    .browse p {
+      color: rgba(255, 254, 250, 0.72);
+    }
+
+    .arrow {
+      font-size: 17px;
+      line-height: 1;
+      transition: transform 180ms ease;
+    }
+
+    .card:hover .arrow {
+      transform: translate(3px, -3px);
+    }
+
+    @media (max-width: 1120px) {
+      .site-header {
+        grid-template-columns: auto 1fr auto;
+      }
+
+      .primary-nav {
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .header-index .quiet {
+        display: none;
+      }
+
+      .hero {
+        grid-column: 1 / 9;
+      }
+
+      .rally {
+        grid-column: 9 / 15;
+      }
+
+      .blueprint,
+      .browse {
+        grid-column: 15 / 19;
+      }
+
+      .signal {
+        grid-column: 5 / 10;
+      }
+
+      .photography {
+        grid-column: 10 / 15;
+      }
+
+      .blueprint {
+        grid-template-columns: 1fr;
+      }
+
+      .blueprint-media {
+        display: none;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .shell {
+        padding: 14px;
+      }
+
+      .site-header {
+        height: auto;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        padding-bottom: 12px;
+      }
+
+      .brand {
+        font-size: 19px;
+      }
+
+      .header-index {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .primary-nav {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: repeat(6, auto);
+        justify-content: space-between;
+        width: 100%;
+        gap: 8px;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+
+      main {
+        height: auto;
+        min-height: 0;
+        margin-top: 12px;
+      }
+
+      .wall {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+      }
+
+      .card {
+        flex: none;
+      }
+
+      .hero {
+        min-height: 580px;
+      }
+
+      .rally {
+        height: 640px;
+      }
+
+      .blueprint {
+        height: 320px;
+        grid-template-columns: 42% 58%;
+      }
+
+      .blueprint-media {
+        display: block;
+      }
+
+      .ways,
+      .signal,
+      .photography {
+        height: 400px;
+      }
+
+      .browse {
+        height: 560px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .shell {
+        padding: 10px;
+      }
+
+      .site-header {
+        position: relative;
+      }
+
+      .primary-nav {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 0;
+      }
+
+      .primary-nav a {
+        padding: 8px 0 4px;
+      }
+
+      .header-index .index-copy {
+        display: none;
+      }
+
+      .hero {
+        min-height: 560px;
+        padding: 26px 22px 22px;
+      }
+
+      .hero h1 {
+        font-size: clamp(60px, 20vw, 82px);
+      }
+
+      .hero h1 span {
+        margin-left: 0;
+      }
+
+      .hero-title-wrap::after {
+        margin-left: 0;
+      }
+
+      .hero-footer {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .hero-coordinates {
+        display: none;
+      }
+
+      .rally {
+        height: 520px;
+      }
+
+      .blueprint {
+        height: 410px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 42% 58%;
+      }
+
+      .blueprint-media {
+        border-right: 0;
+        border-bottom: 1px solid rgba(17, 16, 15, 0.28);
+      }
+
+      .ways,
+      .signal,
+      .photography {
+        height: 390px;
+      }
+
+      .browse {
+        height: 500px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="site-header">
+      <a class="brand" href="#about" aria-label="Nino Chavez, back to introduction">Nino Chavez</a>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="#blueprint">Work</a>
+        <a href="#ways">Practice</a>
+        <a href="#browse">Demos</a>
+        <a href="#signal">Writing</a>
+        <a href="#photography">Photography</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <div class="header-index" aria-label="Current index metadata">
+        <span class="index-copy"><span class="quiet">Open index</span><br>06 objects / 2026</span>
+        <span class="registration" aria-hidden="true"></span>
+      </div>
+    </header>
+
+    <main>
+      <section class="wall" aria-label="Selected work contact system">
+        <section class="card hero" id="about" aria-labelledby="hero-title">
+          <span class="crop crop--tl" aria-hidden="true"></span>
+          <span class="crop crop--br" aria-hidden="true"></span>
+          <div class="hero-top micro">
+            <span class="eyebrow">Product architect / independent builder</span>
+            <span class="folio">NC—00<br>Statement</span>
+          </div>
+
+          <div class="hero-title-wrap">
+            <h1 id="hero-title">The work <span>is the proof.</span></h1>
+          </div>
+
+          <div class="hero-footer">
+            <p class="hero-copy">Products, tools, photographs, and essays—built across software, sport, media, and commerce. Agents are part of the operating system.</p>
+            <span class="hero-coordinates micro">41.8781° N<br>87.6298° W</span>
+          </div>
+        </section>
+
+        <article class="card rally" id="rally" aria-labelledby="rally-title">
+          <a class="card-link" href="#rally" aria-label="View Rally HQ"></a>
+          <span class="crop crop--tl" aria-hidden="true"></span>
+          <span class="crop crop--br" aria-hidden="true"></span>
+          <figure>
+            <img src="../assets/volleyball.jpg" alt="A volleyball match in progress inside a tournament venue">
+            <figcaption class="frame-caption">
+              <span class="status status--active micro">Live</span>
+              <h2 id="rally-title">Rally HQ</h2>
+              <p>Tournament operations for grassroots volleyball.</p>
+            </figcaption>
+          </figure>
+          <div class="frame-rail micro">
+            <span>Operations / sport<br>Frame 02-A</span>
+            <span class="sequence">02 / 06</span>
+          </div>
+        </article>
+
+        <article class="card blueprint" id="blueprint" aria-labelledby="blueprint-title">
+          <a class="card-link" href="#blueprint" aria-label="View Blueprint"></a>
+          <span class="crop crop--tl" aria-hidden="true"></span>
+          <span class="crop crop--br" aria-hidden="true"></span>
+          <div class="blueprint-media">
+            <img src="../assets/demo.jpg" alt="A working product interface specimen">
+          </div>
+          <div class="blueprint-info">
+            <div class="specimen-head micro">
+              <span class="status">Install</span>
+              <span>01 / 06</span>
+            </div>
+            <h2 id="blueprint-title">Blueprint</h2>
+            <div class="specimen-foot">
+              <p>Agent-assisted product initiatives, end to end.</p>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card ways" id="ways" aria-labelledby="ways-title">
+          <a class="card-link" href="#ways" aria-label="View Ways of Working"></a>
+          <span class="crop crop--tl" aria-hidden="true"></span>
+          <span class="crop crop--br" aria-hidden="true"></span>
+          <div class="ways-media">
+            <img src="../assets/essay.webp" alt="A published field note shown as a working artifact">
+          </div>
+          <div class="ways-info">
+            <div class="specimen-head micro">
+              <span class="status">Series</span>
+              <span>03 / 06</span>
+            </div>
+            <h2 id="ways-title">Ways of Working</h2>
+            <div class="specimen-foot">
+              <p>11 real agent sessions, failures included.</p>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card signal" id="signal" aria-labelledby="signal-title">
+          <a class="card-link" href="#signal" aria-label="Read Signal Dispatch"></a>
+          <span class="crop crop--tl" aria-hidden="true"></span>
+          <span class="crop crop--br" aria-hidden="true"></span>
+          <div class="signal-info">
+            <div class="specimen-head micro">
+              <span class="status">Published</span>
+              <span>04 / 06</span>
+            </div>
+            <h2 id="signal-title">Signal<br>Dispatch</h2>
+            <div class="specimen-foot">
+              <p>Essays, whitepapers, and field notes.</p>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+            <span class="signal-mark" aria-hidden="true">S/D</span>
+          </div>
+          <div class="signal-strip" aria-hidden="true">
+            <img src="../assets/essay.webp" alt="">
+          </div>
+        </article>
+
+        <article class="card photography" id="photography" aria-labelledby="photography-title">
+          <a class="card-link" href="#photography" aria-label="View Photography"></a>
+          <span class="crop crop--tl" aria-hidden="true"></span>
+          <span class="crop crop--br" aria-hidden="true"></span>
+          <figure>
+            <img src="../assets/volleyball.jpg" alt="A tightly cropped moment from a volleyball event">
+            <figcaption class="frame-caption">
+              <span class="status micro">Gallery</span>
+              <h2 id="photography-title">Photography</h2>
+              <p>Volleyball events and selected work.</p>
+            </figcaption>
+          </figure>
+          <div class="frame-rail micro">
+            <span>Selected image<br>Crop 04-B</span>
+            <span class="sequence">05 / 06</span>
+          </div>
+          <span class="photo-annotation">Contact approved</span>
+        </article>
+
+        <article class="card browse" id="browse" aria-labelledby="browse-title">
+          <a class="card-link" href="#browse" aria-label="View browse-tool source"></a>
+          <span class="crop crop--tl" aria-hidden="true"></span>
+          <span class="crop crop--br" aria-hidden="true"></span>
+          <div class="browse-media">
+            <img src="../assets/demo.jpg" alt="A Chrome automation demo artifact">
+            <div class="terminal-index" aria-hidden="true">
+              <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span>
+            </div>
+            <div class="command" aria-hidden="true">
+              <code>browse open --profile work</code>
+              <span>OK 118ms</span>
+            </div>
+          </div>
+          <div class="browse-info">
+            <div class="specimen-head micro">
+              <span class="status">Source</span>
+              <span>06 / 06</span>
+            </div>
+            <h2 id="browse-title">browse-tool</h2>
+            <div class="specimen-foot">
+              <p>Real Chrome from ten shell commands.</p>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "surface": "public portfolio",
+  "reviewedAt": "2026-07-31T19:37:33.187Z",
+  "reviewedBy": "Codex",
+  "method": "Rendered browser review and responsive containment audit",
+  "sourceDigest": "sha256:317f1b12ccf5807bdbbfa1dcb9158d8d7cdb90b99110984300e13b680fd635d6",
+  "sourceFiles": 44,
+  "scope": [
+    "70 public routes",
+    "390 768 1061 1080 1100 1260 1280 1728 pixel widths",
+    "copy layout navigation and overflow"
+  ]
+}

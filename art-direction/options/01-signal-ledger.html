@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0c09">
+  <title>Signal Ledger — Nino Chavez</title>
+  <style>
+    :root {
+      --ink: #0b0c09;
+      --ink-raised: #11120f;
+      --ivory: #f1eddf;
+      --ivory-soft: #c6c3b8;
+      --muted: #8b8e83;
+      --line: #33362e;
+      --line-bright: #62665a;
+      --signal: #caff36;
+      --display: "Arial Narrow", "Helvetica Neue Condensed", "Roboto Condensed", Impact, sans-serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      --mono: "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+      --gutter: clamp(18px, 2vw, 34px);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--ink);
+      color-scheme: dark;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      min-height: 100vh;
+      background:
+        linear-gradient(90deg, transparent calc(100% - 1px), rgba(241, 237, 223, .028) 1px) 0 0 / 8.333vw 100%,
+        var(--ink);
+      color: var(--ivory);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--signal);
+      outline-offset: 4px;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding-inline: var(--gutter);
+      position: relative;
+      isolation: isolate;
+    }
+
+    .page::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .1;
+      background-image:
+        radial-gradient(circle at 20% 30%, var(--ivory) 0 .5px, transparent .7px),
+        radial-gradient(circle at 75% 65%, var(--ivory) 0 .5px, transparent .8px);
+      background-size: 7px 9px, 11px 13px;
+      mix-blend-mode: soft-light;
+    }
+
+    .system-bar {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .system-bar p {
+      margin: 0;
+    }
+
+    .system-bar .active {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--ivory-soft);
+    }
+
+    .system-bar .active::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--signal);
+      box-shadow: 0 0 0 3px rgba(202, 255, 54, .09);
+      content: "";
+    }
+
+    .masthead {
+      height: 74px;
+      display: grid;
+      grid-template-columns: minmax(210px, 1fr) auto minmax(210px, 1fr);
+      align-items: center;
+      border-bottom: 1px solid var(--line-bright);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 11px;
+      width: max-content;
+      font-family: var(--display);
+      font-size: 27px;
+      font-stretch: condensed;
+      font-weight: 900;
+      letter-spacing: -.035em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .primary-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(18px, 2vw, 34px);
+    }
+
+    .primary-nav a {
+      position: relative;
+      padding-block: 10px;
+      color: var(--ivory-soft);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: color 160ms ease;
+    }
+
+    .primary-nav a::after {
+      position: absolute;
+      right: 0;
+      bottom: 3px;
+      left: 0;
+      height: 1px;
+      background: var(--signal);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 180ms ease;
+    }
+
+    .primary-nav a:hover {
+      color: var(--ivory);
+    }
+
+    .primary-nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .index-link {
+      justify-self: end;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 34px;
+      padding: 0 13px;
+      border: 1px solid var(--signal);
+      color: var(--signal);
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: background 160ms ease, color 160ms ease;
+    }
+
+    .index-link:hover {
+      background: var(--signal);
+      color: var(--ink);
+    }
+
+    .hero {
+      min-height: 350px;
+      display: grid;
+      grid-template-columns: minmax(112px, .85fr) minmax(550px, 6fr) minmax(280px, 2.35fr);
+      gap: clamp(18px, 2.25vw, 42px);
+      padding: 30px 0 22px;
+      border-bottom: 1px solid var(--line-bright);
+    }
+
+    .hero-rail {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-width: 0;
+      padding-right: 16px;
+      border-right: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--ivory-soft);
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      line-height: 1.55;
+      text-transform: uppercase;
+    }
+
+    .register-mark {
+      display: grid;
+      gap: 7px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .12em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .register-mark strong {
+      color: var(--ivory);
+      font-family: var(--display);
+      font-size: 49px;
+      font-weight: 900;
+      letter-spacing: -.06em;
+      line-height: .8;
+    }
+
+    .hero-title-wrap {
+      align-self: center;
+      min-width: 0;
+    }
+
+    .hero-title {
+      max-width: 950px;
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(82px, 8.2vw, 132px);
+      font-stretch: condensed;
+      font-weight: 900;
+      letter-spacing: -.065em;
+      line-height: .75;
+      text-transform: uppercase;
+    }
+
+    .hero-title span {
+      display: block;
+    }
+
+    .hero-title .proof {
+      display: flex;
+      align-items: center;
+      gap: .1em;
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--ivory);
+    }
+
+    .hero-title .proof::after {
+      flex: 1;
+      min-width: 24px;
+      height: .11em;
+      margin-top: .1em;
+      background: var(--signal);
+      content: "";
+    }
+
+    .hero-copy {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 4px;
+    }
+
+    .hero-copy > p {
+      max-width: 390px;
+      margin: 0;
+      color: var(--ivory-soft);
+      font-size: clamp(17px, 1.25vw, 21px);
+      font-weight: 450;
+      letter-spacing: -.025em;
+      line-height: 1.38;
+    }
+
+    .proof-stamp {
+      align-self: flex-end;
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 13px;
+      align-items: center;
+      padding-top: 15px;
+      border-top: 1px solid var(--line);
+      font-family: var(--mono);
+      text-transform: uppercase;
+    }
+
+    .proof-stamp b {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--ivory-soft);
+      border-radius: 50%;
+      font-size: 10px;
+      letter-spacing: .08em;
+      transform: rotate(-7deg);
+    }
+
+    .proof-stamp p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      line-height: 1.55;
+    }
+
+    .proof-stamp p span {
+      display: block;
+      color: var(--ivory);
+    }
+
+    .evidence {
+      padding-top: 15px;
+    }
+
+    .evidence-heading {
+      min-height: 40px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .evidence-heading h2,
+    .evidence-heading p {
+      margin: 0;
+    }
+
+    .evidence-heading h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--display);
+      font-size: 19px;
+      font-weight: 900;
+      letter-spacing: -.01em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .evidence-heading h2::before {
+      width: 7px;
+      height: 7px;
+      background: var(--signal);
+      content: "";
+    }
+
+    .evidence-heading p {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .ledger {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1fr 1.18fr 1.08fr;
+      border-top: 1px solid var(--line-bright);
+      border-bottom: 1px solid var(--line-bright);
+    }
+
+    .entry {
+      min-width: 0;
+      height: 292px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 12px 13px 13px;
+      overflow: hidden;
+      border-left: 1px solid var(--line);
+      background: rgba(17, 18, 15, .78);
+      transition: background 180ms ease;
+    }
+
+    .entry:first-child {
+      border-left: 0;
+    }
+
+    .entry::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background: var(--signal);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 200ms ease;
+    }
+
+    .entry:hover {
+      background: #161712;
+    }
+
+    .entry:hover::after,
+    .entry:focus-visible::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .entry-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .entry-meta .state {
+      color: var(--ivory-soft);
+    }
+
+    .entry-meta .state.live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--signal);
+    }
+
+    .entry-meta .state.live::before {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: currentColor;
+      content: "";
+    }
+
+    .entry h3 {
+      margin: 0 0 8px;
+      font-family: var(--display);
+      font-size: clamp(23px, 1.7vw, 30px);
+      font-weight: 900;
+      letter-spacing: -.045em;
+      line-height: .92;
+      text-transform: uppercase;
+    }
+
+    .entry > p {
+      margin: 0;
+      color: var(--ivory-soft);
+      font-size: 12px;
+      letter-spacing: -.01em;
+      line-height: 1.35;
+    }
+
+    .entry-visual {
+      flex: 1;
+      min-height: 68px;
+      position: relative;
+      margin: 15px -13px -13px;
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+      background: #171813;
+    }
+
+    .entry-visual img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      filter: grayscale(1) sepia(.12) contrast(1.12) brightness(.7);
+      transition: filter 260ms ease, transform 400ms cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .entry:hover .entry-visual img {
+      filter: grayscale(.82) sepia(.08) contrast(1.08) brightness(.82);
+      transform: scale(1.025);
+    }
+
+    .entry-visual::after {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(11, 12, 9, .05), rgba(11, 12, 9, .55)),
+        repeating-linear-gradient(90deg, transparent 0 27px, rgba(241, 237, 223, .08) 28px);
+      content: "";
+      pointer-events: none;
+    }
+
+    .entry-visual .image-note {
+      position: absolute;
+      right: 9px;
+      bottom: 8px;
+      z-index: 1;
+      padding: 4px 5px;
+      background: var(--ink);
+      color: var(--ivory-soft);
+      font-family: var(--mono);
+      font-size: 7px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .blueprint-map {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      align-items: end;
+      gap: 5px;
+      padding: 13px;
+    }
+
+    .blueprint-map i {
+      display: block;
+      height: calc(var(--n) * 1%);
+      min-height: 9px;
+      border-top: 1px solid var(--ivory-soft);
+      background: repeating-linear-gradient(
+        0deg,
+        transparent 0 6px,
+        rgba(241, 237, 223, .12) 7px
+      );
+    }
+
+    .blueprint-map i:last-child {
+      border-color: var(--signal);
+    }
+
+    .terminal {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 7px;
+      padding: 14px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 7px;
+      letter-spacing: .04em;
+      line-height: 1.2;
+    }
+
+    .terminal span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .terminal span::before {
+      margin-right: 7px;
+      color: var(--ivory-soft);
+      content: ">";
+    }
+
+    .terminal .ready {
+      color: var(--signal);
+    }
+
+    .page-footer {
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .page-footer p {
+      margin: 0;
+    }
+
+    .page-footer a {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--signal);
+    }
+
+    .page-footer a::after {
+      content: "↗";
+      font-size: 12px;
+      transition: transform 160ms ease;
+    }
+
+    .page-footer a:hover::after {
+      transform: translate(2px, -2px);
+    }
+
+    @media (min-width: 1200px) and (min-height: 900px) {
+      .page {
+        min-height: 1000px;
+      }
+
+      .hero {
+        min-height: 410px;
+      }
+
+      .entry {
+        height: 345px;
+      }
+
+      .page-footer {
+        min-height: 60px;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .masthead {
+        grid-template-columns: 1fr auto;
+      }
+
+      .primary-nav {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        height: 40px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        border-top: 1px solid var(--line);
+      }
+
+      .masthead {
+        height: 110px;
+      }
+
+      .hero {
+        grid-template-columns: 92px minmax(0, 1fr) minmax(240px, .48fr);
+      }
+
+      .ledger {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .entry {
+        border-top: 1px solid var(--line);
+      }
+
+      .entry:nth-child(4) {
+        border-left: 0;
+      }
+    }
+
+    @media (max-width: 760px) {
+      body {
+        background-size: 25vw 100%;
+      }
+
+      .system-bar p:last-child {
+        display: none;
+      }
+
+      .masthead {
+        grid-template-columns: 1fr auto;
+      }
+
+      .brand {
+        font-size: 23px;
+      }
+
+      .index-link {
+        width: 34px;
+        padding: 0;
+        justify-content: center;
+        font-size: 0;
+      }
+
+      .index-link::after {
+        content: "↗";
+        font-size: 13px;
+      }
+
+      .primary-nav {
+        gap: 22px;
+      }
+
+      .hero {
+        min-height: 0;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-block: 24px;
+      }
+
+      .hero-rail {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: start;
+        padding: 0 0 15px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .register-mark {
+        justify-items: end;
+      }
+
+      .register-mark strong {
+        font-size: 34px;
+      }
+
+      .hero-title {
+        font-size: clamp(65px, 19vw, 102px);
+      }
+
+      .hero-copy {
+        gap: 30px;
+      }
+
+      .proof-stamp {
+        align-self: auto;
+      }
+
+      .ledger {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .entry:nth-child(odd) {
+        border-left: 0;
+      }
+
+      .entry:nth-child(4) {
+        border-left: 1px solid var(--line);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page {
+        padding-inline: 14px;
+      }
+
+      .brand span {
+        display: none;
+      }
+
+      .evidence-heading {
+        min-height: 55px;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 6px;
+      }
+
+      .ledger {
+        grid-template-columns: 1fr;
+      }
+
+      .entry {
+        height: 280px;
+        border-left: 0 !important;
+      }
+
+      .page-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-block: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside class="system-bar" aria-label="Site status">
+      <p class="active">Independent practice / active</p>
+      <p>Chicago · 41.8781° N / 87.6298° W · Register 01–06</p>
+    </aside>
+
+    <header class="masthead">
+      <a class="brand" href="#" aria-label="Nino Chavez home">
+        Nino Chavez <span>NC / 2026</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#practice">Practice</a>
+        <a href="#demos">Demos</a>
+        <a href="#writing">Writing</a>
+        <a href="#photography">Photography</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <a class="index-link" href="#work">Open index <span aria-hidden="true">↘</span></a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-rail">
+          <p class="eyebrow">Product architect<br>Independent builder</p>
+          <div class="register-mark" aria-label="Proof register number 01">
+            Proof register
+            <strong>01</strong>
+            Issue / 2026.07
+          </div>
+        </div>
+
+        <div class="hero-title-wrap">
+          <h1 class="hero-title" id="hero-title">
+            <span>The work is</span>
+            <span class="proof">the proof.</span>
+          </h1>
+        </div>
+
+        <div class="hero-copy">
+          <p>Products, tools, photographs, and essays—built across software, sport, media, and commerce. Agents are part of the operating system.</p>
+          <div class="proof-stamp">
+            <b>NC<br>OK</b>
+            <p>
+              Built in the open
+              <span>Claims link to evidence</span>
+              Human-directed / agent-operated
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="evidence" id="work" aria-labelledby="evidence-title">
+        <div class="evidence-heading">
+          <h2 id="evidence-title">Selected evidence</h2>
+          <p>Six objects / product, practice, writing, image, source</p>
+        </div>
+
+        <div class="ledger">
+          <a class="entry" href="#" aria-label="Blueprint, install">
+            <div class="entry-meta"><span>01 / System</span><span class="state">Install</span></div>
+            <h3>Blueprint</h3>
+            <p>Agent-assisted product initiatives, end to end.</p>
+            <div class="entry-visual" aria-hidden="true">
+              <div class="blueprint-map">
+                <i style="--n: 26"></i>
+                <i style="--n: 44"></i>
+                <i style="--n: 35"></i>
+                <i style="--n: 69"></i>
+                <i style="--n: 56"></i>
+                <i style="--n: 83"></i>
+                <i style="--n: 100"></i>
+              </div>
+              <span class="image-note">Initiative → evidence</span>
+            </div>
+          </a>
+
+          <a class="entry" href="#" aria-label="Rally HQ, live">
+            <div class="entry-meta"><span>02 / Product</span><span class="state live">Live</span></div>
+            <h3>Rally HQ</h3>
+            <p>Tournament operations for grassroots volleyball.</p>
+            <div class="entry-visual">
+              <img src="../assets/volleyball.jpg" alt="" loading="eager">
+              <span class="image-note">Field tested</span>
+            </div>
+          </a>
+
+          <a class="entry" id="practice" href="#" aria-label="Ways of Working, series">
+            <div class="entry-meta"><span>03 / Practice</span><span class="state">Series</span></div>
+            <h3>Ways of Working</h3>
+            <p>11 real agent sessions, failures included.</p>
+            <div class="entry-visual">
+              <img src="../assets/demo.jpg" alt="" loading="eager">
+              <span class="image-note">Session 11 / 11</span>
+            </div>
+          </a>
+
+          <a class="entry" id="writing" href="#" aria-label="Signal Dispatch, published">
+            <div class="entry-meta"><span>04 / Writing</span><span class="state">Published</span></div>
+            <h3>Signal Dispatch</h3>
+            <p>Essays, whitepapers, and field notes.</p>
+            <div class="entry-visual">
+              <img src="../assets/essay.webp" alt="" loading="eager">
+              <span class="image-note">Read the dispatch</span>
+            </div>
+          </a>
+
+          <a class="entry" id="photography" href="#" aria-label="Photography, gallery">
+            <div class="entry-meta"><span>05 / Image</span><span class="state">Gallery</span></div>
+            <h3>Photography</h3>
+            <p>Volleyball events and selected work.</p>
+            <div class="entry-visual">
+              <img src="../assets/volleyball.jpg" alt="" loading="eager" style="object-position: 78% 40%;">
+              <span class="image-note">Selected frames</span>
+            </div>
+          </a>
+
+          <a class="entry" id="demos" href="#" aria-label="browse-tool, source">
+            <div class="entry-meta"><span>06 / Tool</span><span class="state">Source</span></div>
+            <h3>browse-tool</h3>
+            <p>Real Chrome from ten shell commands.</p>
+            <div class="entry-visual" aria-hidden="true">
+              <div class="terminal">
+                <span>browse start</span>
+                <span>browse open /url</span>
+                <span>browse snapshot</span>
+                <span class="ready">proof: captured</span>
+              </div>
+              <span class="image-note">MIT / source</span>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer" id="about">
+      <p>© Nino Chavez · Products have receipts · No invented case studies</p>
+      <a href="mailto:hello@ninochavez.com">Start a useful conversation</a>
+    </footer>
+  </div>
+</body>
+</html>
