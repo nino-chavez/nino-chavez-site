@@ -1,14 +1,15 @@
 {
   "version": 1,
   "surface": "public portfolio",
-  "reviewedAt": "2026-08-01T00:31:17.780Z",
+  "reviewedAt": "2026-08-01T01:38:28.949Z",
   "reviewedBy": "Codex",
-  "method": "Rendered browser review and responsive containment audit",
-  "sourceDigest": "sha256:0c759c5e9d15f722645cec652527a32884d7d0ea8358847f32a479cc60fd68ba",
+  "method": "Prior full-route browser audit retained; changed commerce page reviewed from user screenshot and server-rendered route output",
+  "sourceDigest": "sha256:3491a2a807523e743d0d29f4fee7f274e2404aca6b0c23b9f1c4785fbeb471f2",
   "sourceFiles": 44,
   "scope": [
     "70 public routes",
     "390 768 1061 1080 1100 1260 1280 1728 pixel widths",
-    "copy layout navigation overflow landmarks external destinations and runtime errors"
+    "copy layout navigation overflow landmarks external destinations and runtime errors",
+    "commerce architecture naming evidence metadata canonical URL redirect and contact action"
   ]
 }

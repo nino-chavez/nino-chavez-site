@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { workItems } from "../../data";
 
@@ -58,9 +58,12 @@ const recordVisuals: Partial<
 type RecordProfile = {
   source: string;
   private?: boolean;
+  access?: string;
+  heading?: string;
   introduction: string;
   details: Array<{ title: string; description: string }>;
   links?: Array<{ label: string; href: string }>;
+  contact?: { label: string; subject: string };
 };
 
 const recordProfiles: Record<string, RecordProfile> = {
@@ -376,24 +379,29 @@ const recordProfiles: Record<string, RecordProfile> = {
       }
     ]
   },
-  "commerce-practice": {
-    "source": "Published professional record",
-    "private": true,
-    "introduction": "The commerce practice is a public account of Nino’s architecture work across retail, B2B, grocery, and multi-brand platforms without publishing client-confidential implementation details.",
+  "commerce-architecture": {
+    "source": "Professional experience",
+    "access": "public summary",
+    "heading": "What this experience covers",
+    "introduction": "Across 25+ years, Nino has designed and delivered commerce systems for retail, B2B, grocery, and multi-brand businesses—from hands-on software development to product and enterprise architecture. Specific client programs stay confidential; the capabilities and scale below are public.",
     "details": [
       {
-        "title": "Platform architecture",
-        "description": "The work spans SAP, Salesforce, Adobe, headless systems, APIs, and distributed commerce platforms."
+        "title": "Platforms and ecosystems",
+        "description": "SAP Commerce Cloud, Salesforce Commerce Cloud, Adobe Commerce, headless storefronts, APIs, and distributed systems."
       },
       {
-        "title": "Strategy through delivery",
-        "description": "Roles have covered product strategy, system design, integration, performance, quality, and global delivery."
+        "title": "Problems solved",
+        "description": "Platform modernization, system integration, performance, delivery recovery, and architecture for mobile, web, and fulfillment."
       },
       {
-        "title": "Ask for the relevant example",
-        "description": "Specific client records stay private; a conversation can match the useful experience to the problem at hand."
+        "title": "Program scale",
+        "description": "Experience includes a $25M multi-brand transformation, 100+ person global delivery, and 20+ commerce implementations."
       }
-    ]
+    ],
+    "contact": {
+      "label": "Discuss a commerce problem",
+      "subject": "Commerce architecture"
+    }
   },
   "forge-brand": {
     "source": "Public README and source",
@@ -561,7 +569,10 @@ export async function generateMetadata({
 }
 
 export function generateStaticParams() {
-  return workItems.map((item) => ({ slug: item.slug }));
+  return [
+    ...workItems.map((item) => ({ slug: item.slug })),
+    { slug: "commerce-practice" },
+  ];
 }
 
 export default async function WorkDetailPage({
@@ -570,6 +581,11 @@ export default async function WorkDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
+  if (slug === "commerce-practice") {
+    redirect("/work/commerce-architecture");
+  }
+
   const item = workItems.find((entry) => entry.slug === slug);
 
   if (!item) {
@@ -621,19 +637,19 @@ export default async function WorkDetailPage({
         </div>
         <dl className="fact-list">
           <div>
-            <dt>State</dt>
+            <dt>Status</dt>
             <dd>{item.state}</dd>
           </div>
           <div>
-            <dt>Form</dt>
+            <dt>Type</dt>
             <dd>{item.form}</dd>
           </div>
           <div>
             <dt>Access</dt>
-            <dd>{profile.private ? "private record" : "public"}</dd>
+            <dd>{profile.access ?? (profile.private ? "private record" : "public")}</dd>
           </div>
           <div>
-            <dt>Record updated</dt>
+            <dt>Updated</dt>
             <dd>{item.updatedAt}</dd>
           </div>
         </dl>
@@ -657,7 +673,9 @@ export default async function WorkDetailPage({
         <header className="work-proof__heading">
           <div>
             <p className="eyebrow">{profile.source}</p>
-            <h2 id="work-proof-title">What is here</h2>
+            <h2 id="work-proof-title">
+              {profile.heading ?? "What is here"}
+            </h2>
           </div>
           <p>{profile.introduction}</p>
         </header>
@@ -685,15 +703,18 @@ export default async function WorkDetailPage({
             ))}
           </div>
         ) : null}
-        {profile.private && !item.destination ? (
+        {profile.contact || (profile.private && !item.destination) ? (
           <a
             className="primary-action work-proof__contact"
             href={
               "mailto:nino@ninochavez.co?subject=" +
-              encodeURIComponent("Question about " + item.name)
+              encodeURIComponent(
+                profile.contact?.subject ?? "Question about " + item.name,
+              )
             }
           >
-            Ask about this work <span aria-hidden="true">↗</span>
+            {profile.contact?.label ?? "Ask about this work"}{" "}
+            <span aria-hidden="true">↗</span>
           </a>
         ) : null}
       </section>

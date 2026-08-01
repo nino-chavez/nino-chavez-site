@@ -10,6 +10,7 @@ export const domains = [
 export const states = [
   "install",
   "live",
+  "published",
   "source",
   "internal",
   "building",
@@ -23,6 +24,7 @@ export const forms = [
   "service",
   "repo",
   "docs",
+  "experience",
   "collection",
 ] as const;
 
@@ -278,14 +280,14 @@ export const workItems: WorkItem[] = [
     },
   },
   {
-    slug: "commerce-practice",
-    name: "Commerce practice",
+    slug: "commerce-architecture",
+    name: "Commerce architecture",
     claim:
-      "A publication-safe index for commerce systems; individual entries remain held until disclosure is authorized.",
+      "25+ years designing and delivering commerce platforms across retail, B2B, grocery, and multi-brand businesses.",
     domain: "Commerce",
-    state: "internal",
-    form: "collection",
-    updatedAt: "2026-07-20",
+    state: "published",
+    form: "experience",
+    updatedAt: "2026-07-31",
   },
   {
     slug: "forge-brand",

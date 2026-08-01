@@ -161,8 +161,9 @@ test("renders the full-volume work and demos collections", async () => {
   assert.doesNotMatch(workHtml, /objects in view/);
   assert.match(workHtml, /Blueprint/);
   assert.match(workHtml, /Rally HQ/);
-  assert.match(workHtml, /Commerce practice/);
-  assert.match(workHtml, /internal/);
+  assert.match(workHtml, /Commerce architecture/);
+  assert.match(workHtml, /published/);
+  assert.match(workHtml, /experience/);
   assert.match(workHtml, /source/);
   assert.match(workHtml, /28 Jul/);
   const filteredDocument = filteredWorkHtml.split('<script id="_R_">')[0];
@@ -870,12 +871,13 @@ test("representative records show evidence and remove prototype placeholders", a
 });
 
 test("grounds Work pages in public proof or an explicit private record", async () => {
-  const [flickdayHtml, volleyHtml, filmRoomHtml, specchainHtml] =
+  const [flickdayHtml, volleyHtml, filmRoomHtml, specchainHtml, commerceHtml] =
     await Promise.all([
       htmlFor("/work/flickday"),
       htmlFor("/work/volleyrx"),
       htmlFor("/work/film-room"),
       htmlFor("/work/specchain"),
+      htmlFor("/work/commerce-architecture"),
     ]);
 
   assert.match(flickdayHtml, /Flickday Media/);
@@ -906,6 +908,24 @@ test("grounds Work pages in public proof or an explicit private record", async (
   assert.match(
     specchainHtml,
     new RegExp('href="https://github\\.com/nino-chavez/specchain" target="_blank" rel="noopener noreferrer"'),
+  );
+  assert.match(commerceHtml, /25\+ years designing and delivering/);
+  assert.match(commerceHtml, /Professional experience/);
+  assert.match(commerceHtml, /What this experience covers/);
+  assert.match(commerceHtml, /public summary/);
+  assert.match(commerceHtml, /\$25M multi-brand transformation/);
+  assert.match(commerceHtml, /100\+ person global delivery/);
+  assert.match(commerceHtml, /20\+ commerce implementations/);
+  assert.match(commerceHtml, /Discuss a commerce problem/);
+  assert.doesNotMatch(commerceHtml, /Commerce practice/);
+  assert.doesNotMatch(commerceHtml, /publication-safe/);
+  assert.doesNotMatch(commerceHtml, /private record/);
+
+  const legacyCommerce = await render("/work/commerce-practice");
+  assert.ok([301, 307, 308].includes(legacyCommerce.status));
+  assert.equal(
+    new URL(legacyCommerce.headers.get("location")).pathname,
+    "/work/commerce-architecture",
   );
 
   const unsupported = await render("/work/cortex");
