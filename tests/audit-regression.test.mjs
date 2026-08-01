@@ -448,6 +448,10 @@ test("C25 — the canonical privacy policy carries the youth tag consent gate", 
 });
 
 test("C26 — photography scale is read from the publisher-owned stats endpoint", async () => {
+  assert.equal(
+    PHOTOGRAPHY_STATS_ENDPOINT,
+    "https://nino-chavez-photography.pages.dev/photography/api/ai/stats",
+  );
   const stats = await getPhotographyArchiveStats(async (url) => {
     assert.equal(url, PHOTOGRAPHY_STATS_ENDPOINT);
     return new Response(
