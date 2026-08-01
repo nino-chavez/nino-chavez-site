@@ -1,5 +1,5 @@
 export const PHOTOGRAPHY_STATS_ENDPOINT =
-  "https://ninochavez.co/photography/api/ai/stats";
+  "https://nino-chavez-photography.pages.dev/photography/api/ai/stats";
 
 /**
  * Read the gallery's publisher-owned totals. A missing response removes the
