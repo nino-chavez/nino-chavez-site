@@ -140,7 +140,7 @@ export default function AboutPage() {
 
       <header className="about-opening">
         <div className="about-opening__register page-shell">
-          <span>About / durable profile</span>
+          <span>About Nino Chavez</span>
           <span>Chicago</span>
           <span>Building since 1999</span>
         </div>
@@ -153,12 +153,12 @@ export default function AboutPage() {
               <span aria-hidden="true">Chavez</span>
             </h1>
             <p className="about-opening__lede">
-              Product architect by trade. I also build software, run volleyball
-              tournaments, photograph them, write, and DJ.
+              I’m a product architect in Chicago. I’ve spent more than 25 years
+              turning complicated decisions into working software.
             </p>
             <p>
-              I live in Chicago. I’ve been writing code since 1999. The work
-              shows how I think; this page supplies the background.
+              Outside the day job, I build and run volleyball products,
+              photograph tournaments, write, and DJ.
             </p>
           </div>
         </div>
@@ -192,9 +192,8 @@ export default function AboutPage() {
               <p>
                 Outside the day job, I run Let’s Pepper, build and operate Rally
                 HQ, shoot volleyball through Flickday Media, publish Signal
-                Dispatch, and keep a music practice on SoundCloud. The mediums
-                are different. None is decorative. Each has to work for the
-                people in front of it.
+                Dispatch, and keep a music practice on SoundCloud. They look
+                different, but each has to work for the people in front of it.
               </p>
             </div>
 
@@ -224,8 +223,8 @@ export default function AboutPage() {
             <span>02 / Throughline</span>
             <h2 id="about-throughline">What connects the work</h2>
             <p>
-              The format changes. The work keeps asking for attention,
-              structure, selection, and responsibility for the result.
+              The form changes. Each one asks me to make something useful, run
+              it under real conditions, and own the result.
             </p>
           </header>
 
@@ -267,18 +266,16 @@ export default function AboutPage() {
 
           <div className="about-prose">
             <p className="about-lead">
-              Agents expand the execution I can carry. They research, draft,
-              code, test, review, and package work across the practice.
+              Agents help me research, draft, code, test, review, and package
+              more work than I could handle alone.
             </p>
             <p>
-              They do not decide what the work is for, what may be published,
-              or whether a judgment is honest. I keep those decisions. The
-              result still has to survive a user, an event, a repository, or a
-              reader.
+              I still decide what the work is for, what can be published, and
+              whether the evidence supports the claim.
             </p>
             <div className="about-inline-actions">
               <Link href="/work/blueprint">See the method in Blueprint →</Link>
-              <Link href="/demos">Open the operating sessions →</Link>
+              <Link href="/demos">See how I work →</Link>
             </div>
           </div>
         </section>

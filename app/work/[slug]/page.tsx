@@ -122,8 +122,8 @@ const recordProfiles: Record<string, RecordProfile> = {
         "description": "Structured progress files support resuming work, and verifier findings can return through a bounded correction pass."
       },
       {
-        "title": "First successful action",
-        "description": "The public repository includes an npx installer and a complete worked example."
+        "title": "Worked example",
+        "description": "The public repository includes a complete example of the staged workflow."
       }
     ]
   },
@@ -290,7 +290,7 @@ const recordProfiles: Record<string, RecordProfile> = {
       },
       {
         "title": "Evidence-linked notes",
-        "description": "The intended product keeps each note claim connected to retained transcript evidence and fails closed on rejected summaries."
+        "description": "The intended product keeps each note claim connected to retained transcript evidence. If a summary fails review, the system withholds it instead of publishing it."
       }
     ]
   },

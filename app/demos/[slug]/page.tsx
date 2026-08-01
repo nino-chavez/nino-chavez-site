@@ -64,7 +64,7 @@ export default async function DemoSessionPage({
       <div className="page-shell demo-story-breadcrumbs">
         <Breadcrumbs
           items={[
-            { label: "Demos", href: "/demos" },
+            { label: "How I work", href: "/demos" },
             { label: "Sessions", href: "/demos#sessions" },
             { label: entry.title },
           ]}
@@ -77,7 +77,7 @@ export default async function DemoSessionPage({
       <div className="page-shell demo-record-context">
         <header className="demo-record-context__header">
           <div>
-            <p className="eyebrow">The record behind the demo</p>
+            <p className="eyebrow">What happened</p>
             <h2>{entry.title}</h2>
             <p>{entry.summary}</p>
           </div>
@@ -145,7 +145,7 @@ export default async function DemoSessionPage({
           ) : (
             <Link href="/demos">
               <span>Sequence complete</span>
-              <strong>Return to all demos</strong>
+              <strong>Return to How I work</strong>
             </Link>
           )}
         </nav>

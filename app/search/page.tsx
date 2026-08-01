@@ -9,7 +9,7 @@ import {
 import { getDemoSnapshot } from "../demos";
 import { getWritingSnapshot } from "../writing";
 
-const durablePages = [
+const sitePages = [
   {
     kind: "Collection",
     title: "Photography",
@@ -33,7 +33,7 @@ const durablePages = [
     title: "Now",
     href: "/now",
     description:
-      "A dated attention map across product architecture, the public site, agent-assisted practice, and volleyball operations.",
+      "What Nino is working on across product architecture, the public site, AI-assisted work, and volleyball operations.",
     keywords:
       "current focus commerce.com site redesign agents Blueprint Film Room volleyball Rally HQ Let's Pepper Flickday Media active July 2026",
   },
@@ -95,7 +95,7 @@ const resultLimits = {
 
 export const metadata = {
   title: "Search",
-  description: "Search work, demos, writing, and durable pages.",
+  description: "Search work, sessions, techniques, writing, and site pages.",
 };
 
 export default async function SearchPage({
@@ -180,7 +180,7 @@ export default async function SearchPage({
         "learn",
       ].join(" "),
     })),
-    ...durablePages,
+    ...sitePages,
   ];
   const pageMatches = query
     ? rankedMatches(
@@ -205,8 +205,8 @@ export default async function SearchPage({
         <p className="eyebrow">Across ninochavez.co</p>
         <h1>Search</h1>
         <p className="lede">
-          Search projects, tools, demos, learning paths, writing, and pages from
-          one place.
+          Search projects, tools, work sessions, learning paths, writing, and
+          pages from one place.
         </p>
       </header>
 
@@ -281,7 +281,7 @@ export default async function SearchPage({
           {demos.length ? (
             <section aria-labelledby="search-demos">
               <div className="group-heading">
-                <h2 id="search-demos">Demos</h2>
+                <h2 id="search-demos">How I work</h2>
                 <span>
                   {demos.length} of {demoMatches.length}
                 </span>

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "source": "apps/blog/astro-build",
-  "sourceRevision": "428a19be5cd9670dcb367156dd82eca3e17f72ca",
-  "generatedAt": "2026-07-31T03:44:23.880Z",
+  "sourceRevision": "5ade64b9875f079855ee0575375793efcd00560e",
+  "generatedAt": "2026-08-01T17:31:13.898Z",
   "latestPublishedAt": "2026-07-31",
   "publicPieceCount": 285,
   "kindCounts": {
@@ -18,8 +18,6 @@
     "AI Development",
     "Commerce",
     "Consulting",
-    "Consulting Practice",
-    "Counterpoints",
     "Engineering",
     "Fiction",
     "Field Notes",
@@ -29,7 +27,6 @@
     "Personal Finance",
     "Philosophy",
     "Reflection",
-    "Reflections",
     "Systems Thinking",
     "Uncategorized"
   ],
@@ -308,7 +305,7 @@
       "excerpt": "What Lopopolo's million lines confirmed. On December 30, 2025 I published a whitepaper claiming the marginal cost of code generation was approaching zero, that this would produce a class of just-in-time software that challenges the SaaS model, and that the locus of value was shifting from the codebase to the intent behind it. On February 11, 2026, OpenAI published the empirical receipt — a three-engineer team producing one million lines of code over five months with zero manually-written lines. The thesis was right. The framing needed one precision upgrade.",
       "publishedAt": "2026-05-25",
       "kind": "Counterpoint",
-      "category": "Counterpoints",
+      "category": "Uncategorized",
       "tags": [
         "agentic-systems",
         "software-economics",
@@ -332,7 +329,7 @@
       "excerpt": "The predictable objection to the chassis argument is that templates and contracts don't eliminate review — they just relocate it. That objection treats agent output as the inspection target. The Industrial Revolution settled the same argument two centuries ago, in favor of inspecting the lathe instead of the bolt.",
       "publishedAt": "2026-05-24",
       "kind": "Counterpoint",
-      "category": "Counterpoints",
+      "category": "Uncategorized",
       "tags": [
         "agentic-systems",
         "architecture",
@@ -823,7 +820,7 @@
       "excerpt": "A systematic challenge to the mimicry-vs-native framing. Where the dual-track model holds, where it fractures, and what the original analysis underweights.",
       "publishedAt": "2026-03-01",
       "kind": "Counterpoint",
-      "category": "Counterpoints",
+      "category": "Uncategorized",
       "tags": [
         "agentic-systems",
         "deep-dive"
@@ -956,7 +953,7 @@
       "excerpt": "A systematic challenge to the bandwidth-to-AI analogy. Where the four-stage arc holds, where it fractures, and what the original analysis underweights.",
       "publishedAt": "2026-02-20",
       "kind": "Counterpoint",
-      "category": "Counterpoints",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "deep-dive"
@@ -1156,7 +1153,7 @@
       "excerpt": "The consulting industry's apprenticeship model was never really about the work—it was about proximity to mastery. When AI handles the grind, how does anyone learn to become a partner? The answer is reshaping the entire profession.",
       "publishedAt": "2026-01-16",
       "kind": "Essay",
-      "category": "Consulting Practice",
+      "category": "Consulting",
       "tags": [
         "consulting",
         "ai-development",
@@ -1170,7 +1167,7 @@
       "excerpt": "AI has severed the link between labor and learning in consulting. The grind that trained partners is disappearing—and firms are racing to rebuild their talent engine. Here's what's emerging.",
       "publishedAt": "2026-01-16",
       "kind": "Presentation",
-      "category": "Consulting Practice",
+      "category": "Consulting",
       "tags": [
         "consulting",
         "ai-development",
@@ -1184,7 +1181,7 @@
       "excerpt": "An adversarial stress test of the Cognitive Foundry thesis, examining pedagogical validity, economic feasibility, tacit knowledge transfer, and structural integrity—with amended recommendations.",
       "publishedAt": "2026-01-16",
       "kind": "Whitepaper",
-      "category": "Consulting Practice",
+      "category": "Consulting",
       "tags": [
         "consulting",
         "ai-development",
@@ -1198,7 +1195,7 @@
       "excerpt": "I wrote about simulation replacing apprenticeship. Then I stress-tested the idea. The technical case still holds—but I was wrong about what matters most.",
       "publishedAt": "2026-01-16",
       "kind": "Essay",
-      "category": "Consulting Practice",
+      "category": "Consulting",
       "tags": [
         "consulting",
         "ai-development",
@@ -1212,7 +1209,7 @@
       "excerpt": "A Red Team analysis of synthetic apprenticeship. The technical case holds—but tacit knowledge requires something the simulation can't provide.",
       "publishedAt": "2026-01-16",
       "kind": "Presentation",
-      "category": "Consulting Practice",
+      "category": "Consulting",
       "tags": [
         "consulting",
         "ai-development",
@@ -1226,7 +1223,7 @@
       "excerpt": "An exhaustive analysis of how the consulting industry is rebuilding its talent engine in real-time—transitioning from the Pyramid Structure defined by high leverage and learning-by-osmosis to the Diamond Structure defined by specialized expertise and learning-by-simulation.",
       "publishedAt": "2026-01-16",
       "kind": "Whitepaper",
-      "category": "Consulting Practice",
+      "category": "Consulting",
       "tags": [
         "consulting",
         "ai-development",
@@ -1408,7 +1405,7 @@
       "excerpt": "Consulting has played this game twice before—with body shops, then offshore. Now AI is the new lever. But what if the pattern itself is the problem?",
       "publishedAt": "2026-01-07",
       "kind": "Essay",
-      "category": "Consulting Practice",
+      "category": "Consulting",
       "tags": [
         "consulting",
         "ai-development",
@@ -1464,7 +1461,7 @@
       "excerpt": "I don't need more Salesmen. I need a Sushi Master, a Pitmaster, and a Molecular Gastronomist. AI lets us return to the Guild—craftspeople in their own lanes, augmenting their own mastery.",
       "publishedAt": "2025-12-21",
       "kind": "Essay",
-      "category": "Consulting Practice",
+      "category": "Consulting",
       "tags": [
         "consulting",
         "ai-development",
@@ -1493,7 +1490,7 @@
       "excerpt": "What if the billable hour isn't a business model—it's a coping mechanism? A way to avoid confronting that the thing we're selling might not be scarce anymore.",
       "publishedAt": "2025-12-16",
       "kind": "Essay",
-      "category": "Consulting Practice",
+      "category": "Consulting",
       "tags": [
         "consulting",
         "ai-development",
@@ -1567,7 +1564,7 @@
       "excerpt": "If I handed you my camera right now—same lens, same settings, same light—would you get the same shot? The tools are available to everyone. The output isn't.",
       "publishedAt": "2025-11-27",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "agentic-systems",
         "reflection",
@@ -1582,7 +1579,7 @@
       "excerpt": "I used to say 'just one more level' until 3am. Now I say 'just one more version.' The game changed. The compulsion didn't.",
       "publishedAt": "2025-11-27",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "reflection",
         "signal-dispatch",
@@ -1596,7 +1593,7 @@
       "excerpt": "It's Thanksgiving. And while I'm grateful for the usual things—family, health, increasingly creative leftover sandwiches—I need to take a moment to thank the team that really made this year possible. They don't eat. They don't sleep. And they never ask for PTO.",
       "publishedAt": "2025-11-27",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "agentic-systems",
         "reflection",
@@ -2062,7 +2059,7 @@
       "excerpt": "A field guide for countering common traps of misguided experience.",
       "publishedAt": "2025-08-09",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "leadership",
         "reflection"
@@ -2345,7 +2342,7 @@
       "excerpt": "If your value lies in how you think, are you ever really off the clock? Lately, I’ve been chasing AI workflows at all hours—and thinking through systems even when I’m not at my keyboard. This post reflects on the cost of always being “on,” and how to protect the infrastructure: you.",
       "publishedAt": "2025-07-31",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "reflection",
         "architecture"
@@ -2869,7 +2866,7 @@
       "excerpt": "The page isn’t the enemy. The page is the gym. You don’t show up to look good. You show up to build grip. Form. Force. Reps. That’s how the voice gets real.",
       "publishedAt": "2025-06-24",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "reflection"
       ],
@@ -2933,7 +2930,7 @@
       "excerpt": "Hard‑won patterns sound like wisdom—until they echo so loudly you miss new ideas. This month I learned: AI model tuning isn’t just prompting, shutter‑speed instincts fail at 60 fps video, and Figma spacing ≠ CSS. Beginner reps, reverse mentorship, and stranger audits keep the channel clear.",
       "publishedAt": "2025-06-18",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "reflection"
       ],
@@ -3128,7 +3125,7 @@
       "excerpt": "Every tech revolution builds a fast market—and leaves a mess. Cleanup becomes its own economy: FinOps, platform teams, and second-wave consultants turning v1 chaos into stability. The real money? It's in making things actually work.",
       "publishedAt": "2025-06-12",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "reflection"
       ],
@@ -3180,7 +3177,7 @@
       "excerpt": "I’ve been writing and thinking so much about how I think, it’s started to shape my real-life conversations — sometimes in ways that feel disconnected. When does thoughtful reflection cross the line into sermonizing? And how do we find balance between clarity and presence?",
       "publishedAt": "2025-06-12",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "reflection",
         "architecture"
@@ -3373,7 +3370,7 @@
       "excerpt": "Sometimes I think I’m hearing subtle signals that no one else picks up. Other times, I wonder if I’m just hallucinating signals to feel smart.",
       "publishedAt": "2025-06-06",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "reflection"
       ],
@@ -3458,7 +3455,7 @@
       "excerpt": "When I started this blog, someone close to me asked, “What are you doing with this?” Not my photography. Not my DJ mixes. Just this. I’ve been thinking about why.",
       "publishedAt": "2025-06-06",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "reflection",
         "architecture"
@@ -3523,7 +3520,7 @@
       "excerpt": "False exemption often hides behind logic. We convince ourselves that the strategy is valid, the tool makes sense—but not for someone like me. This isn’t ignorance. It’s identity-protection dressed up as reason.",
       "publishedAt": "2025-06-05",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "reflection"
       ],
@@ -3535,7 +3532,7 @@
       "excerpt": "The story that you’re too damaged to change is just another form of avoidance. False exemption doesn’t always sound like pride—it often sounds like hopelessness. But even if you’re not to blame for how the storm started, you’re still responsible for how you move through it.",
       "publishedAt": "2025-06-05",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "leadership",
         "reflection"
@@ -3601,7 +3598,7 @@
       "excerpt": "Signal Reflex isn’t a beginning. It’s a different lens. For years, my photos have shown how I see the world. Now I’m sharing how I think—and what that reveals about how I lead, learn, and grow.",
       "publishedAt": "2025-06-04",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "reflection"
       ],
@@ -3613,7 +3610,7 @@
       "excerpt": "Some choices don’t reveal their full meaning until much later. It’s not that the decision was wrong—it’s that the person you become after making it sees things differently.",
       "publishedAt": "2025-06-04",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "reflection"
       ],
@@ -3703,7 +3700,7 @@
       "excerpt": "This started as a rant while driving. A reminder that no matter how much structure we build, growth still happens on its own terms. In club volleyball and in life—you can’t engineer the outcome. You can only build the conditions.",
       "publishedAt": "2025-06-04",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "reflection"
       ],
@@ -3715,7 +3712,7 @@
       "excerpt": "Flickday started as a nod to “almost Friday.” Now it’s my creative safe space—a place to stay playful, go off-script, and build with others beyond the Nino Chavez brand.",
       "publishedAt": "2025-06-03",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "reflection"
       ],
@@ -3740,7 +3737,7 @@
       "excerpt": "Photography is the clearest signal I know. I don’t shoot for content—I shoot to stay connected to the part of me that still notices the small stuff.",
       "publishedAt": "2025-06-03",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "reflection"
       ],
@@ -3765,7 +3762,7 @@
       "excerpt": "Signal Reflex isn’t a brand or a content engine. It’s where I write to stay clear, present, and honest—using AI to reduce drag, not replace thinking.",
       "publishedAt": "2025-06-02",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "reflection"
       ],
@@ -3802,7 +3799,7 @@
       "excerpt": "Senior Night hits different. It’s not just a ceremony—it’s a goodbye. I shoot it like it matters, because for most people in the gym, it does.",
       "publishedAt": "2025-06-02",
       "kind": "Essay",
-      "category": "Reflections",
+      "category": "Reflection",
       "tags": [
         "reflection"
       ],

@@ -28,12 +28,11 @@ export default function WorkPage() {
             <p className="eyebrow">Projects, tools, and collections</p>
             <h1>Work</h1>
             <p className="work-atlas__lede">
-              Products, operating systems, live businesses, and the tools used
-              to make them hold together.
+              Products, tools, methods, live ventures, and the systems behind
+              them.
             </p>
             <p className="work-atlas__note">
-              Start with a domain to understand the range, or search and filter
-              everything below.
+              Browse by domain, or search all {workItems.length} items below.
             </p>
             <a className="work-atlas__all" href="#work-library">
               Browse all {workItems.length} items{" "}
@@ -71,13 +70,6 @@ export default function WorkPage() {
           </nav>
         </div>
 
-        <div className="work-atlas__principle page-shell">
-          <span>Each item says what exists and what you can open.</span>
-          <p>
-            Status describes the work today. Type describes what it is. Public
-            destinations open directly from the page.
-          </p>
-        </div>
       </header>
 
       <section
@@ -88,11 +80,11 @@ export default function WorkPage() {
         <header className="work-library-stage__heading">
           <div>
             <p className="eyebrow">All work</p>
-            <h2 id="work-library-title">Find the work.</h2>
+            <h2 id="work-library-title">Browse all work.</h2>
           </div>
           <p>
-            Search by name or purpose. Narrow by domain, current status, or
-            type.
+            Search by name or purpose. Status says what is available today;
+            type says what kind of work it is.
           </p>
         </header>
         <Suspense fallback={<p>Loading work…</p>}>

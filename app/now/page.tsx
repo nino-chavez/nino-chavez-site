@@ -12,9 +12,9 @@ const currentFocus = [
     state: "Current role",
     title: "Product architecture at commerce.com",
     description:
-      "The day job is Product Architect. The work itself is private; the public question is whether an agent-assisted practice developed in small systems still holds inside a larger organization.",
+      "My work at commerce.com is private. Publicly, I’m testing whether the methods I use on smaller products still work inside a larger organization.",
     href: "/about",
-    action: "Read the durable profile",
+    action: "About Nino",
   },
   {
     area: "Public surface",
@@ -28,16 +28,16 @@ const currentFocus = [
   {
     area: "Agent-assisted practice",
     state: "Building",
-    title: "Tightening the proof loop",
+    title: "Making AI-assisted work easier to verify",
     description:
-      "Blueprint, Film Room, and the operating sessions are being used to keep intent, execution, review, and evidence connected without handing judgment to the tools.",
+      "I’m using Blueprint, Film Room, and documented work sessions to connect each decision to the work and evidence behind it without giving the tools final judgment.",
     href: "/demos",
-    action: "Open the operating sessions",
+    action: "See how I work",
   },
   {
     area: "Live operations",
     state: "Operating",
-    title: "Running the volleyball stack",
+    title: "Running the volleyball products together",
     description:
       "Let’s Pepper events, Rally HQ tournament infrastructure, and Flickday Media coverage are being developed against the same tournament-day conditions.",
     href: "/work?domain=Volleyball",
@@ -76,7 +76,7 @@ export default function NowPage() {
 
       <header className="now-opening">
         <div className="now-opening__register page-shell">
-          <span>Now / current attention</span>
+          <span>What I’m working on now</span>
           <span>Chicago</span>
           <time dateTime="2026-07-30">30 July 2026</time>
         </div>
@@ -92,8 +92,8 @@ export default function NowPage() {
               Four things have my attention.
             </p>
             <p>
-              Each entry below names the work, its current state, and the
-              nearest public evidence.
+              Each entry names the work, its current state, and the closest
+              public example.
             </p>
           </div>
         </div>
@@ -103,10 +103,9 @@ export default function NowPage() {
         <section className="now-section" aria-labelledby="now-in-motion">
           <header>
             <span>In motion</span>
-            <h2 id="now-in-motion">Where the work is moving</h2>
+            <h2 id="now-in-motion">What I’m working on now</h2>
             <p>
-              A current attention map, with the nearest public evidence for
-              each part.
+              Four active areas, with a public example for each one.
             </p>
           </header>
 

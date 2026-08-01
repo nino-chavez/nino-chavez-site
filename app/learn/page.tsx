@@ -12,27 +12,25 @@ export default function LearnPage() {
     <div className="learn-page">
       <header className="library-opening learn-opening">
         <div className="library-opening__register page-shell">
-          <span>Learn / practitioner paths</span>
+          <span>Learn / guided paths</span>
           <span>{learnTracks.length} paths</span>
           <span>5 stages each</span>
         </div>
         <div className="library-opening__copy page-shell">
           <div>
             <p className="eyebrow">Choose by output</p>
-            <h1 aria-label="Start with the artifact.">
+            <h1 aria-label="Start with what you need to make.">
               <span aria-hidden="true">Start with</span>
-              <span aria-hidden="true">the artifact.</span>
+              <span aria-hidden="true">what you need to make.</span>
             </h1>
           </div>
           <div>
             <p className="lede">
-              Choose the thing you need to make, not a role you need to become.
-              Each path ends in a concrete artifact and points back to the work
-              that informed it.
+              Choose an output, then follow a path built from real work.
             </p>
             <p>
-              Each path is self-directed. Follow its stages in order, or start
-              with the evidence you need now.
+              Each path has five stages. Follow them in order, or jump to the
+              example you need now.
             </p>
           </div>
         </div>
@@ -42,10 +40,10 @@ export default function LearnPage() {
         <section className="learn-chooser" aria-labelledby="learn-paths">
           <header>
             <span>{learnTracks.length} paths</span>
-            <h2 id="learn-paths">Seven ways to build something concrete</h2>
+            <h2 id="learn-paths">Choose a path.</h2>
             <p>
-              Compare the starting condition, end artifact, and likely time
-              before opening a path.
+              Compare when to start, what you will make, and how long it may
+              take.
             </p>
           </header>
 
@@ -58,11 +56,11 @@ export default function LearnPage() {
                     <small>{track.tagline}</small>
                   </span>
                   <span className="learn-track-start">
-                    <small>Start here when</small>
+                    <small>Start when</small>
                     {track.startWhen}
                   </span>
                   <span className="learn-track-output">
-                    <small>End artifact</small>
+                    <small>What you’ll make</small>
                     {track.finalArtifact}
                   </span>
                   <span className="learn-track-time">{track.timeline}</span>
@@ -74,12 +72,11 @@ export default function LearnPage() {
         </section>
 
         <aside className="learn-evidence-bridge">
-          <span>Prefer proof before a path?</span>
+          <span>Want to see the work first?</span>
           <p>
-            The demo collection shows the sessions and reusable techniques that
-            these paths draw from.
+            Browse the sessions and techniques these paths use.
           </p>
-          <Link href="/demos">Browse all demos →</Link>
+          <Link href="/demos">See how I work →</Link>
         </aside>
       </div>
     </div>

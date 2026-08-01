@@ -72,7 +72,7 @@ export const workItems: WorkItem[] = [
     slug: "blueprint",
     name: "Blueprint",
     claim:
-      "A repository-native method for human-authorized, agent-executed product work.",
+      "A practical method for planning, reviewing, and checking product work done with AI agents.",
     domain: "Developer tools",
     state: "maintained",
     form: "docs",
@@ -130,7 +130,7 @@ export const workItems: WorkItem[] = [
     slug: "agentic-ways-of-working",
     name: "Agentic Ways of Working",
     claim:
-      "A durable collection of operating patterns for delegating, reviewing, and shipping with agents.",
+      "A public set of rules and tools for delegating work to AI agents and reviewing what comes back.",
     domain: "Developer tools",
     state: "maintained",
     form: "docs",
@@ -169,7 +169,7 @@ export const workItems: WorkItem[] = [
     slug: "gha-minutes",
     name: "GHA Minutes",
     claim:
-      "A portable diagnostic for finding GitHub Actions minute burn and applying safe concurrency cancellation.",
+      "A tool that finds wasted GitHub Actions time and cancels superseded runs without interrupting releases.",
     domain: "Developer tools",
     state: "maintained",
     form: "cli",
@@ -313,7 +313,7 @@ export const workItems: WorkItem[] = [
     slug: "forge-brand",
     name: "Forge Brand",
     claim:
-      "A system for turning approved brand direction into reusable, testable design tokens and assets.",
+      "A system for turning approved brand direction into reusable colors, type, components, and visual assets.",
     domain: "Media & assets",
     state: "maintained",
     form: "toolkit",
@@ -341,7 +341,7 @@ export const workItems: WorkItem[] = [
     slug: "image-gen",
     name: "Image Gen",
     claim:
-      "A public toolkit for model-generated imagery and deterministic HTML-to-image rendering.",
+      "Tools for generating images with AI or rendering them from reusable HTML templates.",
     domain: "Media & assets",
     state: "maintained",
     form: "toolkit",
@@ -355,7 +355,7 @@ export const workItems: WorkItem[] = [
     slug: "render-kit",
     name: "Render Kit",
     claim:
-      "A public rendering toolkit for consistent media export across sites, walkthroughs, and campaigns.",
+      "Tools for producing consistent graphics and walkthroughs across sites and campaigns.",
     domain: "Media & assets",
     state: "maintained",
     form: "toolkit",

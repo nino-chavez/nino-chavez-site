@@ -11,8 +11,6 @@ export const metadata = {
 export default async function BlogPage() {
   const writingSnapshot = await getWritingSnapshot();
   const writingSeries = writingSnapshot.series;
-  const essayCount = writingSnapshot.kindCounts.Essay;
-  const otherCount = writingSnapshot.publicPieceCount - essayCount;
   const latestDate = new Date(
     `${writingSnapshot.latestPublishedAt}T12:00:00Z`,
   ).toLocaleDateString("en-US", {
@@ -26,25 +24,19 @@ export default async function BlogPage() {
     <div className="writing-page">
       <header className="library-opening writing-opening">
         <div className="library-opening__register page-shell">
-          <span>Writing / complete publication</span>
+          <span>Writing / Signal Dispatch</span>
           <span>{writingSnapshot.publicPieceCount} pieces</span>
           <span>Updated {latestDate}</span>
         </div>
         <div className="library-opening__copy page-shell">
           <div>
             <p className="eyebrow">Signal Dispatch</p>
-            <h1
-              aria-label={`${essayCount} essays and ${otherCount} other published pieces.`}
-            >
-              <span aria-hidden="true">{essayCount} essays,</span>
-              <span aria-hidden="true">{otherCount} other pieces.</span>
-            </h1>
+            <h1>Signal Dispatch</h1>
           </div>
           <div>
             <p className="lede">
-              Signal Dispatch publishes essays, whitepapers, presentations,
-              tutorials, counterpoints, and fiction about the work behind
-              software products and operations.
+              Essays and field notes about software products, operations,
+              commerce, and AI-assisted work.
             </p>
             <p>
               Search all {writingSnapshot.publicPieceCount} published pieces,
@@ -106,14 +98,6 @@ export default async function BlogPage() {
           </ol>
         </section>
 
-        <aside className="writing-publication-bridge">
-          <span>Prefer the publication itself?</span>
-          <p>
-            Open the current Signal Dispatch front page for featured work,
-            current navigation, and the reading experience.
-          </p>
-          <a href="https://ninochavez.co/blog">Open Signal Dispatch ↗</a>
-        </aside>
       </div>
     </div>
   );

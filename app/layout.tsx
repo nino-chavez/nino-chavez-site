@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Nino Chavez — Product architect and builder",
     description:
-      "Product architect by trade. I also build software, run volleyball tournaments, photograph them, write, and DJ.",
+      "I design products, build the software behind them, and run them in the real world.",
     images: [
       {
         url: "/og.png",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nino Chavez — Product architect and builder",
     description:
-      "Product architect by trade. I also build software, run volleyball tournaments, photograph them, write, and DJ.",
+      "I design products, build the software behind them, and run them in the real world.",
     images: ["/og.png"],
   },
   robots: {

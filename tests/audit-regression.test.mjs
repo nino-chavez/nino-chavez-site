@@ -25,6 +25,8 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import {
   getPhotographyArchiveStats,
+  getRecentPhotographyAlbums,
+  PHOTOGRAPHY_RECENT_ALBUMS_ENDPOINT,
   PHOTOGRAPHY_STATS_ENDPOINT,
 } from "../app/photography-stats.mjs";
 
@@ -423,7 +425,7 @@ test("C23 — the photography story lives on the section landing", async () => {
   const text = visibleText(await htmlFor("/photography"));
   assert.match(text, /Started courtside\. Never left\./);
   assert.match(text, /What started as a way to capture my own kid(?:'|&#x27;)s volleyball games/);
-  assert.match(text, /I(?:'|&#x27;)m not here for stiff poses or generic highlight reels/);
+  assert.match(text, /I look for the moments players will want back/);
 });
 
 test("C24 — photography archive entrances stay on the apex in the same tab", async () => {
@@ -479,6 +481,44 @@ test("C26 — photography scale is read from the publisher-owned stats endpoint"
   assert.match(source, /stats\.totalAlbums/);
 });
 
+test("photography recent events are read from the publisher-owned catalogue", async () => {
+  assert.equal(
+    PHOTOGRAPHY_RECENT_ALBUMS_ENDPOINT,
+    "https://nino-chavez-photography.pages.dev/photography/api/ai/albums?limit=4&sort=date",
+  );
+  const albums = await getRecentPhotographyAlbums(async (url) => {
+    assert.equal(url, PHOTOGRAPHY_RECENT_ALBUMS_ENDPOINT);
+    return new Response(
+      JSON.stringify({
+        albums: [
+          {
+            key: "abc123",
+            name: "Chicago Open",
+            url: "https://ninochavez.co/photography/albums/chicago-open-abc123",
+            photo_count: 267,
+            video_count: 4,
+            cover_image: "https://imagedelivery.net/example/cover/public",
+            date_range: { start: "2026-07-25", end: "2026-07-25" },
+          },
+        ],
+      }),
+      { headers: { "content-type": "application/json" } },
+    );
+  });
+
+  assert.deepEqual(albums, [
+    {
+      key: "abc123",
+      name: "Chicago Open",
+      href: "/photography/albums/chicago-open-abc123",
+      photoCount: 267,
+      videoCount: 4,
+      coverImage: "https://imagedelivery.net/example/cover/public",
+      latestDate: "2026-07-25",
+    },
+  ]);
+});
+
 test("C29 — the photography landing publishes its canonical URL", async () => {
   const html = await htmlFor("/photography");
   assert.match(
@@ -493,7 +533,7 @@ test("C30 — Photography is a top-level global navigation item", async () => {
     /<nav class="desktop-navigation"[\s\S]*?<\/nav>/,
   )?.[0];
   assert.ok(primary, "primary navigation should render");
-  assert.match(primary, /Work[\s\S]*Demos[\s\S]*Learn[\s\S]*Writing[\s\S]*Photography[\s\S]*About/);
+  assert.match(primary, /Work[\s\S]*How I work[\s\S]*Learn[\s\S]*Writing[\s\S]*Photography[\s\S]*About/);
   assert.match(primary, /href="\/photography" aria-current="page"/);
 });
 
