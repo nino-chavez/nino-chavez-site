@@ -4,6 +4,7 @@ import {
   workHref,
   workItems,
   workStateLabels,
+  workStateText,
 } from "../data";
 import { getDemoSnapshot } from "../demos";
 import { getWritingSnapshot } from "../writing";
@@ -261,7 +262,7 @@ export default async function SearchPage({
                     rel={opensInNewTab ? "noopener noreferrer" : undefined}
                   >
                     <span>
-                      {item.domain} · {workStateLabels[item.state]}
+                      {item.domain} · {workStateText(item.state)}
                     </span>
                     <strong>{item.name}</strong>
                     <small>{item.claim}</small>

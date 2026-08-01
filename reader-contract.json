@@ -16,6 +16,7 @@
   "surfaces": [
     {
       "name": "public portfolio",
+      "termsNote": "allowTerms and denyTerms refreshed 2026-08-01 from docs/audit/FINDINGS-copy-2026-08-01.md. The v1 lists carried the retired single-page site's display copy (CUT / THE / NOISE / SCROLL / THINGS / MAKING), which no longer renders. denyTerms enforce OPEN-PRACTICE-ART-DIRECTION.md §Copy and naming: model and process names, valid in contracts and app/ identifiers, never in visitor-facing text. Deliberately NOT denied: 'prototype' (a class name only) and 'artifact' (load-bearing on /learn — see finding C22). Every denied term was verified absent from rendered copy first, so this file does not deny a term the site ships.",
       "renderedRoots": [],
       "sourceRoots": [
         "app"
@@ -31,35 +32,29 @@
       "allowTerms": [
         "AI",
         "API",
+        "CLI",
         "Signal Dispatch",
+        "Blueprint",
+        "Rally HQ",
+        "Let's Pepper",
+        "Flickday Media",
+        "Volley Rx",
+        "Ways of Working",
         "GitHub",
         "LinkedIn",
-        "CUT",
-        "THE",
-        "NOISE",
-        "FOLLOW",
-        "SIGNAL",
-        "SEE",
-        "SAY",
-        "HI",
-        "LET",
-        "PEPPER",
-        "MEDIA",
-        "RALLY",
-        "HQ",
+        "SoundCloud",
+        "Chicago",
+        "commerce.com",
         "NINO",
-        "CHAVEZ",
-        "SCROLL",
-        "THINGS",
-        "MAKING",
-        "SERIES",
-        "MUSIC",
-        "DJ",
-        "GPT",
-        "SETS",
-        "OPEN"
+        "CHAVEZ"
       ],
-      "denyTerms": [],
+      "denyTerms": [
+        "work object",
+        "durable page",
+        "review build",
+        "registry",
+        "snapshot"
+      ],
       "maxWordsPerText": 70
     }
   ]

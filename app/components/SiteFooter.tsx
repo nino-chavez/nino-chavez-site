@@ -5,11 +5,11 @@ const primary = [
   ["Demos", "/demos"],
   ["Learn", "/learn"],
   ["Writing", "/blog"],
+  ["Photography", "/photography"],
   ["About", "/about"],
 ] as const;
 
 const secondary = [
-  ["Photography", "/photography"],
   ["Now", "/now"],
   ["Links", "/links"],
   ["Privacy", "/privacy"],

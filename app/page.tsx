@@ -219,7 +219,7 @@ export default async function Home() {
             aria-label="Ways of Working collections"
           >
             <Link href="/demos#sessions">
-              <span>{String(demoSessions.length).padStart(2, "0")}</span>
+              <span>{demoSessions.length}</span>
               <div>
                 <strong>Operating sessions</strong>
                 <small>Complete agent-assisted work, kept in sequence.</small>
@@ -227,9 +227,7 @@ export default async function Home() {
               <b aria-hidden="true">→</b>
             </Link>
             <Link href="/demos#applied">
-              <span>
-                {String(appliedTechniques.length).padStart(2, "0")}
-              </span>
+              <span>{appliedTechniques.length}</span>
               <div>
                 <strong>Applied techniques</strong>
                 <small>Reusable moves extracted from the sessions.</small>
@@ -237,7 +235,7 @@ export default async function Home() {
               <b aria-hidden="true">→</b>
             </Link>
             <Link href="/learn">
-              <span>{String(learnTracks.length).padStart(2, "0")}</span>
+              <span>{learnTracks.length}</span>
               <div>
                 <strong>Learning paths</strong>
                 <small>

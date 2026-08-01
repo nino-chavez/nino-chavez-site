@@ -1,5 +1,7 @@
-// Regression cases derived from the site audit at d0cfd0e.
-// See docs/audit/FINDINGS.md — each test names the finding it locks down.
+// Regression cases derived from the site audits.
+//   F* — docs/audit/FINDINGS.md (d0cfd0e, local build)
+//   C* — docs/audit/FINDINGS-copy-2026-08-01.md (production copy pass)
+// Each test names the finding it locks down.
 //
 // These tests assert the post-fix behavior that closes mechanically testable
 // findings. They remain separate from the main suite so the audit ledger stays
@@ -7,13 +9,24 @@
 //
 //   npm run test:audit
 //
-// Layout defects (F2, F5) are not represented here — they need a browser, not a
-// rendered-HTML assertion. Those are covered by the capture script in
+// Layout defects (F2, F5, C15) are not represented here — they need a browser,
+// not a rendered-HTML assertion. Those are covered by the capture script in
 // docs/audit/AUDIT-PLAN.md Phase 1.
+//
+// Copy findings that are judgment, not assertion, and are therefore NOT here:
+// whether the homepage lede answers "what does this person do" (C1), whether a
+// coined term's definition is a good one (C2), framing tone (C13), and the
+// numbering-scheme and vocabulary questions left at S4 (C17, C19, C20, C21).
+// A green suite does not mean the copy is good. It means the copy has not
+// regressed on the parts a machine can check.
 
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import {
+  getPhotographyArchiveStats,
+  PHOTOGRAPHY_STATS_ENDPOINT,
+} from "../app/photography-stats.mjs";
 
 let worker;
 
@@ -251,6 +264,233 @@ test("F7 WITHDRAWN — writing links must stay absolute", async () => {
     /href="https:\/\/ninochavez\.co\/blog\//,
     "article links must remain absolute — this app does not serve them",
   );
+});
+
+// ---------------------------------------------------------------------------
+// C* — production copy pass, docs/audit/FINDINGS-copy-2026-08-01.md
+//
+// These five cases assert the post-fix behavior. They were written as `todo`
+// because the copy pass reported and did not fix, per the audit plan's role
+// rule — so the debt stayed visible in the suite output instead of living only
+// in a document.
+//
+// C8, C11, and C12 were remediated by bd20957 and are now live gates. C10 and
+// C14 remain `todo`. Drop the flag as each is fixed; a case that passes while
+// still marked todo is reported by node:test, so the flag cannot go stale
+// silently — which is how the three above were caught.
+// ---------------------------------------------------------------------------
+
+// Model and process names that belong in this repo's contracts and in app/
+// identifiers, never in text a visitor reads. See
+// OPEN-PRACTICE-ART-DIRECTION.md §Copy and naming.
+//
+// `reader-contract.json` `denyTerms` is the source of record for this list and
+// is the broader one — it covers source files, where a term can appear in a
+// string this test never renders. Keep the two in sync deliberately; a term
+// belongs here only if it is verifiably reaching rendered copy. Notably absent:
+// "prototype", which appears only as the `prototype-banner` class name, and
+// "artifact", which /learn uses as a visitor-facing field label (see C22).
+const INTERNAL_VOCABULARY = ["work object", "durable page", "review build"];
+
+// Visible text only. Class names, data attributes, and the RSC flight payload
+// are not copy, and matching them produces a gate that fails for reasons
+// unrelated to its finding — which would survive the remediation it is meant to
+// verify. This test caught exactly that on its first run.
+function visibleText(html) {
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ");
+}
+
+test(
+  "C8 — no internal vocabulary reaches visitor-facing copy",
+  async () => {
+    for (const path of ["/", "/work", "/search", "/now", "/demos", "/learn", "/about"]) {
+      const text = visibleText(await htmlFor(path));
+      for (const term of INTERNAL_VOCABULARY) {
+        assert.doesNotMatch(
+          text,
+          new RegExp(term, "i"),
+          `${path} renders the internal term "${term}" to visitors`,
+        );
+      }
+    }
+  },
+);
+
+test(
+  "C12 — every rendered record count agrees with its own noun",
+  async () => {
+    // The homepage and /work both render per-domain counts. /work pluralizes
+    // correctly; the homepage does not. Assert the invariant on both so the fix
+    // cannot regress on one page while the other stays right.
+    for (const path of ["/", "/work"]) {
+      const html = await htmlFor(path);
+      const text = visibleText(html);
+      for (const [match, n, noun] of text.matchAll(
+        /\b(\d+)\s+(records?)\b/gi,
+      )) {
+        const expected = Number(n) === 1 ? "record" : "records";
+        assert.equal(
+          noun.toLowerCase(),
+          expected,
+          `${path} renders "${match.trim()}" — ${n} takes "${expected}"`,
+        );
+      }
+    }
+  },
+);
+
+test(
+  "C10 — quantities are not rendered as zero-padded ordinals",
+  async () => {
+    // Sequence positions may be padded (`01 / 06`). Quantities may not — a
+    // padded count is indistinguishable from a position in the same visual
+    // family. AD §Copy.
+    const text = visibleText(await htmlFor("/"));
+    const COUNT_LABELS =
+      /\b0\d\s+(Operating sessions|Applied techniques|Learning paths|records?|sessions|techniques|paths)\b/i;
+    assert.doesNotMatch(
+      text,
+      COUNT_LABELS,
+      "a quantity on / is zero-padded, which reads as a sequence position",
+    );
+  },
+);
+
+test(
+  "C11 — record badges follow the order the records are displayed in",
+  async () => {
+    // WorkLibrary assigns each badge from the record's position in the full
+    // registry, then renders groups sorted by date. The two orders agree only
+    // until records are added. A badge that disagrees with its own list carries
+    // no information the visitor can use. AD §Copy.
+    const html = await htmlFor("/work");
+    const groups = html.match(
+      /class="library-group"[\s\S]*?(?=class="library-group"|<\/main)/g,
+    );
+    assert.ok(groups?.length, "/work should render domain groups");
+
+    for (const group of groups) {
+      const heading = group.match(/<h2[^>]*>([^<]+)<\/h2>/)?.[1] ?? "unknown";
+      const badges = [
+        ...group.matchAll(/class="record-number"[^>]*>\s*(\d+)\s*</g),
+      ].map((m) => Number(m[1]));
+      const ascending = [...badges].sort((a, b) => a - b);
+      assert.deepEqual(
+        badges,
+        ascending,
+        `${heading}: badges ${badges.join(", ")} do not follow display order`,
+      );
+    }
+  },
+);
+
+test(
+  "C14 — every work status is explained where visitors first meet it",
+  async () => {
+    const [workHtml, detailHtml, searchHtml] = await Promise.all([
+      htmlFor("/work"),
+      htmlFor("/work/blueprint"),
+      htmlFor("/search?q=blueprint"),
+    ]);
+    const renderedGlosses = [
+      "Live — available to use now",
+      "Maintained — public and kept current",
+      "Published — available to read",
+      "In development — not yet released",
+    ];
+    for (const gloss of renderedGlosses) {
+      assert.match(
+        visibleText(workHtml),
+        new RegExp(gloss),
+        `the Work filter does not explain “${gloss.split(" — ")[0]}”`,
+      );
+    }
+    const dataSource = await readFile(
+      new URL("../app/data.ts", import.meta.url),
+      "utf8",
+    );
+    assert.match(dataSource, /paused:\s*"not actively developed"/);
+    assert.match(visibleText(detailHtml), /Maintained — public and kept current/);
+    assert.match(visibleText(searchHtml), /Maintained — public and kept current/);
+  },
+);
+
+test("C23 — the photography story lives on the section landing", async () => {
+  const text = visibleText(await htmlFor("/photography"));
+  assert.match(text, /Started courtside\. Never left\./);
+  assert.match(text, /What started as a way to capture my own kid(?:'|&#x27;)s volleyball games/);
+  assert.match(text, /I(?:'|&#x27;)m not here for stiff poses or generic highlight reels/);
+});
+
+test("C24 — photography archive entrances stay on the apex in the same tab", async () => {
+  const html = (await htmlFor("/photography")).split('<script id="_R_">')[0];
+  assert.doesNotMatch(html, /photography\.ninochavez\.co/);
+  assert.match(html, /action="\/photography\/explore"/);
+  for (const route of ["explore", "albums", "timeline", "collections", "favorites"]) {
+    assert.match(html, new RegExp(`href="/photography/${route}`));
+    assert.doesNotMatch(
+      html,
+      new RegExp(`<a(?=[^>]*href="/photography/${route})(?=[^>]*target="_blank")`, "i"),
+    );
+  }
+});
+
+test("C25 — the canonical privacy policy carries the youth tag consent gate", async () => {
+  const text = visibleText(await htmlFor("/privacy"));
+  assert.match(text, /submit an athlete tag/);
+  assert.match(text, /athlete(?:'|&#x27;)s permission/);
+  assert.match(text, /under 18/);
+  assert.match(text, /parent or legal guardian/);
+});
+
+test("C26 — photography scale is read from the publisher-owned stats endpoint", async () => {
+  const stats = await getPhotographyArchiveStats(async (url) => {
+    assert.equal(url, PHOTOGRAPHY_STATS_ENDPOINT);
+    return new Response(
+      JSON.stringify({
+        total_photos: 20655,
+        total_videos: 481,
+        total_albums: 251,
+      }),
+      { headers: { "content-type": "application/json" } },
+    );
+  });
+  assert.deepEqual(stats, {
+    totalPhotos: 20655,
+    totalVideos: 481,
+    totalAlbums: 251,
+  });
+
+  const source = await readFile(
+    new URL("../app/photography/page.tsx", import.meta.url),
+    "utf8",
+  );
+  assert.match(source, /await getPhotographyArchiveStats\(\)/);
+  assert.match(source, /stats\.totalPhotos/);
+  assert.match(source, /stats\.totalVideos/);
+  assert.match(source, /stats\.totalAlbums/);
+});
+
+test("C29 — the photography landing publishes its canonical URL", async () => {
+  const html = await htmlFor("/photography");
+  assert.match(
+    html,
+    /<link rel="canonical" href="https:\/\/ninochavez\.co\/photography"/,
+  );
+});
+
+test("C30 — Photography is a top-level global navigation item", async () => {
+  const html = await htmlFor("/photography");
+  const primary = html.match(
+    /<nav class="desktop-navigation"[\s\S]*?<\/nav>/,
+  )?.[0];
+  assert.ok(primary, "primary navigation should render");
+  assert.match(primary, /Work[\s\S]*Demos[\s\S]*Learn[\s\S]*Writing[\s\S]*Photography[\s\S]*About/);
+  assert.match(primary, /href="\/photography" aria-current="page"/);
 });
 
 test("F8 — the homepage body offers entrances to Learn and About", async () => {

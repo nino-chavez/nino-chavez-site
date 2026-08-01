@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { Breadcrumbs } from "../../components/Breadcrumbs";
-import { workHref, workItems, workStateLabels } from "../../data";
+import {
+  workHref,
+  workItems,
+  workStateText,
+} from "../../data";
+import { getPhotographyArchiveStats } from "../../photography-stats.mjs";
 
 const recordVisuals: Partial<
   Record<
@@ -481,7 +486,7 @@ const recordProfiles: Record<string, RecordProfile> = {
   },
   "nino-chavez-photography": {
     "source": "Public portfolio and archive",
-    "introduction": "The portfolio holds a small edit. The standalone archive holds the complete event record and the tools players use to find their frames.",
+    "introduction": "A small portfolio edit introduces the work. The complete event archive gives players and families the search, album, favorite, and download tools they need to find their frames.",
     "links": [{ "label": "Read the public repository", "href": "https://github.com/nino-chavez/nino-chavez-photography" }],
     "details": [
       {
@@ -500,7 +505,7 @@ const recordProfiles: Record<string, RecordProfile> = {
   },
   "signal-dispatch": {
     "source": "Live publication",
-    "introduction": "Signal Dispatch publishes long-form arguments, field notes, tutorials, and working records about software architecture, commerce, leadership, and agent-assisted product work.",
+    "introduction": "Signal Dispatch publishes essays, fiction, tutorials, and research on architecture, commerce, and AI-assisted work.",
     "links": [{ "label": "Read the public repository", "href": "https://github.com/nino-chavez/blog" }],
     "details": [
       {
@@ -578,6 +583,18 @@ export default async function WorkDetailPage({
   }
 
   const visual = recordVisuals[item.slug];
+  const photographyStats =
+    item.slug === "nino-chavez-photography"
+      ? await getPhotographyArchiveStats()
+      : null;
+  const proofDetails = profile.details.map((detail) =>
+    photographyStats && detail.title === "Browse complete events"
+      ? {
+          ...detail,
+          description: `${photographyStats.totalPhotos.toLocaleString("en-US")} photos and ${photographyStats.totalVideos.toLocaleString("en-US")} videos are organized across ${photographyStats.totalAlbums.toLocaleString("en-US")} public event albums.`,
+        }
+      : detail,
+  );
   const destinationIsExternal = item.destination?.href.startsWith("http");
   const related = (item.related ?? [])
     .map((relatedSlug) =>
@@ -618,7 +635,7 @@ export default async function WorkDetailPage({
         <dl className="fact-list">
           <div>
             <dt>Status</dt>
-            <dd>{workStateLabels[item.state]}</dd>
+            <dd>{workStateText(item.state)}</dd>
           </div>
           <div>
             <dt>Type</dt>
@@ -660,7 +677,7 @@ export default async function WorkDetailPage({
           <p>{profile.introduction}</p>
         </header>
         <div className="work-proof__grid">
-          {profile.details.map((detail) => (
+          {proofDetails.map((detail) => (
             <article key={detail.title}>
               <h3>{detail.title}</h3>
               <p>{detail.description}</p>

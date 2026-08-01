@@ -77,7 +77,7 @@ must not produce a separate public identity.
 The header has three stable regions:
 
 1. **Identity** — `Nino Chavez`, linked to `/`.
-2. **Primary navigation** — Work, Demos, Learn, Writing, About, in that order.
+2. **Primary navigation** — Work, Demos, Learn, Writing, Photography, About, in that order.
 3. **Utility** — Search.
 
 There is no global call-to-action, services link, or product dropdown. The navigation
@@ -87,20 +87,51 @@ The header contract applies to the main app, blog, photography, and every demo p
 The rendering implementation may differ by runtime; the labels, destinations, order,
 active-state rules, and accessibility behavior may not.
 
+### Naming rules
+
+A visitor navigating by label must be able to tell they arrived. These rules were
+derived from the production copy audit of 2026-08-01
+(`docs/audit/FINDINGS-copy-2026-08-01.md`); the vocabulary clauses that govern the
+words themselves live in `OPEN-PRACTICE-ART-DIRECTION.md` §Copy and naming.
+
+- **One canonical name per surface.** Each destination in this contract has exactly
+  one visitor-facing name, used in the nav, the page title, every cross-link, and
+  every breadcrumb. Descriptive variation is allowed in a sentence about the
+  surface; it is not allowed in a label, heading, or link that names it. Seven
+  names for one library ("the work library", "the complete working record", "the
+  complete public record", "the complete searchable record", "all work", "the
+  complete library", "Work") is a wayfinding defect even when every phrase is
+  accurate.
+- **The nav label appears on the page it opens.** A visitor who clicks `Writing`
+  must find the word `Writing` on arrival, even when the destination carries its
+  own brand. `/blog` satisfies this: its eyebrow reads `WRITING / COMPLETE
+  PUBLICATION` above the title `SIGNAL DISPATCH`. Where a destination has a brand
+  the nav does not carry, the surface that links to it introduces both.
+- **The nav label describes what is there.** `Demos` promising interactive product
+  demos and delivering written operating sessions is a label defect, not a content
+  defect. When the page's own title and the nav label disagree about what the page
+  is, the nav label changes.
+- **No two records share a name.** Two work records named `Ways of Working` and
+  `Agentic Ways of Working`, plus a third page titled `Ways of Working`, cannot be
+  distinguished in search results or in a shared link. Admission to the registry
+  requires a name no other public surface already holds.
+
 ### Active-state rules
 
 | Navigation item | Active paths |
 |---|---|
 | Home identity | `/` only |
-| Work | `/work`, `/work/**`, and `/photography/**` |
+| Work | `/work`, `/work/**` |
 | Demos | `/demos`, `/demos/**` |
 | Learn | `/learn`, `/learn/**` |
 | Writing | `/blog`, `/blog/**` |
+| Photography | `/photography`, `/photography/**` |
 | About | `/about`, `/now`, `/links` |
 | Search | `/search` |
 
-Photography is an owned work collection, so Work remains active there. Now and Links
-are personal-context pages, so About remains active there.
+Photography has its own visitor task and subtree, so it owns its active state even
+though it remains represented in Work. Now and Links are personal-context pages, so
+About remains active there.
 
 The current item is communicated by more than color and uses
 `aria-current="page"` on an exact page or `aria-current="true"` for a section owner.
@@ -115,8 +146,8 @@ Menu opens a navigation dialog containing:
 3. Demos
 4. Learn
 5. Writing
-6. About
-7. Photography
+6. Photography
+7. About
 8. Now
 9. Links
 
@@ -298,13 +329,22 @@ links to the collection; it does not duplicate eighteen records.
 ## Search
 
 Site search is justified by the size of the body of work, not added as decoration.
+Its specific justification is reach: `/search` is the only surface that spans the
+apex app and the separately published writing, so it finds things no in-page filter
+can.
 
-The `/search?q=` result set includes:
+The `/search?q=` index covers:
 
 - Work objects
 - Demo sessions and applied techniques
 - Blog posts, whitepapers, and presentations
 - Durable pages such as About and Now
+
+**Those four are index-scope names, not copy.** `work object` and `durable page` are
+this contract's model vocabulary and must not be rendered to visitors — see
+`OPEN-PRACTICE-ART-DIRECTION.md` §Copy and naming. The visitor-facing description of
+the same scope names the things: projects, sessions, techniques, essays, and pages
+about Nino.
 
 Results are grouped by content type, show a result count per group, and preserve the
 visitor's query. Photography may join the index when its runtime can provide stable
@@ -313,11 +353,29 @@ metadata.
 Search never indexes private object details merely because a public Work card names
 an internal system.
 
+### Search scope must be labeled wherever a search box appears
+
+The site carries a site-wide search plus a scoped search box on each collection —
+`/work`, `/demos`, and `/blog` — and a fifth field inside the compact navigation
+dialog. Five boxes with five different scopes and no scope labels means a visitor
+who searched one collection, found nothing, and left never learns the site-wide
+search would have found it.
+
+- Every in-page search control names what it searches and how much of it: "Search
+  the 26 work items", not "Search work".
+- Every in-page search control offers a route to the site-wide search for the same
+  query.
+- The site-wide empty state offers example queries the visitor can click. It does
+  not instruct the visitor in this contract's field names — "try a domain or state"
+  asks them to know the data model before their first search.
+- A result group larger than a screenful is capped with an explicit
+  "show all N" control. A raw total with no ranking rationale reads as search
+  failing open.
+
 ## Footer navigation
 
-The footer repeats the five primary destinations and adds:
+The footer repeats the six primary destinations and adds:
 
-- Photography
 - Now
 - Links
 - Privacy

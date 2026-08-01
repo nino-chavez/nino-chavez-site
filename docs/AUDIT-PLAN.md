@@ -78,9 +78,30 @@ the assertions.
 responsibilities table's **"Must not become"** column is one approved, testable
 claim per route. Five named visitor jobs become five task journeys.
 
+**`docs/OPEN-PRACTICE-ART-DIRECTION.md` §Copy and naming** — six copy clauses,
+added 2026-08-01 from the production copy pass:
+
+- Reader-facing nouns, not data-model names.
+- A coined term carries its gloss at first use — including a site-level frame in
+  the `<title>` or first viewport.
+- Say what the reader gets, not what the site refuses to do.
+- First person, everywhere Nino speaks.
+- Counts never render as ordinals, and a sequence badge matches its own display
+  order.
+- A duration or effort claim names its basis.
+
+**`docs/IA-NAVIGATION.md` §Naming rules and §Search** — one canonical name per
+surface; the nav label appears on the page it opens; the nav label describes what
+is there; no two records share a name; every search control names its scope and
+count and offers a route to the site-wide search.
+
 **`PRODUCT.md`** — the first-encounter promise: who Nino is, what he does, what
 he has made, which object to open next, without scrolling through a manifesto.
 Retained as decision history for structure, but the promise itself still holds.
+
+**`reader-contract.json`** — the `reader-clarity` skill's machine-readable
+surface contract. Its `denyTerms` list is the mechanical form of the
+reader-facing-nouns clause.
 
 Anything a reviewer flags that no clause covers is filed as **S4 — observation**,
 for Nino's call. It is not a defect.
@@ -231,6 +252,30 @@ exactly this shape, so the audit's output becomes a regression gate instead of a
 document that goes stale.
 
 **Phase 5 — Remediate** in severity batches, re-capturing evidence per batch.
+
+### When a copy pass is owed
+
+A full eight-role audit is an event. Keeping copy correct is a cadence, and it
+needs a trigger rather than good intentions. Run the content role — Phase 1
+capture limited to the affected routes, then role 6 against the copy clauses — on
+any of these:
+
+| Trigger | Why |
+|---|---|
+| A new route ships | It has a nav label, a title, and a name that must not already be taken. |
+| A new count renders anywhere | Counts are the site's central claim. §Content ownership and freshness governs the derivation; the copy pass checks agreement and pluralization. |
+| A nav label, page title, or section heading changes | IA §Naming rules constrain all three together; changing one alone breaks the correspondence. |
+| A new coined term or state value enters the vocabulary | It needs a gloss where a visitor first meets it. `workStateLabels` is the seam. |
+| A record is added to the registry | Sequence badges are assigned from registry order and re-sorted for display — the drift that produced C11. |
+| Copy is rewritten by an agent in bulk | The failure mode is fluent internal vocabulary. `reader-contract.json` `denyTerms` catches the known terms; a reader has to catch the new ones. |
+
+`npm run test:audit` is the floor, not the pass. It holds copy and photography
+invariants mechanically — internal vocabulary, count agreement,
+ordinal-vs-quantity, badge order, status glosses, canonical URLs, internal link
+behavior, privacy consent language, publisher-owned totals, and global
+navigation. Everything the clauses call judgment (does the lede
+answer the question, is the gloss a good gloss, does the framing read as
+defensive) needs a person and a re-run.
 
 ---
 

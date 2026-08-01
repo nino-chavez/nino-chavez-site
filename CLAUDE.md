@@ -39,6 +39,26 @@ Open the three canonical docs in order before reasoning about Blueprint shape:
 2. `~/Workspace/dev/tools/blueprint/docs/variant-selection.md`
 3. `~/Workspace/dev/tools/blueprint/docs/portal-and-tier-ladder.md`
 
+## Copy is contract-governed, not free-hand
+
+Visitor-facing words are governed by approved clauses, not taste. Before writing or
+rewriting any rendered copy — a nav label, a heading, a count, a state value, a
+search control, an empty state — read the two clause sets:
+
+- `docs/OPEN-PRACTICE-ART-DIRECTION.md` **§Copy and naming** — reader-facing nouns
+  over model names, glosses for coined terms, positive framing, first person,
+  counts-are-not-ordinals, sourced duration claims.
+- `docs/IA-NAVIGATION.md` **§Naming rules** and **§Search** — one canonical name
+  per surface, nav-label correspondence, unique record names, labeled search scope.
+
+`npm run test:audit` holds the mechanically testable cases and is the floor, not
+the pass. The 2026-08-01 remediation removed the remaining `todo` markers after
+the quantity, status, photography, privacy, canonical, and navigation fixes
+landed. `docs/AUDIT-PLAN.md` §"When a copy pass is owed" lists the events that
+oblige a fresh content review. Findings ledgers live in `docs/audit/`; the latest
+copy pass is `docs/audit/FINDINGS-copy-2026-08-01.md`. `reader-contract.json`
+carries the machine-readable term lists.
+
 ## Browser automation: use browse-tool, not MCP
 
 This project previously used Playwright/Chrome DevTools MCP for interactive browser work. Prefer the Bash-based `browse-tool` CLI instead — it is on PATH when Claude Code is launched from the `cl` alias or a shell that sources `~/.zshrc`.

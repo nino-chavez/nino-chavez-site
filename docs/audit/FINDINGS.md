@@ -569,6 +569,16 @@ Recorded so these are not re-raised.
 | Performance & delivery engineer | `roles/performance.md` | complete |
 | Responsive & containment engineer | `roles/containment.md` | complete |
 
+## Later passes
+
+| Pass | Subject | Scope |
+|---|---|---|
+| [`FINDINGS-copy-2026-08-01.md`](./FINDINGS-copy-2026-08-01.md) | production, live, no frozen SHA | content strategist only (role 6). Produced the copy clauses now in `OPEN-PRACTICE-ART-DIRECTION.md` §Copy and naming and `IA-NAVIGATION.md` §Naming rules / §Search, plus five regression cases. |
+
+Counts are not comparable across passes: this ledger scored 32 records at
+`d0cfd0e`, the copy pass scored the 26 production was serving, and `main` now
+holds 33 under a renamed domain vocabulary.
+
 ## Next
 
 1. Containment report merges in when it lands.

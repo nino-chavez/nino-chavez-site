@@ -137,6 +137,56 @@ manual than a personal portfolio.
 art-direction baseline and the reference for later comparisons. Anton is
 display-only; its force depends on the rest of the interface remaining quiet.
 
+## Copy and naming
+
+The site's premise is a complete, honestly labeled record. A label the visitor
+cannot decode fails that premise as surely as a false count does. These clauses
+are testable claims, written so a reviewer can cite one rather than appeal to
+taste. They were derived from the production copy audit of 2026-08-01
+(`docs/audit/FINDINGS-copy-2026-08-01.md`).
+
+- **Reader-facing nouns, not data-model names.** Rendered copy uses the words a
+  visitor already owns. `work object`, `record` as a category name, `durable
+  page`, `artifact`, `registry`, `snapshot`, and `review build` are internal
+  vocabulary; they may appear in this repo's contracts and in `app/` identifiers,
+  never in visitor-facing text. The registry's own `form` values — site, cli,
+  app, service, docs, collection — are the reader-facing vocabulary for what a
+  thing *is*. `record` remains correct in the detail-page metadata line, where it
+  names the entry rather than the work.
+- **A coined term carries its gloss at first use.** Any term the site invents, or
+  uses in a sense a visitor would not predict, is defined in the same section
+  where it first appears. This applies with most force to Work `Status` values:
+  the `/work` filter, direct search results, and detail metadata explain what
+  labels such as `Maintained` and `Paused` mean. `state` remains the internal data
+  key, not the visitor-facing field name. A site-level frame appearing in the
+  `<title>` or the first viewport is a coined term and must be defined on the page
+  that carries it.
+- **Say what the reader gets, not what the site refuses to do.** Copy does not
+  negate a norm the visitor was never told about. "Nothing is hidden for failing
+  to look finished" asks the reader to first believe hiding is normal here.
+  State the affordance instead: unfinished work is listed, and the state label
+  says what can be opened today.
+- **First person, everywhere Nino speaks.** The site is "presented by the person
+  responsible for it" (`PRODUCT.md` §Product). Third-person self-reference in
+  body copy is a defect, not a register choice. Third person remains correct in
+  `<meta>` description text and structured data, where the audience is a machine.
+- **Counts never render as ordinals.** Sequence positions may be zero-padded
+  (`01 / 06`); quantities never are. `08 Applied techniques` and `01 Practice`
+  in the same visual family make a count indistinguishable from a position. A
+  sequence badge must also match the order the items are displayed in — a badge
+  that disagrees with its own list carries no information the visitor can use.
+  Counts themselves are governed by §Content ownership and freshness: computed
+  from the active snapshot, never copied into prose.
+- **A duration or effort claim names its basis.** The site's authority rests on
+  sourced evidence. An unattributed estimate — a week range on a self-directed
+  path, a time-to-complete — is the weakest claim on any page it appears on.
+  Either ground it in something real ("this took me N weeks") or express it as
+  effort rather than elapsed calendar time.
+
+Judgment, not clause: whether a given rewrite reads well. These clauses catch
+decodability and honesty failures. They do not adjudicate voice, and a reviewer
+citing one to argue about tone is over-reading it.
+
 ## First encounter
 
 The opening salvages the useful behavior of the earlier profile composition
