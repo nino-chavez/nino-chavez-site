@@ -1,5 +1,7 @@
-// Regression cases derived from the site audit at d0cfd0e.
-// See docs/audit/FINDINGS.md — each test names the finding it locks down.
+// Regression cases derived from the site audits.
+//   F* — docs/audit/FINDINGS.md (d0cfd0e, local build)
+//   C* — docs/audit/FINDINGS-copy-2026-08-01.md (production copy pass)
+// Each test names the finding it locks down.
 //
 // These tests assert the post-fix behavior that closes mechanically testable
 // findings. They remain separate from the main suite so the audit ledger stays
@@ -7,9 +9,16 @@
 //
 //   npm run test:audit
 //
-// Layout defects (F2, F5) are not represented here — they need a browser, not a
-// rendered-HTML assertion. Those are covered by the capture script in
+// Layout defects (F2, F5, C15) are not represented here — they need a browser,
+// not a rendered-HTML assertion. Those are covered by the capture script in
 // docs/audit/AUDIT-PLAN.md Phase 1.
+//
+// Copy findings that are judgment, not assertion, and are therefore NOT here:
+// whether the homepage lede answers "what does this person do" (C1), whether a
+// coined term's definition is a good one (C2), framing tone (C13), and the
+// numbering-scheme and vocabulary questions left at S4 (C17, C19, C20, C21).
+// A green suite does not mean the copy is good. It means the copy has not
+// regressed on the parts a machine can check.
 
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
@@ -252,6 +261,164 @@ test("F7 WITHDRAWN — writing links must stay absolute", async () => {
     "article links must remain absolute — this app does not serve them",
   );
 });
+
+// ---------------------------------------------------------------------------
+// C* — production copy pass, docs/audit/FINDINGS-copy-2026-08-01.md
+//
+// These five cases assert the post-fix behavior. They were written as `todo`
+// because the copy pass reported and did not fix, per the audit plan's role
+// rule — so the debt stayed visible in the suite output instead of living only
+// in a document.
+//
+// C8, C11, and C12 were remediated by bd20957 and are now live gates. C10 and
+// C14 remain `todo`. Drop the flag as each is fixed; a case that passes while
+// still marked todo is reported by node:test, so the flag cannot go stale
+// silently — which is how the three above were caught.
+// ---------------------------------------------------------------------------
+
+// Model and process names that belong in this repo's contracts and in app/
+// identifiers, never in text a visitor reads. See
+// OPEN-PRACTICE-ART-DIRECTION.md §Copy and naming.
+//
+// `reader-contract.json` `denyTerms` is the source of record for this list and
+// is the broader one — it covers source files, where a term can appear in a
+// string this test never renders. Keep the two in sync deliberately; a term
+// belongs here only if it is verifiably reaching rendered copy. Notably absent:
+// "prototype", which appears only as the `prototype-banner` class name, and
+// "artifact", which /learn uses as a visitor-facing field label (see C22).
+const INTERNAL_VOCABULARY = ["work object", "durable page", "review build"];
+
+// Visible text only. Class names, data attributes, and the RSC flight payload
+// are not copy, and matching them produces a gate that fails for reasons
+// unrelated to its finding — which would survive the remediation it is meant to
+// verify. This test caught exactly that on its first run.
+function visibleText(html) {
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ");
+}
+
+test(
+  "C8 — no internal vocabulary reaches visitor-facing copy",
+  async () => {
+    for (const path of ["/", "/work", "/search", "/now", "/demos", "/learn", "/about"]) {
+      const text = visibleText(await htmlFor(path));
+      for (const term of INTERNAL_VOCABULARY) {
+        assert.doesNotMatch(
+          text,
+          new RegExp(term, "i"),
+          `${path} renders the internal term "${term}" to visitors`,
+        );
+      }
+    }
+  },
+);
+
+test(
+  "C12 — every rendered record count agrees with its own noun",
+  async () => {
+    // The homepage and /work both render per-domain counts. /work pluralizes
+    // correctly; the homepage does not. Assert the invariant on both so the fix
+    // cannot regress on one page while the other stays right.
+    for (const path of ["/", "/work"]) {
+      const html = await htmlFor(path);
+      const text = visibleText(html);
+      for (const [match, n, noun] of text.matchAll(
+        /\b(\d+)\s+(records?)\b/gi,
+      )) {
+        const expected = Number(n) === 1 ? "record" : "records";
+        assert.equal(
+          noun.toLowerCase(),
+          expected,
+          `${path} renders "${match.trim()}" — ${n} takes "${expected}"`,
+        );
+      }
+    }
+  },
+);
+
+test(
+  "C10 — quantities are not rendered as zero-padded ordinals",
+  { todo: "app/page.tsx pads the demo, technique, and learning-path counts to two digits" },
+  async () => {
+    // Sequence positions may be padded (`01 / 06`). Quantities may not — a
+    // padded count is indistinguishable from a position in the same visual
+    // family. AD §Copy.
+    const text = visibleText(await htmlFor("/"));
+    const COUNT_LABELS =
+      /\b0\d\s+(Operating sessions|Applied techniques|Learning paths|records?|sessions|techniques|paths)\b/i;
+    assert.doesNotMatch(
+      text,
+      COUNT_LABELS,
+      "a quantity on / is zero-padded, which reads as a sequence position",
+    );
+  },
+);
+
+test(
+  "C11 — record badges follow the order the records are displayed in",
+  async () => {
+    // WorkLibrary assigns each badge from the record's position in the full
+    // registry, then renders groups sorted by date. The two orders agree only
+    // until records are added. A badge that disagrees with its own list carries
+    // no information the visitor can use. AD §Copy.
+    const html = await htmlFor("/work");
+    const groups = html.match(
+      /class="library-group"[\s\S]*?(?=class="library-group"|<\/main)/g,
+    );
+    assert.ok(groups?.length, "/work should render domain groups");
+
+    for (const group of groups) {
+      const heading = group.match(/<h2[^>]*>([^<]+)<\/h2>/)?.[1] ?? "unknown";
+      const badges = [
+        ...group.matchAll(/class="record-number"[^>]*>\s*(\d+)\s*</g),
+      ].map((m) => Number(m[1]));
+      const ascending = [...badges].sort((a, b) => a - b);
+      assert.deepEqual(
+        badges,
+        ascending,
+        `${heading}: badges ${badges.join(", ")} do not follow display order`,
+      );
+    }
+  },
+);
+
+test(
+  "C14 — a state value rendered to a visitor carries its gloss",
+  { todo: "workStateLabels supplies one-word labels ('Maintained') with no gloss on any surface" },
+  async () => {
+    // The audited production build glossed state in the /work filter ("Live —
+    // running now") and rendered it bare everywhere else. The current tree is
+    // consistent but glossless: every surface shows a one-word label. Neither
+    // satisfies AD §Copy — the term is coined, so wherever it first appears it
+    // is defined. The filter is where a visitor meets the vocabulary, so the
+    // gloss belongs there and on any detail page that shows a state.
+    const source = await readFile(
+      new URL("../app/data.ts", import.meta.url),
+      "utf8",
+    );
+    const labels = [
+      ...(source.match(/workStateLabels[\s\S]*?\};/)?.[0] ?? "").matchAll(
+        /\w+: "([^"]+)"/g,
+      ),
+    ].map((m) => m[1]);
+    assert.ok(labels.length, "workStateLabels should be readable from data.ts");
+
+    // A gloss is a label followed by an explanatory clause. Em dash or
+    // parenthetical both qualify; the shape is the reviewer's call, the presence
+    // is not.
+    const html = await htmlFor("/work");
+    for (const label of labels) {
+      assert.match(
+        html,
+        new RegExp(`${label}\\s*(—|–|-|\\()\\s*\\S`),
+        `the state "${label}" is offered as a filter with no explanation of what it means`,
+      );
+    }
+  },
+);
 
 test("F8 — the homepage body offers entrances to Learn and About", async () => {
   const html = await htmlFor("/");
