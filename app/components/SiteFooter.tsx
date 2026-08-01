@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const primary = [
   ["Work", "/work"],
-  ["Demos", "/demos"],
+  ["How I work", "/demos"],
   ["Learn", "/learn"],
   ["Writing", "/blog"],
   ["Photography", "/photography"],

@@ -3,26 +3,23 @@
 
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { getPhotographyArchiveStats } from "../photography-stats.mjs";
+import {
+  getPhotographyArchiveStats,
+  getRecentPhotographyAlbums,
+} from "../photography-stats.mjs";
 
 const canonicalRoot = "https://ninochavez.co/photography";
 const sourcePattern = /^[a-z0-9_-]{1,32}$/;
 
 const collectionRoutes = [
   {
-    title: "Search",
-    description: "Find photos by event, team, or jersey number.",
-    href: "/photography/explore",
-    action: "Search photos",
-  },
-  {
-    title: "Albums",
+    title: "Events",
     description: "Open complete event galleries, newest first.",
     href: "/photography/albums",
     action: "Browse events",
   },
   {
-    title: "Timeline",
+    title: "Browse by date",
     description: "Move through the archive by year and month.",
     href: "/photography/timeline",
     action: "Open timeline",
@@ -34,10 +31,10 @@ const collectionRoutes = [
     action: "View collections",
   },
   {
-    title: "Favorites",
+    title: "Your saved photos",
     description: "Return to the frames saved in this browser.",
     href: "/photography/favorites",
-    action: "Open favorites",
+    action: "Open saved photos",
   },
 ] as const;
 
@@ -148,6 +145,85 @@ async function PhotographyScale() {
   );
 }
 
+function formatEventDate(value: string | null) {
+  if (!value) return null;
+
+  const date = new Date(value);
+  if (Number.isNaN(date.valueOf())) return null;
+
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(date);
+}
+
+function albumContents(photoCount: number, videoCount: number) {
+  const parts = [];
+  if (photoCount > 0) {
+    parts.push(`${photoCount.toLocaleString("en-US")} ${photoCount === 1 ? "photo" : "photos"}`);
+  }
+  if (videoCount > 0) {
+    parts.push(`${videoCount.toLocaleString("en-US")} ${videoCount === 1 ? "video" : "videos"}`);
+  }
+  return parts.join(" · ");
+}
+
+async function PhotographyRecentEvents({ source }: { source: string }) {
+  const albums = await getRecentPhotographyAlbums();
+
+  if (albums.length === 0) return null;
+
+  return (
+    <section
+      className="photography-recent page-shell"
+      aria-labelledby="photography-recent-title"
+    >
+      <header>
+        <div>
+          <p>Newest galleries</p>
+          <h2 id="photography-recent-title">Recent events</h2>
+        </div>
+        <a href={withSource("/photography/albums", source)}>
+          Browse every event <span aria-hidden="true">→</span>
+        </a>
+      </header>
+      <div className="photography-recent__grid">
+        {albums.map((album) => {
+          const date = formatEventDate(album.latestDate);
+          const contents = albumContents(album.photoCount, album.videoCount);
+
+          return (
+            <a
+              key={album.key}
+              className="photography-recent__card"
+              href={withSource(album.href, source)}
+            >
+              <span className="photography-recent__image">
+                {album.coverImage ? (
+                  <img
+                    src={album.coverImage}
+                    alt=""
+                    width="600"
+                    height="400"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : null}
+              </span>
+              <strong>{album.name}</strong>
+              <small>
+                {[date, contents].filter(Boolean).join(" · ")}
+              </small>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 export default async function PhotographyPage({
   searchParams,
 }: {
@@ -201,17 +277,17 @@ export default async function PhotographyPage({
               role="search"
             >
               <label htmlFor="photography-query">
-                Search the full photography archive
+                Find photos in the full archive
               </label>
               <div>
                 <input
                   id="photography-query"
                   name="q"
                   type="search"
-                  placeholder="Team, event, or #"
+                  placeholder="Event, team, or jersey number"
                 />
                 <input type="hidden" name="src" value={source} />
-                <button type="submit">Search</button>
+                <button type="submit">Find photos</button>
               </div>
             </form>
             <a
@@ -247,6 +323,10 @@ export default async function PhotographyPage({
       <div className="photography-archive">
         <Suspense fallback={null}>
           <PhotographyScale />
+        </Suspense>
+
+        <Suspense fallback={null}>
+          <PhotographyRecentEvents source={source} />
         </Suspense>
 
         <section
@@ -309,10 +389,9 @@ export default async function PhotographyPage({
               competition runs deep and the lighting is almost always terrible.
             </p>
             <p>
-              I&apos;m not here for stiff poses or generic highlight reels.
-              I&apos;m here to catch the flicker—the exact frame where
-              determination meets opportunity, where emotion breaks through
-              the surface.
+              I look for the moments players will want back: the read before
+              contact, the reaction after the point, and the people around the
+              play.
             </p>
           </div>
         </section>

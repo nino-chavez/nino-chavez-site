@@ -21,7 +21,7 @@ type DemoRecord = DemoEntry & {
 
 const demoKinds: { label: string; value: DemoKind }[] = [
   { label: "Sessions", value: "session" },
-  { label: "Applied techniques", value: "technique" },
+  { label: "Techniques", value: "technique" },
 ];
 
 export function DemoLibrary({
@@ -96,17 +96,17 @@ export function DemoLibrary({
 
   const groups = [
     {
-      description: "Kept in the order the work was published.",
+      description: "See the work in the order it happened.",
       id: "sessions",
       items: visible.filter((record) => record.kind === "session"),
-      label: "Operating sessions",
+      label: "Full sessions",
       value: "session" as const,
     },
     {
-      description: "Reusable moves extracted from the sessions.",
+      description: "Tested parts of the work you can reuse.",
       id: "applied",
       items: visible.filter((record) => record.kind === "technique"),
-      label: "Applied techniques",
+      label: "Techniques",
       value: "technique" as const,
     },
   ].filter((group) => group.items.length > 0);
@@ -127,7 +127,7 @@ export function DemoLibrary({
         onSubmit={(event) => event.preventDefault()}
       >
         <div className="control search-control" data-active={Boolean(query)}>
-          <label htmlFor="demo-query">Search demos</label>
+          <label htmlFor="demo-query">Search sessions and techniques</label>
           <input
             id="demo-query"
             type="search"
@@ -226,7 +226,7 @@ export function DemoLibrary({
                         </span>
                       </div>
                       <span className="demo-session-card__copy">
-                        <small>Operating session</small>
+                        <small>Full session</small>
                         <strong>{record.title}</strong>
                         <p>{record.summary}</p>
                         <em>

@@ -78,7 +78,7 @@ const destinationGroups = [
   },
   {
     title: "Images and sound",
-    description: "The photography and music practices in their native places.",
+    description: "Where to find the photography and music.",
     destinations: [
       {
         name: "Photography",
@@ -146,7 +146,7 @@ export default async function LinksPage({
 
       <header className="links-opening">
         <div className="links-opening__register page-shell">
-          <span>Links / maintained directory</span>
+          <span>Direct links</span>
           <span>11 destinations</span>
           <time dateTime="2026-07-30">Checked 30 July 2026</time>
         </div>
@@ -232,13 +232,6 @@ export default async function LinksPage({
           </section>
         ))}
 
-        <aside className="links-maintenance-note">
-          <span>Directory note</span>
-          <p>
-            Destinations are checked when this page changes. External websites
-            open in a new tab; pages on this site stay in this tab.
-          </p>
-        </aside>
       </div>
     </div>
   );

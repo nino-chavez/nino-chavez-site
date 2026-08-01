@@ -18,7 +18,7 @@ export async function generateMetadata({
   return track
     ? {
         title: `${track.title} learning path`,
-        description: `${track.tagline}. End artifact: ${track.finalArtifact}.`,
+        description: `${track.tagline}. What you’ll make: ${track.finalArtifact}.`,
       }
     : {};
 }
@@ -55,7 +55,7 @@ export default async function LearnTrackPage({
 
           <div className="learn-track-opening__copy">
             <div>
-              <p className="eyebrow">Practitioner path</p>
+              <p className="eyebrow">Guided path</p>
               <h1>{track.title}</h1>
               <p className="learn-track-tagline">{track.tagline}</p>
             </div>
@@ -67,7 +67,7 @@ export default async function LearnTrackPage({
                   <dd>{track.startWhen}</dd>
                 </div>
                 <div>
-                  <dt>End artifact</dt>
+                  <dt>What you’ll make</dt>
                   <dd>{track.finalArtifact}</dd>
                 </div>
               </dl>
@@ -79,11 +79,11 @@ export default async function LearnTrackPage({
       <div className="learn-track-body page-shell">
         <section className="learn-grounding" aria-labelledby="grounding-title">
           <header>
-            <span>Grounding / {track.evidence.length} examples</span>
-            <h2 id="grounding-title">See the evidence before the instruction</h2>
+            <span>{track.evidence.length} examples</span>
+            <h2 id="grounding-title">See the work behind the path</h2>
             <p>
               Each example shows work, a session, or writing that shaped this
-              path. Use the evidence to test the instruction before adopting it.
+              path. Use it to decide whether the instruction fits your work.
             </p>
           </header>
           <div className="learn-evidence-list">
@@ -148,7 +148,7 @@ export default async function LearnTrackPage({
         <section className="learn-level-section" aria-labelledby="levels-title">
           <header>
             <span>Path / 00–04</span>
-            <h2 id="levels-title">Five stages to the artifact</h2>
+            <h2 id="levels-title">Five stages to the finished work</h2>
             <p>
               Each stage has a practical stopping condition. Move on when the
               checkpoint is true, not when the time estimate expires.

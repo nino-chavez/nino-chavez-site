@@ -4,9 +4,9 @@ import { DemoLibrary } from "../components/DemoLibrary";
 import { getDemoSnapshot } from "../demos";
 
 export const metadata = {
-  title: "Demos — Ways of Working",
+  title: "How I work",
   description:
-    "The complete collection of operating sessions and applied techniques from real agent-assisted work.",
+    "Complete work sessions and reusable techniques from real agent-assisted work.",
 };
 
 export default async function DemosPage() {
@@ -19,15 +19,15 @@ export default async function DemosPage() {
       <header className="demo-studio">
         <div className="demo-studio__stage page-shell">
           <div className="demo-studio__lead">
-            <p className="eyebrow">Demos / ways of working</p>
-            <h1>Ways of Working</h1>
+            <p className="eyebrow">Sessions and techniques</p>
+            <h1>How I work</h1>
             <p className="demo-studio__lede">
-              Step through the work in sequence. Then take the reusable parts
-              into your own practice.
+              See complete work sessions, including mistakes, corrections, and
+              the evidence behind each decision.
             </p>
             <p className="demo-studio__note">
-              These are complete operating sessions, including hand-offs,
-              failures, corrections, and the evidence used to decide.
+              Open a full session or jump to one tested technique you can
+              reuse.
             </p>
             <div className="demo-studio__counts" aria-label="Collection counts">
               <a href="#sessions">
@@ -66,13 +66,13 @@ export default async function DemosPage() {
         <div className="demo-studio__key page-shell">
           <div>
             <span>01</span>
-            <strong>Sessions preserve sequence.</strong>
-            <small>See what happened, in the order it happened.</small>
+            <strong>See the work as it happened.</strong>
+            <small>Follow the decisions, failures, and corrections in order.</small>
           </div>
           <div>
             <span>02</span>
-            <strong>Techniques preserve reuse.</strong>
-            <small>Take one tested move without replaying the whole session.</small>
+            <strong>Reuse a tested technique.</strong>
+            <small>Take one useful part without replaying the whole session.</small>
           </div>
         </div>
       </header>
@@ -84,11 +84,11 @@ export default async function DemosPage() {
         <header className="demo-library-stage__heading">
           <div>
             <p className="eyebrow">Complete collection</p>
-            <h2 id="demo-library-title">Choose how to enter.</h2>
+            <h2 id="demo-library-title">Browse sessions and techniques.</h2>
           </div>
           <p>
-            Search all {totalRecords} sessions and techniques, or move directly
-            through the two collections below.
+            Search all {totalRecords} records, or open either collection
+            directly.
           </p>
         </header>
 
@@ -100,10 +100,10 @@ export default async function DemosPage() {
         </Suspense>
 
         <aside className="demo-collection-bridge">
-          <span>Work / Ways of Working</span>
+          <span>About this collection</span>
           <p>
-            These sessions and techniques show how the larger Ways of Working
-            project is used.
+            The Ways of Working project explains how these sessions and
+            techniques fit together.
           </p>
           <Link href="/work/ways-of-working">Open the project page →</Link>
         </aside>

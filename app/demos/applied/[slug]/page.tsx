@@ -64,8 +64,8 @@ export default async function AppliedTechniquePage({
       <div className="page-shell demo-story-breadcrumbs">
         <Breadcrumbs
           items={[
-            { label: "Demos", href: "/demos" },
-            { label: "Applied", href: "/demos#applied" },
+            { label: "How I work", href: "/demos" },
+            { label: "Techniques", href: "/demos#applied" },
             { label: entry.title },
           ]}
         />
@@ -77,7 +77,7 @@ export default async function AppliedTechniquePage({
       <div className="page-shell demo-record-context">
         <header className="demo-record-context__header">
           <div>
-            <p className="eyebrow">The reusable practice</p>
+            <p className="eyebrow">The reusable technique</p>
             <h2>{entry.title}</h2>
             <p>{entry.description}</p>
           </div>
@@ -143,7 +143,7 @@ export default async function AppliedTechniquePage({
           ) : (
             <Link href="/demos#applied">
               <span>Collection start</span>
-              <strong>Return to applied techniques</strong>
+              <strong>Return to all techniques</strong>
             </Link>
           )}
           {next ? (
@@ -154,7 +154,7 @@ export default async function AppliedTechniquePage({
           ) : (
             <Link href="/demos">
               <span>Collection complete</span>
-              <strong>Return to all demos</strong>
+              <strong>Return to How I work</strong>
             </Link>
           )}
         </nav>

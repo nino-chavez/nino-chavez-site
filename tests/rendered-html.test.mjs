@@ -52,25 +52,29 @@ test("server-renders the personal entrance and global navigation", async () => {
   assert.match(html, /Product architect and builder in Chicago/);
   assert.match(
     html,
-    /Product architect by trade. I also build software, run volleyball tournaments, photograph them, write, and DJ./,
+    /I design products, build the software behind them, and run them in the real world./,
   );
   assert.doesNotMatch(html, /Current working set/);
   assert.match(html, /Illustrated portrait of Nino Chavez/);
-  assert.match(html, /Explore my work/);
-  assert.match(html, /What I’m working on now/);
+  assert.match(html, /<details class="practice-profile-badge">/);
+  assert.match(html, /Open profile/);
+  assert.match(html, /About Nino →/);
+  assert.match(html, /mailto:nino@ninochavez.co/);
+  assert.match(html, /See selected work/);
+  assert.match(html, /About me/);
   assert.match(html, /On the court/);
-  assert.match(html, /Work in the world/);
-  assert.match(html, /Built, published, operated/);
+  assert.match(html, /Selected work/);
+  assert.match(html, /Three places to start/);
   assert.match(html, /Read about Blueprint/);
   assert.match(html, /Read Signal Dispatch/);
   assert.match(html, /Browse photography/);
-  assert.match(html, /26 projects, tools, and collections across 6 domains/);
+  assert.match(html, /Explore the full body of work/);
   assert.match(html, /Signal Dispatch/);
-  assert.match(html, /Ways of working/);
+  assert.match(html, /How the work gets done/);
   assert.match(html, /Ways of Working · Session 02/);
   assert.match(html, /Explore all work/);
-  assert.match(html, /Operating sessions/);
-  assert.match(html, /Applied techniques/);
+  assert.match(html, /Full sessions/);
+  assert.match(html, /Techniques/);
   assert.match(html, /href="\/work"/);
   assert.match(html, /href="\/demos"/);
   assert.match(html, /href="\/learn"/);
@@ -157,7 +161,7 @@ test("renders the full-volume work and demos collections", async () => {
       []).length,
     6,
   );
-  assert.match(workHtml, /Each item says what exists and what you can open/);
+  assert.match(workHtml, /Status says what is available today/);
   assert.match(workHtml, /26<\/strong> shown/);
   assert.doesNotMatch(workHtml, /Nothing selected/);
   assert.doesNotMatch(workHtml, /objects in view/);
@@ -176,8 +180,8 @@ test("renders the full-volume work and demos collections", async () => {
   assert.match(emptyWorkHtml, /query “no-such-work”/);
   assert.match(emptyWorkHtml, /Search the whole site for “no-such-work”/);
 
-  assert.match(demosHtml, /Demos \/ ways of working/);
-  assert.match(demosHtml, /<h1>Ways of Working<\/h1>/);
+  assert.match(demosHtml, /Sessions and techniques/);
+  assert.match(demosHtml, /<h1>How I work<\/h1>/);
   assert.match(
     demosHtml,
     new RegExp(`<strong>${sessionCount}<\\/strong><span>Sessions<\\/span>`),
@@ -188,14 +192,14 @@ test("renders the full-volume work and demos collections", async () => {
       `<strong>${techniqueCount}<\\/strong><span>Techniques<\\/span>`,
     ),
   );
-  assert.match(demosHtml, /Sessions preserve sequence/);
-  assert.match(demosHtml, /Techniques preserve reuse/);
+  assert.match(demosHtml, /See the work as it happened/);
+  assert.match(demosHtml, /Reuse a tested technique/);
   assert.match(
     demosHtml,
     new RegExp(`${demoCount}<\\/strong> sessions and techniques in view`),
   );
-  assert.match(demosHtml, /Operating sessions/);
-  assert.match(demosHtml, /Applied techniques/);
+  assert.match(demosHtml, /Full sessions/);
+  assert.match(demosHtml, /Techniques/);
   assert.match(demosHtml, /S01/);
   assert.match(
     demosHtml,
@@ -361,8 +365,8 @@ test("preserves late chapters, diagrams, and rewritten internal demo links", asy
 test("renders seven grounded learning paths without positional placeholders", async () => {
   const learnHtml = await htmlFor("/learn");
 
-  assert.match(learnHtml, /Learn \/ practitioner paths/);
-  assert.match(learnHtml, /aria-label="Start with the artifact\."/);
+  assert.match(learnHtml, /Learn \/ guided paths/);
+  assert.match(learnHtml, /aria-label="Start with what you need to make\."/);
   assert.match(learnHtml, /Explorer/);
   assert.match(learnHtml, /Enterprise/);
   assert.doesNotMatch(learnHtml, /L0[1-7]/);
@@ -380,9 +384,9 @@ test("renders seven grounded learning paths without positional placeholders", as
     "enterprise",
   ]) {
     const html = await htmlFor(`/learn/${slug}`);
-    assert.match(html, /See the evidence before the instruction/);
+    assert.match(html, /See the work behind the path/);
     assert.match(html, /Know whether this is your path/);
-    assert.match(html, /Five stages to the artifact/);
+    assert.match(html, /Five stages to the finished work/);
     assert.equal(
       (html.match(/class="learn-level-title"/g) ?? []).length,
       5,
@@ -422,8 +426,6 @@ test("renders the complete Signal Dispatch publication and real article handoffs
       "utf8",
     ),
   );
-  const essayCount = writingSnapshot.kindCounts.Essay;
-  const otherCount = writingSnapshot.publicPieceCount - essayCount;
   const [writingHtml, whitepapersHtml, emptyHtml, searchHtml] =
     await Promise.all([
       htmlFor("/blog"),
@@ -432,13 +434,8 @@ test("renders the complete Signal Dispatch publication and real article handoffs
       htmlFor("/search?q=Scaffolding"),
     ]);
 
-  assert.match(writingHtml, /Writing \/ complete publication/);
-  assert.match(
-    writingHtml,
-    new RegExp(
-      `aria-label="${essayCount} essays and ${otherCount} other published pieces\\."`,
-    ),
-  );
+  assert.match(writingHtml, /Writing \/ Signal Dispatch/);
+  assert.match(writingHtml, /<h1>Signal Dispatch<\/h1>/);
   assert.match(
     writingHtml,
     new RegExp(
@@ -521,26 +518,26 @@ test("renders the complete Signal Dispatch publication and real article handoffs
   );
 });
 
-test("renders About as a durable profile instead of a services or route-design page", async () => {
+test("renders About as a personal profile instead of a services or route-design page", async () => {
   const [aboutHtml, searchHtml] = await Promise.all([
     htmlFor("/about"),
     htmlFor("/search?q=commerce.com"),
   ]);
 
-  assert.match(aboutHtml, /About \/ durable profile/);
+  assert.match(aboutHtml, /About Nino Chavez/);
   assert.match(
     aboutHtml,
     /<h1 aria-label="Nino Chavez"><span aria-hidden="true">Nino<\/span><span aria-hidden="true">Chavez<\/span><\/h1>/,
   );
-  assert.match(aboutHtml, /Product architect by trade/);
-  assert.match(aboutHtml, /writing code since 1999/);
+  assert.match(aboutHtml, /more than 25 years/);
+  assert.match(aboutHtml, /Building since 1999/);
   assert.match(aboutHtml, /Product Architect at commerce\.com/);
   assert.match(aboutHtml, /Let’s Pepper/);
   assert.match(aboutHtml, /Rally HQ/);
   assert.match(aboutHtml, /Flickday Media/);
   assert.match(aboutHtml, /Signal Dispatch/);
   assert.match(aboutHtml, /How I work with agents/);
-  assert.match(aboutHtml, /what may be published/);
+  assert.match(aboutHtml, /what can be published/);
   assert.match(aboutHtml, /href="\/work\/blueprint"/);
   assert.match(aboutHtml, /href="\/demos"/);
   assert.match(aboutHtml, /href="\/photography"/);
@@ -579,7 +576,7 @@ test("ranks and caps broad site searches", async () => {
   assert.match(html, /Agentic Ways of Working/);
 });
 
-test("renders Now as a dated attention ledger and Links as a maintained directory", async () => {
+test("renders Now as current work and Links as direct destinations", async () => {
   const [nowHtml, linksHtml, attributedLinksHtml, invalidSourceHtml, searchHtml] =
     await Promise.all([
       htmlFor("/now"),
@@ -589,13 +586,13 @@ test("renders Now as a dated attention ledger and Links as a maintained director
       htmlFor("/search?q=Flickday%20Media"),
     ]);
 
-  assert.match(nowHtml, /Now \/ current attention/);
+  assert.match(nowHtml, /What I’m working on now/);
   assert.match(nowHtml, /dateTime="2026-07-30">30 July 2026/);
   assert.match(nowHtml, /Four things have my attention/);
   assert.match(nowHtml, /Product architecture at commerce\.com/);
   assert.match(nowHtml, /Maintaining the public site/);
-  assert.match(nowHtml, /Tightening the proof loop/);
-  assert.match(nowHtml, /Running the volleyball stack/);
+  assert.match(nowHtml, /Making AI-assisted work easier to verify/);
+  assert.match(nowHtml, /Running the volleyball products together/);
   assert.doesNotMatch(nowHtml, /N0[1-4]/);
   assert.match(nowHtml, /Blueprint, Film Room/);
   assert.match(nowHtml, /Let’s Pepper events, Rally HQ/);
@@ -610,11 +607,11 @@ test("renders Now as a dated attention ledger and Links as a maintained director
   );
   assert.match(
     nowHtml,
-    /href="\/about" class="now-register__entry"[\s\S]*Read the durable profile/,
+    /href="\/about" class="now-register__entry"[\s\S]*About Nino/,
   );
   assert.doesNotMatch(nowHtml, /second work inventory|professional timeline/i);
 
-  assert.match(linksHtml, /Links \/ maintained directory/);
+  assert.match(linksHtml, /Direct links/);
   assert.match(linksHtml, /11 destinations/);
   assert.match(linksHtml, /Checked 30 July 2026/);
   assert.match(linksHtml, /Go to the thing itself/);
@@ -683,9 +680,11 @@ test("renders Photography as an owned image collection with live archive paths",
     attributedHtml,
     /\/photography\/albums\?src=ig-photo/,
   );
-  assert.match(photographyDocument, /Search[\s\S]*Albums/);
-  assert.match(photographyDocument, /Timeline[\s\S]*Collections/);
-  assert.match(photographyDocument, /Collections[\s\S]*Favorites/);
+  assert.match(photographyDocument, /Events[\s\S]*Browse by date/);
+  assert.match(photographyDocument, /Browse by date[\s\S]*Collections/);
+  assert.match(photographyDocument, /Collections[\s\S]*Your saved photos/);
+  assert.match(photographyDocument, /Find photos in the full archive/);
+  assert.doesNotMatch(photographyDocument, /<strong>Search<\/strong>/);
   assert.doesNotMatch(photographyDocument, />P0[1-5]</);
   assert.match(photographyDocument, /Contact sheet \/ 12 frames/);
   assert.equal(

@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from "react";
 
 const primary = [
   { label: "Work", href: "/work", owns: ["/work"] },
-  { label: "Demos", href: "/demos", owns: ["/demos"] },
+  { label: "How I work", href: "/demos", owns: ["/demos"] },
   { label: "Learn", href: "/learn", owns: ["/learn"] },
   { label: "Writing", href: "/blog", owns: ["/blog"] },
   {

@@ -7,7 +7,7 @@ const evidence = [
   {
     name: "Blueprint",
     kind: "Published method",
-    note: "A repository-native method for directing agent-assisted work.",
+    note: "A practical method for planning, reviewing, and checking work done with AI agents.",
     href: "/work/blueprint",
     action: "Read about Blueprint",
     image: "/work/blueprint.png",
@@ -17,7 +17,7 @@ const evidence = [
   {
     name: "Signal Dispatch",
     kind: "Ongoing publication",
-    note: "Essays, whitepapers, and field notes on architecture and commerce.",
+    note: "Essays and field notes on software, commerce, and AI-assisted work.",
     href: "/blog",
     action: "Read Signal Dispatch",
     image: "/work/signal-dispatch.webp?v=372a9501",
@@ -37,6 +37,34 @@ const evidence = [
   },
 ] as const;
 
+function ProfileBadge() {
+  return (
+    <details className="practice-profile-badge">
+      <summary>
+        <span className="practice-profile-badge__portrait" aria-hidden="true">
+          <span aria-hidden="true">+</span>
+        </span>
+        <span className="practice-profile-badge__label">
+          <strong>Nino Chavez</strong>
+          <small>Open profile</small>
+        </span>
+      </summary>
+
+      <div className="practice-profile-badge__card">
+        <p className="eyebrow">Chicago · Building since 1999</p>
+        <p>
+          Product architect, software builder, tournament operator,
+          photographer, writer, and DJ.
+        </p>
+        <nav aria-label="Profile links">
+          <Link href="/about">About Nino →</Link>
+          <a href="mailto:nino@ninochavez.co">Email Nino ↗</a>
+        </nav>
+      </div>
+    </details>
+  );
+}
+
 export default async function Home() {
   const { sessions: demoSessions, techniques: appliedTechniques } =
     await getDemoSnapshot();
@@ -45,7 +73,6 @@ export default async function Home() {
     <>
       <section className="practice-board" aria-labelledby="practice-title">
         <div className="practice-board__register page-shell">
-          <span>Product architect</span>
           <span>Chicago</span>
           <span>Building since 1999</span>
         </div>
@@ -63,23 +90,18 @@ export default async function Home() {
 
           <div className="practice-copy">
             <p className="practice-claim">
-              Product architect by trade. I also build software, run volleyball
-              tournaments, photograph them, write, and DJ.
-            </p>
-            <p className="practice-intro">
-              Those projects are where I test how agent-assisted work holds up
-              under real conditions.
+              I design products, build the software behind them, and run them
+              in the real world.
             </p>
             <Link className="practice-enter" href="/work">
-              Explore my work <span aria-hidden="true">↓</span>
+              See selected work <span aria-hidden="true">↓</span>
             </Link>
             <nav className="practice-profile" aria-label="Profile context">
-              <Link href="/about">About Nino →</Link>
-              <Link href="/now">What I’m working on now →</Link>
+              <Link href="/about">About me →</Link>
             </nav>
           </div>
 
-          <div className="practice-portrait">
+          <div className="practice-portrait practice-portrait--backdrop">
             <img
               src="/work/nino-illustrated-v1.webp"
               alt="Illustrated portrait of Nino Chavez"
@@ -88,6 +110,8 @@ export default async function Home() {
               fetchPriority="high"
             />
           </div>
+
+          <ProfileBadge />
 
           <Link
             className="practice-proof practice-proof--rally"
@@ -112,12 +136,11 @@ export default async function Home() {
       <section className="evidence-bench page-shell" aria-labelledby="bench-title">
         <header className="evidence-register">
           <div>
-            <p className="eyebrow">Work in the world</p>
-            <h2 id="bench-title">Built, published, operated.</h2>
+            <p className="eyebrow">Selected work</p>
+            <h2 id="bench-title">Three places to start.</h2>
           </div>
           <p>
-            The work does not stay in one medium. It becomes a method, a
-            publication, and a working photography archive.
+            Start with the method, the writing, or the photography archive.
           </p>
         </header>
 
@@ -144,16 +167,13 @@ export default async function Home() {
       <section className="library-index" aria-labelledby="library-title">
         <header className="library-index__register page-shell">
           <div>
-            <p className="eyebrow">Work</p>
-            <h2 id="library-title">
-              {workItems.length} projects, tools, and collections across{" "}
-              {domains.length} domains.
-            </h2>
+            <p className="eyebrow">All work</p>
+            <h2 id="library-title">Explore the full body of work.</h2>
           </div>
           <div>
             <p>
-              Work in development is included too. Status shows what you can
-              open, install, read, or inspect today.
+              Browse {workItems.length} products, tools, methods, and
+              collections across {domains.length} domains.
             </p>
             <Link href="/work">Explore all work →</Link>
           </div>
@@ -187,13 +207,13 @@ export default async function Home() {
       <section className="ways-index" aria-labelledby="ways-title">
         <header className="ways-index__register page-shell">
           <div>
-            <p className="eyebrow">Ways of working</p>
-            <h2 id="ways-title">Ways of Working</h2>
+            <p className="eyebrow">How I work</p>
+            <h2 id="ways-title">How the work gets done.</h2>
           </div>
           <p>
-            {demoSessions.length} complete sessions and{" "}
-            {appliedTechniques.length} applied techniques show the hand-offs,
-            failures, corrections, and reusable moves behind the work.
+            {demoSessions.length} complete sessions show what happened, what
+            failed, what changed, and which of the {appliedTechniques.length}
+            techniques held up.
           </p>
         </header>
 
@@ -221,16 +241,16 @@ export default async function Home() {
             <Link href="/demos#sessions">
               <span>{demoSessions.length}</span>
               <div>
-                <strong>Operating sessions</strong>
-                <small>Complete agent-assisted work, kept in sequence.</small>
+                <strong>Full sessions</strong>
+                <small>See the work as it happened.</small>
               </div>
               <b aria-hidden="true">→</b>
             </Link>
             <Link href="/demos#applied">
               <span>{appliedTechniques.length}</span>
               <div>
-                <strong>Applied techniques</strong>
-                <small>Reusable moves extracted from the sessions.</small>
+                <strong>Techniques</strong>
+                <small>Reuse one tested part of the work.</small>
               </div>
               <b aria-hidden="true">→</b>
             </Link>
@@ -239,8 +259,8 @@ export default async function Home() {
               <div>
                 <strong>Learning paths</strong>
                 <small>
-                  Self-directed routes through the work, each ending in an
-                  artifact.
+                  Self-directed routes through the work, each ending in
+                  something you can use.
                 </small>
               </div>
               <b aria-hidden="true">→</b>
