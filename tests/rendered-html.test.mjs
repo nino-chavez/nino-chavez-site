@@ -114,8 +114,10 @@ test("preserves the canonical entity endpoints and generated root sitemap", asyn
     /^application\/xml/i,
   );
   const sitemapXml = await sitemap.text();
-  assert.equal((sitemapXml.match(/<url>/g) ?? []).length, 61);
+  assert.equal((sitemapXml.match(/<url>/g) ?? []).length, 59);
   assert.match(sitemapXml, /https:\/\/ninochavez\.co\/work\/film-room/);
+  assert.doesNotMatch(sitemapXml, /\/work\/whitepapers/);
+  assert.doesNotMatch(sitemapXml, /\/work\/presentations/);
   assert.match(sitemapXml, /https:\/\/ninochavez\.co\/demos\/browse-tool/);
   assert.match(sitemapXml, /https:\/\/ninochavez\.co\/learn\/enterprise/);
   assert.doesNotMatch(sitemapXml, /\/api\//);
@@ -155,7 +157,7 @@ test("renders the full-volume work and demos collections", async () => {
       []).length,
     6,
   );
-  assert.match(workHtml, /Nothing is hidden for failing to look finished/);
+  assert.match(workHtml, /Every record names what exists and what can be opened/);
   assert.match(workHtml, /records in view/);
   assert.doesNotMatch(workHtml, /Nothing selected/);
   assert.doesNotMatch(workHtml, /objects in view/);
@@ -164,7 +166,7 @@ test("renders the full-volume work and demos collections", async () => {
   assert.match(workHtml, /Commerce architecture/);
   assert.match(workHtml, /published/);
   assert.match(workHtml, /experience/);
-  assert.match(workHtml, /source/);
+  assert.match(workHtml, /maintained/);
   assert.match(workHtml, /28 Jul/);
   const filteredDocument = filteredWorkHtml.split('<script id="_R_">')[0];
   assert.match(filteredDocument, /2 active filters/);
@@ -900,8 +902,9 @@ test("grounds Work pages in public proof or an explicit private record", async (
     new RegExp('href="https://www\\.volleyrx\\.com/" target="_blank" rel="noopener noreferrer"'),
   );
 
-  assert.match(filmRoomHtml, /Private product baseline/);
-  assert.match(filmRoomHtml, /private record/);
+  assert.match(filmRoomHtml, /Private product, public summary/);
+  assert.match(filmRoomHtml, /public summary/);
+  assert.match(filmRoomHtml, /Review board/);
   assert.match(filmRoomHtml, /Ask about this work/);
   assert.match(specchainHtml, /Public README and source/);
   assert.match(specchainHtml, /Recovery and remediation/);
@@ -926,6 +929,22 @@ test("grounds Work pages in public proof or an explicit private record", async (
   assert.equal(
     new URL(legacyCommerce.headers.get("location")).pathname,
     "/work/commerce-architecture",
+  );
+
+  const whitepapers = await render("/work/whitepapers");
+  assert.ok([301, 307, 308].includes(whitepapers.status));
+  const whitepapersLocation = new URL(whitepapers.headers.get("location"));
+  assert.equal(
+    whitepapersLocation.pathname + whitepapersLocation.search,
+    "/blog?type=Whitepaper",
+  );
+
+  const presentations = await render("/work/presentations");
+  assert.ok([301, 307, 308].includes(presentations.status));
+  const presentationsLocation = new URL(presentations.headers.get("location"));
+  assert.equal(
+    presentationsLocation.pathname + presentationsLocation.search,
+    "/blog?type=Presentation",
   );
 
   const unsupported = await render("/work/cortex");

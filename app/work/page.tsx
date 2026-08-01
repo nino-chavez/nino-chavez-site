@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 const domainNotes: Record<Domain, string> = {
-  Practice: "Methods and tools for directing, inspecting, and retaining agent-assisted work.",
+  "Developer tools": "Tools and methods for planning, building, reviewing, and maintaining software.",
   "Local-first": "Private tools that keep speech, meetings, and working context close to the operator.",
   Volleyball: "Products and live operations tested on courts, at events, and with real players.",
   Commerce: "Architecture and delivery experience from complex commerce programs.",
@@ -76,10 +76,10 @@ export default function WorkPage() {
         </div>
 
         <div className="work-atlas__principle page-shell">
-          <span>Nothing is hidden for failing to look finished.</span>
+          <span>Every record names what exists and what can be opened.</span>
           <p>
-            State tells you what can be opened, installed, read, or inspected
-            now. It does not decide whether the work belongs.
+            Status describes the work today. Type describes what it is. Public
+            destinations open directly from the record.
           </p>
         </div>
       </header>
@@ -95,8 +95,8 @@ export default function WorkPage() {
             <h2 id="work-library-title">Find a record.</h2>
           </div>
           <p>
-            Search by name or purpose. Narrow by domain, current state, or the
-            form the work takes.
+            Search by name or purpose. Narrow by domain, current status, or
+            type.
           </p>
         </header>
         <Suspense fallback={<p>Loading the complete library…</p>}>

@@ -202,34 +202,36 @@ authority.
 
 Domain is the default grouping and the proof of breadth:
 
-1. **Practice**
+1. **Developer tools**
 2. **Local-first**
 3. **Volleyball**
 4. **Commerce**
 5. **Media & assets**
 6. **Writing**
 
-Form is metadata, never a top-level page. State is an honest label and filter, never
+Type is metadata, never a top-level page. Status is an honest label and filter, never
 an admission gate.
 
-### States
+### Statuses
 
-| State | Meaning | Destination behavior |
+| Status | Meaning | Destination behavior |
 |---|---|---|
-| `install` | Public and supported through a verified install command | copy or open the verified install path |
 | `live` | Hosted and usable | open the canonical product |
-| `source` | Public source with no supported install promise | open the repository |
-| `internal` | Working and used, intentionally private | open local detail context or have no action |
+| `maintained` | Actively maintained code, documentation, or toolkit | open the repository or public reference |
+| `published` | Published material kept available as part of a collection | open the collection |
 | `building` | Actively being built, not usable yet | open local detail context or have no action |
 | `paused` | Stopped and retained for reference | open local detail context or have no action |
 
-### Forms
+Access is separate from lifecycle status. A private project may be live or building
+while its Work page remains a public summary.
+
+### Types
 
 The initial controlled vocabulary is:
 
-`site` · `cli` · `app` · `service` · `repo` · `docs` · `collection`
+`site` · `cli` · `app` · `service` · `repo` · `docs` · `toolkit` · `experience` · `collection`
 
-Form describes the object. It does not determine importance, grouping, or whether the
+Type describes the object. It does not determine importance, grouping, or whether the
 object appears.
 
 ### Registry fields
@@ -266,9 +268,9 @@ Refinements are shareable query parameters:
 ```text
 /work?q=capture
 /work?domain=volleyball
-/work?state=internal
+/work?state=building
 /work?form=app
-/work?domain=practice&state=source
+/work?domain=developer%20tools&state=maintained
 ```
 
 Filters combine with AND across fields and OR within a repeated field. Removing all

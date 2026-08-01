@@ -7,6 +7,8 @@ import {
   forms,
   states,
   type WorkItem,
+  workHref,
+  workStateLabels,
 } from "../data";
 import { canonicalFacet, offeredFacets } from "../facets";
 
@@ -24,15 +26,6 @@ const shortMonths = [
   "Nov",
   "Dec",
 ] as const;
-
-const stateLabels: Record<WorkItem["state"], string> = {
-  live: "Live — running now",
-  source: "Source — code or reference is public",
-  install: "Install — available to install",
-  internal: "Internal — exists, not public",
-  building: "Building — in progress",
-  paused: "Paused — kept, not active",
-};
 
 function formatUpdatedAt(value: string) {
   const [, month, day] = value.split("-");
@@ -100,8 +93,8 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
   const activeCriteria = [
     query ? `query “${query}”` : "",
     domain ? `domain “${domain}”` : "",
-    state ? `state “${state}”` : "",
-    form ? `form “${form}”` : "",
+    state ? `status “${workStateLabels[state]}”` : "",
+    form ? `type “${form}”` : "",
   ].filter(Boolean);
 
   return (
@@ -139,29 +132,29 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
         </div>
 
         <div className="control" data-active={Boolean(state)}>
-          <label htmlFor="work-state">State</label>
+          <label htmlFor="work-state">Status</label>
           <select
             id="work-state"
             value={state}
             onChange={(event) => setFilter("state", event.target.value)}
           >
-            <option value="">All states</option>
+            <option value="">All statuses</option>
             {stateOptions.map((item) => (
               <option key={item} value={item}>
-                {stateLabels[item]}
+                {workStateLabels[item]}
               </option>
             ))}
           </select>
         </div>
 
         <div className="control" data-active={Boolean(form)}>
-          <label htmlFor="work-form">Form</label>
+          <label htmlFor="work-form">Type</label>
           <select
             id="work-form"
             value={form}
             onChange={(event) => setFilter("form", event.target.value)}
           >
-            <option value="">All forms</option>
+            <option value="">All types</option>
             {formOptions.map((item) => (
               <option key={item} value={item}>
                 {item}
@@ -221,7 +214,7 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
                 {group.items.map((item) => (
                   <a
                     className="work-record"
-                    href={`/work/${item.slug}`}
+                    href={workHref(item)}
                     key={item.slug}
                   >
                     <span className="record-number" aria-hidden="true">
@@ -242,7 +235,8 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
                       <p>{item.claim}</p>
                     </div>
                     <span className="record-open">
-                      Open <b aria-hidden="true">→</b>
+                      {item.detailPage === false ? "Browse" : "Open"}{" "}
+                      <b aria-hidden="true">→</b>
                     </span>
                   </a>
                 ))}

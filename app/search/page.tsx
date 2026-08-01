@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { learnTracks, workItems } from "../data";
+import { learnTracks, workHref, workItems } from "../data";
 import { getDemoSnapshot } from "../demos";
 import { getWritingSnapshot } from "../writing";
 
@@ -179,11 +179,11 @@ export default async function SearchPage({
       {!query ? (
         <div className="empty-state">
           <p className="eyebrow">Search everything</p>
-          <h2>Try a product, domain, state, or idea.</h2>
+          <h2>Try a product, domain, status, or idea.</h2>
           <p>
             Examples: <Link href="/search?q=agent">agent</Link>,{" "}
             <Link href="/search?q=volleyball">volleyball</Link>, or{" "}
-            <Link href="/search?q=internal">internal</Link>.
+            <Link href="/search?q=maintained">maintained</Link>.
           </p>
         </div>
       ) : total ? (
@@ -200,7 +200,7 @@ export default async function SearchPage({
               </div>
               <div className="result-list">
                 {work.map((item) => (
-                  <Link key={item.slug} href={`/work/${item.slug}`}>
+                  <Link key={item.slug} href={workHref(item)}>
                     <span>
                       {item.domain} · {item.state}
                     </span>

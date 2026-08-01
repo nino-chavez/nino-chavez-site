@@ -1,5 +1,5 @@
 export const domains = [
-  "Practice",
+  "Developer tools",
   "Local-first",
   "Volleyball",
   "Commerce",
@@ -8,11 +8,9 @@ export const domains = [
 ] as const;
 
 export const states = [
-  "install",
   "live",
+  "maintained",
   "published",
-  "source",
-  "internal",
   "building",
   "paused",
 ] as const;
@@ -24,6 +22,7 @@ export const forms = [
   "service",
   "repo",
   "docs",
+  "toolkit",
   "experience",
   "collection",
 ] as const;
@@ -31,6 +30,14 @@ export const forms = [
 export type Domain = (typeof domains)[number];
 export type WorkState = (typeof states)[number];
 export type WorkForm = (typeof forms)[number];
+
+export const workStateLabels: Record<WorkState, string> = {
+  live: "Live",
+  maintained: "Maintained",
+  published: "Published",
+  building: "In development",
+  paused: "Paused",
+};
 
 export type WorkItem = {
   slug: string;
@@ -44,6 +51,7 @@ export type WorkItem = {
     label: string;
     href: string;
   };
+  detailPage?: boolean;
   related?: string[];
 };
 
@@ -53,8 +61,8 @@ export const workItems: WorkItem[] = [
     name: "Blueprint",
     claim:
       "A repository-native method for human-authorized, agent-executed product work.",
-    domain: "Practice",
-    state: "source",
+    domain: "Developer tools",
+    state: "maintained",
     form: "docs",
     updatedAt: "2026-07-28",
     destination: {
@@ -68,8 +76,8 @@ export const workItems: WorkItem[] = [
     name: "Browse Tool",
     claim:
       "A command-line browser workflow that lets agents inspect real product surfaces.",
-    domain: "Practice",
-    state: "source",
+    domain: "Developer tools",
+    state: "maintained",
     form: "cli",
     updatedAt: "2026-07-25",
     destination: {
@@ -82,9 +90,9 @@ export const workItems: WorkItem[] = [
     slug: "specchain",
     name: "Specchain",
     claim:
-      "A staged specification workflow retained as source while its public install path is repaired.",
-    domain: "Practice",
-    state: "source",
+      "A staged workflow that turns a feature request into specifications, implementation, and verification.",
+    domain: "Developer tools",
+    state: "maintained",
     form: "cli",
     updatedAt: "2026-07-22",
     destination: {
@@ -97,8 +105,8 @@ export const workItems: WorkItem[] = [
     name: "Claude Recall",
     claim:
       "A local command-line index for recovering decisions and context from prior agent sessions.",
-    domain: "Practice",
-    state: "source",
+    domain: "Developer tools",
+    state: "maintained",
     form: "cli",
     updatedAt: "2026-07-19",
     destination: {
@@ -111,8 +119,8 @@ export const workItems: WorkItem[] = [
     name: "Agentic Ways of Working",
     claim:
       "A durable collection of operating patterns for delegating, reviewing, and shipping with agents.",
-    domain: "Practice",
-    state: "source",
+    domain: "Developer tools",
+    state: "maintained",
     form: "docs",
     updatedAt: "2026-07-18",
     destination: {
@@ -125,9 +133,9 @@ export const workItems: WorkItem[] = [
     slug: "fleet-observability",
     name: "Fleet Observability",
     claim:
-      "A working internal view of repository health, deployments, and maintenance risk.",
-    domain: "Practice",
-    state: "internal",
+      "A private daily report that monitors repositories, deployments, costs, domains, and key user journeys.",
+    domain: "Developer tools",
+    state: "live",
     form: "service",
     updatedAt: "2026-07-12",
   },
@@ -135,9 +143,9 @@ export const workItems: WorkItem[] = [
     slug: "repo-health-check",
     name: "Repo Health Check",
     claim:
-      "An internal audit that found stale links and abandoned deployment records across active repositories.",
-    domain: "Practice",
-    state: "source",
+      "A public command-line audit for GitHub settings, stale links, failed deployments, and neglected pull requests.",
+    domain: "Developer tools",
+    state: "maintained",
     form: "cli",
     updatedAt: "2026-07-11",
     destination: {
@@ -150,9 +158,9 @@ export const workItems: WorkItem[] = [
     name: "GHA Minutes",
     claim:
       "A portable diagnostic for finding GitHub Actions minute burn and applying safe concurrency cancellation.",
-    domain: "Practice",
-    state: "source",
-    form: "service",
+    domain: "Developer tools",
+    state: "maintained",
+    form: "cli",
     updatedAt: "2026-07-10",
     destination: {
       label: "Read the source",
@@ -163,9 +171,9 @@ export const workItems: WorkItem[] = [
     slug: "design-qa",
     name: "Design QA",
     claim:
-      "A private visual-quality gate that turns recurring design corrections into checks.",
-    domain: "Practice",
-    state: "internal",
+      "A local quality check that keeps visual exceptions tied to explicit, reviewable design decisions.",
+    domain: "Developer tools",
+    state: "building",
     form: "cli",
     updatedAt: "2026-07-09",
   },
@@ -174,7 +182,7 @@ export const workItems: WorkItem[] = [
     name: "Ways of Working",
     claim:
       "Published sessions and applied techniques drawn from real work with AI agents.",
-    domain: "Practice",
+    domain: "Developer tools",
     state: "live",
     form: "collection",
     updatedAt: "2026-07-30",
@@ -190,7 +198,7 @@ export const workItems: WorkItem[] = [
     claim:
       "On-device speech capture and transcription designed to keep recordings local.",
     domain: "Local-first",
-    state: "source",
+    state: "maintained",
     form: "app",
     updatedAt: "2026-07-27",
     destination: {
@@ -202,7 +210,7 @@ export const workItems: WorkItem[] = [
     slug: "local-meeting-notes",
     name: "Local Meeting Notes",
     claim:
-      "A local meeting-capture workflow that turns on-device audio into reviewable notes.",
+      "Research toward a Mac meeting notetaker that keeps audio local and ties every note back to the transcript.",
     domain: "Local-first",
     state: "building",
     form: "app",
@@ -245,7 +253,7 @@ export const workItems: WorkItem[] = [
     slug: "film-room",
     name: "Film Room",
     claim:
-      "A desktop review environment for comparing, inspecting, and deciding on generated media.",
+      "A local desktop app for reviewing sports and event footage, recording decisions, and preparing editor-ready outputs.",
     domain: "Volleyball",
     state: "building",
     form: "app",
@@ -295,8 +303,8 @@ export const workItems: WorkItem[] = [
     claim:
       "A system for turning approved brand direction into reusable, testable design tokens and assets.",
     domain: "Media & assets",
-    state: "source",
-    form: "cli",
+    state: "maintained",
+    form: "toolkit",
     updatedAt: "2026-07-17",
     destination: {
       label: "Read the source",
@@ -309,8 +317,8 @@ export const workItems: WorkItem[] = [
     claim:
       "A site-building playbook that matches client needs to proven archetypes, modules, and delivery steps.",
     domain: "Media & assets",
-    state: "source",
-    form: "cli",
+    state: "maintained",
+    form: "toolkit",
     updatedAt: "2026-07-06",
     destination: {
       label: "Read the source",
@@ -323,8 +331,8 @@ export const workItems: WorkItem[] = [
     claim:
       "A public toolkit for model-generated imagery and deterministic HTML-to-image rendering.",
     domain: "Media & assets",
-    state: "source",
-    form: "service",
+    state: "maintained",
+    form: "toolkit",
     updatedAt: "2026-07-04",
     destination: {
       label: "Read the source",
@@ -337,8 +345,8 @@ export const workItems: WorkItem[] = [
     claim:
       "A public rendering toolkit for consistent media export across sites, walkthroughs, and campaigns.",
     domain: "Media & assets",
-    state: "source",
-    form: "cli",
+    state: "maintained",
+    form: "toolkit",
     updatedAt: "2026-07-03",
     destination: {
       label: "Read the source",
@@ -380,13 +388,14 @@ export const workItems: WorkItem[] = [
     claim:
       "Longer-form arguments and field guides published alongside the essay archive.",
     domain: "Writing",
-    state: "live",
+    state: "published",
     form: "collection",
     updatedAt: "2026-06-28",
     destination: {
       label: "Browse whitepapers",
       href: "/blog?type=Whitepaper",
     },
+    detailPage: false,
   },
   {
     slug: "presentations",
@@ -394,15 +403,22 @@ export const workItems: WorkItem[] = [
     claim:
       "Published decks that turn working decisions into material other practitioners can use.",
     domain: "Writing",
-    state: "live",
+    state: "published",
     form: "collection",
     updatedAt: "2026-06-26",
     destination: {
       label: "Browse presentations",
       href: "/blog?type=Presentation",
     },
+    detailPage: false,
   },
 ];
+
+export function workHref(item: WorkItem) {
+  return item.detailPage === false && item.destination
+    ? item.destination.href
+    : `/work/${item.slug}`;
+}
 
 export type LearnLevel = {
   title: string;

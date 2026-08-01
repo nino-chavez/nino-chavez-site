@@ -17,7 +17,7 @@ const staticPages = [
 export async function GET() {
   const pages = [
     ...staticPages,
-    ...workItems.map((item) => [
+    ...workItems.filter((item) => item.detailPage !== false).map((item) => [
       `/work/${item.slug}`,
       "monthly",
       "0.7",

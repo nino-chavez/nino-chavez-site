@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { Breadcrumbs } from "../../components/Breadcrumbs";
-import { workItems } from "../../data";
+import { workHref, workItems, workStateLabels } from "../../data";
 
 const recordVisuals: Partial<
   Record<
@@ -159,21 +159,22 @@ const recordProfiles: Record<string, RecordProfile> = {
     ]
   },
   "fleet-observability": {
-    "source": "Private repository README",
+    "source": "Private service, public summary",
     "private": true,
-    "introduction": "Fleet Observability pulls health, usage, spend, and settings drift into one operator view across the services that run a small software portfolio.",
+    "access": "public summary",
+    "introduction": "Fleet Observability gathers GitHub, Cloudflare, Vercel, Supabase, email delivery, domains, and live journey checks into a private daily report.",
     "details": [
       {
-        "title": "One daily view",
-        "description": "GitHub, Cloudflare, Vercel, Supabase, email delivery, domains, and live journeys report into one scorecard."
+        "title": "Why it was built",
+        "description": "A manual review found 376 orphaned Vercel deployment records and nine stale public links. The report makes that class of drift visible before it becomes another cleanup."
       },
       {
-        "title": "Built from an incident",
-        "description": "The README traces the work to orphaned deployments and stale public links that were otherwise found by accident."
+        "title": "What runs each day",
+        "description": "A scheduled Worker and GitHub sweep collect service health, cost, configuration, domain, and journey signals into one operator view."
       },
       {
-        "title": "Private by design",
-        "description": "The repository and operator report are not published as a general public product; the page documents what exists without exposing access."
+        "title": "What remains private",
+        "description": "The report contains infrastructure and account-level details, so it is not a public dashboard. This page documents the system without exposing the report."
       }
     ]
   },
@@ -182,8 +183,8 @@ const recordProfiles: Record<string, RecordProfile> = {
     "introduction": "Repo Health Check audits GitHub settings that source-code search cannot see, including stale public links, failed deployments, and old pull requests.",
     "details": [
       {
-        "title": "Settings, not source",
-        "description": "It checks repository metadata and service state that do not live in the checked-out files."
+        "title": "Why source search was not enough",
+        "description": "The first audit began after 347 dead Vercel deployment records and a stale repository homepage were found outside the codebase; the same link rot appeared on seven more repositories."
       },
       {
         "title": "Six concrete checks",
@@ -214,26 +215,28 @@ const recordProfiles: Record<string, RecordProfile> = {
     ]
   },
   "design-qa": {
-    "source": "Private local README",
+    "source": "Local tool, public summary",
     "private": true,
-    "introduction": "Design QA turns deliberate visual exceptions into named, reviewable decisions instead of permanent suppressions nobody can explain later.",
+    "access": "public summary",
+    "introduction": "Design QA checks whether every suppressed visual finding still points to an explicit, authorized decision in that site’s design-direction ledger.",
     "details": [
       {
-        "title": "Direction records",
-        "description": "Each participating site keeps an art-direction ledger beside its code."
+        "title": "Five sites in the first pass",
+        "description": "Each participating site keeps a DIRECTION.md ledger beside its code, and each suppression must name the approved design device that permits it."
       },
       {
-        "title": "Resolvable exceptions",
-        "description": "Every suppression must point to an authorized design device, and the resolver fails when that pointer drifts."
+        "title": "Seven failure cases",
+        "description": "The check fails for missing reasons or pointers, missing devices, rejected verdicts, invalid ledgers, ignore rules, and missing repositories or records."
       },
       {
-        "title": "Still bounded",
-        "description": "The README states that CI wiring and broader route coverage remain unfinished."
+        "title": "Current limit",
+        "description": "The first pass covers five sites and is not wired into CI. It proves the check can work, not yet that every visual exception is governed."
       }
     ]
   },
   "ways-of-working": {
     "source": "Published demos",
+    "heading": "What the collection shows",
     "introduction": "Ways of Working publishes complete sessions and applied techniques from real agent-assisted work, including the corrections and limits that shaped the result.",
     "details": [
       {
@@ -270,15 +273,15 @@ const recordProfiles: Record<string, RecordProfile> = {
   },
   "local-meeting-notes": {
     "source": "Public research README",
-    "introduction": "Local Meeting Notes is a measured product research effort for private meeting capture, evidence-linked notes, and explicit failure states.",
+    "introduction": "Local Meeting Notes is research toward a Mac notetaker that records two audio streams locally and requires every generated note to point back to retained transcript evidence.",
     "details": [
       {
         "title": "Working capture",
         "description": "The repository has a two-leg local capture path that has been exercised over a real 75-minute meeting."
       },
       {
-        "title": "Honest readiness",
-        "description": "The README says the product encounter, voice gate, and note acceptance gates are still open; it does not call the research an app or beta."
+        "title": "What is not proven",
+        "description": "The voiceprint gate has not been tried in a real meeting, and no generated note has passed human review. This is research, not an app or beta."
       },
       {
         "title": "Evidence-linked notes",
@@ -324,21 +327,22 @@ const recordProfiles: Record<string, RecordProfile> = {
     ]
   },
   "film-room": {
-    "source": "Private product baseline",
+    "source": "Private product, public summary",
     "private": true,
+    "access": "public summary",
     "introduction": "Film Room is a local-first assistant editor for a solo sports or event media operator. It orders attention and reduces repetitive work without making editorial decisions.",
     "details": [
       {
-        "title": "Review stays human",
-        "description": "The operator marks every clip, owns the rationale, and decides when precision inspection or correction is needed."
+        "title": "Review board",
+        "description": "The operator marks each clip Keep, Highlight, Reject, or Undecided and records the rationale. The app orders attention but does not make the editorial decision."
       },
       {
-        "title": "Sources stay local",
-        "description": "The product works from owned footage and keeps sources, decisions, adjustments, and outputs under the operator’s control."
+        "title": "Inspect",
+        "description": "A larger, frame-accurate view supports trim and correction work while keeping the source footage and review record on the operator’s machine."
       },
       {
-        "title": "Private work in progress",
-        "description": "Desktop Review is approved for production use, while other workflows and native release gates remain explicitly open."
+        "title": "Current boundary",
+        "description": "The Desktop Review slice has an approved production design. Other workflows, native packaging, distribution, and release gates remain open."
       }
     ]
   },
@@ -405,7 +409,7 @@ const recordProfiles: Record<string, RecordProfile> = {
   },
   "forge-brand": {
     "source": "Public README and source",
-    "introduction": "Forge Brand turns one approved brand kit into reusable tokens, assets, components, and documentation.",
+    "introduction": "Forge Brand turns one approved brand-kit file into CSS and Tailwind tokens, Figma-ready values, media templates, site scaffolds, and production asset exports.",
     "details": [
       {
         "title": "One source",
@@ -416,8 +420,8 @@ const recordProfiles: Record<string, RecordProfile> = {
         "description": "Generators propose options, automated checks validate constraints, and a human approves the direction."
       },
       {
-        "title": "Public toolkit",
-        "description": "The repository documents the CLI, presets, media templates, and available exports."
+        "title": "Outputs teams can use",
+        "description": "Exports include social cards, stories, flyers, favicons, business cards, and bridges for Image Gen and Signal Forge."
       }
     ]
   },
@@ -448,12 +452,12 @@ const recordProfiles: Record<string, RecordProfile> = {
         "description": "AI generation handles image synthesis; Playwright and Sharp handle designed, repeatable layouts."
       },
       {
-        "title": "Style systems",
-        "description": "Templates and style inputs keep a set of generated assets visually related."
+        "title": "Repeatable production",
+        "description": "Named styles, reusable templates, batch commands, and optimization keep related exports consistent and ready for delivery."
       },
       {
-        "title": "Public source",
-        "description": "The repository documents its generators, template engine, and optimization path."
+        "title": "Inspect the commands",
+        "description": "The public README documents generation, rendering, templates, batch runs, and output optimization with working command examples."
       }
     ]
   },
@@ -496,7 +500,7 @@ const recordProfiles: Record<string, RecordProfile> = {
   },
   "signal-dispatch": {
     "source": "Live publication",
-    "introduction": "Signal Dispatch is the published side of the practice: long-form arguments, field notes, tutorials, and records of work still being figured out.",
+    "introduction": "Signal Dispatch publishes long-form arguments, field notes, tutorials, and working records about software architecture, commerce, leadership, and agent-assisted product work.",
     "links": [{ "label": "Read the public repository", "href": "https://github.com/nino-chavez/blog" }],
     "details": [
       {
@@ -510,42 +514,6 @@ const recordProfiles: Record<string, RecordProfile> = {
       {
         "title": "Complete publication",
         "description": "The writing library can be searched by form, subject, or year."
-      }
-    ]
-  },
-  "whitepapers": {
-    "source": "Live publication index",
-    "introduction": "Whitepapers collect the publication’s formal long-form analysis and reference work in one filtered view.",
-    "details": [
-      {
-        "title": "Long-form argument",
-        "description": "Each piece has room to develop evidence, implications, and a durable reference."
-      },
-      {
-        "title": "No separate archive",
-        "description": "Whitepapers remain part of Signal Dispatch and use the same searchable publication index."
-      },
-      {
-        "title": "Open the filtered view",
-        "description": "The destination lands on the current Whitepaper records rather than the publication front page."
-      }
-    ]
-  },
-  "presentations": {
-    "source": "Live publication index",
-    "introduction": "Presentations collect published decks, speaker notes, and supporting material in one filtered view.",
-    "details": [
-      {
-        "title": "Decision-ready format",
-        "description": "The decks turn working decisions and arguments into material that can be presented or reused."
-      },
-      {
-        "title": "Published with context",
-        "description": "Presentations remain connected to the broader Signal Dispatch record."
-      },
-      {
-        "title": "Open the filtered view",
-        "description": "The destination lands on Presentation records rather than the publication front page."
       }
     ]
   }
@@ -570,8 +538,12 @@ export async function generateMetadata({
 
 export function generateStaticParams() {
   return [
-    ...workItems.map((item) => ({ slug: item.slug })),
+    ...workItems
+      .filter((item) => item.detailPage !== false)
+      .map((item) => ({ slug: item.slug })),
     { slug: "commerce-practice" },
+    { slug: "whitepapers" },
+    { slug: "presentations" },
   ];
 }
 
@@ -584,6 +556,14 @@ export default async function WorkDetailPage({
 
   if (slug === "commerce-practice") {
     redirect("/work/commerce-architecture");
+  }
+
+  if (slug === "whitepapers") {
+    redirect("/blog?type=Whitepaper");
+  }
+
+  if (slug === "presentations") {
+    redirect("/blog?type=Presentation");
   }
 
   const item = workItems.find((entry) => entry.slug === slug);
@@ -638,7 +618,7 @@ export default async function WorkDetailPage({
         <dl className="fact-list">
           <div>
             <dt>Status</dt>
-            <dd>{item.state}</dd>
+            <dd>{workStateLabels[item.state]}</dd>
           </div>
           <div>
             <dt>Type</dt>
@@ -674,7 +654,7 @@ export default async function WorkDetailPage({
           <div>
             <p className="eyebrow">{profile.source}</p>
             <h2 id="work-proof-title">
-              {profile.heading ?? "What is here"}
+              {profile.heading ?? "What this work does"}
             </h2>
           </div>
           <p>{profile.introduction}</p>
@@ -727,7 +707,7 @@ export default async function WorkDetailPage({
           </div>
           <div className="related-list">
             {related.map((entry) => (
-              <Link key={entry.slug} href={`/work/${entry.slug}`}>
+              <Link key={entry.slug} href={workHref(entry)}>
                 <span>{entry.domain}</span>
                 <strong>{entry.name}</strong>
                 <small>{entry.claim}</small>

@@ -42,9 +42,9 @@ export default async function BlogPage() {
           </div>
           <div>
             <p className="lede">
-              Signal Dispatch is the published side of the practice: essays
-              plus whitepapers, presentations, tutorials, counterpoints, and
-              fiction.
+              Signal Dispatch publishes essays, whitepapers, presentations,
+              tutorials, counterpoints, and fiction about the work behind
+              software products and operations.
             </p>
             <p>
               Nothing is selected away. Search all{" "}

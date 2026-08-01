@@ -86,9 +86,9 @@ test("F1 — the IA contract's own documented filter URLs return records", async
   for (const url of [
     "/work?q=capture",
     "/work?domain=volleyball",
-    "/work?state=internal",
+    "/work?state=building",
     "/work?form=app",
-    "/work?domain=practice&state=source",
+    "/work?domain=developer%20tools&state=maintained",
   ]) {
     const html = await htmlFor(url);
     assert.ok(
