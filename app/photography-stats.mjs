@@ -12,7 +12,7 @@ export async function getPhotographyArchiveStats(fetcher = fetch) {
   try {
     const response = await fetcher(PHOTOGRAPHY_STATS_ENDPOINT, {
       headers: { accept: "application/json" },
-      signal: AbortSignal.timeout(3000),
+      signal: AbortSignal.timeout(5000),
     });
 
     if (!response.ok) return null;

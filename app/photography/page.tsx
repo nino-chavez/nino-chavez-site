@@ -2,6 +2,7 @@
  * Next Image optimization; these local WebP assets are already sized for delivery. */
 
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getPhotographyArchiveStats } from "../photography-stats.mjs";
 
 const canonicalRoot = "https://ninochavez.co/photography";
@@ -124,6 +125,29 @@ function withSource(href: string, source: string) {
   return `${url.pathname}${url.search}`;
 }
 
+async function PhotographyScale() {
+  const stats = await getPhotographyArchiveStats();
+
+  if (!stats) return null;
+
+  return (
+    <dl className="photography-scale page-shell" aria-label="Archive scale">
+      <div>
+        <dt>Photos</dt>
+        <dd>{stats.totalPhotos.toLocaleString("en-US")}</dd>
+      </div>
+      <div>
+        <dt>Videos</dt>
+        <dd>{stats.totalVideos.toLocaleString("en-US")}</dd>
+      </div>
+      <div>
+        <dt>Event albums</dt>
+        <dd>{stats.totalAlbums.toLocaleString("en-US")}</dd>
+      </div>
+    </dl>
+  );
+}
+
 export default async function PhotographyPage({
   searchParams,
 }: {
@@ -132,7 +156,6 @@ export default async function PhotographyPage({
   const { src } = await searchParams;
   const source =
     typeof src === "string" && sourcePattern.test(src) ? src : "profile";
-  const stats = await getPhotographyArchiveStats();
 
   return (
     <div className="photography-page">
@@ -222,22 +245,9 @@ export default async function PhotographyPage({
       </header>
 
       <div className="photography-archive">
-        {stats ? (
-          <dl className="photography-scale page-shell" aria-label="Archive scale">
-            <div>
-              <dt>Photos</dt>
-              <dd>{stats.totalPhotos.toLocaleString("en-US")}</dd>
-            </div>
-            <div>
-              <dt>Videos</dt>
-              <dd>{stats.totalVideos.toLocaleString("en-US")}</dd>
-            </div>
-            <div>
-              <dt>Event albums</dt>
-              <dd>{stats.totalAlbums.toLocaleString("en-US")}</dd>
-            </div>
-          </dl>
-        ) : null}
+        <Suspense fallback={null}>
+          <PhotographyScale />
+        </Suspense>
 
         <section
           className="photography-selection"
