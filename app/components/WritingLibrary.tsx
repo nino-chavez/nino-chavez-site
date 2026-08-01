@@ -59,22 +59,11 @@ export function WritingLibrary({
     searchParams.get("type") ?? "",
     writingKinds.map((item) => item.value),
   );
-  const category = canonicalFacet(searchParams.get("subject") ?? "", writingCategories);
+  const category = canonicalFacet(
+    searchParams.get("subject") ?? "",
+    writingCategories,
+  );
   const year = canonicalFacet(searchParams.get("year") ?? "", writingYears);
-  const recordCodes = useMemo(() => {
-    const codes = new Map<string, string>();
-    for (const writingKind of writingKinds) {
-      writingItems
-        .filter((item) => item.kind === writingKind.value)
-        .forEach((item, index) => {
-          codes.set(
-            item.href,
-            `${writingKind.code}${String(index + 1).padStart(3, "0")}`,
-          );
-        });
-    }
-    return codes;
-  }, [writingItems]);
 
   function setFilter(name: string, value: string) {
     const next = new URLSearchParams(searchParams.toString());
@@ -220,14 +209,6 @@ export function WritingLibrary({
               aria-labelledby={`writing-${group.value.toLowerCase()}`}
             >
               <div className="group-heading">
-                <span>
-                  {String(
-                    writingKinds.findIndex(
-                      (item) => item.value === group.value,
-                    ) + 1,
-                  ).padStart(2, "0")}{" "}
-                  / {String(writingKinds.length).padStart(2, "0")}
-                </span>
                 <h2 id={`writing-${group.value.toLowerCase()}`}>
                   {group.value}
                   {group.value === "Fiction" ? "" : "s"}
@@ -249,9 +230,6 @@ export function WritingLibrary({
                     id={item.slug}
                     key={`${item.kind}-${item.slug}`}
                   >
-                    <span className="record-number" aria-hidden="true">
-                      {recordCodes.get(item.href)}
-                    </span>
                     <div className="record-meta">
                       <span>{item.category}</span>
                       <time dateTime={item.publishedAt}>
@@ -282,6 +260,11 @@ export function WritingLibrary({
             Filters applied: {activeCriteria.join(", ")}. Remove one, or clear
             all filters to see all {writingItems.length} pieces.
           </p>
+          {query ? (
+            <a href={`/search?q=${encodeURIComponent(query)}`}>
+              Search the whole site for “{query}”
+            </a>
+          ) : null}
           <button
             type="button"
             onClick={() => router.replace(pathname, { scroll: false })}

@@ -188,13 +188,6 @@ export function DemoLibrary({
               aria-labelledby={`${group.id}-title`}
             >
               <div className="group-heading">
-                <span>
-                  {String(
-                    demoKinds.findIndex((item) => item.value === group.value) +
-                      1,
-                  ).padStart(2, "0")}{" "}
-                  / {String(demoKinds.length).padStart(2, "0")}
-                </span>
                 <h2 id={`${group.id}-title`}>{group.label}</h2>
                 <p>
                   {group.items.length}{" "}
@@ -276,6 +269,11 @@ export function DemoLibrary({
             Filters applied: {activeCriteria.join(", ")}. Remove one, or clear
             all filters to see all {records.length} sessions and techniques.
           </p>
+          {query ? (
+            <a href={`/search?q=${encodeURIComponent(query)}`}>
+              Search the whole site for “{query}”
+            </a>
+          ) : null}
           <button
             type="button"
             onClick={() => router.replace(pathname, { scroll: false })}

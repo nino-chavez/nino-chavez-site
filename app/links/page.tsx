@@ -10,12 +10,10 @@ const SOURCE_PATTERN = /^[a-z0-9_-]{1,32}$/;
 
 const destinationGroups = [
   {
-    code: "D01",
     title: "Products and ventures",
     description: "Live places where the work can be used or followed.",
     destinations: [
       {
-        code: "L01",
         name: "Rally HQ",
         description:
           "Run or follow a tournament with registration, schedules, brackets, and live scoring.",
@@ -24,7 +22,6 @@ const destinationGroups = [
         external: true,
       },
       {
-        code: "L02",
         name: "Let’s Pepper",
         description:
           "A community-powered grass volleyball tournament series in Chicagoland.",
@@ -33,7 +30,6 @@ const destinationGroups = [
         external: true,
       },
       {
-        code: "L03",
         name: "Flickday Media",
         description:
           "Player-first tournament photography and grassroots sports media.",
@@ -42,7 +38,6 @@ const destinationGroups = [
         external: true,
       },
       {
-        code: "L04",
         name: "Signal X Studio",
         description:
           "The company behind the sports, media, and software ventures.",
@@ -53,12 +48,10 @@ const destinationGroups = [
     ],
   },
   {
-    code: "D02",
     title: "Source and publishing",
     description: "The public code, ideas, and professional record.",
     destinations: [
       {
-        code: "L05",
         name: "GitHub",
         description:
           "Public source, installable tools, and active repositories.",
@@ -67,7 +60,6 @@ const destinationGroups = [
         external: true,
       },
       {
-        code: "L06",
         name: "Signal Dispatch",
         description:
           "Essays, whitepapers, presentations, tutorials, counterpoints, and fiction.",
@@ -76,7 +68,6 @@ const destinationGroups = [
         external: false,
       },
       {
-        code: "L07",
         name: "LinkedIn",
         description: "Professional history and current role context.",
         href: "https://www.linkedin.com/in/nino-chavez/",
@@ -86,12 +77,10 @@ const destinationGroups = [
     ],
   },
   {
-    code: "D03",
     title: "Images and sound",
     description: "The photography and music practices in their native places.",
     destinations: [
       {
-        code: "L08",
         name: "Photography",
         description:
           "Volleyball, action-sports, and event galleries on this site.",
@@ -101,7 +90,6 @@ const destinationGroups = [
         tracksSource: true,
       },
       {
-        code: "L09",
         name: "Instagram",
         description: "Current photography and event images.",
         href: "https://www.instagram.com/nino.chavez.photo/",
@@ -109,7 +97,6 @@ const destinationGroups = [
         external: true,
       },
       {
-        code: "L10",
         name: "SoundCloud",
         description: "DJ sets and mixes.",
         href: "https://soundcloud.com/ni-no-cha-vez",
@@ -119,12 +106,10 @@ const destinationGroups = [
     ],
   },
   {
-    code: "D04",
     title: "Direct",
     description: "The shortest route to a conversation.",
     destinations: [
       {
-        code: "L11",
         name: "Email",
         description: "Contact me directly at nino@ninochavez.co.",
         href: "mailto:nino@ninochavez.co",
@@ -175,9 +160,9 @@ export default async function LinksPage({
           <div className="links-opening__statement">
             <p className="links-opening__lede">Go to the thing itself.</p>
             <p>
-              The <Link href="/work">Work library</Link> holds the complete
-              record, including private and paused work. This page keeps the
-              destinations that are useful now.
+              <Link href="/work">Work</Link> shows products, tools, methods, and
+              projects in development. This page is the shortest route to
+              destinations you can use now.
             </p>
           </div>
         </div>
@@ -186,13 +171,16 @@ export default async function LinksPage({
       <div className="links-body page-shell">
         {destinationGroups.map((group) => (
           <section
-            key={group.code}
+            key={group.title}
             className="links-group"
-            aria-labelledby={`links-${group.code.toLowerCase()}`}
+            aria-labelledby={`links-${group.title.toLowerCase().replaceAll(" ", "-")}`}
           >
             <header>
-              <span>{group.code}</span>
-              <h2 id={`links-${group.code.toLowerCase()}`}>{group.title}</h2>
+              <h2
+                id={`links-${group.title.toLowerCase().replaceAll(" ", "-")}`}
+              >
+                {group.title}
+              </h2>
               <p>{group.description}</p>
             </header>
 
@@ -206,7 +194,6 @@ export default async function LinksPage({
                   destination.external && href.startsWith("http");
                 const contents = (
                   <>
-                    <span>{destination.code}</span>
                     <strong>{destination.name}</strong>
                     <small>{destination.description}</small>
                     <b>
@@ -224,7 +211,7 @@ export default async function LinksPage({
                 );
 
                 return (
-                  <li key={destination.code}>
+                  <li key={destination.name}>
                     {destination.external ? (
                       <a
                         href={href}

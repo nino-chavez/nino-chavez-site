@@ -47,9 +47,8 @@ export default async function BlogPage() {
               software products and operations.
             </p>
             <p>
-              Nothing is selected away. Search all{" "}
-              {writingSnapshot.publicPieceCount} pieces or narrow the record by
-              form, subject, or year.
+              Search all {writingSnapshot.publicPieceCount} published pieces,
+              or narrow the collection by form, subject, or year.
             </p>
           </div>
         </div>
@@ -69,7 +68,6 @@ export default async function BlogPage() {
           aria-labelledby="writing-series"
         >
           <header>
-            <span>S01–S{String(writingSeries.length).padStart(2, "0")}</span>
             <div>
               <h2 id="writing-series">Series</h2>
               <p>
@@ -80,16 +78,13 @@ export default async function BlogPage() {
             </div>
           </header>
           <ol>
-            {writingSeries.map((series, index) => (
+            {writingSeries.map((series) => (
               <li key={series.slug}>
                 <a
                   href={series.href}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span className="series-number">
-                    S{String(index + 1).padStart(2, "0")}
-                  </span>
                   <span className="series-name">
                     <strong>{series.title}</strong>
                     <small>{series.description}</small>

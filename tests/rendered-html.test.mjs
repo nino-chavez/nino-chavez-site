@@ -35,7 +35,7 @@ async function htmlFor(path) {
   return (await response.text()).replaceAll("<!-- -->", "");
 }
 
-test("server-renders the Open Practice entrance and global navigation", async () => {
+test("server-renders the personal entrance and global navigation", async () => {
   const response = await render("/");
   const html = (await response.text()).replaceAll("<!-- -->", "");
 
@@ -47,16 +47,16 @@ test("server-renders the Open Practice entrance and global navigation", async ()
     "strict-origin-when-cross-origin",
   );
 
-  assert.match(html, /Nino Chavez — Open Practice/);
+  assert.match(html, /Nino Chavez — Product architect and builder/);
   assert.match(html, /<span>Nino <\/span><span>Chavez<\/span>/);
   assert.match(html, /Product architect and builder in Chicago/);
   assert.match(
     html,
-    /I build the system, run the operation, and keep the evidence/,
+    /Product architect by trade. I also build software, run volleyball tournaments, photograph them, write, and DJ./,
   );
   assert.doesNotMatch(html, /Current working set/);
   assert.match(html, /Illustrated portrait of Nino Chavez/);
-  assert.match(html, /Enter the work library/);
+  assert.match(html, /Explore my work/);
   assert.match(html, /What I’m working on now/);
   assert.match(html, /On the court/);
   assert.match(html, /Work in the world/);
@@ -64,11 +64,11 @@ test("server-renders the Open Practice entrance and global navigation", async ()
   assert.match(html, /Read about Blueprint/);
   assert.match(html, /Read Signal Dispatch/);
   assert.match(html, /Browse photography/);
-  assert.match(html, /26 records across 6 domains/);
+  assert.match(html, /26 projects, tools, and collections across 6 domains/);
   assert.match(html, /Signal Dispatch/);
-  assert.match(html, /Operating record/);
+  assert.match(html, /Ways of working/);
   assert.match(html, /Ways of Working · Session 02/);
-  assert.match(html, /Search and filter all work/);
+  assert.match(html, /Explore all work/);
   assert.match(html, /Operating sessions/);
   assert.match(html, /Applied techniques/);
   assert.match(html, /href="\/work"/);
@@ -149,16 +149,16 @@ test("renders the full-volume work and demos collections", async () => {
     htmlFor("/demos?q=no-such-demo"),
   ]);
 
-  assert.match(workHtml, /Complete working record/);
+  assert.match(workHtml, /Projects, tools, and collections/);
   assert.match(workHtml, /<h1>Work<\/h1>/);
-  assert.match(workHtml, /Browse all 26 records/);
+  assert.match(workHtml, /Browse all 26 items/);
   assert.equal(
     (workHtml.match(/class="work-field__domain work-field__domain--[1-6]"/g) ??
       []).length,
     6,
   );
-  assert.match(workHtml, /Every record names what exists and what can be opened/);
-  assert.match(workHtml, /records in view/);
+  assert.match(workHtml, /Each item says what exists and what you can open/);
+  assert.match(workHtml, /26<\/strong> shown/);
   assert.doesNotMatch(workHtml, /Nothing selected/);
   assert.doesNotMatch(workHtml, /objects in view/);
   assert.match(workHtml, /Blueprint/);
@@ -174,8 +174,9 @@ test("renders the full-volume work and demos collections", async () => {
   assert.doesNotMatch(filteredDocument, /Blueprint/);
   assert.match(emptyWorkHtml, /No work matches these filters/);
   assert.match(emptyWorkHtml, /query “no-such-work”/);
+  assert.match(emptyWorkHtml, /Search the whole site for “no-such-work”/);
 
-  assert.match(demosHtml, /Demos \/ operating record/);
+  assert.match(demosHtml, /Demos \/ ways of working/);
   assert.match(demosHtml, /<h1>Ways of Working<\/h1>/);
   assert.match(
     demosHtml,
@@ -236,6 +237,7 @@ test("renders the full-volume work and demos collections", async () => {
     /No sessions or techniques match these filters/,
   );
   assert.match(emptyDemosHtml, /query “no-such-demo”/);
+  assert.match(emptyDemosHtml, /Search the whole site for “no-such-demo”/);
 });
 
 test("keeps the complete demo corpus available as native stories", async () => {
@@ -361,8 +363,9 @@ test("renders seven grounded learning paths without positional placeholders", as
 
   assert.match(learnHtml, /Learn \/ practitioner paths/);
   assert.match(learnHtml, /aria-label="Start with the artifact\."/);
-  assert.match(learnHtml, /L01[\s\S]*Explorer/);
-  assert.match(learnHtml, /L07[\s\S]*Enterprise/);
+  assert.match(learnHtml, /Explorer/);
+  assert.match(learnHtml, /Enterprise/);
+  assert.doesNotMatch(learnHtml, /L0[1-7]/);
   assert.match(learnHtml, /Personal cognitive mirror and bridge to creation/);
   assert.match(learnHtml, /Reusable team skill with quality gates/);
   assert.doesNotMatch(learnHtml, /This seven-way fork belongs here/);
@@ -435,16 +438,7 @@ test("renders the complete Signal Dispatch publication and real article handoffs
       `${writingSnapshot.publicPieceCount}<\\/strong> published pieces in view`,
     ),
   );
-  assert.match(writingHtml, /E001/);
-  assert.match(
-    writingHtml,
-    new RegExp(`E${String(essayCount).padStart(3, "0")}`),
-  );
-  assert.match(writingHtml, /W001/);
-  assert.match(writingHtml, /P001/);
-  assert.match(writingHtml, /T001/);
-  assert.match(writingHtml, /C001/);
-  assert.match(writingHtml, /F001/);
+  assert.doesNotMatch(writingHtml, /class="record-number"/);
   assert.match(writingHtml, /Nothing Broke\. It Just Wasn&#x27;t There\./);
   assert.match(writingHtml, /One Component I Didn&#x27;t Already Have/);
   assert.match(writingHtml, /Every Link Resolves\. Nothing Checks the Number\./);
@@ -476,6 +470,7 @@ test("renders the complete Signal Dispatch publication and real article handoffs
 
   assert.match(emptyHtml, /No published pieces match these filters/);
   assert.match(emptyHtml, /query “no-such-writing”/);
+  assert.match(emptyHtml, /Search the whole site for “no-such-writing”/);
 
   assert.match(searchHtml, /The Scaffolding the Agent Doesn&#x27;t Build/);
   assert.match(
@@ -565,6 +560,18 @@ test("renders About as a durable profile instead of a services or route-design p
   assert.match(searchHtml, /About Nino Chavez/);
 });
 
+test("ranks and caps broad site searches", async () => {
+  const html = (await htmlFor("/search?q=agent")).split('<script id="_R_">')[0];
+  const summary = html.match(
+    /Showing <strong>(\d+)<\/strong> of <strong>(\d+)<\/strong> matches/,
+  );
+
+  assert.ok(summary);
+  assert.ok(Number(summary[1]) < Number(summary[2]));
+  assert.ok(Number(summary[1]) <= 36);
+  assert.match(html, /Agentic Ways of Working/);
+});
+
 test("renders Now as a dated attention ledger and Links as a maintained directory", async () => {
   const [nowHtml, linksHtml, attributedLinksHtml, invalidSourceHtml, searchHtml] =
     await Promise.all([
@@ -578,10 +585,11 @@ test("renders Now as a dated attention ledger and Links as a maintained director
   assert.match(nowHtml, /Now \/ current attention/);
   assert.match(nowHtml, /dateTime="2026-07-30">30 July 2026/);
   assert.match(nowHtml, /Four things have my attention/);
-  assert.match(nowHtml, /N01[\s\S]*Product architecture at commerce\.com/);
-  assert.match(nowHtml, /N02[\s\S]*Consolidating the public record/);
-  assert.match(nowHtml, /N03[\s\S]*Tightening the proof loop/);
-  assert.match(nowHtml, /N04[\s\S]*Running the volleyball stack/);
+  assert.match(nowHtml, /Product architecture at commerce\.com/);
+  assert.match(nowHtml, /Maintaining the public site/);
+  assert.match(nowHtml, /Tightening the proof loop/);
+  assert.match(nowHtml, /Running the volleyball stack/);
+  assert.doesNotMatch(nowHtml, /N0[1-4]/);
   assert.match(nowHtml, /Blueprint, Film Room/);
   assert.match(nowHtml, /Let’s Pepper events, Rally HQ/);
   assert.match(nowHtml, /Current, not exhaustive/);
@@ -625,10 +633,7 @@ test("renders Now as a dated attention ledger and Links as a maintained director
     /href="\/photography\?src=ig-photo"/,
   );
   assert.match(invalidSourceHtml, /href="\/photography\?src=links"/);
-  assert.equal(
-    (linksHtml.match(/<span>L(?:0[1-9]|1[01])<\/span>/g) ?? []).length,
-    11,
-  );
+  assert.doesNotMatch(linksHtml, /<span>L(?:0[1-9]|1[01])<\/span>/);
   assert.match(
     linksHtml,
     /href="https:\/\/rallyhq\.app" target="_blank" rel="noopener noreferrer"/,

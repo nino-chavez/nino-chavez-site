@@ -45,10 +45,9 @@ export default async function Home() {
     <>
       <section className="practice-board" aria-labelledby="practice-title">
         <div className="practice-board__register page-shell">
-          <span>Open practice</span>
+          <span>Product architect</span>
           <span>Chicago</span>
-          <span>{workItems.length} records</span>
-          <span>Since 1999</span>
+          <span>Building since 1999</span>
         </div>
 
         <div className="practice-stage page-shell">
@@ -64,15 +63,15 @@ export default async function Home() {
 
           <div className="practice-copy">
             <p className="practice-claim">
-              I build the system, run the operation, and keep the evidence.
+              Product architect by trade. I also build software, run volleyball
+              tournaments, photograph them, write, and DJ.
             </p>
             <p className="practice-intro">
-              Product work, operating systems, and small live businesses are
-              where I test how agent-assisted practice holds up in real
-              conditions.
+              Those projects are where I test how agent-assisted work holds up
+              under real conditions.
             </p>
             <Link className="practice-enter" href="/work">
-              Enter the work library <span aria-hidden="true">↓</span>
+              Explore my work <span aria-hidden="true">↓</span>
             </Link>
             <nav className="practice-profile" aria-label="Profile context">
               <Link href="/about">About Nino →</Link>
@@ -145,23 +144,23 @@ export default async function Home() {
       <section className="library-index" aria-labelledby="library-title">
         <header className="library-index__register page-shell">
           <div>
-            <p className="eyebrow">Complete work library</p>
+            <p className="eyebrow">Work</p>
             <h2 id="library-title">
-              {workItems.length} records across {domains.length} domains.
+              {workItems.length} projects, tools, and collections across{" "}
+              {domains.length} domains.
             </h2>
           </div>
           <div>
             <p>
-              Every record stays visible when it can be described honestly.
-              State tells you what can be opened, installed, read, or inspected
-              now.
+              Work in development is included too. Status shows what you can
+              open, install, read, or inspect today.
             </p>
-            <Link href="/work">Search and filter all work →</Link>
+            <Link href="/work">Explore all work →</Link>
           </div>
         </header>
 
         <nav className="domain-index page-shell" aria-label="Work domains">
-          {domains.map((domain, index) => {
+          {domains.map((domain) => {
             const count = workItems.filter(
               (item) => item.domain === domain,
             ).length;
@@ -176,9 +175,8 @@ export default async function Home() {
                   } as CSSProperties
                 }
               >
-                <span>{String(index + 1).padStart(2, "0")}</span>
                 <strong>{domain}</strong>
-                <small>{count} records</small>
+                <small>{count} in this domain</small>
                 <b aria-hidden="true">→</b>
               </Link>
             );
@@ -189,7 +187,7 @@ export default async function Home() {
       <section className="ways-index" aria-labelledby="ways-title">
         <header className="ways-index__register page-shell">
           <div>
-            <p className="eyebrow">Operating record</p>
+            <p className="eyebrow">Ways of working</p>
             <h2 id="ways-title">Ways of Working</h2>
           </div>
           <p>

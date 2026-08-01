@@ -8,30 +8,30 @@ const isPublicLaunch = process.env.SITE_VISIBILITY === "public";
 export const metadata: Metadata = {
   metadataBase: new URL("https://ninochavez.co"),
   title: {
-    default: "Nino Chavez — Open Practice",
+    default: "Nino Chavez — Product architect and builder",
     template: "%s — Nino Chavez",
   },
   description:
-    "The open practice of product architect and builder Nino Chavez.",
+    "Product architect and builder in Chicago. Software, volleyball operations, photography, writing, and music.",
   openGraph: {
     type: "website",
-    title: "Nino Chavez — Open Practice",
+    title: "Nino Chavez — Product architect and builder",
     description:
-      "I build the system, run the operation, and keep the evidence.",
+      "Product architect by trade. I also build software, run volleyball tournaments, photograph them, write, and DJ.",
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Nino Chavez — Open Practice",
+        alt: "Nino Chavez — Product architect and builder",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nino Chavez — Open Practice",
+    title: "Nino Chavez — Product architect and builder",
     description:
-      "I build the system, run the operation, and keep the evidence.",
+      "Product architect by trade. I also build software, run volleyball tournaments, photograph them, write, and DJ.",
     images: ["/og.png"],
   },
   robots: {
@@ -70,7 +70,7 @@ export default function RootLayout({
         {!isPublicLaunch ? (
           <div className="prototype-banner">
             Private art-direction review{" "}
-            <span>Open Practice — production remains unchanged</span>
+            <span>Portfolio redesign — production remains unchanged</span>
           </div>
         ) : null}
         <SiteHeader />

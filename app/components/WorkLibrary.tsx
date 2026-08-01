@@ -167,7 +167,7 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
       <div className="library-status" aria-live="polite">
         <p>
           <strong>{visible.length}</strong> of <strong>{items.length}</strong>{" "}
-          records in view
+          shown
         </p>
         <div className="library-status__actions">
           <span>
@@ -197,34 +197,26 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
               aria-labelledby={`domain-${group.name.replaceAll(" ", "-")}`}
             >
               <div className="group-heading">
-                <span>
-                  {String(domains.indexOf(group.name) + 1).padStart(2, "0")} /{" "}
-                  {String(domains.length).padStart(2, "0")}
-                </span>
                 <h2 id={`domain-${group.name.replaceAll(" ", "-")}`}>
                   {group.name}
                 </h2>
-                <p>
-                  {group.items.length}{" "}
-                  {group.items.length === 1 ? "record" : "records"}
-                </p>
+                <p>{group.items.length} shown</p>
               </div>
 
               <div className="work-list">
-                {group.items.map((item) => (
-                  <a
-                    className="work-record"
-                    href={workHref(item)}
-                    key={item.slug}
-                  >
-                    <span className="record-number" aria-hidden="true">
-                      {String(
-                        items.findIndex((record) => record.slug === item.slug) +
-                          1,
-                      ).padStart(2, "0")}
-                    </span>
+                {group.items.map((item) => {
+                  const href = workHref(item);
+                  const opensInNewTab = href.startsWith("http");
+                  return (
+                    <a
+                      className="work-record"
+                      href={href}
+                      key={item.slug}
+                      target={opensInNewTab ? "_blank" : undefined}
+                      rel={opensInNewTab ? "noopener noreferrer" : undefined}
+                    >
                     <div className="record-meta">
-                      <span>{item.state}</span>
+                      <span>{workStateLabels[item.state]}</span>
                       <span>{item.form}</span>
                       <time dateTime={item.updatedAt}>
                         {formatUpdatedAt(item.updatedAt)}
@@ -236,10 +228,16 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
                     </div>
                     <span className="record-open">
                       {item.detailPage === false ? "Browse" : "Open"}{" "}
-                      <b aria-hidden="true">→</b>
+                      <b aria-hidden="true">{opensInNewTab ? "↗" : "→"}</b>
+                      {opensInNewTab ? (
+                        <span className="assistive-text">
+                          {" "}(opens in a new tab)
+                        </span>
+                      ) : null}
                     </span>
                   </a>
-                ))}
+                  );
+                })}
               </div>
             </section>
           ))}
@@ -250,8 +248,13 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
           <h2>No work matches these filters.</h2>
           <p>
             Filters applied: {activeCriteria.join(", ")}. Remove one, or clear
-            all filters to see all {items.length} records.
+            all filters to see all {items.length} items.
           </p>
+          {query ? (
+            <a href={`/search?q=${encodeURIComponent(query)}`}>
+              Search the whole site for “{query}”
+            </a>
+          ) : null}
           <button
             type="button"
             onClick={() => router.replace(pathname, { scroll: false })}

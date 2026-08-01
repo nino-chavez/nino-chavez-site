@@ -19,7 +19,7 @@ export default async function DemosPage() {
       <header className="demo-studio">
         <div className="demo-studio__stage page-shell">
           <div className="demo-studio__lead">
-            <p className="eyebrow">Demos / operating record</p>
+            <p className="eyebrow">Demos / ways of working</p>
             <h1>Ways of Working</h1>
             <p className="demo-studio__lede">
               Step through the work in sequence. Then take the reusable parts
@@ -100,12 +100,12 @@ export default async function DemosPage() {
         </Suspense>
 
         <aside className="demo-collection-bridge">
-          <span>Work record / Ways of Working</span>
+          <span>Work / Ways of Working</span>
           <p>
-            The collection belongs to the same practice as every other project,
-            system, and operating record.
+            These sessions and techniques show how the larger Ways of Working
+            project is used.
           </p>
-          <Link href="/work/ways-of-working">Open the work record →</Link>
+          <Link href="/work/ways-of-working">Open the project page →</Link>
         </aside>
       </section>
     </div>

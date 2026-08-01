@@ -387,7 +387,7 @@ const recordProfiles: Record<string, RecordProfile> = {
     "source": "Professional experience",
     "access": "public summary",
     "heading": "What this experience covers",
-    "introduction": "Across 25+ years, Nino has designed and delivered commerce systems for retail, B2B, grocery, and multi-brand businesses—from hands-on software development to product and enterprise architecture. Specific client programs stay confidential; the capabilities and scale below are public.",
+    "introduction": "Across 25+ years, I have designed and delivered commerce systems for retail, B2B, grocery, and multi-brand businesses—from hands-on software development to product and enterprise architecture. Specific client programs stay confidential; the capabilities and scale below are public.",
     "details": [
       {
         "title": "Platforms and ecosystems",
@@ -718,7 +718,7 @@ export default async function WorkDetailPage({
       ) : null}
 
       <p className="back-link">
-        <Link href="/work">← Return to the complete library</Link>
+        <Link href="/work">← Return to Work</Link>
       </p>
     </div>
   );

@@ -10,7 +10,7 @@ export default function NotFound() {
           <h1>This path does not resolve.</h1>
           <p className="lede">
             The address may be mistyped, moved, or retired. The rest of the
-            practice is still here.
+            site is still here.
           </p>
         </header>
 
@@ -18,7 +18,7 @@ export default function NotFound() {
           <p className="eyebrow">Choose a working entrance</p>
           <h2>Continue without starting over.</h2>
           <p>
-            Browse the complete work record, read the publication, or search
+            Browse the work, read the publication, or search
             across the whole site.
           </p>
           <div className="about-inline-actions">

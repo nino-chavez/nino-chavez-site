@@ -5,8 +5,9 @@ import { WorkLibrary } from "../components/WorkLibrary";
 import { domains, workItems, type Domain } from "../data";
 
 export const metadata = {
-  title: "Work library",
-  description: "The complete authorized inventory of work by Nino Chavez.",
+  title: "Work",
+  description:
+    "Products, tools, methods, operations, and collections by Nino Chavez.",
 };
 
 const domainNotes: Record<Domain, string> = {
@@ -24,25 +25,25 @@ export default function WorkPage() {
       <header className="work-atlas">
         <div className="work-atlas__opening page-shell">
           <div className="work-atlas__lead">
-            <p className="eyebrow">Complete working record</p>
+            <p className="eyebrow">Projects, tools, and collections</p>
             <h1>Work</h1>
             <p className="work-atlas__lede">
               Products, operating systems, live businesses, and the tools used
               to make them hold together.
             </p>
             <p className="work-atlas__note">
-              Start with a domain to understand the range, or move directly to
-              the complete searchable record.
+              Start with a domain to understand the range, or search and filter
+              everything below.
             </p>
             <a className="work-atlas__all" href="#work-library">
-              Browse all {workItems.length} records{" "}
+              Browse all {workItems.length} items{" "}
               <span aria-hidden="true">↓</span>
             </a>
           </div>
 
           <nav className="work-field" aria-label="Explore work by domain">
             {domains.map((domain, index) => {
-              const records = workItems.filter(
+                  const records = workItems.filter(
                 (item) => item.domain === domain,
               );
               const share = (records.length / workItems.length) * 100;
@@ -58,15 +59,10 @@ export default function WorkPage() {
                     } as CSSProperties
                   }
                 >
-                  <span>
-                    {String(index + 1).padStart(2, "0")} /{" "}
-                    {String(domains.length).padStart(2, "0")}
-                  </span>
                   <strong>{domain}</strong>
                   <small>{domainNotes[domain]}</small>
                   <em>
-                    {records.length}{" "}
-                    {records.length === 1 ? "record" : "records"}{" "}
+                    {records.length} in this domain{" "}
                     <b aria-hidden="true">→</b>
                   </em>
                 </Link>
@@ -76,10 +72,10 @@ export default function WorkPage() {
         </div>
 
         <div className="work-atlas__principle page-shell">
-          <span>Every record names what exists and what can be opened.</span>
+          <span>Each item says what exists and what you can open.</span>
           <p>
             Status describes the work today. Type describes what it is. Public
-            destinations open directly from the record.
+            destinations open directly from the page.
           </p>
         </div>
       </header>
@@ -92,14 +88,14 @@ export default function WorkPage() {
         <header className="work-library-stage__heading">
           <div>
             <p className="eyebrow">All work</p>
-            <h2 id="work-library-title">Find a record.</h2>
+            <h2 id="work-library-title">Find the work.</h2>
           </div>
           <p>
             Search by name or purpose. Narrow by domain, current status, or
             type.
           </p>
         </header>
-        <Suspense fallback={<p>Loading the complete library…</p>}>
+        <Suspense fallback={<p>Loading work…</p>}>
           <WorkLibrary items={workItems} />
         </Suspense>
       </section>

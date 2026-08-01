@@ -8,7 +8,6 @@ export const metadata = {
 
 const currentFocus = [
   {
-    code: "N01",
     area: "Professional",
     state: "Current role",
     title: "Product architecture at commerce.com",
@@ -18,17 +17,15 @@ const currentFocus = [
     action: "Read the durable profile",
   },
   {
-    code: "N02",
     area: "Public surface",
-    state: "In review",
-    title: "Consolidating the public record",
+    state: "Maintaining",
+    title: "Maintaining the public site",
     description:
-      "Work, demos, learning paths, writing, photography, and personal context are moving into one apex site and one navigation system. This review build is the current artifact.",
+      "Work, demos, learning paths, writing, photography, and personal context now share one site and navigation. The current focus is keeping those paths useful and accurate.",
     href: "/work",
     action: "Browse the complete work",
   },
   {
-    code: "N03",
     area: "Agent-assisted practice",
     state: "Building",
     title: "Tightening the proof loop",
@@ -38,7 +35,6 @@ const currentFocus = [
     action: "Open the operating sessions",
   },
   {
-    code: "N04",
     area: "Live operations",
     state: "Operating",
     title: "Running the volleyball stack",
@@ -58,7 +54,7 @@ const pageNotes = [
   {
     label: "Update rhythm",
     value:
-      "I update this page when the focus changes materially. It is not a daily activity log.",
+      "I update this page when my focus changes materially, so it stays a useful snapshot rather than a running log.",
   },
 ] as const;
 
@@ -106,7 +102,7 @@ export default function NowPage() {
       <div className="now-body page-shell">
         <section className="now-section" aria-labelledby="now-in-motion">
           <header>
-            <span>01 / In motion</span>
+            <span>In motion</span>
             <h2 id="now-in-motion">Where the work is moving</h2>
             <p>
               A current attention map, with the nearest public evidence for
@@ -116,11 +112,10 @@ export default function NowPage() {
 
           <ol className="now-register">
             {currentFocus.map((item) => (
-              <li key={item.code}>
+              <li key={item.title}>
                 <article>
                   <Link className="now-register__entry" href={item.href}>
                     <div className="now-register__meta">
-                      <span>{item.code}</span>
                       <span>{item.area}</span>
                       <span>{item.state}</span>
                     </div>
@@ -140,7 +135,7 @@ export default function NowPage() {
 
         <section className="now-section now-notes" aria-labelledby="now-notes">
           <header>
-            <span>02 / Reading this page</span>
+            <span>Reading this page</span>
             <h2 id="now-notes">Current, not exhaustive</h2>
           </header>
 

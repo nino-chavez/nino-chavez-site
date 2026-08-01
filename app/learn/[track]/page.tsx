@@ -38,7 +38,6 @@ export default async function LearnTrackPage({
   const track = learnTracks[index];
   const previous = learnTracks.at(index - 1);
   const next = learnTracks.at(index + 1);
-  const record = `L${String(index + 1).padStart(2, "0")}`;
 
   return (
     <div className="learn-track-page">
@@ -49,7 +48,7 @@ export default async function LearnTrackPage({
           />
 
           <div className="learn-track-opening__register">
-            <span>Learn / {record}</span>
+            <span>Learning path</span>
             <span>{track.timeline}</span>
             <span>{track.levels.length} stages</span>
           </div>
@@ -80,19 +79,17 @@ export default async function LearnTrackPage({
       <div className="learn-track-body page-shell">
         <section className="learn-grounding" aria-labelledby="grounding-title">
           <header>
-            <span>Grounding / 03 records</span>
+            <span>Grounding / {track.evidence.length} examples</span>
             <h2 id="grounding-title">See the evidence before the instruction</h2>
             <p>
-              Each record shows work, a session, or writing that shaped this
+              Each example shows work, a session, or writing that shaped this
               path. Use the evidence to test the instruction before adopting it.
             </p>
           </header>
           <div className="learn-evidence-list">
-            {track.evidence.map((item, evidenceIndex) => (
+            {track.evidence.map((item) => (
               <Link href={item.href} key={`${item.kind}-${item.href}`}>
-                <span>
-                  E{String(evidenceIndex + 1).padStart(2, "0")} / {item.kind}
-                </span>
+                <span>{item.kind}</span>
                 <strong>{item.title}</strong>
                 <small>{item.note}</small>
                 <b aria-hidden="true">→</b>

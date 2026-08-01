@@ -2989,7 +2989,7 @@ h3 {
   position: relative;
   z-index: 8;
   display: grid;
-  grid-template-columns: 1fr repeat(3, auto);
+  grid-template-columns: 1fr repeat(2, auto);
   padding: 18px var(--practice-gutter);
   gap: 32px;
   border-bottom: 1px solid rgb(241 234 223 / 0.25);
@@ -3206,7 +3206,7 @@ h3 {
 
 .practice-proof--rally {
   z-index: 5;
-  right: -0.75vw;
+  right: var(--practice-gutter);
   bottom: 4%;
   width: clamp(260px, 18vw, 330px);
   grid-template-rows: auto 52px;
@@ -4363,6 +4363,11 @@ h3 {
     text-align: right;
   }
 
+  .practice-board__register span:last-child {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
   .practice-stage {
     display: grid;
     min-height: 0;
@@ -4697,7 +4702,7 @@ h3 {
 .learn-track-register a {
   display: grid;
   grid-template-columns:
-    36px minmax(150px, 0.32fr) minmax(240px, 0.68fr)
+    minmax(150px, 0.32fr) minmax(240px, 0.68fr)
     minmax(210px, 0.52fr) 76px 18px;
   min-height: 126px;
   padding: 18px 0;
@@ -5147,7 +5152,7 @@ h3 {
 @media (max-width: 1200px) {
   .learn-track-register a {
     grid-template-columns:
-      36px minmax(135px, 0.32fr) minmax(150px, 0.52fr)
+      minmax(135px, 0.32fr) minmax(150px, 0.52fr)
       minmax(150px, 0.52fr) 60px 18px;
   }
 
@@ -5206,30 +5211,30 @@ h3 {
   }
 
   .learn-track-register a {
-    grid-template-columns: 32px minmax(0, 1fr) 18px;
+    grid-template-columns: minmax(0, 1fr) 18px;
     min-height: 0;
     gap: 8px 16px;
   }
 
   .learn-track-name {
-    grid-column: 2;
+    grid-column: 1;
   }
 
   .learn-track-start {
-    grid-column: 2;
+    grid-column: 1;
   }
 
   .learn-track-output {
-    grid-column: 2;
+    grid-column: 1;
   }
 
   .learn-track-time {
-    grid-column: 2;
+    grid-column: 1;
   }
 
   .learn-track-register b {
     grid-row: 1;
-    grid-column: 3;
+    grid-column: 2;
   }
 
   .learn-evidence-bridge,
@@ -5636,6 +5641,7 @@ h3 {
 
 .writing-room .writing-record {
   min-height: 112px;
+  grid-template-columns: minmax(160px, 0.32fr) minmax(0, 1fr) auto;
   scroll-margin-top: calc(var(--header-height) + 28px);
   content-visibility: auto;
   contain-intrinsic-size: auto 112px;
@@ -5709,7 +5715,7 @@ h3 {
   display: grid;
   min-height: 116px;
   padding: 18px 0;
-  grid-template-columns: 42px minmax(0, 1fr) 116px 18px;
+  grid-template-columns: minmax(0, 1fr) 116px 18px;
   gap: clamp(16px, 2.5vw, 36px);
   align-items: center;
   color: var(--text);
@@ -5803,7 +5809,7 @@ h3 {
 
   .writing-series-directory > header {
     position: static;
-    grid-template-columns: 120px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .writing-series-directory header p {
@@ -5820,18 +5826,28 @@ h3 {
     min-width: 0;
   }
 
+  .writing-room .writing-record {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .writing-series-directory > header,
   .writing-publication-bridge {
     grid-template-columns: 1fr;
   }
 
   .writing-series-directory li a {
-    grid-template-columns: 30px minmax(0, 1fr) 18px;
+    grid-template-columns: minmax(0, 1fr) 18px;
     gap: 8px 16px;
   }
 
   .series-state {
-    grid-column: 2;
+    grid-column: 1;
+  }
+
+  .writing-room .record-meta,
+  .writing-room .record-copy,
+  .writing-room .record-open {
+    grid-column: 1;
   }
 
   .writing-series-directory li b {
@@ -6635,12 +6651,11 @@ h3 {
 .now-register__meta {
   display: grid;
   align-content: start;
-  grid-template-columns: 42px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 8px 12px;
 }
 
-.now-register__meta span:nth-child(3) {
-  grid-column: 2;
+.now-register__meta span:nth-child(2) {
   color: var(--muted);
 }
 
@@ -6783,7 +6798,7 @@ h3 {
 
 .links-group > header h2 {
   max-width: 360px;
-  margin: 14px 0 0;
+  margin: 0;
   font-family: var(--display);
   font-size: clamp(2.35rem, 4vw, 4.15rem);
   letter-spacing: -0.06em;
@@ -6812,7 +6827,7 @@ h3 {
   display: grid;
   min-height: 118px;
   padding: 22px 0;
-  grid-template-columns: 42px minmax(160px, 0.38fr) minmax(0, 1fr) auto;
+  grid-template-columns: minmax(160px, 0.38fr) minmax(0, 1fr) auto;
   gap: clamp(16px, 2.5vw, 36px);
   align-items: center;
   color: var(--text);
@@ -6894,11 +6909,11 @@ h3 {
   }
 
   .links-group li > a {
-    grid-template-columns: 36px minmax(145px, 0.36fr) minmax(0, 1fr);
+    grid-template-columns: minmax(145px, 0.36fr) minmax(0, 1fr);
   }
 
   .links-group li b {
-    grid-column: 2 / -1;
+    grid-column: 1 / -1;
     text-align: left;
   }
 }
@@ -6975,12 +6990,12 @@ h3 {
   }
 
   .now-register__meta {
-    grid-template-columns: 42px minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto;
   }
 
-  .now-register__meta span:nth-child(3) {
+  .now-register__meta span:nth-child(2) {
     grid-row: 1;
-    grid-column: 3;
+    grid-column: 2;
     text-align: right;
   }
 
@@ -7001,22 +7016,22 @@ h3 {
 
   .links-group li > a {
     min-width: 0;
-    grid-template-columns: 34px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: 7px 16px;
   }
 
   .links-group li strong {
-    grid-column: 2;
+    grid-column: 1;
   }
 
   .links-group li small {
-    grid-column: 2 / -1;
+    grid-column: 1;
   }
 
   .links-group li b {
     display: inline-flex;
     min-height: 44px;
-    grid-column: 2;
+    grid-column: 1;
     align-items: center;
     justify-self: start;
     color: var(--text);
@@ -7050,12 +7065,12 @@ h3 {
   }
 
   .now-register__meta {
-    grid-template-columns: 36px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .now-register__meta span:nth-child(3) {
+  .now-register__meta span:nth-child(2) {
     grid-row: auto;
-    grid-column: 2;
+    grid-column: 1;
     text-align: left;
   }
 }
@@ -7992,7 +8007,7 @@ h3 {
 }
 
 .domain-index a {
-  grid-template-columns: 42px minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   grid-template-rows: 1fr auto;
   min-height: 156px;
   padding: 20px;
@@ -8035,11 +8050,11 @@ h3 {
 }
 
 .domain-index small {
-  grid-column: 2;
+  grid-column: 1;
 }
 
 .domain-index b {
-  grid-column: 3;
+  grid-column: 2;
   grid-row: 1 / -1;
 }
 
@@ -8443,7 +8458,7 @@ h3 {
   display: grid;
   min-height: 112px;
   padding: 18px 20px;
-  grid-template-columns: 34px minmax(170px, 0.34fr) minmax(0, 1fr) auto;
+  grid-template-columns: minmax(170px, 0.34fr) minmax(0, 1fr) auto;
   gap: clamp(16px, 2.5vw, 34px);
   align-items: center;
   border: 0;
@@ -9332,14 +9347,14 @@ h3 {
   }
 
   .work-library-stage .work-record {
-    grid-template-columns: 28px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: 7px 14px;
   }
 
   .work-library-stage .record-meta,
   .work-library-stage .record-copy,
   .work-library-stage .record-open {
-    grid-column: 2;
+    grid-column: 1;
   }
 
   .work-library-stage .record-open {

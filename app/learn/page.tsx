@@ -31,9 +31,8 @@ export default function LearnPage() {
               that informed it.
             </p>
             <p>
-              These are self-directed practice paths, not enrollment tracks or
-              certification. Use the stages in order, or enter through the
-              evidence you need now.
+              Each path is self-directed. Follow its stages in order, or start
+              with the evidence you need now.
             </p>
           </div>
         </div>
@@ -42,8 +41,8 @@ export default function LearnPage() {
       <div className="learn-room page-shell">
         <section className="learn-chooser" aria-labelledby="learn-paths">
           <header>
-            <span>L01–L07</span>
-            <h2 id="learn-paths">Seven ways into the practice</h2>
+            <span>{learnTracks.length} paths</span>
+            <h2 id="learn-paths">Seven ways to build something concrete</h2>
             <p>
               Compare the starting condition, end artifact, and likely time
               before opening a path.
@@ -51,12 +50,9 @@ export default function LearnPage() {
           </header>
 
           <ol className="learn-track-register">
-            {learnTracks.map((track, index) => (
+            {learnTracks.map((track) => (
               <li key={track.slug}>
                 <Link href={`/learn/${track.slug}`}>
-                  <span className="learn-track-number">
-                    L{String(index + 1).padStart(2, "0")}
-                  </span>
                   <span className="learn-track-name">
                     <strong>{track.title}</strong>
                     <small>{track.tagline}</small>

@@ -34,7 +34,7 @@ const practices = [
   {
     name: "Writing",
     description:
-      "Turn working evidence and unfinished thinking into a public record.",
+      "Turn working evidence and unfinished thinking into published arguments.",
     href: "/blog",
     action: "Read Signal Dispatch",
     external: false,
@@ -56,12 +56,12 @@ const continuations = [
   },
   {
     name: "Links",
-    description: "Maintained destinations across the rest of the practice.",
+    description: "Maintained destinations for sites, profiles, music, and contact.",
     href: "/links",
   },
   {
     name: "Work",
-    description: "The complete public record of projects, systems, and practices.",
+    description: "Products, tools, methods, operations, and collections.",
     href: "/work",
   },
 ] as const;

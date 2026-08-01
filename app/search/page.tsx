@@ -1,5 +1,10 @@
 import Link from "next/link";
-import { learnTracks, workHref, workItems } from "../data";
+import {
+  learnTracks,
+  workHref,
+  workItems,
+  workStateLabels,
+} from "../data";
 import { getDemoSnapshot } from "../demos";
 import { getWritingSnapshot } from "../writing";
 
@@ -51,9 +56,41 @@ const durablePages = [
   },
 ] as const;
 
-function includesQuery(query: string, ...values: string[]) {
-  return values.join(" ").toLowerCase().includes(query.toLowerCase());
+function relevanceScore(query: string, primary: string, ...details: string[]) {
+  const normalized = query.toLowerCase();
+  const title = primary.toLowerCase();
+  if (title === normalized) return 100;
+  if (title.startsWith(normalized)) return 80;
+  if (title.includes(normalized)) return 60;
+
+  const secondary = details.join(" ").toLowerCase();
+  if (secondary.split(/\s+/).includes(normalized)) return 30;
+  return secondary.includes(normalized) ? 10 : 0;
 }
+
+function rankedMatches<T>(
+  items: T[],
+  query: string,
+  primary: (item: T) => string,
+  details: (item: T) => string[],
+) {
+  return items
+    .map((item, index) => ({
+      index,
+      item,
+      score: relevanceScore(query, primary(item), ...details(item)),
+    }))
+    .filter((result) => result.score > 0)
+    .sort((a, b) => b.score - a.score || a.index - b.index)
+    .map((result) => result.item);
+}
+
+const resultLimits = {
+  work: 8,
+  demos: 8,
+  writing: 12,
+  pages: 8,
+} as const;
 
 export const metadata = {
   title: "Search",
@@ -75,80 +112,91 @@ export default async function SearchPage({
   const appliedTechniques = demoSnapshot.techniques;
   const writingItems = writingSnapshot.items;
 
-  const work = query
-    ? workItems.filter((item) =>
-        includesQuery(
-          query,
-          item.name,
+  const workMatches = query
+    ? rankedMatches(
+        workItems,
+        query,
+        (item) => item.name,
+        (item) => [
           item.claim,
           item.domain,
           item.state,
+          workStateLabels[item.state],
           item.form,
-        ),
+        ],
       )
     : [];
+  const work = workMatches.slice(0, resultLimits.work);
 
-  const demos = query
-    ? [
-        ...demoSessions.map((item) => ({
-          ...item,
-          kind: "Session",
-          href: `/demos/${item.slug}`,
-        })),
-        ...appliedTechniques.map((item) => ({
-          ...item,
-          kind: "Applied technique",
-          href: `/demos/applied/${item.slug}`,
-        })),
-      ].filter((item) => includesQuery(query, item.title, item.summary))
+  const demoCandidates = [
+    ...demoSessions.map((item) => ({
+      ...item,
+      kind: "Session",
+      href: `/demos/${item.slug}`,
+    })),
+    ...appliedTechniques.map((item) => ({
+      ...item,
+      kind: "Applied technique",
+      href: `/demos/applied/${item.slug}`,
+    })),
+  ];
+  const demoMatches = query
+    ? rankedMatches(
+        demoCandidates,
+        query,
+        (item) => item.title,
+        (item) => [item.summary, item.kind],
+      )
     : [];
+  const demos = demoMatches.slice(0, resultLimits.demos);
 
-  const writing = query
-    ? writingItems.filter((item) =>
-        includesQuery(
-          query,
-          item.title,
+  const writingMatches = query
+    ? rankedMatches(
+        writingItems,
+        query,
+        (item) => item.title,
+        (item) => [
           item.excerpt,
           item.kind,
           item.category,
           item.publishedAt,
           ...item.tags,
-        ),
+        ],
       )
     : [];
+  const writing = writingMatches.slice(0, resultLimits.writing);
 
-  const pages = query
-    ? [
-        ...learnTracks
-          .filter((track) =>
-            includesQuery(
-              query,
-              track.title,
-              track.tagline,
-              track.description,
-              track.startWhen,
-              track.finalArtifact,
-              "learn",
-            ),
-          )
-          .map((track) => ({
-            kind: "Learn",
-            title: `${track.title} learning path`,
-            href: `/learn/${track.slug}`,
-            description: track.description,
-          })),
-        ...durablePages.filter((page) =>
-          includesQuery(
-            query,
-            page.title,
-            page.description,
-            page.keywords,
-          ),
-        ),
-      ]
+  const pageCandidates = [
+    ...learnTracks.map((track) => ({
+      kind: "Learn",
+      title: `${track.title} learning path`,
+      href: `/learn/${track.slug}`,
+      description: track.description,
+      keywords: [
+        track.tagline,
+        track.startWhen,
+        track.finalArtifact,
+        "learn",
+      ].join(" "),
+    })),
+    ...durablePages,
+  ];
+  const pageMatches = query
+    ? rankedMatches(
+        pageCandidates,
+        query,
+        (item) => item.title,
+        (item) => [item.description, item.keywords, item.kind],
+      )
     : [];
+  const pages = pageMatches.slice(0, resultLimits.pages);
 
-  const total = work.length + demos.length + writing.length + pages.length;
+  const total =
+    workMatches.length +
+    demoMatches.length +
+    writingMatches.length +
+    pageMatches.length;
+  const shown = work.length + demos.length + writing.length + pages.length;
 
   return (
     <div className="page-shell page-stack">
@@ -156,8 +204,8 @@ export default async function SearchPage({
         <p className="eyebrow">Across ninochavez.co</p>
         <h1>Search</h1>
         <p className="lede">
-          Find work objects, demo sessions, applied techniques, writing, and
-          durable pages from one place.
+          Search projects, tools, demos, learning paths, writing, and pages from
+          one place.
         </p>
       </header>
 
@@ -179,35 +227,52 @@ export default async function SearchPage({
       {!query ? (
         <div className="empty-state">
           <p className="eyebrow">Search everything</p>
-          <h2>Try a product, domain, status, or idea.</h2>
+          <h2>Start with a project, topic, or kind of work.</h2>
           <p>
-            Examples: <Link href="/search?q=agent">agent</Link>,{" "}
-            <Link href="/search?q=volleyball">volleyball</Link>, or{" "}
-            <Link href="/search?q=maintained">maintained</Link>.
+            Try <Link href="/search?q=photography">photography</Link>,{" "}
+            <Link href="/search?q=commerce">commerce</Link>, or{" "}
+            <Link href="/search?q=volleyball">volleyball</Link>.
           </p>
         </div>
       ) : total ? (
         <div className="search-results" aria-live="polite">
           <p className="result-summary">
-            <strong>{total}</strong> results for “{query}”
+            Showing <strong>{shown}</strong> of <strong>{total}</strong>{" "}
+            matches for “{query}”
           </p>
 
           {work.length ? (
             <section aria-labelledby="search-work">
               <div className="group-heading">
                 <h2 id="search-work">Work</h2>
-                <span>{work.length}</span>
+                <span>
+                  {work.length} of {workMatches.length}
+                </span>
               </div>
               <div className="result-list">
-                {work.map((item) => (
-                  <Link key={item.slug} href={workHref(item)}>
+                {work.map((item) => {
+                  const href = workHref(item);
+                  const opensInNewTab = href.startsWith("http");
+                  return (
+                  <a
+                    key={item.slug}
+                    href={href}
+                    target={opensInNewTab ? "_blank" : undefined}
+                    rel={opensInNewTab ? "noopener noreferrer" : undefined}
+                  >
                     <span>
-                      {item.domain} · {item.state}
+                      {item.domain} · {workStateLabels[item.state]}
                     </span>
                     <strong>{item.name}</strong>
                     <small>{item.claim}</small>
-                  </Link>
-                ))}
+                    {opensInNewTab ? (
+                      <span className="assistive-text">
+                        (opens in a new tab)
+                      </span>
+                    ) : null}
+                  </a>
+                  );
+                })}
               </div>
             </section>
           ) : null}
@@ -216,7 +281,9 @@ export default async function SearchPage({
             <section aria-labelledby="search-demos">
               <div className="group-heading">
                 <h2 id="search-demos">Demos</h2>
-                <span>{demos.length}</span>
+                <span>
+                  {demos.length} of {demoMatches.length}
+                </span>
               </div>
               <div className="result-list">
                 {demos.map((item) => (
@@ -234,7 +301,9 @@ export default async function SearchPage({
             <section aria-labelledby="search-writing">
               <div className="group-heading">
                 <h2 id="search-writing">Writing</h2>
-                <span>{writing.length}</span>
+                <span>
+                  {writing.length} of {writingMatches.length}
+                </span>
               </div>
               <div className="result-list">
                 {writing.map((item) => (
@@ -263,7 +332,9 @@ export default async function SearchPage({
             <section aria-labelledby="search-pages">
               <div className="group-heading">
                 <h2 id="search-pages">Pages</h2>
-                <span>{pages.length}</span>
+                <span>
+                  {pages.length} of {pageMatches.length}
+                </span>
               </div>
               <div className="result-list">
                 {pages.map((item) => (
