@@ -9,6 +9,7 @@ import {
   type WorkItem,
   workHref,
   workStateLabels,
+  workStateText,
 } from "../data";
 import { canonicalFacet, offeredFacets } from "../facets";
 
@@ -141,7 +142,7 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
             <option value="">All statuses</option>
             {stateOptions.map((item) => (
               <option key={item} value={item}>
-                {workStateLabels[item]}
+                {workStateText(item)}
               </option>
             ))}
           </select>

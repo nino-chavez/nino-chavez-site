@@ -39,6 +39,18 @@ export const workStateLabels: Record<WorkState, string> = {
   paused: "Paused",
 };
 
+export const workStateGlosses: Record<WorkState, string> = {
+  live: "available to use now",
+  maintained: "public and kept current",
+  published: "available to read",
+  building: "not yet released",
+  paused: "not actively developed",
+};
+
+export function workStateText(state: WorkState) {
+  return `${workStateLabels[state]} — ${workStateGlosses[state]}`;
+}
+
 export type WorkItem = {
   slug: string;
   name: string;
@@ -364,7 +376,7 @@ export const workItems: WorkItem[] = [
     updatedAt: "2026-07-02",
     destination: {
       label: "Open the photography collection",
-      href: "https://photography.ninochavez.co",
+      href: "/photography",
     },
     related: ["lets-pepper"],
   },
@@ -372,7 +384,7 @@ export const workItems: WorkItem[] = [
     slug: "signal-dispatch",
     name: "Signal Dispatch",
     claim:
-      "Essays, tutorials, and working notes on architecture, commerce, and building with AI.",
+      "Essays, fiction, tutorials, and research on architecture, commerce, and AI-assisted work.",
     domain: "Writing",
     state: "live",
     form: "collection",
@@ -1018,7 +1030,7 @@ export const learnTracks: LearnTrack[] = [
       {
         kind: "Work",
         title: "AI Champions Kit",
-        href: "/work/ai-champions-kit",
+        href: "https://github.com/nino-chavez/ai-champions-kit",
         note: "A practical enablement kit for turning scattered use into team practice.",
       },
       {

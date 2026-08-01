@@ -155,12 +155,12 @@ taste. They were derived from the production copy audit of 2026-08-01
   names the entry rather than the work.
 - **A coined term carries its gloss at first use.** Any term the site invents, or
   uses in a sense a visitor would not predict, is defined in the same section
-  where it first appears. This applies with most force to `state`, whose values
-  the `/work` filter glosses well ("Live — running now", "Internal — exists, not
-  public") and which appears bare on detail pages and search results that
-  visitors reach first. A site-level frame appearing in the `<title>` or the
-  first viewport is a coined term and must be defined on the page that carries
-  it.
+  where it first appears. This applies with most force to Work `Status` values:
+  the `/work` filter, direct search results, and detail metadata explain what
+  labels such as `Maintained` and `Paused` mean. `state` remains the internal data
+  key, not the visitor-facing field name. A site-level frame appearing in the
+  `<title>` or the first viewport is a coined term and must be defined on the page
+  that carries it.
 - **Say what the reader gets, not what the site refuses to do.** Copy does not
   negate a norm the visitor was never told about. "Nothing is hidden for failing
   to look finished" asks the reader to first believe hiding is normal here.

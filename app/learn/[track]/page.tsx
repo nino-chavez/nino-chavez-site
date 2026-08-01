@@ -87,14 +87,28 @@ export default async function LearnTrackPage({
             </p>
           </header>
           <div className="learn-evidence-list">
-            {track.evidence.map((item) => (
-              <Link href={item.href} key={`${item.kind}-${item.href}`}>
-                <span>{item.kind}</span>
-                <strong>{item.title}</strong>
-                <small>{item.note}</small>
-                <b aria-hidden="true">→</b>
-              </Link>
-            ))}
+            {track.evidence.map((item) => {
+              const external = item.href.startsWith("http");
+
+              return (
+                <Link
+                  href={item.href}
+                  key={`${item.kind}-${item.href}`}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noopener noreferrer" : undefined}
+                >
+                  <span>{item.kind}</span>
+                  <strong>
+                    {item.title}
+                    {external ? (
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    ) : null}
+                  </strong>
+                  <small>{item.note}</small>
+                  <b aria-hidden="true">{external ? "↗" : "→"}</b>
+                </Link>
+              );
+            })}
           </div>
         </section>
 

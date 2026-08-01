@@ -8,15 +8,19 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 const primary = [
-  { label: "Work", href: "/work", owns: ["/work", "/photography"] },
+  { label: "Work", href: "/work", owns: ["/work"] },
   { label: "Demos", href: "/demos", owns: ["/demos"] },
   { label: "Learn", href: "/learn", owns: ["/learn"] },
   { label: "Writing", href: "/blog", owns: ["/blog"] },
+  {
+    label: "Photography",
+    href: "/photography",
+    owns: ["/photography"],
+  },
   { label: "About", href: "/about", owns: ["/about", "/now", "/links"] },
 ] as const;
 
 const mobileSecondary = [
-  { label: "Photography", href: "/photography" },
   { label: "Now", href: "/now" },
   { label: "Links", href: "/links" },
 ] as const;

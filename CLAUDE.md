@@ -51,9 +51,10 @@ search control, an empty state — read the two clause sets:
 - `docs/IA-NAVIGATION.md` **§Naming rules** and **§Search** — one canonical name
   per surface, nav-label correspondence, unique record names, labeled search scope.
 
-`npm run test:audit` holds five of these mechanically and is the floor, not the
-pass; five cases are currently `todo` because the copy audit reported without
-fixing. `docs/AUDIT-PLAN.md` §"When a copy pass is owed" lists the events that
+`npm run test:audit` holds the mechanically testable cases and is the floor, not
+the pass. The 2026-08-01 remediation removed the remaining `todo` markers after
+the quantity, status, photography, privacy, canonical, and navigation fixes
+landed. `docs/AUDIT-PLAN.md` §"When a copy pass is owed" lists the events that
 oblige a fresh content review. Findings ledgers live in `docs/audit/`; the latest
 copy pass is `docs/audit/FINDINGS-copy-2026-08-01.md`. `reader-contract.json`
 carries the machine-readable term lists.

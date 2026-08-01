@@ -487,8 +487,9 @@ page except the wordmark.
   that is no longer true is a copy defect.
 - **Repro**: `curl -sSD- https://photography.ninochavez.co/explore?src=profile | grep -i location`
 - **Fix**: rewrite all six to apex-relative paths, same tab, and remove the new-tab
-  labels. Highest value: make the jersey-number search resolve on `/photography`
-  itself rather than handing off.
+  labels. Keep the authoritative search implementation in the photography runtime
+  at `/photography/explore`; duplicating gallery search inside the portfolio landing
+  would create the second implementation this consolidation is meant to remove.
 
 ### C25. Two indexed privacy policies for one domain `[verified]`
 
@@ -621,9 +622,24 @@ with `npm run test:audit`.
 "observed on production" into "verified against the current tree," which is the
 stronger claim and the one that survives a deploy.
 
-Against `bd20957`, three pass and are now live gates. C10 and C14 remain `todo`, so
-the suite stays green — `17 tests, 15 pass, 0 fail, 2 todo` — with the remaining debt
-visible in the output rather than living only in this document.
+Against `bd20957`, three passed and became live gates. The follow-up remediation
+removed the remaining `todo` markers after C10 and C14 were fixed, then added live
+gates for the mechanically testable photography findings.
+
+### Follow-up resolution — 2026-08-01
+
+| Finding | Resolution |
+|---|---|
+| C10 | Homepage quantities render without ordinal padding. |
+| C14 | Every work status is explained in the filter, direct search results, and detail metadata. The visitor-facing field remains `Status`; `state` is only the data key. |
+| C23 | The two useful story paragraphs now live on `/photography`; the router permanently redirects `/photography/about` to that section. |
+| C24 | Every archive entrance is apex-relative and same-tab. Search remains authoritative at `/photography/explore` rather than being duplicated in the portfolio app. |
+| C25 | The canonical `/privacy` policy now carries the youth-athlete permission gate; the router permanently redirects `/photography/privacy` to it. |
+| C26 | `/photography` and its Work detail read current photo, video, and album totals from the gallery's existing publisher-owned stats endpoint. No count is copied into prose. |
+| C27 | Every runtime uses `Menu` for the global compact-navigation control. |
+| C28 | Already resolved before this remediation: the style guide emits `noindex, follow` and is absent from the sitemap. |
+| C29 | `/photography` now emits an apex canonical and apex Open Graph image URL. |
+| C30 | Photography is a sixth top-level navigation item in the main app, Signal Dispatch, and gallery shell. Its collection sub-navigation remains visually subordinate. |
 
 Not mechanizable, and left to a re-run: C1 (whether the lede answers the
 question), C2 (whether a definition is a *good* definition), C13 (framing), C15
@@ -635,7 +651,7 @@ which.
 
 ## Next
 
-1. Remediate. This pass reported and did not fix, per the audit plan's role rule.
-   C1 and C12 are the two worth doing first — one is the highest-leverage change
-   on the site, the other is a one-line correctness fix.
-2. Re-run per the triggers in `docs/AUDIT-PLAN.md` §4.
+Re-run the affected routes after deployment per the triggers in
+`docs/AUDIT-PLAN.md` §4. The browser pass must include the six-item header near its
+desktop-to-compact breakpoint and the gallery's story, scale, search, and redirect
+paths.

@@ -77,7 +77,7 @@ must not produce a separate public identity.
 The header has three stable regions:
 
 1. **Identity** — `Nino Chavez`, linked to `/`.
-2. **Primary navigation** — Work, Demos, Learn, Writing, About, in that order.
+2. **Primary navigation** — Work, Demos, Learn, Writing, Photography, About, in that order.
 3. **Utility** — Search.
 
 There is no global call-to-action, services link, or product dropdown. The navigation
@@ -121,15 +121,17 @@ words themselves live in `OPEN-PRACTICE-ART-DIRECTION.md` §Copy and naming.
 | Navigation item | Active paths |
 |---|---|
 | Home identity | `/` only |
-| Work | `/work`, `/work/**`, and `/photography/**` |
+| Work | `/work`, `/work/**` |
 | Demos | `/demos`, `/demos/**` |
 | Learn | `/learn`, `/learn/**` |
 | Writing | `/blog`, `/blog/**` |
+| Photography | `/photography`, `/photography/**` |
 | About | `/about`, `/now`, `/links` |
 | Search | `/search` |
 
-Photography is an owned work collection, so Work remains active there. Now and Links
-are personal-context pages, so About remains active there.
+Photography has its own visitor task and subtree, so it owns its active state even
+though it remains represented in Work. Now and Links are personal-context pages, so
+About remains active there.
 
 The current item is communicated by more than color and uses
 `aria-current="page"` on an exact page or `aria-current="true"` for a section owner.
@@ -144,8 +146,8 @@ Menu opens a navigation dialog containing:
 3. Demos
 4. Learn
 5. Writing
-6. About
-7. Photography
+6. Photography
+7. About
 8. Now
 9. Links
 
@@ -372,9 +374,8 @@ search would have found it.
 
 ## Footer navigation
 
-The footer repeats the five primary destinations and adds:
+The footer repeats the six primary destinations and adds:
 
-- Photography
 - Now
 - Links
 - Privacy

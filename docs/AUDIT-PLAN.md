@@ -269,9 +269,11 @@ any of these:
 | A record is added to the registry | Sequence badges are assigned from registry order and re-sorted for display — the drift that produced C11. |
 | Copy is rewritten by an agent in bulk | The failure mode is fluent internal vocabulary. `reader-contract.json` `denyTerms` catches the known terms; a reader has to catch the new ones. |
 
-`npm run test:audit` is the floor, not the pass. It holds five copy invariants
-mechanically — internal vocabulary, count agreement, ordinal-vs-quantity,
-badge order, state gloss. Everything the clauses call judgment (does the lede
+`npm run test:audit` is the floor, not the pass. It holds copy and photography
+invariants mechanically — internal vocabulary, count agreement,
+ordinal-vs-quantity, badge order, status glosses, canonical URLs, internal link
+behavior, privacy consent language, publisher-owned totals, and global
+navigation. Everything the clauses call judgment (does the lede
 answer the question, is the gloss a good gloss, does the framing read as
 defensive) needs a person and a re-run.
 

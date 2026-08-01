@@ -23,6 +23,10 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import {
+  getPhotographyArchiveStats,
+  PHOTOGRAPHY_STATS_ENDPOINT,
+} from "../app/photography-stats.mjs";
 
 let worker;
 
@@ -341,7 +345,6 @@ test(
 
 test(
   "C10 — quantities are not rendered as zero-padded ordinals",
-  { todo: "app/page.tsx pads the demo, technique, and learning-path counts to two digits" },
   async () => {
     // Sequence positions may be padded (`01 / 06`). Quantities may not — a
     // padded count is indistinguishable from a position in the same visual
@@ -386,39 +389,109 @@ test(
 );
 
 test(
-  "C14 — a state value rendered to a visitor carries its gloss",
-  { todo: "workStateLabels supplies one-word labels ('Maintained') with no gloss on any surface" },
+  "C14 — every work status is explained where visitors first meet it",
   async () => {
-    // The audited production build glossed state in the /work filter ("Live —
-    // running now") and rendered it bare everywhere else. The current tree is
-    // consistent but glossless: every surface shows a one-word label. Neither
-    // satisfies AD §Copy — the term is coined, so wherever it first appears it
-    // is defined. The filter is where a visitor meets the vocabulary, so the
-    // gloss belongs there and on any detail page that shows a state.
-    const source = await readFile(
+    const [workHtml, detailHtml, searchHtml] = await Promise.all([
+      htmlFor("/work"),
+      htmlFor("/work/blueprint"),
+      htmlFor("/search?q=blueprint"),
+    ]);
+    const renderedGlosses = [
+      "Live — available to use now",
+      "Maintained — public and kept current",
+      "Published — available to read",
+      "In development — not yet released",
+    ];
+    for (const gloss of renderedGlosses) {
+      assert.match(
+        visibleText(workHtml),
+        new RegExp(gloss),
+        `the Work filter does not explain “${gloss.split(" — ")[0]}”`,
+      );
+    }
+    const dataSource = await readFile(
       new URL("../app/data.ts", import.meta.url),
       "utf8",
     );
-    const labels = [
-      ...(source.match(/workStateLabels[\s\S]*?\};/)?.[0] ?? "").matchAll(
-        /\w+: "([^"]+)"/g,
-      ),
-    ].map((m) => m[1]);
-    assert.ok(labels.length, "workStateLabels should be readable from data.ts");
-
-    // A gloss is a label followed by an explanatory clause. Em dash or
-    // parenthetical both qualify; the shape is the reviewer's call, the presence
-    // is not.
-    const html = await htmlFor("/work");
-    for (const label of labels) {
-      assert.match(
-        html,
-        new RegExp(`${label}\\s*(—|–|-|\\()\\s*\\S`),
-        `the state "${label}" is offered as a filter with no explanation of what it means`,
-      );
-    }
+    assert.match(dataSource, /paused:\s*"not actively developed"/);
+    assert.match(visibleText(detailHtml), /Maintained — public and kept current/);
+    assert.match(visibleText(searchHtml), /Maintained — public and kept current/);
   },
 );
+
+test("C23 — the photography story lives on the section landing", async () => {
+  const text = visibleText(await htmlFor("/photography"));
+  assert.match(text, /Started courtside\. Never left\./);
+  assert.match(text, /What started as a way to capture my own kid(?:'|&#x27;)s volleyball games/);
+  assert.match(text, /I(?:'|&#x27;)m not here for stiff poses or generic highlight reels/);
+});
+
+test("C24 — photography archive entrances stay on the apex in the same tab", async () => {
+  const html = (await htmlFor("/photography")).split('<script id="_R_">')[0];
+  assert.doesNotMatch(html, /photography\.ninochavez\.co/);
+  assert.match(html, /action="\/photography\/explore"/);
+  for (const route of ["explore", "albums", "timeline", "collections", "favorites"]) {
+    assert.match(html, new RegExp(`href="/photography/${route}`));
+    assert.doesNotMatch(
+      html,
+      new RegExp(`<a(?=[^>]*href="/photography/${route})(?=[^>]*target="_blank")`, "i"),
+    );
+  }
+});
+
+test("C25 — the canonical privacy policy carries the youth tag consent gate", async () => {
+  const text = visibleText(await htmlFor("/privacy"));
+  assert.match(text, /submit an athlete tag/);
+  assert.match(text, /athlete(?:'|&#x27;)s permission/);
+  assert.match(text, /under 18/);
+  assert.match(text, /parent or legal guardian/);
+});
+
+test("C26 — photography scale is read from the publisher-owned stats endpoint", async () => {
+  const stats = await getPhotographyArchiveStats(async (url) => {
+    assert.equal(url, PHOTOGRAPHY_STATS_ENDPOINT);
+    return new Response(
+      JSON.stringify({
+        total_photos: 20655,
+        total_videos: 481,
+        total_albums: 251,
+      }),
+      { headers: { "content-type": "application/json" } },
+    );
+  });
+  assert.deepEqual(stats, {
+    totalPhotos: 20655,
+    totalVideos: 481,
+    totalAlbums: 251,
+  });
+
+  const source = await readFile(
+    new URL("../app/photography/page.tsx", import.meta.url),
+    "utf8",
+  );
+  assert.match(source, /await getPhotographyArchiveStats\(\)/);
+  assert.match(source, /stats\.totalPhotos/);
+  assert.match(source, /stats\.totalVideos/);
+  assert.match(source, /stats\.totalAlbums/);
+});
+
+test("C29 — the photography landing publishes its canonical URL", async () => {
+  const html = await htmlFor("/photography");
+  assert.match(
+    html,
+    /<link rel="canonical" href="https:\/\/ninochavez\.co\/photography"/,
+  );
+});
+
+test("C30 — Photography is a top-level global navigation item", async () => {
+  const html = await htmlFor("/photography");
+  const primary = html.match(
+    /<nav class="desktop-navigation"[\s\S]*?<\/nav>/,
+  )?.[0];
+  assert.ok(primary, "primary navigation should render");
+  assert.match(primary, /Work[\s\S]*Demos[\s\S]*Learn[\s\S]*Writing[\s\S]*Photography[\s\S]*About/);
+  assert.match(primary, /href="\/photography" aria-current="page"/);
+});
 
 test("F8 — the homepage body offers entrances to Learn and About", async () => {
   const html = await htmlFor("/");

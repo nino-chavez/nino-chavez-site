@@ -2,39 +2,40 @@
  * Next Image optimization; these local WebP assets are already sized for delivery. */
 
 import type { Metadata } from "next";
+import { getPhotographyArchiveStats } from "../photography-stats.mjs";
 
-const archiveRoot = "https://photography.ninochavez.co";
+const canonicalRoot = "https://ninochavez.co/photography";
 const sourcePattern = /^[a-z0-9_-]{1,32}$/;
 
 const collectionRoutes = [
   {
     title: "Search",
     description: "Find photos by event, team, or jersey number.",
-    href: `${archiveRoot}/explore`,
+    href: "/photography/explore",
     action: "Search photos",
   },
   {
     title: "Albums",
     description: "Open complete event galleries, newest first.",
-    href: `${archiveRoot}/albums`,
+    href: "/photography/albums",
     action: "Browse events",
   },
   {
     title: "Timeline",
     description: "Move through the archive by year and month.",
-    href: `${archiveRoot}/timeline`,
+    href: "/photography/timeline",
     action: "Open timeline",
   },
   {
     title: "Collections",
     description: "Browse curated moments and visual themes.",
-    href: `${archiveRoot}/collections`,
+    href: "/photography/collections",
     action: "View collections",
   },
   {
     title: "Favorites",
     description: "Return to the frames saved in this browser.",
-    href: `${archiveRoot}/favorites`,
+    href: "/photography/favorites",
     action: "Open favorites",
   },
 ] as const;
@@ -94,13 +95,14 @@ export const metadata: Metadata = {
   title: "Photography",
   description:
     "Volleyball and action-sports photography by Nino Chavez. Search the full archive by event, team, or jersey number.",
+  alternates: { canonical: "/photography" },
   openGraph: {
     title: "Nino Chavez Photography",
     description:
       "Volleyball and action-sports photography. Find your event, team, or jersey number.",
     images: [
       {
-        url: `${archiveRoot}/og.png`,
+        url: `${canonicalRoot}/og.png`,
         width: 1200,
         height: 630,
         alt: "Nino Chavez Photography",
@@ -112,14 +114,14 @@ export const metadata: Metadata = {
     title: "Nino Chavez Photography",
     description:
       "Volleyball and action-sports photography. Find your event, team, or jersey number.",
-    images: [`${archiveRoot}/og.png`],
+    images: [`${canonicalRoot}/og.png`],
   },
 };
 
 function withSource(href: string, source: string) {
-  const url = new URL(href);
+  const url = new URL(href, "https://ninochavez.co");
   url.searchParams.set("src", source);
-  return url.toString();
+  return `${url.pathname}${url.search}`;
 }
 
 export default async function PhotographyPage({
@@ -130,6 +132,7 @@ export default async function PhotographyPage({
   const { src } = await searchParams;
   const source =
     typeof src === "string" && sourcePattern.test(src) ? src : "profile";
+  const stats = await getPhotographyArchiveStats();
 
   return (
     <div className="photography-page">
@@ -170,14 +173,12 @@ export default async function PhotographyPage({
               college events by team, event, or jersey number.
             </p>
             <form
-              action={`${archiveRoot}/explore`}
+              action="/photography/explore"
               method="get"
               role="search"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <label htmlFor="photography-query">
-                Search the full photography archive (opens in a new tab)
+                Search the full photography archive
               </label>
               <div>
                 <input
@@ -191,12 +192,9 @@ export default async function PhotographyPage({
               </div>
             </form>
             <a
-              href={withSource(`${archiveRoot}/albums`, source)}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={withSource("/photography/albums", source)}
             >
-              Browse every event <span aria-hidden="true">↗</span>
-              <span className="assistive-text"> (opens in a new tab)</span>
+              Browse every event <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
@@ -210,16 +208,11 @@ export default async function PhotographyPage({
               <li key={route.href}>
                 <a
                   href={withSource(route.href, source)}
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   <strong>{route.title}</strong>
                   <small>{route.description}</small>
                   <b>
-                    {route.action} <span aria-hidden="true">↗</span>
-                    <span className="assistive-text">
-                      {" "}(opens in a new tab)
-                    </span>
+                    {route.action} <span aria-hidden="true">→</span>
                   </b>
                 </a>
               </li>
@@ -229,6 +222,23 @@ export default async function PhotographyPage({
       </header>
 
       <div className="photography-archive">
+        {stats ? (
+          <dl className="photography-scale page-shell" aria-label="Archive scale">
+            <div>
+              <dt>Photos</dt>
+              <dd>{stats.totalPhotos.toLocaleString("en-US")}</dd>
+            </div>
+            <div>
+              <dt>Videos</dt>
+              <dd>{stats.totalVideos.toLocaleString("en-US")}</dd>
+            </div>
+            <div>
+              <dt>Event albums</dt>
+              <dd>{stats.totalAlbums.toLocaleString("en-US")}</dd>
+            </div>
+          </dl>
+        ) : null}
+
         <section
           className="photography-selection"
           aria-labelledby="photography-selection-title"
@@ -265,14 +275,36 @@ export default async function PhotographyPage({
           <footer className="photography-selection__footer page-shell">
             <span>12 frames shown</span>
             <a
-              href={withSource(`${archiveRoot}/explore`, source)}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={withSource("/photography/explore", source)}
             >
-              Open the full gallery <span aria-hidden="true">↗</span>
-              <span className="assistive-text"> (opens in a new tab)</span>
+              Open the full gallery <span aria-hidden="true">→</span>
             </a>
           </footer>
+        </section>
+
+        <section
+          className="photography-story page-shell"
+          id="story"
+          aria-labelledby="photography-story-title"
+        >
+          <header>
+            <p>Behind the camera</p>
+            <h2 id="photography-story-title">Started courtside. Never left.</h2>
+          </header>
+          <div>
+            <p>
+              What started as a way to capture my own kid&apos;s volleyball
+              games turned into something a lot bigger. Now I cover high school
+              and college matches, special events, and tournaments where the
+              competition runs deep and the lighting is almost always terrible.
+            </p>
+            <p>
+              I&apos;m not here for stiff poses or generic highlight reels.
+              I&apos;m here to catch the flicker—the exact frame where
+              determination meets opportunity, where emotion breaks through
+              the surface.
+            </p>
+          </div>
         </section>
 
         <aside className="photography-coverage page-shell">

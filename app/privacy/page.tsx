@@ -296,6 +296,11 @@ export default function PrivacyPage() {
               public when they appear on a published photo.
             </p>
             <p>
+              To submit an athlete tag, you must confirm that you have the
+              athlete&apos;s permission. If the athlete is under 18, you must
+              confirm permission from their parent or legal guardian.
+            </p>
+            <p>
               If you are pictured, or you are the parent or guardian of a youth
               athlete, you can ask me to review a photograph or public athlete
               label for correction or removal. Include the page or photo link

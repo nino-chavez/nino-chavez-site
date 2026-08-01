@@ -401,6 +401,13 @@ test("renders seven grounded learning paths without positional placeholders", as
   assert.match(builderHtml, /Deployed production application/);
   assert.doesNotMatch(builderHtml, /create-specchain|Ask BC/);
 
+  const enterpriseHtml = await htmlFor("/learn/enterprise");
+  assert.match(
+    enterpriseHtml,
+    /href="https:\/\/github\.com\/nino-chavez\/ai-champions-kit"[^>]*target="_blank"/,
+  );
+  assert.doesNotMatch(enterpriseHtml, /href="\/work\/ai-champions-kit"/);
+
   const source = await readFile(
     new URL("../app/learn/[track]/page.tsx", import.meta.url),
     "utf8",
@@ -665,7 +672,7 @@ test("renders Photography as an owned image collection with live archive paths",
   );
   assert.match(
     photographyDocument,
-    /action="https:\/\/photography\.ninochavez\.co\/explore"/,
+    /action="\/photography\/explore"/,
   );
   assert.match(photographyDocument, /name="src" value="profile"/);
   assert.match(
@@ -674,7 +681,7 @@ test("renders Photography as an owned image collection with live archive paths",
   );
   assert.match(
     attributedHtml,
-    /https:\/\/photography\.ninochavez\.co\/albums\?src=ig-photo/,
+    /\/photography\/albums\?src=ig-photo/,
   );
   assert.match(photographyDocument, /Search[\s\S]*Albums/);
   assert.match(photographyDocument, /Timeline[\s\S]*Collections/);
@@ -697,8 +704,20 @@ test("renders Photography as an owned image collection with live archive paths",
   );
   assert.match(
     photographyDocument,
-    /https:\/\/photography\.ninochavez\.co\/og\.png/,
+    /https:\/\/ninochavez\.co\/photography\/og\.png/,
   );
+  assert.match(
+    photographyDocument,
+    /rel="canonical" href="https:\/\/ninochavez\.co\/photography"/,
+  );
+  assert.match(photographyDocument, /Started courtside\. Never left\./);
+  for (const route of ["explore", "albums", "timeline", "collections", "favorites"]) {
+    assert.doesNotMatch(
+      photographyDocument,
+      new RegExp(`<a(?=[^>]*href="/photography/${route})(?=[^>]*target="_blank")`, "i"),
+    );
+  }
+  assert.doesNotMatch(photographyDocument, /photography\.ninochavez\.co/);
   assert.doesNotMatch(
     photographyDocument,
     /Image 0|Gallery structure placeholders|separate runtime|shared shell/i,
@@ -759,6 +778,8 @@ test("renders the current privacy policy and makes it globally searchable", asyn
   assert.match(privacyHtml, /Search records do not currently expire automatically/);
   assert.match(privacyHtml, /What stays on your device/);
   assert.match(privacyHtml, /People in photographs/);
+  assert.match(privacyHtml, /submit an athlete tag/);
+  assert.match(privacyHtml, /parent or legal guardian/);
   assert.match(privacyHtml, /nino@ninochavez\.co/);
   assert.match(
     privacyHtml,
