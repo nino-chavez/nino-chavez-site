@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "source": "apps/nc-demos",
-  "sourceRevision": "c81cdd02522713a6aeec1741f2754e0b9ec99830",
-  "generatedAt": "2026-07-31T03:44:24.135Z",
+  "sourceRevision": "e9d10531f69b540dde4e1c831f84da4a6cbc443f",
+  "generatedAt": "2026-08-02T23:47:45.299Z",
   "sessionCount": 12,
-  "techniqueCount": 8,
+  "techniqueCount": 9,
   "sessions": [
     {
       "number": "01",
@@ -65,18 +65,18 @@
       "number": "04",
       "slug": "session-corpus",
       "title": "Your Sessions Are a Corpus",
-      "summary": "2,747 agent-session transcripts, mined: reusable prompts, your corrections as standing priors, and an honest ledger of what the agent built that survived.",
+      "summary": "A 24 GB session archive forced the next question: how do you keep the lessons, prove closeout, and let the raw record expire?",
       "audience": "Anyone who has corrected an AI twice and watched the correction evaporate with the session.",
-      "evidence": "The mining loop end to end — waste audits, voice priors, graded sessions — plus the tool's own confession that it was rebuilt 12 times before being made durable.",
-      "practice": "Grep your transcripts for one counted waste number before building anything; save corrections where the next session reads them.",
-      "date": "2026-07",
+      "evidence": "The mining loop end to end, plus the measured retention incident that separated canonical truth, compact recall, raw transcripts, and reproducible worktree output.",
+      "practice": "Close one session into an outcome, evidence, open questions, and next action before deciding whether its raw transcript is safe to expire.",
+      "date": "2026-08",
       "theme": "memory",
       "accent": "#46c395",
       "artifact": {
         "src": "/work/demo-session-corpus.jpg",
         "alt": "Demo 04 title slide: a real artifact-miner run over 2,747 transcripts"
       },
-      "relatedTechniqueSlug": "corpus",
+      "relatedTechniqueSlug": "session-closeout",
       "href": "https://ninochavez.co/demos/session-corpus",
       "storyHref": "https://nc-demos.pages.dev/content/sessions/session-corpus.json"
     },
@@ -275,9 +275,7 @@
         "Turn repeated corrections into priors the next session reads.",
         "Re-derive important numbers when you use them."
       ],
-      "relatedSessionSlugs": [
-        "session-corpus"
-      ],
+      "relatedSessionSlugs": [],
       "href": "https://ninochavez.co/demos/applied/corpus",
       "storyHref": "https://nc-demos.pages.dev/content/techniques/corpus.json"
     },
@@ -344,6 +342,22 @@
       ],
       "href": "https://ninochavez.co/demos/applied/registry",
       "storyHref": "https://nc-demos.pages.dev/content/techniques/registry.json"
+    },
+    {
+      "slug": "session-closeout",
+      "title": "Close the Session, Keep the Lesson",
+      "summary": "Turn a finished agent session into durable project truth and compact recall before its raw transcript expires.",
+      "description": "Promote project truth, distill the reusable method, enqueue fast, mine in the background, and delete raw transcripts only after an explicit archive-safety receipt.",
+      "principles": [
+        "Project truth stays with the project that owns it.",
+        "Lifecycle hooks enqueue; background workers mine.",
+        "A current watermark proves ingestion, not semantic completeness."
+      ],
+      "relatedSessionSlugs": [
+        "session-corpus"
+      ],
+      "href": "https://ninochavez.co/demos/applied/session-closeout",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/session-closeout.json"
     },
     {
       "slug": "two-ways",

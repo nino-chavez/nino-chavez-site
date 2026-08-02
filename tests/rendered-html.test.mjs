@@ -118,7 +118,7 @@ test("preserves the canonical entity endpoints and generated root sitemap", asyn
     /^application\/xml/i,
   );
   const sitemapXml = await sitemap.text();
-  assert.equal((sitemapXml.match(/<url>/g) ?? []).length, 59);
+  assert.equal((sitemapXml.match(/<url>/g) ?? []).length, 60);
   assert.match(sitemapXml, /https:\/\/ninochavez\.co\/work\/film-room/);
   assert.doesNotMatch(sitemapXml, /\/work\/whitepapers/);
   assert.doesNotMatch(sitemapXml, /\/work\/presentations/);
@@ -271,7 +271,7 @@ test("keeps the complete demo corpus available as native stories", async () => {
       (total, story) => total + story.sectionCount,
       0,
     ),
-    161,
+    172,
   );
 
   for (const story of [...stories.sessions, ...stories.techniques]) {
