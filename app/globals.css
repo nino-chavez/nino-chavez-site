@@ -3182,19 +3182,12 @@ h3 {
   position: relative;
   z-index: 2;
   display: grid;
-  width: 100%;
+  width: clamp(190px, 16vw, 252px);
   margin-left: auto;
-  overflow: hidden;
-  border: 1px solid rgb(241 234 223 / 0.52);
-  background: var(--ink-soft);
-  box-shadow: 0 22px 50px rgb(0 0 0 / 0.34);
   cursor: pointer;
   list-style: none;
-  transform: rotate(1.2deg);
-  transform-origin: 70% 70%;
-  transition:
-    border-color var(--motion-fast) var(--ease-practice),
-    transform var(--motion-fast) var(--ease-practice);
+  transform-origin: center;
+  transition: transform var(--motion-fast) var(--ease-practice);
 }
 
 .practice-profile-badge summary::-webkit-details-marker {
@@ -3204,8 +3197,7 @@ h3 {
 .practice-profile-badge summary:hover,
 .practice-profile-badge summary:focus-visible,
 .practice-profile-badge[open] summary {
-  border-color: var(--copper-dark);
-  transform: rotate(0deg) translateY(-4px);
+  transform: translateY(-6px) scale(1.015);
 }
 
 .practice-profile-badge__portrait {
@@ -3213,19 +3205,38 @@ h3 {
   display: block;
   aspect-ratio: 1;
   overflow: hidden;
+  border: 1px solid rgb(241 234 223 / 0.56);
+  border-radius: 50%;
   background: url("/work/nino-illustrated-v1.webp") center / cover no-repeat;
+  box-shadow:
+    0 0 0 8px rgb(93 107 250 / 0.08),
+    0 26px 60px rgb(0 0 0 / 0.38);
+  transition:
+    border-color var(--motion-fast) var(--ease-practice),
+    box-shadow var(--motion-fast) var(--ease-practice);
+}
+
+.practice-profile-badge summary:hover .practice-profile-badge__portrait,
+.practice-profile-badge summary:focus-visible .practice-profile-badge__portrait,
+.practice-profile-badge[open] .practice-profile-badge__portrait {
+  border-color: var(--copper-dark);
+  box-shadow:
+    0 0 0 8px rgb(207 112 70 / 0.12),
+    0 30px 70px rgb(0 0 0 / 0.42);
 }
 
 .practice-profile-badge__portrait > span {
   position: absolute;
-  right: 8px;
-  bottom: 8px;
+  right: 8%;
+  bottom: 9%;
   display: grid;
-  width: 27px;
-  height: 27px;
+  width: 34px;
+  height: 34px;
   place-items: center;
   border: 1px solid rgb(241 234 223 / 0.52);
+  border-radius: 50%;
   background: rgb(9 20 38 / 0.92);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.28);
   color: var(--copper-dark);
   font-family: var(--mono);
   font-size: 1.1rem;
@@ -3238,10 +3249,18 @@ h3 {
 }
 
 .practice-profile-badge__label {
+  position: relative;
+  z-index: 2;
   display: grid;
-  padding: 8px 10px 9px;
+  width: max-content;
+  min-width: 136px;
+  margin: -18px 8px 0 auto;
+  padding: 8px 13px 9px;
   gap: 2px;
-  border-top: 1px solid rgb(241 234 223 / 0.3);
+  border: 1px solid rgb(241 234 223 / 0.42);
+  border-radius: 999px;
+  background: rgb(9 20 38 / 0.96);
+  box-shadow: 0 12px 28px rgb(0 0 0 / 0.28);
 }
 
 .practice-profile-badge__label strong {
@@ -3256,10 +3275,23 @@ h3 {
   text-transform: uppercase;
 }
 
+.practice-profile-badge__close-copy {
+  display: none;
+}
+
+.practice-profile-badge[open] .practice-profile-badge__open-copy {
+  display: none;
+}
+
+.practice-profile-badge[open] .practice-profile-badge__close-copy {
+  display: inline;
+}
+
 .practice-profile-badge__card {
-  margin-top: 10px;
+  margin-top: 16px;
   padding: 18px;
   border: 1px solid rgb(241 234 223 / 0.42);
+  border-radius: 14px;
   background: rgb(13 27 49 / 0.98);
   box-shadow: 0 24px 50px rgb(0 0 0 / 0.3);
 }
@@ -4575,7 +4607,7 @@ h3 {
   }
 
   .practice-profile-badge summary {
-    width: min(42vw, 164px);
+    width: min(40vw, 154px);
   }
 
   .practice-proof--rally {

@@ -46,7 +46,14 @@ function ProfileBadge() {
         </span>
         <span className="practice-profile-badge__label">
           <strong>Nino Chavez</strong>
-          <small>Open profile</small>
+          <small>
+            <span className="practice-profile-badge__open-copy">
+              Open profile
+            </span>
+            <span className="practice-profile-badge__close-copy">
+              Close profile
+            </span>
+          </small>
         </span>
       </summary>
 
