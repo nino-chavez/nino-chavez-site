@@ -4177,7 +4177,7 @@ h3 {
 }
 
 .demo-collection-bridge > span {
-  color: var(--copper);
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 0.68rem;
   letter-spacing: 0.04em;
@@ -4191,11 +4191,10 @@ h3 {
 }
 
 .demo-collection-bridge a {
-  color: var(--text);
+  color: var(--action);
   font-family: var(--mono);
   font-size: 0.7rem;
   letter-spacing: 0.03em;
-  text-decoration-color: var(--copper);
   text-transform: uppercase;
 }
 
@@ -4879,17 +4878,23 @@ h3 {
     color 160ms ease;
 }
 
-.learn-track-register a:hover,
-.learn-track-register a:focus-visible {
-  background: var(--cobalt);
-  box-shadow: inset 4px 0 0 var(--copper-dark);
-  color: var(--bone);
+/* claude-design-system: hover shifts color, never the ground */
+.learn-track-register a:hover .learn-track-name strong,
+.learn-track-register a:focus-visible .learn-track-name strong {
+  color: var(--action);
 }
 
 .learn-track-number,
-.learn-track-time,
+.learn-track-time {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
 .learn-track-register b {
-  color: var(--copper);
+  color: var(--action);
   font-family: var(--mono);
   font-size: 0.7rem;
   font-weight: 400;
@@ -4931,22 +4936,9 @@ h3 {
   line-height: 1.4;
 }
 
-.learn-track-register a:hover small,
-.learn-track-register a:focus-visible small,
-.learn-track-register a:hover .learn-track-start,
-.learn-track-register a:focus-visible .learn-track-start,
-.learn-track-register a:hover .learn-track-output,
-.learn-track-register a:focus-visible .learn-track-output {
-  color: rgb(240 241 244 / 0.72);
-}
-
-.learn-track-register a:hover .learn-track-number,
-.learn-track-register a:focus-visible .learn-track-number,
-.learn-track-register a:hover .learn-track-time,
-.learn-track-register a:focus-visible .learn-track-time,
 .learn-track-register a:hover b,
 .learn-track-register a:focus-visible b {
-  color: var(--sand);
+  color: var(--action);
 }
 
 .learn-evidence-bridge {
@@ -9057,23 +9049,21 @@ h3 {
   gap: 10px;
 }
 
+/* claude-design-system: counts are data on the photo ground, not colored tiles */
 .demo-studio__counts a {
   display: grid;
   min-height: 116px;
-  padding: 16px;
+  padding: 16px 4px;
   grid-template-columns: 1fr auto;
   grid-template-rows: 1fr auto;
-  background: var(--cobalt);
-  color: white;
+  border-top: 1px solid rgb(240 241 244 / 0.35);
+  color: var(--bone);
   text-decoration: none;
-}
-
-.demo-studio__counts a + a {
-  background: var(--copper);
 }
 
 .demo-studio__counts strong {
   font-size: clamp(2.6rem, 4vw, 4rem);
+  font-variant-numeric: tabular-nums;
   line-height: 0.9;
 }
 
@@ -9278,23 +9268,26 @@ h3 {
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
-  scrollbar-color: var(--copper) var(--surface-muted);
+  scrollbar-color: var(--action) var(--surface-muted);
 }
 
+/* claude-design-system: the session frame stays dark (it is the artifact);
+ * the card body reads on light ground like every other card */
 .demo-session-card {
   display: grid;
   min-width: 0;
   grid-template-rows: 290px minmax(240px, auto);
-  background: var(--ink);
-  color: var(--bone);
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  color: var(--text);
   scroll-snap-align: start;
   text-decoration: none;
-  transition: transform 220ms var(--ease-practice);
+  transition: border-color var(--motion-fast) ease;
 }
 
 .demo-session-card:hover,
 .demo-session-card:focus-visible {
-  transform: translateY(-6px);
+  border-color: var(--action);
 }
 
 .demo-session-card__frame {
@@ -9323,8 +9316,8 @@ h3 {
   top: 12px;
   left: 12px;
   padding: 6px 8px;
-  background: var(--copper-dark);
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--bone);
   font-family: var(--mono);
   font-size: 0.64rem;
   font-weight: 700;
@@ -9349,7 +9342,7 @@ h3 {
 }
 
 .demo-session-card small {
-  color: var(--copper-dark);
+  color: var(--muted);
 }
 
 .demo-session-card strong,
@@ -9363,7 +9356,7 @@ h3 {
 .demo-session-card p,
 .demo-technique-card p {
   margin: 12px 0 24px;
-  color: rgb(240 241 244 / 0.62);
+  color: var(--muted);
 }
 
 .demo-session-card em,
@@ -9375,7 +9368,7 @@ h3 {
 
 .demo-session-card em b,
 .demo-technique-card em b {
-  color: var(--copper-dark);
+  color: var(--action);
 }
 
 .demo-technique-grid {
@@ -9384,36 +9377,32 @@ h3 {
   gap: 14px;
 }
 
+/* claude-design-system: technique cards on one ground — no pastel rotation,
+ * no hover ground flips */
 .demo-technique-card {
   display: flex;
   min-height: 330px;
   padding: 24px;
   flex-direction: column;
-  background: var(--action-quiet);
+  border: 1px solid var(--rule);
+  background: var(--surface);
   color: var(--text);
   text-decoration: none;
-  transition:
-    transform 220ms var(--ease-practice),
-    background var(--motion-fast) ease;
-}
-
-.demo-technique-card:nth-child(3n + 2) {
-  background: var(--surface-muted);
-}
-
-.demo-technique-card:nth-child(3n) {
-  background: #e8dcc3;
+  transition: border-color var(--motion-fast) ease;
 }
 
 .demo-technique-card:hover,
 .demo-technique-card:focus-visible {
-  transform: translateY(-6px);
-  background: var(--cobalt);
-  color: white;
+  border-color: var(--action);
+}
+
+.demo-technique-card:hover strong,
+.demo-technique-card:focus-visible strong {
+  color: var(--action);
 }
 
 .demo-technique-card > span {
-  color: var(--copper);
+  color: var(--muted);
 }
 
 .demo-technique-card small {
@@ -9425,25 +9414,18 @@ h3 {
   color: var(--text);
 }
 
-.demo-technique-card:hover > span,
-.demo-technique-card:hover small,
-.demo-technique-card:hover p,
-.demo-technique-card:focus-visible > span,
-.demo-technique-card:focus-visible small,
-.demo-technique-card:focus-visible p {
-  color: white;
-}
 
+/* claude-design-system: bridge is a bordered panel on the page ground */
 .demo-collection-bridge {
   margin-top: clamp(72px, 9vw, 120px);
   padding: 24px;
-  border: 0;
-  background: var(--ink);
-  color: var(--bone);
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  color: var(--text);
 }
 
 .demo-collection-bridge a {
-  color: var(--bone);
+  color: var(--action);
 }
 
 /* Photography / image field */
@@ -10174,10 +10156,11 @@ h3 {
   --frame-pos: center 22%;
 }
 
+/* claude-design-system: labels on photo grounds are bone, one species */
 .writing-opening .eyebrow,
 .learn-opening .eyebrow,
 .demo-studio .eyebrow {
-  color: var(--sand);
+  color: rgb(240 241 244 / 0.78);
 }
 
 @media (max-width: 760px) {
