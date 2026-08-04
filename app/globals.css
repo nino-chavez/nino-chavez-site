@@ -9942,17 +9942,17 @@ h3 {
   background-image:
     linear-gradient(
       100deg,
-      rgb(7 16 21 / 0.92) 0%,
-      rgb(7 16 21 / 0.55) 48%,
-      rgb(7 16 21 / 0.3) 100%
+      rgb(7 16 21 / 0.86) 0%,
+      rgb(7 16 21 / 0.45) 48%,
+      rgb(7 16 21 / 0.14) 100%
     ),
     url("/images/all-work-frame.jpg");
   background-image:
     linear-gradient(
       100deg,
-      rgb(7 16 21 / 0.92) 0%,
-      rgb(7 16 21 / 0.55) 48%,
-      rgb(7 16 21 / 0.3) 100%
+      rgb(7 16 21 / 0.86) 0%,
+      rgb(7 16 21 / 0.45) 48%,
+      rgb(7 16 21 / 0.14) 100%
     ),
     image-set(
       url("/images/all-work-frame.webp") type("image/webp"),
@@ -10081,5 +10081,79 @@ h3 {
   .library-index--field .domain-index a,
   .library-index--field .domain-index a:nth-child(n) {
     width: 100%;
+  }
+}
+
+/* Frame system — entrance surfaces set in corpus photographs (candidate A
+   propagation, 2026-08-04). One frame per surface, all duotoned ink->steel
+   like public/images/all-work-frame.*; the scrim keeps text at AA. A browser
+   without image-set() in var() falls back to the flat ink band. */
+.writing-opening,
+.learn-opening,
+.work-atlas,
+.demo-studio {
+  background-color: var(--ink);
+  color: var(--bone);
+  background-image:
+    linear-gradient(
+      100deg,
+      rgb(7 16 21 / 0.88) 0%,
+      rgb(7 16 21 / 0.5) 48%,
+      rgb(7 16 21 / 0.16) 100%
+    ),
+    var(--frame-src);
+  background-size: cover, cover;
+  background-position: center, var(--frame-pos, center 30%);
+}
+
+.writing-opening {
+  --frame-src: image-set(
+    url("/images/frame-writing.webp") type("image/webp"),
+    url("/images/frame-writing.jpg") type("image/jpeg")
+  );
+}
+
+.learn-opening {
+  --frame-src: image-set(
+    url("/images/frame-learn.webp") type("image/webp"),
+    url("/images/frame-learn.jpg") type("image/jpeg")
+  );
+  --frame-pos: center 40%;
+}
+
+.work-atlas {
+  --frame-src: image-set(
+    url("/images/frame-work.webp") type("image/webp"),
+    url("/images/frame-work.jpg") type("image/jpeg")
+  );
+}
+
+.demo-studio {
+  --frame-src: image-set(
+    url("/images/frame-demos.webp") type("image/webp"),
+    url("/images/frame-demos.jpg") type("image/jpeg")
+  );
+  --frame-pos: center 22%;
+}
+
+.writing-opening .eyebrow,
+.learn-opening .eyebrow,
+.work-atlas .eyebrow,
+.demo-studio .eyebrow {
+  color: var(--sand);
+}
+
+@media (max-width: 760px) {
+  .writing-opening,
+  .learn-opening,
+  .work-atlas,
+  .demo-studio {
+    background-image:
+      linear-gradient(
+        160deg,
+        rgb(7 16 21 / 0.94) 0%,
+        rgb(7 16 21 / 0.7) 100%
+      ),
+      var(--frame-src);
   }
 }
