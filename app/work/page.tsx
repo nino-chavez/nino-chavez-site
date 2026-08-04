@@ -37,15 +37,6 @@ export default function WorkPage() {
               Browse all {workItems.length} items{" "}
               <span aria-hidden="true">↓</span>
             </a>
-
-            <figure className="work-atlas__frame">
-              <img
-                src="/images/frame-work.webp"
-                alt="Net play from the photography archive"
-                loading="lazy"
-              />
-              <figcaption>From the photography archive</figcaption>
-            </figure>
           </div>
 
           <nav className="work-domains" aria-label="Explore work by domain">

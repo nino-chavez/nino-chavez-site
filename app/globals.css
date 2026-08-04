@@ -2321,10 +2321,11 @@ code {
   text-decoration-color: var(--copper);
 }
 
+/* claude-design-system: collection openings sit on the page ground — the
+ * photo budget belongs to pages whose subject the archive depicts */
 .library-opening {
   padding-block: 26px clamp(90px, 10vw, 150px);
-  background: var(--ink);
-  color: var(--bone);
+  color: var(--text);
 }
 
 .library-opening__register {
@@ -2332,9 +2333,9 @@ code {
   grid-template-columns: 1fr auto auto;
   padding-block: 10px;
   gap: 32px;
-  border-top: 1px solid rgb(240 241 244 / 0.3);
-  border-bottom: 1px solid rgb(240 241 244 / 0.3);
-  color: rgb(240 241 244 / 0.58);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 0.65rem;
   letter-spacing: 0.07em;
@@ -2349,34 +2350,29 @@ code {
   align-items: end;
 }
 
-.library-opening .eyebrow {
-  color: var(--copper);
-}
-
 .library-opening h1 {
   margin: 0;
-  font-family: var(--display);
-  font-size: clamp(4.5rem, 10vw, 10.5rem);
+  color: var(--ink);
+  font-size: clamp(3.4rem, 6.5vw, 6rem);
   font-weight: 760;
-  letter-spacing: -0.085em;
-  line-height: 0.73;
-  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
 }
 
 .library-opening h1 em {
-  color: var(--cobalt-bright);
+  color: var(--action);
   font-style: normal;
 }
 
 .library-opening__copy .lede {
   margin: 0;
-  color: var(--bone);
+  color: var(--text);
   font-size: clamp(1.25rem, 1.8vw, 1.65rem);
 }
 
 .library-opening__copy > div:last-child > p:last-child {
   margin: 24px 0 0;
-  color: rgb(240 241 244 / 0.58);
+  color: var(--muted);
 }
 
 .library-room {
@@ -3026,10 +3022,6 @@ h3 {
 }
 
 .practice-identity .eyebrow,
-.library-opening .eyebrow {
-  color: var(--copper-dark);
-}
-
 .practice-identity h1 {
   margin: 0;
   color: var(--cobalt-bright);
@@ -3827,13 +3819,10 @@ h3 {
 
 .library-opening h1 {
   max-width: none;
-  font-family: var(--hero);
-  font-size: clamp(6rem, 8vw, 8.75rem);
-  font-weight: 400;
-  letter-spacing: var(--hero-tracking);
-  line-height: var(--hero-leading-stack);
-  text-wrap: nowrap;
-  text-transform: uppercase;
+  font-size: clamp(3.6rem, 6.5vw, 6.2rem);
+  font-weight: 760;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
 }
 
 .library-opening h1 span {
@@ -4827,7 +4816,7 @@ h3 {
 .learn-concept > span,
 .learn-fit > header > span,
 .learn-next-move > span {
-  color: var(--copper);
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 0.7rem;
   letter-spacing: 0.05em;
@@ -8514,30 +8503,6 @@ h3 {
   transition: transform var(--motion-fast) var(--ease-practice);
 }
 
-.work-atlas__frame {
-  margin: 38px 0 0;
-  overflow: hidden;
-  border: 1px solid var(--rule);
-}
-
-.work-atlas__frame img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
-.work-atlas__frame figcaption {
-  padding: 10px 12px;
-  border-top: 1px solid var(--rule);
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.055em;
-  text-transform: uppercase;
-}
-
 /* domain ledger — rows carry the data; no colored tiles */
 .work-domains {
   display: grid;
@@ -8996,10 +8961,7 @@ h3 {
 
 .demo-studio {
   overflow: clip;
-  background:
-    radial-gradient(circle at 78% 38%, rgb(20 103 158 / 0.28), transparent 30%),
-    linear-gradient(128deg, var(--ink) 0 68%, #132541 68% 100%);
-  color: var(--bone);
+  color: var(--text);
 }
 
 .demo-studio__stage {
@@ -9011,19 +8973,14 @@ h3 {
   align-items: center;
 }
 
-.demo-studio__lead .eyebrow {
-  color: var(--copper-dark);
-}
-
 .demo-studio__lead h1 {
   max-width: 690px;
   margin: 14px 0 28px;
-  color: var(--bone);
-  font-family: var(--display);
-  font-size: clamp(4rem, 7vw, 7.4rem);
-  font-weight: 820;
-  letter-spacing: -0.075em;
-  line-height: 0.88;
+  color: var(--ink);
+  font-size: clamp(3.4rem, 6vw, 5.8rem);
+  font-weight: 760;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
 }
 
 .demo-studio__lede {
@@ -9038,7 +8995,7 @@ h3 {
 .demo-studio__note {
   max-width: 560px;
   margin: 22px 0 0;
-  color: rgb(240 241 244 / 0.62);
+  color: var(--muted);
 }
 
 .demo-studio__counts {
@@ -9049,15 +9006,15 @@ h3 {
   gap: 10px;
 }
 
-/* claude-design-system: counts are data on the photo ground, not colored tiles */
+/* claude-design-system: counts are data rows, not colored tiles */
 .demo-studio__counts a {
   display: grid;
   min-height: 116px;
   padding: 16px 4px;
   grid-template-columns: 1fr auto;
   grid-template-rows: 1fr auto;
-  border-top: 1px solid rgb(240 241 244 / 0.35);
-  color: var(--bone);
+  border-top: 1px solid var(--rule);
+  color: var(--text);
   text-decoration: none;
 }
 
@@ -9092,9 +9049,9 @@ h3 {
   transform: rotate(0.8deg);
   background: #050b12;
   box-shadow:
-    0 32px 70px rgb(0 0 0 / 0.38),
-    0 0 0 1px rgb(240 241 244 / 0.32);
-  color: var(--bone);
+    0 18px 44px rgb(14 32 46 / 0.18),
+    0 0 0 1px var(--rule);
+  color: var(--text);
   text-decoration: none;
   transition: transform 260ms var(--ease-practice);
 }
@@ -9125,8 +9082,8 @@ h3 {
   top: 14px;
   left: 14px;
   padding: 7px 9px;
-  background: var(--copper-dark);
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--bone);
   font-family: var(--mono);
   font-size: 0.64rem;
   font-weight: 700;
@@ -9139,12 +9096,13 @@ h3 {
   min-height: 124px;
   padding: 18px 20px;
   gap: 5px;
-  background: var(--ink-soft);
+  border-top: 1px solid var(--rule);
+  background: var(--surface);
 }
 
 .demo-studio__feature small,
 .demo-studio__feature em {
-  color: rgb(240 241 244 / 0.6);
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 0.68rem;
   font-style: normal;
@@ -9161,11 +9119,11 @@ h3 {
   display: flex;
   margin-top: 12px;
   justify-content: space-between;
-  color: var(--bone);
+  color: var(--text);
 }
 
 .demo-studio__feature em b {
-  color: var(--copper-dark);
+  color: var(--action);
 }
 
 .demo-studio__key {
@@ -9181,12 +9139,13 @@ h3 {
   padding: 18px 20px;
   grid-template-columns: 40px minmax(0, 1fr);
   gap: 2px 14px;
-  background: rgb(255 255 255 / 0.07);
+  border: 1px solid var(--rule);
+  background: var(--surface);
 }
 
 .demo-studio__key span {
   grid-row: 1 / 3;
-  color: var(--copper-dark);
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 0.68rem;
 }
@@ -9196,7 +9155,7 @@ h3 {
 }
 
 .demo-studio__key small {
-  color: rgb(240 241 244 / 0.58);
+  color: var(--muted);
 }
 
 .demo-library-stage {
@@ -9235,7 +9194,7 @@ h3 {
 
 .demo-library-stage .group-heading > span,
 .demo-library-stage .group-heading > p {
-  color: var(--copper);
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 0.68rem;
   letter-spacing: 0.04em;
@@ -10109,73 +10068,11 @@ h3 {
   }
 }
 
-/* Frame system — entrance surfaces set in corpus photographs (candidate A
-   propagation, 2026-08-04). One frame per surface, all duotoned ink->steel
-   like public/images/all-work-frame.*; the scrim keeps text at AA. A browser
-   without image-set() in var() falls back to the flat ink band. */
-.writing-opening,
-.learn-opening,
-.demo-studio {
-  background-color: var(--ink);
-  color: var(--bone);
-  background-image:
-    linear-gradient(
-      100deg,
-      rgb(7 16 21 / 0.88) 0%,
-      rgb(7 16 21 / 0.5) 48%,
-      rgb(7 16 21 / 0.16) 100%
-    ),
-    var(--frame-src);
-  background-size: cover, cover;
-  background-position: center, var(--frame-pos, center 30%);
-}
-
-.writing-opening {
-  --frame-src: image-set(
-    url("/images/frame-writing.webp") type("image/webp"),
-    url("/images/frame-writing.jpg") type("image/jpeg")
-  );
-}
-
-.learn-opening {
-  --frame-src: image-set(
-    url("/images/frame-learn.webp") type("image/webp"),
-    url("/images/frame-learn.jpg") type("image/jpeg")
-  );
-  --frame-pos: center 40%;
-}
-
-/* claude-design-system: /work is a utility route — its photo budget is spent
- * as a contained frame in the lead column (.work-atlas__frame), not a band. */
-
-.demo-studio {
-  --frame-src: image-set(
-    url("/images/frame-demos.webp") type("image/webp"),
-    url("/images/frame-demos.jpg") type("image/jpeg")
-  );
-  --frame-pos: center 22%;
-}
-
-/* claude-design-system: labels on photo grounds are bone, one species */
-.writing-opening .eyebrow,
-.learn-opening .eyebrow,
-.demo-studio .eyebrow {
-  color: rgb(240 241 244 / 0.78);
-}
-
-@media (max-width: 760px) {
-  .writing-opening,
-  .learn-opening,
-  .demo-studio {
-    background-image:
-      linear-gradient(
-        160deg,
-        rgb(7 16 21 / 0.94) 0%,
-        rgb(7 16 21 / 0.7) 100%
-      ),
-      var(--frame-src);
-  }
-}
+/* claude-design-system (subject-match rule): the volleyball frame bands on
+ * /blog, /learn, /demos, and /work are removed — archive photography appears
+ * only where the archive is the subject (home identity, /photography,
+ * volleyball work). These collection openings sit on the page ground and
+ * lead with their own real artifacts or with type. */
 
 /* ================================================================
    Home 2026-08 — "the venue". First-principles recomposition

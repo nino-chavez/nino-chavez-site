@@ -86,6 +86,16 @@ Duotone recipe and frame assets already exist (`public/images/frame-*`,
 recipe in docs/audit/PALETTE-HARVEST-2026-08-04.md). Scrims are directional
 (0.88 → 0.16) and exist only where type needs them.
 
+**Subject-match rule (amended 2026-08-04, owner feedback):** the photograph
+must depict the page's own subject, not the brand in general. A volleyball
+frame on a page about learning AI-assisted work is decoration wearing the
+identity's clothes — it confuses the reader it was meant to orient. Archive
+photography appears where the archive is the subject: the home identity
+surface (credited), /photography, and volleyball work. Pages about software
+work show their own real artifacts (session frames, product screenshots) or
+nothing — zero was already a correct answer, and off-subject is worse than
+zero.
+
 ## Component inventory (eight, complete)
 
 1. **Shell** — `min(var(--content), 100% - 48px)`, centered.
