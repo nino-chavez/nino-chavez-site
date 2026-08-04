@@ -21,7 +21,9 @@ export default function LearnPage() {
             <p className="eyebrow">Choose by output</p>
             <h1 aria-label="Start with what you need to make.">
               <span aria-hidden="true">Start with</span>
-              <span aria-hidden="true">what you need to make.</span>
+              <span aria-hidden="true">
+                what you need to <em>make</em>.
+              </span>
             </h1>
           </div>
           <div>
