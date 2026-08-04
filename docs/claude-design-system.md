@@ -52,7 +52,7 @@ and red truly means one thing.
 | Photography | **0 or 1** full-bleed frames per page — zero is a correct answer, not a gap. Utility routes (Work index, Search, error states) spend none; a frame must earn its band. Additional photos only as sharp contained blocks on light ground. Sharp or absent — no veil scrims. | Frame classes per page; scrim only directional, for type legibility |
 | Accent families per ground | 1. `--action` does all emphasis on light. `--signal` is not an accent — it is a status. | Grep rendered colors against token jobs |
 | Display faces | 1 on flat ground (`--font` at 700+, `-0.03em`). `--hero` (Anton) only set *into* a photograph, never on flat color. | Grep `var(--hero)` usage sites |
-| Label species | 1: mono uppercase 11px, `--muted`, `.08em`. Never red, never cobalt — a label is not an action. | One CSS class (`.label`), zero look-alikes |
+| Label species | 1: mono uppercase 11px, `--muted`, `.08em`. Exception (conviction amendment, 2026-08-04): each page's opening label — one per page — carries `--action`. Section labels stay muted; red never labels anything. | One CSS class (`.label`), zero look-alikes |
 | Mono font | Labels, counts, code. Never headings, never body. | Grep `var(--mono)` usage sites (currently 111 — target < 30) |
 | Markers per component | ≤ 3: label, title, action. A note *or* a count may replace the label, not join it. | Component review |
 | Action markers | 1 per interactive component (the arrow lives on the action line only). | Component review |
@@ -64,6 +64,16 @@ hairlines and still reads clean, because they are one species in one color doing
 one job. The current homepage runs 19 labels and reads noisy, because they come
 in three species and two accent colors. The count was never the problem. The
 species count is, and species counts can be tested.
+
+**Budgets are spending targets, not ceilings-toward-zero (conviction
+amendment, 2026-08-04).** The first application of this contract stripped the
+noise and the conviction with it — the owner read the result as "stale and
+sterile." The reference sites are not quiet everywhere: the library runs
+106px display and its accent on every kicker. The rule is one loud thing per
+page on quiet ground, and the loud thing is mandatory, not optional: display
+type at full scale (weight 800, tight tracking), the opening label in accent,
+real artifacts framed large, counts as big tabular numerals. A page where
+nothing is loud fails this contract the same way a page where everything is.
 
 ## Type
 

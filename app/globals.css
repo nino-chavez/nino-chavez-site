@@ -2322,7 +2322,14 @@ code {
 }
 
 /* claude-design-system: collection openings sit on the page ground — the
- * photo budget belongs to pages whose subject the archive depicts */
+ * photo budget belongs to pages whose subject the archive depicts.
+ * Conviction amendment (owner: "stale and sterile"): each opening's label
+ * carries the accent — one colored label per page; section labels stay muted. */
+.library-opening .eyebrow,
+.work-atlas__lead .eyebrow,
+.demo-studio__lead .eyebrow {
+  color: var(--action);
+}
 .library-opening {
   padding-block: 26px clamp(90px, 10vw, 150px);
   color: var(--text);
@@ -2353,10 +2360,10 @@ code {
 .library-opening h1 {
   margin: 0;
   color: var(--ink);
-  font-size: clamp(3.4rem, 6.5vw, 6rem);
-  font-weight: 760;
-  letter-spacing: -0.03em;
-  line-height: 0.98;
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
 }
 
 .library-opening h1 em {
@@ -3819,10 +3826,10 @@ h3 {
 
 .library-opening h1 {
   max-width: none;
-  font-size: clamp(3.6rem, 6.5vw, 6.2rem);
-  font-weight: 760;
-  letter-spacing: -0.03em;
-  line-height: 0.98;
+  font-size: clamp(4.2rem, 7.5vw, 8.2rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
 }
 
 .library-opening h1 span {
@@ -4873,7 +4880,14 @@ h3 {
   color: var(--action);
 }
 
-.learn-track-number,
+.learn-track-number {
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
 .learn-track-time {
   color: var(--muted);
   font-family: var(--mono);
@@ -4898,8 +4912,8 @@ h3 {
 
 .learn-track-name strong {
   font-family: var(--display);
-  font-size: clamp(1.5rem, 2vw, 1.9rem);
-  letter-spacing: -0.035em;
+  font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+  letter-spacing: -0.04em;
   line-height: 1;
 }
 
@@ -4942,7 +4956,7 @@ h3 {
 }
 
 .learn-evidence-bridge > span {
-  color: var(--copper);
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 0.68rem;
   letter-spacing: 0.04em;
@@ -8467,10 +8481,10 @@ h3 {
 .work-atlas__lead h1 {
   margin: 12px 0 28px;
   color: var(--ink);
-  font-size: clamp(3.6rem, 6.5vw, 5.6rem);
-  font-weight: 760;
-  letter-spacing: -0.03em;
-  line-height: 0.98;
+  font-size: clamp(4.2rem, 7.5vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
 }
 
 .work-atlas__lede {
@@ -8529,8 +8543,8 @@ h3 {
 
 .work-domains strong {
   grid-area: name;
-  font-size: clamp(1.3rem, 1.8vw, 1.7rem);
-  letter-spacing: -0.025em;
+  font-size: clamp(1.6rem, 2.2vw, 2.1rem);
+  letter-spacing: -0.03em;
 }
 
 .work-domains small {
@@ -8977,10 +8991,10 @@ h3 {
   max-width: 690px;
   margin: 14px 0 28px;
   color: var(--ink);
-  font-size: clamp(3.4rem, 6vw, 5.8rem);
-  font-weight: 760;
-  letter-spacing: -0.03em;
-  line-height: 0.98;
+  font-size: clamp(3.8rem, 6.5vw, 6.4rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
 }
 
 .demo-studio__lede {
