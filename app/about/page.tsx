@@ -90,7 +90,7 @@ const personSchema = {
   "@type": "Person",
   name: "Nino Chavez",
   url: "https://ninochavez.co/about",
-  image: "https://ninochavez.co/work/nino-illustrated-v1.webp",
+  image: "https://ninochavez.co/work/nino.jpg",
   jobTitle: "Product Architect",
   worksFor: {
     "@type": "Organization",
@@ -161,17 +161,17 @@ export default function AboutPage() {
               photograph tournaments, write, and DJ.
             </p>
           </div>
-        </div>
 
-        <figure className="about-opening__portrait">
-          <img
-            src="/work/nino-illustrated-v1.webp"
-            alt="Illustrated portrait of Nino Chavez"
-            width={1254}
-            height={1254}
-            fetchPriority="high"
-          />
-        </figure>
+          <figure className="about-opening__portrait">
+            <img
+              src="/work/nino.jpg"
+              alt="Portrait of Nino Chavez"
+              width={727}
+              height={727}
+              fetchPriority="high"
+            />
+          </figure>
+        </div>
       </header>
 
       <div className="about-body page-shell">
