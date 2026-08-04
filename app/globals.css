@@ -8482,19 +8482,14 @@ h3 {
   top: calc(var(--header-height) + 40px);
 }
 
-.work-atlas__lead .eyebrow {
-  color: var(--copper);
-}
-
+/* claude-design-system: one display voice on flat ground — Anton retired here */
 .work-atlas__lead h1 {
   margin: 12px 0 28px;
-  color: var(--cobalt);
-  font-family: var(--hero);
-  font-size: clamp(6.5rem, 10vw, 11rem);
-  font-weight: 400;
-  letter-spacing: var(--hero-tracking);
-  line-height: 0.9;
-  text-transform: uppercase;
+  color: var(--ink);
+  font-size: clamp(3.6rem, 6.5vw, 5.6rem);
+  font-weight: 760;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
 }
 
 .work-atlas__lede {
@@ -8513,25 +8508,108 @@ h3 {
 }
 
 .work-atlas__all {
-  display: flex;
-  max-width: 310px;
-  margin-top: 34px;
-  padding: 13px 16px;
+  display: inline-flex;
+  margin-top: 30px;
   align-items: center;
-  justify-content: space-between;
-  background: var(--ink);
-  color: var(--bone);
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  gap: 8px;
+  color: var(--action);
+  font-size: 0.95rem;
+  font-weight: 660;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 .work-atlas__all span {
-  color: var(--copper-dark);
   transition: transform var(--motion-fast) var(--ease-practice);
+}
+
+.work-atlas__frame {
+  margin: 38px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+}
+
+.work-atlas__frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.work-atlas__frame figcaption {
+  padding: 10px 12px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+/* domain ledger — rows carry the data; no colored tiles */
+.work-domains {
+  display: grid;
+  align-content: start;
+}
+
+.work-domains a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 20px;
+  grid-template-areas:
+    "name  count arrow"
+    "note  count arrow";
+  align-items: center;
+  column-gap: 20px;
+  padding: 20px 2px;
+  border-top: 1px solid var(--rule);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.work-domains a:last-of-type {
+  border-bottom: 1px solid var(--rule);
+}
+
+.work-domains strong {
+  grid-area: name;
+  font-size: clamp(1.3rem, 1.8vw, 1.7rem);
+  letter-spacing: -0.025em;
+}
+
+.work-domains small {
+  grid-area: note;
+  max-width: 52ch;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.work-domains em {
+  grid-area: count;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-variant-numeric: tabular-nums;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.work-domains b {
+  grid-area: arrow;
+  color: var(--action);
+  transition: transform var(--motion-fast) var(--ease-practice);
+}
+
+.work-domains a:hover strong,
+.work-domains a:focus-visible strong {
+  color: var(--action);
+}
+
+.work-domains a:hover b,
+.work-domains a:focus-visible b {
+  transform: translateX(4px);
 }
 
 .work-atlas__all:hover span,
@@ -8774,8 +8852,9 @@ h3 {
   min-height: 52px;
   padding: 10px 16px;
   border: 0;
-  background: var(--ink);
-  color: rgb(240 241 244 / 0.7);
+  border-bottom: 1px solid var(--rule);
+  background: transparent;
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 0.68rem;
   letter-spacing: 0.035em;
@@ -8784,16 +8863,15 @@ h3 {
 
 .work-library-stage .library-status strong,
 .demo-library-stage .library-status strong {
-  color: var(--bone);
+  color: var(--text);
 }
 
 .work-library-stage .library-status button,
 .demo-library-stage .library-status button {
   border: 0;
   background: transparent;
-  color: var(--bone);
+  color: var(--action);
   text-decoration: underline;
-  text-decoration-color: var(--copper-dark);
   text-underline-offset: 0.3em;
 }
 
@@ -8813,18 +8891,19 @@ h3 {
   position: sticky;
   top: calc(var(--header-height) + 28px);
   display: flex;
-  min-height: 210px;
-  padding: 24px;
+  min-height: 0;
+  padding: 20px 0 0;
   flex-direction: column;
   align-items: flex-start;
   border: 0;
-  background: var(--ink);
-  color: var(--bone);
+  border-top: 2px solid var(--ink);
+  background: transparent;
+  color: var(--text);
 }
 
 .work-library-stage .group-heading > span,
 .work-library-stage .group-heading > p {
-  color: var(--copper-dark);
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 0.68rem;
   letter-spacing: 0.04em;
@@ -8833,17 +8912,17 @@ h3 {
 
 .work-library-stage .group-heading h2 {
   max-width: 100%;
-  margin: auto 0 16px;
-  color: var(--bone);
-  font-size: clamp(2.2rem, 3vw, 3.3rem);
-  letter-spacing: -0.055em;
-  line-height: 0.96;
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: clamp(1.9rem, 2.6vw, 2.8rem);
+  letter-spacing: -0.04em;
+  line-height: 0.98;
   text-wrap: balance;
 }
 
 .work-library-stage .group-heading > p {
   margin: 0;
-  color: rgb(240 241 244 / 0.58);
+  font-variant-numeric: tabular-nums;
 }
 
 .work-library-stage .work-list {
@@ -8860,21 +8939,23 @@ h3 {
   grid-template-columns: minmax(170px, 0.34fr) minmax(0, 1fr) auto;
   gap: clamp(16px, 2.5vw, 34px);
   align-items: center;
-  border: 0;
+  border: 1px solid var(--rule);
   background: var(--surface);
   color: var(--text);
   text-decoration: none;
-  transition:
-    transform var(--motion-fast) var(--ease-practice),
-    background var(--motion-fast) ease,
-    color var(--motion-fast) ease;
+  transition: border-color var(--motion-fast) ease;
 }
 
+/* claude-design-system: hover shifts the arrow, not the ground (SYSTEM.md
+ * interaction contract — no whole-card color flips) */
 .work-library-stage .work-record:hover,
 .work-library-stage .work-record:active {
-  transform: translateX(6px);
-  background: var(--cobalt);
-  color: white;
+  border-color: var(--action);
+}
+
+.work-library-stage .work-record:hover .record-copy h3,
+.work-library-stage .work-record:active .record-copy h3 {
+  color: var(--action);
 }
 
 .work-library-stage .record-meta {
@@ -8908,17 +8989,11 @@ h3 {
   color: var(--text);
 }
 
-.work-library-stage .work-record:hover .record-meta,
-.work-library-stage .work-record:hover .record-copy p,
-.work-library-stage .work-record:active .record-meta,
-.work-library-stage .work-record:active .record-copy p {
-  color: rgb(255 255 255 / 0.72);
-}
-
-.work-library-stage .work-record:hover .record-open,
-.work-library-stage .work-record:active .record-open {
-  background: white;
-  color: var(--text);
+.work-library-stage .record-open {
+  padding: 0;
+  background: transparent;
+  color: var(--action);
+  font-weight: 660;
 }
 
 /* Demos / sequenced studio */
@@ -10058,7 +10133,6 @@ h3 {
    without image-set() in var() falls back to the flat ink band. */
 .writing-opening,
 .learn-opening,
-.work-atlas,
 .demo-studio {
   background-color: var(--ink);
   color: var(--bone);
@@ -10089,12 +10163,8 @@ h3 {
   --frame-pos: center 40%;
 }
 
-.work-atlas {
-  --frame-src: image-set(
-    url("/images/frame-work.webp") type("image/webp"),
-    url("/images/frame-work.jpg") type("image/jpeg")
-  );
-}
+/* claude-design-system: /work is a utility route — its photo budget is spent
+ * as a contained frame in the lead column (.work-atlas__frame), not a band. */
 
 .demo-studio {
   --frame-src: image-set(
@@ -10106,7 +10176,6 @@ h3 {
 
 .writing-opening .eyebrow,
 .learn-opening .eyebrow,
-.work-atlas .eyebrow,
 .demo-studio .eyebrow {
   color: var(--sand);
 }
@@ -10114,7 +10183,6 @@ h3 {
 @media (max-width: 760px) {
   .writing-opening,
   .learn-opening,
-  .work-atlas,
   .demo-studio {
     background-image:
       linear-gradient(

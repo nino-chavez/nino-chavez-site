@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import type { CSSProperties } from "react";
 import { WorkLibrary } from "../components/WorkLibrary";
 import { domains, workItems, type Domain } from "../data";
 
@@ -38,38 +37,37 @@ export default function WorkPage() {
               Browse all {workItems.length} items{" "}
               <span aria-hidden="true">↓</span>
             </a>
+
+            <figure className="work-atlas__frame">
+              <img
+                src="/images/frame-work.webp"
+                alt="Net play from the photography archive"
+                loading="lazy"
+              />
+              <figcaption>From the photography archive</figcaption>
+            </figure>
           </div>
 
-          <nav className="work-field" aria-label="Explore work by domain">
-            {domains.map((domain, index) => {
-                  const records = workItems.filter(
+          <nav className="work-domains" aria-label="Explore work by domain">
+            {domains.map((domain) => {
+              const records = workItems.filter(
                 (item) => item.domain === domain,
               );
-              const share = (records.length / workItems.length) * 100;
 
               return (
                 <Link
-                  className={`work-field__domain work-field__domain--${index + 1}`}
                   href={`/work?domain=${encodeURIComponent(domain)}#work-library`}
                   key={domain}
-                  style={
-                    {
-                      "--domain-share": `${share}%`,
-                    } as CSSProperties
-                  }
                 >
                   <strong>{domain}</strong>
                   <small>{domainNotes[domain]}</small>
-                  <em>
-                    {records.length} in this domain{" "}
-                    <b aria-hidden="true">→</b>
-                  </em>
+                  <em>{records.length} in this domain</em>
+                  <b aria-hidden="true">→</b>
                 </Link>
               );
             })}
           </nav>
         </div>
-
       </header>
 
       <section
