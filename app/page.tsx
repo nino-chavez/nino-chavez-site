@@ -1,5 +1,4 @@
 import Link from "next/link";
-import type { CSSProperties } from "react";
 import { domains, learnTracks, workItems } from "./data";
 import { getDemoSnapshot } from "./demos";
 
@@ -127,7 +126,7 @@ export default async function Home() {
       </section>
 
       <section
-        className="library-index library-index--field"
+        className="library-index home-allwork"
         aria-labelledby="library-title"
       >
         <header className="library-index__register page-shell">
@@ -144,33 +143,34 @@ export default async function Home() {
           </div>
         </header>
 
-        <nav className="domain-index page-shell" aria-label="Work domains">
-          {domains.map((domain) => {
-            const count = workItems.filter(
-              (item) => item.domain === domain,
-            ).length;
-            const share = Math.round((count / workItems.length) * 1000) / 10;
-            return (
-              <Link
-                href={`/work?domain=${encodeURIComponent(domain)}`}
-                key={domain}
-                style={
-                  {
-                    "--domain-share": `${share}%`,
-                  } as CSSProperties
-                }
-              >
-                <strong>{domain}</strong>
-                <small>{count} in this domain</small>
-                <b aria-hidden="true">→</b>
-              </Link>
-            );
-          })}
-        </nav>
+        <div className="home-allwork__body page-shell">
+          <figure className="home-allwork__frame">
+            <img
+              src="/images/all-work-frame.webp"
+              alt="Defensive dive from the photography archive"
+              loading="lazy"
+            />
+            <figcaption aria-hidden="true">All work</figcaption>
+          </figure>
 
-        <p className="library-field-credit page-shell">
-          <Link href="/photography">From the photography archive →</Link>
-        </p>
+          <nav className="domain-ledger" aria-label="Work domains">
+            {domains.map((domain) => {
+              const count = workItems.filter(
+                (item) => item.domain === domain,
+              ).length;
+              return (
+                <Link
+                  href={`/work?domain=${encodeURIComponent(domain)}`}
+                  key={domain}
+                >
+                  <strong>{domain}</strong>
+                  <small>{count} in this domain</small>
+                  <b aria-hidden="true">→</b>
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
       </section>
 
       <section className="session-index" aria-labelledby="ways-title">
