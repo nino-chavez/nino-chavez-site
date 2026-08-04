@@ -171,7 +171,10 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="library-index" aria-labelledby="library-title">
+      <section
+        className="library-index library-index--field"
+        aria-labelledby="library-title"
+      >
         <header className="library-index__register page-shell">
           <div>
             <p className="eyebrow">All work</p>
@@ -209,6 +212,10 @@ export default async function Home() {
             );
           })}
         </nav>
+
+        <p className="library-field-credit page-shell">
+          <Link href="/photography">From the photography archive →</Link>
+        </p>
       </section>
 
       <section className="ways-index" aria-labelledby="ways-title">
