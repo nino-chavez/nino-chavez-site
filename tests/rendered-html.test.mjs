@@ -181,7 +181,7 @@ test("renders the full-volume work and demos collections", async () => {
   assert.match(emptyWorkHtml, /Search the whole site for “no-such-work”/);
 
   assert.match(demosHtml, /Sessions and techniques/);
-  assert.match(demosHtml, /<h1>How I work<\/h1>/);
+  assert.match(demosHtml, /<h1>Sessions<\/h1>/);
   assert.match(
     demosHtml,
     new RegExp(`<strong>${sessionCount}<\\/strong><span>Sessions<\\/span>`),

@@ -533,7 +533,7 @@ test("C30 — Photography is a top-level global navigation item", async () => {
     /<nav class="desktop-navigation"[\s\S]*?<\/nav>/,
   )?.[0];
   assert.ok(primary, "primary navigation should render");
-  assert.match(primary, /Work[\s\S]*How I work[\s\S]*Learn[\s\S]*Writing[\s\S]*Photography[\s\S]*About/);
+  assert.match(primary, /Work[\s\S]*Sessions[\s\S]*Learn[\s\S]*Writing[\s\S]*Photography[\s\S]*About/);
   assert.match(primary, /href="\/photography" aria-current="page"/);
 });
 

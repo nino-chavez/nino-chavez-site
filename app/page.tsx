@@ -176,7 +176,7 @@ export default async function Home() {
       <section className="session-index" aria-labelledby="ways-title">
         <div className="session-index__body page-shell">
           <header className="session-index__register">
-            <p className="session-index__label">How I work</p>
+            <p className="session-index__label">Sessions</p>
             <h2 id="ways-title">How the work gets done.</h2>
             <p>
               {demoSessions.length} complete sessions show what happened, what

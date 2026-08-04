@@ -281,7 +281,7 @@ export default async function SearchPage({
           {demos.length ? (
             <section aria-labelledby="search-demos">
               <div className="group-heading">
-                <h2 id="search-demos">How I work</h2>
+                <h2 id="search-demos">Sessions</h2>
                 <span>
                   {demos.length} of {demoMatches.length}
                 </span>
