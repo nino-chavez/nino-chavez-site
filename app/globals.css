@@ -7114,10 +7114,10 @@ h3 {
   justify-content: space-between;
   min-height: min(92vh, 980px);
   background-color: var(--ink);
-  background-image: url("/images/home-hero-frame.jpg?v=skyglow2");
+  background-image: url("/images/home-hero-frame.jpg?v=skydark1");
   background-image: image-set(
-    url("/images/home-hero-frame.webp?v=skyglow2") type("image/webp"),
-    url("/images/home-hero-frame.jpg?v=skyglow2") type("image/jpeg")
+    url("/images/home-hero-frame.webp?v=skydark1") type("image/webp"),
+    url("/images/home-hero-frame.jpg?v=skydark1") type("image/jpeg")
   );
   background-size: cover;
   background-position: center 38%;
@@ -7148,7 +7148,7 @@ h3 {
   line-height: 0.88;
   letter-spacing: var(--hero-tracking);
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--bone);
 }
 
 .field-hero h1 span {
@@ -7603,7 +7603,7 @@ h3 {
         rgb(7 16 21 / 0.62) 74%,
         rgb(7 16 21 / 0.88) 100%
       ),
-      url("/images/home-hero-frame.jpg?v=skyglow2");
+      url("/images/home-hero-frame.jpg?v=skydark1");
     background-image: linear-gradient(
         180deg,
         rgb(7 16 21 / 0) 0%,
@@ -7612,8 +7612,8 @@ h3 {
         rgb(7 16 21 / 0.88) 100%
       ),
       image-set(
-        url("/images/home-hero-frame-narrow.webp?v=skyglow2") type("image/webp"),
-        url("/images/home-hero-frame.jpg?v=skyglow2") type("image/jpeg")
+        url("/images/home-hero-frame-narrow.webp?v=skydark1") type("image/webp"),
+        url("/images/home-hero-frame.jpg?v=skydark1") type("image/jpeg")
       );
     background-size: cover, cover;
     background-position: center, center 30%;
