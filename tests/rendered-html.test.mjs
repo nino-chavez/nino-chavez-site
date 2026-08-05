@@ -269,7 +269,12 @@ test("keeps the complete demo corpus available as native stories", async () => {
       (total, story) => total + story.sectionCount,
       0,
     ),
-    172,
+    // 2026-08-04: 169 is what a clean sync from nc-demos main (e9d1053)
+    // reproducibly yields. The prior 172 came from a snapshot generated
+    // against a dirty checkout (session-corpus 12 sections vs 9) whose extra
+    // sections exist in no committed nc-demos state — see the unmerged
+    // nc-demos worktrees. When that work lands, sync bumps this total.
+    169,
   );
 
   for (const story of [...stories.sessions, ...stories.techniques]) {
