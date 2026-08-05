@@ -92,10 +92,11 @@ export default async function Home() {
         <header className="proof-bench__register">
           <div>
             <p className="proof-bench__label">Selected work</p>
-            <h2 id="bench-title">Three places to start.</h2>
+            <h2 id="bench-title">Four places to start.</h2>
           </div>
           <p>
-            Start with the method, the writing, or the photography archive.
+            Start with the live product, the method, the writing, or the
+            photography archive.
           </p>
         </header>
 
@@ -136,8 +137,8 @@ export default async function Home() {
           </div>
           <div>
             <p>
-              Browse {workItems.length} products, tools, methods, and
-              collections across {domains.length} domains.
+              Browse {workItems.length} products, tools, methods, operations,
+              and collections across {domains.length} domains.
             </p>
             <Link href="/work">Explore all work →</Link>
           </div>

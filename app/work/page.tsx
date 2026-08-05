@@ -27,7 +27,7 @@ export default function WorkPage() {
             <p className="eyebrow">Projects, tools, and collections</p>
             <h1>Work</h1>
             <p className="work-atlas__lede">
-              Products, tools, methods, live ventures, and the systems behind
+              Products, tools, methods, operations, and the systems behind
               them.
             </p>
             <p className="work-atlas__note">

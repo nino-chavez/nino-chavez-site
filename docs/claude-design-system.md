@@ -100,10 +100,16 @@ mint-card move in this site's own blue.
 **Owned artwork is world-prop material.** The subject-match rule bans
 off-subject photography, not non-photography. A commissioned or self-made
 illustration of the subject (the illustrated portrait) is a creative
-artifact the way a mascot is on letspepper — contained like a photo,
-optionally mapped into the palette (luminosity blend over an accent
-ground). AI-default decoration is still out; the test is ownership, not
-medium.
+artifact the way a mascot is on letspepper — contained like a photo.
+AI-default decoration is still out; the test is ownership, not medium.
+
+**Owned artwork keeps its own color (owner verdict, 2026-08-04).** A
+luminosity blend that maps the illustration into the accent palette was
+tried and rejected — the warm full-color original reads as the creative
+artifact; the palette-mapped version reads faded. Contain the artwork on
+its own ground (the asset's baked-in near-ink field counts as the
+component's ground, not a page band) and let it carry its own hues. The
+token table governs what the site paints, not what owned artwork depicts.
 
 ## Photography
 

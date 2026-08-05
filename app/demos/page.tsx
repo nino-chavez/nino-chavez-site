@@ -87,8 +87,8 @@ export default async function DemosPage() {
             <h2 id="demo-library-title">Browse sessions and techniques.</h2>
           </div>
           <p>
-            Search all {totalRecords} records, or open either collection
-            directly.
+            Search all {totalRecords} sessions and techniques, or open either
+            collection directly.
           </p>
         </header>
 

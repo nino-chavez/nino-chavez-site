@@ -140,14 +140,13 @@ export default function AboutPage() {
 
       <header className="about-opening">
         <div className="about-opening__register page-shell">
-          <span>About Nino Chavez</span>
+          <span>About</span>
           <span>Chicago</span>
           <span>Building since 1999</span>
         </div>
 
         <div className="about-opening__stage page-shell">
           <div className="about-opening__copy">
-            <p className="eyebrow">Nino Chavez</p>
             <h1 aria-label="Nino Chavez">
               <span aria-hidden="true">Nino</span>
               <span aria-hidden="true">Chavez</span>
@@ -155,10 +154,6 @@ export default function AboutPage() {
             <p className="about-opening__lede">
               I’m a product architect in Chicago. I’ve spent more than 25 years
               turning complicated decisions into working software.
-            </p>
-            <p>
-              Outside the day job, I build and run volleyball products,
-              photograph tournaments, write, and DJ.
             </p>
           </div>
 
@@ -206,7 +201,6 @@ export default function AboutPage() {
                   height={727}
                   loading="lazy"
                 />
-                <figcaption>Chicago</figcaption>
               </figure>
               <dl className="about-coordinates">
               <div>
@@ -235,8 +229,8 @@ export default function AboutPage() {
             <span>02 / Throughline</span>
             <h2 id="about-throughline">What connects the work</h2>
             <p>
-              The form changes. Each one asks me to make something useful, run
-              it under real conditions, and own the result.
+              The form changes. Each practice asks me to make something
+              useful, run it under real conditions, and own the result.
             </p>
           </header>
 
@@ -287,7 +281,7 @@ export default function AboutPage() {
             </p>
             <div className="about-inline-actions">
               <Link href="/work/blueprint">See the method in Blueprint →</Link>
-              <Link href="/demos">See how I work →</Link>
+              <Link href="/demos">See the sessions →</Link>
             </div>
           </div>
         </section>

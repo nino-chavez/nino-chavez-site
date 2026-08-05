@@ -61,7 +61,7 @@ test("server-renders the personal entrance and global navigation", async () => {
   assert.match(html, /About me/);
   assert.match(html, /On the court/);
   assert.match(html, /Selected work/);
-  assert.match(html, /Three places to start/);
+  assert.match(html, /Four places to start/);
   assert.match(html, /Read about Blueprint/);
   assert.match(html, /Read Signal Dispatch/);
   assert.match(html, /Browse photography/);

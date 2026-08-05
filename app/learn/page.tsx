@@ -3,8 +3,7 @@ import { learnTracks } from "../data";
 
 export const metadata = {
   title: "Learn",
-  description:
-    "Seven self-directed practitioner paths grounded in the work of Nino Chavez.",
+  description: `${learnTracks.length} self-directed practitioner paths grounded in the work of Nino Chavez.`,
 };
 
 export default function LearnPage() {
@@ -78,7 +77,7 @@ export default function LearnPage() {
           <p>
             Browse the sessions and techniques these paths use.
           </p>
-          <Link href="/demos">See how I work →</Link>
+          <Link href="/demos">See the sessions →</Link>
         </aside>
       </div>
     </div>
