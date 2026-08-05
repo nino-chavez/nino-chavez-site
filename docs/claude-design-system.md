@@ -37,6 +37,14 @@ Retired: `--sand`, `--copper`, `--copper-dark`, `--cobalt-bright`, `--rule-stron
 `--ink-soft`, and every literal outside this table. Their jobs either move to
 `--action`/`--signal` or cease to exist.
 
+**Alpha variants (amended 2026-08-04, literal audit):** where opacity is needed
+(scrims, shadows, translucent chrome), the only legal literal forms are the
+table's own colors with an alpha channel — `rgb(14 25 40 / a)` [ink],
+`rgb(240 241 244 / a)` [bone], `rgb(247 248 250 / a)` [surface],
+`rgb(20 103 158 / a)` [action]. Any other rgb/hex literal is off-contract; the
+2026-08-04 sweep remapped five stray dark families and two stray hexes that had
+survived the token cleanup.
+
 Focus (amended 2026-08-04 per Codex review): focus is interaction, not status,
 so it belongs to `--action` — but `#14679e` alone reads 2.91:1 on ink, under
 the 3:1 non-text floor. The focus style is therefore a double ring:

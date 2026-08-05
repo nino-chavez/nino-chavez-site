@@ -52,7 +52,9 @@ export default function WorkPage() {
                 >
                   <strong>{domain}</strong>
                   <small>{domainNotes[domain]}</small>
-                  <em>{records.length} in this domain</em>
+                  <em>
+                    <span>{records.length}</span> in this domain
+                  </em>
                   <b aria-hidden="true">→</b>
                 </Link>
               );
