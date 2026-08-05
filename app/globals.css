@@ -7130,7 +7130,18 @@ h3 {
     url("/images/home-hero-frame.jpg?v=skydark1") type("image/jpeg")
   );
   background-size: cover;
-  background-position: center 38%;
+  background-position: 25% 38%;
+}
+
+/* The 2400x1600 frame covers a 16:9 window exactly by width, so position-x
+   alone cannot move the subject on desktop. On wide windows, oversize the
+   crop and anchor it left: the player lands right of center, clear of the
+   claim text. The aspect gate keeps the zoomed image tall enough to cover. */
+@media (min-aspect-ratio: 6/5) {
+  .field-hero {
+    background-size: 128% auto;
+    background-position: 0% 42%;
+  }
 }
 
 /* Directional scrim (contract §Photography): carries the role line, claim,
@@ -7643,7 +7654,9 @@ h3 {
         url("/images/home-hero-frame.jpg?v=skydark1") type("image/jpeg")
       );
     background-size: cover, cover;
-    background-position: center, center 30%;
+    /* Narrow windows have ~660px of cover slack: anchor the photo at 38%
+       so the subject sits right of the copy instead of under it. */
+    background-position: center, 38% 30%;
   }
 
   .proof-bench__register {
