@@ -33,7 +33,7 @@ const sitePages = [
     title: "Now",
     href: "/now",
     description:
-      "What Nino is working on across product architecture, the public site, AI-assisted work, and volleyball operations.",
+      "What I’m working on across product architecture, the public site, AI-assisted work, and volleyball operations.",
     keywords:
       "current focus commerce.com site redesign agents Blueprint Film Room volleyball Rally HQ Let's Pepper Flickday Media active July 2026",
   },

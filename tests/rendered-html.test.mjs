@@ -384,7 +384,7 @@ test("renders seven grounded learning paths without positional placeholders", as
     const html = await htmlFor(`/learn/${slug}`);
     assert.match(html, /See the work behind the path/);
     assert.match(html, /Know whether this is your path/);
-    assert.match(html, /Five stages to the finished work/);
+    assert.match(html, /5(?:<!-- -->)?\s*stages to the finished work/);
     assert.equal(
       (html.match(/class="learn-level-title"/g) ?? []).length,
       5,
@@ -610,7 +610,7 @@ test("renders Now as current work and Links as direct destinations", async () =>
   assert.doesNotMatch(nowHtml, /second work inventory|professional timeline/i);
 
   assert.match(linksHtml, /Direct links/);
-  assert.match(linksHtml, /11 destinations/);
+  assert.match(linksHtml, /11(?:<!-- -->)?\s*destinations/);
   assert.match(linksHtml, /Checked 30 July 2026/);
   assert.match(linksHtml, /Go to the thing itself/);
   assert.match(linksHtml, /Products and ventures/);
@@ -684,7 +684,10 @@ test("renders Photography as an owned image collection with live archive paths",
   assert.match(photographyDocument, /Find photos in the full archive/);
   assert.doesNotMatch(photographyDocument, /<strong>Search<\/strong>/);
   assert.doesNotMatch(photographyDocument, />P0[1-5]</);
-  assert.match(photographyDocument, /Contact sheet \/ 12 frames/);
+  assert.match(
+    photographyDocument,
+    /Contact sheet \/ (?:<!-- -->)?12(?:<!-- -->)?\s*frames/,
+  );
   assert.equal(
     (photographyDocument.match(/class="photography-frame-grid"/g) ?? [])
       .length,

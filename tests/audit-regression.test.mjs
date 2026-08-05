@@ -286,13 +286,20 @@ test("F7 WITHDRAWN — writing links must stay absolute", async () => {
 // identifiers, never in text a visitor reads. See
 // OPEN-PRACTICE-ART-DIRECTION.md §Copy and naming.
 //
-// `reader-contract.json` `denyTerms` is the source of record for this list and
-// is the broader one — it covers source files, where a term can appear in a
-// string this test never renders. Keep the two in sync deliberately; a term
-// belongs here only if it is verifiably reaching rendered copy. Notably absent:
+// `reader-contract.json` `denyTerms` is the source of record for this list.
+// The full five-term list is safe to enforce against visible text because
+// visibleText() strips scripts, styles, and tags — identifiers and the flight
+// payload can no longer false-positive (the 2026-08-04 copy screen confirmed
+// "registry" and "snapshot" reach rendered copy nowhere). Notably absent:
 // "prototype", which appears only as the `prototype-banner` class name, and
 // "artifact", which /learn uses as a visitor-facing field label (see C22).
-const INTERNAL_VOCABULARY = ["work object", "durable page", "review build"];
+const INTERNAL_VOCABULARY = [
+  "work object",
+  "durable page",
+  "review build",
+  "registry",
+  "snapshot",
+];
 
 // Visible text only. Class names, data attributes, and the RSC flight payload
 // are not copy, and matching them produces a gate that fails for reasons
@@ -309,7 +316,20 @@ function visibleText(html) {
 test(
   "C8 — no internal vocabulary reaches visitor-facing copy",
   async () => {
-    for (const path of ["/", "/work", "/search", "/now", "/demos", "/learn", "/about"]) {
+    for (const path of [
+      "/",
+      "/work",
+      "/search",
+      "/now",
+      "/demos",
+      "/learn",
+      "/about",
+      "/links",
+      "/photography",
+      "/work/ways-of-working",
+      "/learn/architect",
+      "/demos/browse-tool",
+    ]) {
       const text = visibleText(await htmlFor(path));
       for (const term of INTERNAL_VOCABULARY) {
         assert.doesNotMatch(

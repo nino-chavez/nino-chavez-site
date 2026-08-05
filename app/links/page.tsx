@@ -147,7 +147,13 @@ export default async function LinksPage({
       <header className="links-opening">
         <div className="links-opening__register page-shell">
           <span>Direct links</span>
-          <span>11 destinations</span>
+          <span>
+            {destinationGroups.reduce(
+              (total, group) => total + group.destinations.length,
+              0,
+            )}{" "}
+            destinations
+          </span>
           <time dateTime="2026-07-30">Checked 30 July 2026</time>
         </div>
 

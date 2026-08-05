@@ -155,7 +155,7 @@ const recordProfiles: Record<string, RecordProfile> = {
       },
       {
         "title": "Portable practice",
-        "description": "The public version is stripped of secrets and personal data so its patterns can be inspected and adapted."
+        "description": "I strip secrets and personal data from the public version so anyone can inspect and adapt its patterns."
       },
       {
         "title": "Working material",
@@ -189,7 +189,7 @@ const recordProfiles: Record<string, RecordProfile> = {
     "details": [
       {
         "title": "Why source search was not enough",
-        "description": "The first audit began after 347 dead Vercel deployment records and a stale repository homepage were found outside the codebase; the same link rot appeared on seven more repositories."
+        "description": "The first audit began after I found 347 dead Vercel deployment records and a stale repository homepage outside the codebase; the same link rot appeared on seven more repositories."
       },
       {
         "title": "Six concrete checks",
@@ -227,7 +227,7 @@ const recordProfiles: Record<string, RecordProfile> = {
     "details": [
       {
         "title": "Five sites in the first pass",
-        "description": "Each participating site keeps a DIRECTION.md ledger beside its code, and each suppression must name the approved design device that permits it."
+        "description": "Each participating site keeps that ledger in a DIRECTION.md file beside its code, and each suppressed finding must name the approved decision that permits it."
       },
       {
         "title": "Seven failure cases",
@@ -250,7 +250,7 @@ const recordProfiles: Record<string, RecordProfile> = {
       },
       {
         "title": "Applied techniques",
-        "description": "Shorter records isolate one practice and show where it held up."
+        "description": "Shorter write-ups isolate one practice and show where it held up."
       },
       {
         "title": "Browse the collection",
@@ -286,7 +286,7 @@ const recordProfiles: Record<string, RecordProfile> = {
       },
       {
         "title": "What is not proven",
-        "description": "The voiceprint gate has not been tried in a real meeting, and no generated note has passed human review. This is research, not an app or beta."
+        "description": "The voiceprint gate — the check that identifies who is speaking — has not been tried in a real meeting, and no generated note has passed human review. This is research, not an app or beta."
       },
       {
         "title": "Evidence-linked notes",
@@ -362,7 +362,7 @@ const recordProfiles: Record<string, RecordProfile> = {
       },
       {
         "title": "Reels and edits",
-        "description": "Quick-turn highlight reels and player edits are prepared for Instagram and TikTok."
+        "description": "I prepare quick-turn highlight reels and player edits for Instagram and TikTok."
       },
       {
         "title": "Photo drops",
@@ -380,7 +380,7 @@ const recordProfiles: Record<string, RecordProfile> = {
       },
       {
         "title": "Home court",
-        "description": "Venue information and event expectations are published before teams arrive."
+        "description": "Volley Rx publishes venue information and event expectations before teams arrive."
       },
       {
         "title": "Open the calendar",
