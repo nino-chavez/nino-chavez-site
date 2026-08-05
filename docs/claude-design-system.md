@@ -191,6 +191,14 @@ composition, and the budgets above. It is deliberately not a website framework.
 - **StateLabel compatibility**: SYSTEM.md's "never a colored badge as the only
   signal" composes with the live badge here — the `--signal` dot is never
   alone; its mono text label carries the meaning.
+- **The Signal Dispatch shell strip is a consumer; its interior is not
+  (2026-08-04).** The blog repo's `open-practice-shell` and `practice-footer`
+  components (astro-build SiteHeader/SiteFooter) impersonate this site's
+  chrome, so they track this contract via a commented machine copy of the
+  token table. Everything below the publication masthead is governed by the
+  blog's own DESIGN.md — its coral-on-dark identity is a deliberate 2026
+  decision, and this contract does not annex it. Alignment there is at the
+  grammar level (single accent, one ground), not the palette level.
 
 ## Enforcement
 
