@@ -52,12 +52,12 @@ and red truly means one thing.
 | Photography | **0 or 1** full-bleed frames per page — zero is a correct answer, not a gap. Utility routes (Work index, Search, error states) spend none; a frame must earn its band. Additional photos only as sharp contained blocks on light ground. Sharp or absent — no veil scrims. | Frame classes per page; scrim only directional, for type legibility |
 | Accent families per ground | 1. `--action` does all emphasis on light. `--signal` is not an accent — it is a status. | Grep rendered colors against token jobs |
 | Display faces | 1 on flat ground (`--font` at 700+, `-0.03em`). `--hero` (Anton) only set *into* a photograph, never on flat color. | Grep `var(--hero)` usage sites |
-| Label species | 1: mono uppercase 11px, `--muted`, `.08em`. Exception (conviction amendment, 2026-08-04): each page's opening label — one per page — carries `--action`. Section labels stay muted; red never labels anything. | One CSS class (`.label`), zero look-alikes |
+| Label species | 1: mono uppercase 11px, `.08em`. Accent-dosage amendment (2026-08-04): content labels — eyebrows, kickers, section labels — carry `--action` everywhere (the reference library runs its accent on every kicker); metadata rows (record meta, form labels, state text) stay `--muted`. Red never labels anything. | One CSS class per role, zero look-alikes |
 | Mono font | Labels, counts, code. Never headings, never body. | Grep `var(--mono)` usage sites (currently 111 — target < 30) |
 | Markers per component | ≤ 3: label, title, action. A note *or* a count may replace the label, not join it. | Component review |
 | Action markers | 1 per interactive component (the arrow lives on the action line only). | Component review |
 | Primary action | 1 filled button per viewport (adopted from SYSTEM.md); everything else is a text action. | Page review |
-| Numbers | `tabular-nums`, `--text`. Counts are data, not decoration — no color. | Grep count styles |
+| Numbers | `tabular-nums`. Accent-dosage amendment: a count that is the row's data payload may carry `--action` (box-score register); counts inside prose stay `--text`. | Grep count styles |
 
 Why budgets and not guidelines: bcsubs runs 64 uppercase micro-labels and 70
 hairlines and still reads clean, because they are one species in one color doing
@@ -86,6 +86,24 @@ nothing is loud fails this contract the same way a page where everything is.
   This is the only uppercase display and the only Anton.
 - Body: `--font` 400/560, 16–18px, line-height 1.55.
 - Label: `--mono` 11px uppercase `--muted`. Counts: `--mono` tabular, `--text`.
+
+## Accent components (accent-dosage amendment, 2026-08-04)
+
+The first application of this contract left pages bone + ink + hairlines with
+the accent only in links — sterile even when clean, because the accent had
+too few jobs, not because the palette lacked hues. Each page may carry one
+accent component alongside its ink component: a cobalt panel with bone text
+(5.6:1) — the learn start-here path, a featured card, a key panel. Bands
+stay banned; this is component-scale color, the reference library's
+mint-card move in this site's own blue.
+
+**Owned artwork is world-prop material.** The subject-match rule bans
+off-subject photography, not non-photography. A commissioned or self-made
+illustration of the subject (the illustrated portrait) is a creative
+artifact the way a mascot is on letspepper — contained like a photo,
+optionally mapped into the palette (luminosity blend over an accent
+ground). AI-default decoration is still out; the test is ownership, not
+medium.
 
 ## Photography
 

@@ -436,9 +436,12 @@ code {
   max-width: 800px;
 }
 
+/* claude-design-system accent-dosage amendment: the label species carries
+ * the accent everywhere (reference: the work library runs its accent on
+ * every kicker). One species, one color, one job. */
 .eyebrow {
   margin: 0 0 14px;
-  color: var(--muted);
+  color: var(--action);
   font-family: var(--mono);
   font-size: 0.75rem;
   font-weight: 700;
@@ -2484,12 +2487,13 @@ h3 {
   color: var(--action);
 }
 
-/* conviction pass: the first path of the ordered ladder is the ink component
- * moment on this page (component-scale ink is contract-legal) */
+/* accent-dosage amendment: the first path of the ordered ladder is this
+ * page's ACCENT component (cobalt panel, bone text at 5.6:1) — /blog keeps
+ * ink for its featured panel so the two collection pages differ. */
 .learn-track-register li:first-child a {
   padding: 30px 24px;
   border-bottom: 0;
-  background: var(--ink);
+  background: var(--action);
   color: var(--bone);
 }
 
@@ -3771,10 +3775,14 @@ h3 {
   line-height: 1.55;
 }
 
+/* accent-dosage amendment: the illustrated portrait is owned artwork — a
+ * world-prop, not off-subject photography — and returns on a cobalt panel
+ * (the original about composition at component scale). */
 .about-opening__portrait {
   margin: 0;
   overflow: hidden;
   border: 1px solid var(--rule);
+  background: var(--action);
 }
 
 .about-opening__portrait img {
@@ -3783,6 +3791,33 @@ h3 {
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
+  mix-blend-mode: luminosity;
+  opacity: 0.96;
+}
+
+.about-biography__photo {
+  margin: 0 0 22px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+}
+
+.about-biography__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.about-biography__photo figcaption {
+  padding: 8px 10px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
 }
 
 .about-body {
@@ -5842,7 +5877,7 @@ h3 {
 
 .work-domains em {
   grid-area: count;
-  color: var(--muted);
+  color: var(--action);
   font-family: var(--mono);
   font-size: 0.72rem;
   font-style: normal;
@@ -6189,6 +6224,7 @@ h3 {
 }
 
 .demo-studio__counts strong {
+  color: var(--action);
   font-size: clamp(2.6rem, 4vw, 4rem);
   font-variant-numeric: tabular-nums;
   line-height: 0.9;
@@ -7247,7 +7283,7 @@ h3 {
   margin-bottom: clamp(34px, 4vw, 54px);
 }
 
-/* claude-design-system: the one label species — mono, uppercase, muted */
+/* claude-design-system: the one label species — mono, uppercase, accent */
 .proof-bench__label,
 .session-index__label {
   margin: 0 0 10px;
@@ -7256,7 +7292,7 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--action);
 }
 
 .proof-bench__register h2 {
@@ -7429,7 +7465,7 @@ h3 {
   font-family: var(--mono);
   font-size: 0.72rem;
   font-variant-numeric: tabular-nums;
-  color: var(--muted);
+  color: var(--action);
 }
 
 .domain-ledger b {
@@ -7572,7 +7608,7 @@ h3 {
   font-weight: 700;
   font-size: 1.5rem;
   font-variant-numeric: tabular-nums;
-  color: var(--text);
+  color: var(--action);
 }
 
 .session-index__routes b {
