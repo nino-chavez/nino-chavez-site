@@ -32,14 +32,14 @@ const currentFocus = [
     description:
       "I’m using Blueprint, Film Room, and documented work sessions to connect each decision to the work and evidence behind it without giving the tools final judgment.",
     href: "/demos",
-    action: "See how I work",
+    action: "See the sessions",
   },
   {
     area: "Live operations",
     state: "Operating",
     title: "Running the volleyball products together",
     description:
-      "Let’s Pepper events, Rally HQ tournament infrastructure, and Flickday Media coverage are being developed against the same tournament-day conditions.",
+      "I build and run Let’s Pepper events, Rally HQ tournament infrastructure, and Flickday Media coverage against the same tournament-day conditions.",
     href: "/work?domain=Volleyball",
     action: "See the volleyball work",
   },
@@ -54,7 +54,7 @@ const pageNotes = [
   {
     label: "Update rhythm",
     value:
-      "I update this page when my focus changes materially, so it stays a useful snapshot rather than a running log.",
+      "I update this page when my focus changes materially, so it stays current rather than growing into a running log.",
   },
 ] as const;
 

@@ -54,7 +54,7 @@ must not produce a separate public identity.
 
 | Route | Visitor question | Required content | Must not become |
 |---|---|---|---|
-| `/` | Who is this, and where should I go? | identity, practice claim, three unlike forms of public work, six-domain map, a direct link to current activity, and entrances to Work, Demos, Learn, Writing, Photography, and About | the full portfolio, a second Now page, a services funnel, or a seven-way persona chooser |
+| `/` | Who is this, and where should I go? | identity, practice claim, three unlike forms of public work, six-domain map, a direct link to current activity, and entrances to Work, Sessions, Learn, Writing, Photography, and About | the full portfolio, a second Now page, a services funnel, or a seven-way persona chooser |
 | `/work` | What has Nino actually made? | complete authorized registry, counts, domain groups, search, state and form filters | a selected-work grid or a list split into tools/apps/sites |
 | `/work/:slug` | What is this object and what is its honest state? | concise claim, state, form, provenance or receipts when useful, one primary destination, related demos/writing | a required template for every object or an invented case study |
 | `/demos` | What can I watch or step through? | all numbered sessions and all applied techniques, with the distinction explained | a marketing teaser for an external subdomain |
@@ -67,7 +67,7 @@ must not produce a separate public identity.
 | `/about` | Who is Nino beyond the catalog? | durable biography, working model, profile image if art direction approves it, links to Now and external profiles | a services pitch |
 | `/now` | What is active now? | dated current focus and active work | a second work inventory |
 | `/links` | Where else can I find or use the work? | maintained destination list | the primary navigation |
-| `/search` | Where is the thing I remember? | grouped results across Work, Demos, Writing, and durable pages | an unscoped web search |
+| `/search` | Where is the thing I remember? | grouped results across Work, Sessions, Writing, and durable pages | an unscoped web search |
 | `/privacy` | What does this site collect? | current policy | promotional content |
 
 ## Global navigation
@@ -77,7 +77,7 @@ must not produce a separate public identity.
 The header has three stable regions:
 
 1. **Identity** — `Nino Chavez`, linked to `/`.
-2. **Primary navigation** — Work, Demos, Learn, Writing, Photography, About, in that order.
+2. **Primary navigation** — Work, Sessions, Learn, Writing, Photography, About, in that order.
 3. **Utility** — Search.
 
 There is no global call-to-action, services link, or product dropdown. The navigation
@@ -111,6 +111,12 @@ words themselves live in `OPEN-PRACTICE-ART-DIRECTION.md` §Copy and naming.
   demos and delivering written operating sessions is a label defect, not a content
   defect. When the page's own title and the nav label disagree about what the page
   is, the nav label changes.
+- **Labels do not share a root noun.** Owner decision 2026-08-04: the surface at
+  `/demos` is named **Sessions** (previously "How I work", previously "Demos").
+  "Work" and "How I work" in the same six-item nav were semantically and verbally
+  too close to scan. "Sessions" is the page's own dominant noun ("12 complete
+  sessions", "Full sessions") and shares no root with any other label. The route
+  stays `/demos`; routes are addresses, not names.
 - **No two records share a name.** Two work records named `Ways of Working` and
   `Agentic Ways of Working`, plus a third page titled `Ways of Working`, cannot be
   distinguished in search results or in a shared link. Admission to the registry
@@ -122,7 +128,7 @@ words themselves live in `OPEN-PRACTICE-ART-DIRECTION.md` §Copy and naming.
 |---|---|
 | Home identity | `/` only |
 | Work | `/work`, `/work/**` |
-| Demos | `/demos`, `/demos/**` |
+| Sessions | `/demos`, `/demos/**` |
 | Learn | `/learn`, `/learn/**` |
 | Writing | `/blog`, `/blog/**` |
 | Photography | `/photography`, `/photography/**` |
@@ -143,7 +149,7 @@ Menu opens a navigation dialog containing:
 
 1. Search
 2. Work
-3. Demos
+3. Sessions
 4. Learn
 5. Writing
 6. Photography
@@ -176,8 +182,8 @@ pages:
 
 ```text
 Work / Film Room
-Demos / Sessions / Title
-Demos / Applied / Technique title
+Sessions / Title
+Sessions / Techniques / Technique title
 Learn / Photographer
 ```
 
@@ -186,12 +192,12 @@ Only ancestors are links. The current item is text with `aria-current="page"`.
 ### Collection controls
 
 - Work uses search and filters, not a subnavigation bar.
-- Demos exposes **Sessions** and **Applied techniques** as named collection sections.
+- Sessions exposes **Full sessions** and **Techniques** as named collection sections.
   These may be jump links on `/demos`; they are not separate global-navigation items.
 - Demo session details expose previous and next sessions in the declared sequence.
 - Applied-technique details expose related sessions instead of pretending to have a
   numbered sequence.
-- Learn tracks return to the Learn index and cross-link to evidence in Work, Demos,
+- Learn tracks return to the Learn index and cross-link to evidence in Work, Sessions,
   and Writing.
 - Blog retains its publication taxonomy below the global header.
 - Photography retains gallery-specific controls below the global header.

@@ -33,7 +33,7 @@ const sitePages = [
     title: "Now",
     href: "/now",
     description:
-      "What Nino is working on across product architecture, the public site, AI-assisted work, and volleyball operations.",
+      "What I’m working on across product architecture, the public site, AI-assisted work, and volleyball operations.",
     keywords:
       "current focus commerce.com site redesign agents Blueprint Film Room volleyball Rally HQ Let's Pepper Flickday Media active July 2026",
   },
@@ -281,7 +281,7 @@ export default async function SearchPage({
           {demos.length ? (
             <section aria-labelledby="search-demos">
               <div className="group-heading">
-                <h2 id="search-demos">How I work</h2>
+                <h2 id="search-demos">Sessions</h2>
                 <span>
                   {demos.length} of {demoMatches.length}
                 </span>

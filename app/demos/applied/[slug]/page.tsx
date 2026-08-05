@@ -64,7 +64,7 @@ export default async function AppliedTechniquePage({
       <div className="page-shell demo-story-breadcrumbs">
         <Breadcrumbs
           items={[
-            { label: "How I work", href: "/demos" },
+            { label: "Sessions", href: "/demos" },
             { label: "Techniques", href: "/demos#applied" },
             { label: entry.title },
           ]}
@@ -154,7 +154,7 @@ export default async function AppliedTechniquePage({
           ) : (
             <Link href="/demos">
               <span>Collection complete</span>
-              <strong>Return to How I work</strong>
+              <strong>Return to Sessions</strong>
             </Link>
           )}
         </nav>

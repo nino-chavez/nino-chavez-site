@@ -199,7 +199,7 @@ export const workItems: WorkItem[] = [
     form: "collection",
     updatedAt: "2026-07-30",
     destination: {
-      label: "View all demos",
+      label: "View all sessions",
       href: "/demos",
     },
     related: ["blueprint", "agentic-ways-of-working"],
@@ -639,7 +639,8 @@ export const learnTracks: LearnTrack[] = [
       "Capture structure, constraints, and decisions in architecture documentation that remains useful while the system changes.",
     startWhen:
       "You need documentation another person can build from without asking you to reconstruct the system.",
-    finalArtifact: "Complete system architecture using the arc42 template",
+    finalArtifact:
+      "Complete system architecture using arc42, a standard template for documenting software architecture",
     timeline: "8–12 weeks",
     whoFor: [
       "You design systems that other people need to understand or extend.",

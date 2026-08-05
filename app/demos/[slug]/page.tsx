@@ -64,8 +64,7 @@ export default async function DemoSessionPage({
       <div className="page-shell demo-story-breadcrumbs">
         <Breadcrumbs
           items={[
-            { label: "How I work", href: "/demos" },
-            { label: "Sessions", href: "/demos#sessions" },
+            { label: "Sessions", href: "/demos" },
             { label: entry.title },
           ]}
         />
@@ -145,7 +144,7 @@ export default async function DemoSessionPage({
           ) : (
             <Link href="/demos">
               <span>Sequence complete</span>
-              <strong>Return to How I work</strong>
+              <strong>Return to Sessions</strong>
             </Link>
           )}
         </nav>

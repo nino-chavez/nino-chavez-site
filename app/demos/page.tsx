@@ -4,7 +4,7 @@ import { DemoLibrary } from "../components/DemoLibrary";
 import { getDemoSnapshot } from "../demos";
 
 export const metadata = {
-  title: "How I work",
+  title: "Sessions",
   description:
     "Complete work sessions and reusable techniques from real agent-assisted work.",
 };
@@ -19,8 +19,8 @@ export default async function DemosPage() {
       <header className="demo-studio">
         <div className="demo-studio__stage page-shell">
           <div className="demo-studio__lead">
-            <p className="eyebrow">Sessions and techniques</p>
-            <h1>How I work</h1>
+            <p className="eyebrow">How the work gets done</p>
+            <h1>Sessions</h1>
             <p className="demo-studio__lede">
               See complete work sessions, including mistakes, corrections, and
               the evidence behind each decision.
@@ -87,8 +87,8 @@ export default async function DemosPage() {
             <h2 id="demo-library-title">Browse sessions and techniques.</h2>
           </div>
           <p>
-            Search all {totalRecords} records, or open either collection
-            directly.
+            Search all {totalRecords} sessions and techniques, or open either
+            collection directly.
           </p>
         </header>
 

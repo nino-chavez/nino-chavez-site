@@ -90,7 +90,7 @@ const personSchema = {
   "@type": "Person",
   name: "Nino Chavez",
   url: "https://ninochavez.co/about",
-  image: "https://ninochavez.co/work/nino-illustrated-v1.webp",
+  image: "https://ninochavez.co/work/nino.jpg",
   jobTitle: "Product Architect",
   worksFor: {
     "@type": "Organization",
@@ -140,14 +140,13 @@ export default function AboutPage() {
 
       <header className="about-opening">
         <div className="about-opening__register page-shell">
-          <span>About Nino Chavez</span>
+          <span>About</span>
           <span>Chicago</span>
           <span>Building since 1999</span>
         </div>
 
         <div className="about-opening__stage page-shell">
           <div className="about-opening__copy">
-            <p className="eyebrow">Nino Chavez</p>
             <h1 aria-label="Nino Chavez">
               <span aria-hidden="true">Nino</span>
               <span aria-hidden="true">Chavez</span>
@@ -156,22 +155,18 @@ export default function AboutPage() {
               I’m a product architect in Chicago. I’ve spent more than 25 years
               turning complicated decisions into working software.
             </p>
-            <p>
-              Outside the day job, I build and run volleyball products,
-              photograph tournaments, write, and DJ.
-            </p>
           </div>
-        </div>
 
-        <figure className="about-opening__portrait">
-          <img
-            src="/work/nino-illustrated-v1.webp"
-            alt="Illustrated portrait of Nino Chavez"
-            width={1254}
-            height={1254}
-            fetchPriority="high"
-          />
-        </figure>
+          <figure className="about-opening__portrait">
+            <img
+              src="/work/nino-illustrated-v1.webp"
+              alt="Illustrated portrait of Nino Chavez"
+              width={1254}
+              height={1254}
+              fetchPriority="high"
+            />
+          </figure>
+        </div>
       </header>
 
       <div className="about-body page-shell">
@@ -197,7 +192,17 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <dl className="about-coordinates">
+            <div>
+              <figure className="about-biography__photo">
+                <img
+                  src="/work/nino.jpg"
+                  alt="Portrait of Nino Chavez"
+                  width={727}
+                  height={727}
+                  loading="lazy"
+                />
+              </figure>
+              <dl className="about-coordinates">
               <div>
                 <dt>Current role</dt>
                 <dd>Product Architect</dd>
@@ -214,7 +219,8 @@ export default function AboutPage() {
                 <dt>Software practice</dt>
                 <dd>Since 1999</dd>
               </div>
-            </dl>
+              </dl>
+            </div>
           </div>
         </section>
 
@@ -223,8 +229,8 @@ export default function AboutPage() {
             <span>02 / Throughline</span>
             <h2 id="about-throughline">What connects the work</h2>
             <p>
-              The form changes. Each one asks me to make something useful, run
-              it under real conditions, and own the result.
+              The form changes. Each practice asks me to make something
+              useful, run it under real conditions, and own the result.
             </p>
           </header>
 
@@ -275,7 +281,7 @@ export default function AboutPage() {
             </p>
             <div className="about-inline-actions">
               <Link href="/work/blueprint">See the method in Blueprint →</Link>
-              <Link href="/demos">See how I work →</Link>
+              <Link href="/demos">See the sessions →</Link>
             </div>
           </div>
         </section>

@@ -3,8 +3,7 @@ import { learnTracks } from "../data";
 
 export const metadata = {
   title: "Learn",
-  description:
-    "Seven self-directed practitioner paths grounded in the work of Nino Chavez.",
+  description: `${learnTracks.length} self-directed practitioner paths grounded in the work of Nino Chavez.`,
 };
 
 export default function LearnPage() {
@@ -21,7 +20,9 @@ export default function LearnPage() {
             <p className="eyebrow">Choose by output</p>
             <h1 aria-label="Start with what you need to make.">
               <span aria-hidden="true">Start with</span>
-              <span aria-hidden="true">what you need to make.</span>
+              <span aria-hidden="true">
+                what you need to <em>make</em>.
+              </span>
             </h1>
           </div>
           <div>
@@ -76,7 +77,7 @@ export default function LearnPage() {
           <p>
             Browse the sessions and techniques these paths use.
           </p>
-          <Link href="/demos">See how I work →</Link>
+          <Link href="/demos">See the sessions →</Link>
         </aside>
       </div>
     </div>

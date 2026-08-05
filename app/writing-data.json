@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "source": "apps/blog/astro-build",
-  "sourceRevision": "5ade64b9875f079855ee0575375793efcd00560e",
-  "generatedAt": "2026-08-01T17:31:13.898Z",
-  "latestPublishedAt": "2026-07-31",
-  "publicPieceCount": 285,
+  "sourceRevision": "390af43f7104d0f78b14c98170152bffeac54873",
+  "generatedAt": "2026-08-04T22:18:07.815Z",
+  "latestPublishedAt": "2026-08-03",
+  "publicPieceCount": 286,
   "kindCounts": {
-    "Essay": 241,
+    "Essay": 242,
     "Whitepaper": 14,
     "Presentation": 9,
     "Tutorial": 7,
@@ -35,6 +35,19 @@
     "2025"
   ],
   "items": [
+    {
+      "slug": "the-style-guide-was-teaching-the-tells",
+      "title": "The Style Guide Was Teaching the Tells",
+      "excerpt": "I asked an AI to audit the style guides that teach AI to write like me. The tone card was describing machine messages, the guide's examples had become tells, and a checker was grading drafts for phrases the corpus abandoned months ago.",
+      "publishedAt": "2026-08-03",
+      "kind": "Essay",
+      "category": "AI Development",
+      "tags": [
+        "ai-governance",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/the-style-guide-was-teaching-the-tells"
+    },
     {
       "slug": "grade-an-agent-tool-before-you-install-it",
       "title": "Grade an Agent Tool Before You Install It",

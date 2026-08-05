@@ -11,6 +11,9 @@ export const metadata = {
 export default async function BlogPage() {
   const writingSnapshot = await getWritingSnapshot();
   const writingSeries = writingSnapshot.series;
+  const latestPiece = [...writingSnapshot.items].sort((a, b) =>
+    b.publishedAt.localeCompare(a.publishedAt),
+  )[0];
   const latestDate = new Date(
     `${writingSnapshot.latestPublishedAt}T12:00:00Z`,
   ).toLocaleDateString("en-US", {
@@ -31,7 +34,9 @@ export default async function BlogPage() {
         <div className="library-opening__copy page-shell">
           <div>
             <p className="eyebrow">Signal Dispatch</p>
-            <h1>Signal Dispatch</h1>
+            <h1>
+              Signal <em>Dispatch</em>
+            </h1>
           </div>
           <div>
             <p className="lede">
@@ -45,6 +50,35 @@ export default async function BlogPage() {
           </div>
         </div>
       </header>
+
+      {latestPiece ? (
+        <section
+          className="writing-featured page-shell"
+          aria-labelledby="latest-piece-title"
+        >
+          <a href={latestPiece.href}>
+            <p className="writing-featured__label">Latest piece</p>
+            <h2 id="latest-piece-title">{latestPiece.title}</h2>
+            <p className="writing-featured__excerpt">{latestPiece.excerpt}</p>
+            <p className="writing-featured__meta">
+              <span>{latestPiece.kind}</span>
+              <span>
+                {new Date(
+                  `${latestPiece.publishedAt}T12:00:00Z`,
+                ).toLocaleDateString("en-US", {
+                  day: "numeric",
+                  month: "short",
+                  year: "numeric",
+                  timeZone: "UTC",
+                })}
+              </span>
+              <b>
+                Read the piece <span aria-hidden="true">→</span>
+              </b>
+            </p>
+          </a>
+        </section>
+      ) : null}
 
       <div className="library-room writing-room page-shell">
         <Suspense fallback={<p>Loading the complete publication…</p>}>

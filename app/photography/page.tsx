@@ -335,12 +335,12 @@ export default async function PhotographyPage({
         >
           <header className="photography-selection__heading page-shell">
             <div>
-              <span>Contact sheet / 12 frames</span>
+              <span>Contact sheet / {frames.length} frames</span>
               <h2 id="photography-selection-title">From the archive</h2>
             </div>
             <p>
-              Twelve frames, left at working scale. The live archive keeps the
-              complete event record searchable.
+              {frames.length} frames, left at working scale. The live archive
+              keeps the complete event record searchable.
             </p>
           </header>
 
@@ -363,7 +363,7 @@ export default async function PhotographyPage({
           </div>
 
           <footer className="photography-selection__footer page-shell">
-            <span>12 frames shown</span>
+            <span>{frames.length} frames shown</span>
             <a
               href={withSource("/photography/explore", source)}
             >

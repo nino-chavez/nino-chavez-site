@@ -147,8 +147,13 @@ export default async function LearnTrackPage({
 
         <section className="learn-level-section" aria-labelledby="levels-title">
           <header>
-            <span>Path / 00–04</span>
-            <h2 id="levels-title">Five stages to the finished work</h2>
+            <span>
+              Path / 00–
+              {String(track.levels.length - 1).padStart(2, "0")}
+            </span>
+            <h2 id="levels-title">
+              {track.levels.length} stages to the finished work
+            </h2>
             <p>
               Each stage has a practical stopping condition. Move on when the
               checkpoint is true, not when the time estimate expires.
@@ -195,7 +200,7 @@ export default async function LearnTrackPage({
           ) : (
             <Link href="/learn">
               <span>Path index</span>
-              <strong>← Compare all seven</strong>
+              <strong>← Compare all {learnTracks.length} paths</strong>
             </Link>
           )}
           {next ? (
@@ -206,7 +211,7 @@ export default async function LearnTrackPage({
           ) : (
             <Link href="/learn">
               <span>Path index</span>
-              <strong>Compare all seven →</strong>
+              <strong>Compare all {learnTracks.length} paths →</strong>
             </Link>
           )}
         </nav>
