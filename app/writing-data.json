@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "source": "apps/blog/astro-build",
-  "sourceRevision": "8fd97762c6a447b11d6bd3afc54fdec1a6cefcc9",
-  "generatedAt": "2026-08-08T12:27:34.769Z",
+  "sourceRevision": "b4e08f861fd89f0eea7ff514c7ffd229de9c245f",
+  "generatedAt": "2026-08-08T19:02:47.176Z",
   "latestPublishedAt": "2026-08-08",
   "publicPieceCount": 290,
   "kindCounts": {
