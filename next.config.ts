@@ -15,7 +15,6 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      { source: "/cv", destination: "/about", permanent: true },
       { source: "/photo", destination: "/photography", permanent: true },
       {
         source: "/photo/:path*",

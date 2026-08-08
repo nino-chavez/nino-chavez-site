@@ -8,14 +8,62 @@
  *
  * This endpoint provides chronological employment history with role details,
  * enabling AI models to answer career trajectory and experience questions.
+ *
+ * Employer names, dates, and the flagship program's budget/team-size figures
+ * are derived from app/career.ts, the single owner of those facts — see that
+ * file's header for provenance. Role-title register (site vs. HR/LinkedIn) and
+ * rollup prose for the pre-2015 roles stay route-local per career.ts's own
+ * dual-register note; this file must not hand-write a number career.ts carries.
  */
 
+import { positions, careerStartYear, yearsOfPractice, identity } from '../../career';
+
+function findPosition(org: string) {
+	const position = positions.find((p) => p.org === org);
+	if (!position) {
+		throw new Error(`career.ts: expected a position for "${org}"`);
+	}
+	return position;
+}
+
 export async function GET() {
+	const currentPosition = positions.find((p) => p.kind === 'employment' && p.end === null);
+	if (!currentPosition) {
+		throw new Error('career.ts: expected a current employment position');
+	}
+
+	const song = findPosition('Accenture Song');
+	const capgemini = findPosition('Capgemini');
+	const peapod = findPosition('Peapod Digital Labs');
+	const flagship = findPosition('Accenture Interactive');
+	const gorillaGroup = findPosition('Gorilla Group');
+
+	const flagshipMetric = (label: string) => {
+		const metric = flagship.bullets[0]?.metrics?.find((m) => m.label === label);
+		if (!metric) {
+			throw new Error(`career.ts: expected a "${label}" metric on the flagship bullet`);
+		}
+		return metric.value;
+	};
+	const flagshipBudget = flagshipMetric('program budget');
+	const flagshipTeamSize = flagshipMetric('global technical and functional resources');
+
+	// The 1999-2015 span rolls up every career.ts position tagged
+	// "early-career" into a single "Various Roles" entry, matching the rollup
+	// this endpoint has always shown (7 items, not 15).
+	const earlyCareer = positions.filter((p) => p.tags?.includes('early-career'));
+	const earlyCareerStart = earlyCareer.map((p) => p.start).sort()[0] ?? '';
+	const earlyCareerEnd = earlyCareer.map((p) => p.end ?? '').sort().at(-1) ?? '';
+
+	// Displayed as a round "X+" so it doesn't need a fact update every year;
+	// re-crosses to the next multiple of 5 automatically (e.g. 30+ in 2029).
+	const yearsExperience = `${Math.floor(yearsOfPractice() / 5) * 5}+`;
+
 	const experienceData = {
 		'@context': 'https://schema.org',
 		'@type': 'ItemList',
 		name: 'Nino Chavez - Professional Experience',
-		description: 'Chronological work history spanning 25+ years in enterprise architecture',
+		description: `Chronological work history spanning ${yearsExperience} years in enterprise architecture`,
 		numberOfItems: 7,
 		itemListElement: [
 			{
@@ -23,9 +71,9 @@ export async function GET() {
 				position: 1,
 				item: {
 					'@type': 'EmployeeRole',
-					roleName: 'Product Architect',
-					startDate: '2026',
-					endDate: null, // Current role
+					roleName: currentPosition.title,
+					startDate: currentPosition.start,
+					endDate: currentPosition.end, // Current role
 					isCurrentRole: true,
 					employmentType: 'FULL_TIME',
 					description:
@@ -38,7 +86,7 @@ export async function GET() {
 					],
 					worksFor: {
 						'@type': 'Organization',
-						name: 'commerce.com',
+						name: currentPosition.org,
 						location: {
 							'@type': 'Place',
 							address: {
@@ -56,9 +104,9 @@ export async function GET() {
 				position: 2,
 				item: {
 					'@type': 'EmployeeRole',
-					roleName: 'Enterprise Architect & Strategic Advisor',
-					startDate: '2023',
-					endDate: '2026',
+					roleName: song.title,
+					startDate: song.start,
+					endDate: song.end,
 					isCurrentRole: false,
 					employmentType: 'FULL_TIME',
 					description:
@@ -71,7 +119,7 @@ export async function GET() {
 					],
 					worksFor: {
 						'@type': 'Organization',
-						name: 'Accenture Song',
+						name: song.org,
 						url: 'https://www.accenture.com/us-en/services/song-index',
 						location: {
 							'@type': 'Place',
@@ -90,9 +138,9 @@ export async function GET() {
 				position: 3,
 				item: {
 					'@type': 'EmployeeRole',
-					roleName: 'Managing Delivery Architect',
-					startDate: '2021',
-					endDate: '2023',
+					roleName: capgemini.title,
+					startDate: capgemini.start,
+					endDate: capgemini.end,
 					employmentType: 'FULL_TIME',
 					description:
 						'End-to-end delivery leadership for enterprise commerce platforms including SAP, Salesforce, and Adobe. Managed architectural alignment across distributed global teams and established technical standards.',
@@ -104,7 +152,7 @@ export async function GET() {
 					],
 					worksFor: {
 						'@type': 'Organization',
-						name: 'Capgemini',
+						name: capgemini.org,
 						location: {
 							'@type': 'Place',
 							address: {
@@ -123,8 +171,8 @@ export async function GET() {
 				item: {
 					'@type': 'EmployeeRole',
 					roleName: 'Domain Architect',
-					startDate: '2020',
-					endDate: '2021',
+					startDate: peapod.start,
+					endDate: peapod.end,
 					employmentType: 'FULL_TIME',
 					description:
 						'Microservices architecture for scalable online grocery platforms. Led architecture strategy for mobile, web, and fulfillment systems with squad-based delivery model.',
@@ -135,7 +183,7 @@ export async function GET() {
 					],
 					worksFor: {
 						'@type': 'Organization',
-						name: 'Peapod Digital Labs',
+						name: peapod.org,
 						location: {
 							'@type': 'Place',
 							address: {
@@ -154,19 +202,18 @@ export async function GET() {
 				item: {
 					'@type': 'EmployeeRole',
 					roleName: 'Managing Enterprise Architect',
-					startDate: '2018',
-					endDate: '2020',
+					startDate: flagship.start,
+					endDate: flagship.end,
 					employmentType: 'FULL_TIME',
-					description:
-						'Led $25M multi-brand omni-channel commerce transformation using SAP Commerce Cloud. Managed 100+ global resources across system integration, performance, QA, and CI/CD workstreams.',
+					description: `Led ${flagshipBudget} multi-brand omni-channel commerce transformation using SAP Commerce Cloud. Managed ${flagshipTeamSize} global resources across system integration, performance, QA, and CI/CD workstreams.`,
 					responsibilities: [
-						'$25M multi-brand omni-channel commerce solution (SAP Commerce)',
-						'Managed 100+ global resources',
+						`${flagshipBudget} multi-brand omni-channel commerce solution (SAP Commerce)`,
+						`Managed ${flagshipTeamSize} global resources`,
 						'Led system integration, performance, QA, CI/CD streams'
 					],
 					worksFor: {
 						'@type': 'Organization',
-						name: 'Accenture Interactive',
+						name: flagship.org,
 						location: {
 							'@type': 'Place',
 							address: {
@@ -181,12 +228,12 @@ export async function GET() {
 						{
 							'@type': 'PropertyValue',
 							name: 'Project Budget',
-							value: '$25M'
+							value: flagshipBudget
 						},
 						{
 							'@type': 'PropertyValue',
 							name: 'Team Size',
-							value: '100+ global resources'
+							value: `${flagshipTeamSize} global resources`
 						}
 					]
 				}
@@ -197,8 +244,8 @@ export async function GET() {
 				item: {
 					'@type': 'EmployeeRole',
 					roleName: 'Managing Enterprise Architect',
-					startDate: '2015',
-					endDate: '2018',
+					startDate: gorillaGroup.start,
+					endDate: gorillaGroup.end,
 					employmentType: 'FULL_TIME',
 					description:
 						'Cross-functional eCommerce implementations across SAP, Magento, and Salesforce platforms. Technical advisor for pre-sales and strategy with architectural framework development for engineering execution.',
@@ -209,7 +256,7 @@ export async function GET() {
 					],
 					worksFor: {
 						'@type': 'Organization',
-						name: 'Gorilla Group',
+						name: gorillaGroup.org,
 						location: {
 							'@type': 'Place',
 							address: {
@@ -228,8 +275,8 @@ export async function GET() {
 				item: {
 					'@type': 'EmployeeRole',
 					roleName: 'Software Engineering & Engineering Lead',
-					startDate: '1999',
-					endDate: '2015',
+					startDate: earlyCareerStart,
+					endDate: earlyCareerEnd,
 					employmentType: 'FULL_TIME',
 					description:
 						'Full-stack development and solution architecture across retail, B2B, and CMS platforms. Led Agile delivery teams across multi-vendor environments using Java, .NET, and open-source frameworks.',
@@ -265,22 +312,22 @@ export async function GET() {
 				{
 					'@type': 'PropertyValue',
 					name: 'Total Years Experience',
-					value: '25+'
+					value: yearsExperience
 				},
 				{
 					'@type': 'PropertyValue',
 					name: 'Career Start Year',
-					value: '1999'
+					value: String(careerStartYear)
 				},
 				{
 					'@type': 'PropertyValue',
 					name: 'Current Employer',
-					value: 'commerce.com'
+					value: currentPosition.org
 				},
 				{
 					'@type': 'PropertyValue',
 					name: 'Primary Location',
-					value: 'Chicago, IL'
+					value: identity.location
 				}
 			]
 		}

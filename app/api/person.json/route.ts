@@ -20,9 +20,43 @@
  * résumé the *less* useful window. Nothing here was false; it was the previous
  * positioning, left behind when the site moved on. Adding a venture or a
  * profile to /links means adding it here too.
+ *
+ * Career facts (current employer, role title, years of experience, flagship
+ * program budget/team size) are derived from app/career.ts, the single owner
+ * of those numbers — see that file's header for provenance. This file must
+ * not hand-write a career fact career.ts already carries.
  */
 
+import { positions, yearsOfPractice } from '../../career';
+
 export async function GET() {
+	const currentPosition = positions.find((p) => p.kind === 'employment' && p.end === null);
+	if (!currentPosition) {
+		throw new Error('career.ts: expected a current employment position');
+	}
+
+	const majorEmployers = positions.filter(
+		(p) => p.kind === 'employment' && !p.tags?.includes('early-career')
+	);
+
+	const flagship = positions.find((p) => p.org === 'Accenture Interactive');
+	if (!flagship) {
+		throw new Error('career.ts: expected an Accenture Interactive position');
+	}
+	const flagshipMetric = (label: string) => {
+		const metric = flagship.bullets[0]?.metrics?.find((m) => m.label === label);
+		if (!metric) {
+			throw new Error(`career.ts: expected a "${label}" metric on the flagship bullet`);
+		}
+		return metric.value;
+	};
+	const projectBudget = flagshipMetric('program budget');
+	const teamSize = flagshipMetric('global technical and functional resources');
+
+	// Displayed as a round "X+" so it doesn't need a fact update every year;
+	// re-crosses to the next multiple of 5 automatically (e.g. 30+ in 2029).
+	const yearsExperience = `${Math.floor(yearsOfPractice() / 5) * 5}+`;
+
 	const personData = {
 		'@context': 'https://schema.org',
 		'@type': 'Person',
@@ -30,7 +64,7 @@ export async function GET() {
 		alternateName: 'Antonino Chavez',
 		// /links introduces him as "Photographer. DJ. Writer. Builder." The day
 		// job stays first — it is still the day job — but it was the whole list.
-		jobTitle: ['Product Architect', 'Action Sports Photographer', 'Writer', 'DJ'],
+		jobTitle: [currentPosition.title, 'Action Sports Photographer', 'Writer', 'DJ'],
 		description:
 			'Chicago-based maker working across software, photography, music, and writing. Writing code since 1999; day job is product architect at commerce.com. Runs Signal X Studio, the holding company behind Let’s Pepper, Rally HQ, Flickday Media, VolleyRX, QuantifAI, and Zero Specs. Shoots action sports and volleyball with a 20,000+ image archive, writes the Signal Dispatch blog, and DJs house and disco.',
 		url: 'https://ninochavez.co',
@@ -39,7 +73,7 @@ export async function GET() {
 		// Current Employment
 		worksFor: {
 			'@type': 'Organization',
-			name: 'commerce.com',
+			name: currentPosition.org,
 			url: 'https://commerce.com'
 		},
 
@@ -90,8 +124,7 @@ export async function GET() {
 			{
 				'@type': 'Thing',
 				name: 'Product Architecture',
-				description:
-					'25+ years designing and implementing large-scale commerce platforms',
+				description: `${yearsExperience} years designing and implementing large-scale commerce platforms`,
 				additionalProperty: {
 					'@type': 'PropertyValue',
 					name: 'Experience Level',
@@ -148,13 +181,13 @@ export async function GET() {
 		hasOccupation: [
 			{
 				'@type': 'Occupation',
-				name: 'Product Architect',
+				name: currentPosition.title,
 				occupationLocation: {
 					'@type': 'City',
 					name: 'Chicago',
 					'@id': 'https://www.wikidata.org/wiki/Q1297'
 				},
-				experienceRequirements: '25+ years',
+				experienceRequirements: `${yearsExperience} years`,
 				responsibilities:
 					'Design and implement Fortune 500 commerce platforms, AI transformation strategy, technical architecture, system integration, cloud-native platform design',
 				skills: [
@@ -186,14 +219,7 @@ export async function GET() {
 		// define — a conforming parser drops them, so the timeline read as six
 		// undated employers. The dated version is /api/experience.json, which
 		// carries all six as EmployeeRole plus the 1999-2015 span before them.
-		alumniOf: [
-			{ '@type': 'Organization', name: 'commerce.com' },
-			{ '@type': 'Organization', name: 'Accenture Song' },
-			{ '@type': 'Organization', name: 'Capgemini' },
-			{ '@type': 'Organization', name: 'Peapod Digital Labs' },
-			{ '@type': 'Organization', name: 'Accenture Interactive' },
-			{ '@type': 'Organization', name: 'Gorilla Group' }
-		],
+		alumniOf: majorEmployers.map((p) => ({ '@type': 'Organization', name: p.org })),
 		subjectOf: {
 			'@type': 'DataFeed',
 			name: 'Nino Chavez - Professional Experience',
@@ -205,17 +231,17 @@ export async function GET() {
 			{
 				'@type': 'PropertyValue',
 				name: 'Years of Experience',
-				value: '25+'
+				value: yearsExperience
 			},
 			{
 				'@type': 'PropertyValue',
 				name: 'Largest Project Budget',
-				value: '$25M'
+				value: projectBudget
 			},
 			{
 				'@type': 'PropertyValue',
 				name: 'Team Resources Managed',
-				value: '100+ global resources'
+				value: `${teamSize} global resources`
 			},
 			{
 				'@type': 'PropertyValue',
