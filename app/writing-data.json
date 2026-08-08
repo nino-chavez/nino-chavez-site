@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "source": "apps/blog/astro-build",
-  "sourceRevision": "390af43f7104d0f78b14c98170152bffeac54873",
-  "generatedAt": "2026-08-04T22:18:07.815Z",
-  "latestPublishedAt": "2026-08-03",
-  "publicPieceCount": 286,
+  "sourceRevision": "8fd97762c6a447b11d6bd3afc54fdec1a6cefcc9",
+  "generatedAt": "2026-08-08T12:27:34.769Z",
+  "latestPublishedAt": "2026-08-08",
+  "publicPieceCount": 290,
   "kindCounts": {
-    "Essay": 242,
-    "Whitepaper": 14,
+    "Essay": 245,
+    "Whitepaper": 15,
     "Presentation": 9,
     "Tutorial": 7,
     "Counterpoint": 4,
@@ -35,6 +35,59 @@
     "2025"
   ],
   "items": [
+    {
+      "slug": "the-sum-of-your-gaps",
+      "title": "The Sum of Your Gaps: What Fixed-Task AI Studies Do Not Measure",
+      "excerpt": "Fixed-task studies measure performance within familiar work. A one-person repository history raises—but cannot answer—a different question about whether AI changes the range of work people attempt.",
+      "publishedAt": "2026-08-08",
+      "kind": "Whitepaper",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "career"
+      ],
+      "href": "https://ninochavez.co/blog/whitepapers/the-sum-of-your-gaps"
+    },
+    {
+      "slug": "there-was-never-a-person-in-that-seat",
+      "title": "There Was Never a Person in That Seat",
+      "excerpt": "Fixed-task studies measure whether AI helps with familiar work. My repository history raises a different question: does AI change the range of work one person attempts?",
+      "publishedAt": "2026-08-08",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "career"
+      ],
+      "href": "https://ninochavez.co/blog/there-was-never-a-person-in-that-seat"
+    },
+    {
+      "slug": "the-loudest-voice-in-my-voice-corpus-isnt-mine",
+      "title": "The Loudest Voice in My Voice Corpus Isn't Mine",
+      "excerpt": "A pipeline mines my agent sessions into a character sheet that gets loaded as context. The top-ranked correction in it is a deny message from a hook I installed, quoted back at me across 117 sessions.",
+      "publishedAt": "2026-08-07",
+      "kind": "Essay",
+      "category": "AI Development",
+      "tags": [
+        "ai-development",
+        "agentic-systems"
+      ],
+      "href": "https://ninochavez.co/blog/the-loudest-voice-in-my-voice-corpus-isnt-mine"
+    },
+    {
+      "slug": "the-cut-youll-make-twice",
+      "title": "The Cut You'll Make Twice",
+      "excerpt": "A guardrail that fires tells you it fired. A constraint built into the shape of what you hand a model tells you nothing, ever — including when you put it in the wrong place. I went looking for the line that would have logged it. There isn't one.",
+      "publishedAt": "2026-08-06",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "ai-development",
+        "architecture"
+      ],
+      "href": "https://ninochavez.co/blog/the-cut-youll-make-twice"
+    },
     {
       "slug": "the-style-guide-was-teaching-the-tells",
       "title": "The Style Guide Was Teaching the Tells",
