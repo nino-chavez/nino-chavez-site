@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "source": "apps/nc-demos",
-  "sourceRevision": "e9d10531f69b540dde4e1c831f84da4a6cbc443f",
-  "generatedAt": "2026-08-05T01:42:53.833Z",
-  "sessionCount": 12,
+  "sourceRevision": "12ad2f86f651e8eb341b03e03a63e341ea67b274",
+  "generatedAt": "2026-08-09T04:04:35.185Z",
+  "sessionCount": 13,
   "techniqueCount": 9,
   "sessions": [
     {
@@ -228,6 +228,24 @@
       "relatedTechniqueSlug": "adopt-or-skip",
       "href": "https://ninochavez.co/demos/adopt-or-skip",
       "storyHref": "https://nc-demos.pages.dev/content/sessions/adopt-or-skip.json"
+    },
+    {
+      "number": "13",
+      "slug": "gate-first",
+      "title": "The Gate Was Written First",
+      "summary": "Three ways to make a meeting archive answer a question, three preregistered gates, three refusals in one day. Each gate was committed to git before the model weights finished downloading — so when the scores came back plausible, there was nothing left to negotiate with. The feature that shipped is the one the evidence admitted.",
+      "audience": "Anyone whose agent keeps wiring features that demo well and fail in use — and anyone deciding when a measured capability is allowed to become product.",
+      "evidence": "A one-day trilogy of preregistered probes — a similarity floor, a pairwise scorer, an extractive no-answer head — each gate frozen before first inference, each failed without tuning; the falsifier showing a right answer scoring below a wrong one, which no threshold can fix; and the honest feature that shipped instead.",
+      "practice": "Commit fixture, model digests, thresholds, prediction, and consequences before the first run. Observe the held-out result once. When the gate fails, record the receipt and stop — the refusal is the deliverable.",
+      "date": "2026-08",
+      "theme": "admission-gates",
+      "accent": "#f59e0b",
+      "artifact": {
+        "src": "/work/demo-gate-first.jpg",
+        "alt": "Demo 13 title slide: the gate was written first, with the preregistration commit that predates the model download"
+      },
+      "href": "https://ninochavez.co/demos/gate-first",
+      "storyHref": "https://nc-demos.pages.dev/content/sessions/gate-first.json"
     }
   ],
   "techniques": [
