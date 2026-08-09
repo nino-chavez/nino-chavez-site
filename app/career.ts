@@ -366,8 +366,28 @@ export const positions: Position[] = [
         text: "Tournament photography and media production as an independent subcontractor.",
         tags: ["photography"],
       },
+      {
+        text: "Agent-orchestrated marketing-operations engagement (Aug 2026): rebuilt the club's website with read-only registration sync, authored consent-first automation standards for marketing to families of minors, and delivered role and pricing proposals — a five-day sprint produced by steering AI agents.",
+        metrics: [
+          {
+            value: "38 pages",
+            label: "rebuilt website, verified against live registration data",
+            source:
+              "630-marketing-automation repo (private): release receipts, docs/internal/ops — not independently re-run",
+            sourceStatus: "claimed",
+          },
+          {
+            value: "5 days",
+            label: "engagement sprint (222 commits, 2026-08-04 to 2026-08-08)",
+            source: "630-marketing-automation repo git history",
+            sourceStatus: "claimed",
+          },
+        ],
+        evidence: ["https://ninochavez.co/blog/the-depth-penalty-is-gone"],
+        tags: ["ai", "delivery"],
+      },
     ],
-    tags: ["contract", "photography"],
+    tags: ["contract", "photography", "ai"],
   },
   {
     kind: "volunteer",

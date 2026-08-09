@@ -190,6 +190,17 @@ export default function AboutPage() {
                 Dispatch, and keep a music practice on SoundCloud. They look
                 different, but each has to work for the people in front of it.
               </p>
+              <p>
+                The practice has a newer shape too: I take engagements outside
+                my own domain and come back in days with working software,
+                evidence a client can check, and problems they couldn’t see.
+                AI agents supply the depth; the architecture years supply the
+                steering. I wrote about the first full test of that model in{" "}
+                <a href="/blog/the-depth-penalty-is-gone">
+                  The Depth Penalty Is Gone
+                </a>
+                .
+              </p>
             </div>
 
             <div>
