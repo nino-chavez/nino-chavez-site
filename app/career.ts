@@ -98,8 +98,8 @@ export function yearsOfPractice(now: Date = new Date()): number {
  * Nino's own locked claims — LinkedIn profile curation audit, 2026-07-31
  * (~/Documents/LInkedIn Profile/linkedin-profile-audit.md). Locked means the
  * prose rewrite must keep them exact; it does not mean re-derived. The audit's
- * "$20M+" was resolved to $25M by operator attestation 2026-08-08 — the live
- * LinkedIn About still says $20M+ and needs that one-word edit.
+ * "$20M+" was resolved to $25M by operator attestation 2026-08-08; the live
+ * LinkedIn About was updated to $25M on 2026-08-09 (verified in the edit form).
  */
 export const precisionLocks = [
   "100+ people",
