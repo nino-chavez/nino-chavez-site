@@ -287,17 +287,18 @@ test("F7 WITHDRAWN — writing links must stay absolute", async () => {
 // OPEN-PRACTICE-ART-DIRECTION.md §Copy and naming.
 //
 // `reader-contract.json` `denyTerms` is the source of record for this list.
-// The full five-term list is safe to enforce against visible text because
-// visibleText() strips scripts, styles, and tags — identifiers and the flight
-// payload can no longer false-positive (the 2026-08-04 copy screen confirmed
-// "registry" and "snapshot" reach rendered copy nowhere). Notably absent:
-// "prototype", which appears only as the `prototype-banner` class name, and
-// "artifact", which /learn uses as a visitor-facing field label (see C22).
+// The list is safe to enforce against visible text because visibleText()
+// strips scripts, styles, and tags — identifiers and the flight payload can
+// no longer false-positive (the 2026-08-04 copy screen confirmed "snapshot"
+// reaches rendered copy nowhere). Notably absent: "prototype", which appears
+// only as the `prototype-banner` class name; "artifact", which /learn uses as
+// a visitor-facing field label (see C22); and "registry", dropped 2026-08-12
+// because demo 06 / technique A07 (synced from nc-demos) have the registry
+// pattern as their subject — topic, not leaked process vocabulary.
 const INTERNAL_VOCABULARY = [
   "work object",
   "durable page",
   "review build",
-  "registry",
   "snapshot",
 ];
 
