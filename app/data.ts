@@ -310,6 +310,21 @@ export const workItems: WorkItem[] = [
     updatedAt: "2026-07-31",
   },
   {
+    slug: "bc-subscriptions",
+    name: "BC Subscriptions",
+    claim:
+      "A subscription engine demonstrated on a live BigCommerce store — billing, dunning recovery, and a self-serve subscriber portal, with the Kibble & Co demo storefront to walk through.",
+    domain: "Commerce",
+    state: "live",
+    form: "site",
+    updatedAt: "2026-08-12",
+    destination: {
+      label: "Open the BC Subscriptions demo",
+      href: "https://marketing.bcsubs.app/",
+    },
+    related: ["commerce-architecture"],
+  },
+  {
     slug: "forge-brand",
     name: "Forge Brand",
     claim:

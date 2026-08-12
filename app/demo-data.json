@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "source": "apps/nc-demos",
   "sourceRevision": "12ad2f86f651e8eb341b03e03a63e341ea67b274",
-  "generatedAt": "2026-08-09T04:04:35.185Z",
-  "sessionCount": 13,
+  "generatedAt": "2026-08-12T12:56:34.158Z",
+  "sessionCount": 15,
   "techniqueCount": 9,
   "sessions": [
     {
@@ -246,6 +246,42 @@
       },
       "href": "https://ninochavez.co/demos/gate-first",
       "storyHref": "https://nc-demos.pages.dev/content/sessions/gate-first.json"
+    },
+    {
+      "number": "14",
+      "slug": "kibble-and-co",
+      "title": "Kibble & Co. Doesn't Sell Anything",
+      "summary": "A pet-supply storefront went live on a real BigCommerce sandbox, moving real Stripe-sandbox money through real dunning logic — and it exists only so a subscription-billing platform could be built against a genuine store instead of a slide deck. Five deployed apps, 94 ADRs, and a generated file that answers 'what's shipped' so nobody has to narrate it. The method is the point; the pet food is the test fixture.",
+      "audience": "Anyone evaluating whether spec-driven, agent-orchestrated delivery produces real software, and anyone deciding whether 'proposal → synthesis → ADR' is process theater or a working discipline.",
+      "evidence": "A five-app BigCommerce subscriptions platform — storefront, admin, API, docs, marketing — built against a live sandbox store behind a fictional pet-supply merchant; 94 ADRs and 218 user stories moving through one repo; the mechanical state-derivation file that replaces status narration; and two real failures, a circular verification audit and a GitHub rate-limit exhaustion, with the fixes that shipped.",
+      "practice": "Route every spec edit through proposal → synthesis → ADR with the synthesis ID in the commit message. Make 'what's shipped' a generated file, never a written claim. Build a disposable, fictional storefront when you need real platform behavior without a real merchant's data on the line.",
+      "date": "2026-08",
+      "theme": "derived-not-narrated",
+      "accent": "#18b0a8",
+      "artifact": {
+        "src": "/work/demo-kibble-and-co.jpg",
+        "alt": "Demo 14 title slide: Kibble & Co. doesn't sell anything, the fictional pet-supply storefront built to make subscription flows real"
+      },
+      "href": "https://ninochavez.co/demos/kibble-and-co",
+      "storyHref": "https://nc-demos.pages.dev/content/sessions/kibble-and-co.json"
+    },
+    {
+      "number": "15",
+      "slug": "bid-package",
+      "title": "The Harder Deliverable Wasn't the Build",
+      "summary": "A ten-document vendor bid package — the scoping and estimation kit a global systems integrator needs before it can bid on a BigCommerce-native subscriptions build — projected from a 28-epic, 218-story spec corpus in days, not weeks. A leakage lint hard-fails before a forbidden pattern ever reaches the export, and a bundling script freezes identical, name-stamped copies per vendor. Every document still carries status: draft-internal-review — the release checklist stayed a human's job.",
+      "audience": "Anyone evaluating how a client-facing deliverable — a bid package, an SOW, a scoping document — can be produced by agents without becoming a liability the moment it reaches an outside reader.",
+      "evidence": "How a 10-document, 28-epic, 218-story vendor bid package gets projected — not authored — from a canonical spec corpus, sanitized by a hard-fail leakage lint instead of a proofread, frozen into identical per-vendor bundles, and held behind an unchecked human release checklist before anything ships.",
+      "practice": "Keep one canonical source and generate every client-facing artifact from it. Make leakage prevention a whitelist-based lint that runs before the file is written, not a review step someone can skip. Write the release checklist before the package exists.",
+      "date": "2026-08",
+      "theme": "vendor-scoping",
+      "accent": "#8b93c4",
+      "artifact": {
+        "src": "/work/demo-bid-package.jpg",
+        "alt": "Demo 15 title slide: the harder deliverable wasn't the build, showing the ten-document bid package's document list and story counts"
+      },
+      "href": "https://ninochavez.co/demos/bid-package",
+      "storyHref": "https://nc-demos.pages.dev/content/sessions/bid-package.json"
     }
   ],
   "techniques": [
