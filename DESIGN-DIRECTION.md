@@ -4,6 +4,12 @@
 > click-through. The visual choices below are not approved for the redesign and
 > should not influence structural review. A new art-direction round follows
 > acceptance of the route system.
+>
+> The canonical design-system owner is `docs/claude-design-system.md` (the
+> rationed system), shipped to production 2026-08-05. The round-04 candidate at
+> `art-direction/round-04-portfolio-system/SYSTEM.md` was withdrawn in the
+> 2026-08-04 bake-off and is retained as historical evidence only. This file is
+> also historical evidence, not a second design-system owner.
 
 ## Decision
 

@@ -143,6 +143,14 @@ layout:
 
 # Nino Chavez Portfolio — Design System
 
+> **Historical production record.** This file describes the prior SvelteKit-era
+> system and remains useful for provenance. The canonical design-system owner is
+> `docs/claude-design-system.md` (the rationed system), shipped to production
+> 2026-08-05; current tokens live in `app/globals.css`. The round-04 candidate at
+> `art-direction/round-04-portfolio-system/SYSTEM.md` was withdrawn and is
+> historical evidence. Do not combine palettes, type roles, or component rules
+> across any of these documents.
+
 ## Overview
 
 Personal portfolio + AEO (Answer Engine Optimization) proof-of-concept. The site is a working demonstration of structured content that AI models (ChatGPT, Claude, Gemini) can definitively answer from — so the visual system is deliberately **content-forward** rather than spectacle-driven. Dark default with a single lime accent; Inter throughout; generous reading measure.

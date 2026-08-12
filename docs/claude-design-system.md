@@ -1,4 +1,9 @@
-# Claude proposal — the rationed system
+# The rationed system — canonical design-system owner
+
+- **Status:** Canonical. Won the 2026-08-04 two-system bake-off (the Codex
+  candidate at `art-direction/round-04-portfolio-system/SYSTEM.md` was withdrawn)
+  and shipped to production 2026-08-05. Tokens live in `app/globals.css`.
+- **Record:** `art-direction/RETROSPECTIVE-claudeish-redesign.md`
 
 One page. The rules are budgets, and every budget is checkable. Written 2026-08-04
 after measuring the two surfaces Nino named as clean (marketing.bcsubs.app, the

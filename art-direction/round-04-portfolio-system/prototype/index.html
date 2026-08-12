@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Nino Chavez — portfolio system prototype</title>
+    <meta
+      name="description"
+      content="A private click-through prototype for the Nino Chavez portfolio system."
+    />
+    <link rel="stylesheet" href="system.css" />
+    <script src="prototype.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="review-bar">
+      <span>Candidate portfolio system</span>
+      <span>Review only · Production is unchanged</span>
+    </div>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="identity" href="#home" data-route-link="home">Nino Chavez</a>
+
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#work" data-route-link="work">Work</a>
+          <a href="#demos" data-route-link="demos">Demos</a>
+          <a href="#learn" data-route-link="learn">Learn</a>
+          <a href="#writing" data-route-link="writing">Writing</a>
+          <a href="#photography" data-route-link="photography">Photography</a>
+          <a href="#about" data-route-link="about">About</a>
+        </nav>
+
+        <a class="search-link" href="#work?focus=search">Search</a>
+
+        <button
+          class="menu-button"
+          type="button"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          Menu
+        </button>
+      </div>
+    </header>
+
+    <div
+      class="mobile-menu"
+      id="mobile-menu"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mobile-menu-title"
+      hidden
+    >
+      <div class="mobile-menu__header">
+        <strong id="mobile-menu-title">Navigate</strong>
+        <button class="menu-close" type="button">Close</button>
+      </div>
+      <form class="mobile-search" action="#work">
+        <label for="mobile-query">Search this site</label>
+        <div>
+          <input id="mobile-query" type="search" placeholder="Project or topic" />
+          <button type="submit">Search</button>
+        </div>
+      </form>
+      <nav aria-label="Mobile navigation">
+        <a href="#work" data-mobile-route>Work</a>
+        <a href="#demos" data-mobile-route>Demos</a>
+        <a href="#learn" data-mobile-route>Learn</a>
+        <a href="#writing" data-mobile-route>Writing</a>
+        <a href="#photography" data-mobile-route>Photography</a>
+        <a href="#about" data-mobile-route>About</a>
+        <a href="#now" data-mobile-route>Now</a>
+        <a href="#links" data-mobile-route>Links</a>
+      </nav>
+    </div>
+
+    <main id="main" tabindex="-1"></main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div>
+          <strong>Nino Chavez</strong>
+          <p>Product architect and builder in Chicago.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <a href="#work">Work</a>
+          <a href="#demos">Demos</a>
+          <a href="#writing">Writing</a>
+          <a href="#photography">Photography</a>
+          <a href="#about">About</a>
+        </nav>
+        <p class="site-footer__status">Prototype · August 2026</p>
+      </div>
+    </footer>
+  </body>
+</html>

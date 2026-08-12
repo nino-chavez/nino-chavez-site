@@ -5,6 +5,9 @@
 - **Depends on**: acceptance of the multi-route IA and navigation prototype
 - **Not a decision**: no palette, typeface, composition, or motion language is
   approved here
+- **Candidate system**: `SYSTEM.md` and `prototype/index.html` translated this
+  evidence into one reviewable direction; that candidate was withdrawn in the
+  2026-08-04 bake-off. The system that shipped is `docs/claude-design-system.md`
 
 ## Research question
 
