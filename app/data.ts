@@ -325,6 +325,21 @@ export const workItems: WorkItem[] = [
     related: ["commerce-architecture"],
   },
   {
+    slug: "ask-bc",
+    name: "Ask BC",
+    claim:
+      "An AI assistant that answers questions about a live store's orders, products, and customers — and asks for explicit confirmation before it changes anything.",
+    domain: "Commerce",
+    state: "live",
+    form: "app",
+    updatedAt: "2026-08-12",
+    destination: {
+      label: "Open Ask BC",
+      href: "https://askbc.ninochavez.co",
+    },
+    related: ["bc-subscriptions", "commerce-architecture"],
+  },
+  {
     slug: "forge-brand",
     name: "Forge Brand",
     claim:
