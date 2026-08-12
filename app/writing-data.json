@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "source": "apps/blog/astro-build",
-  "sourceRevision": "b4e08f861fd89f0eea7ff514c7ffd229de9c245f",
-  "generatedAt": "2026-08-08T19:02:47.176Z",
-  "latestPublishedAt": "2026-08-08",
-  "publicPieceCount": 290,
+  "sourceRevision": "9539359b30fa770f804c1da53859874b9f090be1",
+  "generatedAt": "2026-08-12T12:41:00.196Z",
+  "latestPublishedAt": "2026-08-12",
+  "publicPieceCount": 292,
   "kindCounts": {
-    "Essay": 245,
+    "Essay": 247,
     "Whitepaper": 15,
     "Presentation": 9,
     "Tutorial": 7,
@@ -35,6 +35,33 @@
     "2025"
   ],
   "items": [
+    {
+      "slug": "nine-rgb-points-from-claude-coral",
+      "title": "Nine RGB Points from Claude Coral",
+      "excerpt": "A colleague looked at my freshly redesigned site and typed one line into Slack: it feels very Claudeish. He was more right than he knew — the accent color measured nine RGB points from Claude's own coral. The interesting part is where the sameness actually came from.",
+      "publishedAt": "2026-08-12",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "design-systems",
+        "agentic-ai",
+        "taste"
+      ],
+      "href": "https://ninochavez.co/blog/nine-rgb-points-from-claude-coral"
+    },
+    {
+      "slug": "the-depth-penalty-is-gone",
+      "title": "The Depth Penalty Is Gone",
+      "excerpt": "I spent five days inside a volleyball club's operations — WordPress, a marketing CRM, a registration API, consent law. None of it is my domain. That stopped mattering, and the reason it stopped is the interesting part.",
+      "publishedAt": "2026-08-09",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-ai",
+        "consulting-practice"
+      ],
+      "href": "https://ninochavez.co/blog/the-depth-penalty-is-gone"
+    },
     {
       "slug": "the-sum-of-your-gaps",
       "title": "The Sum of Your Gaps: What Fixed-Task AI Studies Do Not Measure",
