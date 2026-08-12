@@ -325,6 +325,21 @@ export const workItems: WorkItem[] = [
     related: ["commerce-architecture"],
   },
   {
+    slug: "aisles",
+    name: "Aisles",
+    claim:
+      "A storefront that reads the intent behind each visit and generates the category page to fit — same URL, same products, four different layouts.",
+    domain: "Commerce",
+    state: "live",
+    form: "site",
+    updatedAt: "2026-08-12",
+    destination: {
+      label: "Open the Aisles demo",
+      href: "https://aisles-kibble.vercel.app",
+    },
+    related: ["bc-subscriptions", "commerce-architecture"],
+  },
+  {
     slug: "ask-bc",
     name: "Ask BC",
     claim:
