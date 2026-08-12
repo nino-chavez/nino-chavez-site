@@ -58,6 +58,21 @@ const recordVisuals: Partial<
     alt: "Source frame from Gates Between Agentic Stages",
     label: "Source demo frame",
   },
+  "bc-subscriptions": {
+    src: "/work/demo-kibble-and-co.jpg",
+    alt: "Title frame from the Kibble & Co. build session",
+    label: "Source session frame",
+  },
+  "aisles": {
+    src: "/work/demo-four-layouts.jpg",
+    alt: "Title frame from the Aisles session on inferred layouts",
+    label: "Source session frame",
+  },
+  "ask-bc": {
+    src: "/work/demo-asks-twice.jpg",
+    alt: "Title frame from the Ask BC write-gate session",
+    label: "Source session frame",
+  },
 };
 
 type RecordProfile = {
@@ -411,6 +426,73 @@ const recordProfiles: Record<string, RecordProfile> = {
       "label": "Discuss a commerce problem",
       "subject": "Commerce architecture"
     }
+  },
+  "bc-subscriptions": {
+    "source": "Live demo store and public docs",
+    "introduction": "I built a complete subscription engine against a live BigCommerce sandbox store—recurring billing, payment-failure recovery, and a self-serve portal for subscribers. Kibble & Co., the fictional pet-supply merchant fronting it, exists so every demo runs on real store data without touching any real customer. This is an independent demonstration, not a BigCommerce product.",
+    "links": [
+      { "label": "Open the guided demo tours", "href": "https://marketing.bcsubs.app/" },
+      { "label": "Browse the Kibble & Co. storefront", "href": "https://storefront.bcsubs.app/" },
+      { "label": "Read how it was built", "href": "/demos/kibble-and-co" }
+    ],
+    "details": [
+      {
+        "title": "A real store, a fictional merchant",
+        "description": "Checkout, orders, and recurring charges run on genuine platform rails; because the merchant is invented, nothing here can expose a real customer's data."
+      },
+      {
+        "title": "Native, not bolted on",
+        "description": "Every recurring charge produces a native platform order and settles through the store's own payments account—one dashboard for the merchant, not a parallel system."
+      },
+      {
+        "title": "The delivery method is the point",
+        "description": "The build is also a working example of spec-driven, agent-assisted delivery; the session linked above shows the method, including what broke."
+      }
+    ]
+  },
+  "aisles": {
+    "source": "Live demo",
+    "introduction": "Aisles reads the intent behind each visit—search terms, referrer, behavior on the page—and generates the category page to fit one of four inferred shopper types. Same address, same products, four different layouts, each checked against a fixed schema before it renders. It draws its catalog live from the Kibble & Co. store.",
+    "links": [
+      { "label": "Open the Aisles demo", "href": "https://aisles.bcsubs.app/" },
+      { "label": "Read how it works", "href": "/demos/four-layouts" }
+    ],
+    "details": [
+      {
+        "title": "Inference, not segmentation",
+        "description": "Weighted rules over request and behavior signals decide who is probably shopping—no account, no questionnaire, no stored profile required."
+      },
+      {
+        "title": "Generated, but never invalid",
+        "description": "The AI composes each page from a small fixed set of building blocks, and a schema check rejects anything outside it—so a generated page can differ, but it cannot break."
+      },
+      {
+        "title": "Pointed at a real store in a day",
+        "description": "Connecting the engine to the Kibble & Co. catalog took one brand configuration file and two settings, because all catalog access already passed through one function."
+      }
+    ]
+  },
+  "ask-bc": {
+    "source": "Live application",
+    "introduction": "Ask BC is my agent for commerce operations: ask questions about a live store's orders, products, customers, and promotions in plain language, and get answers rendered as tables and cards instead of prose. It runs against the same sandbox store as the Kibble & Co. demos, and it never changes the store without asking first.",
+    "links": [
+      { "label": "Open Ask BC", "href": "https://askbc.ninochavez.co" },
+      { "label": "Read how the write gate works", "href": "/demos/asks-twice" }
+    ],
+    "details": [
+      {
+        "title": "Twenty-nine tools, seven of them writes",
+        "description": "Reading store data is unrestricted; the seven operations that change the store each require a preview turn and an explicit confirmation before anything executes."
+      },
+      {
+        "title": "Confirmation is a mechanism, not a prompt",
+        "description": "The gate lives in the tool's own code, keyed on a flag the model must set on a second call—not a polite instruction the model could skip."
+      },
+      {
+        "title": "The pattern spread",
+        "description": "The subscription platform later adopted the same runtime for its own store copilot, pointed at its internal data instead of the platform's—same rule: nothing changes on the first call."
+      }
+    ]
   },
   "forge-brand": {
     "source": "Public README and source",

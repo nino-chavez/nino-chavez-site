@@ -335,7 +335,7 @@ export const workItems: WorkItem[] = [
     updatedAt: "2026-08-12",
     destination: {
       label: "Open the Aisles demo",
-      href: "https://aisles-kibble.vercel.app",
+      href: "https://aisles.bcsubs.app",
     },
     related: ["bc-subscriptions", "commerce-architecture"],
   },
