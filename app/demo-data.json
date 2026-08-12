@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "source": "apps/nc-demos",
-  "sourceRevision": "6adfbf87e6a3306885f4c5445225516cfcd18c5e",
-  "generatedAt": "2026-08-12T15:03:08.869Z",
+  "sourceRevision": "d927fa55afac56aa018a8e069411e9466ae5b365",
+  "generatedAt": "2026-08-12T15:04:05.154Z",
   "sessionCount": 17,
   "techniqueCount": 9,
   "sessions": [
@@ -18,7 +18,7 @@
       "theme": "delegation",
       "accent": "#f97316",
       "artifact": {
-        "src": "/work/demo-twelve-messages.jpg",
+        "src": "https://nc-demos.pages.dev/twelve-messages/img/gritty.jpg",
         "alt": "Published Instagram story rendered by the demo's pipeline"
       },
       "href": "https://ninochavez.co/demos/twelve-messages",
@@ -36,7 +36,7 @@
       "theme": "tools",
       "accent": "#f2b13d",
       "artifact": {
-        "src": "/work/demo-browse-tool.jpg",
+        "src": "https://nc-demos.pages.dev/browse-tool/img/preview.jpg",
         "alt": "Demo 02 title slide: the browser is a shell command, with a real browse-shot transcript"
       },
       "href": "https://ninochavez.co/demos/browse-tool",
@@ -54,7 +54,7 @@
       "theme": "enforcement",
       "accent": "#c2382f",
       "artifact": {
-        "src": "/work/demo-enforced-forever.jpg",
+        "src": "https://nc-demos.pages.dev/enforced-forever/img/preview.jpg",
         "alt": "Demo 03 title slide, featuring a real read-guard denial of an oversized screenshot"
       },
       "relatedTechniqueSlug": "guardrails",
@@ -73,7 +73,7 @@
       "theme": "memory",
       "accent": "#46c395",
       "artifact": {
-        "src": "/work/demo-session-corpus.jpg",
+        "src": "https://nc-demos.pages.dev/session-corpus/img/preview.jpg",
         "alt": "Demo 04 title slide: a real artifact-miner run over 2,747 transcripts"
       },
       "relatedTechniqueSlug": "session-closeout",
@@ -92,7 +92,7 @@
       "theme": "autonomy",
       "accent": "#5b9dff",
       "artifact": {
-        "src": "/work/demo-feedback-loop.jpg",
+        "src": "https://nc-demos.pages.dev/feedback-loop/img/preview.jpg",
         "alt": "Demo 05 title slide with a real agent-lane ticket and its labels"
       },
       "href": "https://ninochavez.co/demos/feedback-loop",
@@ -110,7 +110,7 @@
       "theme": "knowledge",
       "accent": "#b8940c",
       "artifact": {
-        "src": "/work/demo-landmine-registry.jpg",
+        "src": "https://nc-demos.pages.dev/landmine-registry/img/preview.jpg",
         "alt": "Demo 06 title slide with the shipped-twice landmine exhibit"
       },
       "relatedTechniqueSlug": "registry",
@@ -129,7 +129,7 @@
       "theme": "verification",
       "accent": "#a78bfa",
       "artifact": {
-        "src": "/work/demo-said-it-checked.jpg",
+        "src": "https://nc-demos.pages.dev/said-it-checked/img/preview.jpg",
         "alt": "Demo 07 title slide with a claim-versus-runtime-check exhibit"
       },
       "href": "https://ninochavez.co/demos/said-it-checked",
@@ -147,7 +147,7 @@
       "theme": "process",
       "accent": "#7dd3fc",
       "artifact": {
-        "src": "/work/demo-agentic-gates.jpg",
+        "src": "https://nc-demos.pages.dev/agentic-gates/img/preview.jpg",
         "alt": "Demo 08 title slide: the staged pipeline with gate posts between every stage"
       },
       "relatedTechniqueSlug": "gates",
@@ -166,7 +166,7 @@
       "theme": "documentation",
       "accent": "#fb7185",
       "artifact": {
-        "src": "/work/demo-beautifier.jpg",
+        "src": "https://nc-demos.pages.dev/beautifier/img/preview.jpg",
         "alt": "Demo 09 title slide: a README claim beside the code fact that contradicts it"
       },
       "href": "https://ninochavez.co/demos/beautifier",
@@ -184,7 +184,7 @@
       "theme": "applied-advisory",
       "accent": "#e8556b",
       "artifact": {
-        "src": "/work/demo-four-questions.jpg",
+        "src": "https://nc-demos.pages.dev/four-questions/img/preview.jpg",
         "alt": "Demo 10 title slide with a confidence tag being downgraded from verified to search-derived"
       },
       "relatedTechniqueSlug": "provenance",
@@ -203,7 +203,7 @@
       "theme": "config-experiment",
       "accent": "#a78bfa",
       "artifact": {
-        "src": "/work/demo-config-probe.jpg",
+        "src": "https://nc-demos.pages.dev/config-probe/img/preview.jpg",
         "alt": "Demo 11 title slide: the sycophancy was in the config, with the operator's verbatim question about model versus configuration"
       },
       "relatedTechniqueSlug": "config-probe",
@@ -222,7 +222,7 @@
       "theme": "tool-adoption",
       "accent": "#2dd4bf",
       "artifact": {
-        "src": "/work/demo-adopt-or-skip.jpg",
+        "src": "https://nc-demos.pages.dev/adopt-or-skip/img/preview.jpg",
         "alt": "Demo 12 title slide: one component I didn't already have, with the operator's verbatim request to compare the tool against what he already runs"
       },
       "relatedTechniqueSlug": "adopt-or-skip",
@@ -241,7 +241,7 @@
       "theme": "admission-gates",
       "accent": "#f59e0b",
       "artifact": {
-        "src": "/work/demo-gate-first.jpg",
+        "src": "https://nc-demos.pages.dev/gate-first/img/preview.jpg",
         "alt": "Demo 13 title slide: the gate was written first, with the preregistration commit that predates the model download"
       },
       "href": "https://ninochavez.co/demos/gate-first",
@@ -259,7 +259,7 @@
       "theme": "derived-not-narrated",
       "accent": "#18b0a8",
       "artifact": {
-        "src": "/work/demo-kibble-and-co.jpg",
+        "src": "https://nc-demos.pages.dev/kibble-and-co/img/preview.jpg",
         "alt": "Demo 14 title slide: Kibble & Co. doesn't sell anything, the fictional pet-supply storefront built to make subscription flows real"
       },
       "href": "https://ninochavez.co/demos/kibble-and-co",
@@ -277,7 +277,7 @@
       "theme": "vendor-scoping",
       "accent": "#8b93c4",
       "artifact": {
-        "src": "/work/demo-bid-package.jpg",
+        "src": "https://nc-demos.pages.dev/bid-package/img/preview.jpg",
         "alt": "Demo 15 title slide: the harder deliverable wasn't the build, showing the ten-document bid package's document list and story counts"
       },
       "href": "https://ninochavez.co/demos/bid-package",
@@ -295,7 +295,7 @@
       "theme": "confirm-then-act",
       "accent": "#3b82f6",
       "artifact": {
-        "src": "/work/demo-asks-twice.jpg",
+        "src": "https://nc-demos.pages.dev/asks-twice/img/preview.jpg",
         "alt": "Demo 16 title slide: the agent that asks twice, showing the preview-then-execute turn card"
       },
       "href": "https://ninochavez.co/demos/asks-twice",
@@ -313,7 +313,7 @@
       "theme": "inferred-not-designed",
       "accent": "#d946ef",
       "artifact": {
-        "src": "/work/demo-four-layouts.jpg",
+        "src": "https://nc-demos.pages.dev/four-layouts/img/preview.jpg",
         "alt": "Demo 17 title slide: the layout was inferred, not designed, with the four-persona quad — gatherer, hunter, researcher, gifter"
       },
       "href": "https://ninochavez.co/demos/four-layouts",
