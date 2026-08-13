@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "source": "apps/blog/astro-build",
-  "sourceRevision": "9539359b30fa770f804c1da53859874b9f090be1",
-  "generatedAt": "2026-08-12T12:41:00.196Z",
-  "latestPublishedAt": "2026-08-12",
-  "publicPieceCount": 292,
+  "sourceRevision": "da88b8dad31dce23f291f7a7b3922f597d53303d",
+  "generatedAt": "2026-08-13T23:24:10.995Z",
+  "latestPublishedAt": "2026-08-13",
+  "publicPieceCount": 294,
   "kindCounts": {
-    "Essay": 247,
+    "Essay": 249,
     "Whitepaper": 15,
     "Presentation": 9,
     "Tutorial": 7,
@@ -35,6 +35,33 @@
     "2025"
   ],
   "items": [
+    {
+      "slug": "product-facts-not-fine-print",
+      "title": "Product Facts, Not Fine Print",
+      "excerpt": "The download page for a meeting notepad I shipped lists what the app refuses to do — no automatic sharing, no promise of completeness, no substitute for consent — above the download button, in the marketing copy. That placement is the design decision this piece is about.",
+      "publishedAt": "2026-08-13",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "product-design",
+        "local-first"
+      ],
+      "href": "https://ninochavez.co/blog/product-facts-not-fine-print"
+    },
+    {
+      "slug": "the-agent-needs-a-safety-label",
+      "title": "The Agent Needs a Safety Label",
+      "excerpt": "AI standards already exist. What teams still need is a current, workflow-level record of what one configured agent may do, how it was tested, where it must stop, and when its evidence expires.",
+      "publishedAt": "2026-08-13",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-governance",
+        "agentic-systems",
+        "systems-thinking"
+      ],
+      "href": "https://ninochavez.co/blog/the-agent-needs-a-safety-label"
+    },
     {
       "slug": "nine-rgb-points-from-claude-coral",
       "title": "Nine RGB Points from Claude Coral",
