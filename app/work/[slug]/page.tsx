@@ -8,6 +8,7 @@ import {
   workStateText,
 } from "../../data";
 import { getPhotographyArchiveStats } from "../../photography-stats.mjs";
+import { writingItems } from "../../writing";
 
 const recordVisuals: Partial<
   Record<
@@ -683,6 +684,18 @@ export default async function WorkDetailPage({
       workItems.find((entry) => entry.slug === relatedSlug),
     )
     .filter((entry) => entry !== undefined);
+  // Throw rather than filter. A writing slug that stops resolving means the
+  // post was unpublished or renamed upstream, and a silently vanishing section
+  // is how a record starts under-claiming its own evidence.
+  const writing = (item.writing ?? []).map((writingSlug) => {
+    const entry = writingItems.find((post) => post.slug === writingSlug);
+    if (!entry) {
+      throw new Error(
+        `Work record ${item.slug} names writing ${writingSlug}, which is not in the published snapshot.`,
+      );
+    }
+    return entry;
+  });
 
   return (
     <div className="page-shell detail-page work-detail-page">
@@ -797,6 +810,29 @@ export default async function WorkDetailPage({
           </a>
         ) : null}
       </section>
+
+      {writing.length ? (
+        <section className="detail-section" aria-labelledby="related-writing">
+          <div>
+            <p className="eyebrow">Explicit relationships</p>
+            <h2 id="related-writing">Written about this</h2>
+          </div>
+          <div className="related-list">
+            {writing.map((entry) => (
+              <a
+                key={entry.slug}
+                href={entry.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>{entry.kind}</span>
+                <strong>{entry.title}</strong>
+                <small>{entry.excerpt}</small>
+              </a>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {related.length ? (
         <section className="detail-section" aria-labelledby="related-work">

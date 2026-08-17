@@ -992,6 +992,37 @@ test("grounds Work pages in public proof or an explicit private record", async (
   assert.equal(unsupported.status, 404);
 });
 
+test("links work records to the writing that covers them", async () => {
+  const [rallyHtml, pepperHtml, blueprintHtml] = await Promise.all([
+    htmlFor("/work/rally-hq"),
+    htmlFor("/work/lets-pepper"),
+    htmlFor("/work/blueprint"),
+  ]);
+
+  const rally = rallyHtml.split('<script id="_R_">')[0];
+  assert.match(rally, /Written about this/);
+  for (const slug of [
+    "what-223-sessions-taught-me-about-working-with-ai",
+    "setting-up-an-ai-native-dev-environment",
+    "i-dont-want-to-be-a-10-person-team-of-one",
+    "the-next-chapter-scaling-intent-driven-engineering",
+  ]) {
+    assert.match(
+      rally,
+      new RegExp(`href="https://ninochavez\\.co/blog/${slug}"`),
+      `rally-hq should link ${slug}`,
+    );
+  }
+
+  assert.match(pepperHtml, /Written about this/);
+
+  // A record with no writing relations must not render an empty section.
+  assert.doesNotMatch(
+    blueprintHtml.split('<script id="_R_">')[0],
+    /Written about this/,
+  );
+});
+
 test("opens every external surface in a new tab across the complete route set", async () => {
   const sitemap = await render("/sitemap.xml");
   const sitemapXml = await sitemap.text();
