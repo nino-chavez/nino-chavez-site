@@ -89,6 +89,9 @@ export const workItems: WorkItem[] = [
       href: "https://blueprint.ninochavez.co",
     },
     related: ["ways-of-working", "agentic-ways-of-working"],
+    writing: [
+      "open-kitchen",
+    ],
   },
   {
     slug: "browse-tool",
@@ -121,6 +124,11 @@ export const workItems: WorkItem[] = [
       label: "Read the source",
       href: "https://github.com/nino-chavez/specchain",
     },
+    writing: [
+      "spec-driven-development-with-multi-agent-orchestration",
+      "from-aegis-to-specchain-when-governance-meets-reality",
+      "the-backport-i-didnt-make",
+    ],
   },
   {
     slug: "claude-recall",
@@ -135,6 +143,9 @@ export const workItems: WorkItem[] = [
       label: "Read the source",
       href: "https://github.com/nino-chavez/claude-recall-cli",
     },
+    writing: [
+      "the-loudest-voice-in-my-voice-corpus-isnt-mine",
+    ],
   },
   {
     slug: "agentic-ways-of-working",
@@ -150,6 +161,9 @@ export const workItems: WorkItem[] = [
       href: "https://github.com/nino-chavez/agentic-ways-of-working",
     },
     related: ["ways-of-working", "blueprint"],
+    writing: [
+      "nothing-broke-it-just-wasnt-there",
+    ],
   },
   {
     slug: "fleet-observability",
@@ -260,6 +274,7 @@ export const workItems: WorkItem[] = [
       "setting-up-an-ai-native-dev-environment",
       "i-dont-want-to-be-a-10-person-team-of-one",
       "the-next-chapter-scaling-intent-driven-engineering",
+      "the-backport-i-didnt-make",
     ],
   },
   {
@@ -360,6 +375,9 @@ export const workItems: WorkItem[] = [
       href: "https://aisles.bcsubs.app",
     },
     related: ["bc-subscriptions", "commerce-architecture"],
+    writing: [
+      "the-guardrail-removed-the-storefront",
+    ],
   },
   {
     slug: "ask-bc",
@@ -389,6 +407,10 @@ export const workItems: WorkItem[] = [
       label: "Read the source",
       href: "https://github.com/nino-chavez/forge-brand",
     },
+    writing: [
+      "skip-the-steps",
+      "the-backport-i-didnt-make",
+    ],
   },
   {
     slug: "forge-site",

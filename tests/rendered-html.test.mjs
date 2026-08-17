@@ -993,11 +993,17 @@ test("grounds Work pages in public proof or an explicit private record", async (
 });
 
 test("links work records to the writing that covers them", async () => {
-  const [rallyHtml, pepperHtml, blueprintHtml] = await Promise.all([
-    htmlFor("/work/rally-hq"),
-    htmlFor("/work/lets-pepper"),
-    htmlFor("/work/blueprint"),
-  ]);
+  const [rallyHtml, pepperHtml, blueprintHtml, specchainHtml, unlinkedHtml] =
+    await Promise.all([
+      htmlFor("/work/rally-hq"),
+      htmlFor("/work/lets-pepper"),
+      htmlFor("/work/blueprint"),
+      htmlFor("/work/specchain"),
+      // Verified against the blog corpus 2026-08-17: no post names this
+      // product. Stands in for "a record with no writing relations must not
+      // render an empty section" — pick a fresh one if this ever gets tethered.
+      htmlFor("/work/volleyrx"),
+    ]);
 
   const rally = rallyHtml.split('<script id="_R_">')[0];
   assert.match(rally, /Written about this/);
@@ -1006,6 +1012,7 @@ test("links work records to the writing that covers them", async () => {
     "setting-up-an-ai-native-dev-environment",
     "i-dont-want-to-be-a-10-person-team-of-one",
     "the-next-chapter-scaling-intent-driven-engineering",
+    "the-backport-i-didnt-make",
   ]) {
     assert.match(
       rally,
@@ -1016,9 +1023,26 @@ test("links work records to the writing that covers them", async () => {
 
   assert.match(pepperHtml, /Written about this/);
 
+  const blueprint = blueprintHtml.split('<script id="_R_">')[0];
+  assert.match(blueprint, /Written about this/);
+  assert.match(blueprint, /href="https:\/\/ninochavez\.co\/blog\/open-kitchen"/);
+
+  const specchain = specchainHtml.split('<script id="_R_">')[0];
+  for (const slug of [
+    "spec-driven-development-with-multi-agent-orchestration",
+    "from-aegis-to-specchain-when-governance-meets-reality",
+    "the-backport-i-didnt-make",
+  ]) {
+    assert.match(
+      specchain,
+      new RegExp(`href="https://ninochavez\\.co/blog/${slug}"`),
+      `specchain should link ${slug}`,
+    );
+  }
+
   // A record with no writing relations must not render an empty section.
   assert.doesNotMatch(
-    blueprintHtml.split('<script id="_R_">')[0],
+    unlinkedHtml.split('<script id="_R_">')[0],
     /Written about this/,
   );
 });
