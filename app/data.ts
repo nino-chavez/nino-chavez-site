@@ -65,6 +65,13 @@ export type WorkItem = {
   };
   detailPage?: boolean;
   related?: string[];
+  /**
+   * Slugs in the Signal Dispatch snapshot that write about this record. Kept
+   * separate from `related` because that field relates work to work; one field
+   * naming two entity types is how a vocabulary starts drifting. Every slug
+   * here must resolve — the render throws rather than dropping a typo silently.
+   */
+  writing?: string[];
 };
 
 export const workItems: WorkItem[] = [
@@ -97,6 +104,9 @@ export const workItems: WorkItem[] = [
       href: "https://github.com/nino-chavez/browse-tool",
     },
     related: ["ways-of-working"],
+    writing: [
+      "the-cut-youll-make-twice",
+    ],
   },
   {
     slug: "specchain",
@@ -245,6 +255,12 @@ export const workItems: WorkItem[] = [
       label: "Open Rally HQ",
       href: "https://rallyhq.app",
     },
+    writing: [
+      "what-223-sessions-taught-me-about-working-with-ai",
+      "setting-up-an-ai-native-dev-environment",
+      "i-dont-want-to-be-a-10-person-team-of-one",
+      "the-next-chapter-scaling-intent-driven-engineering",
+    ],
   },
   {
     slug: "lets-pepper",
@@ -260,6 +276,9 @@ export const workItems: WorkItem[] = [
       href: "https://letspepper.com",
     },
     related: ["nino-chavez-photography"],
+    writing: [
+      "the-sky-is-not-falling",
+    ],
   },
   {
     slug: "film-room",
@@ -284,6 +303,9 @@ export const workItems: WorkItem[] = [
       label: "Visit Flickday Media",
       href: "https://www.flickdaymedia.com/",
     },
+    writing: [
+      "almost-flickday",
+    ],
   },
   {
     slug: "volleyrx",
