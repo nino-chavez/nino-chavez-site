@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "source": "apps/blog/astro-build",
-  "sourceRevision": "da88b8dad31dce23f291f7a7b3922f597d53303d",
-  "generatedAt": "2026-08-13T23:24:10.995Z",
-  "latestPublishedAt": "2026-08-13",
-  "publicPieceCount": 294,
+  "sourceRevision": "40b0cd2afe627ae6cef15f7a53f6a06d5030e9d5",
+  "generatedAt": "2026-08-16T23:36:57.607Z",
+  "latestPublishedAt": "2026-08-17",
+  "publicPieceCount": 298,
   "kindCounts": {
-    "Essay": 249,
+    "Essay": 252,
     "Whitepaper": 15,
     "Presentation": 9,
-    "Tutorial": 7,
+    "Tutorial": 8,
     "Counterpoint": 4,
     "Fiction": 10
   },
@@ -27,14 +27,54 @@
     "Personal Finance",
     "Philosophy",
     "Reflection",
-    "Systems Thinking",
-    "Uncategorized"
+    "Systems Thinking"
   ],
   "years": [
     "2026",
     "2025"
   ],
   "items": [
+    {
+      "slug": "diff-your-spec-against-its-system-class",
+      "title": "Diff Your Spec Against Its System Class",
+      "excerpt": "Four checks that run against a spec before anything gets built, and against code an agent already wrote. Name the system's class, diff the non-functional section against that class's published guidance, trace each layer to the failure it was built for, and make the omission mechanical next time. Companion workshop to Everything I Was Afraid of Worked.",
+      "publishedAt": "2026-08-17",
+      "kind": "Tutorial",
+      "category": "Engineering",
+      "tags": [
+        "agentic-systems",
+        "tutorial",
+        "engineering"
+      ],
+      "href": "https://ninochavez.co/blog/tutorials/diff-your-spec-against-its-system-class"
+    },
+    {
+      "slug": "everything-i-was-afraid-of-worked",
+      "title": "Everything I Was Afraid of Worked",
+      "excerpt": "Last October I published a post arguing that agent safety is an architecture problem: the model proposes, hard-coded code disposes, a human approves. Then I built exactly that for a youth sports club's website and used it for an hour. I found seven things wrong with it. None of them were in the part I had been afraid of.",
+      "publishedAt": "2026-08-17",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "ai-development",
+        "software-architecture"
+      ],
+      "href": "https://ninochavez.co/blog/everything-i-was-afraid-of-worked"
+    },
+    {
+      "slug": "the-panic-log-says-signal-not-shortage",
+      "title": "The Panic Log Says Signal, Not Shortage",
+      "excerpt": "A local model run took my Mac down at 10:55:33. Recovering the research cost about twenty minutes. Writing down the wrong reason for the crash cost more, and the file that proves it wrong ships with the operating system.",
+      "publishedAt": "2026-08-15",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "local-first",
+        "ai-assisted-development"
+      ],
+      "href": "https://ninochavez.co/blog/the-panic-log-says-signal-not-shortage"
+    },
     {
       "slug": "product-facts-not-fine-print",
       "title": "Product Facts, Not Fine Print",
@@ -61,6 +101,21 @@
         "systems-thinking"
       ],
       "href": "https://ninochavez.co/blog/the-agent-needs-a-safety-label"
+    },
+    {
+      "slug": "the-guardrail-removed-the-storefront",
+      "title": "The Guardrail Removed the Storefront",
+      "excerpt": "A safe AI storefront cannot give the model a blank canvas. It also cannot remove the model and still claim that inference changes the shopping experience.",
+      "publishedAt": "2026-08-13",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "commerce",
+        "ai-governance",
+        "architecture",
+        "product-strategy"
+      ],
+      "href": "https://ninochavez.co/blog/the-guardrail-removed-the-storefront"
     },
     {
       "slug": "nine-rgb-points-from-claude-coral",
@@ -425,7 +480,7 @@
       "excerpt": "What Lopopolo's million lines confirmed. On December 30, 2025 I published a whitepaper claiming the marginal cost of code generation was approaching zero, that this would produce a class of just-in-time software that challenges the SaaS model, and that the locus of value was shifting from the codebase to the intent behind it. On February 11, 2026, OpenAI published the empirical receipt — a three-engineer team producing one million lines of code over five months with zero manually-written lines. The thesis was right. The framing needed one precision upgrade.",
       "publishedAt": "2026-05-25",
       "kind": "Counterpoint",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [
         "agentic-systems",
         "software-economics",
@@ -439,7 +494,7 @@
       "excerpt": "",
       "publishedAt": "2026-05-24",
       "kind": "Whitepaper",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [],
       "href": "https://ninochavez.co/blog/whitepapers/big-blueprint-methodology"
     },
@@ -449,7 +504,7 @@
       "excerpt": "The predictable objection to the chassis argument is that templates and contracts don't eliminate review — they just relocate it. That objection treats agent output as the inspection target. The Industrial Revolution settled the same argument two centuries ago, in favor of inspecting the lathe instead of the bolt.",
       "publishedAt": "2026-05-24",
       "kind": "Counterpoint",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [
         "agentic-systems",
         "architecture",
@@ -940,7 +995,7 @@
       "excerpt": "A systematic challenge to the mimicry-vs-native framing. Where the dual-track model holds, where it fractures, and what the original analysis underweights.",
       "publishedAt": "2026-03-01",
       "kind": "Counterpoint",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [
         "agentic-systems",
         "deep-dive"
@@ -1073,7 +1128,7 @@
       "excerpt": "A systematic challenge to the bandwidth-to-AI analogy. Where the four-stage arc holds, where it fractures, and what the original analysis underweights.",
       "publishedAt": "2026-02-20",
       "kind": "Counterpoint",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [
         "ai-development",
         "deep-dive"
@@ -1634,7 +1689,7 @@
       "href": "https://ninochavez.co/blog/i-dont-want-to-be-a-10-person-team-of-one"
     },
     {
-      "slug": "q1-2025-the-integration-quarter",
+      "slug": "q1-2026-the-integration-quarter",
       "title": "Q1 2026: The Integration Quarter",
       "excerpt": "Everyone spent 2024-2025 experimenting with AI features. Q1 2026 is when the survivors figure out what actually works—and kill what doesn't.",
       "publishedAt": "2025-12-03",
@@ -1646,7 +1701,7 @@
         "commerce",
         "product-strategy"
       ],
-      "href": "https://ninochavez.co/blog/q1-2025-the-integration-quarter"
+      "href": "https://ninochavez.co/blog/q1-2026-the-integration-quarter"
     },
     {
       "slug": "the-storefront-that-builds-itself",
@@ -1727,7 +1782,7 @@
       "excerpt": "",
       "publishedAt": "2025-11-27",
       "kind": "Whitepaper",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [],
       "href": "https://ninochavez.co/blog/whitepapers/the-agentic-shift"
     },
@@ -1779,7 +1834,7 @@
       "excerpt": "",
       "publishedAt": "2025-11-23",
       "kind": "Whitepaper",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [],
       "href": "https://ninochavez.co/blog/whitepapers/the-fourth-channel"
     },
@@ -1789,7 +1844,7 @@
       "excerpt": "",
       "publishedAt": "2025-11-22",
       "kind": "Whitepaper",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [],
       "href": "https://ninochavez.co/blog/whitepapers/the-algorithmic-consumer"
     },
@@ -1896,7 +1951,7 @@
       "href": "https://ninochavez.co/blog/the-do-more-with-less-paradox"
     },
     {
-      "slug": "self-service-paradox-revised",
+      "slug": "self-service-paradox",
       "title": "When Did I Become the Employee?",
       "excerpt": "I'm not just paying for the service anymore. I'm doing the work. And somewhere between the self-checkout and the self-install kit, I stopped noticing when 'convenience' became unpaid labor.",
       "publishedAt": "2025-10-29",
@@ -1906,7 +1961,7 @@
         "architecture",
         "reflection"
       ],
-      "href": "https://ninochavez.co/blog/self-service-paradox-revised"
+      "href": "https://ninochavez.co/blog/self-service-paradox"
     },
     {
       "slug": "ai-agents-need-a-cop",
@@ -2801,7 +2856,7 @@
       "excerpt": "This post wraps my “Help Me Help You” arc and opens a new question: If precision makes AI more effective, does it also increase human disconnection? I’ve felt the drift. The next thread I’m pulling on is: how to stay human inside all this structure.",
       "publishedAt": "2025-07-02",
       "kind": "Essay",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [
         "ai-development",
         "architecture"
@@ -2826,7 +2881,7 @@
       "excerpt": "A behind-the-scenes look at how I use GPT and Lovable together. One rewrites the prompt. One generates the code. I just define the intent — and stay out of the way. This isn’t a tech stack. It’s a new mode of working.",
       "publishedAt": "2025-07-02",
       "kind": "Essay",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [
         "ai-development",
         "architecture"
@@ -2839,7 +2894,7 @@
       "excerpt": "Prompting is evolving into orchestration. One AI clarifies, another executes, a third checks the result. We’re entering an era where modular intelligence matters — and prompts become the interface between thinking systems.",
       "publishedAt": "2025-07-02",
       "kind": "Essay",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [
         "ai-development",
         "architecture"
@@ -2973,7 +3028,7 @@
       "excerpt": "Most reorgs I’ve seen are just corporate feng shui — shift a few boxes, rename a few titles, pretend it’s visionary. But this one? This one actually maps to something real. For once, the language isn’t just for clients — it mirrors what I’ve been doing in my own damn operating system.",
       "publishedAt": "2025-06-24",
       "kind": "Essay",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [
         "commerce",
         "consulting"
@@ -3012,7 +3067,7 @@
       "excerpt": "Most MVPs aren’t minimum or viable — they’re just premature.",
       "publishedAt": "2025-06-20",
       "kind": "Essay",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [
         "consulting",
         "architecture"
@@ -3025,7 +3080,7 @@
       "excerpt": "One of the easiest traps to fall into as a leader or expert is assuming we already understand. That assumption — even when subtle — shuts down curiosity, slows progress, and can quietly place the burden of clarity on everyone but ourselves.",
       "publishedAt": "2025-06-19",
       "kind": "Essay",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [
         "leadership",
         "reflection"
@@ -3111,7 +3166,7 @@
       "excerpt": "Signal Reflex is now Signal Dispatch — a shift from sensing to sending. Same voice, sharper intent. This is where ideas go out.",
       "publishedAt": "2025-06-16",
       "kind": "Essay",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [
         "ai-development",
         "leadership"
@@ -3124,7 +3179,7 @@
       "excerpt": "(How to Keep Moving Without Losing Yourself)",
       "publishedAt": "2025-06-15",
       "kind": "Essay",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [
         "ai-development",
         "leadership"
@@ -3600,7 +3655,7 @@
       "excerpt": "A structured index of essays and field notes from Signal Dispatch. Organized by theme and series",
       "publishedAt": "2025-06-05",
       "kind": "Essay",
-      "category": "Uncategorized",
+      "category": "",
       "tags": [
         "commerce",
         "leadership",
