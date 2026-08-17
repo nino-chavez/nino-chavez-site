@@ -4,7 +4,7 @@ export const domains = [
   "Volleyball",
   "Commerce",
   "Media & assets",
-  "Writing",
+  "Publishing",
 ] as const;
 
 export const states = [
@@ -430,7 +430,7 @@ export const workItems: WorkItem[] = [
     name: "Signal Dispatch",
     claim:
       "Essays, fiction, tutorials, and research on architecture, commerce, and AI-assisted work.",
-    domain: "Writing",
+    domain: "Publishing",
     state: "live",
     form: "collection",
     updatedAt: "2026-07-30",
@@ -444,7 +444,7 @@ export const workItems: WorkItem[] = [
     name: "Whitepapers",
     claim:
       "Longer-form arguments and field guides published alongside the essay archive.",
-    domain: "Writing",
+    domain: "Publishing",
     state: "published",
     form: "collection",
     updatedAt: "2026-06-28",
@@ -459,7 +459,7 @@ export const workItems: WorkItem[] = [
     name: "Presentations",
     claim:
       "Published decks that turn working decisions into material other practitioners can use.",
-    domain: "Writing",
+    domain: "Publishing",
     state: "published",
     form: "collection",
     updatedAt: "2026-06-26",

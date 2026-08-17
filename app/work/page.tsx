@@ -15,7 +15,7 @@ const domainNotes: Record<Domain, string> = {
   Volleyball: "Products and live operations tested on courts, at events, and with real players.",
   Commerce: "Architecture and delivery experience from complex commerce programs.",
   "Media & assets": "Tools and collections for making, reviewing, and delivering visual work.",
-  Writing: "Published arguments, field notes, presentations, and durable reference material.",
+  Publishing: "Published arguments, field notes, presentations, and durable reference material.",
 };
 
 export default function WorkPage() {

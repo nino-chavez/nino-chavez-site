@@ -244,7 +244,14 @@ Domain is the default grouping and the proof of breadth:
 3. **Volleyball**
 4. **Commerce**
 5. **Media & assets**
-6. **Writing**
+6. **Publishing**
+
+Owner decision 2026-08-17: the sixth domain is named **Publishing** (previously
+"Writing"). `Writing` is the primary-navigation label for `/blog`; the same string
+cannot name a nav destination and a work-record attribute that render together on
+the home page. `Publishing` names the field of work, consistent with `Commerce`, and
+leaves `publication` free to keep denoting Signal Dispatch itself. Shared links
+carrying `?domain=Writing` now resolve to the documented empty state.
 
 Type is metadata, never a top-level page. Status is an honest label and filter, never
 an admission gate.
