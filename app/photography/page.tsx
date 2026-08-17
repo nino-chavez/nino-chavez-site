@@ -393,6 +393,13 @@ export default async function PhotographyPage({
               contact, the reaction after the point, and the people around the
               play.
             </p>
+            <p>
+              Some of these events are ones I run. Let&apos;s Pepper is a grass
+              tournament series; Rally HQ handles its registration, brackets,
+              and live scoring; Flickday Media covers it and drops the photos
+              the same day. Same events, same weekend, same people waiting on
+              all three.
+            </p>
           </div>
         </section>
 
