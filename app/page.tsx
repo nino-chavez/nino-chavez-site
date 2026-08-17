@@ -137,6 +137,10 @@ export default async function Home() {
           </div>
           <div>
             <p>
+              These look unrelated. Each one has to work for the people in
+              front of it — on a court, at a checkout, on a deadline.
+            </p>
+            <p>
               Browse {workItems.length} products, tools, methods, operations,
               and collections across {domains.length} domains.
             </p>

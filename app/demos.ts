@@ -10,6 +10,8 @@ export type DemoEntry = {
 
 export type DemoSession = DemoEntry & {
   number?: string;
+  theme: string;
+  date: string;
   audience: string;
   evidence: string;
   practice: string;
@@ -58,6 +60,8 @@ function normalize(snapshot: DemoSnapshot) {
   const sessionSlugs = new Set(snapshot.sessions.map((item) => item.slug));
   for (const session of snapshot.sessions) {
     if (
+      typeof session.theme !== "string" ||
+      typeof session.date !== "string" ||
       typeof session.storyHref !== "string" ||
       !session.storyHref.startsWith(
         "https://nc-demos.pages.dev/content/sessions/",
