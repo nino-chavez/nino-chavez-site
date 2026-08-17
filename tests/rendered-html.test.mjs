@@ -1030,6 +1030,46 @@ test("keeps retired AI routes connected to their canonical destinations", async 
   }
 });
 
+test("redirects the renamed work domain facet without losing sibling filters", async () => {
+  // Writing -> Publishing, 2026-08-17. Links carrying the old value were
+  // published on /work and the home page for months.
+  for (const [from, to] of [
+    ["/work?domain=Writing", "/work?domain=Publishing"],
+    ["/work?domain=writing", "/work?domain=Publishing"],
+    [
+      "/work?domain=Writing&state=live",
+      "/work?domain=Publishing&state=live",
+    ],
+    [
+      "/work?q=pepper&domain=Writing&form=app",
+      "/work?q=pepper&domain=Publishing&form=app",
+    ],
+  ]) {
+    const response = await render(from);
+    assert.ok(
+      [301, 307, 308].includes(response.status),
+      `${from} should redirect permanently`,
+    );
+    const location = new URL(response.headers.get("location"));
+    assert.equal(`${location.pathname}${location.search}`, to);
+  }
+
+  // Only the retired value redirects, and only on /work — a live domain or an
+  // unfiltered library must still render.
+  for (const path of [
+    "/work?domain=Publishing",
+    "/work?domain=Commerce",
+    "/work",
+  ]) {
+    assert.equal((await render(path)).status, 200, `${path} should render`);
+  }
+
+  const landed = await htmlFor("/work?domain=Publishing");
+  const document = landed.split('<script id="_R_">')[0];
+  assert.match(document, /Signal Dispatch/);
+  assert.doesNotMatch(document, /No work matches these filters/);
+});
+
 test("keeps same-slug demo types distinct in global search", async () => {
   const html = await htmlFor("/search?q=config");
   assert.match(html, /href="\/demos\/config-probe"/);
