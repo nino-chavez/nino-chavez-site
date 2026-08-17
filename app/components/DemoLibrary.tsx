@@ -235,6 +235,7 @@ export function DemoLibrary({
                         </small>
                         <strong>{record.title}</strong>
                         <p>{record.summary}</p>
+                        {record.evidence ? <p>{record.evidence}</p> : null}
                         <em>
                           Open session <b aria-hidden="true">→</b>
                         </em>
