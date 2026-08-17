@@ -28,6 +28,19 @@ async function render(path = "/") {
   );
 }
 
+// React escapes these five characters when it serializes text into markup, so a
+// title carrying an ampersand or an apostrophe reaches <title> encoded. Escape
+// the expectation the same way rather than branching per character — the
+// previous apostrophe-only branch passed until a title contained "&".
+function escapeHtml(value) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#x27;");
+}
+
 async function htmlFor(path) {
   const response = await render(path);
   assert.equal(response.status, 200, `${path} should render`);
@@ -115,7 +128,11 @@ test("preserves the canonical entity endpoints and generated root sitemap", asyn
     /^application\/xml/i,
   );
   const sitemapXml = await sitemap.text();
-  assert.equal((sitemapXml.match(/<url>/g) ?? []).length, 60);
+  // 2026-08-17: 70 urls. Grew from 60 as the corpus did — 29 work items,
+  // 18 sessions, 10 techniques, 7 learn tracks, plus the durable pages. The
+  // doesNotMatch guards below are the real contract; this total exists to
+  // catch a route silently dropping out of the generated map.
+  assert.equal((sitemapXml.match(/<url>/g) ?? []).length, 70);
   assert.match(sitemapXml, /https:\/\/ninochavez\.co\/work\/film-room/);
   assert.doesNotMatch(sitemapXml, /\/work\/whitepapers/);
   assert.doesNotMatch(sitemapXml, /\/work\/presentations/);
@@ -142,7 +159,7 @@ test("renders the full-volume work and demos collections", async () => {
     emptyDemosHtml,
   ] = await Promise.all([
     htmlFor("/work"),
-    htmlFor("/work?domain=Writing&state=live"),
+    htmlFor("/work?domain=Publishing&state=live"),
     htmlFor("/work?q=no-such-work"),
     htmlFor("/demos"),
     htmlFor("/demos?type=technique"),
@@ -151,14 +168,14 @@ test("renders the full-volume work and demos collections", async () => {
 
   assert.match(workHtml, /Projects, tools, and collections/);
   assert.match(workHtml, /<h1>Work<\/h1>/);
-  assert.match(workHtml, /Browse all 26 items/);
+  assert.match(workHtml, /Browse all 29 items/);
   assert.equal(
     (workHtml.split('<script id="_R_">')[0].match(/ in this domain/g) ?? [])
       .length,
     6,
   );
   assert.match(workHtml, /Status says what is available today/);
-  assert.match(workHtml, /26<\/strong> shown/);
+  assert.match(workHtml, /29<\/strong> shown/);
   assert.doesNotMatch(workHtml, /Nothing selected/);
   assert.doesNotMatch(workHtml, /objects in view/);
   assert.match(workHtml, /Blueprint/);
@@ -269,13 +286,16 @@ test("keeps the complete demo corpus available as native stories", async () => {
       (total, story) => total + story.sectionCount,
       0,
     ),
-    // 2026-08-04: 169 is what a clean sync from nc-demos main (e9d1053)
-    // reproducibly yields. The prior 172 came from a snapshot generated
-    // against a dirty checkout (session-corpus 12 sections vs 9) whose extra
-    // sections exist in no committed nc-demos state — see the unmerged
-    // nc-demos worktrees. When that work lands, sync bumps this total.
-    169,
+    // 2026-08-17: 236 across 18 sessions and 10 techniques, from a clean sync
+    // at nc-demos 64c8536. Was 169 at nc-demos e9d1053 (2026-08-04); demos 15,
+    // 17, and 18 plus the later techniques account for the difference. A sync
+    // bumps this total; a drop without one means a story lost chapters.
+    236,
   );
+
+  // This test owns the corpus totals — nothing else should assert them.
+  assert.equal(index.sessionCount, 18);
+  assert.equal(index.techniqueCount, 10);
 
   for (const story of [...stories.sessions, ...stories.techniques]) {
     assert.match(story.sourceHash, /^[a-f0-9]{64}$/);
@@ -318,10 +338,7 @@ test("server-renders every session and applied technique as a native route", asy
     routes.map(async ({ entry, path, storyKey }) => {
       const html = await htmlFor(path);
       assert.ok(
-        html.includes(`<title>${entry.title} — Nino Chavez`) ||
-          html.includes(
-            `<title>${entry.title.replaceAll("'", "&#x27;")} — Nino Chavez`,
-          ),
+        html.includes(`<title>${escapeHtml(entry.title)} — Nino Chavez`),
         `${path} should use the story title in metadata`,
       );
       assert.match(html, new RegExp(`id="story-${storyKey}"`));
@@ -836,12 +853,6 @@ test("keeps the global shell and removes route-level review placeholders", async
 });
 
 test("representative records show evidence and remove prototype placeholders", async () => {
-  const demoSnapshot = JSON.parse(
-    await readFile(
-      new URL("../app/demo-data.json", import.meta.url),
-      "utf8",
-    ),
-  );
   const [blueprintHtml, waysHtml, demoHtml, guardrailHtml, provenanceHtml] =
     await Promise.all([
       htmlFor("/work/blueprint"),
@@ -865,7 +876,6 @@ test("representative records show evidence and remove prototype placeholders", a
   assert.match(waysHtml, /href="\/demos"/);
   assert.doesNotMatch(waysHtml, /href="\/demos"[^>]*target="_blank"/);
 
-  assert.equal(demoSnapshot.sessions.length, 12);
   assert.match(demoHtml, /Session S02 · 10 chapters/);
   assert.match(demoHtml, /<dt>Record<\/dt><dd>S02<\/dd>/);
   assert.match(demoHtml, /class="native-demo-story"/);
