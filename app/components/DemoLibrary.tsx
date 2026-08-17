@@ -13,6 +13,8 @@ type DemoKind = "session" | "technique";
 
 type DemoRecord = DemoEntry & {
   artifact?: DemoSession["artifact"];
+  date?: string;
+  theme?: string;
   href: string;
   index: number;
   kind: DemoKind;
@@ -226,7 +228,11 @@ export function DemoLibrary({
                         </span>
                       </div>
                       <span className="demo-session-card__copy">
-                        <small>Full session</small>
+                        <small>
+                          {record.theme
+                            ? `${record.theme.replace(/-/g, " ")} · ${record.date}`
+                            : "Full session"}
+                        </small>
                         <strong>{record.title}</strong>
                         <p>{record.summary}</p>
                         <em>
