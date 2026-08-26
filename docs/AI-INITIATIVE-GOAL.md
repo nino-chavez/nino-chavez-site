@@ -24,6 +24,53 @@ application, dead demos), and a pure portfolio would show evidence *without* a
 transferable path. The rebuild fuses them: paths as the product, shipped work as
 the proof and the worked examples.
 
+## Evidence amendment — 2026-08-13
+
+The Kibble/Aisles work changes the public proof hierarchy. It is no longer honest
+to present Aisles as “AI generates the storefront.” The current evidence has
+three separate jobs:
+
+- **Reference commerce:** [Kibble & Co.](https://storefront.bcsubs.app/) is a
+  standalone fictional merchant running against a sandbox commerce stack. The
+  reference cart is verified. Product pages expose subscription choices, but
+  starting or managing a subscription requires sign-in and was not executed as
+  part of this proof.
+- **Preserve plus observability:** the [Aisles prospect demo](https://aisles.bcsubs.app/?observe=true)
+  keeps the Kibble shell, product facts, pricing, copy, and page structure fixed.
+  Signals and inference can change approved product order. An explicit demo
+  action can use a model only inside bounded product-order zones on Home, the
+  approved PDP related-products route, and one narrowly smoked PLP route. The
+  model cannot invent layout, CSS, URLs, or arbitrary copy. Aisles does not
+  execute cart or subscription mutations in this sibling demo.
+- **Correction story:** [The Layout Was Inferred, Not Designed](https://ninochavez.co/demos/four-layouts)
+  is now a record of the earlier, overly broad whole-page-generation approach
+  and the merchant-boundary failure it exposed. It must not be queued as proof
+  that the current live demo generates four full pages.
+
+This changes the public sequence:
+
+1. Lead with the live Aisles observability demo when the reader needs to see the
+   current behavior. Explain what is fixed, what rules can change, what the
+   bounded model action can change, and what remains unavailable.
+2. Use Kibble & Co. for the evidence of a real sandbox storefront and the
+   spec-driven delivery method. Use the bid-package twin for the public method
+   demonstration; keep the original package gated.
+3. Treat the four-layout session as a correction and retrospective until its
+   public story page carries the same boundary as the current implementation.
+4. Do not add these four demos to `linkedin-picks.json` or turn their queue
+   routes from `skip` until the public story page, caption source, and current
+   Aisles deployment agree. That file remains the editorial approval gate; these
+   four captions are drafts until they are deliberately added there.
+
+The current Aisles source records Home and PDP model actions as live evidence and
+the PLP action as one bounded production smoke, not visual-parity acceptance.
+The reference-preservation visual gate and named human approval remain open.
+That distinction belongs in every public description of this work.
+
+**Verification note:** the live links above and the bid-package twin were fetched
+directly on 2026-08-13. The Aisles status was re-derived from `origin/main` at
+`589bd2a` and its current deployment records, not from the old caption text.
+
 Build from four inputs that already exist and stay verifiable:
 
 - **The pedagogy of the old corpus (the product)**: the persona-based "apply AI to
@@ -34,7 +81,8 @@ Build from four inputs that already exist and stay verifiable:
 - **Live artifacts (the evidence and worked examples)**: Blueprint (npm CLI +
   blueprint.ninochavez.co), Atelier (atelier.ninochavez.co), Ask BC
   (askbc.ninochavez.co), cortex, forge, ai-champions-kit, specchain,
-  claude-recall-cli. Each track grounds in shipped work (Architect → Blueprint's doc
+  claude-recall-cli, and the Kibble/Aisles storefront-and-observability pair.
+  Each track grounds in shipped work (Architect → Blueprint's doc
   pipeline; Voice → the voice-guide + corpus/recall practice; Enterprise →
   ai-champions-kit; Builder → Atelier/Ask BC/specchain; Author/Strategist →
   forge-signal + Blueprint doc generation).
