@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "source": "apps/nc-demos",
-  "sourceRevision": "64c853649b43582f9b1cf6f4d5d05103107efa21",
-  "generatedAt": "2026-08-15T17:08:47.206Z",
+  "sourceRevision": "25a0394e58f8365b41e3181f4702d837fbea1b78",
+  "generatedAt": "2026-08-28T18:08:22.433Z",
   "sessionCount": 18,
-  "techniqueCount": 10,
+  "techniqueCount": 11,
   "sessions": [
     {
       "number": "01",
@@ -504,6 +504,21 @@
       "relatedSessionSlugs": [],
       "href": "https://ninochavez.co/demos/applied/one-heavy-job",
       "storyHref": "https://nc-demos.pages.dev/content/techniques/one-heavy-job.json"
+    },
+    {
+      "slug": "local-vs-frontier",
+      "title": "The Home AI Server Question",
+      "summary": "A measured local-versus-frontier comparison, plus the cost inputs for deciding whether to buy a home AI server.",
+      "description": "A measured local-versus-frontier comparison built from the Yawn note-taking study and a context-plane experiment. It separates model quality, privacy, latency, operating cost, and the hardware bill before asking whether a Mac mini or Mac Studio earns its place.",
+      "principles": [
+        "Measure the workload before buying the machine.",
+        "Route private, repetitive work locally and reserve frontier calls for jobs that need them.",
+        "Count correction time and operating cost, not just API tokens.",
+        "Treat a failed comparison as useful evidence about the pipeline, not only the model."
+      ],
+      "relatedSessionSlugs": [],
+      "href": "https://ninochavez.co/demos/applied/local-vs-frontier",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/local-vs-frontier.json"
     }
   ]
 }
