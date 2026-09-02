@@ -516,7 +516,7 @@ export const openQuestions = [
     variants: [
       {
         value: "as listed",
-        source: "~/Workspace/dev/.claude/resume-nino-chavez-2025.md (2025-12-08) — no artifact named for any figure",
+        source: "~/Workspace/dev/methods/career-goals/profile/resume-nino-chavez-2025.md (2025-12-08) — no artifact named for any figure",
       },
     ],
     stakes:
