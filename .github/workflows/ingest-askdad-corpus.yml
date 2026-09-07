@@ -9,7 +9,8 @@
 # Only one static GH Actions secret required: OP_SERVICE_ACCOUNT_TOKEN.
 #
 # 1Password items referenced:
-#   OpenAI labs                 → credential (embeddings)
+#   OpenAI forge                → credential (embeddings; shared with ask-dad
+#                                 and forge-signal — "OpenAI labs" archived 2026-09-07)
 #   Vectorize ask-dad           → account_id, api_token, index_name
 #
 # Pre-launch setup (one-time):
@@ -60,7 +61,7 @@ jobs:
           export-env: true
         env:
           OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
-          OPENAI_API_KEY: op://Developer Secrets/OpenAI labs/credential
+          OPENAI_API_KEY: op://Developer Secrets/OpenAI forge/credential
           CLOUDFLARE_ACCOUNT_ID: op://Developer Secrets/Vectorize ask-dad/account_id
           CLOUDFLARE_API_TOKEN: op://Developer Secrets/Vectorize ask-dad/api_token
           VECTORIZE_INDEX: op://Developer Secrets/Vectorize ask-dad/index_name
