@@ -11,6 +11,7 @@ const staticPages = [
   ["/learn", "monthly", "0.8"],
   ["/now", "weekly", "0.7"],
   ["/links", "monthly", "0.6"],
+  ["/photography/coverage", "monthly", "0.6"],
   ["/privacy", "yearly", "0.3"],
 ] as const;
 

@@ -471,3 +471,7 @@ Before production implementation, a route-complete click-through prototype must 
 
 The prototype may use neutral styling. Art direction is a separate decision and begins
 only after this structure is accepted.
+
+### Sports & event coverage
+
+`/photography/coverage` is the **Sports & event coverage** service page. Photography links here for teams, tournaments and events. Real gallery examples show the breadth of the work. A clearly labeled $350 varsity volleyball match package is the current offer; other sports and events receive a fixed quote before booking. The form distinguishes those requests in its fields and prepared email. It does not reserve dates or send mail. The main application owns this exact route and its trailing-slash form. The former `/photography/volleyball-coverage` address redirects here. Other photography paths remain owned by the gallery application.

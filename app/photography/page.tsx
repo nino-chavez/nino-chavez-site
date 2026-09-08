@@ -404,9 +404,9 @@ export default async function PhotographyPage({
         </section>
 
         <aside className="photography-coverage page-shell">
-          <p>Need coverage for a tournament, league, or club?</p>
-          <a href="mailto:nino@ninochavez.co?subject=Event%20coverage%20inquiry">
-            Ask about event coverage <span aria-hidden="true">↗</span>
+          <p>Need photography for a team, tournament or event?</p>
+          <a href="/photography/coverage">
+            Sports &amp; event coverage <span aria-hidden="true">↗</span>
           </a>
         </aside>
       </div>

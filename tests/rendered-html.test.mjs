@@ -128,11 +128,12 @@ test("preserves the canonical entity endpoints and generated root sitemap", asyn
     /^application\/xml/i,
   );
   const sitemapXml = await sitemap.text();
-  // 2026-08-28: 71 urls. The new applied technique adds one native route to
+  // 2026-09-08: 72 urls, including the volleyball coverage page. The applied technique adds one native route to
   // the 18 sessions, 11 techniques, 7 learn tracks, work items, and durable pages. The
   // doesNotMatch guards below are the real contract; this total exists to
   // catch a route silently dropping out of the generated map.
-  assert.equal((sitemapXml.match(/<url>/g) ?? []).length, 71);
+  assert.equal((sitemapXml.match(/<url>/g) ?? []).length, 72);
+  assert.match(sitemapXml, /https:\/\/ninochavez\.co\/photography\/coverage/);
   assert.match(sitemapXml, /https:\/\/ninochavez\.co\/work\/film-room/);
   assert.doesNotMatch(sitemapXml, /\/work\/whitepapers/);
   assert.doesNotMatch(sitemapXml, /\/work\/presentations/);
