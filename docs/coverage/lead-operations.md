@@ -71,3 +71,20 @@ same inquiry reference.
 
 Inquiry data remains private in D1 and the Google inbox for booking/follow-up.
 Honor removal requests in both locations. The privacy page describes collection.
+
+## Release and recipient confirmation — September 8, 2026
+
+The direct-submission release is commit `571eac4`, deployed as Worker version
+`999c5f7f-f0dd-4873-bcde-5403f6746017`. The live test saved an inquiry,
+recorded its source tags, and received provider acceptance on the first attempt.
+Nino then confirmed in the task that the test email arrived. This is recipient
+confirmation, not an automated inbox inspection or a matched provider delivery log.
+
+Test reference: `f92e15dc-c4f9-4fda-acd4-414559ebf258`, marked `test` so it is
+excluded from real lead and booking totals. Live desktop and mobile checks
+confirmed that the top request link permits form input and scrolling back up.
+The deployed five-minute retry schedule was verified through Cloudflare's API.
+
+The optional incoming requests@ alias still requires Google Admin sign-in.
+Follow-up dates and status tracking are available; sales reminder automation
+and an operator dashboard were not implemented. No school outreach was sent.
