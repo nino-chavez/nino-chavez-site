@@ -14,13 +14,15 @@
     "check": "vinext check",
     "deploy:preview": "CLOUDFLARE_ENV=preview vinext deploy",
     "deploy:production": "SITE_VISIBILITY=public vinext deploy",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs",
+    "test": "npm run test:coverage && npm run build && node --test tests/rendered-html.test.mjs",
     "lint": "eslint app worker scripts tests next.config.ts vite.config.ts",
     "sync:content": "npm run sync:writing && npm run sync:demos",
     "sync:demos": "node scripts/sync-demo-index.mjs && node scripts/sync-demo-stories.mjs",
     "sync:writing": "node scripts/sync-writing-index.mjs",
     "db:generate": "drizzle-kit generate",
-    "test:audit": "npm run build && node --test tests/audit-regression.test.mjs"
+    "test:audit": "npm run build && node --test tests/audit-regression.test.mjs",
+    "test:coverage": "node --experimental-strip-types --test tests/coverage.test.mjs",
+    "leads": "node scripts/coverage-leads.mjs"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",

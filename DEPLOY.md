@@ -64,5 +64,34 @@ them to the repository.
 
 ## Database
 
-The portfolio has no direct database. Some routes link to or proxy other
-services through `apps/router`.
+Coverage inquiries use the D1 database described below. Other routes link to
+or proxy specialist services through the router.
+
+## Coverage inquiries
+
+The coverage form posts to `/api/coverage/requests`. The main Worker owns this
+root API route; it must not be placed under the gallery-owned `/photography/api`.
+The router also sends `/photography/coverage.rsc` to main for anchor navigation.
+
+Production bindings:
+- `COVERAGE_DB`: D1 `ninochavez-coverage-leads` for inquiries and anonymous events.
+- `COVERAGE_EMAIL`: Cloudflare Email Sending, restricted to sender
+  `requests@ninochavez.co` and recipient `nino@ninochavez.co`.
+- `COVERAGE_NOTIFY_TO`: `nino@ninochavez.co`, the existing Google Workspace alias.
+- `COVERAGE_LIMIT`: per-IP request limit. IPs are not saved in the lead database.
+
+Before deploying a schema change, run
+`npx wrangler d1 migrations apply ninochavez-coverage-leads --remote`.
+For development use `--local`; local Email Sending is simulated, not sent.
+Preview has no production lead/email bindings and fails closed.
+
+`npm run test:coverage` exercises validation, actual SQLite persistence,
+concurrent duplicate requests, notification failure/retry and analytics boundaries.
+`npx wrangler types worker-configuration.d.ts` refreshes binding/runtime types.
+The scheduled handler retries pending email notifications every five minutes.
+Provider acceptance is recorded as `sent`; this is not proof of inbox delivery.
+After 12 attempts a failed notification remains visible in `npm run leads -- report --remote`.
+An uncertain provider response can cause a duplicate notification on retry;
+its reference remains the same and the inquiry itself is never duplicated.
+
+Operator commands and source-tag conventions are in `docs/coverage/lead-operations.md`.

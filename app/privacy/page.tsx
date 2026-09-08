@@ -59,7 +59,7 @@ export default function PrivacyPage() {
         <div className="privacy-opening__register page-shell">
           <span>Privacy / current policy</span>
           <span>ninochavez.co</span>
-          <time dateTime="2026-07-30">Updated 30 July 2026</time>
+          <time dateTime="2026-09-08">Updated 8 September 2026</time>
         </div>
 
         <div className="privacy-opening__stage page-shell">
@@ -124,7 +124,7 @@ export default function PrivacyPage() {
               normal connection details needed to load its site.
             </p>
             <p>
-              The public pages do not have a contact form and do not require an
+              The public pages include a coverage request form and do not require an
               account. Search forms send the words and filters in the page URL
               so the requested view can be returned.
             </p>
@@ -181,6 +181,23 @@ export default function PrivacyPage() {
                 <span className="assistive-text"> (opens in a new tab)</span>
               </a>
               .
+            </p>
+            <h3 id="coverage-requests">Coverage requests</h3>
+            <p>
+              When you submit a coverage request, I save your contact details,
+              event information and notes in a private Cloudflare database so I
+              can respond, prepare a quote and follow up. Cloudflare sends me an
+              email notification, which reaches my Google Workspace inbox.
+              Submitting a request does not subscribe you to marketing emails.
+            </p>
+            <p>
+              I also record campaign tags and the referring website to understand
+              where inquiries come from. Separate activity counts record page
+              visits, opening the request section, starting the form and sending
+              errors. These activity records contain no names, email addresses,
+              form contents or persistent visitor identifiers, and expire after
+              90 days. Inquiry records remain available for booking and follow-up;
+              you can email me to request their removal.
             </p>
           </div>
         </section>

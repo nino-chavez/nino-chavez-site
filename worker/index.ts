@@ -1,18 +1,9 @@
 /** Cloudflare Worker entry point for the vinext-starter template. */
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
 import handler from "vinext/server/app-router-entry";
+import { handleCoverage, retryNotifications } from "./coverage";
 
-interface Env {
-  ASSETS: Fetcher;
-  DB: D1Database;
-  IMAGES: {
-    input(stream: ReadableStream): {
-      transform(options: Record<string, unknown>): {
-        output(options: { format: string; quality: number }): Promise<{ response(): Response }>;
-      };
-    };
-  };
-}
+type Env = Cloudflare.Env;
 
 interface ExecutionContext {
   waitUntil(promise: Promise<unknown>): void;
@@ -28,6 +19,9 @@ interface ExecutionContext {
 const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
+    if (url.pathname === "/api/coverage/requests" || url.pathname === "/api/coverage/events") {
+      return handleCoverage(request, env, ctx);
+    }
 
     // The sixth work domain was renamed Writing -> Publishing on 2026-08-17.
     // /work and the home page published ?domain= links for months, so a
@@ -47,13 +41,18 @@ const worker = {
       return handleImageOptimization(request, {
         fetchAsset: (path) => env.ASSETS.fetch(new Request(new URL(path, request.url))),
         transformImage: async (body, { width, format, quality }) => {
-          const result = await env.IMAGES.input(body).transform(width > 0 ? { width } : {}).output({ format, quality });
+          const outputFormat = (["image/jpeg", "image/png", "image/gif", "image/webp", "image/avif", "rgb", "rgba"] as const).find(value => value === format);
+          if (!outputFormat) throw new Error("Unsupported image output format");
+          const result = await env.IMAGES.input(body).transform(width > 0 ? { width } : {}).output({ format: outputFormat, quality });
           return result.response();
         },
       }, allowedWidths);
     }
 
     return handler.fetch(request, env, ctx);
+  },
+  async scheduled(_controller: ScheduledController, env: Env, ctx: ExecutionContext) {
+    ctx.waitUntil(retryNotifications(env));
   },
 };
 

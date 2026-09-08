@@ -2,6 +2,12 @@
 
 Approved for publication • September 8, 2026
 
+## Direct submission update
+
+The direct-submission implementation supersedes the email-composer behavior below. Inquiries now save privately in D1 before Cloudflare attempts a notification to Nino. Local verification passed seven backend tests, 27 browser assertions across all four coverage types and failure/retry behavior, the normal build/rendered tests, 24 audit regressions, compatibility and focused types. Lint retains eight existing image warnings. Local email delivery is simulated; publication and live email evidence are recorded separately.
+
+## Historical page and composer review
+
 Nino approved the reviewed page, $350 volleyball package and booking terms with “ship it.” The canonical route is `/photography/coverage`. The notes below preserve the earlier local review; they are not a deployment receipt.
 
 The final form check passed 49 browser assertions across all four coverage types, required fields, date boundaries, whitespace-only input, special characters, exact email payload, stale-draft clearing, focus, mobile layout and no-JavaScript fallback. It found and corrected missing whitespace validation for the sport/event and coverage-window fields. Copy success and permission failure were tested with controlled clipboard stubs; the actual clipboard was unchanged. The email-link click was intercepted before launching an email app. No message was sent or delivered by this test.

@@ -21,8 +21,27 @@
   "images": {
     "binding": "IMAGES"
   },
+  "d1_databases": [{
+    "binding": "COVERAGE_DB",
+    "database_name": "ninochavez-coverage-leads",
+    "database_id": "3bc483f4-ac66-4e4d-a244-a67505b9228c",
+    "migrations_dir": "migrations/coverage"
+  }],
+  "ratelimits": [{
+    "name": "COVERAGE_LIMIT",
+    "namespace_id": "2026090801",
+    "simple": { "limit": 10, "period": 60 }
+  }],
+  "observability": { "enabled": true, "head_sampling_rate": 1 },
+  "triggers": { "crons": ["*/5 * * * *"] },
+  "send_email": [{
+    "name": "COVERAGE_EMAIL",
+    "allowed_sender_addresses": ["requests@ninochavez.co"],
+    "allowed_destination_addresses": ["nino@ninochavez.co"]
+  }],
   "vars": {
-    "SITE_VISIBILITY": "public"
+    "SITE_VISIBILITY": "public",
+    "COVERAGE_NOTIFY_TO": "nino@ninochavez.co"
   },
   "env": {
     "preview": {
