@@ -70,7 +70,7 @@ export async function handleCoverage(request: Request, env: CoverageEnv, ctx: Pi
     }
     const fields = normalizeLead(input);
     // The server owns commercial terms; caller-supplied prices are never accepted.
-    const offer = fields.kind === 'volleyball' ? { price: coverageOffer.price, deposit: coverageOffer.deposit, previewPhotos: coverageOffer.previewPhotos, galleryDays: coverageOffer.galleryDays, typicalGallery: coverageOffer.typicalGallery, onsiteHours: coverageOffer.onsiteHours, deliverySummary: coverageOffer.deliverySummary } : { pricing: 'fixed quote before booking' };
+    const offer = fields.kind === 'volleyball' ? { price: coverageOffer.price, individualDeposit: coverageOffer.individualDeposit, organizationDeposit: 0, organizationPaymentDays: coverageOffer.organizationPaymentDays, previewPhotos: coverageOffer.previewPhotos, galleryDays: coverageOffer.galleryDays, typicalGallery: coverageOffer.typicalGallery, onsiteHours: coverageOffer.onsiteHours, deliverySummary: coverageOffer.deliverySummary } : { pricing: 'fixed quote before booking' };
     const payload = JSON.stringify({ ...fields, offer });
     const hashBytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(payload));
     const hash = Array.from(new Uint8Array(hashBytes), b => b.toString(16).padStart(2, '0')).join('');
@@ -88,7 +88,9 @@ export async function handleCoverage(request: Request, env: CoverageEnv, ctx: Pi
 }
 
 export function notificationText(id: string, payload: Record<string, unknown>, source: string, campaign: string) {
-  const terms = payload.kind === 'volleyball' ? `$350 varsity volleyball package; up to ${coverageOffer.onsiteHours} hours on site; 10 preview photos within 24 hours. ${coverageOffer.deliverySummary}` : 'Fixed quote requested. Price, deliverables and turnaround require confirmation.';
+  const savedOffer = payload.offer as Record<string, unknown> | undefined;
+  const deliverySummary = typeof savedOffer?.deliverySummary === 'string' ? savedOffer.deliverySummary : coverageOffer.deliverySummary;
+  const terms = payload.kind === 'volleyball' ? `$350 varsity volleyball package; up to ${coverageOffer.onsiteHours} hours on site; 10 preview photos within 24 hours. ${deliverySummary}` : 'Fixed quote requested. Price, deliverables and turnaround require confirmation.';
   return `New coverage inquiry\nReference: ${id}\n\n${terms}\n\n${Object.keys(limits).map(key => `${key}: ${payload[key] || 'Not provided'}`).join('\n')}\n\nSource: ${source || 'direct / unknown'}\nCampaign: ${campaign || 'none'}\n\nReply to this email to reach the person requesting coverage. This is an inquiry, not a confirmed booking.`;
 }
 

@@ -3,7 +3,7 @@ import test, { mock } from 'node:test';
 mock.timers.enable({ apis: ['Date'], now: new Date('2026-09-08T12:00:00Z') });
 import { DatabaseSync } from 'node:sqlite';
 import { readFileSync } from 'node:fs';
-import { handleCoverage, retryNotifications, attribution, normalizeLead } from '../worker/coverage.ts';
+import { handleCoverage, retryNotifications, attribution, normalizeLead, notificationText } from '../worker/coverage.ts';
 
 const sample = () => ({ id: crypto.randomUUID(), kind: 'volleyball', activity: 'Girls volleyball', name: 'Coverage Test', email: 'admin@ninochavez.co', school: 'Test School', date: '2026-09-22', venue: 'Test venue, Aurora', website: '', attribution: { source: 'coach-outreach', medium: 'email', campaign: 'fall-2026' } });
 function fixture() {
@@ -111,4 +111,28 @@ test('optional dates do not bypass a closed request window or missing contact de
   for (const key of ['kind', 'activity', 'name', 'email', 'school']) {
     assert.throws(() => normalizeLead({ ...input, [key]: '' }, new Date('2026-09-09T18:00:00Z')), /required fields/);
   }
+});
+
+
+test('inquiries snapshot both payment routes without granting credit or trusting caller prices', async () => {
+  const f = fixture(), body = { ...sample(), payment: 'School purchase order', offer: { price: 1, organizationPaymentDays: 999 } };
+  assert.equal((await f.post(body)).status, 201);
+  await Promise.all(f.pending);
+  const row = f.sqlite.prepare('SELECT * FROM coverage_leads WHERE id=?').get(body.id);
+  const payload = JSON.parse(row.payload_json);
+  assert.equal(payload.offer.price, 350);
+  assert.equal(payload.offer.individualDeposit, 175);
+  assert.equal(payload.offer.organizationDeposit, 0);
+  assert.equal(payload.offer.organizationPaymentDays, 30);
+  assert.notEqual(row.status, 'booked');
+  assert.match(f.messages[0].text, /invoice due 30 days after the event, no deposit/);
+  assert.match(f.messages[0].text, /balance when ready, before full-resolution downloads/);
+  assert.doesNotMatch(f.messages[0].text, /balance.*due on match day/);
+});
+
+test('notification retries retain the delivery terms saved with an earlier inquiry', () => {
+  const original = 'Gallery edited within 5 calendar days; released after the balance is paid or under an agreed school purchase order.';
+  const message = notificationText('saved-inquiry', { kind: 'volleyball', offer: { deliverySummary: original } }, '', '');
+  assert.ok(message.includes(original));
+  assert.doesNotMatch(message, /invoice due 30 days/);
 });

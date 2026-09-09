@@ -139,3 +139,24 @@ Live inquiry `989abc24-5314-42ca-b25e-be5816db05b6` used no date or venue, was
 saved successfully and is marked `test`. Its notification was found and read in
 the Google Workspace inbox as message `1a08836f03a6a8df`, matching the reference.
 The three school messages remain Gmail drafts. No school outreach was sent.
+
+## Payment routes — September 9 update
+
+The $350 volleyball package now has two payment routes. Schools and established
+organizations reserve a confirmed date with an approved purchase order or signed
+agreement, without a deposit. Confirm an authorized payer and billing contact
+before shooting. Their invoice is due 30 calendar days after the event; gallery
+delivery remains within five calendar days and does not wait for payment.
+
+Individuals pay $175 after written availability/access confirmation and $175 when
+the gallery is ready, before full-resolution downloads. Ten edited previews
+remain due within 24 hours for both routes. The form records a preference; it
+does not approve organizational billing or reserve a date. Existing cancellation
+charges apply to either route; organizations are invoiced rather than forfeiting
+a deposit. See the public FAQ for the cancellation due date and exceptions.
+
+New inquiry snapshots store the individual deposit, zero organizational deposit,
+30-day organization payment deadline and the delivery summary. Notification
+retries use the saved delivery summary so a policy update does not silently
+replace the terms recorded for an earlier inquiry. Older release receipts above
+describe the terms in effect at their respective releases.

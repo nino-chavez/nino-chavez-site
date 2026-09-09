@@ -86,7 +86,7 @@ export function CoverageRequest() {
         <label>Start time <span>(Central, optional)</span><input name="time" type="time" /></label>
         {kind && kind !== "volleyball" && <label className="coverage-wide">Coverage window / teams involved <span>(optional)</span><input name="duration" maxLength={200} placeholder="For example: 2–5 p.m., two teams, or one performance" /></label>}
         <label>Venue access approval<select name="access"><option>Not requested yet</option><option>I can approve access</option><option>Approved by the venue</option><option>I need an introduction</option></select></label>
-        <label>Payment route<select name="payment"><option value="">Not decided yet</option><option>Team / organization invoice</option><option>Personal invoice</option><option>School purchase order</option><option>Funding not confirmed yet</option></select></label>
+        <label>Payment route<select name="payment"><option value="">Not decided yet</option><option>School / established organization — invoice in 30 days</option><option>Individual — deposit, balance when gallery is ready</option><option>School purchase order</option><option>Funding not confirmed yet</option></select></label>
       </div></details>
       <p id="coverage-date-help" className="coverage-help">Optional dates must be between September 19 and December 31, 2026 and are subject to availability.</p>
       <p id="coverage-error" role="alert" className="coverage-error">{error}</p>
@@ -98,7 +98,7 @@ export function CoverageRequest() {
     {receipt && <div className="coverage-email" ref={preview} tabIndex={-1} role="status">
       <h3>Request received</h3>
       <p>Your inquiry has been saved. I’ll reply to the email you provided to confirm availability, coverage and price.</p>
-      <p>No date is booked yet. Booking follows written confirmation, access approval and the agreed payment arrangement.</p>
+      <p>{kind === "volleyball" ? "No date is booked yet. Booking follows written confirmation and access approval. Schools and established organizations reserve with an approved purchase order or signed agreement; individuals reserve with the deposit." : "No date is booked yet. Booking follows written confirmation, access approval and the payment terms in your fixed quote."}</p>
       <p className="coverage-help">Reference: {receipt}</p>
     </div>}
     <p className="coverage-direct">Prefer a direct email? <a href={`mailto:${offer.email}`}>{offer.email}</a></p>
