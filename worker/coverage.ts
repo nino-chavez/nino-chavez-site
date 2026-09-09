@@ -90,7 +90,8 @@ export async function handleCoverage(request: Request, env: CoverageEnv, ctx: Pi
 export function notificationText(id: string, payload: Record<string, unknown>, source: string, campaign: string) {
   const savedOffer = payload.offer as Record<string, unknown> | undefined;
   const deliverySummary = typeof savedOffer?.deliverySummary === 'string' ? savedOffer.deliverySummary : coverageOffer.deliverySummary;
-  const terms = payload.kind === 'volleyball' ? `$350 varsity volleyball package; up to ${coverageOffer.onsiteHours} hours on site; 10 preview photos within 24 hours. ${deliverySummary}` : 'Fixed quote requested. Price, deliverables and turnaround require confirmation.';
+  const price = typeof savedOffer?.price === 'number' ? savedOffer.price : coverageOffer.price;
+  const terms = payload.kind === 'volleyball' ? `$${price} varsity volleyball package; up to ${coverageOffer.onsiteHours} hours on site; 10 preview photos within 24 hours. ${deliverySummary}` : 'Fixed quote requested. Price, deliverables and turnaround require confirmation.';
   return `New coverage inquiry\nReference: ${id}\n\n${terms}\n\n${Object.keys(limits).map(key => `${key}: ${payload[key] || 'Not provided'}`).join('\n')}\n\nSource: ${source || 'direct / unknown'}\nCampaign: ${campaign || 'none'}\n\nReply to this email to reach the person requesting coverage. This is an inquiry, not a confirmed booking.`;
 }
 

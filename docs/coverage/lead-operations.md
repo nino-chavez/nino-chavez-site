@@ -21,7 +21,7 @@ npm run leads -- list --remote
 npm run leads -- show LEAD_ID --remote
 npm run leads -- status LEAD_ID contacted --remote
 npm run leads -- status LEAD_ID quoted --remote
-npm run leads -- status LEAD_ID booked 350 --remote
+npm run leads -- status LEAD_ID booked 250 --remote
 npm run leads -- followup LEAD_ID 2026-09-20 "Waiting for school access approval" --remote
 npm run leads -- due --remote
 npm run leads -- report --remote
@@ -160,3 +160,13 @@ New inquiry snapshots store the individual deposit, zero organizational deposit,
 retries use the saved delivery summary so a policy update does not silently
 replace the terms recorded for an earlier inquiry. Older release receipts above
 describe the terms in effect at their respective releases.
+
+## Introductory price correction — September 9
+
+The current volleyball introductory rate is $250. Individuals pay $125 to
+reserve the confirmed date and $125 when the gallery is ready. The cancellation
+charge tied to the deposit is $125; the full assignment charge is $250. Schools
+and established organizations retain no-deposit booking and payment due 30 days
+after the event, with gallery delivery in five days independent of payment.
+Earlier sections record the superseded $350 rate. Notification retries preserve
+the price and delivery terms stored with the original inquiry.

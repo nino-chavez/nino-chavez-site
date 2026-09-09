@@ -120,9 +120,11 @@ test('inquiries snapshot both payment routes without granting credit or trusting
   await Promise.all(f.pending);
   const row = f.sqlite.prepare('SELECT * FROM coverage_leads WHERE id=?').get(body.id);
   const payload = JSON.parse(row.payload_json);
-  assert.equal(payload.offer.price, 350);
-  assert.equal(payload.offer.individualDeposit, 175);
+  assert.equal(payload.offer.price, 250);
+  assert.equal(payload.offer.individualDeposit, 125);
   assert.equal(payload.offer.organizationDeposit, 0);
+  assert.match(f.messages[0].text, /\$250 varsity/);
+  assert.match(f.messages[0].text, /\$125 deposit and \$125 balance/);
   assert.equal(payload.offer.organizationPaymentDays, 30);
   assert.notEqual(row.status, 'booked');
   assert.match(f.messages[0].text, /invoice due 30 days after the event, no deposit/);
@@ -132,7 +134,9 @@ test('inquiries snapshot both payment routes without granting credit or trusting
 
 test('notification retries retain the delivery terms saved with an earlier inquiry', () => {
   const original = 'Gallery edited within 5 calendar days; released after the balance is paid or under an agreed school purchase order.';
-  const message = notificationText('saved-inquiry', { kind: 'volleyball', offer: { deliverySummary: original } }, '', '');
+  const message = notificationText('saved-inquiry', { kind: 'volleyball', offer: { price: 350, deliverySummary: original } }, '', '');
   assert.ok(message.includes(original));
+  assert.match(message, /\$350 varsity/);
+  assert.doesNotMatch(message, /\$250 varsity/);
   assert.doesNotMatch(message, /invoice due 30 days/);
 });
