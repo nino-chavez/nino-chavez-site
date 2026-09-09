@@ -109,3 +109,20 @@ the originating task's outputs. They remain unsent. The September 9 audit and
 revision notes there carry the pricing assumptions and proposed business terms.
 Record total time and direct costs for actual jobs before changing price. The
 existing lead commands track inquiry and booking state, not job profitability.
+
+## Edge HTML and browser verification
+
+A September 9 production check found an AI Labyrinth link prepended directly
+inside the body by Cloudflare. React reported hydration error 418 at that anchor;
+the local production build did not reproduce it. A browser-only experiment that
+removed that injected link eliminated the error. Coverage HTML now appends
+`no-transform` to Cache-Control while preserving existing cache directives.
+This applies only to the coverage HTML route, not the request API or other pages.
+
+Verify through the apex after deployment: the response must include
+`no-transform`, omit injected `/cdn-cgi/content` links, and hydrate without a
+browser error. Then test both the top request link and a direct `#request` URL,
+including typing, repeated upward wheel gestures and a real saved inquiry.
+One oversized wheel gesture is not a reliable test of reaching the page top.
+The change follows Cloudflare's documented response-body control:
+https://developers.cloudflare.com/rules/configuration-rules/response-body-inspection/

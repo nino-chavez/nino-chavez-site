@@ -49,7 +49,18 @@ const worker = {
       }, allowedWidths);
     }
 
-    return handler.fetch(request, env, ctx);
+    const response = await handler.fetch(request, env, ctx);
+    // AI Labyrinth's prepended anchor changes React's document hydration tree.
+    // Preserve this form page's HTML at the edge; keep other routes unchanged.
+    if ((url.pathname === "/photography/coverage" || url.pathname === "/photography/coverage/") && response.headers.get("Content-Type")?.includes("text/html")) {
+      const headers = new Headers(response.headers);
+      const cacheControl = headers.get("Cache-Control");
+      if (!cacheControl?.split(",").some(value => value.trim().toLowerCase() === "no-transform")) {
+        headers.set("Cache-Control", cacheControl ? `${cacheControl}, no-transform` : "no-transform");
+      }
+      return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+    }
+    return response;
   },
   async scheduled(_controller: ScheduledController, env: Env, ctx: ExecutionContext) {
     ctx.waitUntil(retryNotifications(env));
