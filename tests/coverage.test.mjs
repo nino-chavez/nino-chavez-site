@@ -3,7 +3,7 @@ import test, { mock } from 'node:test';
 mock.timers.enable({ apis: ['Date'], now: new Date('2026-09-08T12:00:00Z') });
 import { DatabaseSync } from 'node:sqlite';
 import { readFileSync } from 'node:fs';
-import { handleCoverage, retryNotifications, attribution } from '../worker/coverage.ts';
+import { handleCoverage, retryNotifications, attribution, normalizeLead } from '../worker/coverage.ts';
 
 const sample = () => ({ id: crypto.randomUUID(), kind: 'volleyball', activity: 'Girls volleyball', name: 'Coverage Test', email: 'admin@ninochavez.co', school: 'Test School', date: '2026-09-22', venue: 'Test venue, Aurora', website: '', attribution: { source: 'coach-outreach', medium: 'email', campaign: 'fall-2026' } });
 function fixture() {
@@ -63,7 +63,7 @@ test('validates all four coverage types, dates, email, whitespace and maximum le
     assert.equal(JSON.parse(row.payload_json).offer.pricing, 'fixed quote before booking');
     assert.equal(JSON.parse(row.payload_json).offer.price, undefined);
   }
-  for (const changed of [{ email: 'invalid' }, { name: ' ' }, { activity: ' ' }, { kind: 'unknown' }, { kind: 'event', duration: ' ' }, { date: '2026-09-18' }, { date: '2027-01-01' }, { date: '2026-09-31' }, { date: '2026-10-00' }, { date: '2026-11-32' }, { time: '25:00' }, { name: 'Name\nBcc: injected@example.com' }, { notes: 'a'.repeat(1201) }]) {
+  for (const changed of [{ email: 'invalid' }, { name: ' ' }, { activity: ' ' }, { kind: 'unknown' }, { date: '2026-09-18' }, { date: '2027-01-01' }, { date: '2026-09-31' }, { date: '2026-10-00' }, { date: '2026-11-32' }, { time: '25:00' }, { name: 'Name\nBcc: injected@example.com' }, { notes: 'a'.repeat(1201) }]) {
     assert.equal((await f.post({ ...sample(), ...changed })).status, 400, JSON.stringify(changed));
   }
   await Promise.all(f.pending);
@@ -88,4 +88,27 @@ test('analytics accepts only named events and campaign tags, never contact field
   assert.doesNotMatch(JSON.stringify(rows), /private|Do not save|referrer/);
   assert.equal((await f.post({ ...event, event: 'arbitrary' }, { event: true })).status, 400);
   assert.equal(attribution(event.attribution).referrer, 'example.com');
+});
+
+test('an exploratory inquiry saves and notifies without date, venue or duration for every coverage type', async () => {
+  const f = fixture();
+  for (const kind of ['volleyball', 'sport', 'tournament', 'event']) {
+    const body = { ...sample(), kind, date: '', venue: '', duration: '' };
+    assert.equal((await f.post(body)).status, 201);
+    await Promise.all(f.pending);
+    const saved = f.sqlite.prepare('SELECT * FROM coverage_leads WHERE id=?').get(body.id);
+    assert.equal(saved.event_date, '');
+    assert.equal(JSON.parse(saved.payload_json).venue, '');
+    assert.match(f.messages.at(-1).text, /date: Not provided/);
+    assert.match(f.messages.at(-1).text, /venue: Not provided/);
+  }
+  assert.equal(f.messages.length, 4);
+});
+
+test('optional dates do not bypass a closed request window or missing contact details', () => {
+  const input = { ...sample(), date: '', venue: '' };
+  assert.throws(() => normalizeLead(input, new Date('2027-01-01T18:00:00Z')), /request window has ended/);
+  for (const key of ['kind', 'activity', 'name', 'email', 'school']) {
+    assert.throws(() => normalizeLead({ ...input, [key]: '' }, new Date('2026-09-09T18:00:00Z')), /required fields/);
+  }
 });

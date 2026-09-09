@@ -5,7 +5,7 @@ const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{1
 const kinds = ['volleyball', 'sport', 'tournament', 'event'];
 const events = ['page_view', 'request_open', 'form_start', 'submit_error'];
 const limits: Record<string, number> = { kind: 20, activity: 180, name: 100, email: 254, role: 80, school: 140, opponent: 140, date: 10, time: 5, duration: 200, venue: 250, access: 80, payment: 80, notes: 1200 };
-const required = ['kind', 'activity', 'name', 'email', 'school', 'date', 'venue'];
+const required = ['kind', 'activity', 'name', 'email', 'school'];
 export class InputError extends Error {}
 
 export function normalizeLead(input: Record<string, unknown>, now = new Date()) {
@@ -18,10 +18,10 @@ export function normalizeLead(input: Record<string, unknown>, now = new Date()) 
   if (required.some(key => !fields[key])) throw new InputError('Complete the required fields, including your reply email.');
   if (!kinds.includes(fields.kind)) throw new InputError('Choose a coverage type.');
   if (!/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(fields.email)) throw new InputError('Enter a valid reply email.');
+  if (earliestCoverageDate(now) > coverageOffer.lastDate) throw new InputError('The current request window has ended. Please email nino@ninochavez.co.');
   const parsedDate = new Date(`${fields.date}T12:00:00Z`);
-  if (!Number.isFinite(parsedDate.getTime()) || !/^\d{4}-\d{2}-\d{2}$/.test(fields.date) || fields.date < earliestCoverageDate(now) || fields.date > coverageOffer.lastDate || parsedDate.toISOString().slice(0, 10) !== fields.date) throw new InputError('Choose an upcoming date between September 19 and December 31, 2026.');
+  if (fields.date && (!Number.isFinite(parsedDate.getTime()) || !/^\d{4}-\d{2}-\d{2}$/.test(fields.date) || fields.date < earliestCoverageDate(now) || fields.date > coverageOffer.lastDate || parsedDate.toISOString().slice(0, 10) !== fields.date)) throw new InputError('Choose an upcoming date between September 19 and December 31, 2026.');
   if (fields.time && !/^([01]\d|2[0-3]):[0-5]\d$/.test(fields.time)) throw new InputError('Check the start time.');
-  if (fields.kind !== 'volleyball' && !fields.duration) throw new InputError('Enter the coverage window and teams or event involved.');
   if (fields.kind === 'volleyball') fields.duration = "One team's varsity volleyball match";
   if (fields.kind === 'event' || fields.kind === 'tournament') fields.opponent = '';
   return fields;
@@ -70,7 +70,7 @@ export async function handleCoverage(request: Request, env: CoverageEnv, ctx: Pi
     }
     const fields = normalizeLead(input);
     // The server owns commercial terms; caller-supplied prices are never accepted.
-    const offer = fields.kind === 'volleyball' ? { price: coverageOffer.price, deposit: coverageOffer.deposit, previewPhotos: coverageOffer.previewPhotos, galleryDays: coverageOffer.galleryDays, typicalGallery: coverageOffer.typicalGallery } : { pricing: 'fixed quote before booking' };
+    const offer = fields.kind === 'volleyball' ? { price: coverageOffer.price, deposit: coverageOffer.deposit, previewPhotos: coverageOffer.previewPhotos, galleryDays: coverageOffer.galleryDays, typicalGallery: coverageOffer.typicalGallery, onsiteHours: coverageOffer.onsiteHours, deliverySummary: coverageOffer.deliverySummary } : { pricing: 'fixed quote before booking' };
     const payload = JSON.stringify({ ...fields, offer });
     const hashBytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(payload));
     const hash = Array.from(new Uint8Array(hashBytes), b => b.toString(16).padStart(2, '0')).join('');
@@ -88,7 +88,7 @@ export async function handleCoverage(request: Request, env: CoverageEnv, ctx: Pi
 }
 
 export function notificationText(id: string, payload: Record<string, unknown>, source: string, campaign: string) {
-  const terms = payload.kind === 'volleyball' ? '$350 varsity volleyball package; 10 preview photos within 24 hours; full gallery within 5 calendar days.' : 'Fixed quote requested. Price, deliverables and turnaround require confirmation.';
+  const terms = payload.kind === 'volleyball' ? `$350 varsity volleyball package; up to ${coverageOffer.onsiteHours} hours on site; 10 preview photos within 24 hours. ${coverageOffer.deliverySummary}` : 'Fixed quote requested. Price, deliverables and turnaround require confirmation.';
   return `New coverage inquiry\nReference: ${id}\n\n${terms}\n\n${Object.keys(limits).map(key => `${key}: ${payload[key] || 'Not provided'}`).join('\n')}\n\nSource: ${source || 'direct / unknown'}\nCampaign: ${campaign || 'none'}\n\nReply to this email to reach the person requesting coverage. This is an inquiry, not a confirmed booking.`;
 }
 

@@ -88,3 +88,24 @@ The deployed five-minute retry schedule was verified through Cloudflare's API.
 The optional incoming requests@ alias still requires Google Admin sign-in.
 Follow-up dates and status tracking are available; sales reminder automation
 and an operator dashboard were not implemented. No school outreach was sent.
+
+## Inquiry and offer revision — September 9, 2026
+
+The form accepts an inquiry before date, venue, duration, funding or access are
+known. Coverage type, activity, name, reply email and organization remain
+required. Empty dates are saved as empty strings; notifications show missing
+details as “Not provided.” Supplied dates must still be valid upcoming dates in
+the coverage window. Do not interpret a missing date or a selected package as
+availability, approval, funding or a booking.
+
+The revised offer retains $350 and ten still previews. It makes the five-day
+editing deadline separate from gallery release after payment, with written
+purchase-order exceptions. The proposed on-site limit is three hours; event
+cancellation and cancellation of photography have separate rules. Publish the page and server changes together. Confirm the live page matches
+the draft terms before approving any school outreach.
+
+Current pilot drafts and their state are owned by school-outreach-pilot.json in
+the originating task's outputs. They remain unsent. The September 9 audit and
+revision notes there carry the pricing assumptions and proposed business terms.
+Record total time and direct costs for actual jobs before changing price. The
+existing lead commands track inquiry and booking state, not job profitability.
