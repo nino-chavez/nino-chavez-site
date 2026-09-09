@@ -100,7 +100,7 @@ availability, approval, funding or a booking.
 
 The revised offer retains $350 and ten still previews. It makes the five-day
 editing deadline separate from gallery release after payment, with written
-purchase-order exceptions. The proposed on-site limit is three hours; event
+purchase-order exceptions. The on-site limit is three hours; event
 cancellation and cancellation of photography have separate rules. Publish the page and server changes together. Confirm the live page matches
 the draft terms before approving any school outreach.
 
@@ -126,3 +126,16 @@ including typing, repeated upward wheel gestures and a real saved inquiry.
 One oversized wheel gesture is not a reliable test of reaching the page top.
 The change follows Cloudflare's documented response-body control:
 https://developers.cloudflare.com/rules/configuration-rules/response-body-inspection/
+
+## September 9 release confirmation
+
+Code revision `c4bd1f5` is deployed as Worker version
+`0b6a8299-22e2-4b2f-a25a-c141a9e686ed`. The live coverage page sends
+`no-store, must-revalidate, no-transform` and no longer contains the injected
+Labyrinth anchor. Desktop/mobile hydration and both request-anchor paths passed.
+Repeated upward wheel gestures returned to the top; no scroll lock was observed.
+
+Live inquiry `989abc24-5314-42ca-b25e-be5816db05b6` used no date or venue, was
+saved successfully and is marked `test`. Its notification was found and read in
+the Google Workspace inbox as message `1a08836f03a6a8df`, matching the reference.
+The three school messages remain Gmail drafts. No school outreach was sent.
