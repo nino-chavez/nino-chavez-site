@@ -5084,11 +5084,18 @@ h3 {
 }
 
 .photography-recent__card strong {
+  /* Cold review D7: a single-line ellipsis cut every visible title before the
+     identifying detail ("HS Girls VB - JCA v...", "Bump Bash #5 — C..."). Event
+     names carry the identifying detail late (team, number, date), so a one-line
+     clamp hides exactly what the reader is scanning for. Three lines clears
+     every title in the live catalogue at both 390 and 1280 (verified against
+     the real recent-events feed, not invented copy) with no card overflow. */
+  display: -webkit-box;
   overflow: hidden;
   font-size: 1rem;
   line-height: 1.3;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .photography-recent__card small {
