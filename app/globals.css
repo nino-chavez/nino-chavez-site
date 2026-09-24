@@ -4909,8 +4909,14 @@ h3 {
 }
 
 .photography-search form > div {
+  /* Cold review D3: at the 300-320px right column this box gets on any
+     viewport >=821px wide (see .photography-opening__stage's two-column
+     grid), an input sharing a row with the "Find photos" button had ~90-100px
+     of usable text width — the placeholder clipped to "Event, te...". A
+     single column was already the <460px behavior; using it unconditionally
+     removes the clip everywhere without touching the hero grid ratio. */
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: 1fr;
 }
 
 .photography-search input[type="search"] {
@@ -4931,6 +4937,7 @@ h3 {
   min-height: 52px;
   padding-inline: 22px;
   border: 1px solid var(--bone);
+  border-top: 0; /* sits directly under the input; avoid a doubled rule */
   border-radius: 0;
   background: var(--bone);
   color: var(--ink);
@@ -5374,13 +5381,8 @@ h3 {
     display: none;
   }
 
-  .photography-search form > div {
-    grid-template-columns: 1fr;
-  }
-
-  .photography-search button {
-    border-top: 0;
-  }
+  /* .photography-search form > div and button border-top: now the base rule
+     (cold review D3) — this used to be the only place either was set. */
 
   .photography-selection__heading h2 {
     font-size: clamp(3.2rem, 15vw, 4.4rem);
@@ -6641,10 +6643,17 @@ h3 {
     background var(--motion-fast) ease;
 }
 
-.photography-route-deck li:first-child a {
-  background: rgb(20 103 158 / 0.88);
-}
-
+/* Cold review D1: the "Events" card carried a permanent solid --action (blue)
+   background while the other three identical cards stayed dark, with no
+   label or copy anywhere saying why Events is different — read as an
+   unexplained hierarchy, not a designed one. --action is reserved sitewide
+   for interaction/emphasis (docs/claude-design-system.md: "every interactive
+   and emphasis color on light ground") and is already this deck's hover
+   state below; giving one card a permanent claim on it with no stated reason
+   isn't a documented device (checked DIRECTION.md, DESIGN-DIRECTION.md,
+   docs/OPEN-PRACTICE-ART-DIRECTION.md, docs/IA-NAVIGATION.md — none mention
+   it). Removed rather than given invented marketing copy ("Most popular")
+   the data doesn't support; all four cards now share one treatment. */
 .photography-route-deck a:hover,
 .photography-route-deck a:focus-visible {
   transform: translateY(-7px);
@@ -7005,7 +7014,12 @@ h3 {
   }
 
   .photography-route-deck ol {
-    grid-auto-columns: min(76vw, 270px);
+    /* Cold review D8: at 270px the next card peeked in by only ~18% of the
+       viewport (63px of 342px) — the orchestrator's own note is that a
+       peeking card already signals more content, so this keeps the existing
+       scroll-snap row (no dots/carousel added) and just widens the peek for
+       a clearer signal. */
+    grid-auto-columns: min(70vw, 240px);
   }
 
   .photography-frame-grid {
