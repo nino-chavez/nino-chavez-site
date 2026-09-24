@@ -7171,6 +7171,30 @@ h3 {
   position: relative;
 }
 
+/* D5 fix: the diagonal scrim above only reaches 66% across and fades to
+   nothing well before the hero's lower edge, so the meta strip
+   (.field-hero__register) sits on unmasked photo — busiest on the right,
+   under "Now" and the photography credit link. Add a second, full-width
+   bottom band to the same pseudo-element so it stays behind the text
+   (mobile already gets a bottom band composited into its own background
+   image below, so this is desktop/tablet only to avoid doubling it up). */
+@media (min-width: 761px) {
+  .field-hero::before {
+    background:
+      linear-gradient(
+        78deg,
+        rgb(14 25 40 / 0.82) 0%,
+        rgb(14 25 40 / 0.42) 38%,
+        rgb(14 25 40 / 0) 66%
+      ),
+      linear-gradient(
+        180deg,
+        rgb(14 25 40 / 0) 82%,
+        rgb(14 25 40 / 0.7) 100%
+      );
+  }
+}
+
 .field-hero__stage {
   padding-top: clamp(40px, 6vh, 84px);
 }
@@ -7349,6 +7373,25 @@ h3 {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* D1 fix: the Signal Dispatch cover is a 1200x630 og-image with its title
+   set edge to edge. object-fit: cover center-crops ~8% off each side at
+   this card's 16:10 aspect, cutting the headline. contain shows the whole
+   cover on its own ink ground instead. */
+.proof-cell__image--contain {
+  background: var(--ink);
+}
+
+.proof-cell__image--contain img {
+  object-fit: contain;
+}
+
+/* D9 fix: Blueprint has no product screenshot to show (a method, not a UI) —
+   docs/claude-design-system.md §Photography: real artifact or nothing. Give
+   the caption the card's full height instead of leaving an empty image slot. */
+.proof-cell__caption--flush {
+  padding-top: 20px;
 }
 
 .proof-cell__caption {
@@ -7677,7 +7720,10 @@ h3 {
 
   .field-hero__register {
     flex-wrap: wrap;
-    gap: 12px 20px;
+    /* D5 fix: 12px row-gap read as the two wrapped lines almost touching
+       just above the fold. */
+    gap: 16px 20px;
+    padding-bottom: 28px;
   }
 
   .field-hero__credit {

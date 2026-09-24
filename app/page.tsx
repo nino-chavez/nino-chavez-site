@@ -9,8 +9,13 @@ const proof = [
     note: "Tournament registration, brackets, schedules, and live scoring in one public event page.",
     href: "/work/rally-hq",
     action: "See Rally HQ",
-    image: "/work/rally-hq.webp",
-    alt: "Rally HQ live tournament court display",
+    // Card-only crop of the court view (see public/work/rally-hq.webp for the
+    // full screenshot used on the /work/rally-hq detail page). The full frame
+    // reads as illegible chrome at card size; this crop keeps one court's
+    // score legible and drops the frozen "6:59 PM" clock, which read as a
+    // stale timestamp against the "live" claim.
+    image: "/work/rally-hq-card.webp",
+    alt: "Rally HQ live court card showing a running score",
     live: true,
   },
   {
@@ -19,8 +24,13 @@ const proof = [
     note: "A practical method for planning, reviewing, and checking work done with AI agents.",
     href: "/work/blueprint",
     action: "Read about Blueprint",
-    image: "/work/blueprint.png",
-    alt: "Blueprint method documentation",
+    // No image: Blueprint is a method, not a product with a UI to screenshot.
+    // docs/claude-design-system.md §Photography: "Pages about software work
+    // show their own real artifacts ... or nothing — zero was already a
+    // correct answer, and off-subject is worse than zero." The card
+    // component's image is documented as optional (§Component inventory).
+    image: null,
+    alt: "",
     live: false,
   },
   {
@@ -32,6 +42,11 @@ const proof = [
     image: "/work/signal-dispatch.webp?v=372a9501",
     alt: "Signal Dispatch publication cover",
     live: false,
+    // The source cover is a 1200x630 og-image with its title set edge to
+    // edge. Cropped to the grid's 16:10 card at object-fit: cover, the
+    // default center crop cuts both edges of that title. object-fit:
+    // contain shows the whole cover instead of cropping it.
+    fit: "contain",
   },
   {
     name: "Photography",
@@ -109,10 +124,24 @@ export default async function Home() {
               href={item.href}
               key={item.name}
             >
-              <div className="proof-cell__image">
-                <img src={item.image} alt={item.alt} loading="lazy" />
-              </div>
-              <span className="proof-cell__caption">
+              {item.image ? (
+                <div
+                  className={
+                    "fit" in item && item.fit === "contain"
+                      ? "proof-cell__image proof-cell__image--contain"
+                      : "proof-cell__image"
+                  }
+                >
+                  <img src={item.image} alt={item.alt} loading="lazy" />
+                </div>
+              ) : null}
+              <span
+                className={
+                  item.image
+                    ? "proof-cell__caption"
+                    : "proof-cell__caption proof-cell__caption--flush"
+                }
+              >
                 <small>{item.kind}</small>
                 <strong>{item.name}</strong>
                 <em>{item.note}</em>
