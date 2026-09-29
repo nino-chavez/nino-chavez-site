@@ -59,7 +59,7 @@ export default function PrivacyPage() {
         <div className="privacy-opening__register page-shell">
           <span>Privacy / current policy</span>
           <span>ninochavez.co</span>
-          <time dateTime="2026-09-08">Updated 8 September 2026</time>
+          <time dateTime="2026-09-28">Updated 28 September 2026</time>
         </div>
 
         <div className="privacy-opening__stage page-shell">
@@ -230,7 +230,8 @@ export default function PrivacyPage() {
                 browser user-agent. The raw IP address and user-agent are not
                 stored in the gallery analytics table. The identifier is used
                 with the event date to avoid counting the same action
-                repeatedly.
+                repeatedly. It is a pseudonymous identifier, not proof of an
+                anonymous or unique person.
               </li>
               <li>
                 <strong>Search.</strong> Search words, selected filters, and
@@ -240,7 +241,14 @@ export default function PrivacyPage() {
               </li>
             </ul>
             <p>
-              Engagement events are automatically removed after 90 days.
+              Individual engagement records, including the derived session
+              identifier, are automatically removed after 90 days. Daily action
+              totals by album, photo, action, source, content category, and broad
+              traffic classification may remain after those records expire.
+              These totals do not contain the session identifier. They help me
+              compare gallery activity over time.
+            </p>
+            <p>
               Search records do not currently expire automatically; they stay
               until I remove them, and are not stored with an account or
               session identifier.
