@@ -797,7 +797,10 @@ test("renders the current privacy policy and makes it globally searchable", asyn
   assert.match(privacyHtml, /What the gallery records/);
   assert.match(privacyHtml, /one-way session identifier/);
   assert.match(privacyHtml, /automatically removed after 90 days/);
-  assert.match(privacyHtml, /Search records do not currently expire automatically/);
+  assert.match(privacyHtml, /do not currently expire automatically/);
+  assert.match(privacyHtml, /PostHog Cloud/);
+  assert.match(privacyHtml, /analytics permission/);
+  assert.match(privacyHtml, /not automatically deleted/);
   assert.match(privacyHtml, /What stays on your device/);
   assert.match(privacyHtml, /People in photographs/);
   assert.match(privacyHtml, /submit an athlete tag/);

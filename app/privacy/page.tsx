@@ -15,7 +15,7 @@ const policySummary = [
   },
   {
     label: "Photography",
-    value: "Limited search and interaction records used to run the gallery.",
+    value: "Gallery activity totals and optional linked browsing analytics.",
   },
 ] as const;
 
@@ -59,7 +59,7 @@ export default function PrivacyPage() {
         <div className="privacy-opening__register page-shell">
           <span>Privacy / current policy</span>
           <span>ninochavez.co</span>
-          <time dateTime="2026-09-28">Updated 28 September 2026</time>
+          <time dateTime="2026-09-29">Updated 29 September 2026</time>
         </div>
 
         <div className="privacy-opening__stage page-shell">
@@ -234,10 +234,11 @@ export default function PrivacyPage() {
                 anonymous or unique person.
               </li>
               <li>
-                <strong>Search.</strong> Search words, selected filters, and
-                the number of results are stored so I can see what visitors
-                can and cannot find. Do not put sensitive personal information
-                into gallery search.
+                <strong>Search.</strong> The gallery receives your search words
+                to find photographs. New analytics records contain selected
+                filters, result counts and whether a result was selected, rather
+                than the words you typed. Do not put sensitive personal
+                information into gallery search.
               </li>
             </ul>
             <p>
@@ -249,9 +250,53 @@ export default function PrivacyPage() {
               compare gallery activity over time.
             </p>
             <p>
-              Search records do not currently expire automatically; they stay
-              until I remove them, and are not stored with an account or
-              session identifier.
+              Earlier search records may contain search words. Those records
+              do not currently expire automatically and remain until I remove
+              them. They are not linked to an account or visit identifier and
+              are not transferred to PostHog.
+            </p>
+            <h3 id="linked-gallery-analytics">Optional linked gallery analytics</h3>
+            <p>
+              With your analytics permission, I use PostHog Cloud, hosted in the
+              United States, to understand how browsing, search and downloads
+              work. It receives records such as album and photo opens, visible
+              thumbnails, favorite changes, search result counts, and download
+              requests and observable outcomes. Random browser and visit
+              identifiers connect these actions. They are not linked to your
+              Google or Chrome account and do not establish who you are.
+            </p>
+            <p>
+              The gallery does not send PostHog search words, contact form
+              contents, email addresses, raw visitor IP addresses, or recordings
+              of your screen. It sends limited device and layout information,
+              cleaned arrival-source tags, and photo or album identifiers.
+              Popularity measures describe recorded activity, not verified people
+              or proof that a file was saved to your device.
+            </p>
+            <p>
+              PostHog has separate retention from the gallery&apos;s own 90-day
+              records. The account currently reports a free plan. PostHog&apos;s
+              published policy provides one year of event history on free plans
+              and seven years on paid plans. These reporting windows are not a
+              guarantee that older stored data is automatically erased. Read the{' '}
+              <a href="https://posthog.com/docs/data/events-retention"
+                target="_blank" rel="noopener noreferrer">
+                PostHog event-retention explanation
+                <span className="assistive-text"> (opens in a new tab)</span>
+              </a>.
+            </p>
+            <p>
+              You can decline linked analytics or turn it off through the
+              gallery&apos;s{' '}
+              <a href="/photography/analytics/operator#analytics-preferences">
+                analytics preferences
+              </a>{' '}
+              and keep using the gallery. Turning it off stops new linked
+              collection and cancels queued exports. Records already being sent
+              or stored by PostHog are not automatically deleted. The same controls let you exclude this browser from
+              gallery activity counts without signing in. To request deletion
+              of earlier data, use the contact details below. These preferences
+              do not grant access to private operator tools.
             </p>
             <p>
               Supabase stores the gallery records and provides authentication
@@ -291,6 +336,15 @@ export default function PrivacyPage() {
               browser storage. That data remains on the device unless you clear
               site data in your browser. A favorite action can also be counted
               as a gallery engagement event, as described above.
+            </p>
+            <p>
+              If you allow linked gallery analytics, a random browser identifier
+              is stored on your device for up to 90 days from creation. A visit
+              identifier groups recorded interactions until 30 minutes of
+              inactivity or a maximum of 24 hours. Clearing storage, switching
+              browsers or changing devices can start a new identity. Analytics
+              permission and browser-exclusion preferences are also remembered
+              on your device.
             </p>
             <p>
               I do not use advertising cookies. Cloudflare may set short-lived,
