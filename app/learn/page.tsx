@@ -56,13 +56,13 @@ export default function LearnPage() {
                     <strong>{track.title}</strong>
                     <small>{track.tagline}</small>
                   </span>
-                  <span className="learn-track-start">
-                    <small>Start when</small>
-                    {track.startWhen}
-                  </span>
                   <span className="learn-track-output">
                     <small>What you’ll make</small>
                     {track.finalArtifact}
+                  </span>
+                  <span className="learn-track-start">
+                    <small>Start when</small>
+                    {track.startWhen}
                   </span>
                   <span className="learn-track-time">{track.timeline}</span>
                   <b aria-hidden="true">→</b>

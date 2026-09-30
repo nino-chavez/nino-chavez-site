@@ -80,8 +80,8 @@ export default async function Home() {
               in the real world.
             </p>
             <div className="field-hero__actions">
-              <Link className="field-hero__cta" href="/work">
-                See selected work <span aria-hidden="true">↓</span>
+              <Link className="field-hero__cta" href="/work/rally-hq">
+                See Rally HQ <span aria-hidden="true">→</span>
               </Link>
               <Link className="field-hero__about" href="/about">
                 About me →
@@ -119,7 +119,13 @@ export default async function Home() {
           {proof.map((item) => (
             <Link
               className={
-                item.live ? "proof-cell proof-cell--live" : "proof-cell"
+                [
+                  "proof-cell",
+                  item.live ? "proof-cell--live" : "",
+                  item.image ? "" : "proof-cell--text",
+                ]
+                  .filter(Boolean)
+                  .join(" ")
               }
               href={item.href}
               key={item.name}
