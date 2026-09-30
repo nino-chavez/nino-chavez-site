@@ -10,6 +10,7 @@ const primary = [
 ] as const;
 
 const secondary = [
+  ["Analytics choices", "/photography/analytics-preferences"],
   ["Now", "/now"],
   ["Links", "/links"],
   ["Privacy", "/privacy"],
