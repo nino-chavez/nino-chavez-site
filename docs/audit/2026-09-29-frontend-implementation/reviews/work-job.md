@@ -43,16 +43,16 @@ The detail pages do not create the same cost. Direct referrals can bypass the co
 
 ## The three paths and their strongest counterarguments
 
-1. **Keep Work prominent.**  
-   Strongest argument for it: public completeness remains obvious, and a visitor can browse without already knowing a project name.  
+1. **Keep Work prominent.**
+   Strongest argument for it: public completeness remains obvious, and a visitor can browse without already knowing a project name.
    Strongest argument against it: prominence is unsupported by observed referral tasks, while Home already carries breadth and selected proof.
 
-2. **Make Work a secondary archive — recommended.**  
-   Strongest argument against it: demotion could make the long tail feel hidden and weaken the site’s promise that unfinished or less-prestigious work remains visible. Search is not an adequate replacement because it requires recall.  
+2. **Make Work a secondary archive — recommended.**
+   Strongest argument against it: demotion could make the long tail feel hidden and weaken the site’s promise that unfinished or less-prestigious work remains visible. Search is not an adequate replacement because it requires recall.
    This is why `/work` should remain directly linked from Home, Search results, relevant detail pages, and the footer even if it leaves primary navigation.
 
-3. **Remove the collection entrance but retain detail pages.**  
-   Strongest argument for it: Home, Search, Links, and direct referrals cover most practical discovery tasks with less taxonomy.  
+3. **Remove the collection entrance but retain detail pages.**
+   Strongest argument for it: Home, Search, Links, and direct referrals cover most practical discovery tasks with less taxonomy.
    Strongest argument against it: there would be no way to inspect the complete public body of work without guessing queries or following fragmented relationships. The detail pages would survive, but public completeness would not.
 
 ## Required owner amendment

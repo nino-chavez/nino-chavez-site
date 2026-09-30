@@ -13,7 +13,7 @@ Initial verdict: ready for Nino’s visual review. The candidate has a coherent 
 
 **Strongest preserve argument**
 
-The light global header establishes one site; the content below it changes mode only where the visitor’s job changes. Home uses one decisive archival photo and puts the identity, claim, and action in readable negative space. Photography makes “find my event/photos” the dominant action. Signal Dispatch retains a serious reading environment and its own publication controls. This matches the visual-system requirement for a quiet printed record with photography carrying identity, while preserving runtime-local navigation. 
+The light global header establishes one site; the content below it changes mode only where the visitor’s job changes. Home uses one decisive archival photo and puts the identity, claim, and action in readable negative space. Photography makes “find my event/photos” the dominant action. Signal Dispatch retains a serious reading environment and its own publication controls. This matches the visual-system requirement for a quiet printed record with photography carrying identity, while preserving runtime-local navigation.
 
 **Remaining preference calls, not defects**
 
