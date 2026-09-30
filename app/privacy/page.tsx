@@ -11,7 +11,7 @@ const policySummary = [
   },
   {
     label: "Site analytics",
-    value: "Cookieless Cloudflare page-view and performance metrics.",
+    value: "Cookieless traffic totals, site action counts and optional linked analytics.",
   },
   {
     label: "Photography",
@@ -255,11 +255,31 @@ export default function PrivacyPage() {
               them. They are not linked to an account or visit identifier and
               are not transferred to PostHog.
             </p>
-            <h3 id="linked-gallery-analytics">Optional linked gallery analytics</h3>
+            <h3 id="site-action-analytics">Site activity</h3>
+            <p>
+              Public profile, writing and demo pages record visible page views,
+              link clicks, article scroll progress, time with an article visible,
+              and demo chapters reached. These signals do not prove that you read
+              an article, completed a demo or sent an inquiry. Contact addresses,
+              link text, search words and URL query strings are not collected by
+              this tracking. Without permission, these action records have no
+              browser or visit identifier and are not sent to PostHog. Raw site
+              action records expire after 90 days. Identifier-free daily totals
+              by public page, section and action may remain.
+            </p>
+            <p>
+              <a href="/photography/analytics-preferences">Analytics choices</a>
+              {" "}let you allow linked analytics or exclude this browser from
+              audience action counts. Choices apply to this browser on
+              ninochavez.co; they do not follow your email or Chrome account.
+              Cloudflare’s separate cookieless traffic totals may still include
+              your visits.
+            </p>
+            <h3 id="linked-gallery-analytics">Optional linked site analytics</h3>
             <p>
               With your analytics permission, I use PostHog Cloud, hosted in the
               United States, to understand how browsing, search and downloads
-              work. It receives records such as album and photo opens, visible
+              work across the profile, writing, demos and photography. It receives records such as album and photo opens, visible
               thumbnails, favorite changes, search result counts, and download
               requests and observable outcomes. Random browser and visit
               identifiers connect these actions. They are not linked to your
@@ -288,13 +308,13 @@ export default function PrivacyPage() {
             <p>
               You can decline linked analytics or turn it off through the
               gallery&apos;s{' '}
-              <a href="/photography/analytics/operator#analytics-preferences">
+              <a href="/photography/analytics-preferences">
                 analytics preferences
               </a>{' '}
               and keep using the gallery. Turning it off stops new linked
               collection and cancels queued exports. Records already being sent
               or stored by PostHog are not automatically deleted. The same controls let you exclude this browser from
-              gallery activity counts without signing in. To request deletion
+              site and gallery action counts without signing in. To request deletion
               of earlier data, use the contact details below. These preferences
               do not grant access to private operator tools.
             </p>
