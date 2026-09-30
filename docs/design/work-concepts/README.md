@@ -2,12 +2,14 @@
 
 Three comparison-only HTML prototypes for `/work`. Serve the repository root and open:
 
+Status: Nino rejected all three on September 29, 2026 and challenged the page's purpose. No candidate was selected or implemented. The collection's role and prominence are under review before further design work.
+
 - `docs/design/work-concepts/index.html`
 - `docs/design/work-concepts/a.html`
 - `docs/design/work-concepts/b.html`
 - `docs/design/work-concepts/c.html`
 
-The files expect site-root font paths such as `/fonts/inter-latin.woff2`; no production route imports them.
+The files load the repository's fonts from `public/fonts`; no production route imports them. `comparison.html` shows the captured phone views together.
 
 ## Source and preservation
 

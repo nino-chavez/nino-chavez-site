@@ -1,0 +1,38 @@
+{
+  "recordedAt": "2026-09-30T02:18:48.945758+00:00",
+  "retained": [
+    {
+      "purpose": "Local refit preview",
+      "url": "http://127.0.0.1:4310/",
+      "sessionId": 27265
+    },
+    {
+      "purpose": "Rejected comparison open in browser",
+      "url": "http://127.0.0.1:4311/docs/design/work-concepts/comparison.html",
+      "sessionId": 80205
+    }
+  ],
+  "stopped": [
+    {
+      "purpose": "Publication QA",
+      "port": 4312,
+      "sessionId": 5356,
+      "exitCode": 0
+    },
+    {
+      "purpose": "Gallery QA",
+      "port": 4313,
+      "sessionId": 80248,
+      "exitCode": 0
+    }
+  ],
+  "browserTemporaryTabsClosed": [
+    "5",
+    "6",
+    "7",
+    "8"
+  ],
+  "retainedBrowserTab": "4",
+  "viewportOverrideReset": true,
+  "worktreesRetained": "All unmerged review branches retained; unrelated worktrees not touched."
+}

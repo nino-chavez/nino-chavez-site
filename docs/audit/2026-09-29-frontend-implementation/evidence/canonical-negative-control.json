@@ -1,0 +1,8 @@
+{
+  "gate": "canonical URL",
+  "negativeControl": "unmodified navigation-worker build before canonical repair",
+  "route": "/work?domain=Volleyball",
+  "baselineStatus": 200,
+  "canonicalLinks": 0,
+  "knownDefectRejected": true
+}
