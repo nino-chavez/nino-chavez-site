@@ -4,6 +4,7 @@ import { learnTracks } from "../data";
 export const metadata = {
   title: "Learn",
   description: `${learnTracks.length} self-directed practitioner paths grounded in the work of Nino Chavez.`,
+  alternates: { canonical: "https://ninochavez.co/learn" },
 };
 
 export default function LearnPage() {

@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: "/privacy" },
   title: "Privacy",
   description:
     "What ninochavez.co collects, what the photography gallery records, and the choices available to visitors.",

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "source": "apps/nc-demos",
-  "sourceRevision": "25a0394e58f8365b41e3181f4702d837fbea1b78",
-  "generatedAt": "2026-08-28T18:08:22.433Z",
+  "sourceRevision": "8142570cc33df21156a61bc2490009bb85d2cae7",
+  "generatedAt": "2026-09-30T01:02:36.702Z",
   "sessionCount": 18,
   "techniqueCount": 11,
   "sessions": [
@@ -18,7 +18,7 @@
       "theme": "delegation",
       "accent": "#f97316",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/twelve-messages/img/gritty.jpg",
+        "src": "/work/demo-twelve-messages.jpg",
         "alt": "Published Instagram story rendered by the demo's pipeline"
       },
       "href": "https://ninochavez.co/demos/twelve-messages",
@@ -36,7 +36,7 @@
       "theme": "tools",
       "accent": "#f2b13d",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/browse-tool/img/preview.jpg",
+        "src": "/work/demo-browse-tool.jpg",
         "alt": "Demo 02 title slide: the browser is a shell command, with a real browse-shot transcript"
       },
       "href": "https://ninochavez.co/demos/browse-tool",
@@ -54,7 +54,7 @@
       "theme": "enforcement",
       "accent": "#c2382f",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/enforced-forever/img/preview.jpg",
+        "src": "/work/demo-enforced-forever.jpg",
         "alt": "Demo 03 title slide, featuring a real read-guard denial of an oversized screenshot"
       },
       "relatedTechniqueSlug": "guardrails",
@@ -73,7 +73,7 @@
       "theme": "memory",
       "accent": "#46c395",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/session-corpus/img/preview.jpg",
+        "src": "/work/demo-session-corpus.jpg",
         "alt": "Demo 04 title slide: a real artifact-miner run over 2,747 transcripts"
       },
       "relatedTechniqueSlug": "session-closeout",
@@ -92,7 +92,7 @@
       "theme": "autonomy",
       "accent": "#5b9dff",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/feedback-loop/img/preview.jpg",
+        "src": "/work/demo-feedback-loop.jpg",
         "alt": "Demo 05 title slide with a real agent-lane ticket and its labels"
       },
       "href": "https://ninochavez.co/demos/feedback-loop",
@@ -110,7 +110,7 @@
       "theme": "knowledge",
       "accent": "#b8940c",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/landmine-registry/img/preview.jpg",
+        "src": "/work/demo-landmine-registry.jpg",
         "alt": "Demo 06 title slide with the shipped-twice landmine exhibit"
       },
       "relatedTechniqueSlug": "registry",
@@ -129,7 +129,7 @@
       "theme": "verification",
       "accent": "#a78bfa",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/said-it-checked/img/preview.jpg",
+        "src": "/work/demo-said-it-checked.jpg",
         "alt": "Demo 07 title slide with a claim-versus-runtime-check exhibit"
       },
       "href": "https://ninochavez.co/demos/said-it-checked",
@@ -147,7 +147,7 @@
       "theme": "process",
       "accent": "#7dd3fc",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/agentic-gates/img/preview.jpg",
+        "src": "/work/demo-agentic-gates.jpg",
         "alt": "Demo 08 title slide: the staged pipeline with gate posts between every stage"
       },
       "relatedTechniqueSlug": "gates",
@@ -166,7 +166,7 @@
       "theme": "documentation",
       "accent": "#fb7185",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/beautifier/img/preview.jpg",
+        "src": "/work/demo-beautifier.jpg",
         "alt": "Demo 09 title slide: a README claim beside the code fact that contradicts it"
       },
       "href": "https://ninochavez.co/demos/beautifier",
@@ -184,7 +184,7 @@
       "theme": "applied-advisory",
       "accent": "#e8556b",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/four-questions/img/preview.jpg",
+        "src": "/work/demo-four-questions.jpg",
         "alt": "Demo 10 title slide with a confidence tag being downgraded from verified to search-derived"
       },
       "relatedTechniqueSlug": "provenance",
@@ -203,7 +203,7 @@
       "theme": "config-experiment",
       "accent": "#a78bfa",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/config-probe/img/preview.jpg",
+        "src": "/work/demo-config-probe.jpg",
         "alt": "Demo 11 title slide: the sycophancy was in the config, with the operator's verbatim question about model versus configuration"
       },
       "relatedTechniqueSlug": "config-probe",
@@ -222,7 +222,7 @@
       "theme": "tool-adoption",
       "accent": "#2dd4bf",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/adopt-or-skip/img/preview.jpg",
+        "src": "/work/demo-adopt-or-skip.jpg",
         "alt": "Demo 12 title slide: one component I didn't already have, with the operator's verbatim request to compare the tool against what he already runs"
       },
       "relatedTechniqueSlug": "adopt-or-skip",
@@ -241,7 +241,7 @@
       "theme": "admission-gates",
       "accent": "#f59e0b",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/gate-first/img/preview.jpg",
+        "src": "/work/demo-gate-first.jpg",
         "alt": "Demo 13 title slide: the gate was written first, with the preregistration commit that predates the model download"
       },
       "href": "https://ninochavez.co/demos/gate-first",
@@ -259,7 +259,7 @@
       "theme": "derived-not-narrated",
       "accent": "#18b0a8",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/kibble-and-co/img/preview.jpg",
+        "src": "/work/demo-kibble-and-co.jpg",
         "alt": "Demo 14 title slide: Kibble & Co. doesn't sell anything, the fictional pet-supply storefront built to make subscription flows real"
       },
       "href": "https://ninochavez.co/demos/kibble-and-co",
@@ -277,7 +277,7 @@
       "theme": "vendor-scoping",
       "accent": "#8b93c4",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/bid-package/img/preview.jpg",
+        "src": "/work/demo-bid-package.jpg",
         "alt": "Demo 15 title slide: the harder deliverable wasn't the build, showing the ten-document bid package's document list and story counts"
       },
       "href": "https://ninochavez.co/demos/bid-package",
@@ -295,7 +295,7 @@
       "theme": "confirm-then-act",
       "accent": "#3b82f6",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/asks-twice/img/preview.jpg",
+        "src": "/work/demo-asks-twice.jpg",
         "alt": "Demo 16 title slide: the agent that asks twice, showing the preview-then-execute turn card"
       },
       "href": "https://ninochavez.co/demos/asks-twice",
@@ -313,7 +313,7 @@
       "theme": "inferred-not-designed",
       "accent": "#d946ef",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/four-layouts/img/preview.jpg",
+        "src": "/work/demo-four-layouts.jpg",
         "alt": "Demo 17 title slide: the layout was inferred, not designed, with the four-persona quad — gatherer, hunter, researcher, gifter"
       },
       "href": "https://ninochavez.co/demos/four-layouts",
@@ -331,7 +331,7 @@
       "theme": "steering-across-agents",
       "accent": "#a3e635",
       "artifact": {
-        "src": "https://nc-demos.pages.dev/guardrail-removed/img/preview.jpg",
+        "src": "/work/demo-guardrail-removed.jpg",
         "alt": "Demo 18 title slide: the guardrail removed the storefront, with the four-step chain from direction to handoff to hardening to removal"
       },
       "href": "https://ninochavez.co/demos/guardrail-removed",
@@ -340,124 +340,7 @@
   ],
   "techniques": [
     {
-      "slug": "two-ways",
-      "number": "01",
-      "title": "Two Ways to Draw a System",
-      "summary": "Hand-authored SVG vs themed Mermaid — chosen per diagram, both shown working.",
-      "description": "How an AI agent draws a technical diagram that looks like your project and doesn't go stale — hand-authored SVG vs themed Mermaid, chosen per diagram. The first Applied technique companion to the ways-of-working session demos.",
-      "principles": [
-        "Choose the diagram form instead of defaulting to one.",
-        "Make the visual system native to the project, not the tool.",
-        "Read the system before drawing it."
-      ],
-      "relatedSessionSlugs": [],
-      "href": "https://ninochavez.co/demos/applied/two-ways",
-      "storyHref": "https://nc-demos.pages.dev/content/techniques/two-ways.json"
-    },
-    {
-      "slug": "corpus",
-      "number": "02",
-      "title": "Mine Your Own Transcripts",
-      "summary": "Treat your agent sessions as a searchable corpus — corrections become priors the next session reads.",
-      "description": "Every agent session is a transcript you usually throw away. Mine them instead: reusable prompts, your corrections as standing priors, and counted waste numbers that justify the next fix. The loop, from 614 real sessions.",
-      "principles": [
-        "Treat past sessions as your best reference.",
-        "Turn repeated corrections into priors the next session reads.",
-        "Re-derive important numbers when you use them."
-      ],
-      "relatedSessionSlugs": [],
-      "href": "https://ninochavez.co/demos/applied/corpus",
-      "storyHref": "https://nc-demos.pages.dev/content/techniques/corpus.json"
-    },
-    {
-      "slug": "gates",
-      "number": "03",
-      "title": "Gate Every Hand-Off",
-      "summary": "Agents work inside a stage; deterministic gates verify between. Gate the seam, not the middle.",
-      "description": "An AI agent is strong inside a stage and weak at the seams between them. The fix is a deterministic gate on every hand-off — a non-AI check the agent can't talk its way past. The shape, and the day production published fiction.",
-      "principles": [
-        "Keep agents inside stages and deterministic gates between them.",
-        "Derive the stage from disk instead of trusting the claim.",
-        "Do not mistake a second agent for a gate."
-      ],
-      "relatedSessionSlugs": [
-        "agentic-gates"
-      ],
-      "href": "https://ninochavez.co/demos/applied/gates",
-      "storyHref": "https://nc-demos.pages.dev/content/techniques/gates.json"
-    },
-    {
-      "slug": "guardrails",
-      "number": "04",
-      "title": "Promote a Correction to a Guardrail",
-      "summary": "Wrapper → deny-hook → CI ratchet: promote a repeated correction to the lowest rung that holds.",
-      "description": "A correction you give an AI in chat dies with the session. The fix is changing its environment — a wrapper, a deny-hook, or a CI ratchet — so the rule holds forever. The three-rung ladder, with real deny-hooks firing.",
-      "principles": [
-        "Promote a correction on the second repeat, not the first.",
-        "Use the lowest enforcement rung that holds.",
-        "Ship every guardrail with an escape hatch."
-      ],
-      "relatedSessionSlugs": [
-        "enforced-forever"
-      ],
-      "href": "https://ninochavez.co/demos/applied/guardrails",
-      "storyHref": "https://nc-demos.pages.dev/content/techniques/guardrails.json"
-    },
-    {
-      "slug": "registry",
-      "number": "05",
-      "title": "A Registry for What Grep Can't Find",
-      "summary": "Facts grep can't surface, held in one registry and enforced in CI — the conclusion, pre-paid once.",
-      "description": "Some load-bearing facts are invisible to search — the code compiles and the behavior is still wrong. Hold them in one registry, enforce the mechanical ones in CI, and split why / decided / currently-true. The technique, quoted from a real 25-entry registry.",
-      "principles": [
-        "Write the conclusion, not the search.",
-        "Trust test-backed facts and re-confirm verified-against claims.",
-        "Start the registry the second time the same hidden fact causes a failure."
-      ],
-      "relatedSessionSlugs": [
-        "landmine-registry"
-      ],
-      "href": "https://ninochavez.co/demos/applied/registry",
-      "storyHref": "https://nc-demos.pages.dev/content/techniques/registry.json"
-    },
-    {
-      "slug": "provenance",
-      "number": "06",
-      "title": "Put Provenance Labels on AI Research",
-      "summary": "Three label tiers, an adversarial re-derivation loop, and the honest downgrade — shown working.",
-      "description": "How to make AI-assisted research trustworthy for a reader who can't check it: a three-tier confidence label on every number, an adversarial audit loop that re-derives claims at their sources, and the honest downgrade when a source can't be read. The technique behind demo 10.",
-      "principles": [
-        "Distinguish a source you read from a search result about it.",
-        "Check who owns the domain behind every claim.",
-        "Prefer an honest downgrade to a false confirmation."
-      ],
-      "relatedSessionSlugs": [
-        "four-questions"
-      ],
-      "href": "https://ninochavez.co/demos/applied/provenance",
-      "storyHref": "https://nc-demos.pages.dev/content/techniques/provenance.json"
-    },
-    {
-      "slug": "config-probe",
-      "number": "07",
-      "title": "Bare-Arm Test Your Agent Config",
-      "summary": "A control arm for your own harness: bare mode, isolation arms, and rules validated before adoption.",
-      "description": "How to tell whether an AI behavior gap is the model or your harness: run the same model bare as a control arm, isolate suspect config blocks, validate candidate rules as experiment arms, and promote only what the grid confirms. The technique behind demo 11.",
-      "principles": [
-        "Run the control arm before drawing conclusions.",
-        "Score behaviors, not vibes.",
-        "Pin the worktree and fence the reads.",
-        "Promote a rule only after the experiment validates it."
-      ],
-      "relatedSessionSlugs": [
-        "config-probe"
-      ],
-      "href": "https://ninochavez.co/demos/applied/config-probe",
-      "storyHref": "https://nc-demos.pages.dev/content/techniques/config-probe.json"
-    },
-    {
       "slug": "adopt-or-skip",
-      "number": "08",
       "title": "Run the Subtraction Before You Install",
       "summary": "A feature list is half a subtraction. Enumerate your baseline, sort the tool's list into three buckets, then search its tracker for the uninstall.",
       "description": "Four checks that run before anything touches your machine: enumerate what you already have, subtract it from what the tool ships into native, new, and blocked, query the part of the repository nobody curates, and confirm the uninstall actually works. The technique behind demo 12.",
@@ -474,36 +357,67 @@
       "storyHref": "https://nc-demos.pages.dev/content/techniques/adopt-or-skip.json"
     },
     {
-      "slug": "session-closeout",
-      "number": "09",
-      "title": "Close the Session, Keep the Lesson",
-      "summary": "Turn a finished agent session into durable project truth and compact recall before its raw transcript expires.",
-      "description": "Promote project truth, distill the reusable method, enqueue fast, mine in the background, and delete raw transcripts only after an explicit archive-safety receipt.",
+      "slug": "config-probe",
+      "title": "Bare-Arm Test Your Agent Config",
+      "summary": "A control arm for your own harness: bare mode, isolation arms, and rules validated before adoption.",
+      "description": "How to tell whether an AI behavior gap is the model or your harness: run the same model bare as a control arm, isolate suspect config blocks, validate candidate rules as experiment arms, and promote only what the grid confirms. The technique behind demo 11.",
       "principles": [
-        "Project truth stays with the project that owns it.",
-        "Lifecycle hooks enqueue; background workers mine.",
-        "A current watermark proves ingestion, not semantic completeness."
+        "Run the control arm before drawing conclusions.",
+        "Score behaviors, not vibes.",
+        "Pin the worktree and fence the reads.",
+        "Promote a rule only after the experiment validates it."
       ],
       "relatedSessionSlugs": [
-        "session-corpus"
+        "config-probe"
       ],
-      "href": "https://ninochavez.co/demos/applied/session-closeout",
-      "storyHref": "https://nc-demos.pages.dev/content/techniques/session-closeout.json"
+      "href": "https://ninochavez.co/demos/applied/config-probe",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/config-probe.json"
     },
     {
-      "slug": "one-heavy-job",
-      "number": "10",
-      "title": "One Heavy Job at a Time",
-      "summary": "Local inference makes scheduling an operational decision — and a panic's exit reason is two published integers, not a guess.",
-      "description": "Running a model locally turns a laptop into a machine that has to be scheduled. A kernel panic during an inference run, how to decode the panic's exit reason from the vendor's own header instead of guessing at it, and the habits that made recovery a twenty-minute job instead of a lost morning.",
+      "slug": "corpus",
+      "title": "Mine Your Own Transcripts",
+      "summary": "Treat your agent sessions as a searchable corpus — corrections become priors the next session reads.",
+      "description": "Every agent session is a transcript you usually throw away. Mine them instead: reusable prompts, your corrections as standing priors, and counted waste numbers that justify the next fix. The loop, from 614 real sessions.",
       "principles": [
-        "Give a local model run the machine to itself.",
-        "Look the panic's namespace and subcode up in the vendor's header before translating them.",
-        "Write results atomically, into a directory the system is not allowed to wipe."
+        "Treat past sessions as your best reference.",
+        "Turn repeated corrections into priors the next session reads.",
+        "Re-derive important numbers when you use them."
       ],
       "relatedSessionSlugs": [],
-      "href": "https://ninochavez.co/demos/applied/one-heavy-job",
-      "storyHref": "https://nc-demos.pages.dev/content/techniques/one-heavy-job.json"
+      "href": "https://ninochavez.co/demos/applied/corpus",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/corpus.json"
+    },
+    {
+      "slug": "gates",
+      "title": "Gate Every Hand-Off",
+      "summary": "Agents work inside a stage; deterministic gates verify between. Gate the seam, not the middle.",
+      "description": "An AI agent is strong inside a stage and weak at the seams between them. The fix is a deterministic gate on every hand-off — a non-AI check the agent can't talk its way past. The shape, and the day production published fiction.",
+      "principles": [
+        "Keep agents inside stages and deterministic gates between them.",
+        "Derive the stage from disk instead of trusting the claim.",
+        "Do not mistake a second agent for a gate."
+      ],
+      "relatedSessionSlugs": [
+        "agentic-gates"
+      ],
+      "href": "https://ninochavez.co/demos/applied/gates",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/gates.json"
+    },
+    {
+      "slug": "guardrails",
+      "title": "Promote a Correction to a Guardrail",
+      "summary": "Wrapper → deny-hook → CI ratchet: promote a repeated correction to the lowest rung that holds.",
+      "description": "A correction you give an AI in chat dies with the session. The fix is changing its environment — a wrapper, a deny-hook, or a CI ratchet — so the rule holds forever. The three-rung ladder, with real deny-hooks firing.",
+      "principles": [
+        "Promote a correction on the second repeat, not the first.",
+        "Use the lowest enforcement rung that holds.",
+        "Ship every guardrail with an escape hatch."
+      ],
+      "relatedSessionSlugs": [
+        "enforced-forever"
+      ],
+      "href": "https://ninochavez.co/demos/applied/guardrails",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/guardrails.json"
     },
     {
       "slug": "local-vs-frontier",
@@ -519,6 +433,82 @@
       "relatedSessionSlugs": [],
       "href": "https://ninochavez.co/demos/applied/local-vs-frontier",
       "storyHref": "https://nc-demos.pages.dev/content/techniques/local-vs-frontier.json"
+    },
+    {
+      "slug": "one-heavy-job",
+      "title": "One Heavy Job at a Time",
+      "summary": "Local inference makes scheduling an operational decision — and a panic's exit reason is two published integers, not a guess.",
+      "description": "Running a model locally turns a laptop into a machine that has to be scheduled. A kernel panic during an inference run, how to decode the panic's exit reason from the vendor's own header instead of guessing at it, and the habits that made recovery a twenty-minute job instead of a lost morning.",
+      "principles": [
+        "Give a local model run the machine to itself.",
+        "Look the panic's namespace and subcode up in the vendor's header before translating them.",
+        "Write results atomically, into a directory the system is not allowed to wipe."
+      ],
+      "relatedSessionSlugs": [],
+      "href": "https://ninochavez.co/demos/applied/one-heavy-job",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/one-heavy-job.json"
+    },
+    {
+      "slug": "provenance",
+      "title": "Put Provenance Labels on AI Research",
+      "summary": "Three label tiers, an adversarial re-derivation loop, and the honest downgrade — shown working.",
+      "description": "How to make AI-assisted research trustworthy for a reader who can't check it: a three-tier confidence label on every number, an adversarial audit loop that re-derives claims at their sources, and the honest downgrade when a source can't be read. The technique behind demo 10.",
+      "principles": [
+        "Distinguish a source you read from a search result about it.",
+        "Check who owns the domain behind every claim.",
+        "Prefer an honest downgrade to a false confirmation."
+      ],
+      "relatedSessionSlugs": [
+        "four-questions"
+      ],
+      "href": "https://ninochavez.co/demos/applied/provenance",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/provenance.json"
+    },
+    {
+      "slug": "registry",
+      "title": "A Registry for What Grep Can't Find",
+      "summary": "Facts grep can't surface, held in one registry and enforced in CI — the conclusion, pre-paid once.",
+      "description": "Some load-bearing facts are invisible to search — the code compiles and the behavior is still wrong. Hold them in one registry, enforce the mechanical ones in CI, and split why / decided / currently-true. The technique, quoted from a real 25-entry registry.",
+      "principles": [
+        "Write the conclusion, not the search.",
+        "Trust test-backed facts and re-confirm verified-against claims.",
+        "Start the registry the second time the same hidden fact causes a failure."
+      ],
+      "relatedSessionSlugs": [
+        "landmine-registry"
+      ],
+      "href": "https://ninochavez.co/demos/applied/registry",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/registry.json"
+    },
+    {
+      "slug": "session-closeout",
+      "title": "Close the Session, Keep the Lesson",
+      "summary": "Turn a finished agent session into durable project truth and compact recall before its raw transcript expires.",
+      "description": "Promote project truth, distill the reusable method, enqueue fast, mine in the background, and delete raw transcripts only after an explicit archive-safety receipt.",
+      "principles": [
+        "Project truth stays with the project that owns it.",
+        "Lifecycle hooks enqueue; background workers mine.",
+        "A current watermark proves ingestion, not semantic completeness."
+      ],
+      "relatedSessionSlugs": [
+        "session-corpus"
+      ],
+      "href": "https://ninochavez.co/demos/applied/session-closeout",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/session-closeout.json"
+    },
+    {
+      "slug": "two-ways",
+      "title": "Two Ways to Draw a System",
+      "summary": "Hand-authored SVG vs themed Mermaid — chosen per diagram, both shown working.",
+      "description": "How an AI agent draws a technical diagram that looks like your project and doesn't go stale — hand-authored SVG vs themed Mermaid, chosen per diagram. The first Applied technique companion to the ways-of-working session demos.",
+      "principles": [
+        "Choose the diagram form instead of defaulting to one.",
+        "Make the visual system native to the project, not the tool.",
+        "Read the system before drawing it."
+      ],
+      "relatedSessionSlugs": [],
+      "href": "https://ninochavez.co/demos/applied/two-ways",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/two-ways.json"
     }
   ]
 }

@@ -23,6 +23,7 @@ import { writingSnapshot } from "../writing";
 import "./cv.css";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/cv" },
   title: "CV",
   description: `The career record of Nino Chavez, a product architect in ${identity.location}: positions since ${careerStartYear}, public work, education, and skills.`,
 };

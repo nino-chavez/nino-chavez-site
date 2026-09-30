@@ -48,6 +48,28 @@ async function htmlFor(path) {
   return (await response.text()).replaceAll("<!-- -->", "");
 }
 
+test("public entrances keep their own canonical URL on the shared domain", async () => {
+  for (const [path, canonical] of [
+    ["/", "https://ninochavez.co/"],
+    ["/work?domain=Volleyball", "https://ninochavez.co/work"],
+    ["/demos", "https://ninochavez.co/demos"],
+    ["/learn", "https://ninochavez.co/learn"],
+    ["/learn/builder", "https://ninochavez.co/learn/builder"],
+    ["/blog", "https://ninochavez.co/blog"],
+    ["/about", "https://ninochavez.co/about"],
+    ["/now", "https://ninochavez.co/now"],
+    ["/links", "https://ninochavez.co/links"],
+    ["/cv", "https://ninochavez.co/cv"],
+    ["/privacy", "https://ninochavez.co/privacy"],
+    ["/search?q=Blueprint", "https://ninochavez.co/search"],
+  ]) {
+    const html = await htmlFor(path);
+    const links = [...html.matchAll(/<link\b(?=[^>]*rel="canonical")[^>]*>/g)];
+    assert.equal(links.length, 1, `${path} has one canonical`);
+    assert.equal(links[0][0].match(/href="([^"]+)"/)?.[1], canonical, path);
+  }
+});
+
 test("server-renders the personal entrance and global navigation", async () => {
   const response = await render("/");
   const html = (await response.text()).replaceAll("<!-- -->", "");
@@ -70,7 +92,7 @@ test("server-renders the personal entrance and global navigation", async () => {
   assert.doesNotMatch(html, /Current working set/);
   assert.match(html, /From the photography archive/);
   assert.match(html, /Building since 1999/);
-  assert.match(html, /See selected work/);
+  assert.match(html, /See Rally HQ/);
   assert.match(html, /About me/);
   assert.match(html, /On the court/);
   assert.match(html, /Selected work/);
@@ -529,6 +551,10 @@ test("renders the complete Signal Dispatch publication and real article handoffs
     /href="https:\/\/ninochavez\.co\/blog\/the-scaffolding-the-agent-doesnt-build"/,
   );
   assert.match(searchHtml, /Essay · Reflection · 2026/);
+  assert.doesNotMatch(
+    searchHtml,
+    /href="https:\/\/ninochavez\.co\/blog\/[^"]+"[^>]*target="_blank"/,
+  );
 
   assert.equal(
     Object.values(writingSnapshot.kindCounts).reduce(
@@ -1037,6 +1063,10 @@ test("links work records to the writing that covers them", async () => {
 
   const rally = rallyHtml.split('<script id="_R_">')[0];
   assert.match(rally, /Written about this/);
+  assert.doesNotMatch(
+    rally,
+    /href="https:\/\/ninochavez\.co\/blog\/[^"]+"[^>]*target="_blank"/,
+  );
   for (const slug of [
     "what-223-sessions-taught-me-about-working-with-ai",
     "setting-up-an-ai-native-dev-environment",

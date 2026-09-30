@@ -393,7 +393,7 @@ code {
 }
 
 .navigation-dialog .mobile-secondary {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   padding: 14px 18px;
   gap: 8px;
 }
@@ -1644,8 +1644,13 @@ h3 {
 }
 
 .header-inner {
-  grid-template-columns: minmax(190px, 1fr) auto minmax(190px, 1fr);
   min-height: var(--header-height);
+}
+
+@media (min-width: 921px) {
+  .header-inner {
+    grid-template-columns: minmax(190px, 1fr) auto minmax(190px, 1fr);
+  }
 }
 
 .identity-link {
@@ -2401,7 +2406,7 @@ h3 {
 
 .learn-opening h1 {
   max-width: 12ch;
-  font-size: clamp(3.6rem, 7vw, 7rem);
+  font-size: clamp(3.6rem, 6vw, 6rem);
 }
 
 .learn-opening h1 span {
@@ -3016,10 +3021,28 @@ h3 {
 }
 
 @media (max-width: 720px) {
+  .learn-opening .library-opening__copy {
+    margin-top: 24px;
+    padding-block: 0;
+    gap: 20px;
+  }
+
+  .learn-opening {
+    padding-bottom: 24px;
+  }
+
   .learn-opening h1 {
     max-width: 100%;
-    font-size: clamp(3.05rem, 13.5vw, 4.75rem);
+    font-size: clamp(2.5rem, 11vw, 3.6rem);
     letter-spacing: -0.04em;
+  }
+
+  .learn-room {
+    padding-top: 32px;
+  }
+
+  .learn-chooser {
+    gap: 24px;
   }
 
   .learn-track-register a {
@@ -3027,7 +3050,8 @@ h3 {
     grid-template-areas:
       "name arrow"
       "output output"
-      "start time";
+      "start start"
+      "time time";
     min-height: 0;
     padding: 20px 0;
     gap: 14px 16px;
@@ -3403,11 +3427,10 @@ h3 {
 /* Writing — the complete Signal Dispatch publication */
 
 .writing-opening h1 {
-  font-size: clamp(3.4rem, 6vw, 6.4rem);
+  font-size: clamp(3.4rem, 6vw, 6rem);
 }
 
 @media (min-width: 981px) {
-  .learn-opening .library-opening__copy,
   .writing-opening .library-opening__copy {
     grid-template-columns: minmax(0, 1fr);
     gap: clamp(30px, 4vw, 58px);
@@ -3420,7 +3443,18 @@ h3 {
   }
 
   .learn-opening h1 {
-    font-size: clamp(5.2rem, 8.2vw, 8.8rem);
+    font-size: clamp(3.6rem, 6vw, 6rem);
+  }
+
+  .learn-opening .library-opening__copy {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: start;
+    gap: clamp(32px, 4vw, 64px);
+  }
+
+  .learn-opening .library-opening__copy > div:last-child {
+    width: auto;
+    margin-left: 0;
   }
 
   .learn-opening h1 span,
@@ -3429,7 +3463,7 @@ h3 {
   }
 
   .writing-opening h1 {
-    font-size: clamp(4.8rem, 8vw, 8.75rem);
+    font-size: clamp(3.4rem, 6vw, 6rem);
   }
 }
 
@@ -7761,7 +7795,7 @@ h3 {
 
 @media (max-width: 760px) {
   .field-hero {
-    min-height: min(76svh, 680px);
+    min-height: 480px;
     background-image: linear-gradient(
         180deg,
         rgb(14 25 40 / 0) 0%,
@@ -7785,6 +7819,19 @@ h3 {
     /* Narrow windows have ~660px of cover slack: anchor the photo at 38%
        so the subject sits right of the copy instead of under it. */
     background-position: center, 38% 30%;
+  }
+
+  .field-hero__stage {
+    padding-top: 36px;
+  }
+
+  .proof-bench {
+    padding-top: 36px;
+  }
+
+  .proof-bench__register {
+    margin-bottom: 24px;
+    gap: 20px;
   }
 
   .proof-bench__register {

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/about" },
   title: "About Nino Chavez",
   description:
     "Nino Chavez is a product architect, builder, tournament operator, photographer, writer, and DJ in Chicago.",

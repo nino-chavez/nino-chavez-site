@@ -94,6 +94,7 @@ const resultLimits = {
 } as const;
 
 export const metadata = {
+  alternates: { canonical: "/search" },
   title: "Search",
   description: "Search work, sessions, techniques, writing, and site pages.",
 };
@@ -311,8 +312,6 @@ export default async function SearchPage({
                   <a
                     key={`${item.kind}-${item.slug}`}
                     href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     <span>
                       {item.kind} · {item.category} ·{" "}
@@ -320,9 +319,6 @@ export default async function SearchPage({
                     </span>
                     <strong>{item.title}</strong>
                     {item.excerpt ? <small>{item.excerpt}</small> : null}
-                    <span className="assistive-text">
-                      (opens in a new tab)
-                    </span>
                   </a>
                 ))}
               </div>

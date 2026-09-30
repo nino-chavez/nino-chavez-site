@@ -18,6 +18,7 @@ export async function generateMetadata({
   return track
     ? {
         title: `${track.title} learning path`,
+        alternates: { canonical: `/learn/${track.slug}` },
         description: `${track.tagline}. What you’ll make: ${track.finalArtifact}.`,
       }
     : {};

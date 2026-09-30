@@ -2,6 +2,10 @@ import Link from "next/link";
 import { domains, learnTracks, workItems } from "./data";
 import { getDemoSnapshot } from "./demos";
 
+export const metadata = {
+  alternates: { canonical: "https://ninochavez.co/" },
+};
+
 const proof = [
   {
     name: "Rally HQ",

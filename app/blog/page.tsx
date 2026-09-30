@@ -3,6 +3,7 @@ import { WritingLibrary } from "../components/WritingLibrary";
 import { getWritingSnapshot } from "../writing";
 
 export const metadata = {
+  alternates: { canonical: "/blog" },
   title: "Writing — Signal Dispatch",
   description:
     "The complete Signal Dispatch publication: essays, whitepapers, presentations, tutorials, counterpoints, and fiction by Nino Chavez.",
@@ -108,8 +109,6 @@ export default async function BlogPage() {
               <li key={series.slug}>
                 <a
                   href={series.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   <span className="series-name">
                     <strong>{series.title}</strong>
@@ -122,10 +121,7 @@ export default async function BlogPage() {
                       {series.articleCount === 1 ? "article" : "articles"}
                     </small>
                   </span>
-                  <b aria-hidden="true">↗</b>
-                  <span className="assistive-text">
-                    (opens in a new tab)
-                  </span>
+                  <b aria-hidden="true">→</b>
                 </a>
               </li>
             ))}

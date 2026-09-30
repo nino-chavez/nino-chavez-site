@@ -98,6 +98,9 @@ export function SiteHeader() {
   }
 
   function handleMenuLink(event: React.MouseEvent<HTMLAnchorElement>) {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      return;
+    }
     event.preventDefault();
     navigateFromMenu(event.currentTarget.href);
   }
@@ -111,6 +114,22 @@ export function SiteHeader() {
       search.searchParams.set("q", query);
     }
     navigateFromMenu(search.href);
+  }
+
+  function handleMenuKeys(event: React.KeyboardEvent<HTMLDialogElement>) {
+    if (event.key !== "Tab") return;
+    const controls = Array.from(event.currentTarget.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), input:not([disabled])',
+    )).filter((element) => element.getClientRects().length > 0);
+    const first = controls[0];
+    const last = controls[controls.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last?.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first?.focus();
+    }
   }
 
   return (
@@ -169,6 +188,7 @@ export function SiteHeader() {
         ref={dialogRef}
         className="navigation-dialog"
         aria-labelledby="navigation-dialog-title"
+        onKeyDown={handleMenuKeys}
         onClose={() => {
           setMenuOpen(false);
           menuButtonRef.current?.focus();

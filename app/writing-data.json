@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "source": "apps/blog/astro-build",
-  "sourceRevision": "40b0cd2afe627ae6cef15f7a53f6a06d5030e9d5",
-  "generatedAt": "2026-08-16T23:36:57.607Z",
-  "latestPublishedAt": "2026-08-17",
-  "publicPieceCount": 298,
+  "sourceRevision": "c3d0fb4d8db47f1610302e8b30c36471f9496a5b",
+  "generatedAt": "2026-09-30T01:18:59.896Z",
+  "latestPublishedAt": "2026-09-29",
+  "publicPieceCount": 306,
   "kindCounts": {
-    "Essay": 252,
+    "Essay": 260,
     "Whitepaper": 15,
     "Presentation": 9,
     "Tutorial": 8,
@@ -27,13 +27,126 @@
     "Personal Finance",
     "Philosophy",
     "Reflection",
-    "Systems Thinking"
+    "Systems Thinking",
+    "Uncategorized"
   ],
   "years": [
     "2026",
     "2025"
   ],
   "items": [
+    {
+      "slug": "the-work-doesnt-end-at-send",
+      "title": "The Work Doesn’t End at Send",
+      "excerpt": "AI can make a request easier to send without making it easier to fulfill. Jevons paradox and doing less offer a way to examine the work left behind.",
+      "publishedAt": "2026-09-29",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai",
+        "productivity",
+        "ai-agents"
+      ],
+      "href": "https://ninochavez.co/blog/the-work-doesnt-end-at-send"
+    },
+    {
+      "slug": "trying-to-teach-an-ai-how-i-edit-photos",
+      "title": "Trying to teach an AI how I edit photos",
+      "excerpt": "We built a Lightroom editing experiment and ran blind comparisons against a fixed recipe. The results led me to ask what the work had cost and why we kept going.",
+      "publishedAt": "2026-09-29",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "photography",
+        "ai-development",
+        "experimentation"
+      ],
+      "href": "https://ninochavez.co/blog/trying-to-teach-an-ai-how-i-edit-photos"
+    },
+    {
+      "slug": "the-connector-you-cant-oauth",
+      "title": "The Connector You Can't OAuth",
+      "excerpt": "I asked the new Siri what it could infer from a week of texts. The answer was not a better chatbot. It was inference over a graph no OAuth connector gets.",
+      "publishedAt": "2026-09-15",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "product-strategy",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/the-connector-you-cant-oauth"
+    },
+    {
+      "slug": "give-your-ai-a-reason-for-every-design-reference",
+      "title": "Give Your AI a Reason for Every Design Reference",
+      "excerpt": "A useful design reference may come from a completely different product. The work is identifying the decision it helps with, then telling the agent which part should transfer.",
+      "publishedAt": "2026-09-09",
+      "kind": "Essay",
+      "category": "AI Development",
+      "tags": [
+        "ai-development",
+        "product-design",
+        "design-references"
+      ],
+      "href": "https://ninochavez.co/blog/give-your-ai-a-reason-for-every-design-reference"
+    },
+    {
+      "slug": "who-is-still-driving",
+      "title": "Who Is Still Driving?",
+      "excerpt": "Using AI takes practice, but a product that needs an expert to catch its mistakes should say so before someone relies on it.",
+      "publishedAt": "2026-09-06",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "ai-development",
+        "ai-governance"
+      ],
+      "href": "https://ninochavez.co/blog/who-is-still-driving"
+    },
+    {
+      "slug": "rigorous-about-the-wrong-question",
+      "title": "Rigorous About the Wrong Question",
+      "excerpt": "I asked an AI agent to audit my app for the person it was built for. It sent five sub-agents to check documents and none of them looked at the screen.",
+      "publishedAt": "2026-09-03",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "ai-governance",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/rigorous-about-the-wrong-question"
+    },
+    {
+      "slug": "nobody-owns-what-the-agent-leaves-running",
+      "title": "Nobody Owns What the Agent Leaves Running",
+      "excerpt": "My machine ran out of resources, so I handed an agent four screenshots and typed one word: fix. It did a good job. A day later, twenty-two connector processes were still running, every one of them marked disabled in config. Nothing had failed — and that turns out to be the interesting part.",
+      "publishedAt": "2026-08-23",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "ai-development",
+        "ai-governance"
+      ],
+      "href": "https://ninochavez.co/blog/nobody-owns-what-the-agent-leaves-running"
+    },
+    {
+      "slug": "the-audit-reproduced-the-failure",
+      "title": "The Audit Reproduced the Failure",
+      "excerpt": "A small inspection of one runaway session became repeated parallel work before it had earned that expansion. The 119-of-118 report was the alarm.",
+      "publishedAt": "2026-08-23",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "ai-development",
+        "ai-governance"
+      ],
+      "href": "https://ninochavez.co/blog/the-audit-reproduced-the-failure"
+    },
     {
       "slug": "diff-your-spec-against-its-system-class",
       "title": "Diff Your Spec Against Its System Class",
@@ -186,7 +299,7 @@
     {
       "slug": "the-cut-youll-make-twice",
       "title": "The Cut You'll Make Twice",
-      "excerpt": "A guardrail that fires tells you it fired. A constraint built into the shape of what you hand a model tells you nothing, ever — including when you put it in the wrong place. I went looking for the line that would have logged it. There isn't one.",
+      "excerpt": "A written rule is not a control until the system has a place to enforce it and a failure record that proves what happened.",
       "publishedAt": "2026-08-06",
       "kind": "Essay",
       "category": "AI & Automation",
@@ -480,7 +593,7 @@
       "excerpt": "What Lopopolo's million lines confirmed. On December 30, 2025 I published a whitepaper claiming the marginal cost of code generation was approaching zero, that this would produce a class of just-in-time software that challenges the SaaS model, and that the locus of value was shifting from the codebase to the intent behind it. On February 11, 2026, OpenAI published the empirical receipt — a three-engineer team producing one million lines of code over five months with zero manually-written lines. The thesis was right. The framing needed one precision upgrade.",
       "publishedAt": "2026-05-25",
       "kind": "Counterpoint",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "agentic-systems",
         "software-economics",
@@ -494,7 +607,7 @@
       "excerpt": "",
       "publishedAt": "2026-05-24",
       "kind": "Whitepaper",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [],
       "href": "https://ninochavez.co/blog/whitepapers/big-blueprint-methodology"
     },
@@ -504,7 +617,7 @@
       "excerpt": "The predictable objection to the chassis argument is that templates and contracts don't eliminate review — they just relocate it. That objection treats agent output as the inspection target. The Industrial Revolution settled the same argument two centuries ago, in favor of inspecting the lathe instead of the bolt.",
       "publishedAt": "2026-05-24",
       "kind": "Counterpoint",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "agentic-systems",
         "architecture",
@@ -995,7 +1108,7 @@
       "excerpt": "A systematic challenge to the mimicry-vs-native framing. Where the dual-track model holds, where it fractures, and what the original analysis underweights.",
       "publishedAt": "2026-03-01",
       "kind": "Counterpoint",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "agentic-systems",
         "deep-dive"
@@ -1128,7 +1241,7 @@
       "excerpt": "A systematic challenge to the bandwidth-to-AI analogy. Where the four-stage arc holds, where it fractures, and what the original analysis underweights.",
       "publishedAt": "2026-02-20",
       "kind": "Counterpoint",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "deep-dive"
@@ -1689,7 +1802,7 @@
       "href": "https://ninochavez.co/blog/i-dont-want-to-be-a-10-person-team-of-one"
     },
     {
-      "slug": "q1-2026-the-integration-quarter",
+      "slug": "q1-2025-the-integration-quarter",
       "title": "Q1 2026: The Integration Quarter",
       "excerpt": "Everyone spent 2024-2025 experimenting with AI features. Q1 2026 is when the survivors figure out what actually works—and kill what doesn't.",
       "publishedAt": "2025-12-03",
@@ -1701,7 +1814,7 @@
         "commerce",
         "product-strategy"
       ],
-      "href": "https://ninochavez.co/blog/q1-2026-the-integration-quarter"
+      "href": "https://ninochavez.co/blog/q1-2025-the-integration-quarter"
     },
     {
       "slug": "the-storefront-that-builds-itself",
@@ -1782,7 +1895,7 @@
       "excerpt": "",
       "publishedAt": "2025-11-27",
       "kind": "Whitepaper",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [],
       "href": "https://ninochavez.co/blog/whitepapers/the-agentic-shift"
     },
@@ -1834,7 +1947,7 @@
       "excerpt": "",
       "publishedAt": "2025-11-23",
       "kind": "Whitepaper",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [],
       "href": "https://ninochavez.co/blog/whitepapers/the-fourth-channel"
     },
@@ -1844,7 +1957,7 @@
       "excerpt": "",
       "publishedAt": "2025-11-22",
       "kind": "Whitepaper",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [],
       "href": "https://ninochavez.co/blog/whitepapers/the-algorithmic-consumer"
     },
@@ -1951,7 +2064,7 @@
       "href": "https://ninochavez.co/blog/the-do-more-with-less-paradox"
     },
     {
-      "slug": "self-service-paradox",
+      "slug": "self-service-paradox-revised",
       "title": "When Did I Become the Employee?",
       "excerpt": "I'm not just paying for the service anymore. I'm doing the work. And somewhere between the self-checkout and the self-install kit, I stopped noticing when 'convenience' became unpaid labor.",
       "publishedAt": "2025-10-29",
@@ -1961,7 +2074,7 @@
         "architecture",
         "reflection"
       ],
-      "href": "https://ninochavez.co/blog/self-service-paradox"
+      "href": "https://ninochavez.co/blog/self-service-paradox-revised"
     },
     {
       "slug": "ai-agents-need-a-cop",
@@ -2856,7 +2969,7 @@
       "excerpt": "This post wraps my “Help Me Help You” arc and opens a new question: If precision makes AI more effective, does it also increase human disconnection? I’ve felt the drift. The next thread I’m pulling on is: how to stay human inside all this structure.",
       "publishedAt": "2025-07-02",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "architecture"
@@ -2881,7 +2994,7 @@
       "excerpt": "A behind-the-scenes look at how I use GPT and Lovable together. One rewrites the prompt. One generates the code. I just define the intent — and stay out of the way. This isn’t a tech stack. It’s a new mode of working.",
       "publishedAt": "2025-07-02",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "architecture"
@@ -2894,7 +3007,7 @@
       "excerpt": "Prompting is evolving into orchestration. One AI clarifies, another executes, a third checks the result. We’re entering an era where modular intelligence matters — and prompts become the interface between thinking systems.",
       "publishedAt": "2025-07-02",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "architecture"
@@ -3028,7 +3141,7 @@
       "excerpt": "Most reorgs I’ve seen are just corporate feng shui — shift a few boxes, rename a few titles, pretend it’s visionary. But this one? This one actually maps to something real. For once, the language isn’t just for clients — it mirrors what I’ve been doing in my own damn operating system.",
       "publishedAt": "2025-06-24",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "commerce",
         "consulting"
@@ -3067,7 +3180,7 @@
       "excerpt": "Most MVPs aren’t minimum or viable — they’re just premature.",
       "publishedAt": "2025-06-20",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "consulting",
         "architecture"
@@ -3080,7 +3193,7 @@
       "excerpt": "One of the easiest traps to fall into as a leader or expert is assuming we already understand. That assumption — even when subtle — shuts down curiosity, slows progress, and can quietly place the burden of clarity on everyone but ourselves.",
       "publishedAt": "2025-06-19",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "leadership",
         "reflection"
@@ -3166,7 +3279,7 @@
       "excerpt": "Signal Reflex is now Signal Dispatch — a shift from sensing to sending. Same voice, sharper intent. This is where ideas go out.",
       "publishedAt": "2025-06-16",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "leadership"
@@ -3179,7 +3292,7 @@
       "excerpt": "(How to Keep Moving Without Losing Yourself)",
       "publishedAt": "2025-06-15",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "leadership"
@@ -3655,7 +3768,7 @@
       "excerpt": "A structured index of essays and field notes from Signal Dispatch. Organized by theme and series",
       "publishedAt": "2025-06-05",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "commerce",
         "leadership",

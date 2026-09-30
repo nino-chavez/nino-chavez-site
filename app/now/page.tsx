@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/now" },
   title: "Now",
   description:
     "A dated view of the work and operating questions that currently have Nino Chavez’s attention.",

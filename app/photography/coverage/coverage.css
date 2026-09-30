@@ -5,7 +5,7 @@
 .coverage-breadcrumb span{display:inline-flex;align-items:center}
 .coverage-opening{display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:start;padding:22px 0 64px}
 .coverage-eyebrow{font:11px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.08em;margin:0 0 18px;color:var(--action)}
-.coverage-intro h1{font:800 clamp(52px,6.4vw,88px)/.96 var(--font);letter-spacing:-.055em;margin:0 0 24px}
+.coverage-intro h1{font:800 clamp(52px,6.4vw,88px)/.96 var(--font);letter-spacing:-.03em;margin:0 0 24px}
 .coverage-intro>p:not(.coverage-eyebrow){max-width:46ch}
 .coverage-lead{font-size:22px;font-weight:650;line-height:1.35}
 .coverage-availability{font-size:14px;color:var(--action);font-weight:650;padding-top:12px}

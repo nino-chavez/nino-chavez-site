@@ -4,6 +4,7 @@ import { DemoLibrary } from "../components/DemoLibrary";
 import { getDemoSnapshot } from "../demos";
 
 export const metadata = {
+  alternates: { canonical: "/demos" },
   title: "Sessions",
   description:
     "Complete work sessions and reusable techniques from real agent-assisted work.",

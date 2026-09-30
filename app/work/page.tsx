@@ -4,6 +4,7 @@ import { WorkLibrary } from "../components/WorkLibrary";
 import { domains, workItems, type Domain } from "../data";
 
 export const metadata = {
+  alternates: { canonical: "/work" },
   title: "Work",
   description:
     "Products, tools, methods, operations, and collections by Nino Chavez.",

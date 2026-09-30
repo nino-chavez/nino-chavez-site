@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/links" },
   title: "Links",
   description:
     "Maintained destinations for Nino Chavez’s products, publishing, photography, music, profiles, and contact.",
