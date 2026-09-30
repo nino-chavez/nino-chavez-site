@@ -22,6 +22,7 @@ export function DemoStory({
     <article
       className="native-demo-story"
       id={storyId}
+      data-analytics-demo-path={`/demos/${story.kind === "technique" ? "applied/" : ""}${story.slug}`}
       aria-label={`${story.title} — complete ${story.kind}`}
     >
       <style
@@ -47,6 +48,7 @@ export function DemoStory({
           <section
             className={section.className}
             id={sectionLinks[index].id}
+            data-analytics-demo-section={index + 1}
             aria-label={section.label}
             tabIndex={-1}
             key={section.id}

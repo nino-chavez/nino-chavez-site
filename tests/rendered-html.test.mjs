@@ -48,6 +48,20 @@ async function htmlFor(path) {
   return (await response.text()).replaceAll("<!-- -->", "");
 }
 
+test("shared activity loads once on public entrances and stays off private review", async () => {
+  for (const path of ["/", "/work/blueprint", "/photography", "/blog", "/demos"]) {
+    const html = await htmlFor(path);
+    const scripts = [...html.matchAll(/<script\b[^>]*>/g)]
+      .map(([tag]) => tag)
+      .filter((tag) => tag.includes('src="/photography/site-activity.js?v=1"'));
+    assert.equal(scripts.length, process.env.SITE_VISIBILITY === "public" ? 1 : 0, path);
+    if (scripts.length) {
+      assert.match(scripts[0], /data-site-navigation="react"/);
+      assert.match(scripts[0], /\bdefer(?:=|\s|>)/);
+    }
+  }
+});
+
 test("public entrances keep their own canonical URL on the shared domain", async () => {
   for (const [path, canonical] of [
     ["/", "https://ninochavez.co/"],
@@ -853,6 +867,9 @@ test("renders the current privacy policy and makes it globally searchable", asyn
   assert.match(privacyHtml, /do not currently expire automatically/);
   assert.match(privacyHtml, /PostHog Cloud/);
   assert.match(privacyHtml, /analytics permission/);
+  assert.match(privacyHtml, /Site activity/);
+  assert.match(privacyHtml, /action records have no[\s\S]*browser or visit identifier/);
+  assert.match(privacyHtml, /href="\/photography\/analytics-preferences"/);
   assert.match(privacyHtml, /not automatically deleted/);
   assert.match(privacyHtml, /What stays on your device/);
   assert.match(privacyHtml, /People in photographs/);
@@ -935,6 +952,11 @@ test("representative records show evidence and remove prototype placeholders", a
   assert.match(demoHtml, /Session S02 · 10 chapters/);
   assert.match(demoHtml, /<dt>Record<\/dt><dd>S02<\/dd>/);
   assert.match(demoHtml, /class="native-demo-story"/);
+  assert.match(demoHtml, /data-analytics-demo-path="\/demos\/browse-tool"/);
+  assert.deepEqual(
+    [...demoHtml.matchAll(/data-analytics-demo-section="(\d+)"/g)].map((match) => Number(match[1])),
+    Array.from({ length: 10 }, (_, index) => index + 1),
+  );
   assert.match(demoHtml, /The browser is[\s\S]*a shell command/);
   assert.match(demoHtml, /Every conversation pays for the manual up front/);
   assert.match(demoHtml, /Audit the tax, then build the verbs/);
