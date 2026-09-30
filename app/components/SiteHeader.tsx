@@ -5,7 +5,7 @@
  * same-origin anchors keep the shared navigation reliable in the review build. */
 
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const primary = [
   { label: "Work", href: "/work", owns: ["/work"] },
@@ -35,23 +35,82 @@ export function SiteHeader() {
   const pathname = usePathname();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const menuHistoryEntryRef = useRef(false);
+  const pendingNavigationRef = useRef<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
+  const closeMenu = useCallback((removeHistoryEntry = true) => {
     if (dialogRef.current?.open) {
       dialogRef.current.close();
     }
-  }, [pathname]);
+    setMenuOpen(false);
+    menuButtonRef.current?.focus();
+
+    if (removeHistoryEntry && menuHistoryEntryRef.current) {
+      menuHistoryEntryRef.current = false;
+      window.history.back();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (dialogRef.current?.open) {
+      closeMenu();
+    }
+  }, [closeMenu, pathname]);
+
+  useEffect(() => {
+    function handlePopState() {
+      const destination = pendingNavigationRef.current;
+      pendingNavigationRef.current = null;
+      menuHistoryEntryRef.current = false;
+
+      if (dialogRef.current?.open) {
+        closeMenu(false);
+      }
+
+      if (destination) {
+        window.location.assign(destination);
+      }
+    }
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, [closeMenu]);
 
   function openMenu() {
+    if (dialogRef.current?.open) {
+      return;
+    }
+
+    window.history.pushState(
+      { ...window.history.state, siteNavigationDialog: true },
+      "",
+      window.location.href,
+    );
+    menuHistoryEntryRef.current = true;
     dialogRef.current?.showModal();
     setMenuOpen(true);
   }
 
-  function closeMenu() {
-    dialogRef.current?.close();
-    setMenuOpen(false);
-    menuButtonRef.current?.focus();
+  function navigateFromMenu(destination: string) {
+    pendingNavigationRef.current = destination;
+    closeMenu();
+  }
+
+  function handleMenuLink(event: React.MouseEvent<HTMLAnchorElement>) {
+    event.preventDefault();
+    navigateFromMenu(event.currentTarget.href);
+  }
+
+  function handleMenuSearch(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const query = form.get("q");
+    const search = new URL("/search", window.location.origin);
+    if (typeof query === "string" && query) {
+      search.searchParams.set("q", query);
+    }
+    navigateFromMenu(search.href);
   }
 
   return (
@@ -110,7 +169,10 @@ export function SiteHeader() {
         ref={dialogRef}
         className="navigation-dialog"
         aria-labelledby="navigation-dialog-title"
-        onClose={() => setMenuOpen(false)}
+        onClose={() => {
+          setMenuOpen(false);
+          menuButtonRef.current?.focus();
+        }}
         onCancel={(event) => {
           event.preventDefault();
           closeMenu();
@@ -123,7 +185,12 @@ export function SiteHeader() {
           </button>
         </div>
 
-        <form className="menu-search" action="/search" role="search">
+        <form
+          className="menu-search"
+          action="/search"
+          role="search"
+          onSubmit={handleMenuSearch}
+        >
           <label htmlFor="menu-query">Search this site</label>
           <div>
             <input
@@ -144,6 +211,7 @@ export function SiteHeader() {
               <a
                 key={item.href}
                 href={item.href}
+                onClick={handleMenuLink}
                 aria-current={
                   current ? "page" : active ? "location" : undefined
                 }
@@ -164,6 +232,7 @@ export function SiteHeader() {
               <a
                 key={item.href}
                 href={item.href}
+                onClick={handleMenuLink}
                 aria-current={active ? "page" : undefined}
               >
                 {item.label}

@@ -94,6 +94,29 @@ test("server-renders the personal entrance and global navigation", async () => {
   assert.match(html, /mailto:nino@ninochavez\.co/);
 });
 
+test("uses a native dialog and browser history for compact navigation", async () => {
+  const [html, source] = await Promise.all([
+    htmlFor("/"),
+    readFile(
+      new URL("../app/components/SiteHeader.tsx", import.meta.url),
+      "utf8",
+    ),
+  ]);
+
+  assert.match(
+    html,
+    /<button[^>]*aria-haspopup="dialog"[^>]*aria-controls="site-navigation-dialog"[^>]*aria-expanded="false"[^>]*>Menu<\/button>/,
+  );
+  assert.match(html, /<dialog[^>]*id="site-navigation-dialog"/);
+  assert.match(html, /Search this site/);
+  assert.match(html, /<button[^>]*>Close<\/button>/);
+
+  assert.match(source, /\.showModal\(\)/);
+  assert.match(source, /window\.history\.pushState/);
+  assert.match(source, /addEventListener\("popstate", handlePopState\)/);
+  assert.match(source, /closeMenu\(false\)/);
+});
+
 test("preserves the canonical entity endpoints and generated root sitemap", async () => {
   const [person, expertise, experience, contact, sitemap] = await Promise.all([
     render("/api/person.json"),
@@ -474,6 +497,10 @@ test("renders the complete Signal Dispatch publication and real article handoffs
   assert.match(writingHtml, /The Taste Test/);
   assert.match(writingHtml, /href="https:\/\/ninochavez\.co\/blog\/the-taste-gap"/);
   assert.match(writingHtml, /href="https:\/\/ninochavez\.co\/blog\/series\/the-taste-test"/);
+  assert.doesNotMatch(
+    writingHtml,
+    /href="https:\/\/ninochavez\.co\/blog\/the-taste-gap"[^>]*target="_blank"/,
+  );
   assert.doesNotMatch(writingHtml, /Representative content/);
   assert.doesNotMatch(writingHtml, /Shared shell test/);
   assert.doesNotMatch(writingHtml, /240\+/);
@@ -1050,7 +1077,7 @@ test("links work records to the writing that covers them", async () => {
   );
 });
 
-test("opens every external surface in a new tab across the complete route set", async () => {
+test("classifies absolute links by destination host before applying external protections", async () => {
   const sitemap = await render("/sitemap.xml");
   const sitemapXml = await sitemap.text();
   const paths = [...sitemapXml.matchAll(/<loc>https:\/\/ninochavez\.co([^<]*)<\/loc>/g)]
@@ -1058,16 +1085,21 @@ test("opens every external surface in a new tab across the complete route set", 
 
   for (const path of paths) {
     const html = await htmlFor(path);
-    const externalAnchors =
+    const absoluteAnchors =
       html.match(/<a\b[^>]*href="https?:\/\/[^"]+"[^>]*>/g) ?? [];
 
-    for (const anchor of externalAnchors) {
-      assert.match(anchor, /target="_blank"/, `${path}: ${anchor}`);
-      assert.match(
-        anchor,
-        /rel="noopener noreferrer"/,
-        `${path}: ${anchor}`,
-      );
+    for (const anchor of absoluteAnchors) {
+      const href = anchor.match(/href="([^"]+)"/)?.[1];
+      assert.ok(href, `${path}: an absolute anchor has an href`);
+
+      if (new URL(href).hostname !== "ninochavez.co") {
+        assert.match(anchor, /target="_blank"/, `${path}: ${anchor}`);
+        assert.match(
+          anchor,
+          /rel="noopener noreferrer"/,
+          `${path}: ${anchor}`,
+        );
+      }
     }
   }
 });
