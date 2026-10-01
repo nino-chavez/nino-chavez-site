@@ -90,3 +90,32 @@ Completed Operator dispatch receipts:
 Classification timeouts prevented the gallery worker from starting; the parent implemented its bounded changes. The independent review succeeded on retry. Receipts record requested routes; the runtime did not expose model/effort fields, so those remain unverified. Receipts live under `~/.local/state/nino-operator/dispatch/<id>/`.
 
 Local review processes: main 4344, writing 4341, gallery 4342 and the read-only combined origin 4343. The redundant 4340 dev process was stopped. Earlier user previews were left alone.
+
+## October 1 morning: Home and Writing density refit (local review)
+
+Nino's production screenshots exposed two composition problems after release: Home's destination headings competed with text inside the images, and Writing spent most of the first screen on its introduction and latest-piece feature. This follow-up keeps Concept A and changes those two surfaces only.
+
+Home now presents three equally weighted image previews with separate captions. On phones the destinations become compact image-and-text rows. The full-bleed opening's markup and every hero CSS declaration are byte-for-byte equivalent to the released source at `850f861`. Existing destination copy, images and URLs remain available; the three route names are now the destination headings.
+
+Writing's title band, latest-piece feature, filters and group headings use less space. The latest feature uses the available desktop width. Phone filters share a row where they fit and wrap at 320px. All controls retain at least 44px height. The complete archive, source content, series, and query behavior are unchanged.
+
+Fresh Chrome measurements at 1440 × 900:
+
+| Region | Released production | Local revision |
+| --- | ---: | ---: |
+| Writing introduction height | 369px | 148px |
+| Writing controls start | 839px | 399px |
+| First archive record starts | 1,039px | 590px |
+| Home destination section height | 882px | 501px |
+
+Three full archive records now appear on the initial desktop screen. At 390px, all three homepage destinations fit within a 416px section. These are layout measurements, not evidence of better conversion or reading outcomes.
+
+Verification: production build, static check, lint, rendered-HTML suite and audit-regression suite passed. Lint reports eight existing image warnings and no errors. Browser checks passed at 1440, 768, 390 and 320px. Observed journeys include each homepage destination and Back; combined search/form/subject/year filtering; query reload; opening the real published essay and Back; empty results and clearing; all 306 records and nine series; and keyboard access to archive controls. The overflow check rejected an intentional 4px overflow before passing the restored page. Early automation attempts raced client hydration; the completed run waits for the existing page-ready marker before interacting.
+
+The parent inspected rendered desktop, tablet and phone frames. A separate cold reviewer inspected eight frames, then two complete viewport frames. The review found no blocking visual defects. The initial gutter concern was caused by component-only screenshots and was withdrawn after whole-viewport review. Optional refinements remain: a simpler Building preview image, and a shorter small-phone search placeholder. Neither was required to make the navigation understandable; no new images or copy were introduced.
+
+Impeccable's detector returned design-reference warnings: the repository's old DESIGN.md does not describe the already-approved Concept A font, colors and type sizes. The context launcher also flagged PRODUCT.md as stale. The approved concept record and actual released theme governed this refit. Refreshing those context documents through `init` is separate work, not a reason to revert the selected design.
+
+Evidence: [desktop Writing](refit-20261001/writing-after-1440.png), [phone Writing](refit-20261001/writing-after-390.png), [desktop Home](refit-20261001/home-context-1440.png), [phone Home](refit-20261001/home-context-390.png), [measurements](refit-20261001/measurements.json), and [observed behavior](refit-20261001/behavior.json). Before captures are in the same folder. Review runs at `http://127.0.0.1:4361/` and `/blog`; article links open their real published destinations. Gallery detail routes require the production site because only the main application is running here.
+
+This follow-up is local and unpublished. No production deployment, shared header edit, routing change, stack migration, analytics configuration, generated content change, or gallery/article application edit was performed.

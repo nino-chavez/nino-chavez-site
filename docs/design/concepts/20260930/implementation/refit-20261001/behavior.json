@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "Home → /work → Back",
+    "Home → /blog → Back",
+    "Home → /photography → Back",
+    "Combined search/form/subject/year query survives reload",
+    "Open real published essay and Back preserves the filtered index",
+    "Empty state and Clear filters restore all 306 records",
+    "All 9 series remain linked",
+    "Keyboard sequence reaches all archive controls",
+    "Overflow gate fails a deliberate 4px overflow and passes after removal"
+  ],
+  "recordCount": 306,
+  "seriesCount": 9
+}

@@ -261,3 +261,32 @@ The [September 29 assessment](../audit/2026-09-29-critical-frontend/ASSESSMENT.m
 The interview currently has one question pending: the homepage's primary outcome. Next, settle the appropriate proof and the balance between the photograph and that proof. Work's entrance selection is also open after the critical review. A publication/archive priority question is needed only if the benchmark or those answers would materially change the plan. Keep answers here as they arrive; leave historical audit findings intact.
 
 No website source, generated content index, production setting, branch, or external account was changed to produce this plan.
+
+## October 1 follow-up: calm Home and bring Writing into view
+
+This bounded refit follows the selected [Concept A](concepts/20260930/REVIEW.md). Nino's two production screenshots show competing text on Home's destination images and excessive empty space before Writing's archive. The opening photograph and the four-link navigation remain the approved direction. The earlier open decisions in this document are historical; this pass does not reopen them.
+
+### Surfaces in this pass
+
+| Surface | Reader and job | Primary action | Density and screen budget |
+| --- | --- | --- | --- |
+| Home, below the opening | A new or referred visitor choosing what to explore | Open Building, Writing, or Photography | Three equal image previews with captions outside the images; the complete chooser fits in one desktop viewport and roughly one phone viewport |
+| Writing index | A reader arriving from an essay or looking for an older piece | Open the latest piece, or search and filter the complete archive | At 1440 × 900, title and latest piece together use about 320px after the header; controls and several records appear on the first screen. Phone keeps readable text and every control, with no forced fixed height |
+
+Character: restrained, photographic, legible, direct, warm. Avoid competing display headings, text layered over interface text, arbitrary tall columns, blank title stages, and hidden archive functions. Use the current warm ground, navy text, local display face, and consistent reading type. The first screen communicates location, then gives access to actual work. No new promotional copy, decorative motion, or interaction is needed. Fixed light theme; existing focus and reduced-motion behavior remain available.
+
+### Preserve before editing
+
+- Home's full-bleed opening, crop, copy, heading, and selected-work anchor.
+- All three destination URLs, real preview images, and useful destination descriptions.
+- Global navigation, local archive semantics, source data, canonical URLs, and one h1 per page.
+- Every Writing record, series, latest-piece link, search and form/subject/year filter, query URL, clearing, and Back behavior.
+- Other pages and the blog article and photography applications.
+
+| Object and owner | Action | States to check | Reverse or return |
+| --- | --- | --- | --- |
+| Home destination, main site | Open collection | Desktop, phone, keyboard focus, unavailable image | Browser Back; identity link |
+| Latest piece, blog publisher | Open article | Long title, excerpt, metadata, phone wrap | Browser Back to Writing |
+| Writing archive, main site with publisher data | Search and filter; open result | All, filtered query URL, empty, clearing, narrow phone | Clear filters; reload or Back restores query |
+
+Evidence compares fresh production captures with local rendered screens at matching sizes. Check 1440, 768, 390, and 320px widths, keyboard use, and targeted archive behavior. A cold reviewer judges finished captures after the parent opens them. No conversion or analytics improvement is claimed from visual measurements. This pass is prepared for local review, not a new production release.
