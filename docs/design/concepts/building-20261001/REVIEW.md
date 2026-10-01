@@ -1,3 +1,39 @@
+## Implementation validation — 2026-10-01
+
+Nino approved the revised Selected work direction with “build it and ship it.”
+The real `/work` route now uses eight separated rows with visitor-facing kinds,
+real previews, direct destinations, and the original availability disclosures.
+Flickday Media and Let’s Pepper remain single records in the 34-entry catalogue.
+The original six-entry source was renamed from `app/operated-products.ts` to
+`app/selected-work.ts` and expanded to the approved eight.
+
+Checks on the implementation:
+- `npm run check`, lint (zero errors; eight existing warnings), `npm test`, and
+  the rendered audit regression suite pass.
+- All 36 navigation/browser cases pass on WebKit and Chromium. These include
+  catalogue entry, search, format filtering, reload, clear,
+  empty state, unknown format, Back, legacy filter links, and `#work-library`.
+  The new App-format interaction exercises its seven matching records.
+- Rendered overview and catalogue layouts were checked at 1440, 800, 640, 390,
+  and 320 CSS pixels; the overflow detector rejected an injected four-pixel defect.
+- Parent opened desktop and phone captures. A separate cold reviewer found no
+  release-blocking composition or clarity issues on desktop, tablet, or phone.
+  Phone previews remain contextual glimpses, not readable full product screens.
+- Standalone `tsc --noEmit` does not pass on main. A clean checkout of main
+  reproduced the existing errors; this revision introduces none and resolves
+  two WorkLibrary errors. Remaining errors concern archived code, demos, database
+  typing, old audit tests, and the coverage import setting.
+
+Production navigation is the existing shared navigation, not the prototype shell.
+Other page layouts, app stacks, router configuration, and database schema are
+unchanged. `evidence/implemented-*` contains final actual-route captures.
+
+The deploy workflow was inspected: its Cloudflare gate is dormant and the
+previous deploy steps were skipped. Release follows the manual Worker procedure
+in DEPLOY.md after merging, followed by a public route check.
+
+---
+
 # Building: mixed-work revision ready for review
 
 ## Current assessment — supersedes the original recommendation

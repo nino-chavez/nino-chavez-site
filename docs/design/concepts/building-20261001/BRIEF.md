@@ -78,3 +78,12 @@ Panic's live homepage was inspected October 1 at 1440×900 to ask how multiple p
 ## Original selection state
 
 Superseded by the current direction correction above. Pending Nino's revised review. No production implementation or deploy until he names a direction. Once selected, inspect the rejected candidates for useful pieces, record what is folded in and why, then implement with the existing route and filter contracts.
+
+## Selection and implementation — 2026-10-01
+
+Nino approved the revised Selected work composition with “build it and ship it.”
+The real `/work` route now follows the eight-entry index. It retains the real
+previews and direct actions from A, removes the product-only framing, and keeps
+the complete catalogue behind Browse all work. Purpose grouping from C and the
+selection panel from B remain rejected. Existing filter URLs, detailed work
+routes, and the legacy `#work-library` bookmark remain supported.

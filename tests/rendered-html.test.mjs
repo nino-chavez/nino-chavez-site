@@ -225,7 +225,7 @@ test("renders the full-volume work and demos collections", async () => {
     filteredDemosHtml,
     emptyDemosHtml,
   ] = await Promise.all([
-    htmlFor("/work"),
+    htmlFor("/work?view=all"),
     htmlFor("/work?domain=Publishing&state=live"),
     htmlFor("/work?q=no-such-work"),
     htmlFor("/demos"),
@@ -234,12 +234,16 @@ test("renders the full-volume work and demos collections", async () => {
   ]);
 
   assert.match(workHtml, /<h1>Building<\/h1>/);
+  const selectedHtml = await htmlFor("/work");
+  assert.match(selectedHtml, /Selected work/);
+  assert.match(selectedHtml, /href="\/work\?view=all"/);
+  assert.doesNotMatch(selectedHtml.split('<script id="_R_">')[0], /class="library-controls"/);
   assert.match(workHtml, /Minder/);
   assert.match(workHtml, /The Rotation/);
   assert.match(workHtml, /Cutting Board/);
   assert.match(workHtml, /Yawn/);
   assert.match(workHtml, /Source-backed publications and private handoffs/);
-  assert.match(workHtml, /Public draft/);
+  assert.match(selectedHtml, /Public draft/);
   assert.match(workHtml, /id="work-library"/);
   assert.match(workHtml, /Status says what is available today/);
   assert.match(workHtml, /34<\/strong> shown/);

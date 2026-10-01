@@ -1,11 +1,13 @@
 import type { Domain, WorkForm, WorkState } from "./data";
 
-export type OperatedProduct = {
+export type SelectedWork = {
   slug: string;
   domain: Domain;
   state: WorkState;
   form: WorkForm;
   name: string;
+  /** Visitor-facing identity; catalogue format and availability are separate. */
+  kind: string;
   summary: string;
   availability: string;
   href: string;
@@ -17,9 +19,10 @@ export type OperatedProduct = {
   };
 };
 
-export const operatedProducts: OperatedProduct[] = [
+export const selectedWork: SelectedWork[] = [
   {
     name: "Minder",
+    kind: "iOS app",
     slug: "minder",
     domain: "Local-first",
     state: "live",
@@ -35,7 +38,24 @@ export const operatedProducts: OperatedProduct[] = [
     },
   },
   {
+    name: "Flickday Media",
+    kind: "Sports-media business",
+    slug: "flickday",
+    domain: "Volleyball",
+    state: "live",
+    form: "site",
+    summary: "Tournament photography, highlight reels, and event photo galleries.",
+    availability: "",
+    href: "https://flickdaymedia.com/",
+    action: "Visit Flickday Media",
+    image: {
+      src: "/work/flickday.jpg",
+      alt: "Volleyball photography from the Flickday Media portfolio",
+    },
+  },
+  {
     name: "The Rotation",
+    kind: "Website",
     slug: "the-rotation",
     domain: "Volleyball",
     state: "live",
@@ -50,7 +70,24 @@ export const operatedProducts: OperatedProduct[] = [
     },
   },
   {
+    name: "Let’s Pepper",
+    kind: "Tournament series",
+    slug: "lets-pepper",
+    domain: "Volleyball",
+    state: "live",
+    form: "site",
+    summary: "Player-first grass volleyball tournaments, standings, and event galleries.",
+    availability: "2026 season complete",
+    href: "https://letspepper.com/",
+    action: "Visit Let’s Pepper",
+    image: {
+      src: "/work/lets-pepper-site.png",
+      alt: "Let’s Pepper website with its tournament identity and grass volleyball photograph",
+    },
+  },
+  {
     name: "Rally HQ",
+    kind: "Web app",
     slug: "rally-hq",
     domain: "Volleyball",
     state: "live",
@@ -66,6 +103,7 @@ export const operatedProducts: OperatedProduct[] = [
   },
   {
     name: "Cutting Board",
+    kind: "App",
     slug: "cutting-board",
     domain: "Media & assets",
     state: "live",
@@ -77,6 +115,7 @@ export const operatedProducts: OperatedProduct[] = [
   },
   {
     name: "Yawn",
+    kind: "App",
     slug: "yawn",
     domain: "Local-first",
     state: "building",
@@ -88,6 +127,7 @@ export const operatedProducts: OperatedProduct[] = [
   },
   {
     name: "Work Library",
+    kind: "Publication library",
     slug: "work-library",
     domain: "Publishing",
     state: "published",
