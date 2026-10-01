@@ -143,7 +143,7 @@ test("F15a — every filter option maps to at least one record", async () => {
   const states = held("state");
   const domains = held("domain");
 
-  const html = await htmlFor("/work");
+  const html = await htmlFor("/work?view=all");
   const offered = new Set(
     [...html.matchAll(/<option value="([^"]+)"/g)].map((m) =>
       m[1].replaceAll("&amp;", "&"),
@@ -390,7 +390,7 @@ test(
     // registry, then renders groups sorted by date. The two orders agree only
     // until records are added. A badge that disagrees with its own list carries
     // no information the visitor can use. AD §Copy.
-    const html = await htmlFor("/work");
+    const html = await htmlFor("/work?view=all");
     const groups = html.match(
       /class="library-group"[\s\S]*?(?=class="library-group"|<\/main)/g,
     );
@@ -415,7 +415,7 @@ test(
   "C14 — every work status is explained where visitors first meet it",
   async () => {
     const [workHtml, detailHtml, searchHtml] = await Promise.all([
-      htmlFor("/work"),
+      htmlFor("/work?view=all"),
       htmlFor("/work/blueprint"),
       htmlFor("/search?q=blueprint"),
     ]);

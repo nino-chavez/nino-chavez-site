@@ -10,6 +10,8 @@ import {
   workHref,
   workStateLabels,
   workStateText,
+  workFormLabels,
+  workKind,
 } from "../data";
 import { canonicalFacet, offeredFacets } from "../facets";
 
@@ -33,6 +35,10 @@ function formatUpdatedAt(value: string) {
   return `${Number(day)} ${shortMonths[Number(month) - 1]}`;
 }
 
+function facetLabel(value: string, labels: Readonly<Record<string, string>>) {
+  return labels[value] ?? value;
+}
+
 export function WorkLibrary({ items }: { items: WorkItem[] }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -49,6 +55,7 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
 
   function setFilter(name: string, value: string) {
     const next = new URLSearchParams(searchParams.toString());
+    next.set("view", "all");
     if (value) {
       next.set(name, value);
     } else {
@@ -94,8 +101,8 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
   const activeCriteria = [
     query ? `query “${query}”` : "",
     domain ? `domain “${domain}”` : "",
-    state ? `status “${workStateLabels[state]}”` : "",
-    form ? `type “${form}”` : "",
+    state ? `status “${facetLabel(state, workStateLabels)}”` : "",
+    form ? `format “${facetLabel(form, workFormLabels)}”` : "",
   ].filter(Boolean);
 
   return (
@@ -149,16 +156,16 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
         </div>
 
         <div className="control" data-active={Boolean(form)}>
-          <label htmlFor="work-form">Type</label>
+          <label htmlFor="work-form">Format</label>
           <select
             id="work-form"
             value={form}
             onChange={(event) => setFilter("form", event.target.value)}
           >
-            <option value="">All types</option>
+            <option value="">All formats</option>
             {formOptions.map((item) => (
               <option key={item} value={item}>
-                {item}
+                {workFormLabels[item]}
               </option>
             ))}
           </select>
@@ -181,7 +188,7 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
           {filtered ? (
             <button
               type="button"
-              onClick={() => router.replace(pathname, { scroll: false })}
+              onClick={() => router.replace(`${pathname}?view=all`, { scroll: false })}
             >
               Clear filters
             </button>
@@ -218,7 +225,7 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
                     >
                     <div className="record-meta">
                       <span>{workStateLabels[item.state]}</span>
-                      <span>{item.form}</span>
+                      <span>{workKind(item)}</span>
                       <time dateTime={item.updatedAt}>
                         {formatUpdatedAt(item.updatedAt)}
                       </time>
@@ -258,7 +265,7 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
           ) : null}
           <button
             type="button"
-            onClick={() => router.replace(pathname, { scroll: false })}
+            onClick={() => router.replace(`${pathname}?view=all`, { scroll: false })}
           >
             Clear filters
           </button>

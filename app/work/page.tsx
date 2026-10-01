@@ -4,79 +4,62 @@ import "../by-nino-library.css";
 import "../building.css";
 import { WorkLibrary } from "../components/WorkLibrary";
 import { workItems } from "../data";
-import { operatedProducts } from "../operated-products";
+import { selectedWork } from "../selected-work";
+import { BrowseAllWorkLink } from "../components/BrowseAllWorkLink";
 
 export const metadata = {
   alternates: { canonical: "/work" },
   title: "Building",
   description:
-    "Products, tools, methods, operations, and collections by Nino Chavez.",
+    "Apps, websites, businesses, and the work behind them, by Nino Chavez.",
 };
 
 export default async function WorkPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const params = await searchParams;
-  const filtering = ["q", "domain", "state", "form"].some((key) => Boolean(params[key]));
+  const catalogue = params.view === "all" || ["q", "domain", "state", "form"].some((key) => Boolean(params[key]));
   return (
     <div className="work-page work-atlas-page building-page">
-      <header className="building-page__header">
-        <h1>Building</h1>
-        <p>Products I build and run, plus public studies and guides.</p>
+      <header className="building-page__header building-wrap">
+        <div>
+          <h1>Building</h1>
+          <p>Apps, websites, businesses, and the work behind them.</p>
+        </div>
+        {catalogue ? <Link className="building-action" href="/work">Back to selected work <span aria-hidden="true">→</span></Link> : <BrowseAllWorkLink />}
       </header>
 
-      {!filtering ? <>
-      <section className="building-section" aria-labelledby="products-title">
-        <header className="assistive-text">
-          <h2 id="products-title">Products</h2>
-        </header>
-        <div className="operated-products">
-          {operatedProducts.map((product) => {
-            const external = product.href.startsWith("http");
-            const className = product.image
-              ? `operated-product__media operated-product__media--${product.name.toLowerCase().replaceAll(" ", "-")}`
-              : undefined;
-
-            return (
-              <article className="operated-product" key={product.name}>
-                {product.image ? (
-                  <figure className={className}>
-                    {/* eslint-disable-next-line @next/next/no-img-element -- static local product previews are served as-is. */}
-                    <img src={product.image.src} alt={product.image.alt} />
-                  </figure>
-                ) : null}
-                {product.image?.caption ? (
-                  <p className="operated-product__caption">
-                    {product.image.caption}
-                  </p>
-                ) : null}
-                <p className="operated-product__availability">
-                  {product.availability}
-                </p>
-                <h3>{product.name}</h3>
-                <p className="operated-product__summary">{product.summary}</p>
-                {external ? (
-                  <a
-                    className="operated-product__action"
-                    href={product.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {product.action}
-                    <span className="assistive-text"> (opens in a new tab)</span>
-                  </a>
-                ) : (
-                  <Link className="operated-product__action" href={product.href}>
-                    {product.action}
-                  </Link>
-                )}
-              </article>
-            );
-          })}
-        </div>
+      {!catalogue ? <>
+      <section className="selected-work building-wrap" aria-labelledby="selected-title">
+        <h2 id="selected-title">Selected work</h2>
+        {selectedWork.map((work) => {
+          const external = work.href.startsWith("http");
+          const availability = work.availability === "Live website" ? "" : work.availability;
+          return (
+            <article className={`work-entry${work.image ? "" : " work-entry--text"}`} key={work.slug} data-work={work.slug}>
+              <div className="work-identity">
+                <h3>{work.name}</h3>
+                <p className="work-kind">{work.kind}</p>
+              </div>
+              <div className="work-description">
+                <p>{work.summary}</p>
+                {availability ? <p className="work-availability">{availability}</p> : null}
+                {external ? <a className="building-action" href={work.href} target="_blank" rel="noopener noreferrer">
+                  {work.action}<span aria-hidden="true">↗</span><span className="assistive-text"> (opens in a new tab)</span>
+                </a> : <Link className="building-action" href={work.href}>{work.action}<span aria-hidden="true">→</span></Link>}
+                {work.image?.caption ? <p className="media-caption">{work.image.caption}</p> : null}
+              </div>
+              {work.image ? <figure className={`work-preview work-preview--${work.slug}`}>
+                {/* eslint-disable-next-line @next/next/no-img-element -- Framed static previews preserve the approved screenshot crops. */}
+                <img src={work.image.src} alt={work.image.alt} loading={work.slug === "minder" ? "eager" : "lazy"} />
+              </figure> : null}
+            </article>
+          );
+        })}
       </section>
 
-      <section className="building-section" aria-labelledby="public-work-title">
+      <section className="building-studies" aria-labelledby="public-work-title">
+        <div className="building-wrap">
         <header className="building-section__heading">
-          <h2 id="public-work-title">Public studies and methods</h2>
+          <h2 id="public-work-title">Studies &amp; methods</h2>
         </header>
         <div className="building-resources">
           <article className="building-resource">
@@ -107,9 +90,10 @@ export default async function WorkPage({ searchParams }: { searchParams: Promise
           </article>
 
         </div>
+        </div>
       </section>
 
-      <nav className="building-routes" aria-label="More ways to explore Building">
+      <nav className="building-routes building-wrap" aria-label="More ways to explore Building">
         <Link className="building-route" href="/demos">
           <h2>Process</h2>
           <p>See complete sessions and applied techniques.</p>
@@ -120,10 +104,8 @@ export default async function WorkPage({ searchParams }: { searchParams: Promise
         </Link>
       </nav>
 
-      </> : null}
-
-      <section
-        className="building-section work-library-stage"
+      </> : <section
+        className="building-catalogue building-wrap work-library-stage"
         id="work-library"
         aria-labelledby="work-library-title"
       >
@@ -131,13 +113,13 @@ export default async function WorkPage({ searchParams }: { searchParams: Promise
           <h2 id="work-library-title">Browse all work</h2>
           <p>
             Search by name or purpose. Status says what is available today;
-            type says what kind of work it is.
+            format describes how the work is delivered.
           </p>
         </header>
         <Suspense fallback={<p>Loading work…</p>}>
           <WorkLibrary items={workItems} />
         </Suspense>
-      </section>
+      </section>}
     </div>
   );
 }

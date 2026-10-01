@@ -1,4 +1,4 @@
-import { operatedProducts } from "./operated-products";
+import { selectedWork } from "./selected-work";
 
 export const domains = [
   "Developer tools",
@@ -32,6 +32,16 @@ export const forms = [
 export type Domain = (typeof domains)[number];
 export type WorkState = (typeof states)[number];
 export type WorkForm = (typeof forms)[number];
+
+export const workFormLabels: Record<WorkForm, string> = {
+  site: "Website", cli: "Command-line tool", app: "App", service: "Service",
+  repo: "Code repository", docs: "Documents", toolkit: "Toolkit",
+  experience: "Interactive example", collection: "Collection",
+};
+
+export function workKind(item: Pick<WorkItem, "slug" | "form">) {
+  return selectedWork.find((work) => work.slug === item.slug)?.kind ?? workFormLabels[item.form];
+}
 
 export const workStateLabels: Record<WorkState, string> = {
   live: "Live",
@@ -77,9 +87,9 @@ export type WorkItem = {
 };
 
 export const workItems: WorkItem[] = [
-  // New product records share their copy and destinations with the curated view.
-  // This is the catalog-entry update date, not a product release date.
-  ...operatedProducts.filter((product) => product.slug !== "rally-hq").map((product) => ({
+  // The remaining selected entries already have detailed records below.
+  // This is the catalog-entry update date, not a release date.
+  ...selectedWork.filter((product) => !["rally-hq", "flickday", "lets-pepper"].includes(product.slug)).map((product) => ({
     slug: product.slug,
     name: product.name,
     claim: `${product.summary} ${product.availability}.`,

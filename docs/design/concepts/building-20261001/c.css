@@ -1,0 +1,45 @@
+.purpose-opening{padding-bottom:20px}
+.purpose-opening h1{font-size:clamp(42px,5vw,64px)}
+.purpose-nav{display:flex;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:auto;scrollbar-color:var(--blue) var(--paper)}
+.purpose-nav a{flex:1;min-width:max-content;padding:14px 22px 13px 0;margin-right:22px;color:var(--blue);font-size:13px;font-weight:700;text-decoration:none}
+.purpose-nav a:hover{text-decoration:underline;text-underline-offset:5px}
+.purpose-chapter{padding-block:72px}
+.purpose-chapter--everyday{background:var(--surface)}
+.chapter-grid{display:grid;grid-template-columns:minmax(190px,.62fr) minmax(370px,1.26fr) minmax(220px,.78fr);gap:36px;align-items:start}
+.chapter-intro h2,.chapter-heading h2{max-width:10ch}
+.chapter-intro>p,.chapter-heading p{max-width:28ch;color:var(--muted);font-size:16px}
+.chapter-index{display:grid;gap:0;margin-top:32px;border-top:1px solid var(--line)}
+.chapter-index a{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;font-weight:700;text-decoration:none}
+.chapter-index a:hover{text-decoration:underline;text-underline-offset:4px}
+.chapter-index span{font-size:11px;font-weight:400;color:var(--muted);text-align:right}
+.featured-product{margin:0}.featured-product>#minder-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,.55fr);gap:18px 24px}
+.featured-product__media{height:292px}
+.featured-product__media .preview{height:100%}.featured-product__media .preview--minder img{position:absolute;left:50%;top:-125px;height:540px;width:auto;max-width:none;transform:translateX(-50%)}
+.featured-product__copy{align-self:end}
+.featured-product h3,.chapter-product h3,.volleyball-product h3,.making-product h3{font-size:30px}
+.featured-product p:not(.status),.chapter-product p:not(.status),.volleyball-product p:not(.status),.making-product p:not(.status){color:var(--muted);font-size:15px;max-width:32ch}
+.featured-product .media-caption{grid-column:1/-1;margin:0}
+.chapter-product{min-height:292px;display:flex;flex-direction:column;justify-content:flex-start;padding:22px 0 0;border-top:1px solid var(--ink)}
+.chapter-product__mark,.making-product__word{font:700 clamp(25px,2.2vw,34px)/1.04 Field,sans-serif;letter-spacing:-.04em}
+.chapter-product .status,.making-product .status,.volleyball-product .status{margin:7px 0}
+.purpose-chapter--volleyball{background:var(--dark);color:var(--paper)}
+.chapter-heading{display:flex;justify-content:space-between;gap:56px;align-items:end;margin-bottom:34px}
+.chapter-heading p{color:#b8c7cd}
+.chapter-index--dark{min-width:340px;max-width:430px;margin-top:0;border-color:#35505e}
+.chapter-index--dark a{border-color:#35505e}.chapter-index--dark span{color:#b8c7cd}
+.volleyball-pair{display:grid;grid-template-columns:1.17fr .83fr;gap:36px}
+.volleyball-product>div:first-child{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(190px,.7fr);gap:20px;align-items:end}
+.volleyball-product .preview{height:305px;border-radius:0}
+.volleyball-product--rally>div:first-child{grid-template-columns:1fr}.volleyball-product--rally .preview{height:224px}
+.volleyball-product__copy{padding-bottom:4px}.volleyball-product__copy p:not(.status){color:#b8c7cd}
+.volleyball-product .status{color:#b8c7cd}.volleyball-product .action{color:#d3ecff}
+.purpose-chapter--making{background:var(--paper)}
+.making-grid{display:grid;grid-template-columns:.72fr 1fr 1fr;gap:36px;align-items:stretch}
+.making-product{display:flex;flex-direction:column;justify-content:space-between;gap:62px;min-height:332px;padding:24px;border:1px solid var(--line);background:var(--surface)}
+.making-product--library{background:#e5e0d7}
+.making-product__word{color:var(--blue)}
+.overview-archive{padding:34px 0 54px;border-top:1px solid var(--line)}
+@media(max-width:1000px){.chapter-grid{grid-template-columns:.62fr 1.2fr}.chapter-product{grid-column:1/-1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-top:20px}.volleyball-product>div:first-child{grid-template-columns:1fr}.volleyball-product .preview{height:260px}.chapter-heading{align-items:start}.making-grid{grid-template-columns:.7fr 1fr 1fr;gap:24px}}
+@media(max-width:640px){.purpose-opening{padding-bottom:16px}.purpose-nav{width:100%;padding-left:20px}.purpose-nav a{padding-right:16px;margin-right:16px}.purpose-chapter{padding-block:42px}.chapter-grid,.making-grid,.volleyball-pair{grid-template-columns:1fr;gap:28px}.chapter-intro h2,.chapter-heading h2{max-width:13ch}.chapter-intro>p,.chapter-heading p{font-size:15px}.chapter-index{margin-top:22px}.featured-product>#minder-content{grid-template-columns:1fr;gap:14px}.featured-product__media{height:220px}.chapter-index{display:none}.chapter-product{grid-column:auto;display:block;min-height:0}.chapter-product__mark{margin-bottom:36px}.chapter-heading{display:block;margin-bottom:26px}.chapter-index--dark{min-width:0;max-width:none;margin-top:22px}.volleyball-product .preview,.volleyball-product--rally .preview{height:230px}.making-product{min-height:255px;gap:40px;padding:22px}.overview-archive{padding-block:28px 42px}}
+
+.making-product p.making-product__word:not(.status){font:700 clamp(28px,3vw,42px)/1.06 Field,sans-serif;color:var(--blue);margin:0;letter-spacing:-.035em}

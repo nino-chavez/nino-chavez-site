@@ -1,0 +1,34 @@
+[
+  {
+    "antipattern": "design-system-font",
+    "name": "Font outside DESIGN.md",
+    "description": "A font is used that is not declared in DESIGN.md typography. Use the documented type system or update DESIGN.md if this is an intentional brand addition.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/building-rethink-20261001/docs/design/concepts/building-20261001/selected-work.html",
+    "line": 0,
+    "snippet": "h1 \"Building\" uses field; not declared in DESIGN.md typography",
+    "ignoreValue": "field"
+  },
+  {
+    "antipattern": "design-system-font",
+    "name": "Font outside DESIGN.md",
+    "description": "A font is used that is not declared in DESIGN.md typography. Use the documented type system or update DESIGN.md if this is an intentional brand addition.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/building-rethink-20261001/docs/design/concepts/building-20261001/selected-work.html",
+    "line": 0,
+    "snippet": "p \"Apps, websites, businesses, and the work\" uses body; not declared in DESIGN.md typography",
+    "ignoreValue": "body"
+  },
+  {
+    "antipattern": "cream-palette",
+    "name": "Cream / beige palette",
+    "description": "A warm cream or beige page background has become the default \"tasteful\" AI surface, reached for by reflex. Choose a background that comes from a deliberate palette, not the safe warm off-white.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/building-rethink-20261001/docs/design/concepts/building-20261001/selected-work.html",
+    "line": 0,
+    "snippet": "cream/beige page background rgb(244, 240, 232)"
+  }
+]

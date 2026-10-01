@@ -21,13 +21,13 @@ The homepage gives visitors a direct way into those three bodies of work. About 
 
 ## Positioning
 
-This is a personal practice site that connects writing, software and operated products, and action-sports photography while preserving each destination's own job. The current implementation keeps the publication, gallery, and independent products in their existing runtimes.
+This is a personal practice site that connects writing, apps, websites, businesses, and action-sports photography while preserving each destination's own job. The current implementation keeps the publication, gallery, and independent products in their existing runtimes.
 
 ## Operating Context
 
 The public shell has four global destinations: Writing, Building, Photography, and About. Search is a utility.
 
-Building is the home for products, public studies, process, demos, and guides. Its routes include `/work`, `/demos`, and `/learn`. Writing is `/blog`; Photography is `/photography`; About is `/about`. Direct URLs, query filters, canonical sources, and private boundaries remain part of the visitor contract.
+Building is the home for apps, websites, businesses, public studies, process, demos, and guides. Its common collection label is Selected work; each entry states what it is. Do not label the whole collection Products or group it by purpose. Flickday Media is a sports-media business, and Let’s Pepper is a tournament series; their websites are destinations, not the whole entity. Its routes include `/work`, `/demos`, and `/learn`. Writing is `/blog`; Photography is `/photography`; About is `/about`. Direct URLs, query filters, canonical sources, and private boundaries remain part of the visitor contract.
 
 ## Capabilities and Constraints
 
