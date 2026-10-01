@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { WritingLibrary } from "../components/WritingLibrary";
 import { getWritingSnapshot } from "../writing";
 import "../by-nino-frontdoors.css";
+import "../writing-index.css";
 
 export const metadata = {
   alternates: { canonical: "/blog" },
