@@ -4,6 +4,10 @@ export const metadata = {
   alternates: { canonical: "https://ninochavez.co/" },
 };
 
+function DestinationArrow() {
+  return <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 12h16m-6-6 6 6-6 6" /></svg>;
+}
+
 export default function Home() {
   return (
     <div className="field-home">
@@ -23,15 +27,15 @@ export default function Home() {
       <section id="selected-work" className="field-paths" aria-label="Selected work">
         <Link className="field-path field-path--building" href="/work">
           <img src="/work/rally-hq.webp" alt="Rally HQ tournament interface" width="1200" height="800" loading="lazy" />
-          <div><span>Building</span><h2>Products, tools and studies</h2><p>Minder, The Rotation, Rally HQ and more <span aria-hidden="true">→</span></p></div>
+          <div><h2>Building <DestinationArrow /></h2><p>Products, tools and studies</p><p className="field-path__detail">Minder, The Rotation, Rally HQ and more</p></div>
         </Link>
         <Link className="field-path field-path--writing" href="/blog">
           <img src="/work/writing-field.webp" alt="AI-generated illustration from Signal Dispatch" width="1200" height="800" loading="lazy" />
-          <div><span>Writing</span><h2>Signal Dispatch</h2><p>Essays and field notes <span aria-hidden="true">→</span></p></div>
+          <div><h2>Writing <DestinationArrow /></h2><p>Signal Dispatch</p><p className="field-path__detail">Essays and field notes</p></div>
         </Link>
         <Link className="field-path field-path--photography" href="/photography">
           <img src="/work/photography.webp" alt="Volleyball player preparing to serve" width="1200" height="800" loading="lazy" />
-          <div><h2>Photography</h2><p>Volleyball and action sports <span aria-hidden="true">→</span></p></div>
+          <div><h2>Photography <DestinationArrow /></h2><p>Volleyball and action sports</p></div>
         </Link>
       </section>
     </div>

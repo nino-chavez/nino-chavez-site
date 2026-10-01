@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-01T13:05:38Z",
+  "title": "Design System: Nino Chavez — In the field",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Warm Ground",
+        "canonical": "#f4f0e8",
+        "tonalRamp": [
+          "oklch(15.00% 0.01147 84.58)",
+          "oklch(26.43% 0.01147 84.58)",
+          "oklch(37.86% 0.01147 84.58)",
+          "oklch(49.29% 0.01147 84.58)",
+          "oklch(60.71% 0.01147 84.58)",
+          "oklch(72.14% 0.01147 84.58)",
+          "oklch(83.57% 0.01147 84.58)",
+          "oklch(95.00% 0.01147 84.58)"
+        ],
+        "rampPurpose": "Synthesized lightness previews only; production colors are the canonical tokens in DESIGN.md."
+      },
+      "action": {
+        "role": "primary",
+        "displayName": "Action Blue",
+        "canonical": "#0d5a93",
+        "tonalRamp": [
+          "oklch(15.00% 0.11535 247.66)",
+          "oklch(26.43% 0.11535 247.66)",
+          "oklch(37.86% 0.11535 247.66)",
+          "oklch(49.29% 0.11535 247.66)",
+          "oklch(60.71% 0.11535 247.66)",
+          "oklch(72.14% 0.11535 247.66)",
+          "oklch(83.57% 0.11535 247.66)",
+          "oklch(95.00% 0.11535 247.66)"
+        ],
+        "rampPurpose": "Synthesized lightness previews only; production colors are the canonical tokens in DESIGN.md."
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Photography Ink",
+        "canonical": "#07131d",
+        "tonalRamp": [
+          "oklch(15.00% 0.02721 244.61)",
+          "oklch(26.43% 0.02721 244.61)",
+          "oklch(37.86% 0.02721 244.61)",
+          "oklch(49.29% 0.02721 244.61)",
+          "oklch(60.71% 0.02721 244.61)",
+          "oklch(72.14% 0.02721 244.61)",
+          "oklch(83.57% 0.02721 244.61)",
+          "oklch(95.00% 0.02721 244.61)"
+        ],
+        "rampPurpose": "Synthesized lightness previews only; production colors are the canonical tokens in DESIGN.md."
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "canonical": "#faf7f1",
+        "tonalRamp": [
+          "oklch(15.00% 0.00857 84.57)",
+          "oklch(26.43% 0.00857 84.57)",
+          "oklch(37.86% 0.00857 84.57)",
+          "oklch(49.29% 0.00857 84.57)",
+          "oklch(60.71% 0.00857 84.57)",
+          "oklch(72.14% 0.00857 84.57)",
+          "oklch(83.57% 0.00857 84.57)",
+          "oklch(95.00% 0.00857 84.57)"
+        ],
+        "rampPurpose": "Synthesized lightness previews only; production colors are the canonical tokens in DESIGN.md."
+      },
+      "surface-muted": {
+        "role": "neutral",
+        "displayName": "Surface Muted",
+        "canonical": "#e5e0d7",
+        "tonalRamp": [
+          "oklch(15.00% 0.01328 82.40)",
+          "oklch(26.43% 0.01328 82.40)",
+          "oklch(37.86% 0.01328 82.40)",
+          "oklch(49.29% 0.01328 82.40)",
+          "oklch(60.71% 0.01328 82.40)",
+          "oklch(72.14% 0.01328 82.40)",
+          "oklch(83.57% 0.01328 82.40)",
+          "oklch(95.00% 0.01328 82.40)"
+        ],
+        "rampPurpose": "Synthesized lightness previews only; production colors are the canonical tokens in DESIGN.md."
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Text",
+        "canonical": "#122a3c",
+        "tonalRamp": [
+          "oklch(15.00% 0.04502 243.12)",
+          "oklch(26.43% 0.04502 243.12)",
+          "oklch(37.86% 0.04502 243.12)",
+          "oklch(49.29% 0.04502 243.12)",
+          "oklch(60.71% 0.04502 243.12)",
+          "oklch(72.14% 0.04502 243.12)",
+          "oklch(83.57% 0.04502 243.12)",
+          "oklch(95.00% 0.04502 243.12)"
+        ],
+        "rampPurpose": "Synthesized lightness previews only; production colors are the canonical tokens in DESIGN.md."
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "canonical": "#536373",
+        "tonalRamp": [
+          "oklch(15.00% 0.03233 248.48)",
+          "oklch(26.43% 0.03233 248.48)",
+          "oklch(37.86% 0.03233 248.48)",
+          "oklch(49.29% 0.03233 248.48)",
+          "oklch(60.71% 0.03233 248.48)",
+          "oklch(72.14% 0.03233 248.48)",
+          "oklch(83.57% 0.03233 248.48)",
+          "oklch(95.00% 0.03233 248.48)"
+        ],
+        "rampPurpose": "Synthesized lightness previews only; production colors are the canonical tokens in DESIGN.md."
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "#bbc0bf",
+        "tonalRamp": [
+          "oklch(15.00% 0.00572 182.99)",
+          "oklch(26.43% 0.00572 182.99)",
+          "oklch(37.86% 0.00572 182.99)",
+          "oklch(49.29% 0.00572 182.99)",
+          "oklch(60.71% 0.00572 182.99)",
+          "oklch(72.14% 0.00572 182.99)",
+          "oklch(83.57% 0.00572 182.99)",
+          "oklch(95.00% 0.00572 182.99)"
+        ],
+        "rampPurpose": "Synthesized lightness previews only; production colors are the canonical tokens in DESIGN.md."
+      },
+      "action-quiet": {
+        "role": "neutral",
+        "displayName": "Action Quiet",
+        "canonical": "#e0e9ed",
+        "tonalRamp": [
+          "oklch(15.00% 0.01109 225.99)",
+          "oklch(26.43% 0.01109 225.99)",
+          "oklch(37.86% 0.01109 225.99)",
+          "oklch(49.29% 0.01109 225.99)",
+          "oklch(60.71% 0.01109 225.99)",
+          "oklch(72.14% 0.01109 225.99)",
+          "oklch(83.57% 0.01109 225.99)",
+          "oklch(95.00% 0.01109 225.99)"
+        ],
+        "rampPurpose": "Synthesized lightness previews only; production colors are the canonical tokens in DESIGN.md."
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Interior Display",
+        "purpose": "Compact headings and identity."
+      },
+      "hero": {
+        "displayName": "Photographic Hero",
+        "purpose": "Homepage lockup only."
+      },
+      "body": {
+        "displayName": "Reading Body",
+        "purpose": "Long-form and interface reading."
+      },
+      "evidence": {
+        "displayName": "Evidence Mono",
+        "purpose": "Technical labels, evidence, and code."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "practice",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Navigation dialog movement and state changes."
+      },
+      {
+        "name": "fast",
+        "value": "160ms",
+        "purpose": "Short control-state transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "header-compact",
+        "value": "920px"
+      },
+      {
+        "name": "phone-layout",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary navigation link",
+      "kind": "nav",
+      "refersTo": "nav-active",
+      "description": "Quiet route link with an action-blue active underline.",
+      "html": "<a class=\"ds-nav-link\" href=\"#\" aria-current=\"page\">Building</a>",
+      "css": ".ds-nav-link { position: relative; display: inline-block; padding: 19px 0; color: #122a3c; font: 620 0.85rem/1.55 \"Open Practice Body\", Inter, system-ui, sans-serif; text-decoration: none; } .ds-nav-link[aria-current]::after { position: absolute; right: 0; bottom: -1px; left: 0; height: 3px; background: #0d5a93; content: \"\"; } .ds-nav-link:focus-visible { outline: none; box-shadow: 0 0 0 2px #f4f0e8, 0 0 0 4px #0d5a93; }"
+    },
+    {
+      "name": "Menu button",
+      "kind": "button",
+      "refersTo": "menu-button",
+      "description": "Compact mobile control for opening the navigation dialog.",
+      "html": "<button class=\"ds-menu-button\" type=\"button\">Menu</button>",
+      "css": ".ds-menu-button { min-height: 42px; padding: 8px 13px; border: 1px solid #bbc0bf; border-radius: 3px; background: transparent; color: #122a3c; font: 700 1rem/1.55 \"Open Practice Body\", Inter, system-ui, sans-serif; } .ds-menu-button:focus-visible { outline: none; box-shadow: 0 0 0 2px #f4f0e8, 0 0 0 4px #0d5a93; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "In the field.",
+    "overview": "The selected October 1, 2026 direction is warm, photographic, and restrained. One full-bleed opening photograph establishes the personal surface. The rest of the site gets visitors to real writing, products, studies, and photographs without repeating the introduction or adding promotional scaffolding.",
+    "keyCharacteristics": [
+      "Warm reading ground and navy ink on main-site pages.",
+      "A quiet four-link global navigation: Writing, Building, Photography, About.",
+      "Image-led entrances into the three bodies of work.",
+      "Compact interiors that put the actual archive, product, or gallery task before extended explanation."
+    ],
+    "rules": [
+      {
+        "name": "The Warm Ground Rule",
+        "body": "Use the warm ground for main-site reading surfaces. Use navy text and action blue for legibility and interaction. Use dark ink where photography needs a dark ground or chrome.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Action Rule",
+        "body": "On light pages, one action color carries interactive emphasis. Do not introduce another promotional accent to make a section compete.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Job Per Face Rule",
+        "body": "Schibsted Grotesk, loaded as `In the Field Display`, serves compact interior headings and navigation identity. `Open Practice Body` is the Inter-backed reading face. `Open Practice Evidence` is the Space Mono-backed evidence face. The home lockup uses the `Open Practice Hero` face currently loaded from `anton-400.woff2`.",
+        "section": "typography"
+      },
+      {
+        "name": "The Arrival Rule",
+        "body": "The homepage opens with one full-bleed photograph, then shows three equally weighted routes: Building, Writing, and Photography. Captions sit outside the images so the route names do not compete with content inside the images.",
+        "section": "layout"
+      },
+      {
+        "name": "The Quiet Edge Rule",
+        "body": "Controls use a restrained 3px radius and ordinary 1px rules. The navigation dialog is square after the `site-a` reset, which keeps the temporary panel plain and direct.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do preserve the full-bleed opening photograph and the four-link global navigation.",
+      "Do put the actual work, archive, or gallery action before a long introduction on interior pages.",
+      "Do use real images, real destinations, and truthful availability labels.",
+      "Do keep direct routes, query filters, keyboard focus, and recovery behavior intact."
+    ],
+    "donts": [
+      "Don't bring back the prior dark-and-lime SvelteKit-era palette or typography as active guidance.",
+      "Don't add competing homepage modules, permanent rails, portrait preambles, or a promotional band around the opening photograph.",
+      "Don't replace specialized gallery and product controls with generic decorative controls.",
+      "Don't present generated imagery as photography or invent evidence, availability, testimonials, or measured outcomes."
+    ]
+  }
+}
