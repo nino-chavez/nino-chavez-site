@@ -1,0 +1,72 @@
+[
+  {
+    "height": 900,
+    "innerWidth": 800,
+    "scrollWidth": 800,
+    "url": "http://127.0.0.1:4310/",
+    "width": 800
+  },
+  {
+    "height": 900,
+    "innerWidth": 800,
+    "scrollWidth": 800,
+    "url": "http://127.0.0.1:4310/work",
+    "width": 800
+  },
+  {
+    "height": 900,
+    "innerWidth": 800,
+    "scrollWidth": 800,
+    "url": "http://127.0.0.1:4310/learn",
+    "width": 800
+  },
+  {
+    "height": 900,
+    "innerWidth": 800,
+    "scrollWidth": 800,
+    "url": "http://127.0.0.1:4310/blog",
+    "width": 800
+  },
+  {
+    "height": 900,
+    "innerWidth": 800,
+    "scrollWidth": 800,
+    "url": "http://127.0.0.1:4310/photography",
+    "width": 800
+  },
+  {
+    "height": 900,
+    "innerWidth": 800,
+    "scrollWidth": 800,
+    "url": "http://127.0.0.1:4310/photography/coverage",
+    "width": 800
+  },
+  {
+    "height": 900,
+    "innerWidth": 800,
+    "scrollWidth": 800,
+    "url": "http://127.0.0.1:4310/work/rally-hq",
+    "width": 800
+  },
+  {
+    "height": 900,
+    "innerWidth": 800,
+    "scrollWidth": 800,
+    "url": "http://127.0.0.1:4310/demos",
+    "width": 800
+  },
+  {
+    "height": 900,
+    "innerWidth": 800,
+    "scrollWidth": 800,
+    "url": "http://127.0.0.1:4310/learn/builder",
+    "width": 800
+  },
+  {
+    "height": 900,
+    "innerWidth": 800,
+    "scrollWidth": 800,
+    "url": "http://127.0.0.1:4310/search?q=not-a-result",
+    "width": 800
+  }
+]

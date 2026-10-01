@@ -1,4 +1,17 @@
-# The rationed system — canonical design-system owner
+# In the field — canonical design-system owner
+
+## October 1 selection amendment
+
+Nino selected site-wide Concept A and “less is more.” This amendment supersedes the older composition and palette rules below. The [experience brief](design/experience-brief.md) owns page jobs and the preserve list; [the comparison](design/concepts/20260930/REVIEW.md) records the selection and useful elements retained from B and C.
+
+Use one full-bleed photographic homepage opening, the existing Anton face only on the photograph, and Schibsted/Inter for compact interior headings and reading. Shared navigation: Writing, Building, Photography, About. Search remains a utility. No global Sessions or Learn item; both remain reachable within Building and retain their URLs.
+
+Selected light tokens: paper #f4f0e8, reading ink #122a3c, action #0d5a93, muted #536373; gallery ground #07131d. Preserve semantic colors in tutorials and specialized applications. Main implementation is app/in-the-field.css, scoped to body.site-a. Existing component behavior stays in place.
+
+Every interior page puts its actual work before extended explanation. Album identity stays compact; no album cover hero, no Browse photos detour. Keep the real scroll-linked date timeline, intrinsic photo framing, save/download/search/viewer, keyboard focus and recovery. Independent product destinations keep task-focused navigation and native runtime.
+
+## Historical system
+
 
 - **Status:** Canonical. Won the 2026-08-04 two-system bake-off (the Codex
   candidate at `art-direction/round-04-portfolio-system/SYSTEM.md` was withdrawn)

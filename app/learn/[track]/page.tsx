@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "../../by-nino-library.css";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { learnTracks } from "../../data";
@@ -18,6 +19,7 @@ export async function generateMetadata({
   return track
     ? {
         title: `${track.title} learning path`,
+        alternates: { canonical: `/learn/${track.slug}` },
         description: `${track.tagline}. What you’ll make: ${track.finalArtifact}.`,
       }
     : {};

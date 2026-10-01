@@ -393,7 +393,7 @@ code {
 }
 
 .navigation-dialog .mobile-secondary {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   padding: 14px 18px;
   gap: 8px;
 }
@@ -1082,10 +1082,6 @@ code {
 
 /* Open Practice art-direction prototype */
 
-@view-transition {
-  navigation: auto;
-}
-
 @keyframes practice-line-in {
   from {
     opacity: 0.72;
@@ -1644,8 +1640,13 @@ h3 {
 }
 
 .header-inner {
-  grid-template-columns: minmax(190px, 1fr) auto minmax(190px, 1fr);
   min-height: var(--header-height);
+}
+
+@media (min-width: 921px) {
+  .header-inner {
+    grid-template-columns: minmax(190px, 1fr) auto minmax(190px, 1fr);
+  }
 }
 
 .identity-link {
@@ -2400,7 +2401,12 @@ h3 {
 /* Learn — self-directed paths grounded in the operating record */
 
 .learn-opening h1 {
-  font-size: clamp(5.4rem, 8vw, 8.8rem);
+  max-width: 12ch;
+  font-size: clamp(3.6rem, 6vw, 6rem);
+}
+
+.learn-opening h1 span {
+  white-space: normal;
 }
 
 .learn-room,
@@ -2467,10 +2473,11 @@ h3 {
 .learn-track-register a {
   display: grid;
   grid-template-columns:
-    minmax(150px, 0.32fr) minmax(240px, 0.68fr)
-    minmax(210px, 0.52fr) 76px 18px;
-  min-height: 126px;
-  padding: 18px 0;
+    minmax(150px, 0.32fr) minmax(210px, 0.68fr)
+    minmax(180px, 0.52fr) 68px 18px;
+  grid-template-areas: "name start output time arrow";
+  min-height: 112px;
+  padding: 16px 0;
   gap: clamp(12px, 2vw, 28px);
   align-items: center;
   border-bottom: 1px solid var(--rule);
@@ -2541,6 +2548,12 @@ h3 {
   display: grid;
   gap: 5px;
 }
+
+.learn-track-name { grid-area: name; }
+.learn-track-start { grid-area: start; }
+.learn-track-output { grid-area: output; }
+.learn-track-time { grid-area: time; }
+.learn-track-register b { grid-area: arrow; }
 
 .learn-track-name strong {
   font-family: var(--display);
@@ -2993,38 +3006,71 @@ h3 {
     grid-template-columns: 1fr;
     gap: 38px;
   }
+
+  .learn-track-register a {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+    grid-template-areas:
+      "name output time"
+      "name start arrow";
+    gap: 12px 22px;
+  }
 }
 
 @media (max-width: 720px) {
+  .learn-opening .library-opening__copy {
+    margin-top: 24px;
+    padding-block: 0;
+    gap: 20px;
+  }
+
+  .learn-opening {
+    padding-bottom: 24px;
+  }
+
   .learn-opening h1 {
-    font-size: clamp(3.2rem, 15vw, 6.4rem);
+    max-width: 100%;
+    font-size: clamp(2.5rem, 11vw, 3.6rem);
+    letter-spacing: -0.04em;
+  }
+
+  .learn-room {
+    padding-top: 32px;
+  }
+
+  .learn-chooser {
+    gap: 24px;
   }
 
   .learn-track-register a {
     grid-template-columns: minmax(0, 1fr) 18px;
+    grid-template-areas:
+      "name arrow"
+      "output output"
+      "start start"
+      "time time";
     min-height: 0;
-    gap: 8px 16px;
+    padding: 20px 0;
+    gap: 14px 16px;
   }
 
   .learn-track-name {
-    grid-column: 1;
+    grid-area: name;
   }
 
   .learn-track-start {
-    grid-column: 1;
+    grid-area: start;
   }
 
   .learn-track-output {
-    grid-column: 1;
+    grid-area: output;
   }
 
   .learn-track-time {
-    grid-column: 1;
+    grid-area: time;
   }
 
   .learn-track-register b {
-    grid-row: 1;
-    grid-column: 2;
+    grid-area: arrow;
   }
 
   .learn-evidence-bridge,
@@ -3377,11 +3423,10 @@ h3 {
 /* Writing — the complete Signal Dispatch publication */
 
 .writing-opening h1 {
-  font-size: clamp(4.6rem, 7.7vw, 8.75rem);
+  font-size: clamp(3.4rem, 6vw, 6rem);
 }
 
 @media (min-width: 981px) {
-  .learn-opening .library-opening__copy,
   .writing-opening .library-opening__copy {
     grid-template-columns: minmax(0, 1fr);
     gap: clamp(30px, 4vw, 58px);
@@ -3394,7 +3439,18 @@ h3 {
   }
 
   .learn-opening h1 {
-    font-size: clamp(5.2rem, 8.2vw, 8.8rem);
+    font-size: clamp(3.6rem, 6vw, 6rem);
+  }
+
+  .learn-opening .library-opening__copy {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: start;
+    gap: clamp(32px, 4vw, 64px);
+  }
+
+  .learn-opening .library-opening__copy > div:last-child {
+    width: auto;
+    margin-left: 0;
   }
 
   .learn-opening h1 span,
@@ -3403,12 +3459,12 @@ h3 {
   }
 
   .writing-opening h1 {
-    font-size: clamp(4.8rem, 8vw, 8.75rem);
+    font-size: clamp(3.4rem, 6vw, 6rem);
   }
 }
 
 .writing-room {
-  padding-top: clamp(54px, 7vw, 90px);
+  padding-top: clamp(38px, 5vw, 64px);
 }
 
 .writing-room .library-experience {
@@ -3457,7 +3513,7 @@ h3 {
 }
 
 .writing-room .writing-record {
-  min-height: 112px;
+  min-height: 96px;
   grid-template-columns: minmax(160px, 0.32fr) minmax(0, 1fr) auto;
   scroll-margin-top: calc(var(--header-height) + 28px);
   content-visibility: auto;
@@ -3478,7 +3534,7 @@ h3 {
 
 .writing-series-directory {
   display: grid;
-  margin-top: clamp(110px, 13vw, 180px);
+  margin-top: clamp(72px, 9vw, 120px);
   grid-template-columns: minmax(190px, 0.42fr) minmax(0, 1.58fr);
   gap: clamp(40px, 7vw, 100px);
   align-items: start;
@@ -3529,8 +3585,8 @@ h3 {
 
 .writing-series-directory li a {
   display: grid;
-  min-height: 116px;
-  padding: 18px 0;
+  min-height: 96px;
+  padding: 14px 0;
   grid-template-columns: minmax(0, 1fr) 116px 18px;
   gap: clamp(16px, 2.5vw, 36px);
   align-items: center;
@@ -3602,7 +3658,7 @@ h3 {
 
 @media (max-width: 760px) {
   .writing-opening h1 {
-    font-size: clamp(2.25rem, 12vw, 7rem);
+    font-size: clamp(2.6rem, 12vw, 4.5rem);
   }
 
   .writing-room .writing-record .record-meta {
@@ -5757,8 +5813,8 @@ h3 {
 
 .work-atlas__opening {
   display: grid;
-  min-height: 720px;
-  padding-block: clamp(68px, 8vw, 118px);
+  min-height: 560px;
+  padding-block: clamp(52px, 6vw, 88px);
   grid-template-columns: minmax(260px, 0.48fr) minmax(0, 1.52fr);
   gap: clamp(48px, 7vw, 112px);
   align-items: start;
@@ -5771,9 +5827,9 @@ h3 {
 
 /* claude-design-system: one display voice on flat ground — Anton retired here */
 .work-atlas__lead h1 {
-  margin: 12px 0 28px;
+  margin: 10px 0 20px;
   color: var(--ink);
-  font-size: clamp(4.2rem, 7.5vw, 7rem);
+  font-size: clamp(3.4rem, 5.5vw, 5.6rem);
   font-weight: 800;
   letter-spacing: -0.045em;
   line-height: 0.92;
@@ -5782,7 +5838,7 @@ h3 {
 .work-atlas__lede {
   max-width: 430px;
   margin: 0;
-  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  font-size: clamp(1.15rem, 1.55vw, 1.45rem);
   font-weight: 720;
   letter-spacing: -0.035em;
   line-height: 1.18;
@@ -5823,7 +5879,7 @@ h3 {
     "note  count arrow";
   align-items: center;
   column-gap: 20px;
-  padding: 20px 2px;
+  padding: 15px 2px;
   border-top: 1px solid var(--rule);
   color: var(--text);
   text-decoration: none;
@@ -5835,7 +5891,7 @@ h3 {
 
 .work-domains strong {
   grid-area: name;
-  font-size: clamp(1.6rem, 2.2vw, 2.1rem);
+  font-size: clamp(1.35rem, 1.8vw, 1.7rem);
   letter-spacing: -0.03em;
 }
 
@@ -5918,14 +5974,14 @@ h3 {
 }
 
 .work-library-stage {
-  padding-block: clamp(82px, 9vw, 132px);
+  padding-block: clamp(58px, 7vw, 96px);
   scroll-margin-top: calc(var(--header-height) + 24px);
 }
 
 .work-library-stage__heading,
 .demo-library-stage__heading {
   display: grid;
-  margin-bottom: clamp(40px, 5vw, 70px);
+  margin-bottom: clamp(30px, 4vw, 52px);
   grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.5fr);
   gap: clamp(42px, 7vw, 100px);
   align-items: end;
@@ -5934,7 +5990,7 @@ h3 {
 .work-library-stage__heading h2,
 .demo-library-stage__heading h2 {
   margin: 0;
-  font-size: clamp(3rem, 6vw, 6rem);
+  font-size: clamp(2.6rem, 4.8vw, 4.8rem);
   letter-spacing: -0.065em;
   line-height: 0.92;
 }
@@ -5952,8 +6008,8 @@ h3 {
 
 .work-library-stage .library-controls,
 .demo-library-stage .library-controls {
-  padding: 16px;
-  gap: 10px;
+  padding: 10px;
+  gap: 8px;
   border: 0;
   border-radius: 0;
   background: var(--action-quiet);
@@ -5961,7 +6017,7 @@ h3 {
 
 .work-library-stage .control,
 .demo-library-stage .control {
-  padding: 10px 12px 8px;
+  padding: 8px 10px 6px;
   background: rgb(247 248 250 / 0.82);
 }
 
@@ -6021,8 +6077,8 @@ h3 {
 }
 
 .work-library-stage .library-groups {
-  margin-top: clamp(64px, 8vw, 112px);
-  gap: clamp(76px, 9vw, 124px);
+  margin-top: clamp(42px, 6vw, 76px);
+  gap: clamp(48px, 6vw, 76px);
 }
 
 .work-library-stage .library-group {
@@ -6079,8 +6135,8 @@ h3 {
 
 .work-library-stage .work-record {
   display: grid;
-  min-height: 112px;
-  padding: 18px 20px;
+  min-height: 96px;
+  padding: 14px 16px;
   grid-template-columns: minmax(170px, 0.34fr) minmax(0, 1fr) auto;
   gap: clamp(16px, 2.5vw, 34px);
   align-items: center;
@@ -6579,8 +6635,8 @@ h3 {
 /* Photography / image field */
 
 .photography-opening {
-  min-height: max(900px, calc(100svh - 92px));
-  padding-bottom: 190px;
+  min-height: max(820px, calc(100svh - 92px));
+  padding-bottom: 158px;
 }
 
 .photography-opening__register {
@@ -6589,8 +6645,8 @@ h3 {
 }
 
 .photography-opening__stage {
-  min-height: calc(max(900px, 100svh - 92px) - 57px);
-  padding-bottom: clamp(220px, 20vw, 270px);
+  min-height: calc(max(820px, 100svh - 92px) - 57px);
+  padding-bottom: clamp(180px, 17vw, 226px);
 }
 
 .photography-opening h1 {
@@ -6598,9 +6654,9 @@ h3 {
 }
 
 .photography-search {
-  padding: 24px;
+  padding: 20px;
   border: 0;
-  background: rgb(14 25 40 / 0.76);
+  background: rgb(14 25 40 / 0.66);
   box-shadow: 0 22px 50px rgb(14 25 40 / 0.24);
   backdrop-filter: blur(12px);
 }
@@ -6850,13 +6906,13 @@ h3 {
   }
 
   .photography-opening {
-    min-height: 960px;
-    padding-bottom: 190px;
+    min-height: 880px;
+    padding-bottom: 158px;
   }
 
   .photography-opening__stage {
-    min-height: 770px;
-    padding-bottom: 220px;
+    min-height: 700px;
+    padding-bottom: 190px;
   }
 
   .photography-frame-grid {
@@ -6882,7 +6938,7 @@ h3 {
   }
 
   .work-atlas__lead h1 {
-    font-size: clamp(6rem, 28vw, 9rem);
+    font-size: clamp(3.35rem, 14vw, 5.2rem);
   }
 
   .work-library-stage .library-controls {
@@ -6951,13 +7007,13 @@ h3 {
   }
 
   .photography-opening {
-    min-height: 970px;
-    padding-bottom: 210px;
+    min-height: 870px;
+    padding-bottom: 170px;
   }
 
   .photography-opening__stage {
-    min-height: 760px;
-    padding-bottom: 238px;
+    min-height: 690px;
+    padding-bottom: 198px;
   }
 
   .photography-search {
@@ -7000,17 +7056,17 @@ h3 {
   }
 
   .photography-opening {
-    min-height: 990px;
-    padding-bottom: 220px;
+    min-height: 850px;
+    padding-bottom: 162px;
   }
 
   .photography-opening__stage {
-    min-height: 770px;
-    padding-block: 40px 250px;
+    min-height: 680px;
+    padding-block: 34px 184px;
   }
 
   .photography-opening h1 {
-    font-size: clamp(3.4rem, 15.8vw, 5.5rem);
+    font-size: clamp(3.2rem, 14.5vw, 5rem);
   }
 
   .photography-route-deck ol {
@@ -7020,6 +7076,33 @@ h3 {
        scroll-snap row (no dots/carousel added) and just widens the peek for
        a clearer signal. */
     grid-auto-columns: min(70vw, 240px);
+  }
+
+  .photography-opening__image img {
+    object-position: 58% 38%;
+  }
+
+  .photography-opening__shade {
+    background:
+      linear-gradient(
+        180deg,
+        rgb(14 25 40 / 0.28) 0%,
+        rgb(14 25 40 / 0.04) 34%,
+        rgb(14 25 40 / 0.72) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgb(14 25 40 / 0.66) 0%,
+        rgb(14 25 40 / 0.08) 66%,
+        rgb(14 25 40 / 0.2) 100%
+      );
+  }
+
+  .photography-search {
+    width: min(86%, 340px);
+    margin-left: auto;
+    padding: 16px;
+    background: rgb(14 25 40 / 0.62);
   }
 
   .photography-frame-grid {
@@ -7143,7 +7226,7 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: min(92vh, 980px);
+  min-height: min(80svh, 780px);
   background-color: var(--ink);
   background-image: url("/images/home-hero-frame.jpg?v=skydark1");
   background-image: image-set(
@@ -7228,7 +7311,7 @@ h3 {
   margin: 0;
   font-family: var(--hero);
   font-weight: 400;
-  font-size: clamp(4rem, 11vw, 10.5rem);
+  font-size: clamp(3.6rem, 9vw, 8.6rem);
   line-height: 0.88;
   letter-spacing: var(--hero-tracking);
   text-transform: uppercase;
@@ -7377,7 +7460,7 @@ h3 {
 }
 
 .proof-cell__image {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   border-bottom: 1px solid var(--rule);
 }
@@ -7405,7 +7488,17 @@ h3 {
    docs/claude-design-system.md §Photography: real artifact or nothing. Give
    the caption the card's full height instead of leaving an empty image slot. */
 .proof-cell__caption--flush {
-  padding-top: 20px;
+  padding-top: 24px;
+}
+
+.proof-cell--text {
+  align-self: start;
+  border-top-color: var(--ink);
+  background: var(--surface-muted);
+}
+
+.proof-cell--text .proof-cell__caption {
+  min-height: 224px;
 }
 
 .proof-cell__caption {
@@ -7698,6 +7791,7 @@ h3 {
 
 @media (max-width: 760px) {
   .field-hero {
+    min-height: 480px;
     background-image: linear-gradient(
         180deg,
         rgb(14 25 40 / 0) 0%,
@@ -7723,6 +7817,19 @@ h3 {
     background-position: center, 38% 30%;
   }
 
+  .field-hero__stage {
+    padding-top: 36px;
+  }
+
+  .proof-bench {
+    padding-top: 36px;
+  }
+
+  .proof-bench__register {
+    margin-bottom: 24px;
+    gap: 20px;
+  }
+
   .proof-bench__register {
     grid-template-columns: 1fr;
     align-items: start;
@@ -7730,6 +7837,10 @@ h3 {
 
   .proof-bench__grid {
     grid-template-columns: 1fr;
+  }
+
+  .proof-cell--text .proof-cell__caption {
+    min-height: 0;
   }
 
   .field-hero__register {
