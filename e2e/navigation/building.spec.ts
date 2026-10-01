@@ -31,7 +31,9 @@ test("catalogue filters, reload, reset, return and browser Back keep their meani
   await expect(page.locator(".work-record")).toHaveCount(34);
   for (const name of ["Flickday", "Pepper"]) {
     await page.getByRole("searchbox", { name: "Search work" }).fill(name);
+    await expect(page).toHaveURL(new RegExp(`q=${name}`));
     await expect(page.locator(".work-record")).toHaveCount(1);
+    await expect(page.locator(".work-record h3")).toContainText(name);
     await page.reload();
     await expect(page.getByRole("searchbox", { name: "Search work" })).toHaveValue(name);
     await expect(page.locator(".work-record")).toHaveCount(1);

@@ -1,3 +1,26 @@
+## Production release — 2026-10-01
+
+Shipped through PR #37, main commit `8bbb89bf70354008bf4af621e1d9ecc8fc8738c8`.
+Cloudflare Worker `ninochavez-main-open-practice` is serving version
+`e10984eb-510c-4c4a-bf77-75440f646271` at 100%, deployed at 14:22:43 UTC.
+The GitHub workflow's deploy step was confirmed skipped; the documented manual
+production command completed from the clean merged revision. Runtime bindings
+and the public visibility setting matched the previous live version.
+
+All 16 Building-specific browser checks pass against `https://ninochavez.co`
+in WebKit and Chromium. The first live run exposed a test race: both consecutive
+searches return one record, so a count-only assertion could pass before the
+second query settled. The test now waits for the requested URL and record name
+before reloading. No application change was needed.
+
+A separate public browser inspection confirmed all eight selected entries,
+all five preview images, no private-review banner, and no horizontal overflow.
+Parent inspected desktop and phone frames. The commerce detail route returns
+200; its legacy name redirects to it; whitepapers and presentations redirect
+to their corresponding Writing filters.
+
+---
+
 ## Implementation validation — 2026-10-01
 
 Nino approved the revised Selected work direction with “build it and ship it.”
