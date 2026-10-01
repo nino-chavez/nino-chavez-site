@@ -1,5 +1,17 @@
 # Building: direction comparison
 
+## Current direction correction — October 1
+
+The user rejected grouping by purpose and the universal Products label. The collection includes apps, websites, a sports-media business, a tournament series, and a publication library. Flickday Media and Let’s Pepper were already in the 34-entry catalogue but missing from the curated overview. They are now included in the revised local `selected-work.html` view. The original A/B/C concepts remain available through `comparison-v1.html` and are not selected.
+
+Use **Selected work** as the common heading. Each entry names the entity before describing its function and destination. Keep kind, availability and link action separate. Never infer founder or sole-owner status from a repository or contact address. Kind is a visitor-facing descriptor; the existing catalogue form is the format of the linked material. The revision labels that control Format and leaves its query values intact.
+
+The current proposal uses one continuous set of separated rows. Every row has a name, kind, short description and direct action. Real screens represent software; a portfolio photo represents Flickday; a current website capture represents Let’s Pepper. No purpose sections and no fabricated preview panels. Study and method links remain a distinct supporting section. The row layout is an assessment proposal, not a selected production design.
+
+Confirmed source: `app/data.ts` already contains Let’s Pepper and Flickday. Live public pages inspected October 1: [Flickday Media](https://flickdaymedia.com/) describes tournament photography, reels and photo delivery; [Let’s Pepper](https://letspepper.com/) identifies its grass-volleyball tournament series and reports the 2026 season complete. The latter was read in a real browser after the search fetch failed. Repository source corroborates these descriptions. Public contact information does not prove sole ownership. The Let’s Pepper preview was captured at 1440×900 and is stored in `assets/lets-pepper-site.png`. Flickday uses the existing public portfolio photograph, not a generated image. The older Let’s Pepper image promoted only its gallery and was not used as a preview of the whole series.
+
+The sections below preserve the original comparison brief; this correction supersedes its Products umbrella and purpose-group recommendation.
+
 Design intent: rethink the `/work` page. Source: production revision `1329b5a`. The shared identity, global navigation and other routes stay governed by `DESIGN.md`. This comparison is local; none of its candidates is approved for production.
 
 ## Reader and job
@@ -63,6 +75,6 @@ Parent inspected desktop, middle and phone baseline captures in `evidence/`. A c
 
 Panic's live homepage was inspected October 1 at 1440×900 to ask how multiple products can keep identity while remaining one site. Its opening is a full-screen game promotion; that would add an unnecessary preamble here and is rejected. Its product section groups Mac apps separately from games, with recognizable app icons and strong gaps between groups. C borrows the principle of grouping by purpose; A instead keeps real product previews so unfamiliar names have context. This is composition evidence only, never evidence of effectiveness or a source of graphics/fonts. No authenticated Mobbin evidence is claimed.
 
-## Selection
+## Original selection state
 
-Pending Nino's comparison. No production implementation or deploy until he names a direction. Once selected, inspect the rejected candidates for useful pieces, record what is folded in and why, then implement with the existing route and filter contracts.
+Superseded by the current direction correction above. Pending Nino's revised review. No production implementation or deploy until he names a direction. Once selected, inspect the rejected candidates for useful pieces, record what is folded in and why, then implement with the existing route and filter contracts.

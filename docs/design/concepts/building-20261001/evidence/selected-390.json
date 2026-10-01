@@ -1,0 +1,14 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "geometry": {
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 3134,
+    "brokenImages": 0
+  },
+  "errors": [],
+  "checks": "Eight mixed entries; truthful labels; both additions findable once in 34-entry archive; reload and return passed"
+}

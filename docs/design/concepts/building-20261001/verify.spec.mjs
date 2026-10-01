@@ -56,7 +56,7 @@ test('overflow measurement rejects an injected defect',async({page})=>{
   expect(await page.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth)).toBe(false);
 });
 test('comparison switches concept and phone viewport',async({page})=>{
-  await page.goto(root+'comparison.html?concept=a&size=desktop');
+  await page.goto(root+'comparison-v1.html?concept=a&size=desktop');
   await expect(page.frameLocator('#preview').getByRole('heading',{name:'Building',exact:true})).toBeVisible();
   await page.getByRole('button',{name:'B · Project browser'}).click();
   await expect(page.frameLocator('#preview').getByRole('button',{name:/Yawn/})).toBeVisible();
@@ -65,4 +65,35 @@ test('comparison switches concept and phone viewport',async({page})=>{
   await expect.poll(()=>page.frameLocator('#preview').locator('body').evaluate(()=>innerWidth)).toBe(390);
   await page.getByRole('button',{name:'C · By purpose'}).click();
   await expect(page.frameLocator('#preview').getByRole('heading',{name:'Everyday software',exact:true})).toBeVisible();
+});
+
+for (const viewport of [{width:1440,height:900},{width:800,height:900},{width:390,height:844}]) {
+  test(`selected work: ${viewport.width}px mixed portfolio and catalogue`,async({page})=>{
+    const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.setViewportSize(viewport);
+    await page.goto(root+'selected-work.html');await page.waitForFunction(()=>document.body.dataset.ready==='true');
+    await page.evaluate(async()=>{await document.fonts.ready;await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})));});
+    await expect(page.getByRole('heading',{name:'Selected work',exact:true})).toBeVisible();
+    await expect(page.locator('.work-entry')).toHaveCount(8);
+    await expect(page.getByRole('heading',{name:'Products',exact:true})).toHaveCount(0);
+    for(const [slug,kind,href] of [['flickday','Sports-media business','https://flickdaymedia.com/'],['lets-pepper','Tournament series','https://letspepper.com/'],['rally-hq','Web app','https://ninochavez.co/work/rally-hq']]){
+      const row=page.locator(`[data-work="${slug}"]`);await expect(row.locator('.work-kind')).toHaveText(kind);await expect(row.getByRole('link')).toHaveAttribute('href',href);
+    }
+    const geometry=await page.evaluate(()=>({width:document.documentElement.clientWidth,scrollWidth:document.documentElement.scrollWidth,height:document.documentElement.scrollHeight,brokenImages:[...document.images].filter(i=>!i.complete||!i.naturalWidth).length}));
+    expect(geometry.scrollWidth).toBeLessThanOrEqual(geometry.width);expect(geometry.brokenImages).toBe(0);expect(geometry.height).toBeLessThan(8192);
+    await page.screenshot({path:`${evidence}selected-${viewport.width}.png`});await page.screenshot({path:`${evidence}selected-${viewport.width}-full.png`,fullPage:true});
+    await page.locator('[data-work="lets-pepper"]').screenshot({path:`${evidence}selected-${viewport.width}-pepper.png`});
+    if(viewport.width===390)for(const slug of ['the-rotation','rally-hq'])await page.locator(`[data-work="${slug}"]`).screenshot({path:`${evidence}selected-390-${slug}.png`});
+    await page.getByRole('link',{name:'Browse all work',exact:true}).click();await expect(page.locator('.archive-row')).toHaveCount(34);
+    await page.getByRole('searchbox',{name:'Search work'}).fill('Flickday');await expect(page.locator('.archive-row')).toHaveCount(1);await expect(page.locator('.archive-row')).toContainText('Sports-media business');
+    await page.getByRole('searchbox',{name:'Search work'}).fill('Pepper');await expect(page.locator('.archive-row')).toHaveCount(1);await expect(page.locator('.archive-row')).toContainText('Tournament series');
+    await page.reload();await expect(page.getByRole('searchbox',{name:'Search work'})).toHaveValue('Pepper');
+    await page.getByRole('link',{name:/Back to the overview/}).click();await expect(page.locator('#overview')).toBeVisible();
+    expect(errors).toEqual([]);fs.writeFileSync(`${evidence}selected-${viewport.width}.json`,JSON.stringify({viewport,geometry,errors,checks:'Eight mixed entries; truthful labels; both additions findable once in 34-entry archive; reload and return passed'},null,2)+'\n');
+  });
+}
+test('revised preview uses full desktop and phone dimensions',async({page})=>{
+  await page.setViewportSize({width:800,height:900});await page.goto(root+'comparison.html?concept=c&size=desktop');
+  await expect(page.frameLocator('#preview').getByRole('heading',{name:'Selected work',exact:true})).toBeVisible();
+  await expect.poll(()=>page.frameLocator('#preview').locator('body').evaluate(()=>innerWidth)).toBe(1440);
+  await page.getByRole('button',{name:'Phone',exact:true}).click();await expect.poll(()=>page.frameLocator('#preview').locator('body').evaluate(()=>innerWidth)).toBe(390);
 });

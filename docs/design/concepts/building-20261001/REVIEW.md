@@ -1,4 +1,22 @@
-# Building concepts: ready for a direction decision
+# Building: mixed-work revision ready for review
+
+## Current assessment — supersedes the original recommendation
+
+Nino rejected the purpose grouping and the assumption that the collection contains only products. The corrected proposal is **Selected work**: one continuous portfolio index with a name, kind, description and clear destination for each entry. It now shows all eight entries, including Flickday Media as a sports-media business and Let’s Pepper as a tournament series. A website is the destination for those entities, not a claim that the businesses are apps. The existing catalogue already held both records; no duplicate was added.
+
+The revised source is `selected-work.html`, `selected-work.js` and `selected-work.css`. The shared preview opens this revision with Desktop and Phone controls. `comparison-v1.html` preserves the original three concepts. None of those three was selected.
+
+The parent inspected first-view and whole-page captures at 1440, 800 and 390 pixels. A fresh cold reviewer, given the user correction and rendered frames only, found that the mixed collection now reads accurately, the separate rows are clear, and the phone scan holds together. It requested tighter phone crops of The Rotation and Rally HQ. Those now show one actual match listing and one court score; the reviewer reopened both captures and marked the finding resolved. Its final disposition is ready for local design review.
+
+This structure trades some large-image impact for easier scanning and consistent separation. The graphics now support identification; they are not uniform product mockups. Each business keeps its own truthful descriptor. Entries without imagery remain concise text rows instead of fabricated interfaces. Studies and methods remain a distinct supporting section.
+
+All 12 browser checks passed. The new checks cover eight curated entries, exact destination links for the additions, entity labels, zero document overflow or broken images at three widths, one result per new entry in the 34-record catalogue, reload recovery, return to overview, and accurate phone/desktop iframe dimensions. The earlier search, empty, clear, filter, Back, and overflow-canary checks still pass. These are local prototype checks, not production regression proof.
+
+The one detector pass for this revision reported three warnings: two known font aliases and the existing cream palette. No suppression or new brand choice was saved. Product context now records the mixed scope and the rejection of purpose grouping. Production UI and data are unchanged. No deployment occurred.
+
+Evidence: `evidence/selected-*`, including the complete screenshots, individual phone crops, JSON receipts and detector output. Asset sources and current public-site facts are recorded in the current correction at the top of `BRIEF.md`. Parent and reviewer judgments are design assessments, not analytics results. The proposed selected-work order is reviewable, not inferred from traffic volume. The next production step requires a named human design selection under the existing rethink contract.
+
+## Original comparison record
 
 October 1, 2026. Local prototypes based on production revision `1329b5a7d96da6a576c3489e090c49c3ea30dc88`. No direction has been selected. No production route, stylesheet, navigation, data, or deployment changed.
 
