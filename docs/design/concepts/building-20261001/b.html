@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A project browser for Nino Chavez's Building page.">
+  <title>Building — Project browser</title>
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="b.css">
+</head>
+<body>
+  <div id="site-header"></div>
+  <main id="main">
+    <div id="overview">
+      <section class="browser-opening wrap" aria-labelledby="building-title">
+        <div>
+          <h1 id="building-title">Building</h1>
+          <p>Software, public tools, and practical methods for work that needs to stay clear and usable.</p>
+        </div>
+        <div data-top-archive>
+          <!-- Archive control supplied by the shared prototype contract. -->
+        </div>
+      </section>
+
+      <section class="project-browser wrap" aria-labelledby="projects-title">
+        <div class="browser-heading">
+          <h2 id="projects-title">Projects</h2>
+          <p id="selection-note" aria-live="polite"></p>
+        </div>
+        <div class="browser-layout">
+          <nav class="project-index" aria-label="Choose a product" id="project-index"></nav>
+          <article class="selected-project" id="selected-project" aria-live="polite"></article>
+        </div>
+      </section>
+
+      <div id="studies-slot"></div>
+      <div id="further-slot"></div>
+    </div>
+    <section id="catalogue" class="catalogue" hidden></section>
+  </main>
+  <div id="site-footer"></div>
+
+  <script src="data.js"></script>
+  <script src="shared.js"></script>
+  <script>
+    (() => {
+      const { data, esc, media, caption, link, studies, further, archiveTrigger } = Building;
+      const index = document.querySelector('#project-index');
+      const selected = document.querySelector('#selected-project');
+      const note = document.querySelector('#selection-note');
+      const validSlug = slug => data.products.some(product => product.slug === slug) ? slug : 'minder';
+      const selectedSlug = () => validSlug(new URLSearchParams(location.search).get('project'));
+
+      function emptyPreview(product) {
+        return `<div class="typographic-preview typographic-preview--${esc(product.slug)}" aria-label="${esc(product.name)} has no product preview image">
+          <span>${esc(product.form)}</span>
+          <strong>${esc(product.name)}</strong>
+          <p>${esc(product.availability)}</p>
+        </div>`;
+      }
+
+      function render(projectSlug = selectedSlug()) {
+        const product = data.products.find(item => item.slug === projectSlug);
+        note.textContent = `${product.name} selected`;
+        index.innerHTML = data.products.map((item, position) => {
+          const active = item.slug === product.slug;
+          return `<button class="project-choice${active ? ' is-selected' : ''}" type="button" data-project="${esc(item.slug)}" aria-pressed="${active}" ${active ? 'aria-current="true"' : ''}><span class="choice-number">${String(position + 1).padStart(2, '0')}</span><span>${esc(item.name)}</span><span class="choice-state">${active ? 'Selected' : esc(item.availability)}</span></button>`;
+        }).join('');
+        selected.innerHTML = `<div class="selected-media">${product.image ? media(product) : emptyPreview(product)}${caption(product)}</div><div class="selected-copy"><p class="selected-availability">${esc(product.availability)}</p><h3>${esc(product.name)}</h3><p class="selected-summary">${esc(product.summary)}</p>${link(product, product.action, 'action selected-action')}</div>`;
+      }
+
+      function choose(slug, historyMode = 'push') {
+        const url = new URL(location.href);
+        url.searchParams.set('project', validSlug(slug));
+        if (historyMode === 'push') history.pushState(null, '', `${url.pathname}?${url.searchParams}`);
+        else history.replaceState(null, '', `${url.pathname}?${url.searchParams}`);
+        render(validSlug(slug));
+      }
+
+      index.addEventListener('click', event => {
+        const button = event.target.closest('[data-project]');
+        if (button) choose(button.dataset.project);
+      });
+      window.addEventListener('popstate', () => render());
+
+      document.querySelector('[data-top-archive]').innerHTML = archiveTrigger('Browse all work');
+      document.querySelector('#studies-slot').innerHTML = studies();
+      document.querySelector('#further-slot').innerHTML = further();
+      Building.mount();
+      render();
+    })();
+  </script>
+</body>
+</html>
