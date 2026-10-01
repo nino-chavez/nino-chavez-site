@@ -225,8 +225,6 @@ export function WritingLibrary({
                   <a
                     className="work-record writing-record"
                     href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     id={item.slug}
                     key={`${item.kind}-${item.slug}`}
                   >
@@ -241,10 +239,7 @@ export function WritingLibrary({
                       {item.excerpt ? <p>{item.excerpt}</p> : null}
                     </div>
                     <span className="record-open">
-                      Read <b aria-hidden="true">↗</b>
-                      <span className="assistive-text">
-                        {" "}(opens in a new tab)
-                      </span>
+                      Read <b aria-hidden="true">→</b>
                     </span>
                   </a>
                 ))}

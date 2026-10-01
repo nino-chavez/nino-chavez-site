@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "source": "apps/blog/astro-build",
-  "sourceRevision": "40b0cd2afe627ae6cef15f7a53f6a06d5030e9d5",
-  "generatedAt": "2026-08-16T23:36:57.607Z",
-  "latestPublishedAt": "2026-08-17",
-  "publicPieceCount": 298,
+  "sourceRevision": "3c8a02035cd0cae8e61d86bd04d10f239a78b70d",
+  "generatedAt": "2026-09-30T05:10:47.135Z",
+  "latestPublishedAt": "2026-09-29",
+  "publicPieceCount": 306,
   "kindCounts": {
-    "Essay": 252,
+    "Essay": 260,
     "Whitepaper": 15,
     "Presentation": 9,
     "Tutorial": 8,
@@ -34,6 +34,118 @@
     "2025"
   ],
   "items": [
+    {
+      "slug": "the-work-doesnt-end-at-send",
+      "title": "The Work Doesn’t End at Send",
+      "excerpt": "AI can make a request easier to send without making it easier to fulfill. Jevons paradox and doing less offer a way to examine the work left behind.",
+      "publishedAt": "2026-09-29",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai",
+        "productivity",
+        "ai-agents"
+      ],
+      "href": "https://ninochavez.co/blog/the-work-doesnt-end-at-send"
+    },
+    {
+      "slug": "trying-to-teach-an-ai-how-i-edit-photos",
+      "title": "Trying to teach an AI how I edit photos",
+      "excerpt": "We built a Lightroom editing experiment and ran blind comparisons against a fixed recipe. The results led me to ask what the work had cost and why we kept going.",
+      "publishedAt": "2026-09-29",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "photography",
+        "ai-development",
+        "experimentation"
+      ],
+      "href": "https://ninochavez.co/blog/trying-to-teach-an-ai-how-i-edit-photos"
+    },
+    {
+      "slug": "the-connector-you-cant-oauth",
+      "title": "The Connector You Can't OAuth",
+      "excerpt": "I asked the new Siri what it could infer from a week of texts. The answer was not a better chatbot. It was inference over a graph no OAuth connector gets.",
+      "publishedAt": "2026-09-15",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "product-strategy",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/the-connector-you-cant-oauth"
+    },
+    {
+      "slug": "give-your-ai-a-reason-for-every-design-reference",
+      "title": "Give Your AI a Reason for Every Design Reference",
+      "excerpt": "A useful design reference may come from a completely different product. The work is identifying the decision it helps with, then telling the agent which part should transfer.",
+      "publishedAt": "2026-09-09",
+      "kind": "Essay",
+      "category": "AI Development",
+      "tags": [
+        "ai-development",
+        "product-design",
+        "design-references"
+      ],
+      "href": "https://ninochavez.co/blog/give-your-ai-a-reason-for-every-design-reference"
+    },
+    {
+      "slug": "who-is-still-driving",
+      "title": "Who Is Still Driving?",
+      "excerpt": "Using AI takes practice, but a product that needs an expert to catch its mistakes should say so before someone relies on it.",
+      "publishedAt": "2026-09-06",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "ai-development",
+        "ai-governance"
+      ],
+      "href": "https://ninochavez.co/blog/who-is-still-driving"
+    },
+    {
+      "slug": "rigorous-about-the-wrong-question",
+      "title": "Rigorous About the Wrong Question",
+      "excerpt": "I asked an AI agent to audit my app for the person it was built for. It sent five sub-agents to check documents and none of them looked at the screen.",
+      "publishedAt": "2026-09-03",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "ai-governance",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/rigorous-about-the-wrong-question"
+    },
+    {
+      "slug": "nobody-owns-what-the-agent-leaves-running",
+      "title": "Nobody Owns What the Agent Leaves Running",
+      "excerpt": "My machine ran out of resources, so I handed an agent four screenshots and typed one word: fix. It did a good job. A day later, twenty-two connector processes were still running, every one of them marked disabled in config. Nothing had failed — and that turns out to be the interesting part.",
+      "publishedAt": "2026-08-23",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "ai-development",
+        "ai-governance"
+      ],
+      "href": "https://ninochavez.co/blog/nobody-owns-what-the-agent-leaves-running"
+    },
+    {
+      "slug": "the-audit-reproduced-the-failure",
+      "title": "The Audit Reproduced the Failure",
+      "excerpt": "A small inspection of one runaway session became repeated parallel work before it had earned that expansion. The 119-of-118 report was the alarm.",
+      "publishedAt": "2026-08-23",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "ai-development",
+        "ai-governance"
+      ],
+      "href": "https://ninochavez.co/blog/the-audit-reproduced-the-failure"
+    },
     {
       "slug": "diff-your-spec-against-its-system-class",
       "title": "Diff Your Spec Against Its System Class",
@@ -186,7 +298,7 @@
     {
       "slug": "the-cut-youll-make-twice",
       "title": "The Cut You'll Make Twice",
-      "excerpt": "A guardrail that fires tells you it fired. A constraint built into the shape of what you hand a model tells you nothing, ever — including when you put it in the wrong place. I went looking for the line that would have logged it. There isn't one.",
+      "excerpt": "A written rule is not a control until the system has a place to enforce it and a failure record that proves what happened.",
       "publishedAt": "2026-08-06",
       "kind": "Essay",
       "category": "AI & Automation",

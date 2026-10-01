@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { CoverageRequest } from "./CoverageRequest";
 import { coverageOffer as offer } from "./offer";
 import "./coverage.css";
+import "../../by-nino-frontdoors.css";
 
 const coverageExamples = [
   {
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
 };
 
 export default function SportsEventCoverage() {
-  return <div className="coverage-page">
+  return <div className="coverage-page by-nino-frontdoor by-nino-coverage">
     <div className="coverage-shell">
       <nav className="coverage-breadcrumb" aria-label="Breadcrumb"><a href="/photography">Photography</a><span aria-hidden="true">/</span><span>Sports & event coverage</span></nav>
       <header className="coverage-opening">

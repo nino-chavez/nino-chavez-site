@@ -1,3 +1,5 @@
+import { operatedProducts } from "./operated-products";
+
 export const domains = [
   "Developer tools",
   "Local-first",
@@ -75,6 +77,19 @@ export type WorkItem = {
 };
 
 export const workItems: WorkItem[] = [
+  // New product records share their copy and destinations with the curated view.
+  // This is the catalog-entry update date, not a product release date.
+  ...operatedProducts.filter((product) => product.slug !== "rally-hq").map((product) => ({
+    slug: product.slug,
+    name: product.name,
+    claim: `${product.summary} ${product.availability}.`,
+    domain: product.domain,
+    state: product.state,
+    form: product.form,
+    updatedAt: "2026-10-01",
+    destination: { label: product.action, href: product.href },
+    detailPage: false,
+  })),
   {
     slug: "blueprint",
     name: "Blueprint",

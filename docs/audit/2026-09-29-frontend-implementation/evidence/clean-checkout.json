@@ -1,0 +1,76 @@
+{
+  "checkedAt": "2026-09-30T02:13:15.828160+00:00",
+  "checkout": "/tmp/nino-refit-ci.KjDKh2",
+  "sourceCommit": "6995badba04daf148e860bc7274381caef431455",
+  "independentClone": true,
+  "localSourceOverride": false,
+  "commands": [
+    {
+      "command": "q npm ci",
+      "exitCode": 0,
+      "durationSeconds": 10
+    },
+    {
+      "command": "SITE_VISIBILITY=public q npm test",
+      "exitCode": 0,
+      "durationSeconds": 24
+    }
+  ],
+  "observedOutput": [
+    "ok (10s) npm warn install-scripts Run npm install-scripts ls to review, or npm install-scripts approve <pkg> to allow.",
+    "ok (24s) duration_ms 18275.663458"
+  ],
+  "sessionId": 98849,
+  "sourceMode": "Existing published-feed fallback; no sibling checkout or WRITING_SOURCE_ROOT supplied.",
+  "candidateWritingSource": {
+    "source": "apps/blog/astro-build",
+    "sourceRevision": "c3d0fb4d8db47f1610302e8b30c36471f9496a5b",
+    "generatedAt": "2026-09-30T01:18:59.896Z",
+    "latestPublishedAt": "2026-09-29",
+    "publicPieceCount": 306,
+    "items": 306,
+    "series": 9,
+    "categories": [
+      "AI & Automation",
+      "AI Development",
+      "Commerce",
+      "Consulting",
+      "Engineering",
+      "Fiction",
+      "Field Notes",
+      "Insights",
+      "Leadership",
+      "Meta",
+      "Personal Finance",
+      "Philosophy",
+      "Reflection",
+      "Systems Thinking",
+      "Uncategorized"
+    ]
+  },
+  "standaloneWritingSource": {
+    "source": "apps/blog/astro-build",
+    "sourceRevision": "d2692e349e43a5eb2dedd3f8c4a0cbf41f1ede2f",
+    "generatedAt": "2026-09-29T21:40:08.745Z",
+    "latestPublishedAt": "2026-09-29",
+    "publicPieceCount": 306,
+    "items": 306,
+    "series": 9,
+    "categories": [
+      "AI & Automation",
+      "AI Development",
+      "Commerce",
+      "Consulting",
+      "Engineering",
+      "Fiction",
+      "Field Notes",
+      "Insights",
+      "Leadership",
+      "Meta",
+      "Personal Finance",
+      "Philosophy",
+      "Reflection",
+      "Systems Thinking"
+    ]
+  }
+}

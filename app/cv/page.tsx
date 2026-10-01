@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "../by-nino-library.css";
 import Link from "next/link";
 import {
   careerStartYear,
@@ -23,6 +24,7 @@ import { writingSnapshot } from "../writing";
 import "./cv.css";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/cv" },
   title: "CV",
   description: `The career record of Nino Chavez, a product architect in ${identity.location}: positions since ${careerStartYear}, public work, education, and skills.`,
 };

@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import "../by-nino-library.css";
 import { DemoLibrary } from "../components/DemoLibrary";
 import { getDemoSnapshot } from "../demos";
 
 export const metadata = {
+  alternates: { canonical: "/demos" },
   title: "Sessions",
   description:
     "Complete work sessions and reusable techniques from real agent-assisted work.",

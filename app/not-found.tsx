@@ -1,10 +1,11 @@
 import Link from "next/link";
+import "./by-nino-library.css";
 
 export default function NotFound() {
   return (
     <>
       <title>Page not found — Nino Chavez</title>
-      <div className="page-shell page-stack">
+      <div className="page-shell page-stack not-found-page">
         <header className="page-intro">
           <p className="eyebrow">404 / route not found</p>
           <h1>This path does not resolve.</h1>

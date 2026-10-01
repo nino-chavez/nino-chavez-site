@@ -1,0 +1,430 @@
+[
+  {
+    "file": "home-desktop.jpg",
+    "capturedAt": "2026-09-30T01:40:59.462Z",
+    "dpr": 2.049999952316284,
+    "height": 900,
+    "images": [],
+    "innerWidth": 1440,
+    "scrollWidth": 1440,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4310/",
+    "width": 1440
+  },
+  {
+    "file": "learn-desktop.jpg",
+    "capturedAt": "2026-09-30T01:41:00.841Z",
+    "dpr": 2.049999952316284,
+    "height": 900,
+    "images": [],
+    "innerWidth": 1440,
+    "scrollWidth": 1440,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4310/learn",
+    "width": 1440
+  },
+  {
+    "file": "work-desktop.jpg",
+    "capturedAt": "2026-09-30T01:41:02.209Z",
+    "dpr": 2.049999952316284,
+    "height": 900,
+    "images": [],
+    "innerWidth": 1440,
+    "scrollWidth": 1440,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4310/work",
+    "width": 1440
+  },
+  {
+    "file": "writing-desktop.jpg",
+    "capturedAt": "2026-09-30T01:41:47.616Z",
+    "dpr": 2.049999952316284,
+    "height": 900,
+    "images": [],
+    "innerWidth": 1440,
+    "scrollWidth": 1440,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4310/blog",
+    "width": 1440
+  },
+  {
+    "file": "writing-desktop.jpg",
+    "capturedAt": "2026-09-30T01:43:14.840Z",
+    "dpr": 2.049999952316284,
+    "height": 900,
+    "images": [],
+    "innerWidth": 1440,
+    "scrollWidth": 1440,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4310/blog",
+    "width": 1440
+  },
+  {
+    "file": "learn-desktop.jpg",
+    "capturedAt": "2026-09-30T01:43:16.157Z",
+    "dpr": 2.049999952316284,
+    "height": 900,
+    "images": [],
+    "innerWidth": 1440,
+    "scrollWidth": 1440,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4310/learn",
+    "width": 1440
+  },
+  {
+    "file": "photography-desktop.jpg",
+    "capturedAt": "2026-09-30T01:43:17.564Z",
+    "dpr": 2.049999952316284,
+    "height": 900,
+    "images": [
+      {
+        "loaded": true,
+        "src": "/media/photography/fd-12.webp"
+      }
+    ],
+    "innerWidth": 1440,
+    "scrollWidth": 1440,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4310/photography",
+    "width": 1440
+  },
+  {
+    "file": "coverage-desktop.jpg",
+    "capturedAt": "2026-09-30T01:43:53.036Z",
+    "dpr": 2.049999952316284,
+    "height": 900,
+    "images": [
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/fJKdsB-DSC08907/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/fJKdsB-DSC08793/medium"
+      }
+    ],
+    "innerWidth": 1440,
+    "scrollWidth": 1440,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4310/photography/coverage",
+    "width": 1440
+  },
+  {
+    "file": "article-desktop.jpg",
+    "capturedAt": "2026-09-30T01:43:54.529Z",
+    "dpr": 2.049999952316284,
+    "height": 900,
+    "images": [
+      {
+        "loaded": true,
+        "src": "/images/generated/the-jevons-trap.webp"
+      }
+    ],
+    "innerWidth": 1440,
+    "scrollWidth": 1440,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4312/blog/the-work-doesnt-end-at-send",
+    "width": 1440
+  },
+  {
+    "file": "article-body-desktop.jpg",
+    "capturedAt": "2026-09-30T01:43:55.833Z",
+    "dpr": 2.049999952316284,
+    "height": 900,
+    "images": [
+      {
+        "loaded": true,
+        "src": "/images/generated/the-jevons-trap.webp"
+      }
+    ],
+    "innerWidth": 1440,
+    "scrollWidth": 1440,
+    "scrollY": 886.8292846679688,
+    "url": "http://127.0.0.1:4312/blog/the-work-doesnt-end-at-send",
+    "width": 1440
+  },
+  {
+    "file": "article-body-desktop.jpg",
+    "capturedAt": "2026-09-30T01:44:49.144Z",
+    "dpr": 2.049999952316284,
+    "height": 900,
+    "images": [
+      {
+        "loaded": true,
+        "src": "/images/generated/the-jevons-trap.webp"
+      }
+    ],
+    "innerWidth": 1440,
+    "scrollWidth": 1440,
+    "scrollY": 890.7317504882812,
+    "url": "http://127.0.0.1:4312/blog/the-work-doesnt-end-at-send",
+    "width": 1440
+  },
+  {
+    "file": "article-desktop.jpg",
+    "capturedAt": "2026-09-30T01:45:57.330Z",
+    "dpr": 2.049999952316284,
+    "height": 900,
+    "images": [
+      {
+        "loaded": true,
+        "src": "/images/generated/the-jevons-trap.webp"
+      }
+    ],
+    "innerWidth": 1440,
+    "scrollWidth": 1440,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4312/blog/the-work-doesnt-end-at-send",
+    "width": 1440
+  },
+  {
+    "file": "gallery-desktop.jpg",
+    "capturedAt": "2026-09-30T01:47:01.222Z",
+    "dpr": 2.049999952316284,
+    "height": 900,
+    "images": [
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09434/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/Re7kho-acc-v-jca-28/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/fJKdsB-DSC08673/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/eqYF0h-DSC08503/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/dKe567-DSC07457/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/1BlKk4-DSC06984/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/jq1Rp7-DSC06825/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/z6uqiQ-DSC06169/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/msow-raiders-open-DSC05619/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DSC05487/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DSC03918/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DSC01903/medium"
+      }
+    ],
+    "innerWidth": 1440,
+    "scrollWidth": 1428,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4313/photography/albums",
+    "width": 1428
+  },
+  {
+    "file": "album-mobile.jpg",
+    "capturedAt": "2026-09-30T01:47:03.824Z",
+    "dpr": 2.049999952316284,
+    "height": 844,
+    "images": [
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09434/grid"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09443/grid"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09444-sdr-dd19540564/thumbnail"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09435/thumbnail"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09438/thumbnail"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09437/thumbnail"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09448/thumbnail"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09442-sdr-1ffbd7c29b/thumbnail"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09440/thumbnail"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09432/thumbnail"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09485-sdr-1669291695/thumbnail"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09483-sdr-9603c5f35c/thumbnail"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09426/grid"
+      }
+    ],
+    "innerWidth": 390,
+    "scrollWidth": 378,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4313/photography/albums/college-womens-vb-millikin-at-north-central-09-23-2026-DWdCET",
+    "width": 378
+  },
+  {
+    "file": "menu-blog-mobile.jpg",
+    "capturedAt": "2026-09-30T01:48:19.656Z",
+    "dpr": 2.049999952316284,
+    "height": 844,
+    "images": [
+      {
+        "loaded": true,
+        "src": "/images/generated/the-jevons-trap.webp"
+      }
+    ],
+    "innerWidth": 390,
+    "scrollWidth": 390,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4312/blog/the-work-doesnt-end-at-send",
+    "width": 390
+  },
+  {
+    "file": "article-mobile.jpg",
+    "capturedAt": "2026-09-30T01:48:20.968Z",
+    "dpr": 2.049999952316284,
+    "height": 844,
+    "images": [
+      {
+        "loaded": true,
+        "src": "/images/generated/the-jevons-trap.webp"
+      }
+    ],
+    "innerWidth": 390,
+    "scrollWidth": 390,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4312/blog/the-work-doesnt-end-at-send",
+    "width": 390
+  },
+  {
+    "file": "project-mobile.jpg",
+    "capturedAt": "2026-09-30T01:57:43.349Z",
+    "dpr": 2.049999952316284,
+    "height": 844,
+    "images": [
+      {
+        "loaded": true,
+        "src": "/work/rally-hq.webp"
+      }
+    ],
+    "innerWidth": 390,
+    "scrollWidth": 390,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4310/work/rally-hq",
+    "width": 390
+  },
+  {
+    "file": "gallery-desktop-settled.jpg",
+    "capturedAt": "2026-09-30T02:12:22.200Z",
+    "dpr": 2.049999952316284,
+    "height": 900,
+    "images": [],
+    "innerWidth": 1440,
+    "scrollWidth": 1428,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4313/photography/events",
+    "width": 1428
+  },
+  {
+    "file": "gallery-desktop-settled.jpg",
+    "capturedAt": "2026-09-30T02:13:51.086Z",
+    "dpr": 2.049999952316284,
+    "height": 900,
+    "images": [
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09434/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/Re7kho-acc-v-jca-28/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/fJKdsB-DSC08673/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/eqYF0h-DSC08503/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/dKe567-DSC07457/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/1BlKk4-DSC06984/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/jq1Rp7-DSC06825/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/z6uqiQ-DSC06169/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/msow-raiders-open-DSC05619/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DSC05487/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DSC03918/medium"
+      },
+      {
+        "loaded": true,
+        "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DSC01903/medium"
+      }
+    ],
+    "innerWidth": 1440,
+    "scrollWidth": 1428,
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4313/photography/albums",
+    "width": 1428
+  }
+]

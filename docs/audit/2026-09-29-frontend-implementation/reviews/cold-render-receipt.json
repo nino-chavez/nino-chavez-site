@@ -1,0 +1,53 @@
+{
+  "artifacts": {
+    "events": "/Users/nino/.local/state/nino-operator/dispatch/5b85e538-6edb-493e-976e-5c0071da0042/events.jsonl",
+    "last_message": "/Users/nino/.local/state/nino-operator/dispatch/5b85e538-6edb-493e-976e-5c0071da0042/last-message.txt",
+    "receipt": "/Users/nino/.local/state/nino-operator/dispatch/5b85e538-6edb-493e-976e-5c0071da0042/receipt.json",
+    "stderr": "/Users/nino/.local/state/nino-operator/dispatch/5b85e538-6edb-493e-976e-5c0071da0042/stderr.txt"
+  },
+  "classifier": {
+    "confidence": 0.71,
+    "error": null,
+    "latency_ms": 186,
+    "provider": "typesafe",
+    "tier": "balanced"
+  },
+  "completed_at": "2026-09-30T01:54:53.013650Z",
+  "created_at": "2026-09-30T01:52:15.683593Z",
+  "cwd": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929",
+  "dispatch_id": "5b85e538-6edb-493e-976e-5c0071da0042",
+  "exit_code": 0,
+  "experiment_id": null,
+  "observation_schema": 1,
+  "prompt_sha256": "43c87d4bd6c9151d6ec5d93623d10f549ad65fdbfe4963a2ba61174d1ea992eb",
+  "read_only": true,
+  "routing_mode": "balance",
+  "runtime_evidence": {
+    "child_thread_id": "01a0f003-32bb-7e30-8ffe-69bf8f4651f7",
+    "executable": "/opt/homebrew/bin/codex",
+    "reported_model": null,
+    "reported_reasoning_effort": null,
+    "status": "completed"
+  },
+  "sandbox": {
+    "mode": "read-only",
+    "network": "off"
+  },
+  "schema_version": 1,
+  "selected_route": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "tier": "implementation"
+  },
+  "stage": "completed",
+  "stopping_advice": {
+    "decision": "would-stop",
+    "mode": "observe",
+    "reason": "human_review_allowance_unknown_or_exhausted"
+  },
+  "task_id": "nino-frontend-refit-20260929",
+  "task_record_path": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/docs/audit/2026-09-29-frontend-implementation/task.json",
+  "timeout_seconds": 900.0,
+  "updated_at": "2026-09-30T01:54:53.013639Z",
+  "work_kind": "human-review"
+}

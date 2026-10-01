@@ -1,8 +1,10 @@
 import { Suspense } from "react";
 import { WritingLibrary } from "../components/WritingLibrary";
 import { getWritingSnapshot } from "../writing";
+import "../by-nino-frontdoors.css";
 
 export const metadata = {
+  alternates: { canonical: "/blog" },
   title: "Writing — Signal Dispatch",
   description:
     "The complete Signal Dispatch publication: essays, whitepapers, presentations, tutorials, counterpoints, and fiction by Nino Chavez.",
@@ -14,40 +16,14 @@ export default async function BlogPage() {
   const latestPiece = [...writingSnapshot.items].sort((a, b) =>
     b.publishedAt.localeCompare(a.publishedAt),
   )[0];
-  const latestDate = new Date(
-    `${writingSnapshot.latestPublishedAt}T12:00:00Z`,
-  ).toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-    timeZone: "UTC",
-  });
+
 
   return (
-    <div className="writing-page">
+    <div className="writing-page by-nino-frontdoor by-nino-writing">
       <header className="library-opening writing-opening">
-        <div className="library-opening__register page-shell">
-          <span>Writing / Signal Dispatch</span>
-          <span>{writingSnapshot.publicPieceCount} pieces</span>
-          <span>Updated {latestDate}</span>
-        </div>
         <div className="library-opening__copy page-shell">
-          <div>
-            <p className="eyebrow">Signal Dispatch</p>
-            <h1>
-              Signal <em>Dispatch</em>
-            </h1>
-          </div>
-          <div>
-            <p className="lede">
-              Essays and field notes about software products, operations,
-              commerce, and AI-assisted work.
-            </p>
-            <p>
-              Search all {writingSnapshot.publicPieceCount} published pieces,
-              or narrow the collection by form, subject, or year.
-            </p>
-          </div>
+          <h1>Writing</h1>
+          <p className="lede">Signal Dispatch. Essays and field notes about software, commerce, and AI-assisted work.</p>
         </div>
       </header>
 
@@ -108,8 +84,6 @@ export default async function BlogPage() {
               <li key={series.slug}>
                 <a
                   href={series.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   <span className="series-name">
                     <strong>{series.title}</strong>
@@ -122,10 +96,7 @@ export default async function BlogPage() {
                       {series.articleCount === 1 ? "article" : "articles"}
                     </small>
                   </span>
-                  <b aria-hidden="true">↗</b>
-                  <span className="assistive-text">
-                    (opens in a new tab)
-                  </span>
+                  <b aria-hidden="true">→</b>
                 </a>
               </li>
             ))}
