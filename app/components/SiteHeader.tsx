@@ -30,7 +30,6 @@ export function SiteHeader() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuHistoryEntryRef = useRef(false);
-  const pendingNavigationRef = useRef<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = useCallback((removeHistoryEntry = true) => {
@@ -54,16 +53,10 @@ export function SiteHeader() {
 
   useEffect(() => {
     function handlePopState() {
-      const destination = pendingNavigationRef.current;
-      pendingNavigationRef.current = null;
       menuHistoryEntryRef.current = false;
 
       if (dialogRef.current?.open) {
         closeMenu(false);
-      }
-
-      if (destination) {
-        window.location.assign(destination);
       }
     }
 
@@ -87,8 +80,18 @@ export function SiteHeader() {
   }
 
   function navigateFromMenu(destination: string) {
-    pendingNavigationRef.current = destination;
-    closeMenu();
+    const replaceMenuEntry = menuHistoryEntryRef.current;
+    menuHistoryEntryRef.current = false;
+    closeMenu(false);
+
+    // Replace the temporary menu entry directly. Going Back first also starts
+    // a page-router fetch; its unload failure can overwrite this navigation
+    // with the old page in WebKit. Replacement preserves Back to the source.
+    if (replaceMenuEntry) {
+      window.location.replace(destination);
+    } else {
+      window.location.assign(destination);
+    }
   }
 
   function handleMenuLink(event: React.MouseEvent<HTMLAnchorElement>) {
@@ -194,7 +197,7 @@ export function SiteHeader() {
       >
         <div className="dialog-heading">
           <p id="navigation-dialog-title">Navigate</p>
-          <button type="button" onClick={closeMenu} autoFocus>
+          <button type="button" onClick={() => closeMenu()} autoFocus>
             Close
           </button>
         </div>
