@@ -1,0 +1,236 @@
+[
+  {
+    "path": "/",
+    "status": "200",
+    "url": "https://ninochavez.co/?release=20261001-a",
+    "title": [
+      "Nino Chavez \u2014 Product architect and builder"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://ninochavez.co/\"/>"
+    ],
+    "noindex": false,
+    "tracker": true,
+    "new_home": true
+  },
+  {
+    "path": "/work",
+    "status": "200",
+    "url": "https://ninochavez.co/work?release=20261001-a",
+    "title": [
+      "Building \u2014 Nino Chavez"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://ninochavez.co/work\"/>"
+    ],
+    "noindex": false,
+    "tracker": true,
+    "new_home": false
+  },
+  {
+    "path": "/work/commerce-architecture",
+    "status": "200",
+    "url": "https://ninochavez.co/work/commerce-architecture?release=20261001-a",
+    "title": [
+      "Commerce architecture \u2014 Nino Chavez"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://ninochavez.co/work/commerce-architecture\"/>"
+    ],
+    "noindex": false,
+    "tracker": true,
+    "new_home": false
+  },
+  {
+    "path": "/work/commerce-practice",
+    "status": "200",
+    "url": "https://ninochavez.co/work/commerce-architecture",
+    "title": [
+      "Commerce architecture \u2014 Nino Chavez"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://ninochavez.co/work/commerce-architecture\"/>"
+    ],
+    "noindex": false,
+    "tracker": true,
+    "new_home": false
+  },
+  {
+    "path": "/work/whitepapers",
+    "status": "200",
+    "url": "https://ninochavez.co/blog?type=Whitepaper",
+    "title": [
+      "Writing \u2014 Signal Dispatch \u2014 Nino Chavez"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://ninochavez.co/blog\"/>"
+    ],
+    "noindex": false,
+    "tracker": true,
+    "new_home": false
+  },
+  {
+    "path": "/work/presentations",
+    "status": "200",
+    "url": "https://ninochavez.co/blog?type=Presentation",
+    "title": [
+      "Writing \u2014 Signal Dispatch \u2014 Nino Chavez"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://ninochavez.co/blog\"/>"
+    ],
+    "noindex": false,
+    "tracker": true,
+    "new_home": false
+  },
+  {
+    "path": "/blog",
+    "status": "200",
+    "url": "https://ninochavez.co/blog?release=20261001-a",
+    "title": [
+      "Writing \u2014 Signal Dispatch \u2014 Nino Chavez"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://ninochavez.co/blog\"/>"
+    ],
+    "noindex": false,
+    "tracker": true,
+    "new_home": false
+  },
+  {
+    "path": "/about",
+    "status": "200",
+    "url": "https://ninochavez.co/about?release=20261001-a",
+    "title": [
+      "About Nino Chavez \u2014 Nino Chavez"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://ninochavez.co/about\"/>"
+    ],
+    "noindex": false,
+    "tracker": true,
+    "new_home": false
+  },
+  {
+    "path": "/photography",
+    "status": "200",
+    "url": "https://ninochavez.co/photography?release=20261001-a",
+    "title": [
+      "Photography \u2014 Nino Chavez"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://ninochavez.co/photography\"/>"
+    ],
+    "noindex": false,
+    "tracker": true,
+    "new_home": false
+  },
+  {
+    "path": "/demos",
+    "status": "200",
+    "url": "https://ninochavez.co/demos?release=20261001-a",
+    "title": [
+      "Sessions \u2014 Nino Chavez"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://ninochavez.co/demos\"/>"
+    ],
+    "noindex": false,
+    "tracker": true,
+    "new_home": false
+  },
+  {
+    "path": "/learn",
+    "status": "200",
+    "url": "https://ninochavez.co/learn?release=20261001-a",
+    "title": [
+      "Guides \u2014 Nino Chavez"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://ninochavez.co/learn\"/>"
+    ],
+    "noindex": false,
+    "tracker": true,
+    "new_home": false
+  },
+  {
+    "path": "/privacy",
+    "status": "200",
+    "url": "https://ninochavez.co/privacy?release=20261001-a",
+    "title": [
+      "Privacy \u2014 Nino Chavez"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://ninochavez.co/privacy\"/>"
+    ],
+    "noindex": false,
+    "tracker": true,
+    "new_home": false
+  },
+  {
+    "path": "/photography/coverage",
+    "status": "200",
+    "url": "https://ninochavez.co/photography/coverage?release=20261001-a",
+    "title": [
+      "Sports &amp; event coverage \u2014 Nino Chavez"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://ninochavez.co/photography/coverage\"/>"
+    ],
+    "noindex": false,
+    "tracker": true,
+    "new_home": false
+  },
+  {
+    "path": "/photography/site-activity.js",
+    "status": "200",
+    "url": "https://ninochavez.co/photography/site-activity.js?release=20261001-a",
+    "title": [],
+    "canonical": [],
+    "noindex": false,
+    "tracker": false,
+    "new_home": false
+  },
+  {
+    "path": "/photography/analytics-preferences",
+    "status": "200",
+    "url": "https://ninochavez.co/photography/analytics-preferences?release=20261001-a",
+    "title": [
+      "Analytics choices \u2014 Nino Chavez"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://ninochavez.co/photography/analytics-preferences\" class=\"svelte-12qhfyh\"/>"
+    ],
+    "noindex": true,
+    "tracker": false,
+    "new_home": false
+  },
+  {
+    "path": "/photography/albums/college-womens-vb-millikin-at-north-central-09-23-2026-DWdCET",
+    "status": "200",
+    "url": "https://ninochavez.co/photography/albums/college-womens-vb-millikin-at-north-central-09-23-2026-DWdCET?release=20261001-a",
+    "title": [
+      "College Women's VB - Millikin at North Central - 09-23-2026 | Nino Chavez Photography"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://ninochavez.co/photography/albums/college-womens-vb-millikin-at-north-central-09-23-2026-DWdCET\" class=\"svelte-12qhfyh\"/>"
+    ],
+    "noindex": false,
+    "tracker": false,
+    "new_home": false
+  },
+  {
+    "path": "/photography/timeline",
+    "status": "200",
+    "url": "https://ninochavez.co/photography/timeline?release=20261001-a",
+    "title": [
+      "Photo Timeline | Nino Chavez"
+    ],
+    "canonical": [
+      "<link rel=\"canonical\" href=\"https://ninochavez.co/photography/timeline\" class=\"svelte-12qhfyh\"/>"
+    ],
+    "noindex": false,
+    "tracker": false,
+    "new_home": false
+  }
+]
