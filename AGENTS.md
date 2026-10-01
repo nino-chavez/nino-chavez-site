@@ -33,7 +33,7 @@ npm run dev                      # Development server
 
 ## Content boundaries
 
-- Blog-source corrections belong in `/Users/nino/Workspace/dev/apps/blog/astro-build`.
+- Blog-source corrections belong in `/Users/nino/Workspace/dev/sites/nino/blog/astro-build`.
 - Refresh writing with `npm run sync:writing`; do not hand-edit `app/writing-data.json`.
-- Refresh demos with `npm run sync:demos`; the source remains in `apps/nc-demos`.
+- Refresh demos with `npm run sync:demos`; the source remains in `/Users/nino/Workspace/dev/sites/nino/nc-demos`.
 - `/ai` is a retired namespace retained only for redirects.

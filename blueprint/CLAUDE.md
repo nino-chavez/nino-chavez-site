@@ -67,14 +67,7 @@ Pipeline shape depends on the variant. The greenfield variant is the canonical r
 
 ## Stage 0 — browser sensor
 
-Default sensor: `browse-tool`. Install once per initiative:
-
-```bash
-export PATH="$HOME/Workspace/dev/tools/browse-tool/bin:$PATH"
-# In Claude Code: /add-dir $HOME/Workspace/dev/tools/browse-tool
-```
-
-Override the per-initiative profile name (`--profile-name <initiative-slug>-blueprint`) and claim the next free port in `serve.sh`. Full reference + escalation rubric: `$BLUEPRINT_HOME/docs/context/browser-legibility.md`.
+Use the host/workspace browser-routing policy to select the browser surface and profile. Do not override a profile in this initiative. Preserve the local preview route, evidence captures, and independent tabs. Blueprint-specific escalation guidance is `$BLUEPRINT_HOME/docs/context/browser-legibility.md`.
 
 ## Skills
 
@@ -170,50 +163,9 @@ Reusable prompts for common Blueprint adoption / update scenarios:
 - `$BLUEPRINT_HOME/docs/prompts/add-blueprint-to-project.md` — paste at start of a fresh session in a project taking on Blueprint for the first time
 - `$BLUEPRINT_HOME/docs/prompts/pick-up-blueprint-updates.md` — paste in a session resuming an existing Blueprint initiative to refresh methodology context
 
-## SessionStart canonical-context injection (required)
+## Canonical context at session start
 
-Install `template/.claude/hooks/blueprint-session-start.py` to `~/.claude/hooks/` and merge the SessionStart block from `template/.claude/settings.json.example` into `~/.claude/settings.json`. The hook detects Blueprint initiatives (walks up for `blueprint.yml`) and injects `METHODOLOGY.md` + `docs/variant-selection.md` + `docs/portal-and-tier-ladder.md` at the top of every session.
-
-**Why this is mandatory, not optional**: on 2026-05-25, three live consumer sessions reasoned about Blueprint shape from first principles instead of reading the canonical docs, then disagreed about what Blueprint is. Failing to encode this is a direct violation of Blueprint's own first principle (`METHODOLOGY.md` § "First Principle: Agent Struggle Is a Missing Capability") applied to Blueprint itself. The session-prompts paste-snippets above are a fallback for operators who haven't installed the hook; the hook is the encoding.
-
-## Methodology-shaped global rules (required)
-
-The methodology distributes two domain-neutral discipline rules as global context. Install them once per machine (not per initiative).
-
-### Installation
-
-Append the two files below to `~/.claude/CLAUDE.md` at your next session start, or run manually:
-
-```bash
-cat >> ~/.claude/CLAUDE.md << 'EOF'
-
-<!-- BEGIN blueprint-methodology-rules -->
-
-## Audit Discipline — Verification Against Canonical Sources
-
-Methodology principle: self-attestation is not verification. Audits must resolve to ground truth, never trust an artifact's own claims about being verified.
-
-When an artifact claims verification, pull the canonical source yourself and re-verify the claim independently. Use mechanical verification tools where available (cited-url-lint for citations, state-derive for implementation state, scenario-result artifacts for coverage). Circular audits are the failure mode this rule prevents.
-
-See `$BLUEPRINT_HOME/docs/methodology/global-rules/audit-discipline.md` for the full pattern.
-
-## Decision Bias — Default to Action, Not Confirmation
-
-Methodology principle: agents should default to executing the next logical continuation of work instead of pausing to ask for permission. End work turns with a status sentence naming what landed and the next move, not a question.
-
-Override this bias only for destructive actions (force-push, delete, amend), ambiguous requests, or scope expansion. When the next step is obvious and already authorized, do not ask.
-
-See `$BLUEPRINT_HOME/docs/methodology/global-rules/decision-bias.md` for the full pattern.
-
-<!-- END blueprint-methodology-rules -->
-EOF
-```
-
-**Auto-check**: The SessionStart hook verifies these rules are installed and emits a non-fatal warning if absent. Re-run the installation command above if you see the warning.
-
-### Customization
-
-These are append-only managed sections — do not edit them. Local operator preferences (theme, keybindings, project-specific shortcuts) remain in `~/.claude/CLAUDE.md` outside the managed region; they are unaffected by methodology updates.
+Read canonical Blueprint context through the existing host/workspace integration before methodology-shaped work. If it is unavailable, resolve the methodology home through `blueprint.yml` or the installed Blueprint CLI, read `METHODOLOGY.md`, `docs/variant-selection.md`, and `docs/portal-and-tier-ladder.md` there, and report the missing integration. Continue with that context. Host-wide setup belongs to its tracked configuration owner; ordinary consumer work does not install global hooks or append rules.
 
 ## Converter
 
