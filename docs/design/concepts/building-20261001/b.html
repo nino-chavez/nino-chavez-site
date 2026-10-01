@@ -11,17 +11,17 @@
 <body>
   <div id="site-header"></div>
   <main id="main">
-    <div id="overview">
       <section class="browser-opening wrap" aria-labelledby="building-title">
         <div>
           <h1 id="building-title">Building</h1>
-          <p>Software, public tools, and practical methods for work that needs to stay clear and usable.</p>
+          <p>Products I build and run, plus public studies and guides.</p>
         </div>
         <div data-top-archive>
           <!-- Archive control supplied by the shared prototype contract. -->
         </div>
       </section>
 
+    <div id="overview">
       <section class="project-browser wrap" aria-labelledby="projects-title">
         <div class="browser-heading">
           <h2 id="projects-title">Projects</h2>
@@ -62,11 +62,11 @@
       function render(projectSlug = selectedSlug()) {
         const product = data.products.find(item => item.slug === projectSlug);
         note.textContent = `${product.name} selected`;
-        index.innerHTML = data.products.map((item, position) => {
+        index.innerHTML = data.products.map(item => {
           const active = item.slug === product.slug;
-          return `<button class="project-choice${active ? ' is-selected' : ''}" type="button" data-project="${esc(item.slug)}" aria-pressed="${active}" ${active ? 'aria-current="true"' : ''}><span class="choice-number">${String(position + 1).padStart(2, '0')}</span><span>${esc(item.name)}</span><span class="choice-state">${active ? 'Selected' : esc(item.availability)}</span></button>`;
+          return `<button class="project-choice${active ? ' is-selected' : ''}" type="button" data-project="${esc(item.slug)}" aria-pressed="${active}" ${active ? 'aria-current="true"' : ''}><span>${esc(item.name)}</span><span class="choice-state">${active ? 'Selected' : esc(item.availability)}</span></button>`;
         }).join('');
-        selected.innerHTML = `<div class="selected-media">${product.image ? media(product) : emptyPreview(product)}${caption(product)}</div><div class="selected-copy"><p class="selected-availability">${esc(product.availability)}</p><h3>${esc(product.name)}</h3><p class="selected-summary">${esc(product.summary)}</p>${link(product, product.action, 'action selected-action')}</div>`;
+        selected.innerHTML = `<div class="selected-media">${product.image ? media(product) : emptyPreview(product)}${caption(product)}</div><div class="selected-copy"><h3>${esc(product.name)}</h3><p class="selected-availability">${esc(product.availability)}</p><p class="selected-summary">${esc(product.summary)}</p>${link(product, product.action, 'action selected-action')}</div>`;
       }
 
       function choose(slug, historyMode = 'push') {
@@ -75,6 +75,7 @@
         if (historyMode === 'push') history.pushState(null, '', `${url.pathname}?${url.searchParams}`);
         else history.replaceState(null, '', `${url.pathname}?${url.searchParams}`);
         render(validSlug(slug));
+        index.querySelector(`[data-project="${validSlug(slug)}"]`).focus({preventScroll:true});
       }
 
       index.addEventListener('click', event => {

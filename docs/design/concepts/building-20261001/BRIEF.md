@@ -61,7 +61,7 @@ Fixed light theme follows the existing main site. Native scrolling, links and fo
 
 Parent inspected desktop, middle and phone baseline captures in `evidence/`. A cold reviewer, without source or rationale, found the purpose/direct actions legible, but equal grid weight competes, phone breadth is unclear, Process/Guides need context, and retrieval arrives late. Preserve real previews and honest availability. The new grouping is a design hypothesis, not an analytics conclusion.
 
-Panic's live homepage was inspected October 1 at 1440×900 to ask how multiple products can keep identity while remaining one site. Its opening is a full-screen game promotion; that would add an unnecessary preamble here and is rejected. Its product grouping is considered only as a composition reference, never as evidence of effectiveness or a source of graphics/fonts. No authenticated Mobbin evidence is claimed.
+Panic's live homepage was inspected October 1 at 1440×900 to ask how multiple products can keep identity while remaining one site. Its opening is a full-screen game promotion; that would add an unnecessary preamble here and is rejected. Its product section groups Mac apps separately from games, with recognizable app icons and strong gaps between groups. C borrows the principle of grouping by purpose; A instead keeps real product previews so unfamiliar names have context. This is composition evidence only, never evidence of effectiveness or a source of graphics/fonts. No authenticated Mobbin evidence is claimed.
 
 ## Selection
 
