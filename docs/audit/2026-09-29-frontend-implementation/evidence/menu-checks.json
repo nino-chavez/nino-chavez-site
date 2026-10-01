@@ -1,0 +1,52 @@
+[
+  {
+    "runtime": "blog",
+    "action": "Shift+Tab from Close",
+    "focus": "/links",
+    "open": true
+  },
+  {
+    "runtime": "blog",
+    "action": "Tab from Links",
+    "focus": "Close"
+  },
+  {
+    "runtime": "blog",
+    "action": "Back closes menu",
+    "focus": "Menu",
+    "open": false,
+    "path": "/blog/the-work-doesnt-end-at-send",
+    "rootOverflow": "hidden auto"
+  },
+  {
+    "runtime": "main",
+    "action": "Close",
+    "focus": "Menu",
+    "open": false
+  },
+  {
+    "runtime": "main",
+    "action": "Back after explicit Close",
+    "path": "http://127.0.0.1:4310/learn"
+  },
+  {
+    "runtime": "main",
+    "action": "Shift+Tab from Close",
+    "focus": "/links"
+  },
+  {
+    "runtime": "main",
+    "action": "Tab from Links",
+    "focus": "Close"
+  },
+  {
+    "runtime": "main",
+    "action": "Menu search",
+    "url": "http://127.0.0.1:4310/search?q=Rally"
+  },
+  {
+    "runtime": "main",
+    "action": "Back after menu search",
+    "url": "http://127.0.0.1:4310/learn"
+  }
+]

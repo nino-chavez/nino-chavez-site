@@ -1,0 +1,358 @@
+[
+  {
+    "route": "/",
+    "width": 1440,
+    "height": 900,
+    "scroll": 1440,
+    "h1": 1,
+    "regions": [
+      {
+        "name": "field-opening",
+        "top": 1,
+        "height": 900
+      },
+      {
+        "name": "field-paths",
+        "top": 901,
+        "height": 500.890625
+      },
+      {
+        "name": "field-path field-path--building",
+        "top": 965,
+        "height": 372.890625
+      },
+      {
+        "name": "field-path field-path--writing",
+        "top": 965,
+        "height": 372.890625
+      },
+      {
+        "name": "field-path field-path--photography",
+        "top": 965,
+        "height": 372.890625
+      }
+    ],
+    "links": [
+      "/work",
+      "/blog",
+      "/photography"
+    ]
+  },
+  {
+    "route": "/blog",
+    "width": 1440,
+    "height": 900,
+    "scroll": 1440,
+    "h1": 1,
+    "regions": [
+      {
+        "name": "library-opening writing-opening",
+        "top": 81,
+        "height": 148.328125
+      },
+      {
+        "name": "writing-featured page-shell",
+        "top": 229.328125,
+        "height": 153.921875
+      },
+      {
+        "name": "library-controls writing-controls",
+        "top": 399.25,
+        "height": 95.59375
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 589.84375,
+        "height": 95.921875
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 685.765625,
+        "height": 95.921875
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 781.6875,
+        "height": 95.921875
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 877.609375,
+        "height": 95.921875
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 973.53125,
+        "height": 95.921875
+      }
+    ],
+    "links": []
+  },
+  {
+    "route": "/",
+    "width": 768,
+    "height": 1024,
+    "scroll": 768,
+    "h1": 1,
+    "regions": [
+      {
+        "name": "field-opening",
+        "top": 1,
+        "height": 1024
+      },
+      {
+        "name": "field-paths",
+        "top": 1025,
+        "height": 336.859375
+      },
+      {
+        "name": "field-path field-path--building",
+        "top": 1063.390625,
+        "height": 260.078125
+      },
+      {
+        "name": "field-path field-path--writing",
+        "top": 1063.390625,
+        "height": 260.078125
+      },
+      {
+        "name": "field-path field-path--photography",
+        "top": 1063.390625,
+        "height": 260.078125
+      }
+    ],
+    "links": [
+      "/work",
+      "/blog",
+      "/photography"
+    ]
+  },
+  {
+    "route": "/blog",
+    "width": 768,
+    "height": 1024,
+    "scroll": 768,
+    "h1": 1,
+    "regions": [
+      {
+        "name": "library-opening writing-opening",
+        "top": 73,
+        "height": 125.0625
+      },
+      {
+        "name": "writing-featured page-shell",
+        "top": 198.0625,
+        "height": 205.6875
+      },
+      {
+        "name": "library-controls writing-controls",
+        "top": 415.75,
+        "height": 171.1875
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 744.359375,
+        "height": 113.671875
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 858.03125,
+        "height": 113.671875
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 971.703125,
+        "height": 113.671875
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 1085.375,
+        "height": 135.265625
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 1220.640625,
+        "height": 92.3125
+      }
+    ],
+    "links": []
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "height": 844,
+    "scroll": 390,
+    "h1": 1,
+    "regions": [
+      {
+        "name": "field-opening",
+        "top": 1,
+        "height": 844
+      },
+      {
+        "name": "field-paths",
+        "top": 845,
+        "height": 416
+      },
+      {
+        "name": "field-path field-path--building",
+        "top": 873,
+        "height": 104
+      },
+      {
+        "name": "field-path field-path--writing",
+        "top": 1001,
+        "height": 104
+      },
+      {
+        "name": "field-path field-path--photography",
+        "top": 1129,
+        "height": 104
+      }
+    ],
+    "links": [
+      "/work",
+      "/blog",
+      "/photography"
+    ]
+  },
+  {
+    "route": "/blog",
+    "width": 390,
+    "height": 844,
+    "scroll": 390,
+    "h1": 1,
+    "regions": [
+      {
+        "name": "library-opening writing-opening",
+        "top": 73,
+        "height": 141.703125
+      },
+      {
+        "name": "writing-featured page-shell",
+        "top": 214.703125,
+        "height": 248.40625
+      },
+      {
+        "name": "library-controls writing-controls",
+        "top": 475.109375,
+        "height": 171.1875
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 823.90625,
+        "height": 190.828125
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 1014.734375,
+        "height": 214.03125
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 1228.765625,
+        "height": 190.828125
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 1419.59375,
+        "height": 214.03125
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 1633.625,
+        "height": 169.46875
+      }
+    ],
+    "links": []
+  },
+  {
+    "route": "/",
+    "width": 320,
+    "height": 740,
+    "scroll": 320,
+    "h1": 1,
+    "regions": [
+      {
+        "name": "field-opening",
+        "top": 1,
+        "height": 740
+      },
+      {
+        "name": "field-paths",
+        "top": 741,
+        "height": 355.96875
+      },
+      {
+        "name": "field-path field-path--building",
+        "top": 769,
+        "height": 91.96875
+      },
+      {
+        "name": "field-path field-path--writing",
+        "top": 884.96875,
+        "height": 80
+      },
+      {
+        "name": "field-path field-path--photography",
+        "top": 988.96875,
+        "height": 80
+      }
+    ],
+    "links": [
+      "/work",
+      "/blog",
+      "/photography"
+    ]
+  },
+  {
+    "route": "/blog",
+    "width": 320,
+    "height": 740,
+    "scroll": 320,
+    "h1": 1,
+    "regions": [
+      {
+        "name": "library-opening writing-opening",
+        "top": 73,
+        "height": 157.5625
+      },
+      {
+        "name": "writing-featured page-shell",
+        "top": 230.5625,
+        "height": 248.40625
+      },
+      {
+        "name": "library-controls writing-controls",
+        "top": 490.96875,
+        "height": 250.78125
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 953.953125,
+        "height": 214.03125
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 1167.984375,
+        "height": 235.390625
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 1403.375,
+        "height": 214.03125
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 1617.40625,
+        "height": 235.390625
+      },
+      {
+        "name": "work-record writing-record",
+        "top": 1852.796875,
+        "height": 190.828125
+      }
+    ],
+    "links": []
+  }
+]

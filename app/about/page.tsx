@@ -1,6 +1,8 @@
 import Link from "next/link";
+import "../by-nino-frontdoors.css";
 
 export const metadata = {
+  alternates: { canonical: "/about" },
   title: "About Nino Chavez",
   description:
     "Nino Chavez is a product architect, builder, tournament operator, photographer, writer, and DJ in Chicago.",
@@ -119,7 +121,7 @@ const personSchema = {
 
 export default function AboutPage() {
   return (
-    <div className="about-page">
+    <div className="about-page by-nino-frontdoor by-nino-about">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}

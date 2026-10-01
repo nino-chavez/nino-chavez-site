@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "../by-nino-library.css";
 import {
   learnTracks,
   workHref,
@@ -94,6 +95,7 @@ const resultLimits = {
 } as const;
 
 export const metadata = {
+  alternates: { canonical: "/search" },
   title: "Search",
   description: "Search work, sessions, techniques, writing, and site pages.",
 };
@@ -200,7 +202,7 @@ export default async function SearchPage({
   const shown = work.length + demos.length + writing.length + pages.length;
 
   return (
-    <div className="page-shell page-stack">
+    <div className="page-shell page-stack search-page">
       <header className="page-intro">
         <p className="eyebrow">Across ninochavez.co</p>
         <h1>Search</h1>
@@ -311,8 +313,6 @@ export default async function SearchPage({
                   <a
                     key={`${item.kind}-${item.slug}`}
                     href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     <span>
                       {item.kind} · {item.category} ·{" "}
@@ -320,9 +320,6 @@ export default async function SearchPage({
                     </span>
                     <strong>{item.title}</strong>
                     {item.excerpt ? <small>{item.excerpt}</small> : null}
-                    <span className="assistive-text">
-                      (opens in a new tab)
-                    </span>
                   </a>
                 ))}
               </div>

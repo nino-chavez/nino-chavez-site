@@ -1,6 +1,8 @@
 import Link from "next/link";
+import "../by-nino-library.css";
 
 export const metadata = {
+  alternates: { canonical: "/now" },
   title: "Now",
   description:
     "A dated view of the work and operating questions that currently have Nino Chavez’s attention.",

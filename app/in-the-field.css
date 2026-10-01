@@ -1,0 +1,144 @@
+/* Selected site-wide A. The route and component contracts remain in globals.css. */
+@font-face {
+  font-family: "In the Field Display";
+  src: url("/fonts/schibsted-grotesk-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+.site-a {
+  --ground: #f4f0e8;
+  --surface: #faf7f1;
+  --surface-muted: #e5e0d7;
+  --text: #122a3c;
+  --muted: #536373;
+  --rule: #bbc0bf;
+  --action: #0d5a93;
+  --action-quiet: #e0e9ed;
+  --ink: #07131d;
+  --bone: #f4f0e8;
+  --display: "In the Field Display", var(--font);
+  --header-height: 80px;
+}
+.site-a :is(h1,h2,h3) { font-family: var(--display); }
+.site-a .site-header { position: relative; background: var(--ground); backdrop-filter: none; }
+.site-a .header-inner { width: calc(100% - clamp(40px, 10vw, 156px)); }
+.site-a .desktop-navigation a { color: var(--text); }
+.site-a .site-header--home { margin-bottom: calc(-1 * var(--header-height)); background: transparent; color: white; border-color: rgb(255 255 255 / .25); }
+.site-a .site-header--home :is(.desktop-navigation a,.search-link,.menu-button) { color: white; }
+.site-a .site-header--home .menu-button { border-color: rgb(255 255 255 / .5); background: transparent; }
+.site-a .site-header--home .navigation-dialog { color: var(--text); background: var(--ground); }
+.site-a .site-header--home .navigation-dialog a { color: var(--text); }
+.site-a .identity-link { font-family: var(--display); font-size: 1.1rem; letter-spacing: -.04em; }
+.site-a .search-link { font-size: .8rem; }
+.site-a .field-opening { position: relative; min-height: max(700px,100svh); background: var(--ink); color: white; overflow: hidden; }
+.field-opening > picture, .field-opening > picture img, .field-opening__shade { position: absolute; inset: 0; width: 100%; height: 100%; }
+.field-opening > picture img { object-fit: cover; object-position: center; }
+.field-opening__shade { background: linear-gradient(90deg,rgb(0 16 31 / .72),rgb(0 13 24 / .05) 65%),linear-gradient(0deg,rgb(0 10 18 / .65),transparent 55%); }
+.field-opening__copy { position: relative; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; min-height: max(700px,100svh); padding: 150px clamp(20px,5vw,78px) clamp(48px,7vw,92px); }
+.site-a .field-opening h1 { font-family: var(--hero); font-weight: 400; font-size: clamp(90px,13vw,188px); text-transform: uppercase; letter-spacing: -.015em; line-height: .95; margin: 0; }
+.field-opening h1 span { display: block; }
+.field-opening__copy > p { font-family: var(--display); font-size: clamp(20px,2.2vw,30px); line-height: 1.2; max-width: 530px; margin: 24px 0 28px; }
+.field-opening__copy > a { font-size: .9rem; font-weight: 700; text-decoration: none; padding: 0 0 6px; border-bottom: 2px solid currentColor; }
+.field-paths { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: clamp(20px,3vw,40px); width: min(1280px,calc(100% - clamp(40px,10vw,156px))); margin-inline: auto; padding-block: clamp(32px,5vw,64px); scroll-margin-top: 24px; }
+.field-path { display: block; min-width: 0; color: var(--text); text-decoration: none; }
+.field-path img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; background: var(--ink); }
+.field-path > div { padding-top: 18px; }
+.site-a .field-path h2 { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: clamp(22px,2.1vw,30px); line-height: 1.15; letter-spacing: -.04em; font-weight: 700; margin: 0; }
+.field-path h2 svg { flex-shrink: 0; width: 20px; height: 20px; }
+.field-path p { font-size: .95rem; line-height: 1.45; margin: 8px 0 0; }
+.field-path .field-path__detail { font-size: .85rem; color: var(--muted); margin-top: 4px; }
+.field-path:focus-visible { outline: 3px solid var(--action); outline-offset: 6px; }
+@media (hover: hover) { .field-path:hover h2 { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; } }
+/* Compact interiors. Keep local controls and authored content intact. */
+.site-a .library-opening__copy { padding-block: 48px 32px; gap: 32px; }
+.site-a .library-opening h1 { font-size: clamp(42px,6vw,78px); line-height: 1.02; letter-spacing: -.055em; }
+.site-a .library-opening__register { padding-block: 12px; font-size: .7rem; }
+.site-a .writing-opening .library-opening__copy { display: block; }
+.site-a .writing-opening .lede { max-width: 640px; font-size: 1.1rem; margin-top: 16px; }
+.site-a .writing-featured { padding-block: 28px 38px; }
+.site-a .writing-featured h2 { font-size: clamp(28px,4vw,48px); line-height: 1.08; }
+.site-a .writing-featured__excerpt { font-size: 1rem; }
+.site-a .site-footer { background: var(--ground); padding-block: 40px; }
+.site-a .footer-inner { gap: 32px; font-size: .8rem; }
+.site-a .footer-inner > div > .muted { max-width: 26ch; }
+@media (max-width: 920px) {
+  .site-a { --header-height: 72px; }
+  .site-a .header-inner { grid-template-columns: 1fr auto; }
+  .site-a .field-opening, .field-opening__copy { min-height: max(640px,100svh); }
+  .field-opening__copy { padding-top: 120px; }
+}
+@media (max-width: 640px) {
+  .site-a .field-opening h1 { font-size: clamp(67px,20vw,112px); line-height: 1; }
+  .field-opening__copy > p { max-width: 18em; font-size: 20px; }
+  .field-opening > picture img { object-position: 60% center; }
+  .field-opening__shade { background: linear-gradient(0deg,rgb(0 12 23 / .88),rgb(0 12 23 / .15) 80%); }
+  .field-paths { grid-template-columns: 1fr; gap: 24px; padding-block: 28px; }
+  .field-path { display: grid; grid-template-columns: 104px minmax(0,1fr); gap: 18px; align-items: start; }
+  .field-path img { aspect-ratio: 1; }
+  .field-path > div { padding-top: 0; }
+  .site-a .field-path h2 { font-size: 22px; gap: 8px; }
+  .field-path p { font-size: .9rem; margin-top: 6px; }
+  .field-path .field-path__detail { font-size: .8rem; }
+  .site-a .library-opening__copy { padding-block: 30px 24px; }
+  .site-a .footer-inner { gap: 28px 20px; }
+}
+@media (max-width: 360px) {
+  .field-path { grid-template-columns: 80px minmax(0,1fr); gap: 14px; }
+  .site-a .field-path h2 { font-size: 20px; }
+}
+
+/* Photography is an archive entrance, not a second personal introduction. */
+.site-a .by-nino-photography .photography-opening { display: block; padding: 36px 0 0; min-height: 0; background: var(--ink); }
+.site-a .by-nino-photography .photography-opening__stage { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; width: min(var(--content),calc(100% - 48px)); margin: auto; padding: 0 0 24px; }
+.site-a .by-nino-photography .photography-opening h1 { font-family: var(--display); font-size: clamp(38px,5vw,68px); line-height: 1.05; margin: 0; }
+.site-a .by-nino-photography .photography-search { margin: 0; max-width: 480px; }
+.site-a .by-nino-photography .photography-search > a { display: none; }
+.site-a .by-nino-photography .photography-route-deck { margin: 0; border-top: 1px solid rgb(244 240 232 / .2); background: var(--ink); }
+.site-a .by-nino-photography .photography-route-deck ol { display: flex; gap: 32px; padding-block: 0; flex-wrap: wrap; }
+.site-a .by-nino-photography .photography-route-deck li { border: 0; width: auto; }
+.site-a .by-nino-photography .photography-route-deck a { display: block; min-height: 48px; padding: 14px 0; border: 0; font-size: .9rem; }
+.site-a .by-nino-photography .photography-route-deck strong { font-size: inherit; }
+.site-a .photography-scale { padding-block: 18px; }
+.site-a .photography-recent { padding-block: 24px 44px; }
+.site-a .photography-selection__heading { padding-block: 28px; }
+@media (max-width: 640px) {
+  .site-a .by-nino-photography .photography-opening__stage { display: block; width: calc(100% - 40px); }
+  .site-a .by-nino-photography .photography-search { margin-top: 24px; }
+  .site-a .by-nino-photography .photography-route-deck ol { gap: 20px; width: calc(100% - 40px); }
+}
+.site-a .by-nino-photography { --ink: #07131d; }
+.site-a .by-nino-photography .photography-route-deck ol { width: min(var(--content),calc(100% - 48px)); margin-inline: auto; }
+.site-a .by-nino-photography .photography-route-deck a { background: transparent; box-shadow: none; }
+.site-a .by-nino-photography .photography-route-deck a:hover { color: var(--photography-gold); background: transparent; }
+.site-a .photography-selection { padding-top: 24px; }
+.site-a .photography-selection__heading { display: block; }
+.site-a .photography-selection__heading h2 { font-size: clamp(28px,3vw,42px); line-height: 1.1; margin: 0; }
+@media (min-width: 921px) { .site-a .by-nino-photography .photography-search form > div { grid-template-columns: 1fr auto; } }
+
+.site-a .photography-scale { display: flex; flex-wrap: wrap; gap: 12px 28px; padding-block: 14px; }
+.site-a .photography-scale > div { display: flex; align-items: baseline; gap: 8px; padding: 0; border: 0; }
+.site-a .photography-scale dd { order: -1; font-family: var(--font); font-size: .95rem; line-height: 1.5; margin: 0; }
+.site-a .photography-scale dt { font-family: var(--font); font-size: .85rem; text-transform: none; letter-spacing: 0; }
+.site-a .photography-recent h2 { font-size: clamp(28px,3vw,42px); line-height: 1.1; }
+.site-a .prototype-banner { font-size: 10px; letter-spacing: 0; text-transform: none; }
+.site-a:has(.prototype-banner) .field-opening, .site-a:has(.prototype-banner) .field-opening__copy { min-height: max(700px,calc(100svh - 30px)); }
+@media (max-width: 640px) {
+  .site-a:has(.prototype-banner) .field-opening, .site-a:has(.prototype-banner) .field-opening__copy { min-height: max(640px,calc(100svh - 44px)); }
+}
+.site-a .learn-opening .library-opening__copy { padding-block: 28px; }
+.site-a .learn-opening h1 { font-size: clamp(36px,5vw,64px); line-height: 1.04; }
+.site-a .learn-room { padding-block: 24px 64px; }
+.site-a .learn-chooser > header { margin-bottom: 24px; padding-bottom: 20px; }
+.site-a .learn-chooser h2 { font-size: clamp(28px,3vw,40px); }
+.site-a .demo-studio__stage { padding-block: 36px; gap: 40px; }
+.site-a .demo-studio h1 { font-size: clamp(42px,6vw,72px); }
+.site-a .demo-library-stage { padding-block: 36px 64px; }
+.site-a .demo-library-stage__heading h2 { font-size: clamp(28px,3vw,40px); }
+.site-a .by-nino-about .about-opening__lede { font-size: clamp(18px,1.7vw,24px); font-weight: 450; line-height: 1.4; }
+.site-a .by-nino-about .about-body { padding-block: 36px 64px; }
+@media (max-width: 640px) {
+  .site-a .learn-opening .library-opening__copy { gap: 20px; }
+  .site-a .learn-opening .library-opening__copy .lede { font-size: 18px; }
+  .site-a .learn-opening .library-opening__copy > div > p:last-child { margin-bottom: 0; }
+}

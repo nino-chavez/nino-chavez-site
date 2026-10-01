@@ -1,0 +1,693 @@
+{
+  "recordedAt": "2026-09-30T02:17:19.084718+00:00",
+  "sourceContext": "Captured during the local refit. Some frames precede the final source commit; this collection is not a hosted deployment or human approval receipt.",
+  "discarded": [
+    "article-body-desktop.jpg: clipped screenshot did not represent the observed scroll position; removed.",
+    "An earlier gallery-desktop-settled.jpg capture of a guessed /photography/events 404 was replaced by the actual /photography/albums page."
+  ],
+  "items": [
+    {
+      "file": "album-mobile.jpg",
+      "sha256": "1e814509b7fd39432f2a8d49c90c747fd83f076c8146450ab6225e99bd41b186",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": {
+        "file": "album-mobile.jpg",
+        "capturedAt": "2026-09-30T01:47:03.824Z",
+        "dpr": 2.049999952316284,
+        "height": 844,
+        "images": [
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09434/grid"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09443/grid"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09444-sdr-dd19540564/thumbnail"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09435/thumbnail"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09438/thumbnail"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09437/thumbnail"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09448/thumbnail"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09442-sdr-1ffbd7c29b/thumbnail"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09440/thumbnail"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09432/thumbnail"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09485-sdr-1669291695/thumbnail"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09483-sdr-9603c5f35c/thumbnail"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09426/grid"
+          }
+        ],
+        "innerWidth": 390,
+        "scrollWidth": 378,
+        "scrollY": 0,
+        "url": "http://127.0.0.1:4313/photography/albums/college-womens-vb-millikin-at-north-central-09-23-2026-DWdCET",
+        "width": 378
+      },
+      "state": "candidate observation"
+    },
+    {
+      "file": "article-body-observed.jpg",
+      "sha256": "4d6683a85f0eccbb80b1b19737cdd8b31b3825c0aab28208d275011f0c18ba7c",
+      "pixels": {
+        "pixelWidth": 1440,
+        "pixelHeight": 852
+      },
+      "observation": null,
+      "state": "candidate observation",
+      "metadataNote": "Native scrolled frame; not an exact viewport-size composition capture."
+    },
+    {
+      "file": "article-desktop.jpg",
+      "sha256": "8371727f388a85ef3ed562f3407ae0a53d96a1d4764ed046c4f6b47541863cd1",
+      "pixels": {
+        "pixelWidth": 1440,
+        "pixelHeight": 900
+      },
+      "observation": {
+        "file": "article-desktop.jpg",
+        "capturedAt": "2026-09-30T01:45:57.330Z",
+        "dpr": 2.049999952316284,
+        "height": 900,
+        "images": [
+          {
+            "loaded": true,
+            "src": "/images/generated/the-jevons-trap.webp"
+          }
+        ],
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "scrollY": 0,
+        "url": "http://127.0.0.1:4312/blog/the-work-doesnt-end-at-send",
+        "width": 1440
+      },
+      "state": "candidate observation"
+    },
+    {
+      "file": "article-mobile.jpg",
+      "sha256": "2e6125b97b768b2ce60be15bb4c4107c1cd1b70091e4fcef360f645428d3f545",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": {
+        "file": "article-mobile.jpg",
+        "capturedAt": "2026-09-30T01:48:20.968Z",
+        "dpr": 2.049999952316284,
+        "height": 844,
+        "images": [
+          {
+            "loaded": true,
+            "src": "/images/generated/the-jevons-trap.webp"
+          }
+        ],
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "scrollY": 0,
+        "url": "http://127.0.0.1:4312/blog/the-work-doesnt-end-at-send",
+        "width": 390
+      },
+      "state": "candidate observation"
+    },
+    {
+      "file": "coverage-desktop.jpg",
+      "sha256": "881160c2b4fd6a03d2d42bbc73b440d1a78b3805aa6eabf19ae6e114b888510e",
+      "pixels": {
+        "pixelWidth": 1440,
+        "pixelHeight": 900
+      },
+      "observation": {
+        "file": "coverage-desktop.jpg",
+        "capturedAt": "2026-09-30T01:43:53.036Z",
+        "dpr": 2.049999952316284,
+        "height": 900,
+        "images": [
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/fJKdsB-DSC08907/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/fJKdsB-DSC08793/medium"
+          }
+        ],
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "scrollY": 0,
+        "url": "http://127.0.0.1:4310/photography/coverage",
+        "width": 1440
+      },
+      "state": "candidate observation"
+    },
+    {
+      "file": "coverage-mobile.jpg",
+      "sha256": "1b7554edf0ee5a27cae47942da000d4a6dc58bb1fb58290a9ca6c8e12d665200",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": null,
+      "state": "candidate observation",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "gallery-desktop-settled.jpg",
+      "sha256": "09a5ee7f31e742e4863bfcb937accc9a02a0b74f5b6e629c5b413eac65cfa54a",
+      "pixels": {
+        "pixelWidth": 1440,
+        "pixelHeight": 900
+      },
+      "observation": {
+        "file": "gallery-desktop-settled.jpg",
+        "capturedAt": "2026-09-30T02:13:51.086Z",
+        "dpr": 2.049999952316284,
+        "height": 900,
+        "images": [
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09434/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/Re7kho-acc-v-jca-28/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/fJKdsB-DSC08673/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/eqYF0h-DSC08503/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/dKe567-DSC07457/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/1BlKk4-DSC06984/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/jq1Rp7-DSC06825/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/z6uqiQ-DSC06169/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/msow-raiders-open-DSC05619/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DSC05487/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DSC03918/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DSC01903/medium"
+          }
+        ],
+        "innerWidth": 1440,
+        "scrollWidth": 1428,
+        "scrollY": 0,
+        "url": "http://127.0.0.1:4313/photography/albums",
+        "width": 1428
+      },
+      "state": "candidate observation"
+    },
+    {
+      "file": "gallery-desktop.jpg",
+      "sha256": "feb9401346727709b1f9393149c35405a4599482553c3dc189109c65ee97a6a7",
+      "pixels": {
+        "pixelWidth": 1440,
+        "pixelHeight": 900
+      },
+      "observation": {
+        "file": "gallery-desktop.jpg",
+        "capturedAt": "2026-09-30T01:47:01.222Z",
+        "dpr": 2.049999952316284,
+        "height": 900,
+        "images": [
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09434/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/Re7kho-acc-v-jca-28/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/fJKdsB-DSC08673/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/eqYF0h-DSC08503/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/dKe567-DSC07457/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/1BlKk4-DSC06984/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/jq1Rp7-DSC06825/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/z6uqiQ-DSC06169/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/msow-raiders-open-DSC05619/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DSC05487/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DSC03918/medium"
+          },
+          {
+            "loaded": true,
+            "src": "https://imagedelivery.net/wg34HB28-JkySWVm5fW4kA/DSC01903/medium"
+          }
+        ],
+        "innerWidth": 1440,
+        "scrollWidth": 1428,
+        "scrollY": 0,
+        "url": "http://127.0.0.1:4313/photography/albums",
+        "width": 1428
+      },
+      "state": "candidate observation"
+    },
+    {
+      "file": "gallery-mobile.jpg",
+      "sha256": "48f71de299f7f314e5ad2c23737a6c7404db2421dcb16fd6ea1147bf8c8a001b",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": null,
+      "state": "candidate observation",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "gallery-scroll-observed.jpg",
+      "sha256": "4c1411039bf0b5ed652435af04b42b308c0d2d0bba07ad451afc7ed096fb2a99",
+      "pixels": {
+        "pixelWidth": 1440,
+        "pixelHeight": 852
+      },
+      "observation": null,
+      "state": "candidate observation",
+      "metadataNote": "Native scrolled frame; not an exact viewport-size composition capture."
+    },
+    {
+      "file": "home-desktop.jpg",
+      "sha256": "84b0fb431dbd7041515bcaee9b6cd670565cf69e18abfe9b998ce04b1ffd754c",
+      "pixels": {
+        "pixelWidth": 1440,
+        "pixelHeight": 900
+      },
+      "observation": {
+        "file": "home-desktop.jpg",
+        "capturedAt": "2026-09-30T01:40:59.462Z",
+        "dpr": 2.049999952316284,
+        "height": 900,
+        "images": [],
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "scrollY": 0,
+        "url": "http://127.0.0.1:4310/",
+        "width": 1440
+      },
+      "state": "candidate observation"
+    },
+    {
+      "file": "home-mobile.jpg",
+      "sha256": "cc32001867e8775b31f47125f5dbdbee831cac75f54ccffd663aa7530c378218",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": null,
+      "state": "candidate observation",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "learn-desktop.jpg",
+      "sha256": "25f2fdf52c40a69dc4c29e650442da10aad03cf2918e65094935cfed35b20de7",
+      "pixels": {
+        "pixelWidth": 1440,
+        "pixelHeight": 900
+      },
+      "observation": {
+        "file": "learn-desktop.jpg",
+        "capturedAt": "2026-09-30T01:43:16.157Z",
+        "dpr": 2.049999952316284,
+        "height": 900,
+        "images": [],
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "scrollY": 0,
+        "url": "http://127.0.0.1:4310/learn",
+        "width": 1440
+      },
+      "state": "candidate observation"
+    },
+    {
+      "file": "learn-mobile.jpg",
+      "sha256": "bfd0fbc1a3d930bf7ebdab35c1142004a045812a93039b93508bef54e5665332",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": null,
+      "state": "candidate observation",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "lightbox-mobile.jpg",
+      "sha256": "9f925a01351db949943fd590399c594430d7f78d3fdfd3618655969a4e0d580c",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": null,
+      "state": "candidate observation",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "menu-blog-mobile.jpg",
+      "sha256": "ae01ced59d994da6ebe7352775c620336557a957fc0146081a67d35b050cab3f",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": {
+        "file": "menu-blog-mobile.jpg",
+        "capturedAt": "2026-09-30T01:48:19.656Z",
+        "dpr": 2.049999952316284,
+        "height": 844,
+        "images": [
+          {
+            "loaded": true,
+            "src": "/images/generated/the-jevons-trap.webp"
+          }
+        ],
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "scrollY": 0,
+        "url": "http://127.0.0.1:4312/blog/the-work-doesnt-end-at-send",
+        "width": 390
+      },
+      "state": "candidate observation"
+    },
+    {
+      "file": "menu-gallery-mobile.jpg",
+      "sha256": "57aed4720745739f312e907a541bd5abca2bfe925df9fe5bccfcf985f7142e40",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": null,
+      "state": "candidate observation",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "menu-main-mobile.jpg",
+      "sha256": "dbdef14c8227328c64896ae15c5bc4d1b37eb5aba9f651b9dc27ee395c348b05",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": null,
+      "state": "candidate observation",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "photography-desktop.jpg",
+      "sha256": "c83909b41db4662a6c719c7e4f27ef776dc1c4e8c8d6bbf07be871be6ce29307",
+      "pixels": {
+        "pixelWidth": 1440,
+        "pixelHeight": 900
+      },
+      "observation": {
+        "file": "photography-desktop.jpg",
+        "capturedAt": "2026-09-30T01:43:17.564Z",
+        "dpr": 2.049999952316284,
+        "height": 900,
+        "images": [
+          {
+            "loaded": true,
+            "src": "/media/photography/fd-12.webp"
+          }
+        ],
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "scrollY": 0,
+        "url": "http://127.0.0.1:4310/photography",
+        "width": 1440
+      },
+      "state": "candidate observation"
+    },
+    {
+      "file": "photography-mobile.jpg",
+      "sha256": "6c1d547297aa3fa9401603563d834104530e2952a687df92586610a13180546c",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": null,
+      "state": "candidate observation",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "project-mobile.jpg",
+      "sha256": "26964ca51bcdd0d0fb67fb8ca41a0809ca84c30e9a23d69d81af7ba945165d90",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": {
+        "file": "project-mobile.jpg",
+        "capturedAt": "2026-09-30T01:57:43.349Z",
+        "dpr": 2.049999952316284,
+        "height": 844,
+        "images": [
+          {
+            "loaded": true,
+            "src": "/work/rally-hq.webp"
+          }
+        ],
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "scrollY": 0,
+        "url": "http://127.0.0.1:4310/work/rally-hq",
+        "width": 390
+      },
+      "state": "candidate observation"
+    },
+    {
+      "file": "work-a-desktop.jpg",
+      "sha256": "b139a5bd5df722cc052b203f493420d37803835edc4b29b74f84272706c627ae",
+      "pixels": {
+        "pixelWidth": 1440,
+        "pixelHeight": 900
+      },
+      "observation": null,
+      "state": "rejected concept",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "work-a-mobile.jpg",
+      "sha256": "cc1b1a39ca24406c63550d8ad1df935ecd0d0005bb8f90c326d8537727c6fa46",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": null,
+      "state": "rejected concept",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "work-b-desktop.jpg",
+      "sha256": "14d12bd1991bf65f42e49a17f6808417ab0093c10b4737ebc2355d2ad618929e",
+      "pixels": {
+        "pixelWidth": 1440,
+        "pixelHeight": 900
+      },
+      "observation": null,
+      "state": "rejected concept",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "work-b-mobile.jpg",
+      "sha256": "ecaebaec420549657cea98d199d3782e3be7dd21177c1f571589306f8fadd4d5",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": null,
+      "state": "rejected concept",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "work-c-desktop.jpg",
+      "sha256": "3afcb6517fd27643e995773ddf23900cae8f15acafe52b43ffb788456169a986",
+      "pixels": {
+        "pixelWidth": 1440,
+        "pixelHeight": 900
+      },
+      "observation": null,
+      "state": "rejected concept",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "work-c-mobile.jpg",
+      "sha256": "8a12432f8642af9b16cbdb36cd0b388679b4246957580f1189cb37500d49e495",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": null,
+      "state": "rejected concept",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "work-comparison.jpg",
+      "sha256": "3cb310d75e78cb14e01cb9a4bda4468b7a557ffc932a3b45e0f8646aa4c0605a",
+      "pixels": {
+        "pixelWidth": 1440,
+        "pixelHeight": 900
+      },
+      "observation": null,
+      "state": "rejected concept",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "work-desktop.jpg",
+      "sha256": "c220a2389ea6f5f45c1d495aed87d78f019a3bfbb872d67895e47948b864455d",
+      "pixels": {
+        "pixelWidth": 1440,
+        "pixelHeight": 900
+      },
+      "observation": {
+        "file": "work-desktop.jpg",
+        "capturedAt": "2026-09-30T01:41:02.209Z",
+        "dpr": 2.049999952316284,
+        "height": 900,
+        "images": [],
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "scrollY": 0,
+        "url": "http://127.0.0.1:4310/work",
+        "width": 1440
+      },
+      "state": "candidate observation"
+    },
+    {
+      "file": "work-mobile.jpg",
+      "sha256": "604836e964fee9655e39f102815b6f5b9df5a3b65caac212d8c279e6fd5452c8",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": null,
+      "state": "candidate observation",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "writing-desktop.jpg",
+      "sha256": "0cad5bb573d4354bd2f3533bbe9f1641b0f73cd8f860d188954ea557fca1cb53",
+      "pixels": {
+        "pixelWidth": 1440,
+        "pixelHeight": 900
+      },
+      "observation": {
+        "file": "writing-desktop.jpg",
+        "capturedAt": "2026-09-30T01:43:14.840Z",
+        "dpr": 2.049999952316284,
+        "height": 900,
+        "images": [],
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "scrollY": 0,
+        "url": "http://127.0.0.1:4310/blog",
+        "width": 1440
+      },
+      "state": "candidate observation"
+    },
+    {
+      "file": "writing-mobile.jpg",
+      "sha256": "eefd546a5665542a3d8dcc24db559195a42e09c48a36d112f94f24550b734dc5",
+      "pixels": {
+        "pixelWidth": 390,
+        "pixelHeight": 844
+      },
+      "observation": null,
+      "state": "candidate observation",
+      "metadataNote": "No automatic viewport record retained. Parent opened this frame during the interactive review; no exact pixel-to-CSS mapping is asserted."
+    },
+    {
+      "file": "work-comparison-rejected.jpg",
+      "sha256": "6ed21f2d73d096aa21409c51ebd7985b4ae01d8290f20a34d3ab6f0aca9ab1e7",
+      "pixels": {
+        "pixelWidth": 299,
+        "pixelHeight": 472
+      },
+      "state": "rejected concepts and pending archive prominence",
+      "metadataNote": "Native browser frame after viewport reset; observed CSS viewport 299 by 472.",
+      "observation": {
+        "url": "http://127.0.0.1:4311/docs/design/work-concepts/comparison.html",
+        "capturedAt": "2026-09-30T02:17:53.856Z",
+        "width": 299,
+        "height": 472
+      }
+    }
+  ]
+}

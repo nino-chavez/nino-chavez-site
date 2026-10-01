@@ -26,11 +26,11 @@ export function canonicalFacet(
  * vocabulary order. Offering a filter that can only ever return nothing is a
  * dead end; the vocabulary may legitimately declare values ahead of use.
  */
-export function offeredFacets<T>(
+export function offeredFacets<T, Value extends string>(
   items: readonly T[],
   key: keyof T,
-  options: readonly string[],
-): string[] {
+  options: readonly Value[],
+): Value[] {
   const held = new Set(items.map((item) => String(item[key])));
   return options.filter((option) => held.has(option));
 }

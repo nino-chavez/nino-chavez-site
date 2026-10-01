@@ -61,6 +61,29 @@ test("shared activity loads once on public entrances and stays off private revie
     }
   }
 });
+
+test("public entrances keep their own canonical URL on the shared domain", async () => {
+  for (const [path, canonical] of [
+    ["/", "https://ninochavez.co/"],
+    ["/work?domain=Volleyball", "https://ninochavez.co/work"],
+    ["/demos", "https://ninochavez.co/demos"],
+    ["/learn", "https://ninochavez.co/learn"],
+    ["/learn/builder", "https://ninochavez.co/learn/builder"],
+    ["/blog", "https://ninochavez.co/blog"],
+    ["/about", "https://ninochavez.co/about"],
+    ["/now", "https://ninochavez.co/now"],
+    ["/links", "https://ninochavez.co/links"],
+    ["/cv", "https://ninochavez.co/cv"],
+    ["/privacy", "https://ninochavez.co/privacy"],
+    ["/search?q=Blueprint", "https://ninochavez.co/search"],
+  ]) {
+    const html = await htmlFor(path);
+    const links = [...html.matchAll(/<link\b(?=[^>]*rel="canonical")[^>]*>/g)];
+    assert.equal(links.length, 1, `${path} has one canonical`);
+    assert.equal(links[0][0].match(/href="([^"]+)"/)?.[1], canonical, path);
+  }
+});
+
 test("server-renders the personal entrance and global navigation", async () => {
   const response = await render("/");
   const html = (await response.text()).replaceAll("<!-- -->", "");
@@ -80,31 +103,41 @@ test("server-renders the personal entrance and global navigation", async () => {
     html,
     /I design products, build the software behind them, and run them in the real world./,
   );
-  assert.doesNotMatch(html, /Current working set/);
-  assert.match(html, /From the photography archive/);
-  assert.match(html, /Building since 1999/);
-  assert.match(html, /See selected work/);
-  assert.match(html, /About me/);
-  assert.match(html, /On the court/);
+  assert.match(html, /class="field-opening"/);
+  assert.match(html, /home-hero-frame-narrow\.webp/);
+  assert.match(html, /home-hero-frame\.webp/);
   assert.match(html, /Selected work/);
-  assert.match(html, /Four places to start/);
-  assert.match(html, /Read about Blueprint/);
-  assert.match(html, /Read Signal Dispatch/);
-  assert.match(html, /Browse photography/);
-  assert.match(html, /Explore the full body of work/);
+  assert.match(html, /Minder, The Rotation, Rally HQ/);
   assert.match(html, /Signal Dispatch/);
-  assert.match(html, /How the work gets done/);
-  assert.match(html, /Ways of Working · Session 02/);
-  assert.match(html, /Explore all work/);
-  assert.match(html, /Full sessions/);
-  assert.match(html, /Techniques/);
   assert.match(html, /href="\/work"/);
-  assert.match(html, /href="\/demos"/);
-  assert.match(html, /href="\/learn"/);
+  assert.doesNotMatch(html, /Four places to start|field-hero__rally-proof/);
   assert.match(html, /href="\/blog"/);
   assert.match(html, /href="\/about"/);
   assert.match(html, /href="\/search"/);
   assert.match(html, /mailto:nino@ninochavez\.co/);
+});
+
+test("uses a native dialog and browser history for compact navigation", async () => {
+  const [html, source] = await Promise.all([
+    htmlFor("/"),
+    readFile(
+      new URL("../app/components/SiteHeader.tsx", import.meta.url),
+      "utf8",
+    ),
+  ]);
+
+  assert.match(
+    html,
+    /<button[^>]*aria-haspopup="dialog"[^>]*aria-controls="site-navigation-dialog"[^>]*aria-expanded="false"[^>]*>Menu<\/button>/,
+  );
+  assert.match(html, /<dialog[^>]*id="site-navigation-dialog"/);
+  assert.match(html, /Search this site/);
+  assert.match(html, /<button[^>]*>Close<\/button>/);
+
+  assert.match(source, /\.showModal\(\)/);
+  assert.match(source, /window\.history\.pushState/);
+  assert.match(source, /addEventListener\("popstate", handlePopState\)/);
+  assert.match(source, /closeMenu\(false\)/);
 });
 
 test("preserves the canonical entity endpoints and generated root sitemap", async () => {
@@ -155,6 +188,26 @@ test("preserves the canonical entity endpoints and generated root sitemap", asyn
   assert.doesNotMatch(sitemapXml, /\/api\//);
 });
 
+test("finds featured products in Building filters and site search", async () => {
+  for (const [query, destination, availability] of [
+    ["Minder", "https://apps.apple.com/us/app/minder-your-day/id6803974428", "On the App Store"],
+    ["The Rotation", "https://therotation.tv/", "Live website"],
+    ["Cutting Board", "https://apps.ninochavez.co/cutting-board/", "Public alpha"],
+    ["Yawn", "https://apps.ninochavez.co/yawn/", "Internal alpha"],
+    ["Work Library", "https://library.ninochavez.co/commerce/bc-shared-cart-pattern", "Public studies"],
+  ]) {
+    const [filtered, search] = await Promise.all([
+      htmlFor(`/work?q=${encodeURIComponent(query)}`),
+      htmlFor(`/search?q=${encodeURIComponent(query)}`),
+    ]);
+    for (const html of [filtered, search]) {
+      assert.ok(html.includes(`href="${destination}"`), `${query} must keep its real destination in search`);
+      assert.ok(html.includes(availability), `${query} must retain its availability qualifier`);
+    }
+    assert.doesNotMatch(filtered, /No work matches these filters/);
+  }
+});
+
 test("renders the full-volume work and demos collections", async () => {
   const demoSnapshot = JSON.parse(
     await readFile(
@@ -172,7 +225,7 @@ test("renders the full-volume work and demos collections", async () => {
     filteredDemosHtml,
     emptyDemosHtml,
   ] = await Promise.all([
-    htmlFor("/work"),
+    htmlFor("/work?view=all"),
     htmlFor("/work?domain=Publishing&state=live"),
     htmlFor("/work?q=no-such-work"),
     htmlFor("/demos"),
@@ -180,16 +233,20 @@ test("renders the full-volume work and demos collections", async () => {
     htmlFor("/demos?q=no-such-demo"),
   ]);
 
-  assert.match(workHtml, /Projects, tools, and collections/);
-  assert.match(workHtml, /<h1>Work<\/h1>/);
-  assert.match(workHtml, /Browse all 29 items/);
-  assert.equal(
-    (workHtml.split('<script id="_R_">')[0].match(/ in this domain/g) ?? [])
-      .length,
-    6,
-  );
+  assert.match(workHtml, /<h1>Building<\/h1>/);
+  const selectedHtml = await htmlFor("/work");
+  assert.match(selectedHtml, /Selected work/);
+  assert.match(selectedHtml, /href="\/work\?view=all"/);
+  assert.doesNotMatch(selectedHtml.split('<script id="_R_">')[0], /class="library-controls"/);
+  assert.match(workHtml, /Minder/);
+  assert.match(workHtml, /The Rotation/);
+  assert.match(workHtml, /Cutting Board/);
+  assert.match(workHtml, /Yawn/);
+  assert.match(workHtml, /Source-backed publications and private handoffs/);
+  assert.match(selectedHtml, /Public draft/);
+  assert.match(workHtml, /id="work-library"/);
   assert.match(workHtml, /Status says what is available today/);
-  assert.match(workHtml, /29<\/strong> shown/);
+  assert.match(workHtml, /34<\/strong> shown/);
   assert.doesNotMatch(workHtml, /Nothing selected/);
   assert.doesNotMatch(workHtml, /objects in view/);
   assert.match(workHtml, /Blueprint/);
@@ -398,8 +455,8 @@ test("preserves late chapters, diagrams, and rewritten internal demo links", asy
 test("renders seven grounded learning paths without positional placeholders", async () => {
   const learnHtml = await htmlFor("/learn");
 
-  assert.match(learnHtml, /Learn \/ guided paths/);
-  assert.match(learnHtml, /aria-label="Start with what you need to make\."/);
+  assert.match(learnHtml, /<h1>Guides<\/h1>/);
+  assert.match(learnHtml, /Choose what you need to make/);
   assert.match(learnHtml, /Explorer/);
   assert.match(learnHtml, /Enterprise/);
   assert.doesNotMatch(learnHtml, /L0[1-7]/);
@@ -467,8 +524,8 @@ test("renders the complete Signal Dispatch publication and real article handoffs
       htmlFor("/search?q=Scaffolding"),
     ]);
 
-  assert.match(writingHtml, /Writing \/ Signal Dispatch/);
-  assert.match(writingHtml, /<h1>Signal <em>Dispatch<\/em><\/h1>/);
+  assert.match(writingHtml, /Signal Dispatch/);
+  assert.match(writingHtml, /<h1>Writing<\/h1>/);
   assert.match(
     writingHtml,
     new RegExp(
@@ -487,6 +544,10 @@ test("renders the complete Signal Dispatch publication and real article handoffs
   assert.match(writingHtml, /The Taste Test/);
   assert.match(writingHtml, /href="https:\/\/ninochavez\.co\/blog\/the-taste-gap"/);
   assert.match(writingHtml, /href="https:\/\/ninochavez\.co\/blog\/series\/the-taste-test"/);
+  assert.doesNotMatch(
+    writingHtml,
+    /href="https:\/\/ninochavez\.co\/blog\/the-taste-gap"[^>]*target="_blank"/,
+  );
   assert.doesNotMatch(writingHtml, /Representative content/);
   assert.doesNotMatch(writingHtml, /Shared shell test/);
   assert.doesNotMatch(writingHtml, /240\+/);
@@ -515,6 +576,10 @@ test("renders the complete Signal Dispatch publication and real article handoffs
     /href="https:\/\/ninochavez\.co\/blog\/the-scaffolding-the-agent-doesnt-build"/,
   );
   assert.match(searchHtml, /Essay · Reflection · 2026/);
+  assert.doesNotMatch(
+    searchHtml,
+    /href="https:\/\/ninochavez\.co\/blog\/[^"]+"[^>]*target="_blank"/,
+  );
 
   assert.equal(
     Object.values(writingSnapshot.kindCounts).reduce(
@@ -694,12 +759,9 @@ test("renders Photography as an owned image collection with live archive paths",
   ]);
   const photographyDocument = photographyHtml.split('<script id="_R_">')[0];
 
-  assert.match(photographyDocument, /Nino Chavez \/ Photography/);
-  assert.match(photographyDocument, /Volleyball and action sports/);
-  assert.match(
-    photographyDocument,
-    /Find the frame you came for/,
-  );
+  assert.match(photographyDocument, /<h1>Photography<\/h1>/);
+
+  assert.doesNotMatch(photographyDocument, /photography-opening__image/);
   assert.match(
     photographyDocument,
     /action="\/photography\/explore"/,
@@ -713,16 +775,13 @@ test("renders Photography as an owned image collection with live archive paths",
     attributedHtml,
     /\/photography\/albums\?src=ig-photo/,
   );
-  assert.match(photographyDocument, /Events[\s\S]*Browse by date/);
-  assert.match(photographyDocument, /Browse by date[\s\S]*Collections/);
-  assert.match(photographyDocument, /Collections[\s\S]*Your saved photos/);
+  assert.match(photographyDocument, /Events[\s\S]*By date/);
+  assert.match(photographyDocument, /By date[\s\S]*Collections/);
+  assert.match(photographyDocument, /Collections[\s\S]*Saved/);
   assert.match(photographyDocument, /Find photos in the full archive/);
   assert.doesNotMatch(photographyDocument, /<strong>Search<\/strong>/);
   assert.doesNotMatch(photographyDocument, />P0[1-5]</);
-  assert.match(
-    photographyDocument,
-    /Contact sheet \/ (?:<!-- -->)?12(?:<!-- -->)?\s*frames/,
-  );
+  assert.match(photographyDocument, /From the archive/);
   assert.equal(
     (photographyDocument.match(/class="photography-frame-grid"/g) ?? [])
       .length,
@@ -1031,6 +1090,10 @@ test("links work records to the writing that covers them", async () => {
 
   const rally = rallyHtml.split('<script id="_R_">')[0];
   assert.match(rally, /Written about this/);
+  assert.doesNotMatch(
+    rally,
+    /href="https:\/\/ninochavez\.co\/blog\/[^"]+"[^>]*target="_blank"/,
+  );
   for (const slug of [
     "what-223-sessions-taught-me-about-working-with-ai",
     "setting-up-an-ai-native-dev-environment",
@@ -1071,7 +1134,7 @@ test("links work records to the writing that covers them", async () => {
   );
 });
 
-test("opens every external surface in a new tab across the complete route set", async () => {
+test("classifies absolute links by destination host before applying external protections", async () => {
   const sitemap = await render("/sitemap.xml");
   const sitemapXml = await sitemap.text();
   const paths = [...sitemapXml.matchAll(/<loc>https:\/\/ninochavez\.co([^<]*)<\/loc>/g)]
@@ -1079,16 +1142,21 @@ test("opens every external surface in a new tab across the complete route set", 
 
   for (const path of paths) {
     const html = await htmlFor(path);
-    const externalAnchors =
+    const absoluteAnchors =
       html.match(/<a\b[^>]*href="https?:\/\/[^"]+"[^>]*>/g) ?? [];
 
-    for (const anchor of externalAnchors) {
-      assert.match(anchor, /target="_blank"/, `${path}: ${anchor}`);
-      assert.match(
-        anchor,
-        /rel="noopener noreferrer"/,
-        `${path}: ${anchor}`,
-      );
+    for (const anchor of absoluteAnchors) {
+      const href = anchor.match(/href="([^"]+)"/)?.[1];
+      assert.ok(href, `${path}: an absolute anchor has an href`);
+
+      if (new URL(href).hostname !== "ninochavez.co") {
+        assert.match(anchor, /target="_blank"/, `${path}: ${anchor}`);
+        assert.match(
+          anchor,
+          /rel="noopener noreferrer"/,
+          `${path}: ${anchor}`,
+        );
+      }
     }
   }
 });

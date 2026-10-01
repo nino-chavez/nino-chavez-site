@@ -17,6 +17,7 @@ const canonicalCheckoutRoot = path.dirname(
 );
 const sourceRoot = path.resolve(
   process.argv[2] ??
+    process.env.WRITING_SOURCE_ROOT ??
     path.join(canonicalCheckoutRoot, "../../apps/blog/astro-build"),
 );
 const outputPath = path.join(projectRoot, "app/writing-data.json");

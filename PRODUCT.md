@@ -1,106 +1,58 @@
-# Nino Chavez — personal site and work index
+# Product
 
-> **Superseded for structure on 2026-07-29.** This brief produced a single-page,
-> selected-work portfolio and is retained as decision history. The active
-> product contract is
-> `/Users/nino/Workspace/dev/apps/website-nc/docs/IA-NAVIGATION.md`: a
-> multi-route profile with a complete Work library and Demos integrated at
-> `/demos`.
+<!-- impeccable:product-schema 1 -->
 
-## Product
+## Platform
 
-`ninochavez.co` is Nino Chavez's canonical personal profile and portfolio.
-It introduces the person, curates the strongest public work, and provides a
-complete launch point for the rest.
+web
 
-This is a portfolio in the plain meaning of the word: selected evidence of
-judgment and execution, presented by the person responsible for it. It is not a
-magazine, exhibition catalogue, agency site, résumé replacement, or services
-funnel.
+## Users
 
-## First-encounter promise
+- A person arriving from a LinkedIn crosspost or another shared piece of writing, looking to understand Nino's thinking and open the related work.
+- A person following a social photography link, looking to see the photographs and use the gallery's existing search, viewer, save, and download tools.
+- A peer, collaborator, or potential employer looking for concrete examples of what Nino builds with AI and where those products or studies lead.
+- A returning visitor looking for a specific public product, piece of writing, photograph, study, demo, or guide.
 
-A visitor should understand, without scrolling through a manifesto:
+## Product Purpose
 
-1. who Nino is;
-2. what he does;
-3. what he has made;
-4. which object is worth opening next.
+Nino Chavez's personal web presence introduces his practice and makes its public work reachable. Writing presents AI-assisted thinking. Building presents examples of how and what he builds with AI. Photography demonstrates his photography.
 
-The page should feel personal before it feels comprehensive. The work supplies
-the proof.
+The homepage gives visitors a direct way into those three bodies of work. About supplies the durable profile behind them.
 
-## Primary audiences
+## Positioning
 
-- Someone following a link to Nino or to one named project.
-- A peer deciding whether the work is substantive.
-- A potential collaborator or employer looking for evidence of judgment and
-  execution.
-- A returning visitor looking for what is active now.
+This is a personal practice site that connects writing, apps, websites, businesses, and action-sports photography while preserving each destination's own job. The current implementation keeps the publication, gallery, and independent products in their existing runtimes.
 
-## Content hierarchy
+## Operating Context
 
-1. **Profile** — name, current role and location, and a concrete first-person
-   description of the practice.
-2. **Selected work** — four to six strong, visually legible objects with a real
-   image, a plain description, an honest state, and one action.
-3. **Ways of working** — the demo series as a major proof surface, not an
-   orphaned property.
-4. **Writing** — a small selection and a clear route to Signal Dispatch.
-5. **About and contact** — enough biography and context to make the site
-   unmistakably personal.
-6. **All work** — a separate launch pad for the complete public inventory.
+The public shell has four global destinations: Writing, Building, Photography, and About. Search is a utility.
 
-## Content model
+Building is the home for apps, websites, businesses, public studies, process, demos, and guides. Its common collection label is Selected work; each entry states what it is. Do not label the whole collection Products or group it by purpose. Flickday Media is a sports-media business, and Let’s Pepper is a tournament series; their websites are destinations, not the whole entity. Its routes include `/work`, `/demos`, and `/learn`. Writing is `/blog`; Photography is `/photography`; About is `/about`. Direct URLs, query filters, canonical sources, and private boundaries remain part of the visitor contract.
 
-Every work object has:
+## Capabilities and Constraints
 
-- a name;
-- a plain-language description;
-- a domain;
-- a form, such as product, tool, practice, series, essay, or concept;
-- a state, such as live, public, private, in progress, archived, or concept;
-- an honest action, such as open, install, read, view source, or inspect notes;
-- a real visual when the object has one.
+The main site is a React/VineNext application deployed as a Cloudflare Worker. The article publisher is an Astro application and the gallery is a SvelteKit application. Apex routing joins their public paths; the applications retain their separate runtimes and responsibilities.
 
-Form, state, and domain are metadata. They help visitors orient and filter; they
-do not become six equal homepage departments.
+Minder and The Rotation are independent products with their own task-focused navigation and destinations. They are represented in Building while their current runtimes remain separate. Work Library remains its own product and source authority; only public, source-authorized material may be represented here.
 
-## Property model
+## Brand Commitments
 
-The main site owns the identity, profile, selected-work narrative, and complete
-work index. Existing subdomains remain when the destination is a real product or
-publication with its own task and visual system, including the demo series,
-photography gallery, and blog.
+The site uses Nino Chavez's name and presents the practice through real public work. Writing, Building, Photography, and About are the established global names. Product availability and destinations must be stated truthfully.
 
-The portfolio should preview those properties and send visitors to them. It
-should not absorb their applications, archives, or design systems into one
-deployment.
+## Evidence on Hand
 
-## Non-goals
+The repository contains public work records, writing metadata, demo content, and photography routes. The October 1, 2026 Concept A review and implementation record document the selected direction and the tested public-route behaviors at `docs/design/concepts/20260930/REVIEW.md` and `docs/design/concepts/20260930/implementation/RESULT.md`.
 
-- Selling consulting services.
-- Turning the homepage into a directory of every repository.
-- Giving every craft equal visual acreage.
-- Inventing a new palette for every section.
-- Reusing the demo gallery's serialized arc as the personal-site structure.
-- Using editorial devices—issue departments, numbered chapters, contents rails,
-  mastheads, or contact-sheet labels—to simulate depth.
-- Presenting private work as available.
-- Flattening distinct project identities into one master brand.
+The homepage uses a real photograph credited to Nino Chavez. Building includes real public destinations for products and studies. Do not fabricate testimonials, analytics outcomes, product availability, personal history, or photography permissions.
 
-## Success criteria
+## Product Principles
 
-The finished site succeeds when:
+- Make the next useful destination clear from the visitor's arrival path.
+- Keep the three kinds of proof distinct: writing, building, and photography.
+- Preserve the specialized behavior and source authority of each connected application.
+- Keep public discovery useful without exposing private work or inventing evidence.
+- Treat direct links and query-based retrieval as durable visitor contracts.
 
-- the first viewport names Nino and describes the work in concrete language;
-- selected work is visible as portfolio evidence, not as an archive;
-- at least one real object can be acted on immediately;
-- the demo series, Blueprint, writing, and photography are directly reachable;
-- state and availability are honest but visually secondary;
-- real screenshots and photographs carry more visual weight than decorative
-  typography;
-- `/work` exposes the full public inventory without making the homepage feel
-  exhaustive;
-- the same restrained shell supports home, work, project summaries, about, and
-  simple information pages.
+## Accessibility & Inclusion
+
+Keep the established keyboard navigation, visible focus treatment, responsive layout, and gallery recovery behavior. Preserve semantic content and the existing search, filter, viewer, save, and download interactions when changing public surfaces.

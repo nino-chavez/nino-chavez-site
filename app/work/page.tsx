@@ -1,87 +1,125 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import "../by-nino-library.css";
+import "../building.css";
 import { WorkLibrary } from "../components/WorkLibrary";
-import { domains, workItems, type Domain } from "../data";
+import { workItems } from "../data";
+import { selectedWork } from "../selected-work";
+import { BrowseAllWorkLink } from "../components/BrowseAllWorkLink";
 
 export const metadata = {
-  title: "Work",
+  alternates: { canonical: "/work" },
+  title: "Building",
   description:
-    "Products, tools, methods, operations, and collections by Nino Chavez.",
+    "Apps, websites, businesses, and the work behind them, by Nino Chavez.",
 };
 
-const domainNotes: Record<Domain, string> = {
-  "Developer tools": "Tools and methods for planning, building, reviewing, and maintaining software.",
-  "Local-first": "Private tools that keep speech, meetings, and working context close to the operator.",
-  Volleyball: "Products and live operations tested on courts, at events, and with real players.",
-  Commerce: "Architecture and delivery experience from complex commerce programs.",
-  "Media & assets": "Tools and collections for making, reviewing, and delivering visual work.",
-  Publishing: "Published arguments, field notes, presentations, and durable reference material.",
-};
-
-export default function WorkPage() {
+export default async function WorkPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const params = await searchParams;
+  const catalogue = params.view === "all" || ["q", "domain", "state", "form"].some((key) => Boolean(params[key]));
   return (
-    <div className="work-page work-atlas-page">
-      <header className="work-atlas">
-        <div className="work-atlas__opening page-shell">
-          <div className="work-atlas__lead">
-            <p className="eyebrow">Projects, tools, and collections</p>
-            <h1>Work</h1>
-            <p className="work-atlas__lede">
-              Products, tools, methods, operations, and the systems behind
-              them.
-            </p>
-            <p className="work-atlas__note">
-              Browse by domain, or search all {workItems.length} items below.
-            </p>
-            <a className="work-atlas__all" href="#work-library">
-              Browse all {workItems.length} items{" "}
-              <span aria-hidden="true">↓</span>
-            </a>
-          </div>
-
-          <nav className="work-domains" aria-label="Explore work by domain">
-            {domains.map((domain) => {
-              const records = workItems.filter(
-                (item) => item.domain === domain,
-              );
-
-              return (
-                <Link
-                  href={`/work?domain=${encodeURIComponent(domain)}#work-library`}
-                  key={domain}
-                >
-                  <strong>{domain}</strong>
-                  <small>{domainNotes[domain]}</small>
-                  <em>
-                    <span>{records.length}</span> in this domain
-                  </em>
-                  <b aria-hidden="true">→</b>
-                </Link>
-              );
-            })}
-          </nav>
+    <div className="work-page work-atlas-page building-page">
+      <header className="building-page__header building-wrap">
+        <div>
+          <h1>Building</h1>
+          <p>Apps, websites, businesses, and the work behind them.</p>
         </div>
+        {catalogue ? <Link className="building-action" href="/work">Back to selected work <span aria-hidden="true">→</span></Link> : <BrowseAllWorkLink />}
       </header>
 
-      <section
-        className="work-library-stage page-shell"
+      {!catalogue ? <>
+      <section className="selected-work building-wrap" aria-labelledby="selected-title">
+        <h2 id="selected-title">Selected work</h2>
+        {selectedWork.map((work) => {
+          const external = work.href.startsWith("http");
+          const availability = work.availability === "Live website" ? "" : work.availability;
+          return (
+            <article className={`work-entry${work.image ? "" : " work-entry--text"}`} key={work.slug} data-work={work.slug}>
+              <div className="work-identity">
+                <h3>{work.name}</h3>
+                <p className="work-kind">{work.kind}</p>
+              </div>
+              <div className="work-description">
+                <p>{work.summary}</p>
+                {availability ? <p className="work-availability">{availability}</p> : null}
+                {external ? <a className="building-action" href={work.href} target="_blank" rel="noopener noreferrer">
+                  {work.action}<span aria-hidden="true">↗</span><span className="assistive-text"> (opens in a new tab)</span>
+                </a> : <Link className="building-action" href={work.href}>{work.action}<span aria-hidden="true">→</span></Link>}
+                {work.image?.caption ? <p className="media-caption">{work.image.caption}</p> : null}
+              </div>
+              {work.image ? <figure className={`work-preview work-preview--${work.slug}`}>
+                {/* eslint-disable-next-line @next/next/no-img-element -- Framed static previews preserve the approved screenshot crops. */}
+                <img src={work.image.src} alt={work.image.alt} loading={work.slug === "minder" ? "eager" : "lazy"} />
+              </figure> : null}
+            </article>
+          );
+        })}
+      </section>
+
+      <section className="building-studies" aria-labelledby="public-work-title">
+        <div className="building-wrap">
+        <header className="building-section__heading">
+          <h2 id="public-work-title">Studies &amp; methods</h2>
+        </header>
+        <div className="building-resources">
+          <article className="building-resource">
+            <p className="building-resource__type">Public draft</p>
+            <h3>One Cart Across Two Storefronts</h3>
+            <p>
+              A study of what BigCommerce multi-storefront permits when two
+              storefronts need one cart. Published for inspection; source
+              remains a draft.
+            </p>
+            <a
+              href="https://library.ninochavez.co/commerce/bc-shared-cart-pattern"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read the shared-cart study
+              <span className="assistive-text"> (opens in a new tab)</span>
+            </a>
+          </article>
+          <article className="building-resource">
+            <p className="building-resource__type">Method</p>
+            <h3>Blueprint</h3>
+            <p>
+              A practical method for planning, reviewing, and checking product
+              work done with AI agents.
+            </p>
+            <Link href="/work/blueprint">Explore Blueprint</Link>
+          </article>
+
+        </div>
+        </div>
+      </section>
+
+      <nav className="building-routes building-wrap" aria-label="More ways to explore Building">
+        <Link className="building-route" href="/demos">
+          <h2>Process</h2>
+          <p>See complete sessions and applied techniques.</p>
+        </Link>
+        <Link className="building-route" href="/learn">
+          <h2>Guides</h2>
+          <p>Follow practical learning paths with examples and checkpoints.</p>
+        </Link>
+      </nav>
+
+      </> : <section
+        className="building-catalogue building-wrap work-library-stage"
         id="work-library"
         aria-labelledby="work-library-title"
       >
-        <header className="work-library-stage__heading">
-          <div>
-            <p className="eyebrow">All work</p>
-            <h2 id="work-library-title">Browse all work.</h2>
-          </div>
+        <header className="building-section__heading">
+          <h2 id="work-library-title">Browse all work</h2>
           <p>
             Search by name or purpose. Status says what is available today;
-            type says what kind of work it is.
+            format describes how the work is delivered.
           </p>
         </header>
         <Suspense fallback={<p>Loading work…</p>}>
           <WorkLibrary items={workItems} />
         </Suspense>
-      </section>
+      </section>}
     </div>
   );
 }

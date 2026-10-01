@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "../../by-nino-library.css";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { Breadcrumbs } from "../../components/Breadcrumbs";
@@ -678,7 +679,8 @@ export default async function WorkDetailPage({
         }
       : detail,
   );
-  const destinationIsExternal = item.destination?.href.startsWith("http");
+  const destinationIsExternal = item.destination?.href.startsWith("http") &&
+    new URL(item.destination.href).origin !== "https://ninochavez.co";
   const related = (item.related ?? [])
     .map((relatedSlug) =>
       workItems.find((entry) => entry.slug === relatedSlug),
@@ -822,8 +824,6 @@ export default async function WorkDetailPage({
               <a
                 key={entry.slug}
                 href={entry.href}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 <span>{entry.kind}</span>
                 <strong>{entry.title}</strong>

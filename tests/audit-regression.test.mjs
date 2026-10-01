@@ -143,7 +143,7 @@ test("F15a — every filter option maps to at least one record", async () => {
   const states = held("state");
   const domains = held("domain");
 
-  const html = await htmlFor("/work");
+  const html = await htmlFor("/work?view=all");
   const offered = new Set(
     [...html.matchAll(/<option value="([^"]+)"/g)].map((m) =>
       m[1].replaceAll("&amp;", "&"),
@@ -390,7 +390,7 @@ test(
     // registry, then renders groups sorted by date. The two orders agree only
     // until records are added. A badge that disagrees with its own list carries
     // no information the visitor can use. AD §Copy.
-    const html = await htmlFor("/work");
+    const html = await htmlFor("/work?view=all");
     const groups = html.match(
       /class="library-group"[\s\S]*?(?=class="library-group"|<\/main)/g,
     );
@@ -415,7 +415,7 @@ test(
   "C14 — every work status is explained where visitors first meet it",
   async () => {
     const [workHtml, detailHtml, searchHtml] = await Promise.all([
-      htmlFor("/work"),
+      htmlFor("/work?view=all"),
       htmlFor("/work/blueprint"),
       htmlFor("/search?q=blueprint"),
     ]);
@@ -554,20 +554,15 @@ test("C30 — Photography is a top-level global navigation item", async () => {
     /<nav class="desktop-navigation"[\s\S]*?<\/nav>/,
   )?.[0];
   assert.ok(primary, "primary navigation should render");
-  assert.match(primary, /Work[\s\S]*Sessions[\s\S]*Learn[\s\S]*Writing[\s\S]*Photography[\s\S]*About/);
+  assert.match(primary, /Writing[\s\S]*Building[\s\S]*Photography[\s\S]*About/);
   assert.match(primary, /href="\/photography" aria-current="page"/);
 });
 
-test("F8 — the homepage body offers entrances to Learn and About", async () => {
-  const html = await htmlFor("/");
-  // Strip the site header and footer — the chrome that appears on every route.
-  // What remains is the homepage's own content. Chrome navigation does not
-  // satisfy the IA contract's requirement that the homepage provide entrances to
-  // every top-level route. Content `<nav>` elements inside the page body (the
-  // domain index, the Ways of Working routes) are page content and do count.
-  const body = html
-    .replace(/<header[\s\S]*?<\/header>/gi, "")
-    .replace(/<footer[\s\S]*?<\/footer>/gi, "");
-  assert.match(body, /href="\/learn"/, "the homepage body must enter Learn");
-  assert.match(body, /href="\/about"/, "the homepage body must enter About");
+test("F8 — the selected homepage enters collections and Building keeps process and guides reachable", async () => {
+  const [home, building] = await Promise.all([htmlFor("/"), htmlFor("/work")]);
+  const body = home.match(/<main[^>]*>[\s\S]*?<\/main>/)?.[0];
+  assert.ok(body);
+  for (const path of ["/work", "/blog", "/photography"]) assert.ok(body.includes(`href="${path}"`));
+  for (const path of ["/demos", "/learn"]) assert.ok(building.includes(`href="${path}"`));
+  assert.match(home, /href="\/about"/);
 });

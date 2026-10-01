@@ -1,10 +1,8 @@
 import Link from "next/link";
 
 const primary = [
-  ["Work", "/work"],
-  ["Sessions", "/demos"],
-  ["Learn", "/learn"],
   ["Writing", "/blog"],
+  ["Building", "/work"],
   ["Photography", "/photography"],
   ["About", "/about"],
 ] as const;

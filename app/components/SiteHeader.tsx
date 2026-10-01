@@ -5,18 +5,12 @@
  * same-origin anchors keep the shared navigation reliable in the review build. */
 
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const primary = [
-  { label: "Work", href: "/work", owns: ["/work"] },
-  { label: "Sessions", href: "/demos", owns: ["/demos"] },
-  { label: "Learn", href: "/learn", owns: ["/learn"] },
   { label: "Writing", href: "/blog", owns: ["/blog"] },
-  {
-    label: "Photography",
-    href: "/photography",
-    owns: ["/photography"],
-  },
+  { label: "Building", href: "/work", owns: ["/work", "/demos", "/learn"] },
+  { label: "Photography", href: "/photography", owns: ["/photography"] },
   { label: "About", href: "/about", owns: ["/about", "/now", "/links"] },
 ] as const;
 
@@ -35,27 +29,108 @@ export function SiteHeader() {
   const pathname = usePathname();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const menuHistoryEntryRef = useRef(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
+  const closeMenu = useCallback((removeHistoryEntry = true) => {
     if (dialogRef.current?.open) {
       dialogRef.current.close();
     }
-  }, [pathname]);
+    setMenuOpen(false);
+    menuButtonRef.current?.focus();
+
+    if (removeHistoryEntry && menuHistoryEntryRef.current) {
+      menuHistoryEntryRef.current = false;
+      window.history.back();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (dialogRef.current?.open) {
+      closeMenu();
+    }
+  }, [closeMenu, pathname]);
+
+  useEffect(() => {
+    function handlePopState() {
+      menuHistoryEntryRef.current = false;
+
+      if (dialogRef.current?.open) {
+        closeMenu(false);
+      }
+    }
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, [closeMenu]);
 
   function openMenu() {
+    if (dialogRef.current?.open) {
+      return;
+    }
+
+    window.history.pushState(
+      { ...window.history.state, siteNavigationDialog: true },
+      "",
+      window.location.href,
+    );
+    menuHistoryEntryRef.current = true;
     dialogRef.current?.showModal();
     setMenuOpen(true);
   }
 
-  function closeMenu() {
-    dialogRef.current?.close();
-    setMenuOpen(false);
-    menuButtonRef.current?.focus();
+  function navigateFromMenu(destination: string) {
+    const replaceMenuEntry = menuHistoryEntryRef.current;
+    menuHistoryEntryRef.current = false;
+    closeMenu(false);
+
+    // Replace the temporary menu entry directly. Going Back first also starts
+    // a page-router fetch; its unload failure can overwrite this navigation
+    // with the old page in WebKit. Replacement preserves Back to the source.
+    if (replaceMenuEntry) {
+      window.location.replace(destination);
+    } else {
+      window.location.assign(destination);
+    }
+  }
+
+  function handleMenuLink(event: React.MouseEvent<HTMLAnchorElement>) {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      return;
+    }
+    event.preventDefault();
+    navigateFromMenu(event.currentTarget.href);
+  }
+
+  function handleMenuSearch(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const query = form.get("q");
+    const search = new URL("/search", window.location.origin);
+    if (typeof query === "string" && query) {
+      search.searchParams.set("q", query);
+    }
+    navigateFromMenu(search.href);
+  }
+
+  function handleMenuKeys(event: React.KeyboardEvent<HTMLDialogElement>) {
+    if (event.key !== "Tab") return;
+    const controls = Array.from(event.currentTarget.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), input:not([disabled])',
+    )).filter((element) => element.getClientRects().length > 0);
+    const first = controls[0];
+    const last = controls[controls.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last?.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first?.focus();
+    }
   }
 
   return (
-    <header className="site-header">
+    <header className={`site-header${pathname === "/" ? " site-header--home" : ""}`}>
       <div className="header-inner">
         <a
           className="identity-link"
@@ -110,7 +185,11 @@ export function SiteHeader() {
         ref={dialogRef}
         className="navigation-dialog"
         aria-labelledby="navigation-dialog-title"
-        onClose={() => setMenuOpen(false)}
+        onKeyDown={handleMenuKeys}
+        onClose={() => {
+          setMenuOpen(false);
+          menuButtonRef.current?.focus();
+        }}
         onCancel={(event) => {
           event.preventDefault();
           closeMenu();
@@ -118,12 +197,17 @@ export function SiteHeader() {
       >
         <div className="dialog-heading">
           <p id="navigation-dialog-title">Navigate</p>
-          <button type="button" onClick={closeMenu} autoFocus>
+          <button type="button" onClick={() => closeMenu()} autoFocus>
             Close
           </button>
         </div>
 
-        <form className="menu-search" action="/search" role="search">
+        <form
+          className="menu-search"
+          action="/search"
+          role="search"
+          onSubmit={handleMenuSearch}
+        >
           <label htmlFor="menu-query">Search this site</label>
           <div>
             <input
@@ -144,6 +228,7 @@ export function SiteHeader() {
               <a
                 key={item.href}
                 href={item.href}
+                onClick={handleMenuLink}
                 aria-current={
                   current ? "page" : active ? "location" : undefined
                 }
@@ -164,6 +249,7 @@ export function SiteHeader() {
               <a
                 key={item.href}
                 href={item.href}
+                onClick={handleMenuLink}
                 aria-current={active ? "page" : undefined}
               >
                 {item.label}
