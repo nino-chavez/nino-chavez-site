@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "../by-nino-library.css";
 import {
   learnTracks,
   workHref,
@@ -201,7 +202,7 @@ export default async function SearchPage({
   const shown = work.length + demos.length + writing.length + pages.length;
 
   return (
-    <div className="page-shell page-stack">
+    <div className="page-shell page-stack search-page">
       <header className="page-intro">
         <p className="eyebrow">Across ninochavez.co</p>
         <h1>Search</h1>

@@ -1,3 +1,5 @@
+import "../by-nino-library.css";
+
 export const metadata = {
   alternates: { canonical: "/privacy" },
   title: "Privacy",

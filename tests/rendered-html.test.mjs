@@ -103,27 +103,14 @@ test("server-renders the personal entrance and global navigation", async () => {
     html,
     /I design products, build the software behind them, and run them in the real world./,
   );
-  assert.doesNotMatch(html, /Current working set/);
-  assert.match(html, /From the photography archive/);
-  assert.match(html, /Building since 1999/);
-  assert.match(html, /See Rally HQ/);
-  assert.match(html, /About me/);
-  assert.match(html, /On the court/);
+  assert.match(html, /class="field-opening"/);
+  assert.match(html, /home-hero-frame-narrow\.webp/);
+  assert.match(html, /home-hero-frame\.webp/);
   assert.match(html, /Selected work/);
-  assert.match(html, /Four places to start/);
-  assert.match(html, /Read about Blueprint/);
-  assert.match(html, /Read Signal Dispatch/);
-  assert.match(html, /Browse photography/);
-  assert.match(html, /Explore the full body of work/);
+  assert.match(html, /Minder, The Rotation, Rally HQ/);
   assert.match(html, /Signal Dispatch/);
-  assert.match(html, /How the work gets done/);
-  assert.match(html, /Ways of Working · Session 02/);
-  assert.match(html, /Explore all work/);
-  assert.match(html, /Full sessions/);
-  assert.match(html, /Techniques/);
   assert.match(html, /href="\/work"/);
-  assert.match(html, /href="\/demos"/);
-  assert.match(html, /href="\/learn"/);
+  assert.doesNotMatch(html, /Four places to start|field-hero__rally-proof/);
   assert.match(html, /href="\/blog"/);
   assert.match(html, /href="\/about"/);
   assert.match(html, /href="\/search"/);
@@ -201,6 +188,26 @@ test("preserves the canonical entity endpoints and generated root sitemap", asyn
   assert.doesNotMatch(sitemapXml, /\/api\//);
 });
 
+test("finds featured products in Building filters and site search", async () => {
+  for (const [query, destination, availability] of [
+    ["Minder", "https://apps.apple.com/us/app/minder-your-day/id6803974428", "On the App Store"],
+    ["The Rotation", "https://therotation.tv/", "Live website"],
+    ["Cutting Board", "https://apps.ninochavez.co/cutting-board/", "Public alpha"],
+    ["Yawn", "https://apps.ninochavez.co/yawn/", "Internal alpha"],
+    ["Work Library", "https://library.ninochavez.co/commerce/bc-shared-cart-pattern", "Public studies"],
+  ]) {
+    const [filtered, search] = await Promise.all([
+      htmlFor(`/work?q=${encodeURIComponent(query)}`),
+      htmlFor(`/search?q=${encodeURIComponent(query)}`),
+    ]);
+    for (const html of [filtered, search]) {
+      assert.ok(html.includes(`href="${destination}"`), `${query} must keep its real destination in search`);
+      assert.ok(html.includes(availability), `${query} must retain its availability qualifier`);
+    }
+    assert.doesNotMatch(filtered, /No work matches these filters/);
+  }
+});
+
 test("renders the full-volume work and demos collections", async () => {
   const demoSnapshot = JSON.parse(
     await readFile(
@@ -226,16 +233,16 @@ test("renders the full-volume work and demos collections", async () => {
     htmlFor("/demos?q=no-such-demo"),
   ]);
 
-  assert.match(workHtml, /Projects, tools, and collections/);
-  assert.match(workHtml, /<h1>Work<\/h1>/);
-  assert.match(workHtml, /Browse all 29 items/);
-  assert.equal(
-    (workHtml.split('<script id="_R_">')[0].match(/ in this domain/g) ?? [])
-      .length,
-    6,
-  );
+  assert.match(workHtml, /<h1>Building<\/h1>/);
+  assert.match(workHtml, /Minder/);
+  assert.match(workHtml, /The Rotation/);
+  assert.match(workHtml, /Cutting Board/);
+  assert.match(workHtml, /Yawn/);
+  assert.match(workHtml, /Source-backed publications and private handoffs/);
+  assert.match(workHtml, /Public draft/);
+  assert.match(workHtml, /id="work-library"/);
   assert.match(workHtml, /Status says what is available today/);
-  assert.match(workHtml, /29<\/strong> shown/);
+  assert.match(workHtml, /34<\/strong> shown/);
   assert.doesNotMatch(workHtml, /Nothing selected/);
   assert.doesNotMatch(workHtml, /objects in view/);
   assert.match(workHtml, /Blueprint/);
@@ -444,8 +451,8 @@ test("preserves late chapters, diagrams, and rewritten internal demo links", asy
 test("renders seven grounded learning paths without positional placeholders", async () => {
   const learnHtml = await htmlFor("/learn");
 
-  assert.match(learnHtml, /Learn \/ guided paths/);
-  assert.match(learnHtml, /aria-label="Start with what you need to make\."/);
+  assert.match(learnHtml, /<h1>Guides<\/h1>/);
+  assert.match(learnHtml, /Choose what you need to make/);
   assert.match(learnHtml, /Explorer/);
   assert.match(learnHtml, /Enterprise/);
   assert.doesNotMatch(learnHtml, /L0[1-7]/);
@@ -513,8 +520,8 @@ test("renders the complete Signal Dispatch publication and real article handoffs
       htmlFor("/search?q=Scaffolding"),
     ]);
 
-  assert.match(writingHtml, /Writing \/ Signal Dispatch/);
-  assert.match(writingHtml, /<h1>Signal <em>Dispatch<\/em><\/h1>/);
+  assert.match(writingHtml, /Signal Dispatch/);
+  assert.match(writingHtml, /<h1>Writing<\/h1>/);
   assert.match(
     writingHtml,
     new RegExp(
@@ -748,12 +755,9 @@ test("renders Photography as an owned image collection with live archive paths",
   ]);
   const photographyDocument = photographyHtml.split('<script id="_R_">')[0];
 
-  assert.match(photographyDocument, /Nino Chavez \/ Photography/);
-  assert.match(photographyDocument, /Volleyball and action sports/);
-  assert.match(
-    photographyDocument,
-    /Find the frame you came for/,
-  );
+  assert.match(photographyDocument, /<h1>Photography<\/h1>/);
+
+  assert.doesNotMatch(photographyDocument, /photography-opening__image/);
   assert.match(
     photographyDocument,
     /action="\/photography\/explore"/,
@@ -767,16 +771,13 @@ test("renders Photography as an owned image collection with live archive paths",
     attributedHtml,
     /\/photography\/albums\?src=ig-photo/,
   );
-  assert.match(photographyDocument, /Events[\s\S]*Browse by date/);
-  assert.match(photographyDocument, /Browse by date[\s\S]*Collections/);
-  assert.match(photographyDocument, /Collections[\s\S]*Your saved photos/);
+  assert.match(photographyDocument, /Events[\s\S]*By date/);
+  assert.match(photographyDocument, /By date[\s\S]*Collections/);
+  assert.match(photographyDocument, /Collections[\s\S]*Saved/);
   assert.match(photographyDocument, /Find photos in the full archive/);
   assert.doesNotMatch(photographyDocument, /<strong>Search<\/strong>/);
   assert.doesNotMatch(photographyDocument, />P0[1-5]</);
-  assert.match(
-    photographyDocument,
-    /Contact sheet \/ (?:<!-- -->)?12(?:<!-- -->)?\s*frames/,
-  );
+  assert.match(photographyDocument, /From the archive/);
   assert.equal(
     (photographyDocument.match(/class="photography-frame-grid"/g) ?? [])
       .length,

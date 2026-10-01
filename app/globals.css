@@ -1082,10 +1082,6 @@ code {
 
 /* Open Practice art-direction prototype */
 
-@view-transition {
-  navigation: auto;
-}
-
 @keyframes practice-line-in {
   from {
     opacity: 0.72;

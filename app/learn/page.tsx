@@ -1,8 +1,9 @@
 import Link from "next/link";
+import "../by-nino-library.css";
 import { learnTracks } from "../data";
 
 export const metadata = {
-  title: "Learn",
+  title: "Guides",
   description: `${learnTracks.length} self-directed practitioner paths grounded in the work of Nino Chavez.`,
   alternates: { canonical: "https://ninochavez.co/learn" },
 };
@@ -11,28 +12,14 @@ export default function LearnPage() {
   return (
     <div className="learn-page">
       <header className="library-opening learn-opening">
-        <div className="library-opening__register page-shell">
-          <span>Learn / guided paths</span>
-          <span>{learnTracks.length} paths</span>
-          <span>5 stages each</span>
-        </div>
         <div className="library-opening__copy page-shell">
           <div>
-            <p className="eyebrow">Choose by output</p>
-            <h1 aria-label="Start with what you need to make.">
-              <span aria-hidden="true">Start with</span>
-              <span aria-hidden="true">
-                what you need to <em>make</em>.
-              </span>
-            </h1>
+            <h1>Guides</h1>
           </div>
           <div>
             <p className="lede">
-              Choose an output, then follow a path built from real work.
-            </p>
-            <p>
-              Each path has five stages. Follow them in order, or jump to the
-              example you need now.
+              Choose what you need to make. Each guide has five stages; follow
+              them in order or jump to the example you need.
             </p>
           </div>
         </div>
@@ -40,14 +27,7 @@ export default function LearnPage() {
 
       <div className="learn-room page-shell">
         <section className="learn-chooser" aria-labelledby="learn-paths">
-          <header>
-            <span>{learnTracks.length} paths</span>
-            <h2 id="learn-paths">Choose a path.</h2>
-            <p>
-              Compare when to start, what you will make, and how long it may
-              take.
-            </p>
-          </header>
+          <h2 id="learn-paths" className="assistive-text">Choose a guide</h2>
 
           <ol className="learn-track-register">
             {learnTracks.map((track) => (

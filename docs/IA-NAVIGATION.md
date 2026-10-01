@@ -1,3 +1,24 @@
+# Selected navigation amendment — October 1, 2026
+
+Nino selected site-wide A, In the field, with “less is more.” This amendment supersedes the older six-link global shell and homepage entrance budget below. The route and interaction contracts remain applicable.
+
+```text
+Nino Chavez (home)
+├── Writing       /blog
+├── Building      /work
+│   ├── Products and public studies
+│   ├── Process   /demos
+│   └── Guides    /learn
+├── Photography   /photography
+└── About         /about
+```
+
+Search remains a utility. Building is the complete practice, not the /work?state=building filter (which continues to mean In development). Keep existing deep links, query parameters, detail routes, private boundaries and canonical URLs. Products keep their independent destination/navigation; source-authorized public studies link to their canonical reader. The personal homepage needs image-led entrances to Writing, Building and Photography; About remains one global navigation choice, and Guides is reached through Building.
+
+The mobile menu uses the same four choices in the same order. Preserve dialog focus, browser Back, Escape and local gallery/publication navigation. Styling and page jobs are owned by [the design system](claude-design-system.md) and [experience brief](design/experience-brief.md).
+
+## Historical navigation contract
+
 # Information architecture and navigation contract
 
 - **Status**: Approved foundation

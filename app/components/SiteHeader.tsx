@@ -8,15 +8,9 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const primary = [
-  { label: "Work", href: "/work", owns: ["/work"] },
-  { label: "Sessions", href: "/demos", owns: ["/demos"] },
-  { label: "Learn", href: "/learn", owns: ["/learn"] },
   { label: "Writing", href: "/blog", owns: ["/blog"] },
-  {
-    label: "Photography",
-    href: "/photography",
-    owns: ["/photography"],
-  },
+  { label: "Building", href: "/work", owns: ["/work", "/demos", "/learn"] },
+  { label: "Photography", href: "/photography", owns: ["/photography"] },
   { label: "About", href: "/about", owns: ["/about", "/now", "/links"] },
 ] as const;
 
@@ -133,7 +127,7 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="site-header">
+    <header className={`site-header${pathname === "/" ? " site-header--home" : ""}`}>
       <div className="header-inner">
         <a
           className="identity-link"

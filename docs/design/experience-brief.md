@@ -1,11 +1,71 @@
 ---
-design_intent: refit
+design_intent: rethink
 design_direction: docs/claude-design-system.md
 ---
 
 # Make the work easier to understand and reach
 
-Status: Nino authorized planning and implementation dispatch through completion on September 29. The independent responsive, navigation, styling, and canonical-page refit is implemented and checked locally. Nino rejected all three Work entrances and challenged whether the page earns its place. The recommendation is to keep Work as a secondary complete archive; no organizing model or navigation prominence change has been implemented. The last or next important referral is the pending interview question. See the [implementation result](../audit/2026-09-29-frontend-implementation/IMPLEMENTATION.md) for evidence and limits. Publication remains a separate step.
+## September 30: refit rollout paused for a full-site rethink
+
+Nino rejected the homepage's loss of full-bleed photographic appeal and explicitly opened both the design and the technical architecture to reconsideration, including one codebase and a shared stack. The refit-only constraint below is superseded for this evaluation. No replacement design, navigation labels or migration has been selected. Continue from the [first-principles evaluation model](../audit/2026-09-30-site-model/EVALUATION-MODEL.md) and [independent red-team assessment](../audit/2026-09-30-site-model/RED-TEAM-ASSESSMENT.md), rather than extending the current styling across more pages. Existing useful content, actions and public links remain acceptance requirements; their present layout and taxonomy are open to change.
+
+Nino subsequently clarified the purpose: writing is his AI-assisted thinking; projects and demos show what he builds and how; photography shows photographic skill. The updated recommendation is **Writing, Building, Photography, About**, with projects, making/process material and practical guides within Building. Recommend one public frontend application and shared stack as the target, proven with rich article and gallery behavior before a phased migration. These are recommendations, not a selected visual direction or completed migration. The `design_direction` frontmatter names the existing design source only; the evaluation may replace it. Historical refit constraints below, including preserving separate frontends and the six-item navigation, do not govern the new evaluation.
+
+Scope correction: include `apps.ninochavez.co` and its Cutting Board/Yawn product/download pages. Apps is a visible collection within Building. Consolidation covers the catalog and product web pages, while app code, installers and release ownership remain separate. Preserve existing app URLs and indexing policies until explicitly changed; source versions, checksums and download links from the owning release process. The evaluation model now includes the app-installation arrival job.
+
+Nino also operates The Rotation and Minder: Your Day. Building should lead with products he runs and how to use them, with process and teaching as connected material. Include their personal-site representation and referral journeys. Retain `therotation.tv` and `mindyourday.app` as product destinations with their own task-focused navigation; the latter owns URLs referenced by Minder's public App Store listing. A unified personal frontend does not require migrating these operational products or their native code. The evaluation model distinguishes these boundaries and requires truthful product availability.
+
+Include Work Library's public side as both a tool Nino builds and a body of published studies/methods. Place the tool in Building; surface its public publications by reader job in Writing or relevant Building material, preserving one canonical copy. Evaluate integration of its public catalog/reader with the shared frontend. Work Library retains source/publication authority and private handoff/access ownership; only admitted public material may enter public search or content exports. The public study arrival is now part of the evaluation, and the library's local target contract must not be presented as already deployed.
+
+Status: Nino authorized planning and implementation dispatch through completion on September 29, selected B, By Nino, on September 30, and then extended it to all public pages. The refit is implemented locally. The September 30 regression rerun found and repaired losses in discovery, reading context, image framing and controls. Builds pass; delivery, persistence and production routing checks remain open. The latest [regression result](../audit/2026-09-29-frontend-implementation/reviews/regression-rerun-20260930.md) supersedes earlier visual-clearance claims. All three Work concepts remain rejected; its complete archive, domain map and navigation position remain intact. The homepage's primary outcome remains open. No publication is authorized.
+
+## Selected direction — October 1, 2026
+
+Nino selected **A — In the field** with the instruction **“less is more.”** This is the new site-wide selection, superseding the earlier referral B styling. The full-bleed home photograph, quiet four-link navigation and image-led work are selected. Remove repeated introductions, duplicated labels and competing calls to action. Preserve all useful retrieval and reading functions.
+
+Carry forward B’s compact reading start and clear product availability. Carry forward C’s early access to actual work. Leave out B’s competing front-page modules, C’s permanent navigation rail and portrait preamble, and A’s optional orange promotional band. These compete with the selected photograph and the visitor’s immediate job.
+
+Implement locally on existing routes. Writing is /blog; Building is /work and includes products, studies, /demos and /learn; Photography is /photography; About is /about. Building is not the registry’s In development state. Preserve direct links, query filters, private boundaries, canonical sources and specialized interactions. This selection does not migrate operational products or publish the changes.
+
+The [comparison](concepts/20260930/comparison.html) and [review](concepts/20260930/REVIEW.md) retain the alternatives and their evidence.
+
+## Historical refit decisions below
+
+The following records preserve the earlier work and its interaction requirements. Their visual direction is superseded by the rethink above.
+
+## September 30 continuation: preserve interaction and semantic meaning
+
+The selected direction remains By Nino. The album opens with compact event identity and retrieval, and By date retains its scroll-linked year/month rail. Tutorial exercise, checkpoint and template colors carry different meanings and must remain distinct on the light surface. Shared styles apply only to their owning routes so the arrival path cannot change a page's spacing.
+
+A gallery viewer must take focus when opened, contain Tab and Shift+Tab, and return focus to its original photo on close. Saving or removing a photo must immediately update its heart, count and saved list, then survive reload. The current real-data browser checks require the controls to exist and verify these behaviors; an absent control fails the check. The individual download check must decode the file it receives.
+
+Current verification and limits: [refit continuation](../audit/2026-09-29-frontend-implementation/reviews/refit-continuation-20260930.md). These checks establish local behavior, not production acceptance or a measured audience outcome.
+
+## All public pages — authorized September 30
+
+Nino authorized completing selected By Nino across all public visitor pages. This is a refit. Purpose, complete content, routes, canonicals, publication formats, gallery actions and the approved coverage offer stay intact. Home retains its current product architect claim and Rally HQ action while its primary outcome remains open. Work retains the domain map and complete searchable registry; this does not revive any rejected concept.
+
+Light portfolio and publication pages carry author, subject and real proof clearly. Photography retains charcoal and gold and makes finding photographs immediate. Utilities share the type and control treatment without a forced hero. The selected article and album are the visual baseline, not a universal page template.
+
+Scope includes public indexes, details, search/empty states, visitor forms, factual utilities, recovery pages and existing unlisted guards. Admin, analytics, APIs, source content, databases, authentication and production routing remain outside the refit. Review uses real rendered phone and desktop pages. No production publication is authorized.
+
+| Pages | Preserved actions and recovery |
+|---|---|
+| Home, About, Now, Links, CV, Privacy | Read verified identity/policy; open maintained destinations; preserve CV print |
+| Work, Sessions, Learn and details | Find complete records; retain query URLs, proof, chapters and stages; Back/clear filters |
+| Writing formats, archive, topics, series | Read complete source; search, reading list, contents, ordered series, slides and Back |
+| Photography archives, collections, date, photos | Existing search, filter, paging, viewing, saving, download and share; empty/error recovery |
+| Coverage, FAQ, accessibility, recovery | Real terms, form states, help, browser-local preferences and recovery |
+
+Separate writers own file groups and worktrees. The parent owns common seams, full checks, runtime and final judgment. Check real long content, phone wrapping and relevant interactions. Any unlisted share state unavailable for safe inspection remains unverified rather than replaced with an invented fixture.
+
+## Selected referral direction — September 30
+
+By Nino preserves source titles, authorship and useful context. The article uses the selected light reading surface with the complete Signal Dispatch navigation, including Sections and RSS. After Nino challenged the album hero, the album was corrected to a compact title, event date, count and authorship followed by retrieval controls and photographs. A separate album cover hero and Browse photos detour are excluded. Photography retains its owned charcoal and gold palette, scroll-linked year/month timeline, Popular rail and per-photo metadata. The shared address, canonical URLs, navigation destinations, full content and existing actions remain the preserve list.
+
+Carry A's early author attribution and direct access to content into B. Carry C's compact phone contents and searchable collection into B. Leave out C's permanent site sidebar because it competes with the work. The initial choice of B's larger album image was superseded by Nino's later correction: photo retrieval takes priority over a separate presentation hero. The rejected Work concepts remain a separate decision.
+
+The comparison uses the existing published essay and real Millikin album. It does not demonstrate better traffic or conversion. Nino selected B after viewing the concepts. The concept review opened all twelve images; the parent verified its image calls in the full child transcript because Operator's short activity stream omits them. A fresh independent reviewer also opened nine implementation frames and found no blocking visual defect. Keep the phone opening compact. Source: [concept comparison](referral-concepts/comparison.html) and [implementation review](../audit/2026-09-29-frontend-implementation/reviews/selected-b-cold.md).
 
 Keep `ninochavez.co` as the common address. Keep the separate applications that publish the portfolio, writing, and photography. Repair the phone experience, make navigation predictable, and perform a substantive styling refit. Compare alternatives to Work's taxonomy-first entrance. Measure Writing before changing how its archive works.
 
@@ -44,6 +104,10 @@ Use [the navigation contract](../IA-NAVIGATION.md) for current labels and routes
 - **Shared navigation.** Refit the common labels, order, current state, search placement, and menu behavior across applications.
 
 ## The visitor's situation defines the work
+
+The September 30 referral priority comes from Nino's report of how he shares links. It is not a measured share of all visitors. The next review follows LinkedIn → article → reading and relevant onward exploration, and social post → gallery or album → finding and using a photograph. Each entrance must work without a visit to the homepage. Shared navigation should make the wider site understandable while preserving the publication's reading tools and the gallery's retrieval tools.
+
+Use analytics to check entry destinations and useful actions after the collection repair. The earlier sampled arrivals and sparse newer action history cannot select a replacement layout. Mobbin examples and Impeccable checks can help resolve a specific interaction or presentation problem; the owned visual direction and the visitor's task remain the basis for the design.
 
 | Arrival | What is happening | What the visitor needs next | People and context | Available action |
 |---|---|---|---|---|

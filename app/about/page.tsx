@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "../by-nino-frontdoors.css";
 
 export const metadata = {
   alternates: { canonical: "/about" },
@@ -120,7 +121,7 @@ const personSchema = {
 
 export default function AboutPage() {
   return (
-    <div className="about-page">
+    <div className="about-page by-nino-frontdoor by-nino-about">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}

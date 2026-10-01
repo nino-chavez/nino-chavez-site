@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "../by-nino-library.css";
 
 export const metadata = {
   alternates: { canonical: "/links" },

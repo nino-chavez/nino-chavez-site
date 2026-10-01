@@ -7,6 +7,7 @@ import {
   getPhotographyArchiveStats,
   getRecentPhotographyAlbums,
 } from "../photography-stats.mjs";
+import "../by-nino-frontdoors.css";
 
 const canonicalRoot = "https://ninochavez.co/photography";
 const sourcePattern = /^[a-z0-9_-]{1,32}$/;
@@ -19,7 +20,7 @@ const collectionRoutes = [
     action: "Browse events",
   },
   {
-    title: "Browse by date",
+    title: "By date",
     description: "Move through the archive by year and month.",
     href: "/photography/timeline",
     action: "Open timeline",
@@ -31,7 +32,7 @@ const collectionRoutes = [
     action: "View collections",
   },
   {
-    title: "Your saved photos",
+    title: "Saved",
     description: "Return to the frames saved in this browser.",
     href: "/photography/favorites",
     action: "Open saved photos",
@@ -234,43 +235,14 @@ export default async function PhotographyPage({
     typeof src === "string" && sourcePattern.test(src) ? src : "profile";
 
   return (
-    <div className="photography-page">
+    <div className="photography-page by-nino-frontdoor by-nino-photography">
       <header className="photography-opening">
-        <picture className="photography-opening__image">
-          <source
-            media="(max-width: 720px)"
-            srcSet="/media/photography/fd-12-mobile.webp"
-          />
-          <img
-            src="/media/photography/fd-12.webp"
-            alt="Volleyball players celebrating a point on court"
-            width="1920"
-            height="1280"
-            fetchPriority="high"
-            loading="eager"
-          />
-        </picture>
-
-        <div className="photography-opening__shade" aria-hidden="true" />
-
-        <div className="photography-opening__register page-shell">
-          <span>Nino Chavez / Photography</span>
-          <span>Action sports</span>
-          <span>Chicago</span>
-          <span>Active collection</span>
-        </div>
-
         <div className="photography-opening__stage page-shell">
           <div className="photography-opening__lockup">
-            <p>Volleyball and action sports</p>
             <h1>Photography</h1>
           </div>
 
           <div className="photography-search">
-            <p>
-              Find the frame you came for. Search club, high school, and
-              college events by team, event, or jersey number.
-            </p>
             <form
               action="/photography/explore"
               method="get"
@@ -290,11 +262,7 @@ export default async function PhotographyPage({
                 <button type="submit">Find photos</button>
               </div>
             </form>
-            <a
-              href={withSource("/photography/albums", source)}
-            >
-              Browse every event <span aria-hidden="true">→</span>
-            </a>
+
           </div>
         </div>
 
@@ -309,10 +277,6 @@ export default async function PhotographyPage({
                   href={withSource(route.href, source)}
                 >
                   <strong>{route.title}</strong>
-                  <small>{route.description}</small>
-                  <b>
-                    {route.action} <span aria-hidden="true">→</span>
-                  </b>
                 </a>
               </li>
             ))}
@@ -335,13 +299,8 @@ export default async function PhotographyPage({
         >
           <header className="photography-selection__heading page-shell">
             <div>
-              <span>Contact sheet / {frames.length} frames</span>
               <h2 id="photography-selection-title">From the archive</h2>
             </div>
-            <p>
-              {frames.length} frames, left at working scale. The live archive
-              keeps the complete event record searchable.
-            </p>
           </header>
 
           <div
