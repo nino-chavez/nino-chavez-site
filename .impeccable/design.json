@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-01T12:56:28Z",
+  "title": "Design System: Nino Chavez — In the field",
+  "extensions": {
+    "colorMeta": {
+      "ground": { "role": "neutral", "displayName": "Warm Ground", "canonical": "#f4f0e8", "tonalRamp": ["#07131d", "#122a3c", "#536373", "#bbc0bf", "#e0e9ed", "#e5e0d7", "#f4f0e8", "#faf7f1"] },
+      "action": { "role": "primary", "displayName": "Action Blue", "canonical": "#0d5a93", "tonalRamp": ["#07131d", "#0d3d63", "#0d5a93", "#3c7ca8", "#79a9c6", "#b7d0df", "#e0e9ed", "#f4f0e8"] },
+      "ink": { "role": "neutral", "displayName": "Photography Ink", "canonical": "#07131d", "tonalRamp": ["#07131d", "#122a3c", "#2c4254", "#536373", "#7d8b97", "#aab4bb", "#d4dade", "#f4f0e8"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Interior Display", "purpose": "Compact headings and identity." },
+      "hero": { "displayName": "Photographic Hero", "purpose": "Homepage lockup only." },
+      "body": { "displayName": "Reading Body", "purpose": "Long-form and interface reading." },
+      "evidence": { "displayName": "Evidence Mono", "purpose": "Technical labels, evidence, and code." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "practice", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Navigation dialog movement and state changes." },
+      { "name": "fast", "value": "160ms", "purpose": "Short control-state transitions." }
+    ],
+    "breakpoints": [
+      { "name": "header-compact", "value": "920px" },
+      { "name": "phone-layout", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary navigation link",
+      "kind": "nav",
+      "refersTo": "nav-active",
+      "description": "Quiet route link with an action-blue active underline.",
+      "html": "<a class=\"ds-nav-link\" href=\"#\" aria-current=\"page\">Building</a>",
+      "css": ".ds-nav-link { position: relative; display: inline-block; padding: 22px 0; color: #536373; font: 620 0.9rem/1.2 Inter, system-ui, sans-serif; text-decoration: none; } .ds-nav-link:hover, .ds-nav-link[aria-current] { color: #122a3c; } .ds-nav-link[aria-current]::after { position: absolute; right: 0; bottom: -1px; left: 0; height: 3px; background: #0d5a93; content: \"\"; } .ds-nav-link:focus-visible { outline: 3px solid #0d5a93; outline-offset: 4px; }"
+    },
+    {
+      "name": "Menu button",
+      "kind": "button",
+      "refersTo": "menu-button",
+      "description": "Compact mobile control for opening the navigation dialog.",
+      "html": "<button class=\"ds-menu-button\" type=\"button\">Menu</button>",
+      "css": ".ds-menu-button { min-height: 42px; padding: 8px 13px; border: 1px solid #bbc0bf; border-radius: 3px; background: transparent; color: #122a3c; font: 700 1rem/1.2 Inter, system-ui, sans-serif; } .ds-menu-button:hover { background: #e0e9ed; } .ds-menu-button:focus-visible { outline: 3px solid #0d5a93; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "In the field.",
+    "overview": "The selected October 1, 2026 direction is warm, photographic, and restrained. One full-bleed opening photograph establishes the personal surface. The rest of the site gets visitors to real writing, products, studies, and photographs without repeating the introduction or adding promotional scaffolding.",
+    "keyCharacteristics": ["Warm reading ground and navy ink on main-site pages.", "A quiet four-link global navigation.", "Image-led entrances into the three bodies of work.", "Compact interiors that put the task before extended explanation."],
+    "rules": [
+      { "name": "The Warm Ground Rule", "body": "Use the warm ground for main-site reading surfaces. Use navy text and action blue for legibility and interaction.", "section": "colors" },
+      { "name": "The One Job Per Face Rule", "body": "Each typeface has a defined role: interior display, hero lockup, reading body, or evidence.", "section": "typography" },
+      { "name": "The Arrival Rule", "body": "The homepage opens with one full-bleed photograph, then shows three direct routes into real work.", "section": "layout" },
+      { "name": "The Quiet Edge Rule", "body": "Controls use restrained corners and ordinary rules; the navigation dialog is the temporary-panel exception.", "section": "shapes" }
+    ],
+    "dos": ["Do preserve the full-bleed opening photograph and the four-link global navigation.", "Do put the actual work, archive, or gallery action before a long introduction on interior pages.", "Do use real images, real destinations, and truthful availability labels.", "Do keep direct routes, query filters, keyboard focus, and recovery behavior intact."],
+    "donts": ["Don't bring back the prior dark-and-lime SvelteKit-era palette or typography as active guidance.", "Don't add competing homepage modules, permanent rails, portrait preambles, or a promotional band around the opening photograph.", "Don't replace specialized gallery and product controls with generic decorative controls.", "Don't present generated imagery as photography or invent evidence, availability, testimonials, or measured outcomes."]
+  }
+}

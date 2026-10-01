@@ -1,5 +1,7 @@
 # Selected navigation amendment — October 1, 2026
 
+> **Active navigation source.** This amendment is the current contract. The sections below it preserve earlier route and interaction rationale; where they disagree, use this amendment and [root `PRODUCT.md`](../PRODUCT.md).
+
 Nino selected site-wide A, In the field, with “less is more.” This amendment supersedes the older six-link global shell and homepage entrance budget below. The route and interaction contracts remain applicable.
 
 ```text

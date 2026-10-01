@@ -1,5 +1,7 @@
 # In the field — canonical design-system owner
 
+> **Superseded as the active system record.** [Root `DESIGN.md`](../DESIGN.md) is the current machine-readable design contract, extracted from the shipped `site-a` implementation on October 1, 2026. This document preserves the earlier design rationale and selection history; do not combine its historical rules with the active contract.
+
 ## October 1 selection amendment
 
 Nino selected site-wide Concept A and “less is more.” This amendment supersedes the older composition and palette rules below. The [experience brief](design/experience-brief.md) owns page jobs and the preserve list; [the comparison](design/concepts/20260930/REVIEW.md) records the selection and useful elements retained from B and C.
