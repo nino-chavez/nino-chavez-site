@@ -1,0 +1,103 @@
+{
+  "checkedAt": "2026-09-30T05:28:15.942Z",
+  "syntheticAcceptance": true,
+  "classificationMethod": "Existing browser exclusion cookie applied only to collector requests; actual preferences responses and client events are unchanged.",
+  "originalUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+  "blockedTrafficBeacons": 2,
+  "targetId": "BD0FE812A3C7F7FC2AD631A8B9A4490B",
+  "events": [
+    {
+      "request": {
+        "event_id": "4a4162d6-4ac1-49c1-9a51-1fd9a352445c",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T05:28:13.546Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "profile",
+          "canonical_path": "/",
+          "view_id": "22ca007a-65ca-4641-80ba-3694daacdea9",
+          "layout_class": "wide",
+          "content_kind": "page"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "4a4162d6-4ac1-49c1-9a51-1fd9a352445c",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "8beba417-7891-478f-bd33-18d0d2fef503",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T05:28:14.553Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "profile",
+          "canonical_path": "/work/blueprint",
+          "view_id": "d4c6c5eb-816b-4341-8ac4-4d691e7c43e8",
+          "layout_class": "wide",
+          "content_kind": "page"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "8beba417-7891-478f-bd33-18d0d2fef503",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "05d144d2-aa9b-4da0-b9da-592fb893d806",
+        "schema_version": 2,
+        "event_name": "site_link_clicked",
+        "occurred_at": "2026-09-30T05:28:15.415Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "profile",
+          "canonical_path": "/work/blueprint",
+          "view_id": "d4c6c5eb-816b-4341-8ac4-4d691e7c43e8",
+          "target_kind": "internal",
+          "target_path": "/photography"
+        }
+      },
+      "exclusionApplied": true
+    }
+  ],
+  "observations": [
+    {
+      "path": "/",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "analyticsPath": "/",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    },
+    {
+      "path": "/work/blueprint",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "analyticsPath": "/work/blueprint",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    }
+  ],
+  "failures": [],
+  "screens": []
+}

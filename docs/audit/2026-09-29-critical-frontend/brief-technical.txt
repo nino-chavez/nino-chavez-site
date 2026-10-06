@@ -1,0 +1,19 @@
+Goal and audience: Independently assess the public frontend's technical and interaction seams for Nino. This is Impeccable assessment B, isolated from the design review. Own detector/source/behavior analysis only. You are not alone in the codebase; do not edit or revert others' work. Audit only.
+
+READ FIRST: /Users/nino/Workspace/dev/sites/nino/nino-chavez-site/AGENTS.md, CLAUDE.md, reader-contract.json, docs/IA-NAVIGATION.md, docs/OPEN-PRACTICE-ART-DIRECTION.md, and /Users/nino/.codex/skills/impeccable/reference/critique.md Assessment B. Live public DOM and screenshots are in docs/audit/2026-09-29-critical-frontend/evidence, Sept 29, desktop 1440x900 and mobile 390x844. Current main is one privacy commit behind origin/main: inspect origin/main for latest main-source claims. Photography main is 19 commits behind origin/main: use git show origin/main:<path> from /Users/nino/Workspace/dev/sites/nino/nino-chavez-photography for current code. Do not treat those old checked-out files as deployed truth. Current rendered colors and tokens in app/globals.css outrank historical DESIGN.md. For voice read /Users/nino/Workspace/dev/sites/nino/blog/docs/signal-dispatch-voice-guide.md, Solution Architecture register.
+
+Output structure: Run /Users/nino/.codex/skills/impeccable/scripts/impeccable detect --json app exactly once; report exit code, counts, rule names/file locations, and false positives against approved design. Inspect source owners for shared header/footer, URL-backed filters/search, direct-entry context, keyboard/focus, page weights, navigation behavior crossing the Next-compatible main, Astro writing, and Svelte gallery. Distinguish observed in saved live JSON from source-derived predictions and unmeasured behaviors. Rank 3-6 concrete issues with evidence, file/line, affected visitor job, and smallest change. Provide instrumentation limitations from code, but do not manufacture metrics. Cover which changes are preserve/refit and which require structural rethink. Do not read other reviews. The parent owns real browser interactions, live analytics, and SEO synthesis.
+
+Browser/overlay rule: This worker is read-only with network disabled. You cannot drive a live browser, start Impeccable live-server, or inject overlays. State that explicitly and use provided live DOM/screenshots as the browser evidence fallback. Do not claim overlays exist. Do not attempt alternate network access. Parent may independently measure interactions.
+
+Cross references: Main synthesis docs/audit/2026-09-29-critical-frontend/ASSESSMENT.md is a forward link. Output will become review-technical.md. Do not read design or routing worker findings.
+
+Don't do: No code edits, generated JSON edits, rewrite copy, commit/push, deploy, private-data API, servers, new tools, or external messages. Intentional aesthetics are not automatic detector defects. A green checker is not a user test; a source concern is not an observed production defect.
+
+Voice and length: Plain, exact, no emoji, no generic advice. Approximately 1200-1800 words. Return detector detail sufficient for parent reuse without rerunning it.
+
+Report: Full assessment in final text, list files and PNGs actually used, command results and limits. Operator saves the output; parent writes the report file. Include any skipped steps with exact reasons.
+
+Runtime isolation: read-only cwd /Users/nino/Workspace/dev/sites/nino/nino-chavez-site. No browser tab/lease, host, port, database, Docker, or visible window. No network. Shared files read-only. Do not launch nested agents.
+
+Cleanup: Start no servers/processes/tabs/fixtures. Detector is a foreground one-shot only. Report cleanup; write no files.

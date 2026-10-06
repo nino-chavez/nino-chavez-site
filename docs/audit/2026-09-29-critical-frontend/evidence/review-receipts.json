@@ -1,0 +1,44 @@
+[
+  {
+    "review": "design",
+    "dispatchId": "8d9055e7-7d85-4245-a5bd-b093cd03461c",
+    "completedAt": "2026-09-29T22:28:15.001102Z",
+    "exitCode": 0,
+    "runtimeEvidence": {
+      "child_thread_id": "01a0ef43-4188-7591-8d13-25498880338e",
+      "executable": "/Users/nino/.nvm/versions/node/v22.21.1/bin/codex",
+      "reported_model": null,
+      "reported_reasoning_effort": null,
+      "status": "completed"
+    },
+    "receiptPath": "/Users/nino/.local/state/nino-operator/dispatch/8d9055e7-7d85-4245-a5bd-b093cd03461c/receipt.json"
+  },
+  {
+    "review": "routing",
+    "dispatchId": "0ad17c03-ef06-4a71-8791-ae423b06d88f",
+    "completedAt": "2026-09-29T22:28:11.672504Z",
+    "exitCode": 0,
+    "runtimeEvidence": {
+      "child_thread_id": "01a0ef41-608b-7701-b2d6-f63b745748f4",
+      "executable": "/Users/nino/.nvm/versions/node/v22.21.1/bin/codex",
+      "reported_model": null,
+      "reported_reasoning_effort": null,
+      "status": "completed"
+    },
+    "receiptPath": "/Users/nino/.local/state/nino-operator/dispatch/0ad17c03-ef06-4a71-8791-ae423b06d88f/receipt.json"
+  },
+  {
+    "review": "technical",
+    "dispatchId": "638ac1ee-74d5-4433-9a9a-effdfafa603c",
+    "completedAt": "2026-09-29T22:39:36.402352Z",
+    "exitCode": 0,
+    "runtimeEvidence": {
+      "child_thread_id": "01a0ef46-8316-7293-832e-045b207afb9c",
+      "executable": "/Users/nino/.nvm/versions/node/v22.21.1/bin/codex",
+      "reported_model": null,
+      "reported_reasoning_effort": null,
+      "status": "completed"
+    },
+    "receiptPath": "/Users/nino/.local/state/nino-operator/dispatch/638ac1ee-74d5-4433-9a9a-effdfafa603c/receipt.json"
+  }
+]

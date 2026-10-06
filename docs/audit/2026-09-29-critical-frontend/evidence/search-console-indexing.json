@@ -1,0 +1,75 @@
+{
+  "url": "https://search.google.com/search-console/index?resource_id=sc-domain%3Aninochavez.co",
+  "title": "Page indexing",
+  "text": "help_outline\nHelp\nmanage_accounts\nUser settings\n\t\nnotifications\nMessages\n7\n\nhome\nOverview\nlightbulb_2\nInsights\ntrending_up\nPerformance\nsearch\nURL inspection\nIndexing\nkeyboard_arrow_up\nfile_copy\nPages\naccount_tree\nSitemaps\nvisibility_off\nRemovals\nExperience\nkeyboard_arrow_up\nspeed\nCore Web Vitals\nlock\nHTTPS\nSecurity & Manual Actions\nkeyboard_arrow_down\nlink_2\nLinks\ntrophy\nAchievements\nsettings\nSettings\nfeedback\nSubmit feedback\ninfo\nAbout Search Console\nPrivacyTerms\nPage indexing\n\nEXPORT\nAll known pages\nLast update: 9/20/26\n\nNot indexed\n27\n3 reasons\n\n\nIndexed\n2\n\nImpressions\nPages\n6/30/26\n7/11/26\n7/22/26\n8/2/26\n8/13/26\n8/24/26\n9/4/26\n9/15/26\n45\n30\n15\n0\ncheck_circle\nView data about indexed pages\n\ninfo_filled\nWhy pages aren’t indexed\nPages that aren’t indexed can’t be served on Google\n\nReason\n\tSource\n\n\tValidation\n\tTrend\t\nPages\nPage with redirect\tWebsite\t\n\nNot Started\n\t\t6\nNot found (404)\tWebsite\t\n\nNot Started\n\t\t3\nCrawled - currently not indexed\tGoogle systems\t\n\nNot Started\n\t\t18\nRows per page:\n5\n10\n25\n50\n100\n250\n500\n1-3 of 3\n",
+  "links": [
+    {
+      "text": "",
+      "href": "./search-console?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "",
+      "href": "https://accounts.google.com/SignOutOptions?hl=en&continue=https://search.google.com/search-console/index%3Fresource_id%3Dsc-domain:ninochavez.co&ec=GBRA1AI"
+    },
+    {
+      "text": "",
+      "href": "./search-console?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "home\nOverview",
+      "href": "./search-console?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "lightbulb_2\nInsights",
+      "href": "./search-console/performance/insights?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "trending_up\nPerformance",
+      "href": "./search-console/performance/search-analytics?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "file_copy\nPages",
+      "href": "./search-console/index?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "account_tree\nSitemaps",
+      "href": "./search-console/sitemaps?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "visibility_off\nRemovals",
+      "href": "./search-console/removals?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "speed\nCore Web Vitals",
+      "href": "./search-console/core-web-vitals?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "lock\nHTTPS",
+      "href": "./search-console/https?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "",
+      "href": "./search-console/manual-actions?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "",
+      "href": "./search-console/security-issues?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "link_2\nLinks",
+      "href": "./search-console/links?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "trophy\nAchievements",
+      "href": "./search-console/achievements?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "settings\nSettings",
+      "href": "./search-console/settings?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "check_circle\nView data about indexed pages\n",
+      "href": "./search-console/index/drilldown?resource_id=sc-domain%3Aninochavez.co&pages=ALL_URLS"
+    }
+  ]
+}

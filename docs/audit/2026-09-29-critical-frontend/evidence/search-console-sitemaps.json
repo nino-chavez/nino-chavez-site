@@ -1,0 +1,71 @@
+{
+  "url": "https://search.google.com/search-console/sitemaps?resource_id=sc-domain%3Aninochavez.co",
+  "title": "Sitemaps",
+  "text": "help_outline\nHelp\nmanage_accounts\nUser settings\n\t\nnotifications\nMessages\n7\n\nhome\nOverview\nlightbulb_2\nInsights\ntrending_up\nPerformance\nsearch\nURL inspection\nIndexing\nkeyboard_arrow_up\nfile_copy\nPages\naccount_tree\nSitemaps\nvisibility_off\nRemovals\nExperience\nkeyboard_arrow_up\nspeed\nCore Web Vitals\nlock\nHTTPS\nSecurity & Manual Actions\nkeyboard_arrow_down\nlink_2\nLinks\ntrophy\nAchievements\nsettings\nSettings\nfeedback\nSubmit feedback\ninfo\nAbout Search Console\nPrivacyTerms\nSitemaps\nAdd a new sitemap\nEnter sitemap URL\nSUBMIT\nSubmitted sitemaps\n\nSitemap\n\tType\n\tSubmitted\n\tLast read\n\tStatus\n\t\nDiscovered pages\t\nDiscovered videos\t\nhttps://ninochavez.co/blog/sitemap-index.xml\tSitemap index\tJan 12, 2026\tMay 5, 2026\tCouldn't fetch\t0\t0\t\nhttps://blog.ninochavez.co/sitemap-index.xml\tSitemap index\tJan 12, 2026\tJan 12, 2026\tSuccess\t0\t0\t\nhttps://photography.ninochavez.co/sitemap.xml\tUnknown\tOct 19, 2025\t\tCouldn't fetch\t0\t0\t\nhttps://ninochavez.co/blog/sitemap.xml\tSitemap\tOct 19, 2025\tMay 1, 2026\tSuccess\t174\t0\t\nhttps://www.ninochavez.co/sitemap.xml\tSitemap\tOct 19, 2025\tOct 29, 2025\tSuccess\t9\t0\t\nRows per page:\n5\n10\n25\n50\n100\n250\n500\n1-5 of 5\n\n1Password menu is available. Press down arrow to select.",
+  "links": [
+    {
+      "text": "",
+      "href": "./search-console?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "",
+      "href": "https://accounts.google.com/SignOutOptions?hl=en&continue=https://search.google.com/search-console/sitemaps%3Fresource_id%3Dsc-domain:ninochavez.co&ec=GBRA1AI"
+    },
+    {
+      "text": "",
+      "href": "./search-console?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "home\nOverview",
+      "href": "./search-console?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "lightbulb_2\nInsights",
+      "href": "./search-console/performance/insights?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "trending_up\nPerformance",
+      "href": "./search-console/performance/search-analytics?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "file_copy\nPages",
+      "href": "./search-console/index?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "account_tree\nSitemaps",
+      "href": "./search-console/sitemaps?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "visibility_off\nRemovals",
+      "href": "./search-console/removals?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "speed\nCore Web Vitals",
+      "href": "./search-console/core-web-vitals?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "lock\nHTTPS",
+      "href": "./search-console/https?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "",
+      "href": "./search-console/manual-actions?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "",
+      "href": "./search-console/security-issues?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "link_2\nLinks",
+      "href": "./search-console/links?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "trophy\nAchievements",
+      "href": "./search-console/achievements?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "settings\nSettings",
+      "href": "./search-console/settings?resource_id=sc-domain%3Aninochavez.co"
+    }
+  ]
+}

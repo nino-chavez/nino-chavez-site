@@ -1,0 +1,53 @@
+{
+  "artifacts": {
+    "events": "/Users/nino/.local/state/nino-operator/dispatch/245d273e-7dc7-487f-a618-fa0faa737dae/events.jsonl",
+    "last_message": "/Users/nino/.local/state/nino-operator/dispatch/245d273e-7dc7-487f-a618-fa0faa737dae/last-message.txt",
+    "receipt": "/Users/nino/.local/state/nino-operator/dispatch/245d273e-7dc7-487f-a618-fa0faa737dae/receipt.json",
+    "stderr": "/Users/nino/.local/state/nino-operator/dispatch/245d273e-7dc7-487f-a618-fa0faa737dae/stderr.txt"
+  },
+  "classifier": {
+    "confidence": 0.43,
+    "error": null,
+    "latency_ms": 302,
+    "provider": "typesafe",
+    "tier": "deep"
+  },
+  "completed_at": "2026-09-30T22:15:00.319206Z",
+  "created_at": "2026-09-30T22:03:54.204088Z",
+  "cwd": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/referral-entry-20260930",
+  "dispatch_id": "245d273e-7dc7-487f-a618-fa0faa737dae",
+  "exit_code": 0,
+  "experiment_id": null,
+  "observation_schema": 1,
+  "prompt_sha256": "5f96499d22f68a5a65262616c04751fca9515a1660ba610f61316a9f02b40d81",
+  "read_only": true,
+  "routing_mode": "balance",
+  "runtime_evidence": {
+    "child_thread_id": "01a0f458-7a23-7c31-8b4e-5e2aaacdb96c",
+    "executable": "/opt/homebrew/bin/codex",
+    "reported_model": null,
+    "reported_reasoning_effort": null,
+    "status": "completed"
+  },
+  "sandbox": {
+    "mode": "read-only",
+    "network": "off"
+  },
+  "schema_version": 1,
+  "selected_route": {
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "tier": "deep"
+  },
+  "stage": "completed",
+  "stopping_advice": {
+    "decision": "allow",
+    "mode": "observe",
+    "reason": "task_record_missing"
+  },
+  "task_id": null,
+  "task_record_path": null,
+  "timeout_seconds": 900.0,
+  "updated_at": "2026-09-30T22:15:00.319180Z",
+  "work_kind": "routine"
+}

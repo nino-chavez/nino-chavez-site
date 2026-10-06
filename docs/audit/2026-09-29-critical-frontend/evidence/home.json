@@ -1,0 +1,390 @@
+{
+  "url": "https://ninochavez.co/",
+  "title": "Nino Chavez — Product architect and builder",
+  "description": "Product architect and builder in Chicago. Software, volleyball operations, photography, writing, and music.",
+  "robots": "index, follow",
+  "viewport": {
+    "width": 1440,
+    "inner": 1440,
+    "height": 900,
+    "scrollWidth": 1440,
+    "scrollHeight": 3665
+  },
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "NINO\nCHAVEZ"
+    },
+    {
+      "tag": "H2",
+      "text": "Four places to start."
+    },
+    {
+      "tag": "H2",
+      "text": "Explore the full body of work."
+    },
+    {
+      "tag": "H2",
+      "text": "How the work gets done."
+    }
+  ],
+  "text": "Skip to content\nNino Chavez\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nSearch site\n\nPRODUCT ARCHITECT + BUILDER\n\nNINO\nCHAVEZ\n\nI design products, build the software behind them, and run them in the real world.\n\nSee selected work ↓\nAbout me →\nCHICAGO\nBUILDING SINCE 1999\nNOW →\nFROM THE PHOTOGRAPHY ARCHIVE →\n\nSELECTED WORK\n\nFour places to start.\n\nStart with the live product, the method, the writing, or the photography archive.\n\nON THE COURT\nRally HQ\nTournament registration, brackets, schedules, and live scoring in one public event page.\nSee Rally HQ→\nPUBLISHED METHOD\nBlueprint\nA practical method for planning, reviewing, and checking work done with AI agents.\nRead about Blueprint→\nONGOING PUBLICATION\nSignal Dispatch\nEssays and field notes on software, commerce, and AI-assisted work.\nRead Signal Dispatch→\nWORKING ARCHIVE\nPhotography\nEvent photography organized for browsing and reuse.\nBrowse photography→\n\nALL WORK\n\nExplore the full body of work.\n\nThese look unrelated. Each one has to work for the people in front of it — on a court, at a checkout, on a deadline.\n\nBrowse 29 products, tools, methods, operations, and collections across 6 domains.\n\nExplore all work →\nALL WORK\nDeveloper tools\n10 in this domain\n→\nLocal-first\n2 in this domain\n→\nVolleyball\n5 in this domain\n→\nCommerce\n4 in this domain\n→\nMedia & assets\n5 in this domain\n→\nPublishing\n3 in this domain\n→\n\nSESSIONS\n\nHow the work gets done.\n\n18 complete sessions show what happened, what failed, what changed, and which of the 11 techniques held up.\n\nWAYS OF WORKING · SESSION 02\nThe Browser Is a Shell Command\n→\nFull sessions\nSee the work as it happened.\n18\n→\nTechniques\nReuse one tested part of the work.\n11\n→\nLearning paths\nSelf-directed routes through the work, each ending in something you can use.\n7\n→\n\nNino Chavez\n\nProduct architect and builder in Chicago.\n\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nNow\nLinks\nPrivacy\nGitHub ↗\n(opens in a new tab)\nLinkedIn ↗\n(opens in a new tab)\nEmail ↗",
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "#main"
+    },
+    {
+      "text": "Nino Chavez",
+      "href": "/"
+    },
+    {
+      "text": "Work",
+      "href": "/work"
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos"
+    },
+    {
+      "text": "Learn",
+      "href": "/learn"
+    },
+    {
+      "text": "Writing",
+      "href": "/blog"
+    },
+    {
+      "text": "Photography",
+      "href": "/photography"
+    },
+    {
+      "text": "About",
+      "href": "/about"
+    },
+    {
+      "text": "Search site",
+      "href": "/search"
+    },
+    {
+      "text": "Work",
+      "href": "/work"
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos"
+    },
+    {
+      "text": "Learn",
+      "href": "/learn"
+    },
+    {
+      "text": "Writing",
+      "href": "/blog"
+    },
+    {
+      "text": "Photography",
+      "href": "/photography"
+    },
+    {
+      "text": "About",
+      "href": "/about"
+    },
+    {
+      "text": "Now",
+      "href": "/now"
+    },
+    {
+      "text": "Links",
+      "href": "/links"
+    },
+    {
+      "text": "See selected work ↓",
+      "href": "/work"
+    },
+    {
+      "text": "About me →",
+      "href": "/about"
+    },
+    {
+      "text": "NOW →",
+      "href": "/now"
+    },
+    {
+      "text": "FROM THE PHOTOGRAPHY ARCHIVE →",
+      "href": "/photography"
+    },
+    {
+      "text": "ON THE COURT\nRally HQ\nTournament registration, brackets, schedules, and live scoring in one public event page.\nSee Rally HQ→",
+      "href": "/work/rally-hq"
+    },
+    {
+      "text": "PUBLISHED METHOD\nBlueprint\nA practical method for planning, reviewing, and checking work done with AI agents.\nRead about Blueprint→",
+      "href": "/work/blueprint"
+    },
+    {
+      "text": "ONGOING PUBLICATION\nSignal Dispatch\nEssays and field notes on software, commerce, and AI-assisted work.\nRead Signal Dispatch→",
+      "href": "/blog"
+    },
+    {
+      "text": "WORKING ARCHIVE\nPhotography\nEvent photography organized for browsing and reuse.\nBrowse photography→",
+      "href": "/photography"
+    },
+    {
+      "text": "Explore all work →",
+      "href": "/work"
+    },
+    {
+      "text": "Developer tools\n10 in this domain\n→",
+      "href": "/work?domain=Developer%20tools"
+    },
+    {
+      "text": "Local-first\n2 in this domain\n→",
+      "href": "/work?domain=Local-first"
+    },
+    {
+      "text": "Volleyball\n5 in this domain\n→",
+      "href": "/work?domain=Volleyball"
+    },
+    {
+      "text": "Commerce\n4 in this domain\n→",
+      "href": "/work?domain=Commerce"
+    },
+    {
+      "text": "Media & assets\n5 in this domain\n→",
+      "href": "/work?domain=Media%20%26%20assets"
+    },
+    {
+      "text": "Publishing\n3 in this domain\n→",
+      "href": "/work?domain=Publishing"
+    },
+    {
+      "text": "WAYS OF WORKING · SESSION 02\nThe Browser Is a Shell Command\n→",
+      "href": "/demos/browse-tool"
+    },
+    {
+      "text": "Full sessions\nSee the work as it happened.\n18\n→",
+      "href": "/demos#sessions"
+    },
+    {
+      "text": "Techniques\nReuse one tested part of the work.\n11\n→",
+      "href": "/demos#applied"
+    },
+    {
+      "text": "Learning paths\nSelf-directed routes through the work, each ending in something you can use.\n7\n→",
+      "href": "/learn"
+    },
+    {
+      "text": "Work",
+      "href": "/work"
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos"
+    },
+    {
+      "text": "Learn",
+      "href": "/learn"
+    },
+    {
+      "text": "Writing",
+      "href": "/blog"
+    },
+    {
+      "text": "Photography",
+      "href": "/photography"
+    },
+    {
+      "text": "About",
+      "href": "/about"
+    },
+    {
+      "text": "Now",
+      "href": "/now"
+    },
+    {
+      "text": "Links",
+      "href": "/links"
+    },
+    {
+      "text": "Privacy",
+      "href": "/privacy"
+    },
+    {
+      "text": "GitHub ↗\n(opens in a new tab)",
+      "href": "https://github.com/nino-chavez"
+    },
+    {
+      "text": "LinkedIn ↗\n(opens in a new tab)",
+      "href": "https://www.linkedin.com/in/nino-chavez/"
+    },
+    {
+      "text": "Email ↗",
+      "href": "mailto:nino@ninochavez.co"
+    }
+  ],
+  "scripts": [
+    "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+  ],
+  "performance": [
+    {
+      "ttfb": 151.19999992847443,
+      "domLoaded": 373.6999999284744,
+      "load": 400.59999990463257,
+      "transferSize": 7225,
+      "encodedBodySize": 6925,
+      "decodedBodySize": 31901
+    }
+  ],
+  "resources": [
+    {
+      "name": "https://ninochavez.co/cdn-cgi/speculation",
+      "transfer": 451,
+      "encoded": 151,
+      "duration": 57.799999952316284
+    },
+    {
+      "name": "https://ninochavez.co/assets/layout-segment-context-Cm8kYRGr.js",
+      "transfer": 300,
+      "encoded": 190,
+      "duration": 161.10000002384186
+    },
+    {
+      "name": "https://ninochavez.co/assets/index-BmdNnmlC.css",
+      "transfer": 300,
+      "encoded": 31561,
+      "duration": 161.89999997615814
+    },
+    {
+      "name": "https://ninochavez.co/assets/rolldown-runtime-S-ySWqyJ.js",
+      "transfer": 300,
+      "encoded": 403,
+      "duration": 159.89999997615814
+    },
+    {
+      "name": "https://ninochavez.co/assets/index-B-UOV3cu.js",
+      "transfer": 300,
+      "encoded": 25259,
+      "duration": 162.09999990463257
+    },
+    {
+      "name": "https://ninochavez.co/assets/framework-DjPHiq1u.js",
+      "transfer": 300,
+      "encoded": 59295,
+      "duration": 160.39999997615814
+    },
+    {
+      "name": "https://ninochavez.co/assets/query-BqyIlvsm.js",
+      "transfer": 300,
+      "encoded": 770,
+      "duration": 159.90000009536743
+    },
+    {
+      "name": "https://ninochavez.co/assets/SiteHeader-DM9R833z.js",
+      "transfer": 300,
+      "encoded": 1084,
+      "duration": 160.5
+    },
+    {
+      "name": "https://ninochavez.co/assets/link-B8uMb1L1.js",
+      "transfer": 300,
+      "encoded": 3206,
+      "duration": 161.20000004768372
+    },
+    {
+      "name": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "transfer": 0,
+      "encoded": 0,
+      "duration": 33.39999997615814
+    },
+    {
+      "name": "https://ninochavez.co/images/home-hero-frame.webp?v=skydark1",
+      "transfer": 300,
+      "encoded": 207966,
+      "duration": 56.199999928474426
+    },
+    {
+      "name": "https://ninochavez.co/fonts/space-mono-latin-700-normal.woff2",
+      "transfer": 0,
+      "encoded": 16724,
+      "duration": 2.100000023841858
+    },
+    {
+      "name": "https://ninochavez.co/fonts/inter-latin.woff2",
+      "transfer": 0,
+      "encoded": 48432,
+      "duration": 2.1999999284744263
+    },
+    {
+      "name": "https://ninochavez.co/fonts/anton-400.woff2",
+      "transfer": 0,
+      "encoded": 12004,
+      "duration": 1
+    },
+    {
+      "name": "https://ninochavez.co/fonts/space-mono-latin-400-normal.woff2",
+      "transfer": 0,
+      "encoded": 16520,
+      "duration": 1.5
+    },
+    {
+      "name": "https://ninochavez.co/work/rally-hq-card.webp",
+      "transfer": 0,
+      "encoded": 13966,
+      "duration": 2.299999952316284
+    },
+    {
+      "name": "https://ninochavez.co/work/signal-dispatch.webp?v=372a9501",
+      "transfer": 0,
+      "encoded": 21656,
+      "duration": 2.200000047683716
+    },
+    {
+      "name": "https://ninochavez.co/work/photography.webp",
+      "transfer": 0,
+      "encoded": 46650,
+      "duration": 2.899999976158142
+    },
+    {
+      "name": "https://ninochavez.co/images/all-work-frame.webp",
+      "transfer": 300,
+      "encoded": 66728,
+      "duration": 48.5
+    },
+    {
+      "name": "https://ninochavez.co/cdn-cgi/rum?",
+      "transfer": 300,
+      "encoded": 0,
+      "duration": 26.100000023841858
+    },
+    {
+      "name": "https://ninochavez.co/work.rsc?_rsc=KsQaSH2L7Z4e6Q5N",
+      "transfer": 5959,
+      "encoded": 5659,
+      "duration": 64.90000009536743
+    },
+    {
+      "name": "https://ninochavez.co/about.rsc?_rsc=KsQaSH2L7Z4e6Q5N",
+      "transfer": 4693,
+      "encoded": 4393,
+      "duration": 85.70000004768372
+    },
+    {
+      "name": "https://ninochavez.co/now.rsc?_rsc=KsQaSH2L7Z4e6Q5N",
+      "transfer": 3583,
+      "encoded": 3283,
+      "duration": 51.10000002384186
+    },
+    {
+      "name": "https://ninochavez.co/blog.rsc?_rsc=KsQaSH2L7Z4e6Q5N",
+      "transfer": 42858,
+      "encoded": 42558,
+      "duration": 130.5
+    }
+  ],
+  "styles": {
+    "font": "\"Open Practice Body\", Inter, ui-sans-serif, system-ui, sans-serif",
+    "color": "rgb(20, 32, 46)",
+    "background": "rgb(240, 241, 244)"
+  }
+}

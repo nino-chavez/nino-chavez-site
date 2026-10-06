@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-09-30T03:46:23.881229+00:00",
+  "probe": "HTTP GET only; no preference writes or event submission",
+  "checks": [
+    {
+      "url": "https://ninochavez.co/photography/api/analytics/preferences",
+      "status": 200,
+      "contentType": "application/json",
+      "cacheControl": "no-store",
+      "bytes": 52,
+      "preferences": {
+        "linkedAnalytics": false,
+        "excludeThisBrowser": false
+      }
+    },
+    {
+      "url": "https://ninochavez.co/photography/api/analytics/events",
+      "status": 405,
+      "contentType": null,
+      "cacheControl": null,
+      "bytes": 22
+    },
+    {
+      "url": "https://analytics.ninochavez.co/sites?view=actions",
+      "status": 200,
+      "contentType": "text/html",
+      "cacheControl": "public, max-age=60, s-maxage=600",
+      "bytes": 15713,
+      "reportStatements": [
+        "comes. No browser or visit identifiers are shown. No matching action has been recorded yet. This tracking starts with this release; earlier Cloudflare traffic cannot supply missing actions. Pages viewed \u2014 Visible public pages. Separate from Cloudflare page loa"
+      ],
+      "inlineDataPresent": true
+    }
+  ]
+}

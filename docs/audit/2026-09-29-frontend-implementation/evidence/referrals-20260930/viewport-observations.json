@@ -1,0 +1,36 @@
+[
+  {
+    "clientWidth": 308,
+    "dpr": 2.049999952316284,
+    "firstPhotoTop": 409.8285217285156,
+    "height": 844,
+    "loadedImages": 55,
+    "scrollWidth": 308,
+    "title": {
+      "height": 56,
+      "scrollHeight": 56,
+      "scrollWidth": 276,
+      "width": 276
+    },
+    "titleText": "College Women's VB - Millikin at North Central - 09-23-2026",
+    "width": 320,
+    "file": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/docs/audit/2026-09-29-frontend-implementation/evidence/referrals-20260930/album-narrow.jpg"
+  },
+  {
+    "clientWidth": 1428,
+    "dpr": 2.049999952316284,
+    "firstPhotoTop": 293.8833923339844,
+    "height": 900,
+    "loadedImages": 55,
+    "scrollWidth": 1428,
+    "title": {
+      "height": 32,
+      "scrollHeight": 32,
+      "scrollWidth": 710,
+      "width": 710
+    },
+    "titleText": "College Women's VB - Millikin at North Central - 09-23-2026",
+    "width": 1440,
+    "file": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/docs/audit/2026-09-29-frontend-implementation/evidence/referrals-20260930/album-desktop.jpg"
+  }
+]

@@ -1,0 +1,53 @@
+The empty Site Actions history is explained by a live deployment/source mismatch, not by visitor behavior: the shared tracker is live as an asset, but the observed public pages do not load it. Gallery activity uses its own collector, so it can exist independently.
+
+## 1. Collection map
+
+```text
+/public page
+  -> SiteActivity / blog layout injects shared tracker
+  -> static/site-activity.js emits action
+  -> /photography/api/analytics/events validates and records it
+  -> analytics_events_v2
+  -> scheduled identifier-free daily summary
+  -> /sites?view=actions
+```
+
+- Profile, `/photography`, and `/work/blueprint` need the candidate’s `SiteActivity` mounted in [app/layout.tsx](/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/site-action-analytics/app/layout.tsx:3) and [SiteActivity.tsx](/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/site-action-analytics/app/components/SiteActivity.tsx:5). It loads `/photography/site-activity.js` and signals committed React navigation.
+- Blog needs its own script tag in [BaseLayout.astro](/Users/nino/Workspace/dev/sites/nino/blog/.worktrees/codex/site-action-analytics/astro-build/src/layouts/BaseLayout.astro:160). Demo completion also requires the candidate attributes in [DemoStory.tsx](/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/site-action-analytics/app/components/DemoStory.tsx:22).
+- The shared tracker allows only public routes, emits page/link/article/demo actions, and posts to the collection endpoint in [site-activity.js](/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-action-analytics/static/site-activity.js:11) and [site-activity.js](/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-action-analytics/static/site-activity.js:28).
+- The API derives audience/exclusion context and atomically calls `analytics_accept_event_v2` in [+server.ts](/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-action-analytics/src/routes/api/analytics/events/+server.ts:46).
+- The action-summary refresh writes daily counts and records a cutoff in [20260930005003_analytics_scheduled_site_reports.sql](/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-action-analytics/supabase/migrations/20260930005003_analytics_scheduled_site_reports.sql:64); the report reads those stored counts in [site-actions.server.ts](/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-action-analytics/src/lib/analytics/site-actions.server.ts:67).
+
+PostHog is separate: only consented, bound audience events enter the outbox; aggregate first-party counts do not require that consent ([events endpoint](/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-action-analytics/src/routes/api/analytics/events/+server.ts:46), [outbox migration](/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-action-analytics/supabase/migrations/20260929040000_analytics_events_v2_outbox.sql:71)). The relay is disabled by its checked-in flag ([wrangler.toml](/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-action-analytics/cloudflare-worker/analytics-relay/wrangler.toml:7)); that blocks linked journeys, not local action totals.
+
+## 2. Ranked causes
+
+1. **Confirmed: the live public pages lack emitters.** The saved read-only GET evidence found only the Cloudflare beacon on `/photography` and `/work/blueprint`, with no tracker reference; the tracker asset itself returned 200 ([raw evidence](/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/docs/audit/2026-09-29-critical-frontend/evidence/collection-public-surfaces.json:3)). Main and frontend-refit both lack the candidate’s `SiteActivity`, layout mount, and demo markers. This directly explains no cross-site actions.
+
+2. **Source-confirmed, live impact unverified: React initialization can lose its first view.** A React `nino:page-ready` can run before preferences finish. `start()` records the route before `emit()` suppresses it under the temporary default exclusion; after preferences resolve, the same route returns early ([tracker](/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-action-analytics/static/site-activity.js:46), [tracker](/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-action-analytics/static/site-activity.js:95)). Parent should verify with a delayed-preferences browser rehearsal after deployment.
+
+3. **Source-confirmed limitation, not an explanation for a month of absence:** the report excludes the current UTC day until a same-day refresh. A yesterday-only cutoff can move the completed end date back one additional day ([summary SQL](/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-action-analytics/supabase/migrations/20260930005003_analytics_scheduled_site_reports.sql:246)). Parent can read summary status and raw/count presence. This cannot explain empty prior days if emitters had been live.
+
+## 3. Tests
+
+I ran the pure source tests: 11 passed across action-report decoding, event boundaries, and journey empty-versus-unavailable handling. No browser, service, or database process ran.
+
+The first required red case is absent: extend [site-activity.spec.ts](/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-action-analytics/tests/site-activity.spec.ts:41) to delay `/preferences`, dispatch React readiness first, then resolve preferences. Current source should produce zero `site_page_viewed`; repaired source must produce exactly one. This exercises the actual static asset, not a mirror.
+
+## 4. Bounded repair
+
+Apply the existing candidate instrumentation to the shipping site sources:
+
+- Add `SiteActivity.tsx`; import/mount it in `app/layout.tsx`.
+- Add demo data attributes in `DemoStory.tsx`.
+- Add the public script tag to the blog `BaseLayout.astro`.
+- Before release, guard tracker `start()` until preferences are loaded and add the delayed-preferences regression case.
+
+Preserve `static/site-activity.js` event contract, collector API, preferences policy, migrations, report UI, and relay configuration. Acceptance: raw production HTML for the observed social → `/photography` and LinkedIn → `/work/blueprint` paths references the tracker; a non-excluded controlled browser records one page view on each; after a completed UTC refresh, Site Actions shows it. Do not treat contact clicks as inquiries or an empty past report as zero conversion.
+
+## 5. State and cleanup
+
+This photography worktree remains untouched on `codex/analytics-clean-url-shell`; its only dirty files are `docs/ANALYTICS_PLAN.md` and `docs/POSTHOG_PLAN.md`. Main/refit also contain unrelated untracked audit material. No files changed and no persistent resources were started.
+
+I used an older workspace note only as a lead; the diagnosis above was rechecked against current source and saved raw GET evidence.
+

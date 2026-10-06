@@ -1,0 +1,105 @@
+{
+  "checkedAt": "2026-09-30T05:34:11.399Z",
+  "syntheticAcceptance": true,
+  "classificationMethod": "Existing browser exclusion cookie applied only to collector requests; actual preferences responses and client events are unchanged.",
+  "originalUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+  "blockedTrafficBeacons": 2,
+  "targetId": "727B5AA0AD547ACA27C428CD25237BC9",
+  "events": [
+    {
+      "request": {
+        "event_id": "c33451b5-bd1c-4a3f-8809-067b6f017304",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T05:34:08.972Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "profile",
+          "canonical_path": "/",
+          "view_id": "20a85676-f172-4886-8165-9533c3625c74",
+          "layout_class": "wide",
+          "content_kind": "page"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "c33451b5-bd1c-4a3f-8809-067b6f017304",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "879b123c-bee6-45c6-9108-4e00ade3fb59",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T05:34:10.219Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "profile",
+          "canonical_path": "/work/blueprint",
+          "view_id": "31305461-b319-41f6-93cd-783e3602f464",
+          "layout_class": "wide",
+          "content_kind": "page"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "879b123c-bee6-45c6-9108-4e00ade3fb59",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "08f02c56-67b9-4a51-bc6d-82e588ecddc5",
+        "schema_version": 2,
+        "event_name": "site_link_clicked",
+        "occurred_at": "2026-09-30T05:34:10.957Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "profile",
+          "canonical_path": "/work/blueprint",
+          "view_id": "31305461-b319-41f6-93cd-783e3602f464",
+          "target_kind": "internal",
+          "target_path": "/photography"
+        }
+      },
+      "exclusionApplied": true
+    }
+  ],
+  "observations": [
+    {
+      "path": "/",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "analyticsPath": "/",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    },
+    {
+      "path": "/work/blueprint",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "analyticsPath": "/work/blueprint",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    }
+  ],
+  "failures": [
+    "Error: waitForFunction failed: frame got detached."
+  ],
+  "screens": []
+}

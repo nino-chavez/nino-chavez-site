@@ -1,0 +1,28 @@
+Ready for parent review.
+
+Commit: `5627343b429847a2b29db37cfd76854b90afe8c6`  
+`fix(analytics): mount shared tracker on public site routes`
+
+Changed files:
+
+- `app/components/SiteActivity.tsx`
+- `app/layout.tsx`
+- `app/components/DemoStory.tsx`
+- `app/components/SiteFooter.tsx`
+- `app/privacy/page.tsx`
+- `tests/rendered-html.test.mjs`
+
+Verified:
+
+- `npm run check` — passed
+- `npm run lint` — passed, 8 existing warnings / 0 errors
+- `npm run test:coverage` — passed
+- Public `vinext build` — passed
+- Public rendered HTML + audit tests — passed
+- Private build + tracker-only test — passed; tracker absent
+- Final public build retained in `dist`
+- Worktree clean; diff is limited to the six allowed files
+
+Conflict decision: retained only `fe44a2d`’s tracker test. Excluded a canonical-URL test brought in as parent-branch context, preserving the collection-only scope.
+
+No browser, dev/watch server, network, or external service was used. Sandbox process enumeration was unavailable, but no listener process was started.

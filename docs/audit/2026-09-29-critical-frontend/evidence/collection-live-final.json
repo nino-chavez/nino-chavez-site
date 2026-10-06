@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-09-30T04:20:30.471396+00:00",
+  "probe": "HTTP GET only; no browser preference or event writes",
+  "rows": [
+    {
+      "url": "https://ninochavez.co/work/blueprint",
+      "status": 200,
+      "siteActivityReference": false,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://ninochavez.co/photography",
+      "status": 200,
+      "siteActivityReference": false,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://ninochavez.co/blog",
+      "status": 200,
+      "siteActivityReference": false,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://ninochavez.co/photography/site-activity.js?v=1",
+      "status": 200,
+      "siteActivityReference": false,
+      "contentType": "application/javascript",
+      "sourceSha256": "bc9857e69bb92f7317f572921a82d1464844f6120a2a24a92af414f01eb8eae9",
+      "preferencesLoadedGate": false
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/referral-entry-20260930",
+  "destination": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/concept-a-gallery-20260930",
+  "head": "3a1bd85143e6d1e9e5c10f33a551a17995590f82",
+  "copiedUntracked": [
+    "src/routes/analytics-preferences/+page.svelte",
+    "tests/refit-journeys.spec.ts",
+    "tools/ux-preview.config.ts"
+  ],
+  "excludedNonSource": []
+}

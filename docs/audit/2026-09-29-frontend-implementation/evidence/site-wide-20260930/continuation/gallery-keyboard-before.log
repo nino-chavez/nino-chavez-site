@@ -1,0 +1,58 @@
+(node:78454) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+[1A[2K(node:78461) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:78461) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+
+[1A[2K(node:78461) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K[1/2] [chromium] › tests/refit-journeys.spec.ts:34:3 › viewer preserves keyboard position at 1440px
+[1A[2K  1) [chromium] › tests/refit-journeys.spec.ts:34:3 › viewer preserves keyboard position at 1440px ─
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeFocused[2m([22m[2m)[22m failed
+
+    Locator:  getByRole('dialog', { name: 'Photo lightbox' }).getByRole('button', { name: 'Close lightbox' })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toBeFocused" with timeout 5000ms[22m
+    [2m  - waiting for getByRole('dialog', { name: 'Photo lightbox' }).getByRole('button', { name: 'Close lightbox' })[22m
+    [2m    9 × locator resolved to <button title="Close (ESC)" aria-label="Close lightbox" class="p-2 md:p-3 rounded-lg bg-white/10 hover:bg-white/20 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-gold-500 s-cnuNGpRTezJQ">…</button>[22m
+    [2m      - unexpected value "inactive"[22m
+
+
+      28 | 		const viewer = page.getByRole('dialog', { name: 'Photo lightbox' });
+      29 | 		await expect(viewer).toBeVisible();
+    > 30 | 		await expect(viewer.getByRole('button', { name: 'Close lightbox' })).toBeFocused();
+         | 		                                                                     ^
+      31 |
+      32 | 		// Cycling both ways must never reach controls underneath the viewer.
+      33 | 		for (const key of ['Tab', 'Shift+Tab']) {
+        at /Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/referral-entry-20260930/tests/refit-journeys.spec.ts:30:72
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/refit-journeys-viewer-preserves-keyboard-position-at-1440px-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/refit-journeys-viewer-preserves-keyboard-position-at-1440px-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/refit-journeys-viewer-preserves-keyboard-position-at-1440px-chromium/error-context.md
+
+
+[1A[2K[31mTesting stopped early after 1 maximum allowed failures.[39m
+
+[1A[2K  1 failed
+    [chromium] › tests/refit-journeys.spec.ts:34:3 › viewer preserves keyboard position at 1440px ──
+  1 did not run
+  1 error was not a part of any test, see above for details

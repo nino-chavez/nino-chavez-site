@@ -1,0 +1,438 @@
+{
+  "url": "https://ninochavez.co/demos/browse-tool",
+  "title": "The Browser Is a Shell Command — Nino Chavez",
+  "canonical": "https://ninochavez.co/demos/browse-tool",
+  "description": "Replacing 18,000 tokens of always-loaded browser-automation schema with ten shell commands and a README — and why the agent gets sharper, not weaker.",
+  "robots": "index, follow",
+  "viewport": {
+    "width": 1440,
+    "inner": 1440,
+    "height": 900,
+    "scrollWidth": 1440,
+    "scrollHeight": 10249
+  },
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "THE BROWSER IS\nA SHELL COMMAND."
+    },
+    {
+      "tag": "H2",
+      "text": "EVERY CONVERSATION PAYS FOR THE MANUAL UP FRONT"
+    },
+    {
+      "tag": "H2",
+      "text": "AGENTS ALREADY SPEAK BASH AND THE DOM"
+    },
+    {
+      "tag": "H2",
+      "text": "TEN COMMANDS, 724 LINES, FOUR DEPENDENCIES"
+    },
+    {
+      "tag": "H2",
+      "text": "REAL TRANSCRIPTS, CAPTURED WHILE BUILDING THIS PAGE"
+    },
+    {
+      "tag": "H2",
+      "text": "FOUR CHOICES THAT MAKE A TOOL AGENT-FRIENDLY"
+    },
+    {
+      "tag": "H2",
+      "text": "SOME WALLS SHOULD STAY HUMAN"
+    },
+    {
+      "tag": "H2",
+      "text": "WHERE IT EARNED ITS KEEP"
+    },
+    {
+      "tag": "H2",
+      "text": "WHAT BROKE, AND WHAT STAYS TRUE"
+    },
+    {
+      "tag": "H2",
+      "text": "AUDIT THE TAX, THEN BUILD THE VERBS"
+    },
+    {
+      "tag": "H2",
+      "text": "The Browser Is a Shell Command"
+    },
+    {
+      "tag": "H2",
+      "text": "Who this is for"
+    },
+    {
+      "tag": "H2",
+      "text": "What the session shows"
+    },
+    {
+      "tag": "H2",
+      "text": "What to reuse"
+    }
+  ],
+  "text": "Skip to content\nNino Chavez\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nSearch site\nSessions\nThe Browser Is a Shell Command\n\nCREATED AND PRESENTED BY NINO CHAVEZ.\n\n01\n02\n03\n04\n05\n06\n07\n08\n09\n10\nSESSION S02 · 10 CHAPTERS\nSCROLL TO READ · USE ← → TO STEP BETWEEN CHAPTERS\nSKIP TO THE RECORD\n\nWAYS OF WORKING · DEMO 02 NINO CHAVEZ\n\nTHE BROWSER IS\nA SHELL COMMAND.\n\nMy coding agent drives a real, logged-in Chrome — navigating, scraping, screenshotting — through ten tiny shell commands instead of an MCP server. This is the cost math, the design, and what broke.\n\nagent — zsh\n$ browse-shot https://demos.ninochavez.co --out /tmp/demos.png\n/tmp/demos.png\n\n→ or scroll to advance · ← to go back\n\n02 THE TAX\n\nEVERY CONVERSATION PAYS FOR THE MANUAL UP FRONT\n\nMCP browser tools ship their entire instruction manual — every command's schema — into the agent's context before any work happens, in every conversation, whether or not the browser is ever touched. Measured against this tool's README:\n\nChrome DevTools MCP\n≈ 18,000 tokens, always loaded\nPlaywright MCP\n≈ 13,700 tokens, always loaded\nbrowse-tool README\na few hundred — read only when needed\n\nContext an agent spends on schemas is context it can't spend on your problem. The tax isn't just money — it's attention: the more boilerplate in the window, the worse the reasoning at the margins.\n\n03 THE INSIGHT\n\nAGENTS ALREADY SPEAK BASH AND THE DOM\n\nThe idea comes from Mario Zechner's \"What if you don't need MCP at all?\" — and it inverts the tooling assumption. An agent doesn't need a protocol and a schema for every browser action. It already has two deep skills: running shell commands and writing JavaScript against the DOM.\n\nMCP'S BET\n\nDefine every capability as a typed tool. The agent learns your schema, calls your protocol, gets your output format.\n\nTHIS BET\n\nGive the agent ten small commands and let its existing knowledge be the API. browse-eval takes arbitrary JS — every DOM skill the model already has just works.\n\nWHY IT COMPOUNDS\n\nShell output pipes, saves, and composes. A screenshot is a path. Markdown goes to a file. The whole Unix toolbox becomes browser tooling for free.\n\n04 THE TOOL\n\nTEN COMMANDS, 724 LINES, FOUR DEPENDENCIES\n\nSmall enough to rebuild in an afternoon, which is the point — this is a pattern you can own, not a product you adopt. One long-lived Chrome, started once; every command connects to it.\n\nbrowse-start\nlaunch the managed Chrome; persistent per-project profiles\nbrowse-stop\nkill it, clear state\nbrowse-nav\nnavigate the active tab\nbrowse-eval\nrun any JavaScript in the page, JSON out\nbrowse-screenshot\nviewport or full page → a PNG path\nbrowse-shot\nnavigate + wait + screenshot, one command\nbrowse-markdown\npage → clean, LLM-ready markdown\nbrowse-crawl\ndepth-limited crawl → markdown + manifest\nbrowse-tabs\nlist or close tabs\nbrowse-pick\nhuman clicks elements; agent gets selectors\n\n05 SEE IT RUN\n\nREAL TRANSCRIPTS, CAPTURED WHILE BUILDING THIS PAGE\nagent — zsh\n# one command: navigate, wait, screenshot\n$ browse-shot https://demos.ninochavez.co --out /tmp/demos.png\n/tmp/demos.png\n\n→ the agent Reads that path only if it needs to look — a screenshot costs nothing until opened\n\ndemos.ninochavez.co\n\nwhat Chrome saw — this site, shot by the tool, embedded in the deck about the tool\n\nagent — zsh\n# arbitrary JS against the live DOM — no schema, just the platform\n$ browse-eval 'return [...document.querySelectorAll(\".card-title\")].map(e => e.innerText)'\n[\n  \"Twelve Messages\"\n]\n# page → clean markdown (Readability + Turndown) — here, this tool's own origin story\n$ browse-markdown https://mariozechner.at/posts/2025-11-02-what-if-you-dont-need-mcp/ | head -3\n# What if you don't need MCP at all?\n\n2025-11-02\n\ncaptured 2026-07-15 — the eval output will drift as demos get added, which is exactly the point of live data\n\n06 DESIGNED FOR AGENTS\n\nFOUR CHOICES THAT MAKE A TOOL AGENT-FRIENDLY\n\nPERSISTENT PROFILES\n\nEach project gets a Chrome profile under ~/.browse-tool/profiles/, seeded once from your real Chrome (never modifying it). Logins survive across sessions — the agent works authenticated without ever seeing a credential.\n\nPATHS AND PIPES, NOT BLOBS\n\nScreenshots print a file path. Markdown goes to stdout. Nothing dumps kilobytes into the context window uninvited — the agent chooses what to read, when.\n\nONE BROWSER, STATELESS COMMANDS\n\nA single long-lived Chrome holds all the state; every command is a quick connect-act-exit. Any command composes with any other, in scripts, loops, or pipelines.\n\nGROWS ONE NEED AT A TIME\n\nAdding a command is one file — no protocol, no rebuild. The git history is the proof: shot, markdown, and crawl each landed the week a real session needed them.\n\nThe pattern: build the verb when the work demands it, never speculatively.\n\n07 HUMAN IN THE LOOP\n\nSOME WALLS SHOULD STAY HUMAN\n\nTwo of the tool's most useful moves are the ones where it hands control to a person instead of automating past them.\n\nBROWSE-PICK\n\nThe agent enables a picker; the human clicks the element in the real Chrome window; the agent gets back a selector, text, and geometry. No guessing at brittle selectors — the person points, the machine proceeds.\n\nLOGIN WALLS\n\nOTP prompts and CAPTCHAs are deliberately not automated — they exist to verify a human. The human logs in once in the tool's window; the persistent profile keeps that session; the agent does the analytical work after the door is open.\n\nSame principle as demo 01: judgment — and identity — stays human.\n\n08 IN THE WILD\n\nWHERE IT EARNED ITS KEEP\n\nDEMO 01'S PIPELINE\n\nThe Twelve Messages session opened by reading two auth-gated Google Sheets through a seeded profile — no export, no API setup, no credential handling. That roster became the production database.\n\nDESIGN VERIFICATION\n\nEvery render in that session — and every page of this site before deploy — was screenshotted and visually inspected by the agent. Three real layout bugs died in that loop before any human saw them.\n\nRESEARCH\n\nbrowse-markdown and browse-crawl turn articles and small docs sites into clean markdown for the agent to work from — no copy-paste, no HTML noise.\n\n09 HONEST LIMITS\n\nWHAT BROKE, AND WHAT STAYS TRUE\n\nTHE AGENT MISUSED IT — TODAY\n\nWhile building this very site, the agent recalled a command's shape from memory and passed an output path where the URL goes. Instant failure.\n\nThe standing rule exists for a reason: read the README fresh — the tool changes, memory doesn't.\n\nWHERE MCP STILL WINS\n\nHosted or remote agents where you can't put binaries on a PATH, teams that need managed auth and central policy, tools that stream rich structured events. The CLI bet assumes you own the machine.\n\nLOCAL QUIRKS ARE REAL\n\nmacOS merges the managed Chrome with your real one in the Dock. A stale state file means \"Cannot connect\" until you restart it. Small tools mean owning small sharp edges.\n\n10 YOUR VERSION OF THIS\n\nAUDIT THE TAX, THEN BUILD THE VERBS\n\nIF YOU NEVER TOUCH CODE\n\nKnow that your AI tools have a fixed cost before any work starts. When an assistant feels dumber with more integrations enabled, this is often why.\n\nIF YOU'RE TECHNICAL\n\nList the five operations you actually use from that always-loaded server. Wrap them as small CLIs that print paths and pipe cleanly. Keep a README the agent reads on demand.\n\nIF YOU BUILD SYSTEMS\n\nDesign agent tools like Unix tools: one job, composable output, state in one place, growth by need. The agent's existing knowledge is the interface — stop re-teaching it the world through schemas.\n\ngithub.com/nino-chavez/browse-tool\npuppeteer-core · @mozilla/readability · jsdom · turndown\n10 commands · 724 lines · one README\nColophon. All transcripts on this page are real command output, captured 2026-07-15 while this demo was being built — including the screenshot of this site taken by the tool itself. Demo 02 in the ways-of-working series; the tool's production debut is demo 01.\n\nWHAT HAPPENED\n\nThe Browser Is a Shell Command\n\nReplacing 18,000 tokens of always-loaded browser-automation schema with ten shell commands and a README — and why the agent gets sharper, not weaker.\n\nCollection\nWays of Working\nRecord\nS02\nFormat\nSession\n01 / READER\nWho this is for\n\nAgent users paying token tax for tools they barely touch; builders choosing between MCP and CLIs.\n\n02 / EVIDENCE\nWhat the session shows\n\nThe cost math, four design choices that make a tool agent-friendly, live transcripts, and where MCP still wins.\n\n03 / PRACTICE\nWhat to reuse\n\nAudit your always-loaded schemas, then wrap the five operations you actually use as small composable commands.\n\n← Previous session\nTwelve Messages\nNext session →\nTaught Once, Enforced Forever\n\nNino Chavez\n\nProduct architect and builder in Chicago.\n\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nNow\nLinks\nPrivacy\nGitHub ↗\n(opens in a new tab)\nLinkedIn ↗\n(opens in a new tab)\nEmail ↗",
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "#main",
+      "target": ""
+    },
+    {
+      "text": "Nino Chavez",
+      "href": "/",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Search site",
+      "href": "/search",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "SessionsCurrent section",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Now",
+      "href": "/now",
+      "target": ""
+    },
+    {
+      "text": "Links",
+      "href": "/links",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "01",
+      "href": "#story-session-browse-tool-s1",
+      "target": ""
+    },
+    {
+      "text": "02",
+      "href": "#story-session-browse-tool-s2",
+      "target": ""
+    },
+    {
+      "text": "03",
+      "href": "#story-session-browse-tool-s3",
+      "target": ""
+    },
+    {
+      "text": "04",
+      "href": "#story-session-browse-tool-s4",
+      "target": ""
+    },
+    {
+      "text": "05",
+      "href": "#story-session-browse-tool-s5",
+      "target": ""
+    },
+    {
+      "text": "06",
+      "href": "#story-session-browse-tool-s6",
+      "target": ""
+    },
+    {
+      "text": "07",
+      "href": "#story-session-browse-tool-s7",
+      "target": ""
+    },
+    {
+      "text": "08",
+      "href": "#story-session-browse-tool-s8",
+      "target": ""
+    },
+    {
+      "text": "09",
+      "href": "#story-session-browse-tool-s9",
+      "target": ""
+    },
+    {
+      "text": "10",
+      "href": "#story-session-browse-tool-s10",
+      "target": ""
+    },
+    {
+      "text": "SKIP TO THE RECORD",
+      "href": "#story-session-browse-tool-end",
+      "target": ""
+    },
+    {
+      "text": "\"What if you don't need MCP at all?\"",
+      "href": "https://mariozechner.at/posts/2025-11-02-what-if-you-dont-need-mcp/",
+      "target": "_blank"
+    },
+    {
+      "text": "Twelve Messages",
+      "href": "/demos/twelve-messages",
+      "target": ""
+    },
+    {
+      "text": "github.com/nino-chavez/browse-tool",
+      "href": "https://github.com/nino-chavez/browse-tool",
+      "target": "_blank"
+    },
+    {
+      "text": "ways-of-working series",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "demo 01",
+      "href": "/demos/twelve-messages",
+      "target": ""
+    },
+    {
+      "text": "← Previous session\nTwelve Messages",
+      "href": "/demos/twelve-messages",
+      "target": ""
+    },
+    {
+      "text": "Next session →\nTaught Once, Enforced Forever",
+      "href": "/demos/enforced-forever",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Now",
+      "href": "/now",
+      "target": ""
+    },
+    {
+      "text": "Links",
+      "href": "/links",
+      "target": ""
+    },
+    {
+      "text": "Privacy",
+      "href": "/privacy",
+      "target": ""
+    },
+    {
+      "text": "GitHub ↗\n(opens in a new tab)",
+      "href": "https://github.com/nino-chavez",
+      "target": "_blank"
+    },
+    {
+      "text": "LinkedIn ↗\n(opens in a new tab)",
+      "href": "https://www.linkedin.com/in/nino-chavez/",
+      "target": "_blank"
+    },
+    {
+      "text": "Email ↗",
+      "href": "mailto:nino@ninochavez.co",
+      "target": ""
+    }
+  ],
+  "scripts": [
+    "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+  ],
+  "performance": [
+    {
+      "ttfb": 46.5,
+      "domLoaded": 144.5,
+      "load": 163.60000002384186,
+      "transferSize": 16187,
+      "encodedBodySize": 15887,
+      "decodedBodySize": 80304
+    }
+  ],
+  "resources": [
+    {
+      "name": "https://ninochavez.co/cdn-cgi/speculation",
+      "transfer": 451,
+      "encoded": 151,
+      "duration": 33.10000002384186
+    },
+    {
+      "name": "https://ninochavez.co/assets/index-BmdNnmlC.css",
+      "transfer": 31861,
+      "encoded": 31561,
+      "duration": 72.60000002384186
+    },
+    {
+      "name": "https://ninochavez.co/assets/layout-segment-context-Cm8kYRGr.js",
+      "transfer": 490,
+      "encoded": 190,
+      "duration": 63.89999997615814
+    },
+    {
+      "name": "https://ninochavez.co/assets/DemoStoryProgress-D3DIpQ9A.js",
+      "transfer": 300,
+      "encoded": 1100,
+      "duration": 55.90000009536743
+    },
+    {
+      "name": "https://ninochavez.co/assets/rolldown-runtime-S-ySWqyJ.js",
+      "transfer": 703,
+      "encoded": 403,
+      "duration": 57.800000071525574
+    },
+    {
+      "name": "https://ninochavez.co/assets/query-BqyIlvsm.js",
+      "transfer": 1070,
+      "encoded": 770,
+      "duration": 63.90000009536743
+    },
+    {
+      "name": "https://ninochavez.co/assets/SiteHeader-DM9R833z.js",
+      "transfer": 1384,
+      "encoded": 1084,
+      "duration": 64.20000004768372
+    },
+    {
+      "name": "https://ninochavez.co/assets/link-B8uMb1L1.js",
+      "transfer": 3545,
+      "encoded": 3245,
+      "duration": 64.10000002384186
+    },
+    {
+      "name": "https://ninochavez.co/assets/framework-DjPHiq1u.js",
+      "transfer": 59595,
+      "encoded": 59295,
+      "duration": 71.10000002384186
+    },
+    {
+      "name": "https://ninochavez.co/assets/index-B-UOV3cu.js",
+      "transfer": 25566,
+      "encoded": 25266,
+      "duration": 78.40000009536743
+    },
+    {
+      "name": "https://nc-demos.pages.dev/browse-tool/img/shot-demos.jpg",
+      "transfer": 0,
+      "encoded": 0,
+      "duration": 95
+    },
+    {
+      "name": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "transfer": 0,
+      "encoded": 0,
+      "duration": 22.899999976158142
+    },
+    {
+      "name": "https://ninochavez.co/fonts/inter-latin.woff2",
+      "transfer": 0,
+      "encoded": 48432,
+      "duration": 1.3000000715255737
+    },
+    {
+      "name": "https://ninochavez.co/fonts/space-mono-latin-400-normal.woff2",
+      "transfer": 0,
+      "encoded": 16520,
+      "duration": 1.2000000476837158
+    },
+    {
+      "name": "https://ninochavez.co/fonts/anton-400.woff2",
+      "transfer": 0,
+      "encoded": 12004,
+      "duration": 1.600000023841858
+    },
+    {
+      "name": "https://ninochavez.co/fonts/space-mono-latin-700-normal.woff2",
+      "transfer": 0,
+      "encoded": 16724,
+      "duration": 1.3000000715255737
+    },
+    {
+      "name": "https://ninochavez.co/cdn-cgi/rum?",
+      "transfer": 300,
+      "encoded": 0,
+      "duration": 17.600000023841858
+    },
+    {
+      "name": "https://ninochavez.co/demos.rsc?_rsc=uWCPny6XkEPqJg0c",
+      "transfer": 14478,
+      "encoded": 14178,
+      "duration": 42.39999997615814
+    }
+  ]
+}

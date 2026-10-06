@@ -1,0 +1,1318 @@
+{
+  "source": "Direct Cloudflare GraphQL rumPageloadEventsAdaptiveGroups requestHost=ninochavez.co bot=0",
+  "retrievedAt": "2026-09-29T22:23:37.295163+00:00",
+  "current": {
+    "start": "2026-08-30",
+    "end": "2026-09-28",
+    "pageLoads": 550,
+    "entryVisits": 60,
+    "groupCount": 38,
+    "rows": [
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-08",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/demos/browse-tool"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 30,
+        "dimensions": {
+          "date": "2026-08-30",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-09-01",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-08-31",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-10",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/demos"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-27",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-11",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-12",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-16",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-16",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/blog"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-13",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-09-04",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-09-23",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-25",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-08",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/photography/coverage"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-16",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/blog"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-31",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/work/volleyrx"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-16",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-25",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-04",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-02",
+          "deviceType": "mobile",
+          "refererHost": "m.facebook.com",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-20",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-09-03",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-09-02",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/demos"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-09-26",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/work"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-24",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-09-01",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/links"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-28",
+          "deviceType": "desktop",
+          "refererHost": "www.linkedin.com",
+          "requestPath": "/work/blueprint"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-26",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-23",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/work"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-09-03",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-09-21",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/search"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-09-01",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 30,
+        "dimensions": {
+          "date": "2026-09-22",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/demos"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-05",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/about"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-22",
+          "deviceType": "mobile",
+          "refererHost": "l.instagram.com",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 30,
+        "dimensions": {
+          "date": "2026-09-21",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-09-04",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/blog"
+        },
+        "sum": {
+          "visits": 0
+        }
+      }
+    ]
+  },
+  "previous": {
+    "start": "2026-07-31",
+    "end": "2026-08-29",
+    "pageLoads": 1020,
+    "entryVisits": 760,
+    "groupCount": 70,
+    "rows": [
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-16",
+          "deviceType": "desktop",
+          "refererHost": "www.webnocular.com",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-20",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/blog"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-17",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/work"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-24",
+          "deviceType": "mobile",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-01",
+          "deviceType": "mobile",
+          "refererHost": "m.facebook.com",
+          "requestPath": "/links"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-24",
+          "deviceType": "mobile",
+          "refererHost": "l.instagram.com",
+          "requestPath": "/links"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-08-03",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 20
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-08-28",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/blog"
+        },
+        "sum": {
+          "visits": 20
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-02",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/demos"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-28",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/blog"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-07-31",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 20
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-14",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/demos"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-23",
+          "deviceType": "mobile",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-14",
+          "deviceType": "desktop",
+          "refererHost": "odiasearch.com",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-05",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/now"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-29",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/demos"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-01",
+          "deviceType": "mobile",
+          "refererHost": "",
+          "requestPath": "/work"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-01",
+          "deviceType": "mobile",
+          "refererHost": "www.facebook.com",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-02",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-06",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/demos"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-08-13",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/demos"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-02",
+          "deviceType": "mobile",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 30,
+        "dimensions": {
+          "date": "2026-07-31",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/work"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-18",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/blog"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-06",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-27",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-13",
+          "deviceType": "mobile",
+          "refererHost": "",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 130,
+        "dimensions": {
+          "date": "2026-08-01",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/work/browse-tool"
+        },
+        "sum": {
+          "visits": 130
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-01",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-07",
+          "deviceType": "mobile",
+          "refererHost": "",
+          "requestPath": "/blog"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-21",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/blog"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-19",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-08-01",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 20
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-14",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 30,
+        "dimensions": {
+          "date": "2026-07-31",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/demos"
+        },
+        "sum": {
+          "visits": 30
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-04",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/about"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-17",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-09",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/demos/gate-first"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-14",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/work/blueprint"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-12",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 50,
+        "dimensions": {
+          "date": "2026-08-01",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/search"
+        },
+        "sum": {
+          "visits": 50
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-20",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/demos"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-13",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/blog"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-07-31",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/about"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-05",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/work"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-04",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/blog"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-07-31",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/demos/applied/gates"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-13",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-29",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/photography"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-29",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-02",
+          "deviceType": "mobile",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-08-29",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/demos/twelve-messages"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-22",
+          "deviceType": "mobile",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-08-05",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 20
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-06",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/work"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-21",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/blog"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-24",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-07-31",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 20
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-08-01",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/work"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-17",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/demos/applied/one-heavy-job"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-16",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/about"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-05",
+          "deviceType": "mobile",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 20,
+        "dimensions": {
+          "date": "2026-07-31",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/work/blueprint"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-15",
+          "deviceType": "desktop",
+          "refererHost": "www.linkedin.com",
+          "requestPath": "/demos/guardrail-removed"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-01",
+          "deviceType": "mobile",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-03",
+          "deviceType": "mobile",
+          "refererHost": "",
+          "requestPath": "/"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-01",
+          "deviceType": "desktop",
+          "refererHost": "ninochavez.co",
+          "requestPath": "/demos/applied/corpus"
+        },
+        "sum": {
+          "visits": 0
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-14",
+          "deviceType": "mobile",
+          "refererHost": "www.facebook.com",
+          "requestPath": "/links"
+        },
+        "sum": {
+          "visits": 10
+        }
+      },
+      {
+        "count": 30,
+        "dimensions": {
+          "date": "2026-08-17",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/blog"
+        },
+        "sum": {
+          "visits": 30
+        }
+      },
+      {
+        "count": 10,
+        "dimensions": {
+          "date": "2026-08-01",
+          "deviceType": "desktop",
+          "refererHost": "",
+          "requestPath": "/work/rally-hq"
+        },
+        "sum": {
+          "visits": 10
+        }
+      }
+    ]
+  }
+}

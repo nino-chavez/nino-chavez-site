@@ -1,0 +1,150 @@
+{
+  "checkedAt": "2026-09-30T05:42:43.585Z",
+  "testIds": [
+    "4a4162d6-4ac1-49c1-9a51-1fd9a352445c",
+    "8beba417-7891-478f-bd33-18d0d2fef503",
+    "05d144d2-aa9b-4da0-b9da-592fb893d806",
+    "c33451b5-bd1c-4a3f-8809-067b6f017304",
+    "879b123c-bee6-45c6-9108-4e00ade3fb59",
+    "08f02c56-67b9-4a51-bc6d-82e588ecddc5"
+  ],
+  "rows": [
+    {
+      "event_id": "4a4162d6-4ac1-49c1-9a51-1fd9a352445c",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:28:13.649517+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "22ca007a-65ca-4641-80ba-3694daacdea9",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "profile",
+        "canonical_path": "/"
+      }
+    },
+    {
+      "event_id": "8beba417-7891-478f-bd33-18d0d2fef503",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:28:14.599336+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "d4c6c5eb-816b-4341-8ac4-4d691e7c43e8",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "profile",
+        "canonical_path": "/work/blueprint"
+      }
+    },
+    {
+      "event_id": "05d144d2-aa9b-4da0-b9da-592fb893d806",
+      "event_name": "site_link_clicked",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:28:15.479583+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "d4c6c5eb-816b-4341-8ac4-4d691e7c43e8",
+        "target_kind": "internal",
+        "target_path": "/photography",
+        "site_section": "profile",
+        "canonical_path": "/work/blueprint"
+      }
+    },
+    {
+      "event_id": "c33451b5-bd1c-4a3f-8809-067b6f017304",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:34:09.085557+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "20a85676-f172-4886-8165-9533c3625c74",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "profile",
+        "canonical_path": "/"
+      }
+    },
+    {
+      "event_id": "879b123c-bee6-45c6-9108-4e00ade3fb59",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:34:10.27006+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "31305461-b319-41f6-93cd-783e3602f464",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "profile",
+        "canonical_path": "/work/blueprint"
+      }
+    },
+    {
+      "event_id": "08f02c56-67b9-4a51-bc6d-82e588ecddc5",
+      "event_name": "site_link_clicked",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:34:11.002531+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "31305461-b319-41f6-93cd-783e3602f464",
+        "target_kind": "internal",
+        "target_path": "/photography",
+        "site_section": "profile",
+        "canonical_path": "/work/blueprint"
+      }
+    }
+  ],
+  "daily": [
+    {
+      "bucket_date": "2026-09-30",
+      "section": "profile",
+      "path": "/",
+      "page_views": 0,
+      "contact_clicks": 0,
+      "external_clicks": 0,
+      "reading_90": 0,
+      "active_30": 0,
+      "demo_last_section": 0,
+      "excluded_events": 2
+    },
+    {
+      "bucket_date": "2026-09-30",
+      "section": "profile",
+      "path": "/work/blueprint",
+      "page_views": 0,
+      "contact_clicks": 0,
+      "external_clicks": 0,
+      "reading_90": 0,
+      "active_30": 0,
+      "demo_last_section": 0,
+      "excluded_events": 4
+    }
+  ],
+  "status": [
+    {
+      "report_name": "site_actions",
+      "last_successful_at": "2026-09-30T05:37:00.109138+00:00",
+      "summary_cutoff_at": "2026-09-30T05:37:00.066768+00:00",
+      "last_error_at": null,
+      "last_error_code": null
+    }
+  ]
+}

@@ -1,0 +1,638 @@
+{
+  "url": "https://ninochavez.co/work",
+  "title": "Work — Nino Chavez",
+  "description": "Products, tools, methods, operations, and collections by Nino Chavez.",
+  "robots": "index, follow",
+  "viewport": {
+    "width": 1440,
+    "inner": 1440,
+    "height": 900,
+    "scrollWidth": 1440,
+    "scrollHeight": 6254
+  },
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "Work"
+    },
+    {
+      "tag": "H2",
+      "text": "Browse all work."
+    },
+    {
+      "tag": "H2",
+      "text": "Developer tools"
+    },
+    {
+      "tag": "H3",
+      "text": "Ways of Working"
+    },
+    {
+      "tag": "H3",
+      "text": "Blueprint"
+    },
+    {
+      "tag": "H3",
+      "text": "Browse Tool"
+    },
+    {
+      "tag": "H3",
+      "text": "Specchain"
+    },
+    {
+      "tag": "H3",
+      "text": "Claude Recall"
+    },
+    {
+      "tag": "H3",
+      "text": "Agentic Ways of Working"
+    },
+    {
+      "tag": "H3",
+      "text": "Fleet Observability"
+    },
+    {
+      "tag": "H3",
+      "text": "Repo Health Check"
+    },
+    {
+      "tag": "H3",
+      "text": "GHA Minutes"
+    },
+    {
+      "tag": "H3",
+      "text": "Design QA"
+    },
+    {
+      "tag": "H2",
+      "text": "Local-first"
+    },
+    {
+      "tag": "H3",
+      "text": "Local Dictation"
+    },
+    {
+      "tag": "H3",
+      "text": "Local Meeting Notes"
+    },
+    {
+      "tag": "H2",
+      "text": "Volleyball"
+    },
+    {
+      "tag": "H3",
+      "text": "Flickday Media"
+    },
+    {
+      "tag": "H3",
+      "text": "Volley Rx"
+    },
+    {
+      "tag": "H3",
+      "text": "Rally HQ"
+    },
+    {
+      "tag": "H3",
+      "text": "Let’s Pepper"
+    },
+    {
+      "tag": "H3",
+      "text": "Film Room"
+    },
+    {
+      "tag": "H2",
+      "text": "Commerce"
+    },
+    {
+      "tag": "H3",
+      "text": "Aisles"
+    },
+    {
+      "tag": "H3",
+      "text": "Ask BC"
+    },
+    {
+      "tag": "H3",
+      "text": "BC Subscriptions"
+    },
+    {
+      "tag": "H3",
+      "text": "Commerce architecture"
+    },
+    {
+      "tag": "H2",
+      "text": "Media & assets"
+    },
+    {
+      "tag": "H3",
+      "text": "Forge Brand"
+    },
+    {
+      "tag": "H3",
+      "text": "Forge Site"
+    },
+    {
+      "tag": "H3",
+      "text": "Image Gen"
+    },
+    {
+      "tag": "H3",
+      "text": "Render Kit"
+    },
+    {
+      "tag": "H3",
+      "text": "Nino Chavez Photography"
+    },
+    {
+      "tag": "H2",
+      "text": "Publishing"
+    },
+    {
+      "tag": "H3",
+      "text": "Signal Dispatch"
+    },
+    {
+      "tag": "H3",
+      "text": "Whitepapers"
+    },
+    {
+      "tag": "H3",
+      "text": "Presentations"
+    }
+  ],
+  "text": "Skip to content\nNino Chavez\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nSearch site\n\nPROJECTS, TOOLS, AND COLLECTIONS\n\nWork\n\nProducts, tools, methods, operations, and the systems behind them.\n\nBrowse by domain, or search all 29 items below.\n\nBrowse all 29 items\n↓\nDeveloper tools\nTools and methods for planning, building, reviewing, and maintaining software.\n10\nIN THIS DOMAIN\n→\nLocal-first\nPrivate tools that keep speech, meetings, and working context close to the operator.\n2\nIN THIS DOMAIN\n→\nVolleyball\nProducts and live operations tested on courts, at events, and with real players.\n5\nIN THIS DOMAIN\n→\nCommerce\nArchitecture and delivery experience from complex commerce programs.\n4\nIN THIS DOMAIN\n→\nMedia & assets\nTools and collections for making, reviewing, and delivering visual work.\n5\nIN THIS DOMAIN\n→\nPublishing\nPublished arguments, field notes, presentations, and durable reference material.\n3\nIN THIS DOMAIN\n→\n\nALL WORK\n\nBrowse all work.\n\nSearch by name or purpose. Status says what is available today; type says what kind of work it is.\n\nSEARCH WORK\nDOMAIN\nAll domains\nDeveloper tools\nLocal-first\nVolleyball\nCommerce\nMedia & assets\nPublishing\nSTATUS\nAll statuses\nLive — available to use now\nMaintained — public and kept current\nPublished — available to read\nIn development — not yet released\nTYPE\nAll types\nsite\ncli\napp\nservice\ndocs\ntoolkit\nexperience\ncollection\n\n29 OF 29 SHOWN\n\nALL WORK\nDeveloper tools\n\n10 SHOWN\n\nLIVE\nCOLLECTION\n30 JUL\nWays of Working\n\nPublished sessions and applied techniques drawn from real work with AI agents.\n\nOPEN →\nMAINTAINED\nDOCS\n28 JUL\nBlueprint\n\nA practical method for planning, reviewing, and checking product work done with AI agents.\n\nOPEN →\nMAINTAINED\nCLI\n25 JUL\nBrowse Tool\n\nA command-line browser workflow that lets agents inspect real product surfaces.\n\nOPEN →\nMAINTAINED\nCLI\n22 JUL\nSpecchain\n\nA staged workflow that turns a feature request into specifications, implementation, and verification.\n\nOPEN →\nMAINTAINED\nCLI\n19 JUL\nClaude Recall\n\nA local command-line index for recovering decisions and context from prior agent sessions.\n\nOPEN →\nMAINTAINED\nDOCS\n18 JUL\nAgentic Ways of Working\n\nA public set of rules and tools for delegating work to AI agents and reviewing what comes back.\n\nOPEN →\nLIVE\nSERVICE\n12 JUL\nFleet Observability\n\nA private daily report that monitors repositories, deployments, costs, domains, and key user journeys.\n\nOPEN →\nMAINTAINED\nCLI\n11 JUL\nRepo Health Check\n\nA public command-line audit for GitHub settings, stale links, failed deployments, and neglected pull requests.\n\nOPEN →\nMAINTAINED\nCLI\n10 JUL\nGHA Minutes\n\nA tool that finds wasted GitHub Actions time and cancels superseded runs without interrupting releases.\n\nOPEN →\nIN DEVELOPMENT\nCLI\n9 JUL\nDesign QA\n\nA local quality check that keeps visual exceptions tied to explicit, reviewable design decisions.\n\nOPEN →\nLocal-first\n\n2 SHOWN\n\nMAINTAINED\nAPP\n27 JUL\nLocal Dictation\n\nOn-device speech capture and transcription designed to keep recordings local.\n\nOPEN →\nIN DEVELOPMENT\nAPP\n23 JUL\nLocal Meeting Notes\n\nResearch toward a Mac meeting notetaker that keeps audio local and ties every note back to the transcript.\n\nOPEN →\nVolleyball\n\n5 SHOWN\n\nLIVE\nSITE\n31 JUL\nFlickday Media\n\nGrassroots sports media with on-site tournament photography, quick-turn reels, and same-day photo drops.\n\nOPEN →\nLIVE\nSITE\n31 JUL\nVolley Rx\n\nProfessionally organized volleyball tournaments across the Chicagoland area.\n\nOPEN →\nLIVE\nSITE\n26 JUL\nRally HQ\n\nTournament registration, brackets, schedules, and live scoring in one public event page.\n\nOPEN →\nLIVE\nSITE\n24 JUL\nLet’s Pepper\n\nA player-first grass volleyball tournament series with events, divisions, and photography.\n\nOPEN →\nIN DEVELOPMENT\nAPP\n21 JUL\nFilm Room\n\nA local desktop app for reviewing sports and event footage, recording decisions, and preparing editor-ready outputs.\n\nOPEN →\nCommerce\n\n4 SHOWN\n\nLIVE\nSITE\n12 AUG\nAisles\n\nA storefront that reads the intent behind each visit and generates the category page to fit — same URL, same products, four different layouts.\n\nOPEN →\nLIVE\nAPP\n12 AUG\nAsk BC\n\nAn AI assistant that answers questions about a live store's orders, products, and customers — and asks for explicit confirmation before it changes anything.\n\nOPEN →\nLIVE\nSITE\n12 AUG\nBC Subscriptions\n\nA subscription engine demonstrated on a live BigCommerce store — billing, dunning recovery, and a self-serve subscriber portal, with the Kibble & Co demo storefront to walk through.\n\nOPEN →\nPUBLISHED\nEXPERIENCE\n31 JUL\nCommerce architecture\n\n25+ years designing and delivering commerce platforms across retail, B2B, grocery, and multi-brand businesses.\n\nOPEN →\nMedia & assets\n\n5 SHOWN\n\nMAINTAINED\nTOOLKIT\n17 JUL\nForge Brand\n\nA system for turning approved brand direction into reusable colors, type, components, and visual assets.\n\nOPEN →\nMAINTAINED\nTOOLKIT\n6 JUL\nForge Site\n\nA site-building playbook that matches client needs to proven archetypes, modules, and delivery steps.\n\nOPEN →\nMAINTAINED\nTOOLKIT\n4 JUL\nImage Gen\n\nTools for generating images with AI or rendering them from reusable HTML templates.\n\nOPEN →\nMAINTAINED\nTOOLKIT\n3 JUL\nRender Kit\n\nTools for producing consistent graphics and walkthroughs across sites and campaigns.\n\nOPEN →\nLIVE\nSITE\n2 JUL\nNino Chavez Photography\n\nVolleyball action photography organized so players can find, download, and keep their frames.\n\nOPEN →\nPublishing\n\n3 SHOWN\n\nLIVE\nCOLLECTION\n30 JUL\nSignal Dispatch\n\nEssays, fiction, tutorials, and research on architecture, commerce, and AI-assisted work.\n\nOPEN →\nPUBLISHED\nCOLLECTION\n28 JUN\nWhitepapers\n\nLonger-form arguments and field guides published alongside the essay archive.\n\nBROWSE →\nPUBLISHED\nCOLLECTION\n26 JUN\nPresentations\n\nPublished decks that turn working decisions into material other practitioners can use.\n\nBROWSE →\n\nNino Chavez\n\nProduct architect and builder in Chicago.\n\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nNow\nLinks\nPrivacy\nGitHub ↗\n(opens in a new tab)\nLinkedIn ↗\n(opens in a new tab)\nEmail ↗",
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "#main",
+      "target": ""
+    },
+    {
+      "text": "Nino Chavez",
+      "href": "/",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Search site",
+      "href": "/search",
+      "target": ""
+    },
+    {
+      "text": "WorkCurrent page",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Now",
+      "href": "/now",
+      "target": ""
+    },
+    {
+      "text": "Links",
+      "href": "/links",
+      "target": ""
+    },
+    {
+      "text": "Browse all 29 items\n↓",
+      "href": "#work-library",
+      "target": ""
+    },
+    {
+      "text": "Developer tools\nTools and methods for planning, building, reviewing, and maintaining software.\n10\nIN THIS DOMAIN\n→",
+      "href": "/work?domain=Developer%20tools#work-library",
+      "target": ""
+    },
+    {
+      "text": "Local-first\nPrivate tools that keep speech, meetings, and working context close to the operator.\n2\nIN THIS DOMAIN\n→",
+      "href": "/work?domain=Local-first#work-library",
+      "target": ""
+    },
+    {
+      "text": "Volleyball\nProducts and live operations tested on courts, at events, and with real players.\n5\nIN THIS DOMAIN\n→",
+      "href": "/work?domain=Volleyball#work-library",
+      "target": ""
+    },
+    {
+      "text": "Commerce\nArchitecture and delivery experience from complex commerce programs.\n4\nIN THIS DOMAIN\n→",
+      "href": "/work?domain=Commerce#work-library",
+      "target": ""
+    },
+    {
+      "text": "Media & assets\nTools and collections for making, reviewing, and delivering visual work.\n5\nIN THIS DOMAIN\n→",
+      "href": "/work?domain=Media%20%26%20assets#work-library",
+      "target": ""
+    },
+    {
+      "text": "Publishing\nPublished arguments, field notes, presentations, and durable reference material.\n3\nIN THIS DOMAIN\n→",
+      "href": "/work?domain=Publishing#work-library",
+      "target": ""
+    },
+    {
+      "text": "LIVE\nCOLLECTION\n30 JUL\nWays of Working\n\nPublished sessions and applied techniques drawn from real work with AI agents.\n\nOPEN →",
+      "href": "/work/ways-of-working",
+      "target": ""
+    },
+    {
+      "text": "MAINTAINED\nDOCS\n28 JUL\nBlueprint\n\nA practical method for planning, reviewing, and checking product work done with AI agents.\n\nOPEN →",
+      "href": "/work/blueprint",
+      "target": ""
+    },
+    {
+      "text": "MAINTAINED\nCLI\n25 JUL\nBrowse Tool\n\nA command-line browser workflow that lets agents inspect real product surfaces.\n\nOPEN →",
+      "href": "/work/browse-tool",
+      "target": ""
+    },
+    {
+      "text": "MAINTAINED\nCLI\n22 JUL\nSpecchain\n\nA staged workflow that turns a feature request into specifications, implementation, and verification.\n\nOPEN →",
+      "href": "/work/specchain",
+      "target": ""
+    },
+    {
+      "text": "MAINTAINED\nCLI\n19 JUL\nClaude Recall\n\nA local command-line index for recovering decisions and context from prior agent sessions.\n\nOPEN →",
+      "href": "/work/claude-recall",
+      "target": ""
+    },
+    {
+      "text": "MAINTAINED\nDOCS\n18 JUL\nAgentic Ways of Working\n\nA public set of rules and tools for delegating work to AI agents and reviewing what comes back.\n\nOPEN →",
+      "href": "/work/agentic-ways-of-working",
+      "target": ""
+    },
+    {
+      "text": "LIVE\nSERVICE\n12 JUL\nFleet Observability\n\nA private daily report that monitors repositories, deployments, costs, domains, and key user journeys.\n\nOPEN →",
+      "href": "/work/fleet-observability",
+      "target": ""
+    },
+    {
+      "text": "MAINTAINED\nCLI\n11 JUL\nRepo Health Check\n\nA public command-line audit for GitHub settings, stale links, failed deployments, and neglected pull requests.\n\nOPEN →",
+      "href": "/work/repo-health-check",
+      "target": ""
+    },
+    {
+      "text": "MAINTAINED\nCLI\n10 JUL\nGHA Minutes\n\nA tool that finds wasted GitHub Actions time and cancels superseded runs without interrupting releases.\n\nOPEN →",
+      "href": "/work/gha-minutes",
+      "target": ""
+    },
+    {
+      "text": "IN DEVELOPMENT\nCLI\n9 JUL\nDesign QA\n\nA local quality check that keeps visual exceptions tied to explicit, reviewable design decisions.\n\nOPEN →",
+      "href": "/work/design-qa",
+      "target": ""
+    },
+    {
+      "text": "MAINTAINED\nAPP\n27 JUL\nLocal Dictation\n\nOn-device speech capture and transcription designed to keep recordings local.\n\nOPEN →",
+      "href": "/work/local-dictation",
+      "target": ""
+    },
+    {
+      "text": "IN DEVELOPMENT\nAPP\n23 JUL\nLocal Meeting Notes\n\nResearch toward a Mac meeting notetaker that keeps audio local and ties every note back to the transcript.\n\nOPEN →",
+      "href": "/work/local-meeting-notes",
+      "target": ""
+    },
+    {
+      "text": "LIVE\nSITE\n31 JUL\nFlickday Media\n\nGrassroots sports media with on-site tournament photography, quick-turn reels, and same-day photo drops.\n\nOPEN →",
+      "href": "/work/flickday",
+      "target": ""
+    },
+    {
+      "text": "LIVE\nSITE\n31 JUL\nVolley Rx\n\nProfessionally organized volleyball tournaments across the Chicagoland area.\n\nOPEN →",
+      "href": "/work/volleyrx",
+      "target": ""
+    },
+    {
+      "text": "LIVE\nSITE\n26 JUL\nRally HQ\n\nTournament registration, brackets, schedules, and live scoring in one public event page.\n\nOPEN →",
+      "href": "/work/rally-hq",
+      "target": ""
+    },
+    {
+      "text": "LIVE\nSITE\n24 JUL\nLet’s Pepper\n\nA player-first grass volleyball tournament series with events, divisions, and photography.\n\nOPEN →",
+      "href": "/work/lets-pepper",
+      "target": ""
+    },
+    {
+      "text": "IN DEVELOPMENT\nAPP\n21 JUL\nFilm Room\n\nA local desktop app for reviewing sports and event footage, recording decisions, and preparing editor-ready outputs.\n\nOPEN →",
+      "href": "/work/film-room",
+      "target": ""
+    },
+    {
+      "text": "LIVE\nSITE\n12 AUG\nAisles\n\nA storefront that reads the intent behind each visit and generates the category page to fit — same URL, same products, four different layouts.\n\nOPEN →",
+      "href": "/work/aisles",
+      "target": ""
+    },
+    {
+      "text": "LIVE\nAPP\n12 AUG\nAsk BC\n\nAn AI assistant that answers questions about a live store's orders, products, and customers — and asks for explicit confirmation before it changes anything.\n\nOPEN →",
+      "href": "/work/ask-bc",
+      "target": ""
+    },
+    {
+      "text": "LIVE\nSITE\n12 AUG\nBC Subscriptions\n\nA subscription engine demonstrated on a live BigCommerce store — billing, dunning recovery, and a self-serve subscriber portal, with the Kibble & Co demo storefront to walk through.\n\nOPEN →",
+      "href": "/work/bc-subscriptions",
+      "target": ""
+    },
+    {
+      "text": "PUBLISHED\nEXPERIENCE\n31 JUL\nCommerce architecture\n\n25+ years designing and delivering commerce platforms across retail, B2B, grocery, and multi-brand businesses.\n\nOPEN →",
+      "href": "/work/commerce-architecture",
+      "target": ""
+    },
+    {
+      "text": "MAINTAINED\nTOOLKIT\n17 JUL\nForge Brand\n\nA system for turning approved brand direction into reusable colors, type, components, and visual assets.\n\nOPEN →",
+      "href": "/work/forge-brand",
+      "target": ""
+    },
+    {
+      "text": "MAINTAINED\nTOOLKIT\n6 JUL\nForge Site\n\nA site-building playbook that matches client needs to proven archetypes, modules, and delivery steps.\n\nOPEN →",
+      "href": "/work/forge-site",
+      "target": ""
+    },
+    {
+      "text": "MAINTAINED\nTOOLKIT\n4 JUL\nImage Gen\n\nTools for generating images with AI or rendering them from reusable HTML templates.\n\nOPEN →",
+      "href": "/work/image-gen",
+      "target": ""
+    },
+    {
+      "text": "MAINTAINED\nTOOLKIT\n3 JUL\nRender Kit\n\nTools for producing consistent graphics and walkthroughs across sites and campaigns.\n\nOPEN →",
+      "href": "/work/render-kit",
+      "target": ""
+    },
+    {
+      "text": "LIVE\nSITE\n2 JUL\nNino Chavez Photography\n\nVolleyball action photography organized so players can find, download, and keep their frames.\n\nOPEN →",
+      "href": "/work/nino-chavez-photography",
+      "target": ""
+    },
+    {
+      "text": "LIVE\nCOLLECTION\n30 JUL\nSignal Dispatch\n\nEssays, fiction, tutorials, and research on architecture, commerce, and AI-assisted work.\n\nOPEN →",
+      "href": "/work/signal-dispatch",
+      "target": ""
+    },
+    {
+      "text": "PUBLISHED\nCOLLECTION\n28 JUN\nWhitepapers\n\nLonger-form arguments and field guides published alongside the essay archive.\n\nBROWSE →",
+      "href": "/blog?type=Whitepaper",
+      "target": ""
+    },
+    {
+      "text": "PUBLISHED\nCOLLECTION\n26 JUN\nPresentations\n\nPublished decks that turn working decisions into material other practitioners can use.\n\nBROWSE →",
+      "href": "/blog?type=Presentation",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Now",
+      "href": "/now",
+      "target": ""
+    },
+    {
+      "text": "Links",
+      "href": "/links",
+      "target": ""
+    },
+    {
+      "text": "Privacy",
+      "href": "/privacy",
+      "target": ""
+    },
+    {
+      "text": "GitHub ↗\n(opens in a new tab)",
+      "href": "https://github.com/nino-chavez",
+      "target": "_blank"
+    },
+    {
+      "text": "LinkedIn ↗\n(opens in a new tab)",
+      "href": "https://www.linkedin.com/in/nino-chavez/",
+      "target": "_blank"
+    },
+    {
+      "text": "Email ↗",
+      "href": "mailto:nino@ninochavez.co",
+      "target": ""
+    }
+  ],
+  "scripts": [
+    "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+  ],
+  "performance": [
+    {
+      "ttfb": 106.59999990463257,
+      "domLoaded": 238.80000007152557,
+      "load": 260,
+      "transferSize": 10264,
+      "encodedBodySize": 9964,
+      "decodedBodySize": 48904
+    }
+  ],
+  "resources": [
+    {
+      "name": "https://ninochavez.co/cdn-cgi/speculation",
+      "transfer": 451,
+      "encoded": 151,
+      "duration": 50.39999997615814
+    },
+    {
+      "name": "https://ninochavez.co/assets/index-BmdNnmlC.css",
+      "transfer": 31861,
+      "encoded": 31561,
+      "duration": 92
+    },
+    {
+      "name": "https://ninochavez.co/assets/layout-segment-context-Cm8kYRGr.js",
+      "transfer": 490,
+      "encoded": 190,
+      "duration": 73.60000002384186
+    },
+    {
+      "name": "https://ninochavez.co/assets/index-B-UOV3cu.js",
+      "transfer": 25617,
+      "encoded": 25317,
+      "duration": 76.89999997615814
+    },
+    {
+      "name": "https://ninochavez.co/assets/rolldown-runtime-S-ySWqyJ.js",
+      "transfer": 703,
+      "encoded": 403,
+      "duration": 83.79999995231628
+    },
+    {
+      "name": "https://ninochavez.co/assets/SiteHeader-DM9R833z.js",
+      "transfer": 300,
+      "encoded": 1084,
+      "duration": 80.39999997615814
+    },
+    {
+      "name": "https://ninochavez.co/assets/framework-DjPHiq1u.js",
+      "transfer": 59595,
+      "encoded": 59295,
+      "duration": 82.60000002384186
+    },
+    {
+      "name": "https://ninochavez.co/assets/link-B8uMb1L1.js",
+      "transfer": 3544,
+      "encoded": 3244,
+      "duration": 81.89999997615814
+    },
+    {
+      "name": "https://ninochavez.co/assets/query-BqyIlvsm.js",
+      "transfer": 1070,
+      "encoded": 770,
+      "duration": 83.39999997615814
+    },
+    {
+      "name": "https://ninochavez.co/assets/WorkLibrary-DUJMws3O.js",
+      "transfer": 300,
+      "encoded": 2061,
+      "duration": 83.89999997615814
+    },
+    {
+      "name": "https://ninochavez.co/assets/facets-ClNarxFu.js",
+      "transfer": 421,
+      "encoded": 121,
+      "duration": 89
+    },
+    {
+      "name": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "transfer": 0,
+      "encoded": 0,
+      "duration": 40.89999997615814
+    },
+    {
+      "name": "https://ninochavez.co/fonts/inter-latin.woff2",
+      "transfer": 0,
+      "encoded": 48432,
+      "duration": 0.7999999523162842
+    },
+    {
+      "name": "https://ninochavez.co/fonts/space-mono-latin-700-normal.woff2",
+      "transfer": 0,
+      "encoded": 16724,
+      "duration": 0.7999999523162842
+    },
+    {
+      "name": "https://ninochavez.co/fonts/space-mono-latin-400-normal.woff2",
+      "transfer": 0,
+      "encoded": 16520,
+      "duration": 0.6999999284744263
+    },
+    {
+      "name": "https://ninochavez.co/cdn-cgi/rum?",
+      "transfer": 300,
+      "encoded": 0,
+      "duration": 13.600000023841858
+    },
+    {
+      "name": "https://ninochavez.co/work.rsc?domain=Developer%20tools&_rsc=rgK1zgUbsSe-NAr1",
+      "transfer": 5968,
+      "encoded": 5668,
+      "duration": 63.800000071525574
+    },
+    {
+      "name": "https://ninochavez.co/work.rsc?domain=Local-first&_rsc=rgK1zgUbsSe-NAr1",
+      "transfer": 5968,
+      "encoded": 5668,
+      "duration": 54.200000047683716
+    },
+    {
+      "name": "https://ninochavez.co/work.rsc?domain=Volleyball&_rsc=rgK1zgUbsSe-NAr1",
+      "transfer": 5966,
+      "encoded": 5666,
+      "duration": 117.19999992847443
+    },
+    {
+      "name": "https://ninochavez.co/work.rsc?domain=Commerce&_rsc=rgK1zgUbsSe-NAr1",
+      "transfer": 5965,
+      "encoded": 5665,
+      "duration": 105.69999992847443
+    },
+    {
+      "name": "https://ninochavez.co/work.rsc?domain=Media%20%26%20assets&_rsc=rgK1zgUbsSe-NAr1",
+      "transfer": 5968,
+      "encoded": 5668,
+      "duration": 98.40000009536743
+    },
+    {
+      "name": "https://ninochavez.co/work.rsc?domain=Publishing&_rsc=rgK1zgUbsSe-NAr1",
+      "transfer": 5966,
+      "encoded": 5666,
+      "duration": 134.10000002384186
+    }
+  ]
+}

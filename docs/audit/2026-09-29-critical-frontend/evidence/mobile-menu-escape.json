@@ -1,0 +1,10 @@
+{
+  "url": "https://ninochavez.co/work",
+  "menu": [
+    {
+      "expanded": "true",
+      "aria": "site-navigation-dialog"
+    }
+  ],
+  "activeElement": "Close"
+}

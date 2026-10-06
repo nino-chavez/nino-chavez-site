@@ -1,0 +1,53 @@
+{
+  "artifacts": {
+    "events": "/Users/nino/.local/state/nino-operator/dispatch/4de1a65e-ec20-4aa1-97d2-7c1f54187983/events.jsonl",
+    "last_message": "/Users/nino/.local/state/nino-operator/dispatch/4de1a65e-ec20-4aa1-97d2-7c1f54187983/last-message.txt",
+    "receipt": "/Users/nino/.local/state/nino-operator/dispatch/4de1a65e-ec20-4aa1-97d2-7c1f54187983/receipt.json",
+    "stderr": "/Users/nino/.local/state/nino-operator/dispatch/4de1a65e-ec20-4aa1-97d2-7c1f54187983/stderr.txt"
+  },
+  "classifier": {
+    "confidence": 0.94,
+    "error": null,
+    "latency_ms": 337,
+    "provider": "typesafe",
+    "tier": "balanced"
+  },
+  "completed_at": "2026-09-30T22:44:10.879697Z",
+  "created_at": "2026-09-30T22:41:00.329119Z",
+  "cwd": "/Users/nino/Workspace/dev/sites/nino/blog/.worktrees/codex/referral-design-b-20260930",
+  "dispatch_id": "4de1a65e-ec20-4aa1-97d2-7c1f54187983",
+  "exit_code": 0,
+  "experiment_id": null,
+  "observation_schema": 1,
+  "prompt_sha256": "a1559520b7858510d3eeb83a337484f1c65a0b4ba1c37bb21bd91d1a3611258a",
+  "read_only": true,
+  "routing_mode": "balance",
+  "runtime_evidence": {
+    "child_thread_id": "01a0f47a-7a76-7b51-a65f-be5024fc25c3",
+    "executable": "/Users/nino/.nvm/versions/node/v22.21.1/bin/codex",
+    "reported_model": null,
+    "reported_reasoning_effort": null,
+    "status": "completed"
+  },
+  "sandbox": {
+    "mode": "read-only",
+    "network": "off"
+  },
+  "schema_version": 1,
+  "selected_route": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "tier": "implementation"
+  },
+  "stage": "completed",
+  "stopping_advice": {
+    "decision": "allow",
+    "mode": "observe",
+    "reason": "task_record_missing"
+  },
+  "task_id": null,
+  "task_record_path": null,
+  "timeout_seconds": 900.0,
+  "updated_at": "2026-09-30T22:44:10.879656Z",
+  "work_kind": "routine"
+}

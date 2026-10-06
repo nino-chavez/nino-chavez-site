@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-30",
+  "environment": "Local in-app browser; gallery POST writes blocked",
+  "finalMeasurements": {
+    "desktopSearch": {
+      "clientWidth": 1440,
+      "descriptionWidth": 996.9284
+    },
+    "phoneSearch": {
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "descriptionWidth": 354.2416
+    },
+    "desktopSessions": {
+      "clientWidth": 1440,
+      "scrollWidth": 1440,
+      "featureRight": 1380,
+      "textRight": 1379.0244,
+      "imageFit": "contain"
+    },
+    "phoneArchive": {
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "filterX": 11.997,
+      "filterRight": 378.247,
+      "filterHeight": 165.7965,
+      "filterPosition": "static"
+    },
+    "phoneAlbum": {
+      "clientWidth": 378,
+      "scrollWidth": 378,
+      "heroMediaCount": 0
+    },
+    "desktopDateRail": {
+      "navBottom": 239,
+      "yearHeadingTop": 239,
+      "observedJump": "January 2023"
+    },
+    "presentationDots": {
+      "inactiveBackground": "rgb(90, 100, 114)",
+      "inactiveWidth": 7.9992,
+      "activeWidth": 23.9977,
+      "height": 7.9992
+    },
+    "fictionBody": {
+      "before": "rgb(90, 100, 114)",
+      "after": "rgb(20, 32, 46)",
+      "background": "rgb(240, 241, 244)",
+      "font": "Georgia"
+    }
+  },
+  "interactionsObserved": [
+    "Album viewer Next and Escape",
+    "Timeline year and January 2023 jumps",
+    "Gallery search Millikin: 442 results",
+    "Publication search metering: 9 results",
+    "Archive whitespace/no-match/clear/load-more",
+    "Archive featured exact-title search: 1 result",
+    "Archive topic button filtered independently; row click opened the matching essay",
+    "Desktop slide 3/17 via marker; phone slide 2/17 via Next",
+    "Main Search to Sessions navigation"
+  ],
+  "tests": {
+    "main": [
+      "npm test PASS",
+      "node --test tests/audit-regression.test.mjs PASS",
+      "npm run check PASS",
+      "npm run lint PASS: 0 errors, 10 warnings",
+      "git diff --check PASS"
+    ],
+    "publication": [
+      "npm run build PASS after final slide/fiction fixes",
+      "git diff --check PASS"
+    ],
+    "gallery": [
+      "npm run check PASS",
+      "npm run build PASS",
+      "navigation/lightbox/pagination/canonical-name/collections targeted tests PASS",
+      "git diff --check PASS"
+    ]
+  },
+  "notVerified": [
+    "Download delivery",
+    "Save and consent persistence",
+    "Populated Saved state",
+    "Valid unlisted share",
+    "Physical phones",
+    "Production one-host routing",
+    "Coverage submission persistence"
+  ]
+}

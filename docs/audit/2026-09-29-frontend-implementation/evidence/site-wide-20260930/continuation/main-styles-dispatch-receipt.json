@@ -1,0 +1,53 @@
+{
+  "artifacts": {
+    "events": "/Users/nino/.local/state/nino-operator/dispatch/800f12fd-0150-4155-a062-92ba6cbed0fa/events.jsonl",
+    "last_message": "/Users/nino/.local/state/nino-operator/dispatch/800f12fd-0150-4155-a062-92ba6cbed0fa/last-message.txt",
+    "receipt": "/Users/nino/.local/state/nino-operator/dispatch/800f12fd-0150-4155-a062-92ba6cbed0fa/receipt.json",
+    "stderr": "/Users/nino/.local/state/nino-operator/dispatch/800f12fd-0150-4155-a062-92ba6cbed0fa/stderr.txt"
+  },
+  "classifier": {
+    "confidence": 0.83,
+    "error": null,
+    "latency_ms": 390,
+    "provider": "typesafe",
+    "tier": "balanced"
+  },
+  "completed_at": "2026-09-30T22:44:33.885439Z",
+  "created_at": "2026-09-30T22:41:00.384337Z",
+  "cwd": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929",
+  "dispatch_id": "800f12fd-0150-4155-a062-92ba6cbed0fa",
+  "exit_code": 0,
+  "experiment_id": null,
+  "observation_schema": 1,
+  "prompt_sha256": "43865e0c684c6c7333f7ff403d744192a2e1cf3ede9d540c893c99ae7d935a15",
+  "read_only": true,
+  "routing_mode": "balance",
+  "runtime_evidence": {
+    "child_thread_id": "01a0f47a-7e07-7c91-93e5-072c413fb74b",
+    "executable": "/Users/nino/.nvm/versions/node/v22.21.1/bin/codex",
+    "reported_model": null,
+    "reported_reasoning_effort": null,
+    "status": "completed"
+  },
+  "sandbox": {
+    "mode": "read-only",
+    "network": "off"
+  },
+  "schema_version": 1,
+  "selected_route": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "tier": "implementation"
+  },
+  "stage": "completed",
+  "stopping_advice": {
+    "decision": "allow",
+    "mode": "observe",
+    "reason": "task_record_missing"
+  },
+  "task_id": null,
+  "task_record_path": null,
+  "timeout_seconds": 900.0,
+  "updated_at": "2026-09-30T22:44:33.885401Z",
+  "work_kind": "routine"
+}

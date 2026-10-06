@@ -1,0 +1,30 @@
+{
+  "main": {
+    "worktree": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929",
+    "head": "fe44a2dacf899ea04d01d480dd89156702a894b2",
+    "files": {
+      "app/by-nino-library.css": "sha256:90d11023f8d6a2adf5f31ca80cedd1d17408f7df3f62420322fb0f9bbfe4539a"
+    }
+  },
+  "publication": {
+    "worktree": "/Users/nino/Workspace/dev/sites/nino/blog/.worktrees/codex/referral-design-b-20260930",
+    "head": "2dd2f0342ecf2fe5d233c755b672eefc78a4fc68",
+    "files": {
+      "astro-build/src/styles/publication.css": "sha256:5a9b891702f7ef498503433d72be4f84b0f5605f04505c1a707763939d2d2f26",
+      "astro-build/src/components/tutorials/Exercise.tsx": "sha256:5862d223d96782308691dea837bc3b851ab5d974b66483e52f9424580ae60de2",
+      "astro-build/src/components/tutorials/Checkpoint.tsx": "sha256:0046dff7a7450327c53e4a7a151c1dff79285360b3086f2c1a7aa19ec4e2111d",
+      "astro-build/src/components/tutorials/Template.tsx": "sha256:f8c59ef5497ee562779a386572e2ddf1ab88a6818d3e222ea8d849c12e9b5a7d"
+    }
+  },
+  "gallery": {
+    "worktree": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/referral-entry-20260930",
+    "head": "3a1bd85143e6d1e9e5c10f33a551a17995590f82",
+    "files": {
+      "src/lib/components/gallery/Lightbox.svelte": "sha256:bf2d08e00775e9741ce2f9113704c526b0d25cc714aea9aa646973a53ec42853",
+      "src/lib/stores/favorites.svelte.ts": "sha256:a1c8d43abde7296a08db339dfeb06abdb61f29871d09ef145d2351a07736cc69",
+      "playwright.config.ts": "sha256:341df6789576cac4dc0c091cce935ca0874c75276c40570b9564c6705d374f08",
+      "tests/refit-journeys.spec.ts": "sha256:b7a28db184c4ff896e258b22ab7fef3df5d3bc8ea581aa9070b4cabd3846fb9c",
+      "src/routes/api/download/+server.ts": "sha256:ffc807b7e6cb8d18f2478a6bd1d08fbb8406427725d98d1cf0f03bb94fccfb64"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "retrievedAt": "2026-09-29T22:48:52.270215+00:00",
+  "rows": [
+    {
+      "requested": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+      "final": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+      "status": 200,
+      "title": "How to Specify a Canonical with rel=&quot;canonical&quot; and Other Methods | Google Search Central &nbsp;|&nbsp; Documentation &nbsp;|&nbsp; Google for Developers",
+      "matches": [
+        {
+          "probe": "none of them are required",
+          "context": "r preferred canonical URL appearing in search results. While we encourage you to use these methods, none of them are required; your site will likely do just fine without specifying a canonical preference. That's because if you don't specify a canonical URL, Google will identify which version of the URL is objectively the best version to show to users in Search . If you use a CMS, such as WordPress, Wix, or Blogger , you might not be able to edit your HTML directly. "
+        }
+      ]
+    },
+    {
+      "requested": "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes",
+      "final": "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes",
+      "status": 200,
+      "title": "Site Moves and Migrations | Google Search Central &nbsp;|&nbsp; Documentation &nbsp;|&nbsp; Google for Developers",
+      "matches": [
+        {
+          "probe": "PageRank",
+          "context": "in sections. Don't worry about link credit. 301 and other permanent redirects don't cause a loss in PageRank . Make use of Search Console. Search Console is your friend, especially during a site move. Verify data for each property separately in Search Console. Use the Index Status report for a broad look. Use the Sitemaps report to view how many URLs submitted in a sitemap have been indexed. Be patient, give it time To consider a site move complete, Googlebot will h"
+        }
+      ]
+    },
+    {
+      "requested": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview",
+      "final": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview",
+      "status": 200,
+      "title": "What Is a Sitemap | Google Search Central &nbsp;|&nbsp; Documentation &nbsp;|&nbsp; Google for Developers",
+      "matches": [
+        {
+          "probe": "doesn't guarantee",
+          "context": "sites, or more specialized files. A sitemap helps search engines discover URLs on your site, but it doesn't guarantee that all the items in your sitemap will be crawled and indexed. However, in most cases, your site will benefit from having a sitemap. You might need a sitemap if: Your site is large. Generally, on large sites it's more difficult to make sure that every page is linked by at least one other page on the site. As a result, it's more likely Googlebot migh"
+        }
+      ]
+    },
+    {
+      "requested": "https://developers.cloudflare.com/web-analytics/data-metrics/",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ]
+}

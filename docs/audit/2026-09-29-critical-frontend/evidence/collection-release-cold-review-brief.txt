@@ -1,0 +1,20 @@
+Goal and reader: give the parent a cold usability review of the small analytics-choice addition on Nino's public website. Nino may arrive through a photo referral and needs to find photos, understand who operates the site, and control measurement. Inspect what is rendered before reading implementation. You are not alone in this repository; do not modify any file or branch ref.
+
+Read first: independently open both actual live mobile captures with view_image:
+/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/docs/audit/2026-09-29-critical-frontend/evidence/collection-release-browser-mobile-top.png
+/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/docs/audit/2026-09-29-critical-frontend/evidence/collection-release-mobile-footer-actual.png
+These are real 390 by 844 viewport captures of the same live Photography landing page, at its top and global footer. They are representative rendered states, not a visual spec. Then read app/components/SiteFooter.tsx and app/privacy/page.tsx only to confirm the exact added labels and disclosure. Do not read prior audit verdicts or design plans.
+
+Output structure: one short verdict on whether the visible analytics-choice addition introduces a usability defect that should block this collection release. Then up to three concrete observations, each tied to visible words/position or the source's exact disclosure. Distinguish visual observation, source finding, and unobserved interaction. Report any larger photo-finding weakness separately as existing product work; do not infer visitor counts or conclusions from screenshots.
+
+Cross references: the parent owns the release receipt and final judgment. No new document or forward-linked artifact is expected; return your findings in the final message.
+
+Do not: edit code/docs, browse, run tests, contact anyone, use credentials or a database, launch Chrome, create a new concept, promote a redesign, or equate source with observed behavior. Network is disabled. No emojis or padded praise.
+
+Voice and length: plain, direct, under 250 words. Aesthetic dislike alone is not a collection-release failure. You may criticize the visible layout, but state the user's actual consequence.
+
+Reporting: explicitly state which images you opened, what you could and could not verify, and your release-blocking verdict. No model/effort claim unless reported by your runtime.
+
+Runtime isolation: read-only work in /Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/site-collection-release-20260929. No browser lease, cookie, port, Docker stack, database, or visible window. Do not start or stop any process. Use only local reads and image inspection.
+
+Cleanup: leave no processes, files, tabs or fixtures. Parent retains the two images and closes all owned release resources.

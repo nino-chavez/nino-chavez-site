@@ -1,0 +1,70 @@
+{
+  "checkedAt": "2026-09-30T05:23:22.969Z",
+  "sourceCommit": "2c0672fe014ac175d72ea248c6e7a40fa4df5acc",
+  "deployment": {
+    "id": "7016fec8-9da3-404d-ba03-2bb804d38d61",
+    "source": "wrangler",
+    "strategy": "percentage",
+    "author_email": "abelino.chavez@gmail.com",
+    "annotations": {
+      "workers/triggered_by": "deployment"
+    },
+    "versions": [
+      {
+        "version_id": "77cdc5a7-8e35-4522-8239-fd3da52fb167",
+        "percentage": 100
+      }
+    ],
+    "created_on": "2026-09-30T05:20:44.193655Z"
+  },
+  "routes": [
+    {
+      "path": "/",
+      "status": 200,
+      "location": null,
+      "trackerCount": 1,
+      "hasChoices": true,
+      "privacyDisclosure": false
+    },
+    {
+      "path": "/work/blueprint",
+      "status": 200,
+      "location": null,
+      "trackerCount": 1,
+      "hasChoices": true,
+      "privacyDisclosure": false
+    },
+    {
+      "path": "/photography",
+      "status": 200,
+      "location": null,
+      "trackerCount": 1,
+      "hasChoices": true,
+      "privacyDisclosure": false
+    },
+    {
+      "path": "/demos",
+      "status": 200,
+      "location": null,
+      "trackerCount": 1,
+      "hasChoices": true,
+      "privacyDisclosure": false
+    },
+    {
+      "path": "/privacy",
+      "status": 200,
+      "location": null,
+      "trackerCount": 1,
+      "hasChoices": true,
+      "privacyDisclosure": true
+    },
+    {
+      "path": "/work/commerce-practice",
+      "status": 307,
+      "location": "https://ninochavez.co/work/commerce-architecture",
+      "trackerCount": 0,
+      "hasChoices": false,
+      "privacyDisclosure": false
+    }
+  ]
+}

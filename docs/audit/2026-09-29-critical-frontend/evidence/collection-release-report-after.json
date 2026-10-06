@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-09-30T05:39:17.672Z",
+  "report": {
+    "end": "2026-09-29",
+    "page": 0,
+    "pages": [],
+    "start": "2026-08-31",
+    "totals": {},
+    "available": true,
+    "freshness": {
+      "status": "current",
+      "refreshedAt": "2026-09-30T05:37:00.109138+00:00",
+      "lastFailureAt": null,
+      "todayAvailable": true,
+      "summaryCutoffAt": "2026-09-30T05:37:00.066768+00:00",
+      "completedThrough": "2026-09-29"
+    },
+    "pageCount": 1,
+    "todayTotals": {},
+    "excludedEvents": 0,
+    "previousTotals": {},
+    "firstRecordedAt": "2026-09-30T05:28:13.546+00:00",
+    "recordedSections": []
+  }
+}

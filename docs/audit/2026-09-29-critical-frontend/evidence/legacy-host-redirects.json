@@ -1,0 +1,30 @@
+{
+  "retrievedAt": "2026-09-29T22:47:47.075749+00:00",
+  "rows": [
+    {
+      "url": "https://photography.ninochavez.co/",
+      "status": 308,
+      "location": "/photography/"
+    },
+    {
+      "url": "https://photography.ninochavez.co/albums/hs-girls-vb-jca-at-acc-09-22-2026-Re7kho",
+      "status": 200,
+      "location": null
+    },
+    {
+      "url": "https://blog.ninochavez.co/",
+      "status": 301,
+      "location": "https://ninochavez.co/blog/"
+    },
+    {
+      "url": "https://demos.ninochavez.co/",
+      "status": 301,
+      "location": "https://ninochavez.co/demos/"
+    },
+    {
+      "url": "https://www.ninochavez.co/",
+      "status": 301,
+      "location": "https://ninochavez.co/"
+    }
+  ]
+}

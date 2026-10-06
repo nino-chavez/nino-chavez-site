@@ -1,0 +1,66 @@
+{
+  "gallery": [
+    {
+      "canonical": "https://ninochavez.co/photography/albums/college-womens-vb-millikin-at-north-central-09-23-2026-DWdCET",
+      "client": 390,
+      "collectionTop": 701.593017578125,
+      "height": 844,
+      "heroTop": 440.0990905761719,
+      "photoCount": 43,
+      "scrollWidth": 390,
+      "state": "album-phone-opening",
+      "title": "Millikin at North Central",
+      "width": 390
+    },
+    {
+      "client": 308,
+      "collectionTop": 646.7949829101562,
+      "height": 844,
+      "heroTop": 440.0990905761719,
+      "scrollWidth": 308,
+      "state": "album-320-opening",
+      "title": "Millikin at North Central",
+      "width": 320
+    },
+    {
+      "client": 1428,
+      "collectionTop": 633.4603881835938,
+      "height": 900,
+      "heroTop": 137.9954376220703,
+      "scrollWidth": 1428,
+      "state": "album-desktop-opening",
+      "title": "Millikin at North Central",
+      "width": 1440
+    },
+    {
+      "first": "/photography/photo/acc-v-jca-01?a=Re7kho",
+      "photos": 96,
+      "state": "larger-album-after-load-more"
+    },
+    {
+      "loadMore": false,
+      "photos": 120,
+      "state": "larger-album-after-whole-album-search"
+    }
+  ],
+  "article": [
+    {
+      "state": "phone",
+      "client": 390,
+      "scroll": 390
+    },
+    {
+      "state": "narrow",
+      "client": 320,
+      "scroll": 320
+    },
+    {
+      "state": "desktop",
+      "client": 1440,
+      "scroll": 1440
+    }
+  ],
+  "publicationSearch": "Built Pagefind query Jevons returned the representative article; result titles and highlights are readable; close icon observed at 18 by 18 CSS pixels.",
+  "contents": "Phone disclosure opened and anchor navigated to Doing less has to survive delegation; settled heading y 95.9.",
+  "limits": "Browser viewport emulation. No physical device, traffic or production routing acceptance."
+}

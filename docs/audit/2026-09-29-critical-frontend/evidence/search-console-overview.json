@@ -1,0 +1,117 @@
+{
+  "url": "https://search.google.com/search-console?resource_id=sc-domain%3Aninochavez.co",
+  "title": "Overview",
+  "text": "help_outline\nHelp\nmanage_accounts\nUser settings\n\t\nnotifications\nMessages\n7\n\nhome\nOverview\nlightbulb_2\nInsights\ntrending_up\nPerformance\nsearch\nURL inspection\nIndexing\nkeyboard_arrow_up\nfile_copy\nPages\naccount_tree\nSitemaps\nvisibility_off\nRemovals\nExperience\nkeyboard_arrow_up\nspeed\nCore Web Vitals\nlock\nHTTPS\nSecurity & Manual Actions\nkeyboard_arrow_down\nlink_2\nLinks\ntrophy\nAchievements\nsettings\nSettings\nfeedback\nSubmit feedback\ninfo\nAbout Search Console\nPrivacyTerms\nOverview\nlightbulb_outline\nGet insights into your site's Search performance\nchevron_right\nExplore your insights\nPerformance\nchevron_right\nFull report\n0 total web search clicks\n6/28/26\n7/10/26\n7/22/26\n8/3/26\n8/15/26\n8/27/26\n9/8/26\n9/20/26\n3\n2\n1\n0\nIndexing\nchevron_right\nFull report\n27 not indexed pages\n2 indexed pages\n6/30/26\n7/11/26\n7/22/26\n8/2/26\n8/13/26\n8/24/26\n9/4/26\n9/15/26\n45\n30\n15\n0\nExperience\nType\t\tGood\tNeeds improvement\tPoor\tTrend\t\n\nCore Web Vitals\n\t\nMobile\nDesktop\n\t\nNo data\nNo data\n\t\nNo data\nNo data\n\t\nNo data\nNo data\n\t\n\t\tHTTPS\t\tNon HTTPS\t\t\n\nHTTPS\n\t\t\n2\n\t\t\n0\n\t\n\t\nchevron_right\nEnhancements\nType\tValid\tInvalid\tTrend\t\nNo enhancements yet. Learn more",
+  "links": [
+    {
+      "text": "",
+      "href": "./search-console?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "",
+      "href": "https://accounts.google.com/SignOutOptions?hl=en&continue=https://search.google.com/search-console%3Fresource_id%3Dsc-domain:ninochavez.co&ec=GBRA1AI"
+    },
+    {
+      "text": "",
+      "href": "./search-console?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "home\nOverview",
+      "href": "./search-console?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "lightbulb_2\nInsights",
+      "href": "./search-console/performance/insights?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "trending_up\nPerformance",
+      "href": "./search-console/performance/search-analytics?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "file_copy\nPages",
+      "href": "./search-console/index?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "account_tree\nSitemaps",
+      "href": "./search-console/sitemaps?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "visibility_off\nRemovals",
+      "href": "./search-console/removals?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "speed\nCore Web Vitals",
+      "href": "./search-console/core-web-vitals?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "lock\nHTTPS",
+      "href": "./search-console/https?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "",
+      "href": "./search-console/manual-actions?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "",
+      "href": "./search-console/security-issues?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "link_2\nLinks",
+      "href": "./search-console/links?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "trophy\nAchievements",
+      "href": "./search-console/achievements?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "settings\nSettings",
+      "href": "./search-console/settings?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "",
+      "href": "./search-console/performance/insights?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "",
+      "href": "./search-console/performance/search-analytics?resource_id=sc-domain%3Aninochavez.co"
+    },
+    {
+      "text": "",
+      "href": "./search-console/index?resource_id=sc-domain%3Aninochavez.co"
+    }
+  ],
+  "buttons": [
+    {
+      "text": "",
+      "aria": "Go back"
+    },
+    {
+      "text": "",
+      "aria": "Clear search"
+    },
+    {
+      "text": "",
+      "aria": "Search"
+    },
+    {
+      "text": "feedback",
+      "aria": "Feedback"
+    },
+    {
+      "text": "help_outline",
+      "aria": "Help"
+    },
+    {
+      "text": "manage_accounts",
+      "aria": "User settings"
+    },
+    {
+      "text": "notifications",
+      "aria": "Unread messages: 7"
+    },
+    {
+      "text": "chevron_right",
+      "aria": "Open report"
+    }
+  ]
+}

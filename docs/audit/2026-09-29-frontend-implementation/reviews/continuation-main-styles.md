@@ -1,0 +1,19 @@
+No cross-route regression is confirmed from the allowed evidence.
+
+The two supplied frames show their route-specific layouts without an observed foreign style. The new stylesheet files do not exist at `HEAD`; their predecessor is the existing global styling in [globals.css](/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/app/globals.css:503).
+
+Source risk remains:
+
+- [by-nino-frontdoors.css](/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/app/by-nino-frontdoors.css:3) is harmless for cross-route leakage: every rule is rooted under an existing `.by-nino-*` wrapper. Its route importers add those wrappers, including Home at [page.tsx](/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/app/page.tsx:72), Writing at [blog/page.tsx](/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/app/blog/page.tsx:29), Photography, and About.
+
+- [by-nino-library.css](/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/app/by-nino-library.css:4) claims route scoping but does not prefix selectors with route wrappers. Most names are feature-specific and currently harmless: `.work-domains`, `.demo-studio__feature`, and `.learn-track-*`.
+
+- Possible leaks are its generic structural selectors: `.library-controls` and `.library-status` ([lines 196–265](/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/app/by-nino-library.css:196)), `.group-heading`, `.work-record`, and `.result-list` ([lines 267–342](/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/app/by-nino-library.css:267)), plus `.detail-header`, `.fact-list`, and `.record-artifact` ([lines 472–550](/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/app/by-nino-library.css:472)). They override predecessor global rules with the same class names.
+
+This is source risk, not a reproduced defect. Header navigation uses plain anchors ([SiteHeader.tsx](/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/app/components/SiteHeader.tsx:138)), so the main journey reloads. Footer navigation uses `Link` ([SiteFooter.tsx](/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/app/components/SiteFooter.tsx:32)), and VineNext’s Link prevents the browser navigation then performs a client-side route swap ([link.js](/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/node_modules/vinext/dist/shims/link.js:241)). Whether its route stylesheet remains active needs runtime proof.
+
+The most exposed candidate is Writing: it imports only the front-door sheet, but uses shared library classes for controls, status, headings, and records ([WritingLibrary.tsx](/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/app/components/WritingLibrary.tsx:111)). If reproduced, the smallest repair is to prefix each library rule with its existing owner (`.work-page`, `.demos-page`, `.search-page`, `.work-detail-page`, etc.), rather than changing navigation or redesigning controls.
+
+Disproving journey: load `/demos`, use the footer’s Writing link, then compare Writing’s controls/status/group headings with a hard reload of `/blog`. Equal computed styles and frames rule out the remaining stylesheet-residence concern.
+
+Reviewed: both supplied frames; `HEAD` comparison; `globals.css`, layout, shared header/footer, all 18 direct stylesheet importers, and VineNext Link behavior. Unreviewed: live client navigation/style retention, mobile, production, and route rendering beyond the two supplied frames. No files or runtime resources were created.

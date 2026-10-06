@@ -1,0 +1,80 @@
+[
+  {
+    "review": "visual",
+    "dispatch_id": "272c6bc5-8f14-4e3f-996a-c051d12425d5",
+    "stage": "completed",
+    "receipt": "/Users/nino/.local/state/nino-operator/dispatch/272c6bc5-8f14-4e3f-996a-c051d12425d5/receipt.json",
+    "created_at": "2026-09-29T23:38:08.902670Z",
+    "updated_at": "2026-09-29T23:43:51.151517Z",
+    "selected_route": {
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "high",
+      "tier": "deep"
+    },
+    "runtime_evidence": {
+      "child_thread_id": "01a0ef88-66eb-7ff0-a0b3-a417f07bf057",
+      "executable": "/Users/nino/.nvm/versions/node/v22.21.1/bin/codex",
+      "reported_model": null,
+      "reported_reasoning_effort": null,
+      "status": "completed"
+    },
+    "artifacts": {
+      "events": "/Users/nino/.local/state/nino-operator/dispatch/272c6bc5-8f14-4e3f-996a-c051d12425d5/events.jsonl",
+      "last_message": "/Users/nino/.local/state/nino-operator/dispatch/272c6bc5-8f14-4e3f-996a-c051d12425d5/last-message.txt",
+      "receipt": "/Users/nino/.local/state/nino-operator/dispatch/272c6bc5-8f14-4e3f-996a-c051d12425d5/receipt.json",
+      "stderr": "/Users/nino/.local/state/nino-operator/dispatch/272c6bc5-8f14-4e3f-996a-c051d12425d5/stderr.txt"
+    }
+  },
+  {
+    "review": "structure",
+    "dispatch_id": "155119dd-5287-4582-a18f-225da155da9d",
+    "stage": "completed",
+    "receipt": "/Users/nino/.local/state/nino-operator/dispatch/155119dd-5287-4582-a18f-225da155da9d/receipt.json",
+    "created_at": "2026-09-29T23:38:08.903658Z",
+    "updated_at": "2026-09-29T23:43:41.703906Z",
+    "selected_route": {
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "high",
+      "tier": "deep"
+    },
+    "runtime_evidence": {
+      "child_thread_id": "01a0ef88-66ea-7cb2-8758-636cf3a91aa0",
+      "executable": "/Users/nino/.nvm/versions/node/v22.21.1/bin/codex",
+      "reported_model": null,
+      "reported_reasoning_effort": null,
+      "status": "completed"
+    },
+    "artifacts": {
+      "events": "/Users/nino/.local/state/nino-operator/dispatch/155119dd-5287-4582-a18f-225da155da9d/events.jsonl",
+      "last_message": "/Users/nino/.local/state/nino-operator/dispatch/155119dd-5287-4582-a18f-225da155da9d/last-message.txt",
+      "receipt": "/Users/nino/.local/state/nino-operator/dispatch/155119dd-5287-4582-a18f-225da155da9d/receipt.json",
+      "stderr": "/Users/nino/.local/state/nino-operator/dispatch/155119dd-5287-4582-a18f-225da155da9d/stderr.txt"
+    }
+  },
+  {
+    "review": "verdict",
+    "dispatch_id": "6262211f-1531-4db9-9373-5920b5a7d5d9",
+    "stage": "completed",
+    "receipt": "/Users/nino/.local/state/nino-operator/dispatch/6262211f-1531-4db9-9373-5920b5a7d5d9/receipt.json",
+    "created_at": "2026-09-29T23:38:08.903625Z",
+    "updated_at": "2026-09-29T23:41:56.726433Z",
+    "selected_route": {
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "high",
+      "tier": "deep"
+    },
+    "runtime_evidence": {
+      "child_thread_id": "01a0ef88-66ea-7dd2-828e-a1420b10579a",
+      "executable": "/Users/nino/.nvm/versions/node/v22.21.1/bin/codex",
+      "reported_model": null,
+      "reported_reasoning_effort": null,
+      "status": "completed"
+    },
+    "artifacts": {
+      "events": "/Users/nino/.local/state/nino-operator/dispatch/6262211f-1531-4db9-9373-5920b5a7d5d9/events.jsonl",
+      "last_message": "/Users/nino/.local/state/nino-operator/dispatch/6262211f-1531-4db9-9373-5920b5a7d5d9/last-message.txt",
+      "receipt": "/Users/nino/.local/state/nino-operator/dispatch/6262211f-1531-4db9-9373-5920b5a7d5d9/receipt.json",
+      "stderr": "/Users/nino/.local/state/nino-operator/dispatch/6262211f-1531-4db9-9373-5920b5a7d5d9/stderr.txt"
+    }
+  }
+]

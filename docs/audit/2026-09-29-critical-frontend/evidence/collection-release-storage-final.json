@@ -1,0 +1,144 @@
+{
+  "checkedAt": "2026-09-30T05:50:34.473Z",
+  "requested": 8,
+  "stored": 8,
+  "rows": [
+    {
+      "event_id": "4250c4d7-e454-464e-bf2f-f0f7d318a092",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:41:15.711013+00:00",
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "ca0cac80-abfc-4ffb-8971-f2299b576777",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "photography",
+        "canonical_path": "/photography"
+      },
+      "anonymous_browser_id": null,
+      "visit_id": null
+    },
+    {
+      "event_id": "0ccfc753-36d4-45d1-a6ca-b28ab366dc24",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:41:16.667635+00:00",
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "7e96662b-2dc7-4a06-a1a5-66c06e9da152",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "writing",
+        "canonical_path": "/blog"
+      },
+      "anonymous_browser_id": null,
+      "visit_id": null
+    },
+    {
+      "event_id": "1c90e4b6-02a1-4c77-b09e-35d83343257e",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:41:17.703418+00:00",
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "c0840d99-668c-4161-b599-5de89045ed3d",
+        "content_kind": "article",
+        "layout_class": "wide",
+        "site_section": "writing",
+        "canonical_path": "/blog/who-is-still-driving"
+      },
+      "anonymous_browser_id": null,
+      "visit_id": null
+    },
+    {
+      "event_id": "f209b489-8f2e-410f-a97f-cce34e4e39ad",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:41:18.635969+00:00",
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "2c3dd388-6488-495a-a827-b68fea95247f",
+        "content_kind": "demo_story",
+        "layout_class": "wide",
+        "site_section": "demos",
+        "canonical_path": "/demos/browse-tool"
+      },
+      "anonymous_browser_id": null,
+      "visit_id": null
+    },
+    {
+      "event_id": "f4fc5e8a-ec78-4678-a91f-597990816029",
+      "event_name": "demo_section_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:41:18.640933+00:00",
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "2c3dd388-6488-495a-a827-b68fea95247f",
+        "position": 1,
+        "site_section": "demos",
+        "section_count": 10,
+        "canonical_path": "/demos/browse-tool"
+      },
+      "anonymous_browser_id": null,
+      "visit_id": null
+    },
+    {
+      "event_id": "048e6a9a-3ce0-45d3-b8b0-b1a6a6f76bc1",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:41:19.761709+00:00",
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "727428b8-6cec-40fe-bced-92b3e379e2a5",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "profile",
+        "canonical_path": "/"
+      },
+      "anonymous_browser_id": null,
+      "visit_id": null
+    },
+    {
+      "event_id": "209d451f-7bc7-488d-a02b-4c49c98183cd",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:41:20.794215+00:00",
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "1c406284-04d1-4e44-a4ad-327c4e39449e",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "profile",
+        "canonical_path": "/work/blueprint"
+      },
+      "anonymous_browser_id": null,
+      "visit_id": null
+    },
+    {
+      "event_id": "7e5ed1c1-97c6-4c97-9ce0-c4c16eeac180",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:41:24.134533+00:00",
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "2e550a3e-f795-494b-990c-0a28ec063b0d",
+        "content_kind": "page",
+        "layout_class": "narrow",
+        "site_section": "photography",
+        "canonical_path": "/photography"
+      },
+      "anonymous_browser_id": null,
+      "visit_id": null
+    }
+  ],
+  "outbox": []
+}

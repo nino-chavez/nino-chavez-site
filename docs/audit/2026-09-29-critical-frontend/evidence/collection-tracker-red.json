@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-09-30T04:11:11.388380+00:00",
+  "asset": "actual tracker from 70d3f8d",
+  "tests": "delayed preferences at /work/blueprint and /photography",
+  "exitCode": 1,
+  "expectedFailureObserved": true,
+  "browser": "installed chromium headless shell 1243; Playwright project runner",
+  "productionRequests": "intercepted by fixture",
+  "validation": "ANSI-normalized raw Playwright output; both assertions reached the expected 0-versus-1 failure"
+}

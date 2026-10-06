@@ -1,0 +1,59 @@
+{
+  "date": "2026-09-30",
+  "source": {
+    "galleryBranch": "codex/referral-entry-20260930",
+    "galleryBase": "3a1bd85",
+    "albumSourceSha256": "faae4551d205676f62e1b2c302cdf135de72c711a18c4cb6c5649a572da62220",
+    "uncommitted": true
+  },
+  "context": "Public published Millikin at North Central album in a read-only local preview. Browser POST requests blocked. Parent opened the frames; independent reviewer opened the five article/album frames before source reads. Article frames are from the prior local refit. Not a hosted release, visitor outcome, or physical-device acceptance.",
+  "captureMethod": "Browser viewport measured in CSS pixels. Screenshot clipping compensates for native DPR. Photo-action capture uses observed scroll position; an earlier top-of-document clip was replaced. All album captures include the full viewport, not a full-page stitch.",
+  "parentPhoneMeasurement": {
+    "viewportWidth": 390,
+    "viewportHeight": 844,
+    "documentClientWidth": 378,
+    "documentScrollWidth": 378,
+    "devicePixelRatio": 2.049999952316284
+  },
+  "worker": {
+    "dispatchId": "a6229f21-a1e1-4d8b-b7bb-50c27a7d7c4d",
+    "completed": true,
+    "observedModel": null,
+    "observedEffort": null,
+    "visualToolCallsVerified": true
+  },
+  "items": [
+    {
+      "file": "album-desktop.jpg",
+      "sha256": "55bf05b30849a4265c2c19e7a5604ae22bf67f822d06eda730cc13ab517e3ccb",
+      "pixels": [
+        1428,
+        900
+      ]
+    },
+    {
+      "file": "album-narrow.jpg",
+      "sha256": "983959afc76d11ffbd5d549fa286ed1c0a52026f200387a7b9854f98cdd53aea",
+      "pixels": [
+        308,
+        844
+      ]
+    },
+    {
+      "file": "album-phone.jpg",
+      "sha256": "449648e79d24c1aa7bb8d1474862781ca85afb2f9949e17b03c46455ee43059b",
+      "pixels": [
+        378,
+        844
+      ]
+    },
+    {
+      "file": "photo-actions-phone.jpg",
+      "sha256": "f659eae821d550037f40cc7306c7473f881f8d224c58d90f26d635c015534dd7",
+      "pixels": [
+        390,
+        844
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-09-30T05:11:09.628Z",
+  "nino-chavez-photography": {
+    "status": 200,
+    "id": "b3c32047-4527-48b5-9ec0-f6dc25168304",
+    "environment": "production",
+    "deployment_trigger": {
+      "type": "github:push",
+      "metadata": {
+        "branch": "main",
+        "commit_hash": "2eb4c6c10c9870c00981ab23b40dfa73e074415c",
+        "commit_message": "fix(analytics): retain the first view while preferences load (#172)\n\n* fix(analytics): wait for preferences before tracking views\n\n* test(analytics): verify both entry routes in isolated tracker suite",
+        "commit_dirty": false
+      }
+    },
+    "latest_stage": {
+      "name": "deploy",
+      "started_on": "2026-09-30T05:05:38.645933Z",
+      "ended_on": "2026-09-30T05:05:49.978764Z",
+      "status": "success"
+    },
+    "url": "https://b3c32047.nino-chavez-photography.pages.dev"
+  },
+  "ninochavez-blog": {
+    "status": 200,
+    "id": "c5d5f027-2a02-481e-9fd3-3fbf24241516",
+    "environment": "production",
+    "deployment_trigger": {
+      "type": "github:push",
+      "metadata": {
+        "branch": "main",
+        "commit_hash": "3c8a02035cd0cae8e61d86bd04d10f239a78b70d",
+        "commit_message": "fix(analytics): load shared activity tracker on public writing (#51)",
+        "commit_dirty": false
+      }
+    },
+    "latest_stage": {
+      "name": "build",
+      "started_on": "2026-09-30T05:09:43.042401Z",
+      "ended_on": null,
+      "status": "active"
+    },
+    "url": "https://c5d5f027.ninochavez-blog.pages.dev"
+  },
+  "asset": {
+    "status": 200,
+    "cacheControl": "public, max-age=0, must-revalidate",
+    "guard": true,
+    "sha256": "98b49e546ae86d93ecf06b4f4bcff5bcb721b1d084a23811fb0fb145bcb985d8"
+  }
+}

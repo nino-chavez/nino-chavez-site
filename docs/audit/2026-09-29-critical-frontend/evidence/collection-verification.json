@@ -1,0 +1,81 @@
+{
+  "checkedAt": "2026-09-30T04:20:27.508441+00:00",
+  "state": "prepared locally; production release and live acceptance pending",
+  "sources": {
+    "main": {
+      "path": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929",
+      "head": "fe44a2dacf899ea04d01d480dd89156702a894b2",
+      "change": "public mounts, demo markers, existing disclosure and choices, rendered checks"
+    },
+    "blog": {
+      "path": "/Users/nino/Workspace/dev/sites/nino/blog/.worktrees/codex/frontend-shell-20260929",
+      "head": "2dd2f0342ecf2fe5d233c755b672eefc78a4fc68",
+      "change": "public layout mount; noindex suppression"
+    },
+    "gallery": {
+      "path": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-collection-readiness-20260929",
+      "head": "7edaa6fbb1e64ec22f54c006068aa6448fb1efb2",
+      "fixCommit": "cc1a3959152d4a14f809b9f745b42fe8ff71e3e1",
+      "change": "preference-readiness gate and real-asset browser regressions"
+    }
+  },
+  "verification": {
+    "mainPublicInitialFullTest": "passed; ordinary sync output generated upstream content changes which were restored out of scope",
+    "mainTrackedSnapshotPublicBuildAndRenderedAuditTests": "passed",
+    "mainPrivateBuildAndFocusedCollectionTest": "passed; no tracker tags",
+    "mainCheck": "passed",
+    "mainLint": "0 errors; 8 existing warnings",
+    "mainPublicScriptNegativeControl": "failed before mounts; expected 1 script, observed 0",
+    "blogBuild": "passed",
+    "blogRendered": {
+      "artifact": "rendered Astro build",
+      "publicSharedPagesChecked": 359,
+      "noindexPagesChecked": 1,
+      "standaloneExportsOutsideTrackerScope": [
+        "dist/presentations/export/neuro-symbolic-convergence.html",
+        "dist/presentations/export/anatomy-of-ai-native-development.html",
+        "dist/presentations/export/the-7-10-year-evolution-of-the-web.html",
+        "dist/presentations/export/beyond-chat-agentic-workflows.html"
+      ],
+      "failures": []
+    },
+    "galleryCheck": "passed on parent host",
+    "galleryBuild": "passed on parent host",
+    "trackerNegativeControl": {
+      "checkedAt": "2026-09-30T04:11:11.388380+00:00",
+      "asset": "actual tracker from 70d3f8d",
+      "tests": "delayed preferences at /work/blueprint and /photography",
+      "exitCode": 1,
+      "expectedFailureObserved": true,
+      "browser": "installed chromium headless shell 1243; Playwright project runner",
+      "productionRequests": "intercepted by fixture",
+      "validation": "ANSI-normalized raw Playwright output; both assertions reached the expected 0-versus-1 failure"
+    },
+    "trackerBrowserSuite": {
+      "passed": 11,
+      "runtime": "Chromium headless shell 1243 via project configuration override; pinned Playwright runner",
+      "network": "site/API responses intercepted; no production event submissions",
+      "command": "SITE_ACTIVITY_BROWSER_EXECUTABLE=<installed executable> npm run analytics:site:test"
+    }
+  },
+  "limitations": [
+    "No production page, preference, forwarding flag, or database was changed.",
+    "Actual accepted production events and their stored/report counts still need post-release verification.",
+    "No new audience behavior is available from these synthetic tests.",
+    "The other analytics chat owns its intelligence/reporting work; no messages or mutations were sent there.",
+    "No linked PostHog forwarding was enabled.",
+    "Apply only collection commits when releasing; main and blog branch histories also contain earlier frontend review work."
+  ],
+  "dispatch": [
+    {
+      "id": "70eae58f-3371-443f-ae1f-deb41fd28490",
+      "kind": "read-only source inspection",
+      "runtimeModelAndEffort": "not reported by child runtime"
+    },
+    {
+      "id": "cf10249e-7c38-4559-bd07-c92146176336",
+      "kind": "isolated race fix",
+      "runtimeModelAndEffort": "not reported by child runtime"
+    }
+  ]
+}

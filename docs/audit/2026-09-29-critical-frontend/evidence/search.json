@@ -1,0 +1,297 @@
+{
+  "url": "https://ninochavez.co/search",
+  "title": "Search — Nino Chavez",
+  "description": "Search work, sessions, techniques, writing, and site pages.",
+  "robots": "index, follow",
+  "viewport": {
+    "width": 1440,
+    "inner": 1440,
+    "height": 900,
+    "scrollWidth": 1440,
+    "scrollHeight": 1478
+  },
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "Search"
+    },
+    {
+      "tag": "H2",
+      "text": "Start with a project, topic, or kind of work."
+    }
+  ],
+  "text": "Skip to content\nNino Chavez\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nSearch site\n\nACROSS NINOCHAVEZ.CO\n\nSearch\n\nSearch projects, tools, work sessions, learning paths, writing, and pages from one place.\n\nSearch this site\nSearch\n\nSEARCH EVERYTHING\n\nStart with a project, topic, or kind of work.\n\nTry photography, commerce, or volleyball.\n\nNino Chavez\n\nProduct architect and builder in Chicago.\n\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nNow\nLinks\nPrivacy\nGitHub ↗\n(opens in a new tab)\nLinkedIn ↗\n(opens in a new tab)\nEmail ↗\n1Password menu is available. Press down arrow to select.",
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "#main",
+      "target": ""
+    },
+    {
+      "text": "Nino Chavez",
+      "href": "/",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Search site",
+      "href": "/search",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Now",
+      "href": "/now",
+      "target": ""
+    },
+    {
+      "text": "Links",
+      "href": "/links",
+      "target": ""
+    },
+    {
+      "text": "photography",
+      "href": "/search?q=photography",
+      "target": ""
+    },
+    {
+      "text": "commerce",
+      "href": "/search?q=commerce",
+      "target": ""
+    },
+    {
+      "text": "volleyball",
+      "href": "/search?q=volleyball",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Now",
+      "href": "/now",
+      "target": ""
+    },
+    {
+      "text": "Links",
+      "href": "/links",
+      "target": ""
+    },
+    {
+      "text": "Privacy",
+      "href": "/privacy",
+      "target": ""
+    },
+    {
+      "text": "GitHub ↗\n(opens in a new tab)",
+      "href": "https://github.com/nino-chavez",
+      "target": "_blank"
+    },
+    {
+      "text": "LinkedIn ↗\n(opens in a new tab)",
+      "href": "https://www.linkedin.com/in/nino-chavez/",
+      "target": "_blank"
+    },
+    {
+      "text": "Email ↗",
+      "href": "mailto:nino@ninochavez.co",
+      "target": ""
+    }
+  ],
+  "scripts": [
+    "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+  ],
+  "performance": [
+    {
+      "ttfb": 32.799999952316284,
+      "domLoaded": 111.80000007152557,
+      "load": 115.80000007152557,
+      "transferSize": 4453,
+      "encodedBodySize": 4153,
+      "decodedBodySize": 16746
+    }
+  ],
+  "resources": [
+    {
+      "name": "https://ninochavez.co/cdn-cgi/speculation",
+      "transfer": 451,
+      "encoded": 151,
+      "duration": 24.700000047683716
+    },
+    {
+      "name": "https://ninochavez.co/assets/rolldown-runtime-S-ySWqyJ.js",
+      "transfer": 703,
+      "encoded": 403,
+      "duration": 56.199999928474426
+    },
+    {
+      "name": "https://ninochavez.co/assets/layout-segment-context-Cm8kYRGr.js",
+      "transfer": 490,
+      "encoded": 190,
+      "duration": 56.09999990463257
+    },
+    {
+      "name": "https://ninochavez.co/assets/framework-DjPHiq1u.js",
+      "transfer": 59528,
+      "encoded": 59228,
+      "duration": 61.09999990463257
+    },
+    {
+      "name": "https://ninochavez.co/assets/index-BmdNnmlC.css",
+      "transfer": 31864,
+      "encoded": 31564,
+      "duration": 66.79999995231628
+    },
+    {
+      "name": "https://ninochavez.co/assets/index-B-UOV3cu.js",
+      "transfer": 25559,
+      "encoded": 25259,
+      "duration": 67.19999992847443
+    },
+    {
+      "name": "https://ninochavez.co/assets/SiteHeader-DM9R833z.js",
+      "transfer": 1384,
+      "encoded": 1084,
+      "duration": 55.90000009536743
+    },
+    {
+      "name": "https://ninochavez.co/assets/query-BqyIlvsm.js",
+      "transfer": 1070,
+      "encoded": 770,
+      "duration": 56.40000009536743
+    },
+    {
+      "name": "https://ninochavez.co/assets/link-B8uMb1L1.js",
+      "transfer": 3506,
+      "encoded": 3206,
+      "duration": 61.40000009536743
+    },
+    {
+      "name": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "transfer": 0,
+      "encoded": 0,
+      "duration": 12.600000023841858
+    },
+    {
+      "name": "https://ninochavez.co/fonts/space-mono-latin-700-normal.woff2",
+      "transfer": 0,
+      "encoded": 16724,
+      "duration": 0.8000000715255737
+    },
+    {
+      "name": "https://ninochavez.co/fonts/inter-latin.woff2",
+      "transfer": 0,
+      "encoded": 48432,
+      "duration": 0.8000000715255737
+    },
+    {
+      "name": "https://ninochavez.co/cdn-cgi/rum?",
+      "transfer": 300,
+      "encoded": 0,
+      "duration": 18.100000023841858
+    },
+    {
+      "name": "https://ninochavez.co/search.rsc?q=photography&_rsc=hEdSYtBncL1HUmIT",
+      "transfer": 3935,
+      "encoded": 3635,
+      "duration": 59.799999952316284
+    },
+    {
+      "name": "https://ninochavez.co/search.rsc?q=volleyball&_rsc=hEdSYtBncL1HUmIT",
+      "transfer": 4620,
+      "encoded": 4320,
+      "duration": 72.10000002384186
+    },
+    {
+      "name": "https://ninochavez.co/search.rsc?q=commerce&_rsc=hEdSYtBncL1HUmIT",
+      "transfer": 6350,
+      "encoded": 6050,
+      "duration": 79.60000002384186
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "checkedAt": "2026-09-30T05:41:25.361Z",
+  "syntheticAcceptance": true,
+  "classificationMethod": "Existing browser exclusion cookie applied only to collector requests; actual preferences responses and client events are unchanged.",
+  "originalUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+  "blockedTrafficBeacons": 8,
+  "targetId": "1615748912EF724881DFA816B2DE01D7",
+  "events": [
+    {
+      "request": {
+        "event_id": "4250c4d7-e454-464e-bf2f-f0f7d318a092",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T05:41:15.664Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "photography",
+          "canonical_path": "/photography",
+          "view_id": "ca0cac80-abfc-4ffb-8971-f2299b576777",
+          "layout_class": "wide",
+          "content_kind": "page"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "4250c4d7-e454-464e-bf2f-f0f7d318a092",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "0ccfc753-36d4-45d1-a6ca-b28ab366dc24",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T05:41:16.624Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "writing",
+          "canonical_path": "/blog",
+          "view_id": "7e96662b-2dc7-4a06-a1a5-66c06e9da152",
+          "layout_class": "wide",
+          "content_kind": "page"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "0ccfc753-36d4-45d1-a6ca-b28ab366dc24",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "1c90e4b6-02a1-4c77-b09e-35d83343257e",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T05:41:17.658Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "writing",
+          "canonical_path": "/blog/who-is-still-driving",
+          "view_id": "c0840d99-668c-4161-b599-5de89045ed3d",
+          "layout_class": "wide",
+          "content_kind": "article"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "1c90e4b6-02a1-4c77-b09e-35d83343257e",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "f209b489-8f2e-410f-a97f-cce34e4e39ad",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T05:41:18.591Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "demos",
+          "canonical_path": "/demos/browse-tool",
+          "view_id": "2c3dd388-6488-495a-a827-b68fea95247f",
+          "layout_class": "wide",
+          "content_kind": "demo_story"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "f209b489-8f2e-410f-a97f-cce34e4e39ad",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "f4fc5e8a-ec78-4678-a91f-597990816029",
+        "schema_version": 2,
+        "event_name": "demo_section_viewed",
+        "occurred_at": "2026-09-30T05:41:18.593Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "demos",
+          "canonical_path": "/demos/browse-tool",
+          "view_id": "2c3dd388-6488-495a-a827-b68fea95247f",
+          "position": 1,
+          "section_count": 10
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "f4fc5e8a-ec78-4678-a91f-597990816029",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "048e6a9a-3ce0-45d3-b8b0-b1a6a6f76bc1",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T05:41:19.715Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "profile",
+          "canonical_path": "/",
+          "view_id": "727428b8-6cec-40fe-bced-92b3e379e2a5",
+          "layout_class": "wide",
+          "content_kind": "page"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "048e6a9a-3ce0-45d3-b8b0-b1a6a6f76bc1",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "209d451f-7bc7-488d-a02b-4c49c98183cd",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T05:41:20.756Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "profile",
+          "canonical_path": "/work/blueprint",
+          "view_id": "1c406284-04d1-4e44-a4ad-327c4e39449e",
+          "layout_class": "wide",
+          "content_kind": "page"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "209d451f-7bc7-488d-a02b-4c49c98183cd",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "7e5ed1c1-97c6-4c97-9ce0-c4c16eeac180",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T05:41:24.104Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "photography",
+          "canonical_path": "/photography",
+          "view_id": "2e550a3e-f795-494b-990c-0a28ec063b0d",
+          "layout_class": "narrow",
+          "content_kind": "page"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "7e5ed1c1-97c6-4c97-9ce0-c4c16eeac180",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    }
+  ],
+  "observations": [
+    {
+      "path": "/photography",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "analyticsPath": "/photography",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    },
+    {
+      "path": "/blog",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "analyticsPath": "/blog",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    },
+    {
+      "path": "/blog/who-is-still-driving",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    },
+    {
+      "path": "/demos/browse-tool",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "analyticsPath": "/demos/browse-tool",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    },
+    {
+      "path": "/",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "analyticsPath": "/",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    },
+    {
+      "path": "/work/blueprint",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "analyticsPath": "/work/blueprint",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    },
+    {
+      "path": "/photography",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "analyticsPath": "/photography",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    },
+    {
+      "mobileGeometry": {
+        "viewport": 390,
+        "scrollWidth": 390
+      },
+      "overflowControl": {
+        "viewport": 390,
+        "scrollWidth": 394
+      },
+      "footerHasChoices": false
+    }
+  ],
+  "failures": [],
+  "screens": [
+    "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/docs/audit/2026-09-29-critical-frontend/evidence/collection-release-browser-mobile-top.png",
+    "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/docs/audit/2026-09-29-critical-frontend/evidence/collection-release-browser-mobile-footer.png"
+  ]
+}

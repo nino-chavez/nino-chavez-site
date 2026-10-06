@@ -1,0 +1,17 @@
+{
+  "phone": {
+    "bodyOverflow": "hidden",
+    "dpr": 2.049999952316284,
+    "focusInside": true,
+    "focused": "Close lightbox",
+    "height": 844,
+    "path": "/photography/albums/college-womens-vb-millikin-at-north-central-09-23-2026-DWdCET",
+    "width": 390
+  },
+  "closed": {
+    "bodyOverflow": "",
+    "dialog": false,
+    "focusClass": "photo-card group relative aspect-[4/3] bg-charcoal-900 rounded-lg overflow-hidden border border-charcoal-800 transition-all cursor-pointer outline-none block s-PWlKS4YySPpc",
+    "focusHref": "/photography/photo/DSC09426?a=DWdCET"
+  }
+}

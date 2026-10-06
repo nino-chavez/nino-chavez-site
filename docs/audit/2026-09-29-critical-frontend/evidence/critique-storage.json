@@ -1,0 +1,9 @@
+{
+  "target": "https://ninochavez.co",
+  "writeExitCode": 0,
+  "writeOutput": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.impeccable/critique/2026-09-29T23-02-24Z__ninochavez-co.md",
+  "trendExitCode": 0,
+  "trendOutput": "[\n  {\n    \"target\": \"Hypercritical frontend assessment of ninochavez.co\",\n    \"total_score\": 13,\n    \"max_score\": 20,\n    \"na_heuristics\": \"3,5,7,9,10\",\n    \"p0_count\": 0,\n    \"p1_count\": 1,\n    \"target_identity\": \"url:https://ninochavez.co/\",\n    \"timestamp\": \"2026-09-29T23-02-24Z\",\n    \"slug\": \"ninochavez-co\"\n  }\n]",
+  "scoreScope": "Static Assessment A, five scored heuristics; not empirical usability",
+  "temporaryBodyRemoved": true
+}

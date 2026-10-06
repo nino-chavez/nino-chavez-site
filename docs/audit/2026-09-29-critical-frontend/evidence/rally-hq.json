@@ -1,0 +1,339 @@
+{
+  "url": "https://ninochavez.co/work/rally-hq",
+  "title": "Rally HQ — Nino Chavez",
+  "canonical": "https://ninochavez.co/work/rally-hq",
+  "description": "Tournament registration, brackets, schedules, and live scoring in one public event page.",
+  "robots": "index, follow",
+  "viewport": {
+    "width": 1440,
+    "inner": 1440,
+    "height": 900,
+    "scrollWidth": 1440,
+    "scrollHeight": 3505
+  },
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "Rally HQ"
+    },
+    {
+      "tag": "H2",
+      "text": "What this work does"
+    },
+    {
+      "tag": "H3",
+      "text": "Before play"
+    },
+    {
+      "tag": "H3",
+      "text": "During the event"
+    },
+    {
+      "tag": "H3",
+      "text": "Open the product"
+    },
+    {
+      "tag": "H2",
+      "text": "Written about this"
+    }
+  ],
+  "text": "Skip to content\nNino Chavez\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nSearch site\nWork\nRally HQ\n\nVOLLEYBALL\n\nRally HQ\n\nTournament registration, brackets, schedules, and live scoring in one public event page.\n\nOpen Rally HQ\n↗\n(opens in a new tab)\nStatus\nLive — available to use now\nType\nsite\nAccess\npublic\nUpdated\n2026-07-26\nLIVE PRODUCT SURFACE\nRALLY HQ\n\nLIVE PRODUCT\n\nWhat this work does\n\nRally HQ gives organizers and players one public event surface for registration, schedules, brackets, court assignments, and scoring.\n\nBefore play\n\nPublish registration, divisions, teams, pools, and schedules without splitting the record across tools.\n\nDuring the event\n\nKeep brackets, court assignments, and live scores available from the same event page.\n\nOpen the product\n\nThe live site carries current and completed tournaments.\n\nEXPLICIT RELATIONSHIPS\n\nWritten about this\nESSAY\nWhat 223 Sessions Taught Me About Working with AI\nI pulled 30 days of Claude Code session data — 223 sessions, 38,000+ prompts, 32 projects, 1.2 GB of conversation. The numbers tell a story about what AI-native development actually looks like when nobody's watching.\nESSAY\nSetting Up an AI-Native Dev Environment\nThe practical companion to 'What 223 Sessions Taught Me.' How to set up CLAUDE.md files, the memory system, custom skills, project-scoped conversations, and the infrastructure that makes AI-assisted development actually sustainable.\nESSAY\nI Don't Want to Be a 10-Person Team of One\nI've been the bridge. Between strategy and code, between design and delivery. It's exhausting. And lately I've been wondering if exhausting is the same thing as valuable.\nESSAY\nThe Next Chapter: What Happens When You Try to Scale Intent-Driven Engineering\nI've spent six months proving that one person with AI agents can build what used to require a team. Now I'm joining Commerce.com to find out if that methodology survives contact with an organization.\nESSAY\nThe A/B Test That Built the Lathe\nI pasted a two-paragraph plan into a terminal and walked away for two days. The strategy package that came back was good. Then I asked Claude to do it again from a template, without me in the feedback loop. The template version landed at 70-80% of the quality in 10-15x less time. The gap — and the loop that closed it — has a name from another century.\n\n← Return to Work\n\nNino Chavez\n\nProduct architect and builder in Chicago.\n\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nNow\nLinks\nPrivacy\nGitHub ↗\n(opens in a new tab)\nLinkedIn ↗\n(opens in a new tab)\nEmail ↗",
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "#main",
+      "target": ""
+    },
+    {
+      "text": "Nino Chavez",
+      "href": "/",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Search site",
+      "href": "/search",
+      "target": ""
+    },
+    {
+      "text": "WorkCurrent section",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Now",
+      "href": "/now",
+      "target": ""
+    },
+    {
+      "text": "Links",
+      "href": "/links",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Open Rally HQ\n↗\n(opens in a new tab)",
+      "href": "https://rallyhq.app",
+      "target": "_blank"
+    },
+    {
+      "text": "ESSAY\nWhat 223 Sessions Taught Me About Working with AI\nI pulled 30 days of Claude Code session data — 223 sessions, 38,000+ prompts, 32 projects, 1.2 GB of conversation. The numbers tell a story about what AI-native development actually looks like when nobody's watching.",
+      "href": "https://ninochavez.co/blog/what-223-sessions-taught-me-about-working-with-ai",
+      "target": "_blank"
+    },
+    {
+      "text": "ESSAY\nSetting Up an AI-Native Dev Environment\nThe practical companion to 'What 223 Sessions Taught Me.' How to set up CLAUDE.md files, the memory system, custom skills, project-scoped conversations, and the infrastructure that makes AI-assisted development actually sustainable.",
+      "href": "https://ninochavez.co/blog/setting-up-an-ai-native-dev-environment",
+      "target": "_blank"
+    },
+    {
+      "text": "ESSAY\nI Don't Want to Be a 10-Person Team of One\nI've been the bridge. Between strategy and code, between design and delivery. It's exhausting. And lately I've been wondering if exhausting is the same thing as valuable.",
+      "href": "https://ninochavez.co/blog/i-dont-want-to-be-a-10-person-team-of-one",
+      "target": "_blank"
+    },
+    {
+      "text": "ESSAY\nThe Next Chapter: What Happens When You Try to Scale Intent-Driven Engineering\nI've spent six months proving that one person with AI agents can build what used to require a team. Now I'm joining Commerce.com to find out if that methodology survives contact with an organization.",
+      "href": "https://ninochavez.co/blog/the-next-chapter-scaling-intent-driven-engineering",
+      "target": "_blank"
+    },
+    {
+      "text": "ESSAY\nThe A/B Test That Built the Lathe\nI pasted a two-paragraph plan into a terminal and walked away for two days. The strategy package that came back was good. Then I asked Claude to do it again from a template, without me in the feedback loop. The template version landed at 70-80% of the quality in 10-15x less time. The gap — and the loop that closed it — has a name from another century.",
+      "href": "https://ninochavez.co/blog/the-backport-i-didnt-make",
+      "target": "_blank"
+    },
+    {
+      "text": "← Return to Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Now",
+      "href": "/now",
+      "target": ""
+    },
+    {
+      "text": "Links",
+      "href": "/links",
+      "target": ""
+    },
+    {
+      "text": "Privacy",
+      "href": "/privacy",
+      "target": ""
+    },
+    {
+      "text": "GitHub ↗\n(opens in a new tab)",
+      "href": "https://github.com/nino-chavez",
+      "target": "_blank"
+    },
+    {
+      "text": "LinkedIn ↗\n(opens in a new tab)",
+      "href": "https://www.linkedin.com/in/nino-chavez/",
+      "target": "_blank"
+    },
+    {
+      "text": "Email ↗",
+      "href": "mailto:nino@ninochavez.co",
+      "target": ""
+    }
+  ],
+  "scripts": [
+    "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+  ],
+  "performance": [
+    {
+      "ttfb": 46.10000002384186,
+      "domLoaded": 121,
+      "load": 129.60000002384186,
+      "transferSize": 6577,
+      "encodedBodySize": 6277,
+      "decodedBodySize": 26831
+    }
+  ],
+  "resources": [
+    {
+      "name": "https://ninochavez.co/cdn-cgi/speculation",
+      "transfer": 451,
+      "encoded": 151,
+      "duration": 24.600000023841858
+    },
+    {
+      "name": "https://ninochavez.co/work/rally-hq.webp",
+      "transfer": 0,
+      "encoded": 40120,
+      "duration": 15.299999952316284
+    },
+    {
+      "name": "https://ninochavez.co/assets/rolldown-runtime-S-ySWqyJ.js",
+      "transfer": 703,
+      "encoded": 403,
+      "duration": 48
+    },
+    {
+      "name": "https://ninochavez.co/assets/layout-segment-context-Cm8kYRGr.js",
+      "transfer": 490,
+      "encoded": 190,
+      "duration": 48.39999997615814
+    },
+    {
+      "name": "https://ninochavez.co/assets/index-BmdNnmlC.css",
+      "transfer": 31861,
+      "encoded": 31561,
+      "duration": 53.89999997615814
+    },
+    {
+      "name": "https://ninochavez.co/assets/SiteHeader-DM9R833z.js",
+      "transfer": 300,
+      "encoded": 1084,
+      "duration": 42.59999990463257
+    },
+    {
+      "name": "https://ninochavez.co/assets/link-B8uMb1L1.js",
+      "transfer": 3545,
+      "encoded": 3245,
+      "duration": 47.5
+    },
+    {
+      "name": "https://ninochavez.co/assets/index-B-UOV3cu.js",
+      "transfer": 25623,
+      "encoded": 25323,
+      "duration": 47.799999952316284
+    },
+    {
+      "name": "https://ninochavez.co/assets/framework-DjPHiq1u.js",
+      "transfer": 59670,
+      "encoded": 59370,
+      "duration": 62.39999997615814
+    },
+    {
+      "name": "https://ninochavez.co/assets/query-BqyIlvsm.js",
+      "transfer": 1070,
+      "encoded": 770,
+      "duration": 47.40000009536743
+    },
+    {
+      "name": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "transfer": 0,
+      "encoded": 0,
+      "duration": 15.399999976158142
+    },
+    {
+      "name": "https://ninochavez.co/fonts/inter-latin.woff2",
+      "transfer": 0,
+      "encoded": 48432,
+      "duration": 0.8000000715255737
+    },
+    {
+      "name": "https://ninochavez.co/fonts/space-mono-latin-700-normal.woff2",
+      "transfer": 0,
+      "encoded": 16724,
+      "duration": 0.6000000238418579
+    },
+    {
+      "name": "https://ninochavez.co/fonts/space-mono-latin-400-normal.woff2",
+      "transfer": 0,
+      "encoded": 16520,
+      "duration": 0.8000000715255737
+    },
+    {
+      "name": "https://ninochavez.co/cdn-cgi/rum?",
+      "transfer": 300,
+      "encoded": 0,
+      "duration": 20
+    },
+    {
+      "name": "https://ninochavez.co/work.rsc?_rsc=fu-zAmeUSH0QzjoB",
+      "transfer": 5966,
+      "encoded": 5666,
+      "duration": 52.5
+    }
+  ]
+}
