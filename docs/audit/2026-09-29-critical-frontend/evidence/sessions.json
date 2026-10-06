@@ -1,0 +1,491 @@
+{
+  "url": "https://ninochavez.co/demos",
+  "title": "Sessions — Nino Chavez",
+  "description": "Complete work sessions and reusable techniques from real agent-assisted work.",
+  "robots": "index, follow",
+  "viewport": {
+    "width": 1440,
+    "inner": 1440,
+    "height": 900,
+    "scrollWidth": 1440,
+    "scrollHeight": 5367
+  },
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "Sessions"
+    },
+    {
+      "tag": "H2",
+      "text": "Browse sessions and techniques."
+    },
+    {
+      "tag": "H2",
+      "text": "Full sessions"
+    },
+    {
+      "tag": "H2",
+      "text": "Techniques"
+    }
+  ],
+  "text": "Skip to content\nNino Chavez\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nSearch site\n\nHOW THE WORK GETS DONE\n\nSessions\n\nSee complete work sessions, including mistakes, corrections, and the evidence behind each decision.\n\nOpen a full session or jump to one tested technique you can reuse.\n\n18\nSESSIONS\n↓\n11\nTECHNIQUES\n↓\nSESSION 02\nSTART WITH A COMPLETE SESSION\nThe Browser Is a Shell Command\nOPEN THE SESSION\n→\n01\nSee the work as it happened.\nFollow the decisions, failures, and corrections in order.\n02\nReuse a tested technique.\nTake one useful part without replaying the whole session.\n\nCOMPLETE COLLECTION\n\nBrowse sessions and techniques.\n\nSearch all 29 sessions and techniques, or open either collection directly.\n\nSEARCH SESSIONS AND TECHNIQUES\nTYPE\nAll sessions and techniques\nSessions\nTechniques\n\n29 OF 29 SESSIONS AND TECHNIQUES IN VIEW\n\nALL SESSIONS AND TECHNIQUES\nFull sessions\n\n18 SESSIONS\n\nSee the work in the order it happened.\nS01\nDELEGATION · 2026-07\nTwelve Messages\n\nEverything typed to take a live event from spreadsheet chaos to published social content — and the method that made the other 99% happen.\n\nThe verbatim conversation, a five-principle method, the pipeline that runs it, and two honest failures.\n\nOPEN SESSION\n→\nS02\nTOOLS · 2026-07\nThe Browser Is a Shell Command\n\nReplacing 18,000 tokens of always-loaded browser-automation schema with ten shell commands and a README — and why the agent gets sharper, not weaker.\n\nThe cost math, four design choices that make a tool agent-friendly, live transcripts, and where MCP still wins.\n\nOPEN SESSION\n→\nS03\nENFORCEMENT · 2026-07\nTaught Once, Enforced Forever\n\nCorrections given in chat decay when the session ends. The fix is changing the agent's environment — helpers, deny-hooks, and CI ratchets that carry the rule forever.\n\nFour real guards with their origin audits, verbatim deny messages, and the five properties that keep guardrails from getting ripped out.\n\nOPEN SESSION\n→\nS04\nMEMORY · 2026-08\nYour Sessions Are a Corpus\n\nA 24 GB session archive forced the next question: how do you keep the lessons, prove closeout, and let the raw record expire?\n\nThe mining loop end to end, plus the measured retention incident that separated canonical truth, compact recall, raw transcripts, and reproducible worktree output.\n\nOPEN SESSION\n→\nS05\nAUTONOMY · 2026-07\nThe Product That Files Its Own Tickets\n\nEnd users file feedback, an LLM judge triages it into GitHub Issues, an agent implements the safe ones — with the autonomy boundary in deterministic code and a human holding the only merge key.\n\nThe four-stage loop, the allowlist gate read from live source, six real tickets sorted by lane, and a run ledger whose best result was declining to fabricate a fix.\n\nOPEN SESSION\n→\nS06\nKNOWLEDGE · 2026-07\nThe Registry of Landmines\n\nSome load-bearing facts are invisible to search — the code compiles and the behavior is still wrong. One registry file holds them, a derive catalog enforces them in CI, and a meta-test keeps the registry from lying about itself.\n\nThe bug that shipped twice, the token economics of pre-paid conclusions, the why/decided/currently-true split, and the registry-about-the-registry.\n\nOPEN SESSION\n→\nS07\nVERIFICATION · 2026-07\nThe Agent Said It Checked\n\n\"Verified\" is a sentence, not a fact. A security migration passed its audit while production was broken — and the discipline that came out of it caught three more false claims building this very series.\n\nThe circular-audit failure mode, a prod-broke-twice case study peeled layer by layer, and the re-derivation discipline with its real budget.\n\nOPEN SESSION\n→\nS08\nPROCESS · 2026-07\nGates Between Agentic Stages\n\nAgents are strong inside a stage and unreliable at the boundaries. A delivery methodology built on that: deterministic gates between agentic stages — 88 versioned revisions, 14 running initiatives, and the day production published fiction.\n\nThe deterministic-core/agentic-shell shape, the migration-sweep incident and the inverted check it left behind, and a methodology versioned like a product.\n\nOPEN SESSION\n→\nS09\nDOCUMENTATION · 2026-07\nThe Beautifier Was an Auditor\n\nA skill built to make a README prettier turned out to be a drift detector. Across five repos it flagged a deploy doc still pointing at a platform the project left months ago, a command list that no longer matched the actual commands, and capabilities the code had grown that nobody had written down. The visual polish was the smallest thing it did.\n\nWhy a beautifier's real payload is its inspect step, five repos' worth of drift it surfaced, and one honest failure — claiming checked when the check was only partial.\n\nOPEN SESSION\n→\nS10\nAPPLIED ADVISORY · 2026-07\nThe Chiropractor's Four Questions\n\nA sports chiropractor asked four plain questions about selling rehab programs from his website. The AI's answer was confident, tabulated, sourced — and its evidence was marketing all the way down. Twice.\n\nA first pass built on vendors ranking themselves, a 'correction' that swapped in a competitor's stat, three refuted claims with the fetches that killed them, and the confidence-label system that came out the other side.\n\nOPEN SESSION\n→\nS11\nCONFIG EXPERIMENT · 2026-07\nThe Sycophancy Was in the Config\n\nA rival model reviewing my agent's work looked sharper — it demanded competing candidates and restraint. So my agent A/B tested its own harness: same model, same prompt, config on and off. The vanilla arm pushed back on me twice. The configured arm never did.\n\nA twelve-run experiment on a live harness: the bare-mode control arm, a self-contaminating probe, a scorecard separating model habits from config damage, and one validated sentence that flipped the behavior 2/2.\n\nOPEN SESSION\n→\nS12\nTOOL ADOPTION · 2026-07\nOne Component I Didn't Already Have\n\nA plugin advertising eleven agents and fifty-four hooks, measured against the setup I already run. Of the eight components that could land on my machine, three were already going, one was the wrong platform, one was broken upstream, two were costs. The delta was one.\n\nA component-by-component subtraction against a real machine, three mechanical queries against the part of a repo nobody curates, a retracted recommendation, and the correction that produced all of it.\n\nOPEN SESSION\n→\nS13\nADMISSION GATES · 2026-08\nThe Gate Was Written First\n\nThree ways to make a meeting archive answer a question, three preregistered gates, three refusals in one day. Each gate was committed to git before the model weights finished downloading — so when the scores came back plausible, there was nothing left to negotiate with. The feature that shipped is the one the evidence admitted.\n\nA one-day trilogy of preregistered probes — a similarity floor, a pairwise scorer, an extractive no-answer head — each gate frozen before first inference, each failed without tuning; the falsifier showing a right answer scoring below a wrong one, which no threshold can fix; and the honest feature that shipped instead.\n\nOPEN SESSION\n→\nS14\nDERIVED NOT NARRATED · 2026-08\nKibble & Co. Doesn't Sell Anything\n\nA pet-supply storefront went live on a real BigCommerce sandbox, moving real Stripe-sandbox money through real dunning logic — and it exists only so a subscription-billing platform could be built against a genuine store instead of a slide deck. Five deployed apps, 94 ADRs, and a generated file that answers 'what's shipped' so nobody has to narrate it. The method is the point; the pet food is the test fixture.\n\nA five-app BigCommerce subscriptions platform — storefront, admin, API, docs, marketing — built against a live sandbox store behind a fictional pet-supply merchant; 94 ADRs and 218 user stories moving through one repo; the mechanical state-derivation file that replaces status narration; and two real failures, a circular verification audit and a GitHub rate-limit exhaustion, with the fixes that shipped.\n\nOPEN SESSION\n→\nS15\nVENDOR SCOPING · 2026-08\nThe Harder Deliverable Wasn't the Build\n\nA ten-document vendor bid package — the scoping and estimation kit a global systems integrator needs before it can bid on a BigCommerce-native subscriptions build — projected from a 28-epic, 218-story spec corpus in days, not weeks. A leakage lint hard-fails before a forbidden pattern ever reaches the export, and a bundling script freezes identical, name-stamped copies per vendor. Every document still carries status: draft-internal-review — the release checklist stayed a human's job.\n\nHow a 10-document, 28-epic, 218-story vendor bid package gets projected — not authored — from a canonical spec corpus, sanitized by a hard-fail leakage lint instead of a proofread, frozen into identical per-vendor bundles, and held behind an unchecked human release checklist before anything ships.\n\nOPEN SESSION\n→\nS16\nCONFIRM THEN ACT · 2026-08\nThe Agent That Asks Twice\n\nAsk BC is a production agent with 29 tools against a live commerce store — 22 that read, 7 that can change it — deployed split across a Next.js app and a Cloudflare Worker with a Durable Object per store. Every mutation needs two turns: a preview, then an explicit confirm. Months later, a sibling platform copied the runtime wholesale for its own merchant copilot — same Durable Object, same codemode sandbox, same two-turn writes — and pointed it at a different API entirely.\n\nThe two-turn confirmation pattern read straight from the tool code — nothing mutates on the first call, only on an explicit second call with the confirm flag set to true; the generative-UI block protocol that turns tool output into an inline React component instead of a wall of markdown; the Haiku-default, Sonnet-on-retry model split; a real security gap caught and fixed a month before the app's custom domain went live; and the decision record where a second product adopted the identical Durable-Object-plus-codemode runtime for its own copilot, pointed at an entirely different data plane.\n\nOPEN SESSION\n→\nS17\nINFERRED NOT DESIGNED · 2026-08\nThe Layout Was Inferred, Not Designed\n\nAisles is a headless storefront that decides its own layout per shopper — 31 weighted rules feed a Bayesian inference engine that picks one of four personas, then an AI model generates the category page from a four-component vocabulary a Zod schema won't let it leave. Same URL, same catalog, four schema-valid layouts. On 2026-08-12 it was pointed at a real BigCommerce store for the first time — a brand-config entry, two environment variables, a harvested palette with file-line citations, and one honest bug: a client-side lookup that silently rendered furniture navigation over a pet-supply catalog.\n\nThe full pipeline read from source — 31 rules, a gatherer-biased Bayesian prior, and a softmax over four named personas (gatherer, hunter, researcher, gifter); the Zod schema that makes an AI-written layout provably valid instead of usually reasonable; the per-persona prompt language that actually reaches the model; the same-day integration against a live BigCommerce sandbox that took one config file because the catalog seam was already generic; a palette harvested from the storefront's own CSS with file and line citations; and the client-side brand-resolution bug the integration surfaced, with its fix.\n\nOPEN SESSION\n→\nS18\nSTEERING ACROSS AGENTS · 2026-08\nThe Guardrail Removed the Storefront\n\nI asked one agent to make an AI storefront look as good as the real one, then handed the work to a second agent in four words: “pick up where Claude ended.” Nineteen commits later the AI was gone — and every commit message was a safety word. Nobody typed “remove the model.” The tests stayed green because they were rewritten to expect it. What caught it was remembering what the live site used to do.\n\nThe verbatim direction that started it and the four-word handoff that dropped it; 27 agent sessions in one repository in a day, zero containing a typed instruction — every operator turn an auto-generated approval; the nineteen-commit verb ladder, where no single commit is wrong and the sequence deletes the feature; the green status line reporting “zero model requests” as an achievement for a product built on model requests; the contract test rewritten from listing model-authorized zones to asserting there are none; and the second overshoot, where the agent sent to fix the mistake made it again first.\n\nOPEN SESSION\n→\nTechniques\n\n11 TECHNIQUES\n\nTested parts of the work you can reuse.\nA01\nAPPLIED TECHNIQUE\nTwo Ways to Draw a System\n\nHand-authored SVG vs themed Mermaid — chosen per diagram, both shown working.\n\nOPEN TECHNIQUE\n→\nA02\nAPPLIED TECHNIQUE\nMine Your Own Transcripts\n\nTreat your agent sessions as a searchable corpus — corrections become priors the next session reads.\n\nOPEN TECHNIQUE\n→\nA03\nAPPLIED TECHNIQUE\nGate Every Hand-Off\n\nAgents work inside a stage; deterministic gates verify between. Gate the seam, not the middle.\n\nOPEN TECHNIQUE\n→\nA04\nAPPLIED TECHNIQUE\nPromote a Correction to a Guardrail\n\nWrapper → deny-hook → CI ratchet: promote a repeated correction to the lowest rung that holds.\n\nOPEN TECHNIQUE\n→\nA05\nAPPLIED TECHNIQUE\nA Registry for What Grep Can't Find\n\nFacts grep can't surface, held in one registry and enforced in CI — the conclusion, pre-paid once.\n\nOPEN TECHNIQUE\n→\nA06\nAPPLIED TECHNIQUE\nPut Provenance Labels on AI Research\n\nThree label tiers, an adversarial re-derivation loop, and the honest downgrade — shown working.\n\nOPEN TECHNIQUE\n→\nA07\nAPPLIED TECHNIQUE\nBare-Arm Test Your Agent Config\n\nA control arm for your own harness: bare mode, isolation arms, and rules validated before adoption.\n\nOPEN TECHNIQUE\n→\nA08\nAPPLIED TECHNIQUE\nRun the Subtraction Before You Install\n\nA feature list is half a subtraction. Enumerate your baseline, sort the tool's list into three buckets, then search its tracker for the uninstall.\n\nOPEN TECHNIQUE\n→\nA09\nAPPLIED TECHNIQUE\nClose the Session, Keep the Lesson\n\nTurn a finished agent session into durable project truth and compact recall before its raw transcript expires.\n\nOPEN TECHNIQUE\n→\nA10\nAPPLIED TECHNIQUE\nOne Heavy Job at a Time\n\nLocal inference makes scheduling an operational decision — and a panic's exit reason is two published integers, not a guess.\n\nOPEN TECHNIQUE\n→\nA11\nAPPLIED TECHNIQUE\nThe Home AI Server Question\n\nA measured local-versus-frontier comparison, plus the cost inputs for deciding whether to buy a home AI server.\n\nOPEN TECHNIQUE\n→\nABOUT THIS COLLECTION\n\nThe Ways of Working project explains how these sessions and techniques fit together.\n\nOPEN THE PROJECT PAGE →\n\nNino Chavez\n\nProduct architect and builder in Chicago.\n\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nNow\nLinks\nPrivacy\nGitHub ↗\n(opens in a new tab)\nLinkedIn ↗\n(opens in a new tab)\nEmail ↗",
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "#main",
+      "target": ""
+    },
+    {
+      "text": "Nino Chavez",
+      "href": "/",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Search site",
+      "href": "/search",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "SessionsCurrent page",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Now",
+      "href": "/now",
+      "target": ""
+    },
+    {
+      "text": "Links",
+      "href": "/links",
+      "target": ""
+    },
+    {
+      "text": "18\nSESSIONS\n↓",
+      "href": "#sessions",
+      "target": ""
+    },
+    {
+      "text": "11\nTECHNIQUES\n↓",
+      "href": "#applied",
+      "target": ""
+    },
+    {
+      "text": "SESSION 02\nSTART WITH A COMPLETE SESSION\nThe Browser Is a Shell Command\nOPEN THE SESSION\n→",
+      "href": "/demos/browse-tool",
+      "target": ""
+    },
+    {
+      "text": "S01\nDELEGATION · 2026-07\nTwelve Messages\n\nEverything typed to take a live event from spreadsheet chaos to published social content — and the method that made the other 99% happen.\n\nThe verbatim conversation, a five-principle method, the pipeline that runs it, and two honest failures.\n\nOPEN SESSION\n→",
+      "href": "/demos/twelve-messages",
+      "target": ""
+    },
+    {
+      "text": "S02\nTOOLS · 2026-07\nThe Browser Is a Shell Command\n\nReplacing 18,000 tokens of always-loaded browser-automation schema with ten shell commands and a README — and why the agent gets sharper, not weaker.\n\nThe cost math, four design choices that make a tool agent-friendly, live transcripts, and where MCP still wins.\n\nOPEN SESSION\n→",
+      "href": "/demos/browse-tool",
+      "target": ""
+    },
+    {
+      "text": "S03\nENFORCEMENT · 2026-07\nTaught Once, Enforced Forever\n\nCorrections given in chat decay when the session ends. The fix is changing the agent's environment — helpers, deny-hooks, and CI ratchets that carry the rule forever.\n\nFour real guards with their origin audits, verbatim deny messages, and the five properties that keep guardrails from getting ripped out.\n\nOPEN SESSION\n→",
+      "href": "/demos/enforced-forever",
+      "target": ""
+    },
+    {
+      "text": "S04\nMEMORY · 2026-08\nYour Sessions Are a Corpus\n\nA 24 GB session archive forced the next question: how do you keep the lessons, prove closeout, and let the raw record expire?\n\nThe mining loop end to end, plus the measured retention incident that separated canonical truth, compact recall, raw transcripts, and reproducible worktree output.\n\nOPEN SESSION\n→",
+      "href": "/demos/session-corpus",
+      "target": ""
+    },
+    {
+      "text": "S05\nAUTONOMY · 2026-07\nThe Product That Files Its Own Tickets\n\nEnd users file feedback, an LLM judge triages it into GitHub Issues, an agent implements the safe ones — with the autonomy boundary in deterministic code and a human holding the only merge key.\n\nThe four-stage loop, the allowlist gate read from live source, six real tickets sorted by lane, and a run ledger whose best result was declining to fabricate a fix.\n\nOPEN SESSION\n→",
+      "href": "/demos/feedback-loop",
+      "target": ""
+    },
+    {
+      "text": "S06\nKNOWLEDGE · 2026-07\nThe Registry of Landmines\n\nSome load-bearing facts are invisible to search — the code compiles and the behavior is still wrong. One registry file holds them, a derive catalog enforces them in CI, and a meta-test keeps the registry from lying about itself.\n\nThe bug that shipped twice, the token economics of pre-paid conclusions, the why/decided/currently-true split, and the registry-about-the-registry.\n\nOPEN SESSION\n→",
+      "href": "/demos/landmine-registry",
+      "target": ""
+    },
+    {
+      "text": "S07\nVERIFICATION · 2026-07\nThe Agent Said It Checked\n\n\"Verified\" is a sentence, not a fact. A security migration passed its audit while production was broken — and the discipline that came out of it caught three more false claims building this very series.\n\nThe circular-audit failure mode, a prod-broke-twice case study peeled layer by layer, and the re-derivation discipline with its real budget.\n\nOPEN SESSION\n→",
+      "href": "/demos/said-it-checked",
+      "target": ""
+    },
+    {
+      "text": "S08\nPROCESS · 2026-07\nGates Between Agentic Stages\n\nAgents are strong inside a stage and unreliable at the boundaries. A delivery methodology built on that: deterministic gates between agentic stages — 88 versioned revisions, 14 running initiatives, and the day production published fiction.\n\nThe deterministic-core/agentic-shell shape, the migration-sweep incident and the inverted check it left behind, and a methodology versioned like a product.\n\nOPEN SESSION\n→",
+      "href": "/demos/agentic-gates",
+      "target": ""
+    },
+    {
+      "text": "S09\nDOCUMENTATION · 2026-07\nThe Beautifier Was an Auditor\n\nA skill built to make a README prettier turned out to be a drift detector. Across five repos it flagged a deploy doc still pointing at a platform the project left months ago, a command list that no longer matched the actual commands, and capabilities the code had grown that nobody had written down. The visual polish was the smallest thing it did.\n\nWhy a beautifier's real payload is its inspect step, five repos' worth of drift it surfaced, and one honest failure — claiming checked when the check was only partial.\n\nOPEN SESSION\n→",
+      "href": "/demos/beautifier",
+      "target": ""
+    },
+    {
+      "text": "S10\nAPPLIED ADVISORY · 2026-07\nThe Chiropractor's Four Questions\n\nA sports chiropractor asked four plain questions about selling rehab programs from his website. The AI's answer was confident, tabulated, sourced — and its evidence was marketing all the way down. Twice.\n\nA first pass built on vendors ranking themselves, a 'correction' that swapped in a competitor's stat, three refuted claims with the fetches that killed them, and the confidence-label system that came out the other side.\n\nOPEN SESSION\n→",
+      "href": "/demos/four-questions",
+      "target": ""
+    },
+    {
+      "text": "S11\nCONFIG EXPERIMENT · 2026-07\nThe Sycophancy Was in the Config\n\nA rival model reviewing my agent's work looked sharper — it demanded competing candidates and restraint. So my agent A/B tested its own harness: same model, same prompt, config on and off. The vanilla arm pushed back on me twice. The configured arm never did.\n\nA twelve-run experiment on a live harness: the bare-mode control arm, a self-contaminating probe, a scorecard separating model habits from config damage, and one validated sentence that flipped the behavior 2/2.\n\nOPEN SESSION\n→",
+      "href": "/demos/config-probe",
+      "target": ""
+    },
+    {
+      "text": "S12\nTOOL ADOPTION · 2026-07\nOne Component I Didn't Already Have\n\nA plugin advertising eleven agents and fifty-four hooks, measured against the setup I already run. Of the eight components that could land on my machine, three were already going, one was the wrong platform, one was broken upstream, two were costs. The delta was one.\n\nA component-by-component subtraction against a real machine, three mechanical queries against the part of a repo nobody curates, a retracted recommendation, and the correction that produced all of it.\n\nOPEN SESSION\n→",
+      "href": "/demos/adopt-or-skip",
+      "target": ""
+    },
+    {
+      "text": "S13\nADMISSION GATES · 2026-08\nThe Gate Was Written First\n\nThree ways to make a meeting archive answer a question, three preregistered gates, three refusals in one day. Each gate was committed to git before the model weights finished downloading — so when the scores came back plausible, there was nothing left to negotiate with. The feature that shipped is the one the evidence admitted.\n\nA one-day trilogy of preregistered probes — a similarity floor, a pairwise scorer, an extractive no-answer head — each gate frozen before first inference, each failed without tuning; the falsifier showing a right answer scoring below a wrong one, which no threshold can fix; and the honest feature that shipped instead.\n\nOPEN SESSION\n→",
+      "href": "/demos/gate-first",
+      "target": ""
+    },
+    {
+      "text": "S14\nDERIVED NOT NARRATED · 2026-08\nKibble & Co. Doesn't Sell Anything\n\nA pet-supply storefront went live on a real BigCommerce sandbox, moving real Stripe-sandbox money through real dunning logic — and it exists only so a subscription-billing platform could be built against a genuine store instead of a slide deck. Five deployed apps, 94 ADRs, and a generated file that answers 'what's shipped' so nobody has to narrate it. The method is the point; the pet food is the test fixture.\n\nA five-app BigCommerce subscriptions platform — storefront, admin, API, docs, marketing — built against a live sandbox store behind a fictional pet-supply merchant; 94 ADRs and 218 user stories moving through one repo; the mechanical state-derivation file that replaces status narration; and two real failures, a circular verification audit and a GitHub rate-limit exhaustion, with the fixes that shipped.\n\nOPEN SESSION\n→",
+      "href": "/demos/kibble-and-co",
+      "target": ""
+    },
+    {
+      "text": "S15\nVENDOR SCOPING · 2026-08\nThe Harder Deliverable Wasn't the Build\n\nA ten-document vendor bid package — the scoping and estimation kit a global systems integrator needs before it can bid on a BigCommerce-native subscriptions build — projected from a 28-epic, 218-story spec corpus in days, not weeks. A leakage lint hard-fails before a forbidden pattern ever reaches the export, and a bundling script freezes identical, name-stamped copies per vendor. Every document still carries status: draft-internal-review — the release checklist stayed a human's job.\n\nHow a 10-document, 28-epic, 218-story vendor bid package gets projected — not authored — from a canonical spec corpus, sanitized by a hard-fail leakage lint instead of a proofread, frozen into identical per-vendor bundles, and held behind an unchecked human release checklist before anything ships.\n\nOPEN SESSION\n→",
+      "href": "/demos/bid-package",
+      "target": ""
+    },
+    {
+      "text": "S16\nCONFIRM THEN ACT · 2026-08\nThe Agent That Asks Twice\n\nAsk BC is a production agent with 29 tools against a live commerce store — 22 that read, 7 that can change it — deployed split across a Next.js app and a Cloudflare Worker with a Durable Object per store. Every mutation needs two turns: a preview, then an explicit confirm. Months later, a sibling platform copied the runtime wholesale for its own merchant copilot — same Durable Object, same codemode sandbox, same two-turn writes — and pointed it at a different API entirely.\n\nThe two-turn confirmation pattern read straight from the tool code — nothing mutates on the first call, only on an explicit second call with the confirm flag set to true; the generative-UI block protocol that turns tool output into an inline React component instead of a wall of markdown; the Haiku-default, Sonnet-on-retry model split; a real security gap caught and fixed a month before the app's custom domain went live; and the decision record where a second product adopted the identical Durable-Object-plus-codemode runtime for its own copilot, pointed at an entirely different data plane.\n\nOPEN SESSION\n→",
+      "href": "/demos/asks-twice",
+      "target": ""
+    },
+    {
+      "text": "S17\nINFERRED NOT DESIGNED · 2026-08\nThe Layout Was Inferred, Not Designed\n\nAisles is a headless storefront that decides its own layout per shopper — 31 weighted rules feed a Bayesian inference engine that picks one of four personas, then an AI model generates the category page from a four-component vocabulary a Zod schema won't let it leave. Same URL, same catalog, four schema-valid layouts. On 2026-08-12 it was pointed at a real BigCommerce store for the first time — a brand-config entry, two environment variables, a harvested palette with file-line citations, and one honest bug: a client-side lookup that silently rendered furniture navigation over a pet-supply catalog.\n\nThe full pipeline read from source — 31 rules, a gatherer-biased Bayesian prior, and a softmax over four named personas (gatherer, hunter, researcher, gifter); the Zod schema that makes an AI-written layout provably valid instead of usually reasonable; the per-persona prompt language that actually reaches the model; the same-day integration against a live BigCommerce sandbox that took one config file because the catalog seam was already generic; a palette harvested from the storefront's own CSS with file and line citations; and the client-side brand-resolution bug the integration surfaced, with its fix.\n\nOPEN SESSION\n→",
+      "href": "/demos/four-layouts",
+      "target": ""
+    },
+    {
+      "text": "S18\nSTEERING ACROSS AGENTS · 2026-08\nThe Guardrail Removed the Storefront\n\nI asked one agent to make an AI storefront look as good as the real one, then handed the work to a second agent in four words: “pick up where Claude ended.” Nineteen commits later the AI was gone — and every commit message was a safety word. Nobody typed “remove the model.” The tests stayed green because they were rewritten to expect it. What caught it was remembering what the live site used to do.\n\nThe verbatim direction that started it and the four-word handoff that dropped it; 27 agent sessions in one repository in a day, zero containing a typed instruction — every operator turn an auto-generated approval; the nineteen-commit verb ladder, where no single commit is wrong and the sequence deletes the feature; the green status line reporting “zero model requests” as an achievement for a product built on model requests; the contract test rewritten from listing model-authorized zones to asserting there are none; and the second overshoot, where the agent sent to fix the mistake made it again first.\n\nOPEN SESSION\n→",
+      "href": "/demos/guardrail-removed",
+      "target": ""
+    },
+    {
+      "text": "A01\nAPPLIED TECHNIQUE\nTwo Ways to Draw a System\n\nHand-authored SVG vs themed Mermaid — chosen per diagram, both shown working.\n\nOPEN TECHNIQUE\n→",
+      "href": "/demos/applied/two-ways",
+      "target": ""
+    },
+    {
+      "text": "A02\nAPPLIED TECHNIQUE\nMine Your Own Transcripts\n\nTreat your agent sessions as a searchable corpus — corrections become priors the next session reads.\n\nOPEN TECHNIQUE\n→",
+      "href": "/demos/applied/corpus",
+      "target": ""
+    },
+    {
+      "text": "A03\nAPPLIED TECHNIQUE\nGate Every Hand-Off\n\nAgents work inside a stage; deterministic gates verify between. Gate the seam, not the middle.\n\nOPEN TECHNIQUE\n→",
+      "href": "/demos/applied/gates",
+      "target": ""
+    },
+    {
+      "text": "A04\nAPPLIED TECHNIQUE\nPromote a Correction to a Guardrail\n\nWrapper → deny-hook → CI ratchet: promote a repeated correction to the lowest rung that holds.\n\nOPEN TECHNIQUE\n→",
+      "href": "/demos/applied/guardrails",
+      "target": ""
+    },
+    {
+      "text": "A05\nAPPLIED TECHNIQUE\nA Registry for What Grep Can't Find\n\nFacts grep can't surface, held in one registry and enforced in CI — the conclusion, pre-paid once.\n\nOPEN TECHNIQUE\n→",
+      "href": "/demos/applied/registry",
+      "target": ""
+    },
+    {
+      "text": "A06\nAPPLIED TECHNIQUE\nPut Provenance Labels on AI Research\n\nThree label tiers, an adversarial re-derivation loop, and the honest downgrade — shown working.\n\nOPEN TECHNIQUE\n→",
+      "href": "/demos/applied/provenance",
+      "target": ""
+    },
+    {
+      "text": "A07\nAPPLIED TECHNIQUE\nBare-Arm Test Your Agent Config\n\nA control arm for your own harness: bare mode, isolation arms, and rules validated before adoption.\n\nOPEN TECHNIQUE\n→",
+      "href": "/demos/applied/config-probe",
+      "target": ""
+    },
+    {
+      "text": "A08\nAPPLIED TECHNIQUE\nRun the Subtraction Before You Install\n\nA feature list is half a subtraction. Enumerate your baseline, sort the tool's list into three buckets, then search its tracker for the uninstall.\n\nOPEN TECHNIQUE\n→",
+      "href": "/demos/applied/adopt-or-skip",
+      "target": ""
+    },
+    {
+      "text": "A09\nAPPLIED TECHNIQUE\nClose the Session, Keep the Lesson\n\nTurn a finished agent session into durable project truth and compact recall before its raw transcript expires.\n\nOPEN TECHNIQUE\n→",
+      "href": "/demos/applied/session-closeout",
+      "target": ""
+    },
+    {
+      "text": "A10\nAPPLIED TECHNIQUE\nOne Heavy Job at a Time\n\nLocal inference makes scheduling an operational decision — and a panic's exit reason is two published integers, not a guess.\n\nOPEN TECHNIQUE\n→",
+      "href": "/demos/applied/one-heavy-job",
+      "target": ""
+    },
+    {
+      "text": "A11\nAPPLIED TECHNIQUE\nThe Home AI Server Question\n\nA measured local-versus-frontier comparison, plus the cost inputs for deciding whether to buy a home AI server.\n\nOPEN TECHNIQUE\n→",
+      "href": "/demos/applied/local-vs-frontier",
+      "target": ""
+    },
+    {
+      "text": "OPEN THE PROJECT PAGE →",
+      "href": "/work/ways-of-working",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Now",
+      "href": "/now",
+      "target": ""
+    },
+    {
+      "text": "Links",
+      "href": "/links",
+      "target": ""
+    },
+    {
+      "text": "Privacy",
+      "href": "/privacy",
+      "target": ""
+    },
+    {
+      "text": "GitHub ↗\n(opens in a new tab)",
+      "href": "https://github.com/nino-chavez",
+      "target": "_blank"
+    },
+    {
+      "text": "LinkedIn ↗\n(opens in a new tab)",
+      "href": "https://www.linkedin.com/in/nino-chavez/",
+      "target": "_blank"
+    },
+    {
+      "text": "Email ↗",
+      "href": "mailto:nino@ninochavez.co",
+      "target": ""
+    }
+  ],
+  "scripts": [
+    "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+  ],
+  "performance": [
+    {
+      "ttfb": 50,
+      "domLoaded": 232.70000004768372,
+      "load": 246.39999997615814,
+      "transferSize": 19398,
+      "encodedBodySize": 19098,
+      "decodedBodySize": 84433
+    }
+  ],
+  "resources": [
+    {
+      "name": "https://ninochavez.co/cdn-cgi/speculation",
+      "transfer": 451,
+      "encoded": 151,
+      "duration": 159.60000002384186
+    },
+    {
+      "name": "https://ninochavez.co/work/demo-browser.jpg",
+      "transfer": 0,
+      "encoded": 50243,
+      "duration": 16.300000071525574
+    },
+    {
+      "name": "https://ninochavez.co/assets/index-BmdNnmlC.css",
+      "transfer": 31922,
+      "encoded": 31622,
+      "duration": 160.30000007152557
+    },
+    {
+      "name": "https://ninochavez.co/assets/layout-segment-context-Cm8kYRGr.js",
+      "transfer": 490,
+      "encoded": 190,
+      "duration": 160.60000002384186
+    },
+    {
+      "name": "https://ninochavez.co/assets/rolldown-runtime-S-ySWqyJ.js",
+      "transfer": 703,
+      "encoded": 403,
+      "duration": 160.80000007152557
+    },
+    {
+      "name": "https://ninochavez.co/assets/index-B-UOV3cu.js",
+      "transfer": 25623,
+      "encoded": 25323,
+      "duration": 160.39999997615814
+    },
+    {
+      "name": "https://ninochavez.co/assets/query-BqyIlvsm.js",
+      "transfer": 1070,
+      "encoded": 770,
+      "duration": 159.10000002384186
+    },
+    {
+      "name": "https://ninochavez.co/assets/link-B8uMb1L1.js",
+      "transfer": 3544,
+      "encoded": 3244,
+      "duration": 160.70000004768372
+    },
+    {
+      "name": "https://ninochavez.co/assets/DemoLibrary-BlbqCNdT.js",
+      "transfer": 300,
+      "encoded": 1831,
+      "duration": 161.10000002384186
+    },
+    {
+      "name": "https://ninochavez.co/assets/SiteHeader-DM9R833z.js",
+      "transfer": 300,
+      "encoded": 1084,
+      "duration": 161.20000004768372
+    },
+    {
+      "name": "https://ninochavez.co/assets/framework-DjPHiq1u.js",
+      "transfer": 59595,
+      "encoded": 59295,
+      "duration": 161
+    },
+    {
+      "name": "https://ninochavez.co/assets/facets-ClNarxFu.js",
+      "transfer": 421,
+      "encoded": 121,
+      "duration": 159.39999997615814
+    },
+    {
+      "name": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "transfer": 0,
+      "encoded": 0,
+      "duration": 16.09999990463257
+    },
+    {
+      "name": "https://ninochavez.co/fonts/space-mono-latin-400-normal.woff2",
+      "transfer": 0,
+      "encoded": 16520,
+      "duration": 0.8999999761581421
+    },
+    {
+      "name": "https://ninochavez.co/fonts/space-mono-latin-700-normal.woff2",
+      "transfer": 0,
+      "encoded": 16724,
+      "duration": 0.8000000715255737
+    },
+    {
+      "name": "https://ninochavez.co/fonts/inter-latin.woff2",
+      "transfer": 0,
+      "encoded": 48432,
+      "duration": 0.8000000715255737
+    },
+    {
+      "name": "https://ninochavez.co/cdn-cgi/rum?",
+      "transfer": 300,
+      "encoded": 0,
+      "duration": 13.800000071525574
+    },
+    {
+      "name": "https://nc-demos.pages.dev/feedback-loop/img/preview.jpg",
+      "transfer": 0,
+      "encoded": 0,
+      "duration": 31.699999928474426
+    },
+    {
+      "name": "https://nc-demos.pages.dev/twelve-messages/img/gritty.jpg",
+      "transfer": 0,
+      "encoded": 0,
+      "duration": 32.39999997615814
+    },
+    {
+      "name": "https://nc-demos.pages.dev/session-corpus/img/preview.jpg",
+      "transfer": 0,
+      "encoded": 0,
+      "duration": 34.699999928474426
+    },
+    {
+      "name": "https://nc-demos.pages.dev/browse-tool/img/preview.jpg",
+      "transfer": 0,
+      "encoded": 0,
+      "duration": 34.89999997615814
+    },
+    {
+      "name": "https://nc-demos.pages.dev/enforced-forever/img/preview.jpg",
+      "transfer": 0,
+      "encoded": 0,
+      "duration": 37.799999952316284
+    }
+  ]
+}

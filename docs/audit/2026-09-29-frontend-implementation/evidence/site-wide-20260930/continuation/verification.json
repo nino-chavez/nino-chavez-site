@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-09-30T23:04:32.418778+00:00",
+  "main": {
+    "productionAndRenderedHtmlTests": "pass",
+    "auditRegression": "pass",
+    "staticCheck": "pass",
+    "lint": {
+      "errors": 0,
+      "warnings": 10
+    },
+    "clientNavigationStylesEqual": true
+  },
+  "publication": {
+    "normalBuild": "pass",
+    "tutorialDesktopAndPhoneReview": "parent inspected",
+    "phoneClientAndScrollWidth": 390,
+    "copyFeedback": "Copied!",
+    "clipboardPayload": "unverified"
+  },
+  "gallery": {
+    "staticCheck": "pass",
+    "productionBuild": "pass",
+    "viewerNavigationTests": "pass",
+    "favoriteTransitionTests": "pass",
+    "browserJourneys": {
+      "total": 4,
+      "passed": 4,
+      "viewports": [
+        "1440x900",
+        "390x844"
+      ],
+      "runtime": "project Playwright runner, installed Chrome channel",
+      "data": "real published album through local read-only preview",
+      "negativeBaselines": [
+        "keyboard focus",
+        "Saved list after removal",
+        "JPEG filename with WebP bytes"
+      ]
+    },
+    "imageDownloadFormat": "jpeg",
+    "downloadResponseTests": "pass"
+  },
+  "release": "local, uncommitted, unpublished",
+  "limits": [
+    "consent persistence",
+    "external share submission",
+    "bulk ZIP delivery",
+    "valid unlisted share",
+    "physical phone",
+    "production one-host routing"
+  ]
+}

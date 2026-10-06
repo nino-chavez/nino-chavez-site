@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-09-30T05:34:10.852Z",
+  "rows": [
+    {
+      "path": "/blog",
+      "status": 200,
+      "location": null,
+      "trackerCount": 1
+    },
+    {
+      "path": "/blog/who-is-still-driving",
+      "status": 200,
+      "location": null,
+      "trackerCount": 1
+    },
+    {
+      "path": "/photography/analytics-preferences",
+      "status": 200,
+      "location": null,
+      "trackerCount": 0
+    },
+    {
+      "path": "/work/whitepapers",
+      "status": 307,
+      "location": "https://ninochavez.co/blog?type=Whitepaper",
+      "trackerCount": 0
+    },
+    {
+      "path": "/work/presentations",
+      "status": 307,
+      "location": "https://ninochavez.co/blog?type=Presentation",
+      "trackerCount": 0
+    },
+    {
+      "path": "/work/commerce-architecture",
+      "status": 200,
+      "location": null,
+      "trackerCount": 1
+    }
+  ]
+}

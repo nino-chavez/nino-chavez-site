@@ -1,0 +1,15 @@
+refs/heads/codex/analytics-intelligence-collection 141be6758a24ab064005c17635ea9ec38f8a78a0
+refs/heads/codex/coverage-anchor-fix 0895029d14dabe423c056c6e2755f435da09e94b
+refs/heads/codex/coverage-leads 571eac42553138ab33ee27d38157a346c7f2e987
+refs/heads/codex/frontend-navigation-20260929 2c7fde6f76057023b9664bded39c1b2415eb0c6c
+refs/heads/codex/frontend-refit-20260929 d72aac2e4adc63825d3335b0c6a0d09a8f776869
+refs/heads/codex/frontend-style-20260929 1ad7454017501b442b84dee2e12e5986099a0315
+refs/heads/codex/photography-analytics-privacy 0c3401b7b67345e29ae74a1c0c6376e8f93c594d
+refs/heads/codex/project-context-fleet de14640b374e95b12603268fea5636e0eccdc680
+refs/heads/codex/site-action-analytics 141be6758a24ab064005c17635ea9ec38f8a78a0
+refs/heads/codex/volleyball-coverage 0895029d14dabe423c056c6e2755f435da09e94b
+refs/heads/codex/work-concepts-20260929 94ed145424d251299072e9d9f3a2e20a48fef46a
+refs/heads/fix/cold-review-medium 7bf6be64ece414e6e0f5b720b33bae2ff39d02d0
+refs/heads/fix/photography-cold-review-high a7388d67432f943a6b3b050befb56bfb052f2698
+refs/heads/fix/photography-cold-review-medium 79b57dafac6e9c5b5da083d932ce40e89032b5fb
+refs/heads/main d264e7d30cede17689faab5127c3bf4b8d20c8d2

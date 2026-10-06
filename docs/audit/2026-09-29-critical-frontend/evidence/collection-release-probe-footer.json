@@ -1,0 +1,264 @@
+{
+  "mode": "footer",
+  "syntheticAcceptance": true,
+  "startedAt": "2026-09-30T06:04:04.063Z",
+  "targetId": "14E125F50F4657857768233003620BFD",
+  "checks": [
+    {
+      "frameNavigated": "https://ninochavez.co/photography"
+    },
+    {
+      "frameNavigated": "https://ninochavez.co/photography"
+    },
+    {
+      "frameNavigated": "https://ninochavez.co/photography"
+    },
+    {
+      "firstStatus": 200,
+      "speculationHeader": "\"/cdn-cgi/speculation\""
+    },
+    {
+      "footer": {
+        "top": 179.046875,
+        "bottom": 843.734375,
+        "viewport": 844,
+        "choicesVisible": true,
+        "text": "Nino Chavez\n\nProduct architect and builder in Chicago.\n\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nAnalytics choices\nNow\nLinks\nPrivacy\nGitHub ↗\n(opens in a new tab)\nLinkedIn ↗\n(opens in a new tab)\nEmail ↗"
+      }
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/photography",
+      "type": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/cdn-cgi/speculation",
+      "type": "other"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/index-BmdNnmlC.css",
+      "type": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/layout-segment-context-BYRckPzQ.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/rolldown-runtime-S-ySWqyJ.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/index-DQPdmYFu.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/framework-DjPHiq1u.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/SiteHeader-CkoLv4F9.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/link-CmPtUKUI.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/query-Bf6XU0gg.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/SiteActivity-DAH4JEiK.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/fd-12-mobile.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/photography/site-activity.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/fonts/inter-latin.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "path": "/fonts/space-mono-latin-400-normal.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "path": "/fonts/space-mono-latin-700-normal.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "path": "/fonts/anton-400.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/p-01.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/p-02.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/p-03.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09463-sdr-8fa44e4d51/medium",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/wg34HB28-JkySWVm5fW4kA/Re7kho-acc-v-jca-091/medium",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/wg34HB28-JkySWVm5fW4kA/fJKdsB-DSC08692/medium",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/wg34HB28-JkySWVm5fW4kA/eqYF0h-DSC08446/medium",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/photography/api/analytics/preferences",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/cdn-cgi/challenge-platform/scripts/jsd/main.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/favicon.png",
+      "type": "other"
+    },
+    {
+      "method": "GET",
+      "path": "/cdn-cgi/challenge-platform/h/b/scripts/jsd/d76008a69eab/main.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/favicon.png",
+      "type": "other"
+    },
+    {
+      "method": "POST",
+      "path": "/cdn-cgi/challenge-platform/h/b/jsd/oneshot/d76008a69eab/0.41132107542808993:1790744429:D-gxIVApnRAcm87oXSrnSbWvKsRq49dYK7gyEPT2wKA/a431072d9b1feabe",
+      "type": "xhr"
+    },
+    {
+      "method": "GET",
+      "path": "/photography/api/analytics/preferences",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/p-10.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/p-11.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/p-13.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/work.rsc",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/demos.rsc",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/learn.rsc",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/blog.rsc",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/photography.rsc",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/about.rsc",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/now.rsc",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/links.rsc",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/privacy.rsc",
+      "type": "fetch"
+    }
+  ],
+  "consoleErrors": [],
+  "failures": [],
+  "blockedURLs": [
+    "https://static.cloudflareinsights.com/*",
+    "https://ninochavez.co/cdn-cgi/rum*"
+  ],
+  "preferences": {
+    "linkedAnalytics": false,
+    "excludeThisBrowser": true
+  },
+  "screenshot": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/docs/audit/2026-09-29-critical-frontend/evidence/collection-release-mobile-footer-actual.png",
+  "finishedAt": "2026-09-30T06:04:08.070Z"
+}

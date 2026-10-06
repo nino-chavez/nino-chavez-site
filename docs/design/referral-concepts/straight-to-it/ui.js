@@ -1,0 +1,1 @@
+(() => {const body=document.querySelector('[data-article-body]');const image=document.querySelector('[data-feature]');const introEnd=body?.querySelectorAll(':scope > p')[2];if(introEnd&&image)introEnd.after(image);})();

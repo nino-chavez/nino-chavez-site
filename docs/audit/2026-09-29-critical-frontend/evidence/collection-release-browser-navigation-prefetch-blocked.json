@@ -1,0 +1,305 @@
+{
+  "checkedAt": "2026-09-30T06:04:53.984Z",
+  "syntheticAcceptance": true,
+  "prefetchBlockedInTestBrowser": true,
+  "classificationMethod": "Existing browser exclusion cookie applied only to collector requests; actual preferences responses and client events are unchanged.",
+  "originalUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+  "blockedTrafficBeacons": 8,
+  "targetId": "992B2FB0BAD32561BCE46EEE143456EB",
+  "events": [
+    {
+      "request": {
+        "event_id": "742a473f-8612-428c-93bc-0cc48c482633",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T06:04:45.318Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "photography",
+          "canonical_path": "/photography",
+          "view_id": "f67b78fc-2957-480a-98ab-8609c3d3fa0b",
+          "layout_class": "wide",
+          "content_kind": "page"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "742a473f-8612-428c-93bc-0cc48c482633",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "dc927259-b657-42b3-b7b6-36a37e43433c",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T06:04:46.205Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "writing",
+          "canonical_path": "/blog",
+          "view_id": "ce2566bb-d127-4c26-933e-02a885fc97cf",
+          "layout_class": "wide",
+          "content_kind": "page"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "dc927259-b657-42b3-b7b6-36a37e43433c",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "33acdcec-0231-44c4-9070-568c4b0012d6",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T06:04:47.164Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "writing",
+          "canonical_path": "/blog/who-is-still-driving",
+          "view_id": "f66a83b7-9b4c-4fff-9536-c1fd0767a7d4",
+          "layout_class": "wide",
+          "content_kind": "article"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "33acdcec-0231-44c4-9070-568c4b0012d6",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "61d34058-89c1-445a-a226-3d642df361fb",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T06:04:48.380Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "demos",
+          "canonical_path": "/demos/browse-tool",
+          "view_id": "358c3638-fe85-4d5b-a0b0-5bcf13a22b94",
+          "layout_class": "wide",
+          "content_kind": "demo_story"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "61d34058-89c1-445a-a226-3d642df361fb",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "fb5e305f-98cd-4a91-af2d-03231ec6bcca",
+        "schema_version": 2,
+        "event_name": "demo_section_viewed",
+        "occurred_at": "2026-09-30T06:04:48.391Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "demos",
+          "canonical_path": "/demos/browse-tool",
+          "view_id": "358c3638-fe85-4d5b-a0b0-5bcf13a22b94",
+          "position": 1,
+          "section_count": 10
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "fb5e305f-98cd-4a91-af2d-03231ec6bcca",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "cddaa702-8f78-42c6-9911-c858300c5f7a",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T06:04:49.298Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "profile",
+          "canonical_path": "/",
+          "view_id": "2fd5c01b-d93a-40f4-b59c-0aa6dd0ae77e",
+          "layout_class": "wide",
+          "content_kind": "page"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "cddaa702-8f78-42c6-9911-c858300c5f7a",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "c3b4ce51-16ed-4d53-af99-babd29cd9dd6",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T06:04:50.304Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "profile",
+          "canonical_path": "/work/blueprint",
+          "view_id": "bafa6134-17e0-4cf3-94b7-1b7e171cbdbb",
+          "layout_class": "wide",
+          "content_kind": "page"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "c3b4ce51-16ed-4d53-af99-babd29cd9dd6",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    },
+    {
+      "request": {
+        "event_id": "14426017-7a11-41b4-a522-5d4f1d33477d",
+        "schema_version": 2,
+        "event_name": "site_link_clicked",
+        "occurred_at": "2026-09-30T06:04:51.148Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "profile",
+          "canonical_path": "/work/blueprint",
+          "view_id": "bafa6134-17e0-4cf3-94b7-1b7e171cbdbb",
+          "target_kind": "internal",
+          "target_path": "/photography"
+        }
+      },
+      "exclusionApplied": true
+    },
+    {
+      "request": {
+        "event_id": "1a847759-c170-404a-9ce7-b315441f65f4",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T06:04:53.704Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "photography",
+          "canonical_path": "/photography",
+          "view_id": "f96abc8a-0dcb-4f64-8233-427e5104fddb",
+          "layout_class": "wide",
+          "content_kind": "page"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 200,
+      "response": {
+        "accepted": true,
+        "event_id": "1a847759-c170-404a-9ce7-b315441f65f4",
+        "duplicate": false,
+        "export_eligible": false
+      }
+    }
+  ],
+  "observations": [
+    {
+      "path": "/photography",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "analyticsPath": "/photography",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    },
+    {
+      "path": "/blog",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "analyticsPath": "/blog",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    },
+    {
+      "path": "/blog/who-is-still-driving",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    },
+    {
+      "path": "/demos/browse-tool",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "analyticsPath": "/demos/browse-tool",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    },
+    {
+      "path": "/",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "analyticsPath": "/",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    },
+    {
+      "path": "/work/blueprint",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "analyticsPath": "/work/blueprint",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    },
+    {
+      "path": "/photography",
+      "tracker": true,
+      "webdriver": false,
+      "visibility": "visible",
+      "analyticsPath": "/photography",
+      "scriptCount": 1,
+      "browserIdentity": null,
+      "visitIdentity": null
+    }
+  ],
+  "failures": [
+    "AssertionError [ERR_ASSERTION]: trusted internal click recorded"
+  ],
+  "screens": []
+}

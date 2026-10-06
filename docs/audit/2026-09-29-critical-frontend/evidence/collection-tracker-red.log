@@ -1,0 +1,74 @@
+
+Running 2 tests using 1 worker
+
+
+
+
+
+
+[1A[2K[1/2] tests/site-activity.spec.ts:46:64 › React readiness waits for loaded preferences at /work/blueprint
+[1A[2K  1) tests/site-activity.spec.ts:46:64 › React readiness waits for loaded preferences at /work/blueprint 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      28 |  expect(events).toHaveLength(0);
+      29 |  resolvePreferences({linkedAnalytics:false,excludeThisBrowser:false});
+    > 30 |  await expect.poll(()=>events.filter(e=>e.event_name==='site_page_viewed').length).toBe(1);
+         |  ^
+      31 |  await page.evaluate(()=>{history.pushState(null,'','/about');document.documentElement.dataset.analyticsPath='/about';dispatchEvent(new Event('nino:page-ready'));});
+      32 |  await expect.poll(()=>events.filter(e=>e.event_name==='site_page_viewed').length).toBe(2);
+      33 | });
+        at /Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-collection-readiness-20260929/tests/site-activity.spec.ts:30:2
+
+    Error Context: test-results/site-activity-parent/site-activity-React-readin-a786a-eferences-at-work-blueprint/error-context.md
+
+
+
+
+
+
+
+[1A[2K[2/2] tests/site-activity.spec.ts:46:64 › React readiness waits for loaded preferences at /photography
+[1A[2K  2) tests/site-activity.spec.ts:46:64 › React readiness waits for loaded preferences at /photography 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      28 |  expect(events).toHaveLength(0);
+      29 |  resolvePreferences({linkedAnalytics:false,excludeThisBrowser:false});
+    > 30 |  await expect.poll(()=>events.filter(e=>e.event_name==='site_page_viewed').length).toBe(1);
+         |  ^
+      31 |  await page.evaluate(()=>{history.pushState(null,'','/about');document.documentElement.dataset.analyticsPath='/about';dispatchEvent(new Event('nino:page-ready'));});
+      32 |  await expect.poll(()=>events.filter(e=>e.event_name==='site_page_viewed').length).toBe(2);
+      33 | });
+        at /Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-collection-readiness-20260929/tests/site-activity.spec.ts:30:2
+
+    Error Context: test-results/site-activity-parent/site-activity-React-readin-cdb75--preferences-at-photography/error-context.md
+
+
+[1A[2K  2 failed
+    tests/site-activity.spec.ts:46:64 › React readiness waits for loaded preferences at /work/blueprint 
+    tests/site-activity.spec.ts:46:64 › React readiness waits for loaded preferences at /photography 
+(node:82795) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[1A[2K(node:82797) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:82797) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+[1A[2K(node:82797) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:82818) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K(node:82818) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+[1A[2K(node:82818) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

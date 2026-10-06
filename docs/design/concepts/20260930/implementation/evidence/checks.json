@@ -1,0 +1,416 @@
+{
+  "routes": [
+    {
+      "name": "home",
+      "width": 1440,
+      "status": 200,
+      "title": "Nino Chavez — Product architect and builder",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "building",
+      "width": 1440,
+      "status": 200,
+      "title": "Building — Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "writing",
+      "width": 1440,
+      "status": 200,
+      "title": "Writing — Signal Dispatch — Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "about",
+      "width": 1440,
+      "status": 200,
+      "title": "About Nino Chavez — Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "photography",
+      "width": 1440,
+      "status": 200,
+      "title": "Photography — Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "process",
+      "width": 1440,
+      "status": 200,
+      "title": "Sessions — Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "guides",
+      "width": 1440,
+      "status": 200,
+      "title": "Guides — Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "rally",
+      "width": 1440,
+      "status": 200,
+      "title": "Rally HQ — Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "privacy",
+      "width": 1440,
+      "status": 200,
+      "title": "Privacy — Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "article",
+      "width": 1440,
+      "status": 200,
+      "title": "The Work Doesn’t End at Send - Signal Dispatch",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "tutorial",
+      "width": 1440,
+      "status": 200,
+      "title": "Diff Your Spec Against Its System Class - Signal Dispatch",
+      "h1": 2,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "album",
+      "width": 1440,
+      "status": 200,
+      "title": "College Women's VB - Millikin at North Central - 09-23-2026 | Nino Chavez Photography",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [],
+      "photoTop": 783.3125
+    },
+    {
+      "name": "timeline",
+      "width": 1440,
+      "status": 200,
+      "title": "Photo Timeline | Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": []
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "status": 200,
+      "title": "Nino Chavez — Product architect and builder",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "building",
+      "width": 390,
+      "status": 200,
+      "title": "Building — Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "writing",
+      "width": 390,
+      "status": 200,
+      "title": "Writing — Signal Dispatch — Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "about",
+      "width": 390,
+      "status": 200,
+      "title": "About Nino Chavez — Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "photography",
+      "width": 390,
+      "status": 200,
+      "title": "Photography — Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "process",
+      "width": 390,
+      "status": 200,
+      "title": "Sessions — Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "guides",
+      "width": 390,
+      "status": 200,
+      "title": "Guides — Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "rally",
+      "width": 390,
+      "status": 200,
+      "title": "Rally HQ — Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "privacy",
+      "width": 390,
+      "status": 200,
+      "title": "Privacy — Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "article",
+      "width": 390,
+      "status": 200,
+      "title": "The Work Doesn’t End at Send - Signal Dispatch",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "tutorial",
+      "width": 390,
+      "status": 200,
+      "title": "Diff Your Spec Against Its System Class - Signal Dispatch",
+      "h1": 2,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [
+        "Writing",
+        "Building",
+        "Photography",
+        "About"
+      ]
+    },
+    {
+      "name": "album",
+      "width": 390,
+      "status": 200,
+      "title": "College Women's VB - Millikin at North Central - 09-23-2026 | Nino Chavez Photography",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": [],
+      "photoTop": 768.359375
+    },
+    {
+      "name": "timeline",
+      "width": 390,
+      "status": 200,
+      "title": "Photo Timeline | Nino Chavez",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "nav": []
+    }
+  ],
+  "errors": [],
+  "interactions": [
+    "home: menu Escape/Back/focus",
+    "article: menu Escape/Back/focus",
+    "album: menu Escape/Back/focus",
+    "Filtered Building opens the existing results without the curated introduction",
+    "Main writing entrance reaches local article across the application seam"
+  ],
+  "canary": true,
+  "knownBaseline": [
+    "The existing tutorial template and authored tutorial both contain a level-one heading; two are retained in this route, with no source-copy edits."
+  ],
+  "finished": "2026-10-01T05:32:48.467Z",
+  "failures": []
+}

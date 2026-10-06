@@ -1,0 +1,61 @@
+{
+  "blocks": [
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "rgb(203, 180, 119)",
+      "color": "rgb(128, 80, 0)",
+      "headerBackground": "rgb(245, 232, 204)",
+      "kind": "exercise",
+      "rect": {
+        "height": 2157.900146484375,
+        "width": 749.4512329101562,
+        "x": 345.2743835449219,
+        "y": 2153.997802734375
+      }
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "rgb(131, 178, 189)",
+      "color": "rgb(13, 97, 117)",
+      "headerBackground": "rgb(222, 237, 241)",
+      "kind": "template",
+      "rect": {
+        "height": 277.7553405761719,
+        "width": 699.5045776367188,
+        "x": 370.2477111816406,
+        "y": 3154.4970703125
+      }
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "rgb(131, 178, 189)",
+      "color": "rgb(13, 97, 117)",
+      "headerBackground": "rgb(222, 237, 241)",
+      "kind": "template",
+      "rect": {
+        "height": 303.25457763671875,
+        "width": 699.5045776367188,
+        "x": 370.2477111816406,
+        "y": 3525.99462890625
+      }
+    },
+    {
+      "background": "rgb(226, 239, 231)",
+      "border": "rgb(139, 182, 156)",
+      "color": "rgb(32, 100, 73)",
+      "headerBackground": "rgba(0, 0, 0, 0)",
+      "kind": "checkpoint",
+      "rect": {
+        "height": 276.4367370605469,
+        "width": 699.5045776367188,
+        "x": 370.2477111816406,
+        "y": 3982.48876953125
+      }
+    }
+  ],
+  "viewport": {
+    "dpr": 2.049999952316284,
+    "height": 900,
+    "width": 1440
+  }
+}

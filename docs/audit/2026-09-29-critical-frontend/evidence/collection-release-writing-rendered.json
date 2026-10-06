@@ -1,0 +1,16 @@
+{
+  "publicPages": 359,
+  "excluded": [
+    {
+      "path": "dist/blog/private/41fb78245d2b3f19/the-muscle-memory-of-expensive-things.html",
+      "trackerCount": 0
+    }
+  ],
+  "standaloneExports": [
+    "dist/presentations/export/neuro-symbolic-convergence.html",
+    "dist/presentations/export/anatomy-of-ai-native-development.html",
+    "dist/presentations/export/the-7-10-year-evolution-of-the-web.html",
+    "dist/presentations/export/beyond-chat-agentic-workflows.html"
+  ],
+  "bad": []
+}

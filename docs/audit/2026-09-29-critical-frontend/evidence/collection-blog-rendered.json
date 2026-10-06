@@ -1,0 +1,12 @@
+{
+  "artifact": "rendered Astro build",
+  "publicSharedPagesChecked": 359,
+  "noindexPagesChecked": 1,
+  "standaloneExportsOutsideTrackerScope": [
+    "dist/presentations/export/neuro-symbolic-convergence.html",
+    "dist/presentations/export/anatomy-of-ai-native-development.html",
+    "dist/presentations/export/the-7-10-year-evolution-of-the-web.html",
+    "dist/presentations/export/beyond-chat-agentic-workflows.html"
+  ],
+  "failures": []
+}

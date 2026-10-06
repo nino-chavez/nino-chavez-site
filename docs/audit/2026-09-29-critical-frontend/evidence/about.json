@@ -1,0 +1,396 @@
+{
+  "url": "https://ninochavez.co/about",
+  "title": "About Nino Chavez — Nino Chavez",
+  "description": "Nino Chavez is a product architect, builder, tournament operator, photographer, writer, and DJ in Chicago.",
+  "robots": "index, follow",
+  "viewport": {
+    "width": 1440,
+    "inner": 1440,
+    "height": 900,
+    "scrollWidth": 1440,
+    "scrollHeight": 4168
+  },
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "Nino\nChavez"
+    },
+    {
+      "tag": "H2",
+      "text": "The short version"
+    },
+    {
+      "tag": "H2",
+      "text": "What connects the work"
+    },
+    {
+      "tag": "H2",
+      "text": "How I work with agents"
+    },
+    {
+      "tag": "H2",
+      "text": "Choose the context you need"
+    }
+  ],
+  "text": "Skip to content\nNino Chavez\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nSearch site\nABOUT\nNOW\nLINKS\nABOUT\nCHICAGO\nBUILDING SINCE 1999\nNino\nChavez\n\nI’m a product architect in Chicago. I’ve spent more than 25 years turning complicated decisions into working software.\n\n01 / BIOGRAPHY\nThe short version\n\nI started in software engineering, moved through architecture and consulting, and now work as a Product Architect at commerce.com. I still prefer the part where a decision becomes a working system.\n\nOutside the day job, I run Let’s Pepper, build and operate Rally HQ, shoot volleyball through Flickday Media, publish Signal Dispatch, and keep a music practice on SoundCloud. They look different, but each has to work for the people in front of it.\n\nThe practice has a newer shape too: I take engagements outside my own domain and come back in days with working software, evidence a client can check, and problems they couldn’t see. AI agents supply the depth; the architecture years supply the steering. I wrote about the first full test of that model in The Depth Penalty Is Gone.\n\nCURRENT ROLE\nProduct Architect\nORGANIZATION\ncommerce.com\nHOME\nChicago\nSOFTWARE PRACTICE\nSince 1999\n02 / THROUGHLINE\nWhat connects the work\n\nThe form changes. Each practice asks me to make something useful, run it under real conditions, and own the result.\n\n01\nArchitecture\nHold the shape of a system while decisions become working software.\nOPEN THE WORK →\n02\nLive operations\nRun registration, schedules, brackets, scoring, and the event around them.\nSEE VOLLEYBALL WORK →\n03\nPhotography\nAnticipate the point before it happens, then make the result easy to find and keep.\nOPEN PHOTOGRAPHY →\n04\nWriting\nTurn working evidence and unfinished thinking into published arguments.\nREAD SIGNAL DISPATCH →\n05\nMusic\nSelect and sequence records for the room.\nLISTEN ON SOUNDCLOUD\n↗\n(OPENS IN A NEW TAB)\n03 / WORKING MODEL\nHow I work with agents\n\nAgents help me research, draft, code, test, review, and package more work than I could handle alone.\n\nI still decide what the work is for, what can be published, and whether the evidence supports the claim.\n\nSee the method in Blueprint →\nSee the sessions →\nWHERE TO GO NEXT\nChoose the context you need\nNow\nA dated view of active work and current attention.\n→\nLinks\nMaintained destinations for sites, profiles, music, and contact.\n→\nWork\nProducts, tools, methods, operations, and collections.\n→\nELSEWHERE\nLINKEDIN ↗\n(OPENS IN A NEW TAB)\nGITHUB ↗\n(OPENS IN A NEW TAB)\nSOUNDCLOUD ↗\n(OPENS IN A NEW TAB)\nEMAIL ↗\n\nNino Chavez\n\nProduct architect and builder in Chicago.\n\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nNow\nLinks\nPrivacy\nGitHub ↗\n(opens in a new tab)\nLinkedIn ↗\n(opens in a new tab)\nEmail ↗",
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "#main",
+      "target": ""
+    },
+    {
+      "text": "Nino Chavez",
+      "href": "/",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Search site",
+      "href": "/search",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "AboutCurrent page",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Now",
+      "href": "/now",
+      "target": ""
+    },
+    {
+      "text": "Links",
+      "href": "/links",
+      "target": ""
+    },
+    {
+      "text": "ABOUT",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "NOW",
+      "href": "/now",
+      "target": ""
+    },
+    {
+      "text": "LINKS",
+      "href": "/links",
+      "target": ""
+    },
+    {
+      "text": "The Depth Penalty Is Gone",
+      "href": "/blog/the-depth-penalty-is-gone",
+      "target": ""
+    },
+    {
+      "text": "OPEN THE WORK →",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "SEE VOLLEYBALL WORK →",
+      "href": "/work?domain=Volleyball",
+      "target": ""
+    },
+    {
+      "text": "OPEN PHOTOGRAPHY →",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "READ SIGNAL DISPATCH →",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "LISTEN ON SOUNDCLOUD\n↗\n(OPENS IN A NEW TAB)",
+      "href": "https://soundcloud.com/ni-no-cha-vez",
+      "target": "_blank"
+    },
+    {
+      "text": "See the method in Blueprint →",
+      "href": "/work/blueprint",
+      "target": ""
+    },
+    {
+      "text": "See the sessions →",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Now\nA dated view of active work and current attention.\n→",
+      "href": "/now",
+      "target": ""
+    },
+    {
+      "text": "Links\nMaintained destinations for sites, profiles, music, and contact.\n→",
+      "href": "/links",
+      "target": ""
+    },
+    {
+      "text": "Work\nProducts, tools, methods, operations, and collections.\n→",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "LINKEDIN ↗\n(OPENS IN A NEW TAB)",
+      "href": "https://www.linkedin.com/in/nino-chavez/",
+      "target": "_blank"
+    },
+    {
+      "text": "GITHUB ↗\n(OPENS IN A NEW TAB)",
+      "href": "https://github.com/nino-chavez",
+      "target": "_blank"
+    },
+    {
+      "text": "SOUNDCLOUD ↗\n(OPENS IN A NEW TAB)",
+      "href": "https://soundcloud.com/ni-no-cha-vez",
+      "target": "_blank"
+    },
+    {
+      "text": "EMAIL ↗",
+      "href": "mailto:nino@ninochavez.co",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Now",
+      "href": "/now",
+      "target": ""
+    },
+    {
+      "text": "Links",
+      "href": "/links",
+      "target": ""
+    },
+    {
+      "text": "Privacy",
+      "href": "/privacy",
+      "target": ""
+    },
+    {
+      "text": "GitHub ↗\n(opens in a new tab)",
+      "href": "https://github.com/nino-chavez",
+      "target": "_blank"
+    },
+    {
+      "text": "LinkedIn ↗\n(opens in a new tab)",
+      "href": "https://www.linkedin.com/in/nino-chavez/",
+      "target": "_blank"
+    },
+    {
+      "text": "Email ↗",
+      "href": "mailto:nino@ninochavez.co",
+      "target": ""
+    }
+  ],
+  "scripts": [
+    "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+  ],
+  "performance": [
+    {
+      "ttfb": 37.700000047683716,
+      "domLoaded": 108.69999992847443,
+      "load": 127.39999997615814,
+      "transferSize": 7469,
+      "encodedBodySize": 7169,
+      "decodedBodySize": 33479
+    }
+  ],
+  "resources": [
+    {
+      "name": "https://ninochavez.co/cdn-cgi/speculation",
+      "transfer": 451,
+      "encoded": 151,
+      "duration": 32.89999997615814
+    },
+    {
+      "name": "https://ninochavez.co/work/nino-illustrated-v1.webp",
+      "transfer": 0,
+      "encoded": 190914,
+      "duration": 21.399999976158142
+    },
+    {
+      "name": "https://ninochavez.co/assets/layout-segment-context-Cm8kYRGr.js",
+      "transfer": 490,
+      "encoded": 190,
+      "duration": 51.199999928474426
+    },
+    {
+      "name": "https://ninochavez.co/assets/rolldown-runtime-S-ySWqyJ.js",
+      "transfer": 703,
+      "encoded": 403,
+      "duration": 54.699999928474426
+    },
+    {
+      "name": "https://ninochavez.co/assets/index-BmdNnmlC.css",
+      "transfer": 31861,
+      "encoded": 31561,
+      "duration": 61.199999928474426
+    },
+    {
+      "name": "https://ninochavez.co/assets/index-B-UOV3cu.js",
+      "transfer": 25623,
+      "encoded": 25323,
+      "duration": 66.19999992847443
+    },
+    {
+      "name": "https://ninochavez.co/assets/framework-DjPHiq1u.js",
+      "transfer": 59595,
+      "encoded": 59295,
+      "duration": 68.39999997615814
+    },
+    {
+      "name": "https://ninochavez.co/assets/SiteHeader-DM9R833z.js",
+      "transfer": 1384,
+      "encoded": 1084,
+      "duration": 54.60000002384186
+    },
+    {
+      "name": "https://ninochavez.co/assets/link-B8uMb1L1.js",
+      "transfer": 3545,
+      "encoded": 3245,
+      "duration": 58.200000047683716
+    },
+    {
+      "name": "https://ninochavez.co/assets/query-BqyIlvsm.js",
+      "transfer": 1070,
+      "encoded": 770,
+      "duration": 60.5
+    },
+    {
+      "name": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "transfer": 0,
+      "encoded": 0,
+      "duration": 20.399999976158142
+    },
+    {
+      "name": "https://ninochavez.co/fonts/inter-latin.woff2",
+      "transfer": 0,
+      "encoded": 48432,
+      "duration": 1
+    },
+    {
+      "name": "https://ninochavez.co/fonts/space-mono-latin-400-normal.woff2",
+      "transfer": 0,
+      "encoded": 16520,
+      "duration": 1.5999999046325684
+    },
+    {
+      "name": "https://ninochavez.co/work/nino.jpg",
+      "transfer": 0,
+      "encoded": 58457,
+      "duration": 2
+    },
+    {
+      "name": "https://ninochavez.co/cdn-cgi/rum?",
+      "transfer": 300,
+      "encoded": 0,
+      "duration": 16.799999952316284
+    },
+    {
+      "name": "https://ninochavez.co/about.rsc?_rsc=l4JIodh-7qSioXE4",
+      "transfer": 4702,
+      "encoded": 4402,
+      "duration": 38.89999997615814
+    },
+    {
+      "name": "https://ninochavez.co/now.rsc?_rsc=l4JIodh-7qSioXE4",
+      "transfer": 3586,
+      "encoded": 3286,
+      "duration": 29
+    },
+    {
+      "name": "https://ninochavez.co/links.rsc?_rsc=l4JIodh-7qSioXE4",
+      "transfer": 3737,
+      "encoded": 3437,
+      "duration": 38
+    }
+  ]
+}

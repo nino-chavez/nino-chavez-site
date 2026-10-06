@@ -1,0 +1,12 @@
+{
+  "source": "/Users/nino/Workspace/dev/sites/nino/blog/.worktrees/codex/referral-design-b-20260930",
+  "destination": "/Users/nino/Workspace/dev/sites/nino/blog/.worktrees/codex/concept-a-publication-20260930",
+  "head": "2dd2f0342ecf2fe5d233c755b672eefc78a4fc68",
+  "copiedUntracked": [
+    "astro-build/src/styles/article.css",
+    "astro-build/src/styles/publication.css"
+  ],
+  "excludedNonSource": [
+    "docs/audits/2026-09-30-by-nino-article-design/receipt.md"
+  ]
+}

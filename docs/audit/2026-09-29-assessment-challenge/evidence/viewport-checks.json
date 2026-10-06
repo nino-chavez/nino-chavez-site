@@ -1,0 +1,98 @@
+[
+  {
+    "file": "home-proof-desktop.png",
+    "png": [
+      1440,
+      900
+    ],
+    "expected": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "file": "home-proof-mobile.png",
+    "png": [
+      390,
+      844
+    ],
+    "expected": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "file": "work-records-desktop.png",
+    "png": [
+      1440,
+      900
+    ],
+    "expected": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "file": "work-records-mobile.png",
+    "png": [
+      390,
+      844
+    ],
+    "expected": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "file": "writing-records-desktop.png",
+    "png": [
+      1440,
+      900
+    ],
+    "expected": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "file": "writing-records-mobile.png",
+    "png": [
+      390,
+      844
+    ],
+    "expected": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "file": "article-body-desktop.png",
+    "png": [
+      1440,
+      900
+    ],
+    "expected": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "file": "article-body-mobile.png",
+    "png": [
+      390,
+      844
+    ],
+    "expected": [
+      390,
+      844
+    ],
+    "pass": true
+  }
+]

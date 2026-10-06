@@ -1,0 +1,527 @@
+{
+  "checkedAt": "2026-09-30T06:08:38.690Z",
+  "testIds": [
+    "4a4162d6-4ac1-49c1-9a51-1fd9a352445c",
+    "8beba417-7891-478f-bd33-18d0d2fef503",
+    "05d144d2-aa9b-4da0-b9da-592fb893d806",
+    "c33451b5-bd1c-4a3f-8809-067b6f017304",
+    "879b123c-bee6-45c6-9108-4e00ade3fb59",
+    "08f02c56-67b9-4a51-bc6d-82e588ecddc5",
+    "4250c4d7-e454-464e-bf2f-f0f7d318a092",
+    "0ccfc753-36d4-45d1-a6ca-b28ab366dc24",
+    "1c90e4b6-02a1-4c77-b09e-35d83343257e",
+    "f209b489-8f2e-410f-a97f-cce34e4e39ad",
+    "f4fc5e8a-ec78-4678-a91f-597990816029",
+    "048e6a9a-3ce0-45d3-b8b0-b1a6a6f76bc1",
+    "209d451f-7bc7-488d-a02b-4c49c98183cd",
+    "7e5ed1c1-97c6-4c97-9ce0-c4c16eeac180",
+    "742a473f-8612-428c-93bc-0cc48c482633",
+    "dc927259-b657-42b3-b7b6-36a37e43433c",
+    "33acdcec-0231-44c4-9070-568c4b0012d6",
+    "61d34058-89c1-445a-a226-3d642df361fb",
+    "fb5e305f-98cd-4a91-af2d-03231ec6bcca",
+    "cddaa702-8f78-42c6-9911-c858300c5f7a",
+    "c3b4ce51-16ed-4d53-af99-babd29cd9dd6",
+    "14426017-7a11-41b4-a522-5d4f1d33477d",
+    "1a847759-c170-404a-9ce7-b315441f65f4"
+  ],
+  "rows": [
+    {
+      "event_id": "4a4162d6-4ac1-49c1-9a51-1fd9a352445c",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:28:13.649517+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "22ca007a-65ca-4641-80ba-3694daacdea9",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "profile",
+        "canonical_path": "/"
+      }
+    },
+    {
+      "event_id": "8beba417-7891-478f-bd33-18d0d2fef503",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:28:14.599336+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "d4c6c5eb-816b-4341-8ac4-4d691e7c43e8",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "profile",
+        "canonical_path": "/work/blueprint"
+      }
+    },
+    {
+      "event_id": "05d144d2-aa9b-4da0-b9da-592fb893d806",
+      "event_name": "site_link_clicked",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:28:15.479583+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "d4c6c5eb-816b-4341-8ac4-4d691e7c43e8",
+        "target_kind": "internal",
+        "target_path": "/photography",
+        "site_section": "profile",
+        "canonical_path": "/work/blueprint"
+      }
+    },
+    {
+      "event_id": "c33451b5-bd1c-4a3f-8809-067b6f017304",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:34:09.085557+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "20a85676-f172-4886-8165-9533c3625c74",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "profile",
+        "canonical_path": "/"
+      }
+    },
+    {
+      "event_id": "879b123c-bee6-45c6-9108-4e00ade3fb59",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:34:10.27006+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "31305461-b319-41f6-93cd-783e3602f464",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "profile",
+        "canonical_path": "/work/blueprint"
+      }
+    },
+    {
+      "event_id": "08f02c56-67b9-4a51-bc6d-82e588ecddc5",
+      "event_name": "site_link_clicked",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:34:11.002531+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "31305461-b319-41f6-93cd-783e3602f464",
+        "target_kind": "internal",
+        "target_path": "/photography",
+        "site_section": "profile",
+        "canonical_path": "/work/blueprint"
+      }
+    },
+    {
+      "event_id": "4250c4d7-e454-464e-bf2f-f0f7d318a092",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:41:15.711013+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "ca0cac80-abfc-4ffb-8971-f2299b576777",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "photography",
+        "canonical_path": "/photography"
+      }
+    },
+    {
+      "event_id": "0ccfc753-36d4-45d1-a6ca-b28ab366dc24",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:41:16.667635+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "7e96662b-2dc7-4a06-a1a5-66c06e9da152",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "writing",
+        "canonical_path": "/blog"
+      }
+    },
+    {
+      "event_id": "1c90e4b6-02a1-4c77-b09e-35d83343257e",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:41:17.703418+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "c0840d99-668c-4161-b599-5de89045ed3d",
+        "content_kind": "article",
+        "layout_class": "wide",
+        "site_section": "writing",
+        "canonical_path": "/blog/who-is-still-driving"
+      }
+    },
+    {
+      "event_id": "f209b489-8f2e-410f-a97f-cce34e4e39ad",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:41:18.635969+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "2c3dd388-6488-495a-a827-b68fea95247f",
+        "content_kind": "demo_story",
+        "layout_class": "wide",
+        "site_section": "demos",
+        "canonical_path": "/demos/browse-tool"
+      }
+    },
+    {
+      "event_id": "f4fc5e8a-ec78-4678-a91f-597990816029",
+      "event_name": "demo_section_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:41:18.640933+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "2c3dd388-6488-495a-a827-b68fea95247f",
+        "position": 1,
+        "site_section": "demos",
+        "section_count": 10,
+        "canonical_path": "/demos/browse-tool"
+      }
+    },
+    {
+      "event_id": "048e6a9a-3ce0-45d3-b8b0-b1a6a6f76bc1",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:41:19.761709+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "727428b8-6cec-40fe-bced-92b3e379e2a5",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "profile",
+        "canonical_path": "/"
+      }
+    },
+    {
+      "event_id": "209d451f-7bc7-488d-a02b-4c49c98183cd",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:41:20.794215+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "1c406284-04d1-4e44-a4ad-327c4e39449e",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "profile",
+        "canonical_path": "/work/blueprint"
+      }
+    },
+    {
+      "event_id": "7e5ed1c1-97c6-4c97-9ce0-c4c16eeac180",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T05:41:24.134533+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "2e550a3e-f795-494b-990c-0a28ec063b0d",
+        "content_kind": "page",
+        "layout_class": "narrow",
+        "site_section": "photography",
+        "canonical_path": "/photography"
+      }
+    },
+    {
+      "event_id": "742a473f-8612-428c-93bc-0cc48c482633",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T06:04:45.467083+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "f67b78fc-2957-480a-98ab-8609c3d3fa0b",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "photography",
+        "canonical_path": "/photography"
+      }
+    },
+    {
+      "event_id": "dc927259-b657-42b3-b7b6-36a37e43433c",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T06:04:46.242538+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "ce2566bb-d127-4c26-933e-02a885fc97cf",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "writing",
+        "canonical_path": "/blog"
+      }
+    },
+    {
+      "event_id": "33acdcec-0231-44c4-9070-568c4b0012d6",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T06:04:47.198578+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "f66a83b7-9b4c-4fff-9536-c1fd0767a7d4",
+        "content_kind": "article",
+        "layout_class": "wide",
+        "site_section": "writing",
+        "canonical_path": "/blog/who-is-still-driving"
+      }
+    },
+    {
+      "event_id": "61d34058-89c1-445a-a226-3d642df361fb",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T06:04:48.416889+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "358c3638-fe85-4d5b-a0b0-5bcf13a22b94",
+        "content_kind": "demo_story",
+        "layout_class": "wide",
+        "site_section": "demos",
+        "canonical_path": "/demos/browse-tool"
+      }
+    },
+    {
+      "event_id": "fb5e305f-98cd-4a91-af2d-03231ec6bcca",
+      "event_name": "demo_section_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T06:04:48.430716+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "358c3638-fe85-4d5b-a0b0-5bcf13a22b94",
+        "position": 1,
+        "site_section": "demos",
+        "section_count": 10,
+        "canonical_path": "/demos/browse-tool"
+      }
+    },
+    {
+      "event_id": "cddaa702-8f78-42c6-9911-c858300c5f7a",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T06:04:49.331219+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "2fd5c01b-d93a-40f4-b59c-0aa6dd0ae77e",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "profile",
+        "canonical_path": "/"
+      }
+    },
+    {
+      "event_id": "c3b4ce51-16ed-4d53-af99-babd29cd9dd6",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T06:04:50.334409+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "bafa6134-17e0-4cf3-94b7-1b7e171cbdbb",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "profile",
+        "canonical_path": "/work/blueprint"
+      }
+    },
+    {
+      "event_id": "14426017-7a11-41b4-a522-5d4f1d33477d",
+      "event_name": "site_link_clicked",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T06:04:51.202902+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "bafa6134-17e0-4cf3-94b7-1b7e171cbdbb",
+        "target_kind": "internal",
+        "target_path": "/photography",
+        "site_section": "profile",
+        "canonical_path": "/work/blueprint"
+      }
+    },
+    {
+      "event_id": "1a847759-c170-404a-9ce7-b315441f65f4",
+      "event_name": "site_page_viewed",
+      "traffic_context": "self_excluded",
+      "export_eligible": false,
+      "received_at": "2026-09-30T06:04:53.736974+00:00",
+      "anonymous_browser_id": null,
+      "visit_id": null,
+      "properties": {
+        "release": "commit_2eb4c6c10c98",
+        "view_id": "f96abc8a-0dcb-4f64-8233-427e5104fddb",
+        "content_kind": "page",
+        "layout_class": "wide",
+        "site_section": "photography",
+        "canonical_path": "/photography"
+      }
+    }
+  ],
+  "outbox": [],
+  "daily": [
+    {
+      "bucket_date": "2026-09-30",
+      "section": "profile",
+      "path": "/",
+      "page_views": 0,
+      "contact_clicks": 0,
+      "external_clicks": 0,
+      "reading_90": 0,
+      "active_30": 0,
+      "demo_last_section": 0,
+      "excluded_events": 4
+    },
+    {
+      "bucket_date": "2026-09-30",
+      "section": "writing",
+      "path": "/blog",
+      "page_views": 0,
+      "contact_clicks": 0,
+      "external_clicks": 0,
+      "reading_90": 0,
+      "active_30": 0,
+      "demo_last_section": 0,
+      "excluded_events": 2
+    },
+    {
+      "bucket_date": "2026-09-30",
+      "section": "writing",
+      "path": "/blog/who-is-still-driving",
+      "page_views": 0,
+      "contact_clicks": 0,
+      "external_clicks": 0,
+      "reading_90": 0,
+      "active_30": 0,
+      "demo_last_section": 0,
+      "excluded_events": 2
+    },
+    {
+      "bucket_date": "2026-09-30",
+      "section": "demos",
+      "path": "/demos/browse-tool",
+      "page_views": 0,
+      "contact_clicks": 0,
+      "external_clicks": 0,
+      "reading_90": 0,
+      "active_30": 0,
+      "demo_last_section": 0,
+      "excluded_events": 4
+    },
+    {
+      "bucket_date": "2026-09-30",
+      "section": "photography",
+      "path": "/photography",
+      "page_views": 0,
+      "contact_clicks": 0,
+      "external_clicks": 0,
+      "reading_90": 0,
+      "active_30": 0,
+      "demo_last_section": 0,
+      "excluded_events": 4
+    },
+    {
+      "bucket_date": "2026-09-30",
+      "section": "profile",
+      "path": "/work/blueprint",
+      "page_views": 0,
+      "contact_clicks": 0,
+      "external_clicks": 0,
+      "reading_90": 0,
+      "active_30": 0,
+      "demo_last_section": 0,
+      "excluded_events": 7
+    }
+  ],
+  "status": [
+    {
+      "report_name": "site_actions",
+      "last_successful_at": "2026-09-30T06:07:00.080525+00:00",
+      "summary_cutoff_at": "2026-09-30T06:07:00.058989+00:00",
+      "last_error_at": null,
+      "last_error_code": null
+    }
+  ],
+  "report": {
+    "end": "2026-09-29",
+    "page": 0,
+    "pages": [],
+    "start": "2026-08-31",
+    "totals": {},
+    "available": true,
+    "freshness": {
+      "status": "current",
+      "refreshedAt": "2026-09-30T06:07:00.080525+00:00",
+      "lastFailureAt": null,
+      "todayAvailable": true,
+      "summaryCutoffAt": "2026-09-30T06:07:00.058989+00:00",
+      "completedThrough": "2026-09-29"
+    },
+    "pageCount": 1,
+    "todayTotals": {},
+    "excludedEvents": 0,
+    "previousTotals": {},
+    "firstRecordedAt": "2026-09-30T05:28:13.546+00:00",
+    "recordedSections": []
+  }
+}

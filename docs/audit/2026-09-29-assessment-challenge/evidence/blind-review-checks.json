@@ -1,0 +1,88 @@
+[
+  {
+    "review": "visual",
+    "session_file": "/Users/nino/.codex/sessions/2026/09/29/rollout-2026-09-29T18-38-09-01a0ef88-66eb-7ff0-a0b3-a417f07bf057.jsonl",
+    "image_call_lines": [
+      35,
+      45,
+      57,
+      69,
+      140
+    ],
+    "rationale_read_lines": [
+      94,
+      103,
+      110,
+      117,
+      124
+    ],
+    "checkpoint_line": 82,
+    "images_before_checkpoint": true,
+    "assessment_after_checkpoint": true,
+    "session_context": {
+      "model": "gpt-5.6-sol",
+      "effort": "high",
+      "sandbox_policy": {
+        "type": "read-only"
+      },
+      "approval_policy": "never"
+    }
+  },
+  {
+    "review": "structure",
+    "session_file": "/Users/nino/.codex/sessions/2026/09/29/rollout-2026-09-29T18-38-09-01a0ef88-66ea-7cb2-8758-636cf3a91aa0.jsonl",
+    "image_call_lines": [
+      35,
+      44,
+      55,
+      66,
+      139,
+      197
+    ],
+    "rationale_read_lines": [
+      81,
+      88,
+      95,
+      104,
+      118
+    ],
+    "checkpoint_line": 78,
+    "images_before_checkpoint": true,
+    "assessment_after_checkpoint": true,
+    "session_context": {
+      "model": "gpt-5.6-sol",
+      "effort": "high",
+      "sandbox_policy": {
+        "type": "read-only"
+      },
+      "approval_policy": "never"
+    }
+  },
+  {
+    "review": "verdict",
+    "session_file": "/Users/nino/.codex/sessions/2026/09/29/rollout-2026-09-29T18-38-09-01a0ef88-66ea-7dd2-828e-a1420b10579a.jsonl",
+    "image_call_lines": [
+      42,
+      53,
+      64,
+      75
+    ],
+    "rationale_read_lines": [
+      90,
+      97,
+      104,
+      113
+    ],
+    "checkpoint_line": 87,
+    "images_before_checkpoint": true,
+    "assessment_after_checkpoint": true,
+    "session_context": {
+      "model": "gpt-5.6-sol",
+      "effort": "high",
+      "sandbox_policy": {
+        "type": "read-only"
+      },
+      "approval_policy": "never"
+    }
+  }
+]

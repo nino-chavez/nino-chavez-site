@@ -1,0 +1,60 @@
+{
+  "retrievedAt": "2026-09-30T03:23:01.237Z",
+  "url": "https://analytics.ninochavez.co/sites?view=actions",
+  "title": "Site analytics \u2014 Nino Chavez",
+  "text": "NC\nNino Chavez / Reports\nView site \u2197\n\nACROSS NINOCHAVEZ.CO\n\nSite analytics\n\nFind which work people reach, then inspect a section.\n\nAvailable by direct link\n\nSites\nGallery report\nPeriod\n7 days\n30 days\n90 days\nSection\nAll sections\nProfile & work\nWriting\nDemos\nPhotography\nOther pages\nReach\nActions\n\nOBSERVED ACTIONS\n\nWhat visitors did\n2026-08-31\u20132026-09-29 \u00b7 complete UTC days\nUpdated Sep 30, 2026, 3:07 AM UTC\n\nOperator, test, classified bot and excluded-browser activity is omitted. These are action counts, not people or completed outcomes. No browser or visit identifiers are shown.\n\nNo matching action has been recorded yet. This tracking starts with this release; earlier Cloudflare traffic cannot supply missing actions.\nPages viewed\n\u2014\nVisible public pages. Separate from Cloudflare page loads.\nToday: not available\nContact links clicked\n\u2014\nEmail or phone links opened. This is not a submitted inquiry.\nToday: not available\nOutbound links clicked\n\u2014\nLinks leading to another site. No destination or contact values are stored.\nToday: not available\n90% of article reached\n\u2014\nThe viewport reached 90% of an article. This does not prove it was read.\nToday: not available\n30 seconds with article\n\u2014\nAn article was on screen in a visible, focused tab for at least 30 seconds.\nToday: not available\nLast demo section reached\n\u2014\nThe last chapter appeared on screen. This does not prove every chapter was visited.\nToday: not available\nActions by page \u00b7 most viewed first\nPage\tPages viewed\tContact links clicked\tOutbound links clicked\t90% of article reached\t30 seconds with article\tLast demo section reached\n\nNo audience actions match these dates and section.\n\nUse these signals to decide what to change\nLinked journeys \u00b7 PostHog\n\nExclude your browser or change linked-analytics choices. PostHog journeys use only opted-in visits and will differ from these totals.",
+  "links": [
+    {
+      "text": "Sites",
+      "href": "https://analytics.ninochavez.co/sites"
+    },
+    {
+      "text": "Gallery report",
+      "href": "https://analytics.ninochavez.co/gallery"
+    },
+    {
+      "text": "7 days",
+      "href": "https://analytics.ninochavez.co/sites?period=7&view=actions"
+    },
+    {
+      "text": "30 days",
+      "href": "https://analytics.ninochavez.co/sites?period=30&view=actions"
+    },
+    {
+      "text": "90 days",
+      "href": "https://analytics.ninochavez.co/sites?period=90&view=actions"
+    },
+    {
+      "text": "All sections",
+      "href": "https://analytics.ninochavez.co/sites?period=30&view=actions"
+    },
+    {
+      "text": "Profile & work",
+      "href": "https://analytics.ninochavez.co/sites?period=30&view=actions&section=profile"
+    },
+    {
+      "text": "Writing",
+      "href": "https://analytics.ninochavez.co/sites?period=30&view=actions&section=writing"
+    },
+    {
+      "text": "Demos",
+      "href": "https://analytics.ninochavez.co/sites?period=30&view=actions&section=demos"
+    },
+    {
+      "text": "Photography",
+      "href": "https://analytics.ninochavez.co/sites?period=30&view=actions&section=photography"
+    },
+    {
+      "text": "Other pages",
+      "href": "https://analytics.ninochavez.co/sites?period=30&view=actions&section=other"
+    },
+    {
+      "text": "Reach",
+      "href": "https://analytics.ninochavez.co/sites?period=30&section=all&view=reach"
+    },
+    {
+      "text": "Actions",
+      "href": "https://analytics.ninochavez.co/sites?period=30&section=all&view=actions"
+    }
+  ]
+}

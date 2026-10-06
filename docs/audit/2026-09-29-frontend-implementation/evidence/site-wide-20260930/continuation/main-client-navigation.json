@@ -1,0 +1,170 @@
+{
+  "journey": "Sessions footer Writing, awaited /blog, then hard reload and visible controls",
+  "client": {
+    "path": "/blog",
+    "styles": [
+      {
+        "background": "rgb(247, 248, 250)",
+        "border": "0.97561px solid rgb(185, 190, 198)",
+        "class": "library-controls writing-controls",
+        "color": "rgb(20, 32, 46)",
+        "columns": "590.884px 216.658px 216.658px 216.658px",
+        "display": "grid",
+        "fontSize": "16px",
+        "gap": "14px",
+        "padding": "17.6px",
+        "text": "Search the publicationFormAll formsEssayWhitepaperPresentationTutorial",
+        "width": 1320
+      },
+      {
+        "background": "rgba(240, 241, 244, 0.97)",
+        "border": "",
+        "class": "library-status",
+        "color": "rgb(90, 100, 114)",
+        "columns": "none",
+        "display": "flex",
+        "fontSize": "12px",
+        "gap": "10px 20px",
+        "padding": "9px 12px",
+        "text": "306 of 306 published pieces in viewComplete publicationAdjust filters ",
+        "width": 1343.993896484375
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "0px none rgb(20, 32, 46)",
+        "class": "group-heading",
+        "color": "rgb(20, 32, 46)",
+        "columns": "none",
+        "display": "flex",
+        "fontSize": "16px",
+        "gap": "20px",
+        "padding": "0px",
+        "text": "Essays260 piecesPublic reflections, field notes, and arguments.",
+        "width": 222.1189117431641
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "",
+        "class": "work-record writing-record",
+        "color": "rgb(20, 32, 46)",
+        "columns": "216.505px 676.582px 46.7988px",
+        "display": "grid",
+        "fontSize": "16px",
+        "gap": "36px",
+        "padding": "14px 0px",
+        "text": "AI & Automation29 Sep 2026The Work Doesn’t End at SendAI can make a re",
+        "width": 1011.8826293945312
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "",
+        "class": "work-record writing-record",
+        "color": "rgb(20, 32, 46)",
+        "columns": "216.505px 676.582px 46.7988px",
+        "display": "grid",
+        "fontSize": "16px",
+        "gap": "36px",
+        "padding": "14px 0px",
+        "text": "AI & Automation29 Sep 2026Trying to teach an AI how I edit photosWe bu",
+        "width": 1011.8826293945312
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "",
+        "class": "work-record writing-record",
+        "color": "rgb(20, 32, 46)",
+        "columns": "216.505px 676.582px 46.7988px",
+        "display": "grid",
+        "fontSize": "16px",
+        "gap": "36px",
+        "padding": "14px 0px",
+        "text": "AI & Automation15 Sep 2026The Connector You Can't OAuthI asked the new",
+        "width": 1011.8826293945312
+      }
+    ]
+  },
+  "reload": {
+    "path": "/blog",
+    "styles": [
+      {
+        "background": "rgb(247, 248, 250)",
+        "border": "0.97561px solid rgb(185, 190, 198)",
+        "class": "library-controls writing-controls",
+        "color": "rgb(20, 32, 46)",
+        "columns": "590.884px 216.658px 216.658px 216.658px",
+        "display": "grid",
+        "fontSize": "16px",
+        "gap": "14px",
+        "padding": "17.6px",
+        "text": "Search the publicationFormAll formsEssayWhitepaperPresentationTutorial",
+        "width": 1320
+      },
+      {
+        "background": "rgba(240, 241, 244, 0.97)",
+        "border": "",
+        "class": "library-status",
+        "color": "rgb(90, 100, 114)",
+        "columns": "none",
+        "display": "flex",
+        "fontSize": "12px",
+        "gap": "10px 20px",
+        "padding": "9px 12px",
+        "text": "306 of 306 published pieces in viewComplete publicationAdjust filters ",
+        "width": 1343.993896484375
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "0px none rgb(20, 32, 46)",
+        "class": "group-heading",
+        "color": "rgb(20, 32, 46)",
+        "columns": "none",
+        "display": "flex",
+        "fontSize": "16px",
+        "gap": "normal",
+        "padding": "0px",
+        "text": "Essays260 piecesPublic reflections, field notes, and arguments.",
+        "width": 222.1189117431641
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "",
+        "class": "work-record writing-record",
+        "color": "rgb(20, 32, 46)",
+        "columns": "216.505px 676.582px 46.7988px",
+        "display": "grid",
+        "fontSize": "16px",
+        "gap": "36px",
+        "padding": "14px 0px",
+        "text": "AI & Automation29 Sep 2026The Work Doesn’t End at SendAI can make a re",
+        "width": 1011.8826293945312
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "",
+        "class": "work-record writing-record",
+        "color": "rgb(20, 32, 46)",
+        "columns": "216.505px 676.582px 46.7988px",
+        "display": "grid",
+        "fontSize": "16px",
+        "gap": "36px",
+        "padding": "14px 0px",
+        "text": "AI & Automation29 Sep 2026Trying to teach an AI how I edit photosWe bu",
+        "width": 1011.8826293945312
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "",
+        "class": "work-record writing-record",
+        "color": "rgb(20, 32, 46)",
+        "columns": "216.505px 676.582px 46.7988px",
+        "display": "grid",
+        "fontSize": "16px",
+        "gap": "36px",
+        "padding": "14px 0px",
+        "text": "AI & Automation15 Sep 2026The Connector You Can't OAuthI asked the new",
+        "width": 1011.8826293945312
+      }
+    ]
+  },
+  "equal": false
+}

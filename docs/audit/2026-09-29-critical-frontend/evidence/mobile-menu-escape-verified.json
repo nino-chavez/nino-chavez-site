@@ -1,0 +1,17 @@
+{
+  "url": "https://ninochavez.co/work",
+  "dialogs": [
+    {
+      "open": false,
+      "id": "site-navigation-dialog",
+      "visible": "none"
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Menu",
+      "expanded": "false"
+    }
+  ],
+  "focused": "Menu"
+}

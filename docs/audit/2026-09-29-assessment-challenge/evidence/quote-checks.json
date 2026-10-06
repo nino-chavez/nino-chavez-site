@@ -1,0 +1,149 @@
+[
+  {
+    "review": "visual",
+    "quote": "Real proof",
+    "exact_source_match": []
+  },
+  {
+    "review": "visual",
+    "quote": "How I work",
+    "exact_source_match": [
+      "docs/audit/2026-09-29-critical-frontend/ASSESSMENT.md"
+    ]
+  },
+  {
+    "review": "visual",
+    "quote": "A whole-site redesign would spend effort replacing things that already work.",
+    "exact_source_match": [
+      "docs/audit/2026-09-29-critical-frontend/ASSESSMENT.md"
+    ]
+  },
+  {
+    "review": "visual",
+    "quote": "The visual language is authored.",
+    "exact_source_match": [
+      "docs/audit/2026-09-29-critical-frontend/ASSESSMENT.md"
+    ]
+  },
+  {
+    "review": "visual",
+    "quote": "Varied page compositions connect to this body of work.",
+    "exact_source_match": []
+  },
+  {
+    "review": "visual",
+    "quote": "Fonts, palette, publication identity \\| Preserve.",
+    "exact_source_match": []
+  },
+  {
+    "review": "visual",
+    "quote": "Photography entrance. Preserve image discovery and gallery controls; align the common navigation.",
+    "exact_source_match": []
+  },
+  {
+    "review": "visual",
+    "quote": "Under a refit, preserve behavior and identity; three new concepts are unnecessary.",
+    "exact_source_match": [
+      "docs/design/experience-brief.md"
+    ]
+  },
+  {
+    "review": "structure",
+    "quote": "Four places to start",
+    "exact_source_match": []
+  },
+  {
+    "review": "structure",
+    "quote": "How I work",
+    "exact_source_match": [
+      "docs/audit/2026-09-29-critical-frontend/ASSESSMENT.md"
+    ]
+  },
+  {
+    "review": "structure",
+    "quote": "Sessions",
+    "exact_source_match": [
+      "docs/audit/2026-09-29-critical-frontend/ASSESSMENT.md",
+      "docs/design/experience-brief.md"
+    ]
+  },
+  {
+    "review": "structure",
+    "quote": "A whole-site redesign would spend effort replacing things that already work.",
+    "exact_source_match": [
+      "docs/audit/2026-09-29-critical-frontend/ASSESSMENT.md"
+    ]
+  },
+  {
+    "review": "structure",
+    "quote": "The website establishes Nino faster than it demonstrates what Nino builds.",
+    "exact_source_match": []
+  },
+  {
+    "review": "structure",
+    "quote": "Refit Home, Work, Learn, and the common navigation.",
+    "exact_source_match": [
+      "docs/audit/2026-09-29-critical-frontend/ASSESSMENT.md"
+    ]
+  },
+  {
+    "review": "structure",
+    "quote": "The existing site already has a clear purpose.",
+    "exact_source_match": []
+  },
+  {
+    "review": "structure",
+    "quote": "Do not add another selected-work grid above the atlas.",
+    "exact_source_match": [
+      "docs/design/experience-brief.md"
+    ]
+  },
+  {
+    "review": "structure",
+    "quote": "Under a refit… three new concepts are unnecessary.",
+    "exact_source_match": []
+  },
+  {
+    "review": "verdict",
+    "quote": "selected work",
+    "exact_source_match": [
+      "docs/audit/2026-09-29-critical-frontend/ASSESSMENT.md"
+    ]
+  },
+  {
+    "review": "verdict",
+    "quote": "The visual language is authored.",
+    "exact_source_match": [
+      "docs/audit/2026-09-29-critical-frontend/ASSESSMENT.md"
+    ]
+  },
+  {
+    "review": "verdict",
+    "quote": "Refit Home, Work, Learn, and the common navigation.",
+    "exact_source_match": [
+      "docs/audit/2026-09-29-critical-frontend/ASSESSMENT.md"
+    ]
+  },
+  {
+    "review": "verdict",
+    "quote": "A whole-site rethink has not earned its cost.",
+    "exact_source_match": []
+  },
+  {
+    "review": "verdict",
+    "quote": "Photography’s role in the homepage opening — Preserve as the baseline.",
+    "exact_source_match": []
+  },
+  {
+    "review": "verdict",
+    "quote": "Use the existing Anton / Inter / Space Mono roles and owned color tokens.",
+    "exact_source_match": [
+      "docs/design/experience-brief.md"
+    ]
+  },
+  {
+    "review": "verdict",
+    "quote": "Under a refit…three new concepts are unnecessary.",
+    "exact_source_match": []
+  }
+]

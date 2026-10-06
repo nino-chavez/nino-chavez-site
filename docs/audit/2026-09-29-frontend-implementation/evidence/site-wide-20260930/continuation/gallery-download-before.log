@@ -1,0 +1,45 @@
+(node:83852) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+[1A[2K(node:83853) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:83853) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+
+[1A[2K(node:83853) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K[1/1] [chromium] › tests/refit-journeys.spec.ts:106:1 › photo download delivers a decodable image
+[1A[2K  1) [chromium] › tests/refit-journeys.spec.ts:106:1 › photo download delivers a decodable image ───
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"jpeg"[39m
+    Received: [31m"webp"[39m
+
+      87 | 	expect(bytes.length).toBeGreaterThan(1000);
+      88 | 	const metadata = await sharp(bytes).metadata();
+    > 89 | 	expect(metadata.format).toBe('jpeg');
+         | 	                        ^
+      90 | 	expect(metadata.width).toBeGreaterThan(0);
+      91 | 	expect(metadata.height).toBeGreaterThan(0);
+      92 | });
+        at /Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/referral-entry-20260930/tests/refit-journeys.spec.ts:89:26
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/refit-journeys-photo-download-delivers-a-decodable-image-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/refit-journeys-photo-download-delivers-a-decodable-image-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/refit-journeys-photo-download-delivers-a-decodable-image-chromium/error-context.md
+
+
+[1A[2K  1 failed
+    [chromium] › tests/refit-journeys.spec.ts:106:1 › photo download delivers a decodable image ────

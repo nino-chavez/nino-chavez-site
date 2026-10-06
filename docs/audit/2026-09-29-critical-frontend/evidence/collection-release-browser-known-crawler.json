@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-09-30T05:23:38.323Z",
+  "syntheticAcceptance": true,
+  "classificationMethod": "Existing browser exclusion cookie applied only to collector requests; actual preferences responses and client events are unchanged.",
+  "targetId": "7B9CF351B9E442A5B3CE5ED47255D881",
+  "events": [
+    {
+      "request": {
+        "event_id": "2bc14846-548c-4a63-ac1c-70c6ab4b1ff8",
+        "schema_version": 2,
+        "event_name": "site_page_viewed",
+        "occurred_at": "2026-09-30T05:23:17.580Z",
+        "anonymous_browser_id": null,
+        "visit_id": null,
+        "properties": {
+          "site_section": "profile",
+          "canonical_path": "/",
+          "view_id": "492c37c4-0d45-4c11-941a-0be0c29997d5",
+          "layout_class": "wide",
+          "content_kind": "page"
+        }
+      },
+      "exclusionApplied": true,
+      "status": 202,
+      "response": {
+        "accepted": false,
+        "duplicate": false,
+        "reason": "known_crawler"
+      }
+    }
+  ],
+  "observations": [],
+  "failures": [],
+  "screens": []
+}

@@ -1,0 +1,66 @@
+(node:79242) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+[1A[2K(node:79243) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:79243) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+
+[1A[2K(node:79243) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K[1/4] [chromium] › tests/refit-journeys.spec.ts:34:3 › viewer preserves keyboard position at 1440px
+[1A[2K[2/4] [chromium] › tests/refit-journeys.spec.ts:34:3 › viewer preserves keyboard position at 390px
+[1A[2K[3/4] [chromium] › tests/refit-journeys.spec.ts:73:1 › a saved photo survives reload and can be removed
+[1A[2K  1) [chromium] › tests/refit-journeys.spec.ts:73:1 › a saved photo survives reload and can be removed 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByText('No saved photos yet', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for getByText('No saved photos yet', { exact: true })[22m
+
+
+      66 | 	await saved.hover();
+      67 | 	await saved.getByRole('button', { name: 'Remove saved photo', exact: true }).click();
+    > 68 | 	await expect(page.getByText('No saved photos yet', { exact: true })).toBeVisible();
+         | 	                                                                     ^
+      69 | 	await page.reload();
+      70 | 	await expect(page.getByText('No saved photos yet', { exact: true })).toBeVisible();
+      71 | });
+        at /Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/referral-entry-20260930/tests/refit-journeys.spec.ts:68:71
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/refit-journeys-a-saved-pho-e364e-s-reload-and-can-be-removed-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/refit-journeys-a-saved-pho-e364e-s-reload-and-can-be-removed-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/refit-journeys-a-saved-pho-e364e-s-reload-and-can-be-removed-chromium/error-context.md
+
+
+[1A[2K(node:79349) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:79349) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+
+[1A[2K(node:79349) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K[4/4] [chromium] › tests/refit-journeys.spec.ts:101:1 › photo download delivers a decodable image
+[1A[2K  1 failed
+    [chromium] › tests/refit-journeys.spec.ts:73:1 › a saved photo survives reload and can be removed 
+  3 passed (26.1s)

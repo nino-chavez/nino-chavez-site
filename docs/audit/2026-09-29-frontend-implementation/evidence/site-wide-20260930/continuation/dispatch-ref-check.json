@@ -1,0 +1,14 @@
+[
+  {
+    "review": "publication",
+    "dispatchId": "4de1a65e-ec20-4aa1-97d2-7c1f54187983",
+    "branchRefsUnchanged": true,
+    "worktree": "/Users/nino/Workspace/dev/sites/nino/blog/.worktrees/codex/referral-design-b-20260930"
+  },
+  {
+    "review": "main-styles",
+    "dispatchId": "800f12fd-0150-4155-a062-92ba6cbed0fa",
+    "branchRefsUnchanged": true,
+    "worktree": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929"
+  }
+]

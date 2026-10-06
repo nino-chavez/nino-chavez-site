@@ -1,0 +1,68 @@
+{
+  "artifacts": {
+    "events": "/Users/nino/.local/state/nino-operator/dispatch/cf10249e-7c38-4559-bd07-c92146176336/events.jsonl",
+    "last_message": "/Users/nino/.local/state/nino-operator/dispatch/cf10249e-7c38-4559-bd07-c92146176336/last-message.txt",
+    "receipt": "/Users/nino/.local/state/nino-operator/dispatch/cf10249e-7c38-4559-bd07-c92146176336/receipt.json",
+    "stderr": "/Users/nino/.local/state/nino-operator/dispatch/cf10249e-7c38-4559-bd07-c92146176336/stderr.txt"
+  },
+  "classifier": {
+    "confidence": 0.84,
+    "error": null,
+    "latency_ms": 207,
+    "provider": "typesafe",
+    "tier": "balanced"
+  },
+  "completed_at": "2026-09-30T04:01:23.081713Z",
+  "created_at": "2026-09-30T03:53:41.451233Z",
+  "cwd": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-collection-readiness-20260929",
+  "dispatch_id": "cf10249e-7c38-4559-bd07-c92146176336",
+  "exit_code": 0,
+  "experiment_id": null,
+  "observation_schema": 1,
+  "prompt_sha256": "e1a2c7b5d38af32d8d24a34a12e4256ee43f5d39961103096656f97a6f9776da",
+  "read_only": false,
+  "routing_mode": "balance",
+  "runtime_evidence": {
+    "child_thread_id": "01a0f072-5cd3-7851-9868-e857d434e646",
+    "executable": "/Users/nino/.nvm/versions/node/v22.21.1/bin/codex",
+    "reported_model": null,
+    "reported_reasoning_effort": null,
+    "status": "completed"
+  },
+  "sandbox": {
+    "filesystem": {
+      "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.git/logs": "write",
+      "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.git/logs/refs/stash": "read",
+      "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.git/objects": "write",
+      "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.git/refs": "write",
+      "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.git/refs/stash": "read",
+      "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.git/worktrees/site-collection-readiness-20260929": "write",
+      "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.git/worktrees/site-collection-readiness-20260929/commondir": "read",
+      "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.git/worktrees/site-collection-readiness-20260929/config.worktree": "read",
+      "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.git/worktrees/site-collection-readiness-20260929/gitdir": "read",
+      "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.git/worktrees/site-collection-readiness-20260929/rebase-apply": "read",
+      "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.git/worktrees/site-collection-readiness-20260929/rebase-merge": "read",
+      "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.git/worktrees/site-collection-readiness-20260929/sequencer": "read"
+    },
+    "mode": "workspace-write",
+    "network": "loopback",
+    "permissions_profile": "operator_dispatch_write"
+  },
+  "schema_version": 1,
+  "selected_route": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "tier": "implementation"
+  },
+  "stage": "completed",
+  "stopping_advice": {
+    "decision": "allow",
+    "mode": "observe",
+    "reason": "routine_work"
+  },
+  "task_id": "nino-site-collection-readiness-20260929",
+  "task_record_path": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/docs/audit/2026-09-29-critical-frontend/collection-task.json",
+  "timeout_seconds": 900.0,
+  "updated_at": "2026-09-30T04:01:23.081677Z",
+  "work_kind": "routine"
+}

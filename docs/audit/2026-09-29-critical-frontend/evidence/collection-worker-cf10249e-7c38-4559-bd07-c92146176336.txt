@@ -1,0 +1,9 @@
+Committed the race fix as `cc1a3959152d4a14f809b9f745b42fe8ff71e3e1`.
+
+- Defect: React readiness could create a view before preferences loaded; the later retry saw the same path and dropped the initial page view.
+- Changed: `static/site-activity.js` gates `start()` until preferences load. `tests/site-activity.spec.ts` delays the real asset’s preference request and covers repeated readiness, route change, excluded preferences, and a failed request.
+- Red command: Playwright could not reach the assertion here. Its expected bundled browser was absent; the available shell then failed macOS Mach-port permission before opening a page.
+- Green checks: `node --check static/site-activity.js` and TypeScript validation of `tests/site-activity.spec.ts` passed.
+- Broad tracker tests: not executable in this restricted browser runtime for the same launch failure.
+- `npm run check`: Svelte check reported 0 errors; its final taxonomy subprocess was blocked from creating a local IPC socket.
+- Cleanup: removed the temporary Playwright config and test output. Port 4320 is unused. Worktree is clean.

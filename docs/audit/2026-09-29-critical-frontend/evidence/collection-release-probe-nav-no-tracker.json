@@ -1,0 +1,173 @@
+{
+  "mode": "nav-no-tracker",
+  "syntheticAcceptance": true,
+  "startedAt": "2026-09-30T06:02:29.411Z",
+  "targetId": "D35B22AE2C0B030F62A85B45C2411D69",
+  "checks": [
+    {
+      "frameNavigated": "https://ninochavez.co/work/blueprint"
+    },
+    {
+      "frameNavigated": "https://ninochavez.co/work/blueprint"
+    },
+    {
+      "frameNavigated": "https://ninochavez.co/work/blueprint"
+    },
+    {
+      "firstStatus": 200,
+      "speculationHeader": "\"/cdn-cgi/speculation\""
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/work/blueprint",
+      "type": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/cdn-cgi/speculation",
+      "type": "other"
+    },
+    {
+      "method": "GET",
+      "path": "/work/blueprint.png",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/index-BmdNnmlC.css",
+      "type": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/layout-segment-context-BYRckPzQ.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/rolldown-runtime-S-ySWqyJ.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/index-DQPdmYFu.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/framework-DjPHiq1u.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/SiteHeader-CkoLv4F9.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/link-CmPtUKUI.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/query-Bf6XU0gg.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/SiteActivity-DAH4JEiK.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/photography/site-activity.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/fonts/inter-latin.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "path": "/fonts/space-mono-latin-700-normal.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "path": "/fonts/space-mono-latin-400-normal.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "path": "/cdn-cgi/challenge-platform/scripts/jsd/main.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/cdn-cgi/challenge-platform/h/b/scripts/jsd/d76008a69eab/main.js",
+      "type": "script"
+    },
+    {
+      "method": "POST",
+      "path": "/cdn-cgi/challenge-platform/h/b/jsd/oneshot/d76008a69eab/0.41132107542808993:1790744429:D-gxIVApnRAcm87oXSrnSbWvKsRq49dYK7gyEPT2wKA/a43104de1baf2bff",
+      "type": "xhr"
+    },
+    {
+      "method": "GET",
+      "path": "/favicon.png",
+      "type": "other"
+    },
+    {
+      "method": "GET",
+      "path": "/work.rsc",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/favicon.png",
+      "type": "other"
+    },
+    {
+      "method": "GET",
+      "path": "/photography/api/analytics/preferences",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/photography",
+      "type": "prefetch"
+    },
+    {
+      "method": "GET",
+      "path": "/photography",
+      "type": "document"
+    }
+  ],
+  "consoleErrors": [],
+  "failures": [
+    "Error: Navigating frame was detached"
+  ],
+  "blockedURLs": [
+    "https://static.cloudflareinsights.com/*",
+    "https://ninochavez.co/cdn-cgi/rum*",
+    "https://ninochavez.co/photography/site-activity.js*"
+  ],
+  "preferences": {
+    "linkedAnalytics": false,
+    "excludeThisBrowser": true
+  },
+  "before": {
+    "path": "/work/blueprint",
+    "tracker": false,
+    "analyticsPath": "/work/blueprint",
+    "speculation": 0
+  },
+  "finishedAt": "2026-09-30T06:02:31.071Z"
+}

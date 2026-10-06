@@ -1,0 +1,29 @@
+{
+  "recordedAt": "2026-09-30T22:29:38.392997+00:00",
+  "repositories": {
+    "main": {
+      "path": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929",
+      "head": "fe44a2dacf899ea04d01d480dd89156702a894b2",
+      "branchRefsUnchanged": true,
+      "dispatch": "8768a508-e02c-4d9e-85af-0e10fa63e86e",
+      "completedReviewerReport": true,
+      "refChanges": {}
+    },
+    "publication": {
+      "path": "/Users/nino/Workspace/dev/sites/nino/blog/.worktrees/codex/referral-design-b-20260930",
+      "head": "2dd2f0342ecf2fe5d233c755b672eefc78a4fc68",
+      "branchRefsUnchanged": true,
+      "dispatch": "d2b73a0c-d1c0-4c69-a4fb-6b499af55a88",
+      "completedReviewerReport": false,
+      "refChanges": {}
+    },
+    "gallery": {
+      "path": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/referral-entry-20260930",
+      "head": "3a1bd85143e6d1e9e5c10f33a551a17995590f82",
+      "branchRefsUnchanged": true,
+      "dispatch": "245d273e-7dc7-487f-a618-fa0faa737dae",
+      "completedReviewerReport": true,
+      "refChanges": {}
+    }
+  }
+}

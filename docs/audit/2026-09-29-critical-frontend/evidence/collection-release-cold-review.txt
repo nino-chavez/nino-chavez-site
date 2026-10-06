@@ -1,0 +1,13 @@
+Verdict: no release-blocking usability defect from the analytics-choice addition.
+
+I opened both requested live mobile captures: `collection-release-browser-mobile-top.png` and `collection-release-mobile-footer-actual.png`.
+
+- Visual observation: the footer visibly identifies “Nino Chavez” and says “Product architect and builder in Chicago.” A photo-referral visitor can also reach the photography search immediately from the top capture through “Find photos.”
+
+- Visual observation: “Analytics choices” is a visible, legible footer link, placed after the primary site links. It is not visible at the photography page’s top, so a visitor must reach the global footer to find it. That is a discoverability limitation, but not a release blocker for an optional control.
+
+- Source finding: the exact privacy disclosure says “Analytics choices” lets a visitor “allow linked analytics or exclude this browser from audience action counts”; it also states that Cloudflare’s separate cookieless totals may still include visits. The later disclosure says turning linked analytics off stops new linked collection and queued exports, while existing PostHog records are not automatically deleted.
+
+Unobserved interaction: I did not open the preferences page or test whether either choice saves, takes effect, or remains available after navigation.
+
+No separate larger photo-finding weakness is evidenced by these two captures.

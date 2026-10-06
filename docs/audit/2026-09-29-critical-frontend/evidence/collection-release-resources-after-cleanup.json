@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-09-30T06:18:30.533Z",
+  "repos": [
+    {
+      "repo": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-site",
+      "ownedReleaseWorktreeRemoved": true,
+      "branchRefsUnchanged": true
+    },
+    {
+      "repo": "/Users/nino/Workspace/dev/sites/nino/nino-chavez-photography",
+      "ownedReleaseWorktreeRemoved": true,
+      "branchRefsUnchanged": true
+    },
+    {
+      "repo": "/Users/nino/Workspace/dev/sites/nino/blog",
+      "ownedReleaseWorktreeRemoved": true,
+      "branchRefsUnchanged": true
+    }
+  ],
+  "temporaryHelpersDeleted": [
+    "collection-release-browser.mjs",
+    "collection-release-navigation.mjs",
+    "collection-release-navigation-probe.mjs"
+  ],
+  "evidenceKept": true,
+  "otherWorktreesPreserved": true
+}

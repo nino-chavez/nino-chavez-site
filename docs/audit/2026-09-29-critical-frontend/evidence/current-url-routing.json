@@ -1,0 +1,67 @@
+{
+  "retrievedAt": "2026-09-29T22:46:24.188377+00:00",
+  "rows": [
+    {
+      "requested": "https://photography.ninochavez.co/",
+      "final": "https://ninochavez.co/photography",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://ninochavez.co/photography\"/>"
+      ]
+    },
+    {
+      "requested": "https://blog.ninochavez.co/",
+      "final": "https://ninochavez.co/blog",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": []
+    },
+    {
+      "requested": "https://demos.ninochavez.co/",
+      "final": "https://ninochavez.co/demos",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": []
+    },
+    {
+      "requested": "https://www.ninochavez.co/",
+      "final": "https://ninochavez.co/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "canonical": []
+    },
+    {
+      "requested": "https://ninochavez.co/robots.txt",
+      "final": "https://ninochavez.co/robots.txt",
+      "status": 200,
+      "contentType": "text/plain",
+      "canonical": null,
+      "contentPrefix": "# robots.txt for ninochavez.co\n#\n# THIS FILE GOVERNS THE WHOLE DOMAIN, NOT JUST THIS APP.\n#\n# Three Cloudflare Pages projects are stitched into one hostname by the router\n# worker (apps/router). `/robots.txt` is not claimed by any prefix there, so it\n# falls through to this app \u2014 which makes this the only robots.txt a crawler\n# reads for ninochavez.co. The blog and gallery each ship one too; nothing\n# fetches them. Every rule and every Sitemap: line below has to be true for\n# paths served by all three apps.\n#\n# EVERY PATH NAMED HERE MUST RESOLVE. Verify before editing:\n#   curl -so /dev/null -w '%{http_code} %{redirect_url}\\n' https://ninochavez.co<path>\n#\n# The previous version of this file failed that check on every line it added:\n# it disallowed /case-studies/, /writing/implementations/, /projects/ and\n# /api/projects.json \u2014 four paths that have never existed on this domain \u2014 and\n# allowed /cv, which 301s. The case studies it claimed to protect are served at\n# /work/<slug> and were "
+    },
+    {
+      "requested": "https://ninochavez.co/sitemap.xml",
+      "final": "https://ninochavez.co/sitemap.xml",
+      "status": 200,
+      "contentType": "application/xml; charset=utf-8",
+      "canonical": null,
+      "contentPrefix": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://ninochavez.co/</loc>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>\n  <url>\n    <loc>https://ninochavez.co/about</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.9</priority>\n  </url>\n  <url>\n    <loc>https://ninochavez.co/work</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n  <url>\n    <loc>https://ninochavez.co/demos</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://ninochavez.co/learn</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  <url>\n    <loc>https://ninochavez.co/now</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>\n  <url>\n    <loc>https://ninochavez.co/links</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n  <url>\n    <loc>https://ninoc"
+    },
+    {
+      "requested": "https://ninochavez.co/sitemap-index.xml",
+      "final": "https://ninochavez.co/sitemap-index.xml",
+      "status": 200,
+      "contentType": "application/xml",
+      "canonical": null,
+      "contentPrefix": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"><sitemap><loc>https://ninochavez.co/sitemap-0.xml</loc><lastmod>2026-09-29T21:39:44.521Z</lastmod></sitemap></sitemapindex>"
+    },
+    {
+      "requested": "https://ninochavez.co/photography/sitemap.xml",
+      "final": "https://ninochavez.co/photography/sitemap.xml",
+      "status": 200,
+      "contentType": "application/xml",
+      "canonical": null,
+      "contentPrefix": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://ninochavez.co/photography</loc>\n    \n    <priority>1</priority>\n    <changefreq>daily</changefreq>\n  </url>\n  <url>\n    <loc>https://ninochavez.co/photography/explore</loc>\n    \n    <priority>0.9</priority>\n    <changefreq>daily</changefreq>\n  </url>\n  <url>\n    <loc>https://ninochavez.co/photography/collections</loc>\n    \n    <priority>0.8</priority>\n    <changefreq>weekly</changefreq>\n  </url>\n  <url>\n    <loc>https://ninochavez.co/photography/albums</loc>\n    \n    <priority>0.8</priority>\n    <changefreq>weekly</changefreq>\n  </url>\n  <url>\n    <loc>https://ninochavez.co/photography/faq</loc>\n    \n    <priority>0.6</priority>\n    <changefreq>monthly</changefreq>\n  </url>\n  <url>\n    <loc>https://ninochavez.co/photography/timeline</loc>\n    \n    <priority>0.7</priority>\n    <changefreq>weekly</changefreq>\n  </url>\n  <url>\n    <loc>https://ninochavez.co/photogra"
+    }
+  ]
+}

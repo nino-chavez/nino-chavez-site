@@ -1,0 +1,57 @@
+{
+  "retrievedAt": "2026-09-29T22:34:04.241394+00:00",
+  "dates": [
+    "2026-08-30",
+    "2026-09-28"
+  ],
+  "filter": "bot=0",
+  "hosts": {
+    "ninochavez.co": {
+      "pageLoadsAllPaths": 560,
+      "entryVisitsAllPaths": 60,
+      "groupCount": 39,
+      "publicPages": {
+        "/": 180,
+        "/photography": 160,
+        "/demos": 60,
+        "/blog": 30,
+        "/work": 30,
+        "/links": 20,
+        "/search": 20,
+        "/demos/browse-tool": 10,
+        "/photography/coverage": 10,
+        "/work/volleyrx": 10,
+        "/work/blueprint": 10,
+        "/%20photography/albums/college-womens-vb": 10,
+        "/about": 10
+      },
+      "devices": {
+        "desktop": 240,
+        "mobile": 320
+      },
+      "entrySources": {
+        "ninochavez.co": 0,
+        "Direct / unknown": 30,
+        "m.facebook.com": 10,
+        "www.linkedin.com": 10,
+        "l.instagram.com": 10
+      }
+    },
+    "photography.ninochavez.co": {
+      "pageLoadsAllPaths": 0,
+      "entryVisitsAllPaths": 0,
+      "groupCount": 0,
+      "publicPages": {},
+      "devices": {},
+      "entrySources": {}
+    },
+    "blog.ninochavez.co": {
+      "pageLoadsAllPaths": 0,
+      "entryVisitsAllPaths": 0,
+      "groupCount": 0,
+      "publicPages": {},
+      "devices": {},
+      "entrySources": {}
+    }
+  }
+}

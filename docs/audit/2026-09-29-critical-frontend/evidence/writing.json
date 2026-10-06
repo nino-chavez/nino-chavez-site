@@ -1,0 +1,1639 @@
+{
+  "url": "https://ninochavez.co/blog",
+  "title": "Writing — Signal Dispatch — Nino Chavez",
+  "description": "The complete Signal Dispatch publication: essays, whitepapers, presentations, tutorials, counterpoints, and fiction by Nino Chavez.",
+  "robots": "index, follow",
+  "viewport": {
+    "width": 1440,
+    "inner": 1440,
+    "height": 900,
+    "scrollWidth": 1440,
+    "scrollHeight": 46074
+  },
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "Signal Dispatch"
+    },
+    {
+      "tag": "H2",
+      "text": "The Work Doesn’t End at Send"
+    },
+    {
+      "tag": "H2",
+      "text": "Essays"
+    },
+    {
+      "tag": "H3",
+      "text": "The Work Doesn’t End at Send"
+    },
+    {
+      "tag": "H3",
+      "text": "Trying to teach an AI how I edit photos"
+    },
+    {
+      "tag": "H3",
+      "text": "The Connector You Can't OAuth"
+    },
+    {
+      "tag": "H3",
+      "text": "Give Your AI a Reason for Every Design Reference"
+    },
+    {
+      "tag": "H3",
+      "text": "Who Is Still Driving?"
+    },
+    {
+      "tag": "H3",
+      "text": "Rigorous About the Wrong Question"
+    },
+    {
+      "tag": "H3",
+      "text": "Nobody Owns What the Agent Leaves Running"
+    },
+    {
+      "tag": "H3",
+      "text": "The Audit Reproduced the Failure"
+    },
+    {
+      "tag": "H3",
+      "text": "Everything I Was Afraid of Worked"
+    },
+    {
+      "tag": "H3",
+      "text": "The Panic Log Says Signal, Not Shortage"
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H2",
+      "text": "Whitepapers"
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H2",
+      "text": "Presentations"
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H2",
+      "text": "Tutorials"
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H2",
+      "text": "Counterpoints"
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H2",
+      "text": "Fiction"
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H3",
+      "text": ""
+    },
+    {
+      "tag": "H2",
+      "text": "Series"
+    }
+  ],
+  "text": "Skip to content\nNino Chavez\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nSearch site\nWRITING / SIGNAL DISPATCH\n306 PIECES\nUPDATED SEP 29, 2026\n\nSIGNAL DISPATCH\n\nSignal Dispatch\n\nEssays and field notes about software products, operations, commerce, and AI-assisted work.\n\nSearch all 306 published pieces, or narrow the collection by form, subject, or year.\n\nLATEST PIECE\n\nThe Work Doesn’t End at Send\n\nAI can make a request easier to send without making it easier to fulfill. Jevons paradox and doing less offer a way to examine the work left behind.\n\nESSAY\nSEP 29, 2026\nREAD THE PIECE →\n\nSEARCH THE PUBLICATION\nFORM\nAll forms\nEssay\nWhitepaper\nPresentation\nTutorial\nCounterpoint\nFiction\nSUBJECT\nAll subjects\nAI & Automation\nAI Development\nCommerce\nConsulting\nEngineering\nFiction\nField Notes\nInsights\nLeadership\nMeta\nPersonal Finance\nPhilosophy\nReflection\nSystems Thinking\nYEAR\nAll years\n2026\n2025\n\n306 OF 306 PUBLISHED PIECES IN VIEW\n\nCOMPLETE PUBLICATION\nADJUST FILTERS ↑\nEssays\n\n260 PIECES\n\nPublic reflections, field notes, and arguments.\nAI & AUTOMATION\n29 SEP 2026\nThe Work Doesn’t End at Send\n\nAI can make a request easier to send without making it easier to fulfill. Jevons paradox and doing less offer a way to examine the work left behind.\n\nREAD ↗\n(OPENS IN A NEW TAB)\nAI & AUTOMATION\n29 SEP 2026\nTrying to teach an AI how I edit photos\n\nWe built a Lightroom editing experiment and ran blind comparisons against a fixed recipe. The results led me to ask what the work had cost and why we kept going.\n\nREAD ↗\n(OPENS IN A NEW TAB)\nAI & AUTOMATION\n15 SEP 2026\nThe Connector You Can't OAuth\n\nI asked the new Siri what it could infer from a week of texts. The answer was not a better chatbot. It was inference over a graph no OAuth connector gets.\n\nREAD ↗\n(OPENS IN A NEW TAB)\nAI DEVELOPMENT\n9 SEP 2026\nGive Your AI a Reason for Every Design Reference\n\nA useful design reference may come from a completely different product. The work is identifying the decision it helps with, then telling the agent which part should transfer.\n\nREAD ↗\n(OPENS IN A NEW TAB)\nAI & AUTOMATION\n6 SEP 2026\nWho Is Still Driving?\n\nUsing AI takes practice, but a product that needs an expert to catch its mistakes should say so before someone relies on it.\n\nREAD ↗\n(OPENS IN A NEW TAB)\nAI & AUTOMATION\n3 SEP 2026\nRigorous About the Wrong Question\n\nI asked an AI agent to audit my app for the person it was built for. It sent five sub-agents to check documents and none of them looked at the screen.\n\nREAD ↗\n(OPENS IN A NEW TAB)\nAI & AUTOMATION\n23 AUG 2026\nNobody Owns What the Agent Leaves Running\n\nMy machine ran out of resources, so I handed an agent four screenshots and typed one word: fix. It did a good job. A day later, twenty-two connector processes were still running, every one of them marked disabled in config. Nothing had failed — and that turns out to be the interesting part.\n\nREAD ↗\n(OPENS IN A NEW TAB)\nAI & AUTOMATION\n23 AUG 2026\nThe Audit Reproduced the Failure\n\nA small inspection of one runaway session became repeated parallel work before it had earned that expansion. The 119-of-118 report was the alarm.\n\nREAD ↗\n(OPENS IN A NEW TAB)\nAI & AUTOMATION\n17 AUG 2026\nEverything I Was Afraid of Worked\n\nLast October I published a post arguing that agent safety is an architecture problem: the model proposes, hard-coded code disposes, a human approves. Then I built exactly that for a youth sports club's website and used it for an hour. I found seven things wrong with it. None of them were in the part I had been afraid of.\n\nREAD ↗\n(OPENS IN A NEW TAB)\nAI & AUTOMATION\n15 AUG 2026\nThe Panic Log Says Signal, Not Shortage\n\nA local model run took my Mac down at 10:55:33. Recovering the research cost about twenty minutes. Writing down the wrong reason for the crash cost more, and the file that proves it wrong ships with the operating system.\n\nREAD ↗\n(OPENS IN A NEW TAB)\nWhitepapers\n\n15 PIECES\n\nFormal long-form analysis and reference work.\nPresentations\n\n9 PIECES\n\nSlide decks with speaker notes and supporting material.\nTutorials\n\n8 PIECES\n\nHands-on exercises with a concrete stopping condition.\nCounterpoints\n\n4 PIECES\n\nAdversarial responses that test an earlier argument.\nFiction\n\n10 PIECES\n\nShort stories and serialized fiction.\nSeries\n\n9 authored sequences offer a second way through the publication. Each opens at its live Signal Dispatch index.\n\nThe Taste Test\nA three-part series on what happens when AI handles the making and humans are left with the judging. Starting with the identity crisis of losing your maker status, through the realization that taste is the new bottleneck, to a provisional answer: maybe the job was always about matching, not making.\nACTIVE\n3 articles\n↗\n(opens in a new tab)\nThe Bifurcation\nA series on the two ways a machine can be given eyes — operate the interfaces built for humans, or demand interfaces built for machines. It starts as an industry-scale standoff between two bets, questions whether splitting effort across both means neither ever finishes, and ends with the standoff collapsing into a single pipeline where a human still has to close the seam.\nACTIVE\n3 articles\n↗\n(opens in a new tab)\nThe Talent Engine\nAI hasn't just changed what work gets done—it's disrupted how expertise is developed. The old apprenticeship model is breaking. This series explores what replaces it: new roles, new learning paths, and the mechanisms by which people acquire mastery in an AI-saturated world.\nACTIVE\n5 articles\n↗\n(opens in a new tab)\nAgentic Workflows in Practice\nReal work, documented as it happens. Not demos, not theory—actual tasks where AI agents execute, iterate, and deliver. A running log of what works, what breaks, and what it means for how we work.\nACTIVE\n7 articles\n↗\n(opens in a new tab)\nFrom Prompt to Pattern\nHow a small fix—using one AI to rewrite prompts for another—became a system. A four-part arc on multi-model workflows, prompt refinement, and learning to think with AI.\nCOMPLETED\n5 articles\n↗\n(opens in a new tab)\nThe Loom\nA diptych on the relationship between humans and AI in systems. Humans as the weaver—patient, structural, synthesis-oriented. AI as the thread—fast, abundant, increasingly tangled.\nCOMPLETED\n2 articles\n↗\n(opens in a new tab)\nGrid-Level Thinking\nA four-part exploration of how AI functions as infrastructure, not magic. What we miss when we treat it like a shortcut instead of a system to design around.\nCOMPLETED\n5 articles\n↗\n(opens in a new tab)\nSignal Reflex: The Origin\nHow Signal Dispatch (originally Signal Reflex) came to be—the why, the how, and the evolution. From a commitment to daily AI-assisted writing to a platform for thinking out loud.\nCOMPLETED\n5 articles\n↗\n(opens in a new tab)\nThe Storefront\nA three-part series on the evolution of e-commerce—from the death of the traditional storefront to AI-generated experiences that build themselves in real-time.\nCOMPLETED\n3 articles\n↗\n(opens in a new tab)\n\nNino Chavez\n\nProduct architect and builder in Chicago.\n\nWork\nSessions\nLearn\nWriting\nPhotography\nAbout\nNow\nLinks\nPrivacy\nGitHub ↗\n(opens in a new tab)\nLinkedIn ↗\n(opens in a new tab)\nEmail ↗",
+  "links": [
+    {
+      "text": "Skip to content",
+      "href": "#main",
+      "target": ""
+    },
+    {
+      "text": "Nino Chavez",
+      "href": "/",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Search site",
+      "href": "/search",
+      "target": ""
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "WritingCurrent page",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Now",
+      "href": "/now",
+      "target": ""
+    },
+    {
+      "text": "Links",
+      "href": "/links",
+      "target": ""
+    },
+    {
+      "text": "LATEST PIECE\n\nThe Work Doesn’t End at Send\n\nAI can make a request easier to send without making it easier to fulfill. Jevons paradox and doing less offer a way to examine the work left behind.\n\nESSAY\nSEP 29, 2026\nREAD THE PIECE →",
+      "href": "https://ninochavez.co/blog/the-work-doesnt-end-at-send",
+      "target": ""
+    },
+    {
+      "text": "ADJUST FILTERS ↑",
+      "href": "#writing-controls",
+      "target": ""
+    },
+    {
+      "text": "AI & AUTOMATION\n29 SEP 2026\nThe Work Doesn’t End at Send\n\nAI can make a request easier to send without making it easier to fulfill. Jevons paradox and doing less offer a way to examine the work left behind.\n\nREAD ↗\n(OPENS IN A NEW TAB)",
+      "href": "https://ninochavez.co/blog/the-work-doesnt-end-at-send",
+      "target": "_blank"
+    },
+    {
+      "text": "AI & AUTOMATION\n29 SEP 2026\nTrying to teach an AI how I edit photos\n\nWe built a Lightroom editing experiment and ran blind comparisons against a fixed recipe. The results led me to ask what the work had cost and why we kept going.\n\nREAD ↗\n(OPENS IN A NEW TAB)",
+      "href": "https://ninochavez.co/blog/trying-to-teach-an-ai-how-i-edit-photos",
+      "target": "_blank"
+    },
+    {
+      "text": "AI & AUTOMATION\n15 SEP 2026\nThe Connector You Can't OAuth\n\nI asked the new Siri what it could infer from a week of texts. The answer was not a better chatbot. It was inference over a graph no OAuth connector gets.\n\nREAD ↗\n(OPENS IN A NEW TAB)",
+      "href": "https://ninochavez.co/blog/the-connector-you-cant-oauth",
+      "target": "_blank"
+    },
+    {
+      "text": "AI DEVELOPMENT\n9 SEP 2026\nGive Your AI a Reason for Every Design Reference\n\nA useful design reference may come from a completely different product. The work is identifying the decision it helps with, then telling the agent which part should transfer.\n\nREAD ↗\n(OPENS IN A NEW TAB)",
+      "href": "https://ninochavez.co/blog/give-your-ai-a-reason-for-every-design-reference",
+      "target": "_blank"
+    },
+    {
+      "text": "AI & AUTOMATION\n6 SEP 2026\nWho Is Still Driving?\n\nUsing AI takes practice, but a product that needs an expert to catch its mistakes should say so before someone relies on it.\n\nREAD ↗\n(OPENS IN A NEW TAB)",
+      "href": "https://ninochavez.co/blog/who-is-still-driving",
+      "target": "_blank"
+    },
+    {
+      "text": "AI & AUTOMATION\n3 SEP 2026\nRigorous About the Wrong Question\n\nI asked an AI agent to audit my app for the person it was built for. It sent five sub-agents to check documents and none of them looked at the screen.\n\nREAD ↗\n(OPENS IN A NEW TAB)",
+      "href": "https://ninochavez.co/blog/rigorous-about-the-wrong-question",
+      "target": "_blank"
+    },
+    {
+      "text": "AI & AUTOMATION\n23 AUG 2026\nNobody Owns What the Agent Leaves Running\n\nMy machine ran out of resources, so I handed an agent four screenshots and typed one word: fix. It did a good job. A day later, twenty-two connector processes were still running, every one of them marked disabled in config. Nothing had failed — and that turns out to be the interesting part.\n\nREAD ↗\n(OPENS IN A NEW TAB)",
+      "href": "https://ninochavez.co/blog/nobody-owns-what-the-agent-leaves-running",
+      "target": "_blank"
+    },
+    {
+      "text": "AI & AUTOMATION\n23 AUG 2026\nThe Audit Reproduced the Failure\n\nA small inspection of one runaway session became repeated parallel work before it had earned that expansion. The 119-of-118 report was the alarm.\n\nREAD ↗\n(OPENS IN A NEW TAB)",
+      "href": "https://ninochavez.co/blog/the-audit-reproduced-the-failure",
+      "target": "_blank"
+    },
+    {
+      "text": "AI & AUTOMATION\n17 AUG 2026\nEverything I Was Afraid of Worked\n\nLast October I published a post arguing that agent safety is an architecture problem: the model proposes, hard-coded code disposes, a human approves. Then I built exactly that for a youth sports club's website and used it for an hour. I found seven things wrong with it. None of them were in the part I had been afraid of.\n\nREAD ↗\n(OPENS IN A NEW TAB)",
+      "href": "https://ninochavez.co/blog/everything-i-was-afraid-of-worked",
+      "target": "_blank"
+    },
+    {
+      "text": "AI & AUTOMATION\n15 AUG 2026\nThe Panic Log Says Signal, Not Shortage\n\nA local model run took my Mac down at 10:55:33. Recovering the research cost about twenty minutes. Writing down the wrong reason for the crash cost more, and the file that proves it wrong ships with the operating system.\n\nREAD ↗\n(OPENS IN A NEW TAB)",
+      "href": "https://ninochavez.co/blog/the-panic-log-says-signal-not-shortage",
+      "target": "_blank"
+    },
+    {
+      "text": "The Taste Test\nA three-part series on what happens when AI handles the making and humans are left with the judging. Starting with the identity crisis of losing your maker status, through the realization that taste is the new bottleneck, to a provisional answer: maybe the job was always about matching, not making.\nACTIVE\n3 articles\n↗\n(opens in a new tab)",
+      "href": "https://ninochavez.co/blog/series/the-taste-test",
+      "target": "_blank"
+    },
+    {
+      "text": "The Bifurcation\nA series on the two ways a machine can be given eyes — operate the interfaces built for humans, or demand interfaces built for machines. It starts as an industry-scale standoff between two bets, questions whether splitting effort across both means neither ever finishes, and ends with the standoff collapsing into a single pipeline where a human still has to close the seam.\nACTIVE\n3 articles\n↗\n(opens in a new tab)",
+      "href": "https://ninochavez.co/blog/series/the-bifurcation",
+      "target": "_blank"
+    },
+    {
+      "text": "The Talent Engine\nAI hasn't just changed what work gets done—it's disrupted how expertise is developed. The old apprenticeship model is breaking. This series explores what replaces it: new roles, new learning paths, and the mechanisms by which people acquire mastery in an AI-saturated world.\nACTIVE\n5 articles\n↗\n(opens in a new tab)",
+      "href": "https://ninochavez.co/blog/series/the-talent-engine",
+      "target": "_blank"
+    },
+    {
+      "text": "Agentic Workflows in Practice\nReal work, documented as it happens. Not demos, not theory—actual tasks where AI agents execute, iterate, and deliver. A running log of what works, what breaks, and what it means for how we work.\nACTIVE\n7 articles\n↗\n(opens in a new tab)",
+      "href": "https://ninochavez.co/blog/series/agentic-workflows-in-practice",
+      "target": "_blank"
+    },
+    {
+      "text": "From Prompt to Pattern\nHow a small fix—using one AI to rewrite prompts for another—became a system. A four-part arc on multi-model workflows, prompt refinement, and learning to think with AI.\nCOMPLETED\n5 articles\n↗\n(opens in a new tab)",
+      "href": "https://ninochavez.co/blog/series/from-prompt-to-pattern",
+      "target": "_blank"
+    },
+    {
+      "text": "The Loom\nA diptych on the relationship between humans and AI in systems. Humans as the weaver—patient, structural, synthesis-oriented. AI as the thread—fast, abundant, increasingly tangled.\nCOMPLETED\n2 articles\n↗\n(opens in a new tab)",
+      "href": "https://ninochavez.co/blog/series/the-loom",
+      "target": "_blank"
+    },
+    {
+      "text": "Grid-Level Thinking\nA four-part exploration of how AI functions as infrastructure, not magic. What we miss when we treat it like a shortcut instead of a system to design around.\nCOMPLETED\n5 articles\n↗\n(opens in a new tab)",
+      "href": "https://ninochavez.co/blog/series/grid-level-thinking",
+      "target": "_blank"
+    },
+    {
+      "text": "Signal Reflex: The Origin\nHow Signal Dispatch (originally Signal Reflex) came to be—the why, the how, and the evolution. From a commitment to daily AI-assisted writing to a platform for thinking out loud.\nCOMPLETED\n5 articles\n↗\n(opens in a new tab)",
+      "href": "https://ninochavez.co/blog/series/signal-reflex-launch",
+      "target": "_blank"
+    },
+    {
+      "text": "The Storefront\nA three-part series on the evolution of e-commerce—from the death of the traditional storefront to AI-generated experiences that build themselves in real-time.\nCOMPLETED\n3 articles\n↗\n(opens in a new tab)",
+      "href": "https://ninochavez.co/blog/series/the-storefront",
+      "target": "_blank"
+    },
+    {
+      "text": "Work",
+      "href": "/work",
+      "target": ""
+    },
+    {
+      "text": "Sessions",
+      "href": "/demos",
+      "target": ""
+    },
+    {
+      "text": "Learn",
+      "href": "/learn",
+      "target": ""
+    },
+    {
+      "text": "Writing",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Photography",
+      "href": "/photography",
+      "target": ""
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Now",
+      "href": "/now",
+      "target": ""
+    },
+    {
+      "text": "Links",
+      "href": "/links",
+      "target": ""
+    },
+    {
+      "text": "Privacy",
+      "href": "/privacy",
+      "target": ""
+    },
+    {
+      "text": "GitHub ↗\n(opens in a new tab)",
+      "href": "https://github.com/nino-chavez",
+      "target": "_blank"
+    },
+    {
+      "text": "LinkedIn ↗\n(opens in a new tab)",
+      "href": "https://www.linkedin.com/in/nino-chavez/",
+      "target": "_blank"
+    },
+    {
+      "text": "Email ↗",
+      "href": "mailto:nino@ninochavez.co",
+      "target": ""
+    }
+  ],
+  "scripts": [
+    "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+  ],
+  "performance": [
+    {
+      "ttfb": 158.89999997615814,
+      "domLoaded": 252.10000002384186,
+      "load": 262.5,
+      "transferSize": 61366,
+      "encodedBodySize": 61066,
+      "decodedBodySize": 409049
+    }
+  ],
+  "resources": [
+    {
+      "name": "https://ninochavez.co/cdn-cgi/speculation",
+      "transfer": 451,
+      "encoded": 151,
+      "duration": 36.60000002384186
+    },
+    {
+      "name": "https://ninochavez.co/assets/index-BmdNnmlC.css",
+      "transfer": 31864,
+      "encoded": 31564,
+      "duration": 64.70000004768372
+    },
+    {
+      "name": "https://ninochavez.co/assets/layout-segment-context-Cm8kYRGr.js",
+      "transfer": 490,
+      "encoded": 190,
+      "duration": 53.60000002384186
+    },
+    {
+      "name": "https://ninochavez.co/assets/rolldown-runtime-S-ySWqyJ.js",
+      "transfer": 703,
+      "encoded": 403,
+      "duration": 57.299999952316284
+    },
+    {
+      "name": "https://ninochavez.co/assets/query-BqyIlvsm.js",
+      "transfer": 1070,
+      "encoded": 770,
+      "duration": 57.299999952316284
+    },
+    {
+      "name": "https://ninochavez.co/assets/link-B8uMb1L1.js",
+      "transfer": 3506,
+      "encoded": 3206,
+      "duration": 57.39999997615814
+    },
+    {
+      "name": "https://ninochavez.co/assets/SiteHeader-DM9R833z.js",
+      "transfer": 1384,
+      "encoded": 1084,
+      "duration": 57.5
+    },
+    {
+      "name": "https://ninochavez.co/assets/index-B-UOV3cu.js",
+      "transfer": 25623,
+      "encoded": 25323,
+      "duration": 63.10000002384186
+    },
+    {
+      "name": "https://ninochavez.co/assets/framework-DjPHiq1u.js",
+      "transfer": 59595,
+      "encoded": 59295,
+      "duration": 61.799999952316284
+    },
+    {
+      "name": "https://ninochavez.co/assets/WritingLibrary-BPXIXJll.js",
+      "transfer": 300,
+      "encoded": 40869,
+      "duration": 53.59999990463257
+    },
+    {
+      "name": "https://ninochavez.co/assets/facets-ClNarxFu.js",
+      "transfer": 421,
+      "encoded": 121,
+      "duration": 63.59999990463257
+    },
+    {
+      "name": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "transfer": 0,
+      "encoded": 0,
+      "duration": 20.600000023841858
+    },
+    {
+      "name": "https://ninochavez.co/fonts/inter-latin.woff2",
+      "transfer": 0,
+      "encoded": 48432,
+      "duration": 0.7000000476837158
+    },
+    {
+      "name": "https://ninochavez.co/fonts/space-mono-latin-400-normal.woff2",
+      "transfer": 0,
+      "encoded": 16520,
+      "duration": 0.6000000238418579
+    },
+    {
+      "name": "https://ninochavez.co/fonts/space-mono-latin-700-normal.woff2",
+      "transfer": 0,
+      "encoded": 16724,
+      "duration": 0.6999999284744263
+    },
+    {
+      "name": "https://ninochavez.co/cdn-cgi/rum?",
+      "transfer": 300,
+      "encoded": 0,
+      "duration": 14.699999928474426
+    }
+  ]
+}

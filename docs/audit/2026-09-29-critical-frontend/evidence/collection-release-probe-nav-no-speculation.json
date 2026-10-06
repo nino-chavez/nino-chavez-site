@@ -1,0 +1,354 @@
+{
+  "mode": "nav-no-speculation",
+  "syntheticAcceptance": true,
+  "startedAt": "2026-09-30T06:01:47.426Z",
+  "targetId": "069DAFE7225232948CB5D6E2B8DCD6FB",
+  "checks": [
+    {
+      "frameNavigated": "https://ninochavez.co/work/blueprint"
+    },
+    {
+      "frameNavigated": "https://ninochavez.co/work/blueprint"
+    },
+    {
+      "frameNavigated": "https://ninochavez.co/work/blueprint"
+    },
+    {
+      "firstStatus": 200,
+      "speculationHeader": "\"/cdn-cgi/speculation\""
+    },
+    {
+      "frameNavigated": "https://ninochavez.co/photography"
+    },
+    {
+      "frameNavigated": "https://ninochavez.co/photography"
+    },
+    {
+      "frameNavigated": "https://ninochavez.co/photography"
+    },
+    {
+      "navigationPassed": true
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/work/blueprint",
+      "type": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/cdn-cgi/speculation",
+      "type": "other"
+    },
+    {
+      "method": "GET",
+      "path": "/work/blueprint.png",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/index-BmdNnmlC.css",
+      "type": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/layout-segment-context-BYRckPzQ.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/rolldown-runtime-S-ySWqyJ.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/index-DQPdmYFu.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/framework-DjPHiq1u.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/SiteHeader-CkoLv4F9.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/link-CmPtUKUI.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/query-Bf6XU0gg.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/SiteActivity-DAH4JEiK.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/photography/site-activity.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/fonts/inter-latin.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "path": "/fonts/space-mono-latin-700-normal.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "path": "/fonts/space-mono-latin-400-normal.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "path": "/photography/api/analytics/preferences",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/cdn-cgi/challenge-platform/scripts/jsd/main.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/favicon.png",
+      "type": "other"
+    },
+    {
+      "method": "GET",
+      "path": "/cdn-cgi/challenge-platform/h/b/scripts/jsd/d76008a69eab/main.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/work.rsc",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/favicon.png",
+      "type": "other"
+    },
+    {
+      "method": "POST",
+      "path": "/cdn-cgi/challenge-platform/h/b/jsd/oneshot/d76008a69eab/0.41132107542808993:1790744429:D-gxIVApnRAcm87oXSrnSbWvKsRq49dYK7gyEPT2wKA/a43103d7ce8f65a0",
+      "type": "xhr"
+    },
+    {
+      "method": "GET",
+      "path": "/photography/api/analytics/preferences",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/photography",
+      "type": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/cdn-cgi/speculation",
+      "type": "other"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/index-BmdNnmlC.css",
+      "type": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/layout-segment-context-BYRckPzQ.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/rolldown-runtime-S-ySWqyJ.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/index-DQPdmYFu.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/framework-DjPHiq1u.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/SiteHeader-CkoLv4F9.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/link-CmPtUKUI.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/query-Bf6XU0gg.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/assets/SiteActivity-DAH4JEiK.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/fd-12.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/photography/site-activity.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/fonts/inter-latin.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "path": "/fonts/space-mono-latin-400-normal.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "path": "/fonts/space-mono-latin-700-normal.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "path": "/fonts/anton-400.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/p-01.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/p-02.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/p-03.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/p-04.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/p-05.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/p-06.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/p-07.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/p-08.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/media/photography/p-11.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/wg34HB28-JkySWVm5fW4kA/DWdCET-DSC09463-sdr-8fa44e4d51/medium",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/wg34HB28-JkySWVm5fW4kA/Re7kho-acc-v-jca-091/medium",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/wg34HB28-JkySWVm5fW4kA/fJKdsB-DSC08692/medium",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/wg34HB28-JkySWVm5fW4kA/eqYF0h-DSC08446/medium",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/photography/api/analytics/preferences",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/favicon.png",
+      "type": "other"
+    },
+    {
+      "method": "GET",
+      "path": "/favicon.png",
+      "type": "other"
+    }
+  ],
+  "consoleErrors": [],
+  "failures": [],
+  "blockedURLs": [
+    "https://static.cloudflareinsights.com/*",
+    "https://ninochavez.co/cdn-cgi/rum*",
+    "https://ninochavez.co/cdn-cgi/speculation*"
+  ],
+  "preferences": {
+    "linkedAnalytics": false,
+    "excludeThisBrowser": true
+  },
+  "before": {
+    "path": "/work/blueprint",
+    "tracker": true,
+    "analyticsPath": "/work/blueprint",
+    "speculation": 0
+  },
+  "after": {
+    "path": "/photography",
+    "tracker": true,
+    "analyticsPath": "/photography",
+    "title": "Photography — Nino Chavez"
+  },
+  "finishedAt": "2026-09-30T06:01:52.875Z"
+}

@@ -1,0 +1,25 @@
+{
+  "url": "https://ninochavez.co/work",
+  "before": {
+    "fixedViewport": 390,
+    "innerWidth": 390,
+    "clientWidth": 390,
+    "scrollWidth": 390,
+    "overflow": false
+  },
+  "injected": {
+    "fixedViewport": 390,
+    "innerWidth": 390,
+    "clientWidth": 390,
+    "scrollWidth": 520,
+    "overflow": true
+  },
+  "restored": {
+    "fixedViewport": 390,
+    "innerWidth": 390,
+    "clientWidth": 390,
+    "scrollWidth": 390,
+    "overflow": false
+  },
+  "purpose": "Prove the overflow check detects a known defect and returns to the baseline"
+}

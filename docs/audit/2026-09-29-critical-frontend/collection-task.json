@@ -1,0 +1,25 @@
+{
+  "task_id": "nino-site-collection-readiness-20260929",
+  "state": "complete",
+  "goal": "Verify the existing site action collection before using it for frontend decisions.",
+  "decision": "Collection-only releases are merged and live. Cold entrance recording, stored internal navigation and natural scheduled QA exclusion are verified. There is still no eligible audience history for a frontend decision. Chrome 152 navigation with Cloudflare prefetch remains a documented separate limitation.",
+  "evidence": [
+    "COLLECTION.md",
+    "evidence/collection-release-live-routes.json",
+    "evidence/collection-release-storage-navigation.json",
+    "evidence/collection-release-scheduled-final.json",
+    "evidence/collection-release-probe-nav-no-tracker.json",
+    "evidence/collection-release-probe-nav-no-speculation.json",
+    "evidence/collection-release-cold-review.txt"
+  ],
+  "source_state": "Main production 2c0672fe014ac175d72ea248c6e7a40fa4df5acc; gallery 2eb4c6c10c9870c00981ab23b40dfa73e074415c; writing 3c8a02035cd0cae8e61d86bd04d10f239a78b70d. Earlier frontend refit and analytics-intelligence branches were not published.",
+  "failed_approaches": [
+    "Worker browser launch and taxonomy IPC were denied in its sandbox; parent host verification passed.",
+    "Pinned Playwright browser download stalled and was stopped; installed Chromium override completed the same runner.",
+    "The release worker classifier first timed out; retry through the same required dispatcher succeeded.",
+    "Unrestricted Chrome 152 navigation crashed, including with the tracker blocked. Blocking Cloudflare prefetch in the isolated test browser allowed the click to complete; production settings were preserved.",
+    "The navigation harness expected a keepalive response after page unload; actual stored click confirms delivery. The failed receipt is retained.",
+    "An early footer screenshot selected a component footer; actual global footer capture and viewport check passed."
+  ],
+  "next_assignment": "Use eligible audience actions for cold/referral frontend decisions. Investigate unrestricted Chrome 152 prefetch navigation separately; the collection release is not a claim of general browser reliability."
+}

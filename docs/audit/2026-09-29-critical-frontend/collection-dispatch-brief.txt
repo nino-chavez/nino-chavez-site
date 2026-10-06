@@ -1,0 +1,24 @@
+Goal: Inspect the EXISTING cross-site action collection, not redesign analytics. Nino needs usable observations before changing the frontend. Return a bounded diagnosis of why the live Site Actions report has no eligible history, and the smallest verified repair if one exists. This is a read-only worker; the parent owns live probes, edits, and final judgment.
+
+READ FIRST:
+- /Users/nino/Workspace/dev/sites/nino/nino-chavez-photography/.worktrees/codex/site-action-analytics/AGENTS.md
+- docs/implementation/analytics-20260929/COORDINATION.md in that worktree.
+- /Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/frontend-refit-20260929/docs/audit/2026-09-29-critical-frontend/AUDIENCE.md for actual observed arrivals and measurement limits.
+- src/lib/analytics/site-actions.ts and site-actions.server.ts, the public site-activity.js route/static asset, site collection API, action summarization SQL, site journeys query, and the relay. Discover exact paths; do not assume absent files.
+- /Users/nino/Workspace/dev/sites/nino/nino-chavez-site/.worktrees/codex/site-action-analytics/app/components/SiteActivity.tsx and app/layout.tsx.
+Also compare the main site checkout and the frontend-refit worktree to the analytics candidate without editing any checkout. Find the real blog and demos instrumentation using the workspace index if needed. Inspect existing implementation receipts only as claims, then check their source or raw evidence.
+
+Observed facts/prior: Sep29 live report showed no Site Action history and no linked views. Gallery photo activity exists. The tracked relay flag is false; that affects forwarding and may not explain aggregate action counts. A second chat is currently working in the photography worktree on dashboard intelligence, with dirty ANALYTICS_PLAN.md and POSTHOG_PLAN.md. Its work must be preserved; do not edit or message it. Do not decide new tracking policy from an empty report.
+
+Return these sections in the final response, within roughly 1,200 words:
+1. Concrete collection map: rendered page -> emitter -> collector -> storage -> summary -> report, plus the separate optional PostHog forwarding path. Cite exact files and line numbers.
+2. Three ranked, falsifiable causes of empty history. Label source-proven facts, hypotheses, and what needs parent live verification. Include date-cutoff/today behavior and deployment/source mismatch as candidates where supported.
+3. Existing source and regression tests that can prove the smallest repair; run narrow read-only tests only if available without changing files. Identify a failing case first. No mirror-only tests.
+4. Exact bounded edit proposal (files, preserve list, acceptance checks), or a supported no-code-change verdict. Include the two observed paths: social -> Photography and LinkedIn -> /work/blueprint.
+5. Resource/cleanup and source-state report.
+
+Cross references: parent will write docs/audit/2026-09-29-critical-frontend/COLLECTION.md after checking your findings. Do not create that file.
+
+Don't do: no edits, commits, push, deployment, database writes, analytics injection, secret reads, browser actions, consent/relay changes, generated content changes, dashboard styling, new infrastructure, or additional workers. Do not invent audience identities or treat empty history as zero conversion. Public contact clicks are not submitted inquiries. No raw identifiers or secret values in output.
+
+Runtime isolation: current photo analytics worktree is read-only, including uncommitted docs. You are not alone in the codebase. No browsers, listeners, ports, Docker, or shared database sessions. External networking is unavailable. Parent performs live verification. Stop any process you start before reporting; retain no fixtures or temporary scripts. Plain concrete prose, no emojis.

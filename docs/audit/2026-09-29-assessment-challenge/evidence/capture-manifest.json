@@ -1,0 +1,90 @@
+[
+  {
+    "file": "home-proof-desktop.png",
+    "url": "https://ninochavez.co/",
+    "title": "Nino Chavez — Product architect and builder",
+    "width": 1440,
+    "height": 900,
+    "scrollY": 869,
+    "documentHeight": 3665,
+    "capturedAt": "2026-09-29T23:38:45.844Z",
+    "heading": "NINO\nCHAVEZ"
+  },
+  {
+    "file": "home-proof-mobile.png",
+    "url": "https://ninochavez.co/",
+    "title": "Nino Chavez — Product architect and builder",
+    "width": 390,
+    "height": 844,
+    "scrollY": 813,
+    "documentHeight": 5272,
+    "capturedAt": "2026-09-29T23:38:49.496Z",
+    "heading": "NINO\nCHAVEZ"
+  },
+  {
+    "file": "work-records-desktop.png",
+    "url": "https://ninochavez.co/work",
+    "title": "Work — Nino Chavez",
+    "width": 1440,
+    "height": 900,
+    "scrollY": 1399,
+    "documentHeight": 6254,
+    "capturedAt": "2026-09-29T23:38:53.319Z",
+    "heading": "Work"
+  },
+  {
+    "file": "work-records-mobile.png",
+    "url": "https://ninochavez.co/work",
+    "title": "Work — Nino Chavez",
+    "width": 390,
+    "height": 844,
+    "scrollY": 2026,
+    "documentHeight": 10422,
+    "capturedAt": "2026-09-29T23:38:57.172Z",
+    "heading": "Work"
+  },
+  {
+    "file": "writing-records-desktop.png",
+    "url": "https://ninochavez.co/blog",
+    "title": "Writing — Signal Dispatch — Nino Chavez",
+    "width": 1440,
+    "height": 900,
+    "scrollY": 919,
+    "documentHeight": 45948,
+    "capturedAt": "2026-09-29T23:39:01.260Z",
+    "heading": "Signal Dispatch"
+  },
+  {
+    "file": "writing-records-mobile.png",
+    "url": "https://ninochavez.co/blog",
+    "title": "Writing — Signal Dispatch — Nino Chavez",
+    "width": 390,
+    "height": 844,
+    "scrollY": 773,
+    "documentHeight": 49822,
+    "capturedAt": "2026-09-29T23:39:05.114Z",
+    "heading": "Signal Dispatch"
+  },
+  {
+    "file": "article-body-desktop.png",
+    "url": "https://ninochavez.co/blog/the-work-doesnt-end-at-send",
+    "title": "The Work Doesn’t End at Send - Signal Dispatch",
+    "width": 1440,
+    "height": 900,
+    "scrollY": 1248,
+    "documentHeight": 6309,
+    "capturedAt": "2026-09-29T23:39:08.918Z",
+    "heading": "The Work Doesn’t End at Send"
+  },
+  {
+    "file": "article-body-mobile.png",
+    "url": "https://ninochavez.co/blog/the-work-doesnt-end-at-send",
+    "title": "The Work Doesn’t End at Send - Signal Dispatch",
+    "width": 390,
+    "height": 844,
+    "scrollY": 1239,
+    "documentHeight": 10366,
+    "capturedAt": "2026-09-29T23:39:12.905Z",
+    "heading": "The Work Doesn’t End at Send"
+  }
+]

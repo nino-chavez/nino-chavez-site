@@ -1,0 +1,22 @@
+[
+  {
+    "rollout": "rollout-2026-09-30T17-41-02-01a0f47a-7a76-7b51-a65f-be5024fc25c3.jsonl",
+    "callId": "call_KxN01NBvhsWaeofWsCK2MqMV",
+    "outputTypes": [
+      "input_text",
+      "input_image",
+      "input_image",
+      "input_image",
+      "input_image"
+    ]
+  },
+  {
+    "rollout": "rollout-2026-09-30T17-41-03-01a0f47a-7e07-7c91-93e5-072c413fb74b.jsonl",
+    "callId": "call_kYndN1PbRXppwxZzYgAOdJtN",
+    "outputTypes": [
+      "input_text",
+      "input_image",
+      "input_image"
+    ]
+  }
+]

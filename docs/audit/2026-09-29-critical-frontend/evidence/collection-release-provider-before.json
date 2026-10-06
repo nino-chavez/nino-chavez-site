@@ -1,0 +1,313 @@
+{
+  "checkedAt": "2026-09-30T04:56:27.728479+00:00",
+  "projects": {
+    "nino-chavez-photography": {
+      "status": 200,
+      "source": {
+        "type": "github",
+        "config": {
+          "owner": "nino-chavez",
+          "owner_id": "12718755",
+          "repo_name": "nino-chavez-photography",
+          "repo_id": "1079305678",
+          "production_branch": "main",
+          "pr_comments_enabled": true,
+          "deployments_enabled": true,
+          "production_deployments_enabled": true,
+          "preview_deployment_setting": "custom",
+          "preview_branch_includes": [],
+          "preview_branch_excludes": [
+            "*"
+          ],
+          "path_includes": [
+            "*"
+          ],
+          "path_excludes": []
+        }
+      },
+      "buildConfig": {
+        "build_command": "npm run build",
+        "destination_dir": ".svelte-kit/cloudflare",
+        "build_caching": true,
+        "root_dir": "",
+        "web_analytics_tag": null,
+        "web_analytics_token": null
+      },
+      "domains": [
+        "nino-chavez-photography.pages.dev",
+        "analytics.ninochavez.co"
+      ],
+      "latestDeployment": {
+        "id": "c63a1852-c9d9-4dab-80d6-684150ad0a29",
+        "environment": "production",
+        "deployment_trigger": {
+          "type": "github:push",
+          "metadata": {
+            "branch": "main",
+            "commit_hash": "8c830924bda86a74fdd5fa709d9dc84f353cddc6",
+            "commit_message": "fix(analytics): preserve dashboard shell and clean URL navigation (#171)",
+            "commit_dirty": false
+          }
+        },
+        "latest_stage": {
+          "name": "deploy",
+          "started_on": "2026-09-30T02:03:53.339259Z",
+          "ended_on": "2026-09-30T02:04:02.919531Z",
+          "status": "success"
+        },
+        "url": "https://c63a1852.nino-chavez-photography.pages.dev"
+      },
+      "envNamesAndTypes": {
+        "ADMIN_EMAILS": "plain_text",
+        "ANALYTICS_IDENTITY_BINDING_SECRET": "secret_text",
+        "ANALYTICS_POSTHOG_SCHEDULE_TOKEN": "secret_text",
+        "CF_IMAGES_API_TOKEN": "secret_text",
+        "CF_STREAM_API_TOKEN": "secret_text",
+        "CLOUDFLARE_ACCOUNT_ID": "plain_text",
+        "CLOUDFLARE_ANALYTICS_TOKEN": "secret_text",
+        "GOOGLE_API_KEY": "secret_text",
+        "NODE_VERSION": "secret_text",
+        "OPENROUTER_API_KEY": "secret_text",
+        "POSTHOG_ENABLED": "plain_text",
+        "POSTHOG_HOST": "plain_text",
+        "POSTHOG_PROJECT_API_KEY": "secret_text",
+        "POSTHOG_PROJECT_ID": "plain_text",
+        "POSTHOG_QUERY_API_KEY": "secret_text",
+        "POSTHOG_TARGET_ENVIRONMENT": "plain_text",
+        "SUPABASE_SERVICE_ROLE_KEY": "secret_text",
+        "VITE_CF_STREAM_SUBDOMAIN": "secret_text",
+        "VITE_SUPABASE_ANON_KEY": "secret_text",
+        "VITE_SUPABASE_URL": "secret_text",
+        "ZIP_SIGNING_SECRET": "secret_text"
+      }
+    },
+    "ninochavez-blog": {
+      "status": 200,
+      "source": {
+        "type": "github",
+        "config": {
+          "owner": "nino-chavez",
+          "owner_id": "12718755",
+          "repo_name": "blog",
+          "repo_id": "1075017832",
+          "production_branch": "main",
+          "pr_comments_enabled": true,
+          "deployments_enabled": true,
+          "production_deployments_enabled": true,
+          "preview_deployment_setting": "custom",
+          "preview_branch_includes": [],
+          "preview_branch_excludes": [
+            "*"
+          ],
+          "path_includes": [
+            "*"
+          ],
+          "path_excludes": []
+        }
+      },
+      "buildConfig": {
+        "build_command": "npm install && npm run build",
+        "destination_dir": "dist",
+        "build_caching": true,
+        "root_dir": "astro-build",
+        "web_analytics_tag": null,
+        "web_analytics_token": null
+      },
+      "domains": [
+        "ninochavez-blog.pages.dev"
+      ],
+      "latestDeployment": {
+        "id": "6b56182c-e393-4686-bf90-8334a781d0e4",
+        "environment": "production",
+        "deployment_trigger": {
+          "type": "github:push",
+          "metadata": {
+            "branch": "main",
+            "commit_hash": "d2692e349e43a5eb2dedd3f8c4a0cbf41f1ede2f",
+            "commit_message": "docs: preserve editorial decisions and writing pilot evidence",
+            "commit_dirty": false
+          }
+        },
+        "latest_stage": {
+          "name": "deploy",
+          "started_on": "2026-09-29T21:41:22.899408Z",
+          "ended_on": "2026-09-29T21:41:36.955262Z",
+          "status": "success"
+        },
+        "url": "https://6b56182c.ninochavez-blog.pages.dev"
+      },
+      "envNamesAndTypes": {}
+    }
+  },
+  "wrongCredentialStatus": 400,
+  "mainWorker": {
+    "status": 200,
+    "result": {
+      "deployments": [
+        {
+          "id": "a671e52a-a4f5-4943-93dc-88b50ac67a41",
+          "source": "wrangler",
+          "strategy": "percentage",
+          "author_email": "abelino.chavez@gmail.com",
+          "annotations": {
+            "workers/triggered_by": "deployment"
+          },
+          "versions": [
+            {
+              "version_id": "6e28554d-ac1f-4f74-848f-e80f9b2d0bbd",
+              "percentage": 100
+            }
+          ],
+          "created_on": "2026-09-29T18:47:14.340744Z"
+        },
+        {
+          "id": "5545bdd0-4a2c-4b29-b7ed-59c9dd1fdd32",
+          "source": "wrangler",
+          "strategy": "percentage",
+          "author_email": "abelino.chavez@gmail.com",
+          "annotations": {
+            "workers/triggered_by": "deployment"
+          },
+          "versions": [
+            {
+              "version_id": "24472edd-09bf-478e-8158-19b6003c2542",
+              "percentage": 100
+            }
+          ],
+          "created_on": "2026-09-29T02:34:35.783019Z"
+        },
+        {
+          "id": "5f0ee06d-e191-451c-a5d4-42f4bd400621",
+          "source": "wrangler",
+          "strategy": "percentage",
+          "author_email": "abelino.chavez@gmail.com",
+          "annotations": {
+            "workers/triggered_by": "deployment"
+          },
+          "versions": [
+            {
+              "version_id": "5a62a61d-7971-420a-bb2e-6311dfcd9555",
+              "percentage": 100
+            }
+          ],
+          "created_on": "2026-09-09T22:56:38.29457Z"
+        },
+        {
+          "id": "13487379-7c06-4b22-be45-f460d7249e2a",
+          "source": "wrangler",
+          "strategy": "percentage",
+          "author_email": "abelino.chavez@gmail.com",
+          "annotations": {
+            "workers/triggered_by": "deployment"
+          },
+          "versions": [
+            {
+              "version_id": "1ef74e98-87bf-472f-85e1-1c6682301ba5",
+              "percentage": 100
+            }
+          ],
+          "created_on": "2026-09-09T22:36:11.433251Z"
+        },
+        {
+          "id": "b48b61ef-4466-42fa-af8f-af7f2b1dc9d3",
+          "source": "wrangler",
+          "strategy": "percentage",
+          "author_email": "abelino.chavez@gmail.com",
+          "annotations": {
+            "workers/triggered_by": "deployment"
+          },
+          "versions": [
+            {
+              "version_id": "0b6a8299-22e2-4b2f-a25a-c141a9e686ed",
+              "percentage": 100
+            }
+          ],
+          "created_on": "2026-09-09T22:07:49.473265Z"
+        },
+        {
+          "id": "db9d9ed9-46ae-437e-af79-3fc3dd625b79",
+          "source": "wrangler",
+          "strategy": "percentage",
+          "author_email": "abelino.chavez@gmail.com",
+          "annotations": {
+            "workers/triggered_by": "deployment"
+          },
+          "versions": [
+            {
+              "version_id": "32bb3d10-c5c3-42db-a141-dd9629508051",
+              "percentage": 100
+            }
+          ],
+          "created_on": "2026-09-09T22:01:03.589535Z"
+        },
+        {
+          "id": "f5fb9877-041e-450d-a525-c72e490abf7c",
+          "source": "wrangler",
+          "strategy": "percentage",
+          "author_email": "abelino.chavez@gmail.com",
+          "annotations": {
+            "workers/triggered_by": "deployment"
+          },
+          "versions": [
+            {
+              "version_id": "999c5f7f-f0dd-4873-bcde-5403f6746017",
+              "percentage": 100
+            }
+          ],
+          "created_on": "2026-09-08T23:04:29.569484Z"
+        },
+        {
+          "id": "0ef8da5f-b20b-4332-b749-bbc0378bc846",
+          "source": "wrangler",
+          "strategy": "percentage",
+          "author_email": "abelino.chavez@gmail.com",
+          "annotations": {
+            "workers/triggered_by": "deployment"
+          },
+          "versions": [
+            {
+              "version_id": "0b6e1efe-bc31-4947-9d5e-96e1e9f711c2",
+              "percentage": 100
+            }
+          ],
+          "created_on": "2026-09-08T22:29:32.538568Z"
+        },
+        {
+          "id": "eb60f59d-5c4e-45aa-8972-e4bbd878e11a",
+          "source": "wrangler",
+          "strategy": "percentage",
+          "author_email": "abelino.chavez@gmail.com",
+          "annotations": {
+            "workers/triggered_by": "deployment"
+          },
+          "versions": [
+            {
+              "version_id": "0c45c233-b734-48b2-9c74-6f1063b4b990",
+              "percentage": 100
+            }
+          ],
+          "created_on": "2026-08-17T21:18:38.330258Z"
+        },
+        {
+          "id": "8038debd-3599-4a15-bdf5-25a5876cd1b6",
+          "source": "wrangler",
+          "strategy": "percentage",
+          "author_email": "abelino.chavez@gmail.com",
+          "annotations": {
+            "workers/triggered_by": "deployment"
+          },
+          "versions": [
+            {
+              "version_id": "e30a5325-1e64-4ceb-afd8-a54380a95441",
+              "percentage": 100
+            }
+          ],
+          "created_on": "2026-08-17T21:08:10.14041Z"
+        }
+      ]
+    }
+  },
+  "workersBuildsAccess": {
+    "status": 403
+  }
+}

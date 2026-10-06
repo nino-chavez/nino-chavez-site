@@ -1,0 +1,74 @@
+{
+  "blocks": [
+    {
+      "background": "rgb(217, 229, 239)",
+      "border": "rgb(185, 190, 198)",
+      "class": "my-10 rounded-2xl border border-amber-500/30 bg-gradient-to-br from-amber-500/5 to-transparent overflow-hidden not-prose",
+      "color": "rgb(20, 103, 158)",
+      "rect": {
+        "height": 2306.642578125,
+        "width": 592.393310546875,
+        "x": 15.998476028442385,
+        "y": 2158.738525390625
+      },
+      "text": "1Install the mechanical half5 min"
+    },
+    {
+      "background": "rgb(217, 229, 239)",
+      "border": "oklab(0.715 -0.116822 -0.0824726 / 0.3)",
+      "class": "my-8 rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/5 to-transparent overflow-hidden not-prose",
+      "color": "rgb(20, 103, 158)",
+      "rect": {
+        "height": 277.7553405761719,
+        "width": 542.4466552734375,
+        "x": 40.971797943115234,
+        "y": 3278.231689453125
+      },
+      "text": "Full install— Wires hooks, statusline, and commands in one pass — safe to re-runCopy"
+    },
+    {
+      "background": "rgb(217, 229, 239)",
+      "border": "oklab(0.715 -0.116822 -0.0824726 / 0.3)",
+      "class": "my-8 rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/5 to-transparent overflow-hidden not-prose",
+      "color": "rgb(20, 103, 158)",
+      "rect": {
+        "height": 303.25457763671875,
+        "width": 542.4466552734375,
+        "x": 40.971797943115234,
+        "y": 3649.7294921875
+      },
+      "text": "Fresh clone + install— One command, everything wiredCopy"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "rgb(185, 190, 198)",
+      "class": "my-8 rounded-xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/5 to-transparent p-5 not-prose",
+      "color": "rgb(20, 103, 158)",
+      "rect": {
+        "height": 306.1852111816406,
+        "width": 542.4466552734375,
+        "x": 40.971797943115234,
+        "y": 4106.2236328125
+      },
+      "text": "Checkpoint"
+    },
+    {
+      "background": "rgb(217, 229, 239)",
+      "border": "rgb(185, 190, 198)",
+      "class": "my-10 rounded-2xl border border-amber-500/30 bg-gradient-to-br from-amber-500/5 to-transparent overflow-hidden not-prose",
+      "color": "rgb(20, 103, 158)",
+      "rect": {
+        "height": 1820.64794921875,
+        "width": 592.393310546875,
+        "x": 15.998476028442385,
+        "y": 4562.35546875
+      },
+      "text": "2Measure, don't guess5 min"
+    }
+  ],
+  "viewport": {
+    "dpr": 4.099999904632568,
+    "height": 351,
+    "width": 624
+  }
+}
