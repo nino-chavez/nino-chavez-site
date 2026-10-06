@@ -30,16 +30,23 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
 
 # typescript
 next-env.d.ts
+
+# build and tool output
 /dist/
 /.wrangler/
 /outputs/
 /work/
+
+# agent scratch: reports, logs, local runtime files and browser state.
+# Anything worth keeping moves into docs/ and is committed there.
+/.temp/
 
 # Audit evidence: screenshots and rendered HTML are regenerable from a SHA
 docs/audit/evidence/*/shots/
