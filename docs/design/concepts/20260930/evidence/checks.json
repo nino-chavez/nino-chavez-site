@@ -1,0 +1,861 @@
+{
+  "started": "2026-10-01T04:19:16.354Z",
+  "routes": [
+    {
+      "concept": "a",
+      "width": 1440,
+      "surface": "home",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 1440,
+      "surface": "building",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 1440,
+      "surface": "writing",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 1440,
+      "surface": "article",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 1440,
+      "surface": "photography",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 1440,
+      "surface": "album",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "firstPhoto": 443.484375,
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 1440,
+      "surface": "product",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 1440,
+      "surface": "study",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 1440,
+      "surface": "about",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 390,
+      "surface": "home",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 390,
+      "surface": "building",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 390,
+      "surface": "writing",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 390,
+      "surface": "article",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 390,
+      "surface": "photography",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 390,
+      "surface": "album",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "firstPhoto": 489.421875,
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 390,
+      "surface": "product",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 390,
+      "surface": "study",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 390,
+      "surface": "about",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 320,
+      "surface": "home",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 320,
+      "surface": "building",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 320,
+      "surface": "writing",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 320,
+      "surface": "article",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 320,
+      "surface": "photography",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 320,
+      "surface": "album",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "firstPhoto": 489.421875,
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 320,
+      "surface": "product",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 320,
+      "surface": "study",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "a",
+      "width": 320,
+      "surface": "about",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 1440,
+      "surface": "home",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 1440,
+      "surface": "building",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 1440,
+      "surface": "writing",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 1440,
+      "surface": "article",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 1440,
+      "surface": "photography",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 1440,
+      "surface": "album",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "firstPhoto": 553.453125,
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 1440,
+      "surface": "product",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 1440,
+      "surface": "study",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 1440,
+      "surface": "about",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 390,
+      "surface": "home",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 390,
+      "surface": "building",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 390,
+      "surface": "writing",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 390,
+      "surface": "article",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 390,
+      "surface": "photography",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 390,
+      "surface": "album",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "firstPhoto": 594.34375,
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 390,
+      "surface": "product",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 390,
+      "surface": "study",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 390,
+      "surface": "about",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 320,
+      "surface": "home",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 320,
+      "surface": "building",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 320,
+      "surface": "writing",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 320,
+      "surface": "article",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 320,
+      "surface": "photography",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 320,
+      "surface": "album",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "firstPhoto": 594.34375,
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 320,
+      "surface": "product",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 320,
+      "surface": "study",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "b",
+      "width": 320,
+      "surface": "about",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 1440,
+      "surface": "home",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 1440,
+      "surface": "building",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 1440,
+      "surface": "writing",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 1440,
+      "surface": "article",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 1440,
+      "surface": "photography",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 1440,
+      "surface": "album",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "firstPhoto": 476.15625,
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 1440,
+      "surface": "product",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 1440,
+      "surface": "study",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 1440,
+      "surface": "about",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 390,
+      "surface": "home",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 390,
+      "surface": "building",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 390,
+      "surface": "writing",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 390,
+      "surface": "article",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 390,
+      "surface": "photography",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 390,
+      "surface": "album",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "firstPhoto": 493.84375,
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 390,
+      "surface": "product",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 390,
+      "surface": "study",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 390,
+      "surface": "about",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 320,
+      "surface": "home",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 320,
+      "surface": "building",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 320,
+      "surface": "writing",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 320,
+      "surface": "article",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 320,
+      "surface": "photography",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 320,
+      "surface": "album",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "firstPhoto": 493.84375,
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 320,
+      "surface": "product",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 320,
+      "surface": "study",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    },
+    {
+      "concept": "c",
+      "width": 320,
+      "surface": "about",
+      "h1": 1,
+      "main": 1,
+      "overflow": 0,
+      "broken": [],
+      "links": []
+    }
+  ],
+  "interactions": [
+    {
+      "concept": "a",
+      "photoSearch": "pass",
+      "searchReset": "pass",
+      "viewerKeyboardAndFocus": "pass",
+      "viewer320": "pass",
+      "productFilters": "pass",
+      "mobileMenu": "pass",
+      "fiveProducts": "pass"
+    },
+    {
+      "concept": "b",
+      "photoSearch": "pass",
+      "searchReset": "pass",
+      "viewerKeyboardAndFocus": "pass",
+      "viewer320": "pass",
+      "productFilters": "pass",
+      "mobileMenu": "pass",
+      "fiveProducts": "pass"
+    },
+    {
+      "concept": "c",
+      "photoSearch": "pass",
+      "searchReset": "pass",
+      "viewerKeyboardAndFocus": "pass",
+      "viewer320": "pass",
+      "productFilters": "pass",
+      "mobileMenu": "pass",
+      "fiveProducts": "pass"
+    }
+  ],
+  "errors": [],
+  "gateCanary": true,
+  "comparison": "Preserves album and phone size across switches",
+  "finished": "2026-10-01T04:19:24.299Z",
+  "failures": []
+}

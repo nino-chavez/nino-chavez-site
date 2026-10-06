@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-30",
+  "articleSource": "docs/design/referral-concepts/shared/content.js (existing publication snapshot)",
+  "albumSource": "docs/design/referral-concepts/shared/album-source.json (43 public photographs)",
+  "homePhoto": "public/images/home-hero-frame.webp",
+  "minderSource": "/Users/nino/Workspace/dev/apps/minder/apps/marketing/public/media/minder-preview-poster.jpg",
+  "minderNote": "Existing published preview contains fictional sample day; label remains visible.",
+  "rotationSource": "https://therotation.tv/?view=schedule; captured read-only September 30, 2026",
+  "studySource": "/Users/nino/Workspace/dev/apps/work-library/app/generated/cases/bc-shared-cart-pattern/content.json",
+  "studyVersion": "8a32da54b4d3f8aed5c8a1f3ea909a4c1716dec0",
+  "studyScope": "Only public catalog fields and three opening source paragraphs included. No private metadata exported.",
+  "remaining": "Existing first-party local assets; original images are not edited."
+}

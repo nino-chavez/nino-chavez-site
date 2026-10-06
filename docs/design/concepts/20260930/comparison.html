@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nino Chavez — Three directions</title><link rel="stylesheet" href="shared/base.css"><link rel="stylesheet" href="comparison.css"></head>
+<body>
+<header class="review-header">
+  <div class="review-title"><h1>Three directions for ninochavez.co</h1><p>Same work. Different ways in.</p></div>
+  <nav class="directions" aria-label="Design direction">
+    <button data-concept="a" aria-pressed="true"><b>A</b> In the field</button>
+    <button data-concept="b" aria-pressed="false"><b>B</b> The journal</button>
+    <button data-concept="c" aria-pressed="false"><b>C</b> The contact sheet</button>
+  </nav>
+  <div class="review-controls">
+    <label>Page<select id="surface"><option value="home">Home</option><option value="building">Building</option><option value="writing">Writing</option><option value="article">Article</option><option value="photography">Photography</option><option value="album">Album</option><option value="product">Product</option><option value="study">Public study</option><option value="about">About</option></select></label>
+    <label id="product-control" hidden>Product<select id="product"><option value="minder">Minder: Your Day</option><option value="rotation">The Rotation</option><option value="rally">Rally HQ</option><option value="cutting-board">Cutting Board</option><option value="yawn">Yawn</option></select></label>
+    <div class="sizes" aria-label="Preview size"><button data-size="desktop" aria-pressed="true">Desktop</button><button data-size="phone" aria-pressed="false">Phone</button></div>
+    <a id="full-page" href="a/index.html?page=home" target="_blank" rel="noopener">Open page ↗</a>
+  </div>
+</header>
+<main class="review-main">
+  <div class="direction-summary"><p id="description"></p><p id="tradeoff"></p></div>
+  <div class="stage" data-size="desktop"><iframe id="preview" title="A — In the field" src="a/index.html?page=home"></iframe></div>
+</main>
+<footer class="review-footer"><span>Local design comparison · September 30, 2026</span><span>Navigation, search and photo viewing work. Product actions open existing sites.</span></footer>
+<script src="comparison.js"></script></body></html>
