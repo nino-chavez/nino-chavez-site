@@ -46,6 +46,25 @@ Disallow: /api/
 Crawl-delay: 10
 
 # ---------------------------------------------------------------------------
+# Meta's model-training crawler is shut out.
+#
+# meta-externalagent crawls to train Meta's foundation models; Meta's crawler
+# page says to block it with a Disallow here. From Oct 2, 2026 it fetched about
+# 26,000 pages a day under /photography and ran each page's JavaScript, which
+# sent about 33,000 analytics requests a day (nino-chavez-photography PR #212,
+# docs/evidence/collection-rejections-2026-10-07.md). It is training, not
+# citation, so it does not serve the purpose of the default rule above.
+#
+# This does not touch link previews or Meta AI search: facebookexternalhit
+# builds the previews when a link is shared on Facebook, Instagram or
+# Messenger, and meta-webindexer cites and links pages in Meta AI search. Both
+# stay under the default rule. Source, read 2026-10-07:
+# https://developers.facebook.com/docs/sharing/webmasters/web-crawlers
+# ---------------------------------------------------------------------------
+User-agent: meta-externalagent
+Disallow: /
+
+# ---------------------------------------------------------------------------
 # Unlisted pages.
 #
 # Committed as "unlisted" (f9b9bb1) and linked from nowhere, but a URL meant to
