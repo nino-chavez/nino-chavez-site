@@ -19,7 +19,6 @@
     "sync:content": "npm run sync:writing && npm run sync:demos",
     "sync:demos": "node scripts/sync-demo-index.mjs && node scripts/sync-demo-stories.mjs",
     "sync:writing": "node scripts/sync-writing-index.mjs",
-    "db:generate": "drizzle-kit generate",
     "test:audit": "npm run build && node --test tests/audit-regression.test.mjs",
     "test:coverage": "node --experimental-strip-types --test tests/coverage.test.mjs",
     "test:navigation": "npm run build && playwright test --config playwright.navigation.config.ts",
@@ -27,7 +26,6 @@
     "typecheck": "tsc --noEmit -p ."
   },
   "dependencies": {
-    "drizzle-orm": "0.45.2",
     "next": "^16.4.0",
     "postcss": "^8.5.25",
     "react": "19.3.0",
@@ -43,7 +41,6 @@
     "@vinext/cloudflare": "1.0.1",
     "@vitejs/plugin-react": "6.0.2",
     "@vitejs/plugin-rsc": "0.5.36",
-    "drizzle-kit": "0.31.11",
     "eslint": "9.39.4",
     "eslint-config-next": "16.4.0",
     "miniflare": "5.20261006.0-alpha",
@@ -57,9 +54,6 @@
   "overrides": {
     "postcss": "$postcss",
     "sharp": "0.35.5",
-    "@esbuild-kit/core-utils": {
-      "esbuild": "^0.25.4"
-    },
     "fflate": "0.7.5"
   },
   "type": "module"
