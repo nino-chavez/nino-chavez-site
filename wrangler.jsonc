@@ -4,10 +4,11 @@
   // Raising this past the local workerd's build date breaks `npm run dev` with
   // ERR_RUNTIME_FAILURE ("requires compatibility date X, newest supported is
   // Y") while build, start, and deploy keep working — the platform's runtime is
-  // current even when the installed one is not. Bump wrangler and
-  // @cloudflare/vite-plugin together in the same change: both pull their own
-  // miniflare/workerd, so upgrading only wrangler leaves `vinext dev` on the
-  // old runtime.
+  // current even when the installed one is not. Bump wrangler,
+  // @cloudflare/vite-plugin and miniflare together in the same change: each
+  // pulls a miniflare/workerd, so upgrading only wrangler leaves `vinext dev` on
+  // the old runtime, and miniflare (pinned to wrangler's version) runs the
+  // rendered-html and audit tests in workerd.
   "compatibility_date": "2026-07-31",
   "compatibility_flags": [
     "nodejs_compat"

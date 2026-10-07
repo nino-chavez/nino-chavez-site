@@ -1,44 +1,25 @@
 import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
-import test from "node:test";
+import test, { after } from "node:test";
+import { redirectTarget, render, stopWorker, visibleDocument } from "./worker.mjs";
 
 const templateRoot = new URL("../", import.meta.url);
-let worker;
+after(stopWorker);
 
-async function render(path = "/") {
-  if (!worker) {
-    const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-    workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-    ({ default: worker } = await import(workerUrl.href));
-  }
-
-  return worker.fetch(
-    new Request(`http://localhost${path}`, {
-      headers: { accept: "text/html" },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
-      },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
-  );
-}
-
-// React escapes these five characters when it serializes text into markup, so a
-// title carrying an ampersand or an apostrophe reaches <title> encoded. Escape
-// the expectation the same way rather than branching per character — the
-// previous apostrophe-only branch passed until a title contained "&".
-function escapeHtml(value) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#x27;");
+// The text of <title>, entities decoded. A renderer may or may not escape an
+// apostrophe or quote in text (React's server renderer did; vinext 1.0's metadata
+// does not), and both are valid HTML, so compare what a reader sees.
+function titleText(html) {
+  // The document's title is the one in <head>; an inline SVG diagram in the body
+  // can carry its own <title>.
+  const raw = html.split("</head>")[0].match(/<title>([^<]*)<\/title>/)?.[1];
+  return raw
+    ?.replaceAll("&lt;", "<")
+    .replaceAll("&gt;", ">")
+    .replaceAll("&quot;", '"')
+    .replaceAll("&#x27;", "'")
+    .replaceAll("&#39;", "'")
+    .replaceAll("&amp;", "&");
 }
 
 async function htmlFor(path) {
@@ -80,7 +61,9 @@ test("public entrances keep their own canonical URL on the shared domain", async
     const html = await htmlFor(path);
     const links = [...html.matchAll(/<link\b(?=[^>]*rel="canonical")[^>]*>/g)];
     assert.equal(links.length, 1, `${path} has one canonical`);
-    assert.equal(links[0][0].match(/href="([^"]+)"/)?.[1], canonical, path);
+    // Compared as parsed URLs: the URL standard makes "https://ninochavez.co" and
+    // "https://ninochavez.co/" the same address, and vinext 1.0 emits the first.
+    assert.equal(new URL(links[0][0].match(/href="([^"]+)"/)?.[1]).href, new URL(canonical).href, path);
   }
 });
 
@@ -237,7 +220,7 @@ test("renders the full-volume work and demos collections", async () => {
   const selectedHtml = await htmlFor("/work");
   assert.match(selectedHtml, /Selected work/);
   assert.match(selectedHtml, /href="\/work\?view=all"/);
-  assert.doesNotMatch(selectedHtml.split('<script id="_R_">')[0], /class="library-controls"/);
+  assert.doesNotMatch(visibleDocument(selectedHtml), /class="library-controls"/);
   assert.match(workHtml, /Minder/);
   assert.match(workHtml, /The Rotation/);
   assert.match(workHtml, /Cutting Board/);
@@ -256,7 +239,7 @@ test("renders the full-volume work and demos collections", async () => {
   assert.match(workHtml, /experience/);
   assert.match(workHtml, /maintained/);
   assert.match(workHtml, /28 Jul/);
-  const filteredDocument = filteredWorkHtml.split('<script id="_R_">')[0];
+  const filteredDocument = visibleDocument(filteredWorkHtml);
   assert.match(filteredDocument, /2 active filters/);
   assert.match(filteredDocument, /Signal Dispatch/);
   assert.doesNotMatch(filteredDocument, /Blueprint/);
@@ -307,9 +290,7 @@ test("renders the full-volume work and demos collections", async () => {
     /href="https:\/\/demos\.ninochavez\.co/,
   );
 
-  const filteredDemosDocument = filteredDemosHtml.split(
-    '<script id="_R_">',
-  )[0];
+  const filteredDemosDocument = visibleDocument(filteredDemosHtml);
   assert.match(
     filteredDemosDocument,
     new RegExp(
@@ -408,7 +389,7 @@ test("server-renders every session and applied technique as a native route", asy
     routes.map(async ({ entry, path, storyKey }) => {
       const html = await htmlFor(path);
       assert.ok(
-        html.includes(`<title>${escapeHtml(entry.title)} — Nino Chavez`),
+        titleText(html) === `${entry.title} — Nino Chavez`,
         `${path} should use the story title in metadata`,
       );
       assert.match(html, new RegExp(`id="story-${storyKey}"`));
@@ -663,7 +644,7 @@ test("renders About as a personal profile instead of a services or route-design 
 });
 
 test("ranks and caps broad site searches", async () => {
-  const html = (await htmlFor("/search?q=agent")).split('<script id="_R_">')[0];
+  const html = visibleDocument(await htmlFor("/search?q=agent"));
   const summary = html.match(
     /Showing <strong>(\d+)<\/strong> of <strong>(\d+)<\/strong> matches/,
   );
@@ -757,7 +738,7 @@ test("renders Photography as an owned image collection with live archive paths",
     htmlFor("/photography?src=ig-photo"),
     htmlFor("/search?q=jersey%20number"),
   ]);
-  const photographyDocument = photographyHtml.split('<script id="_R_">')[0];
+  const photographyDocument = visibleDocument(photographyHtml);
 
   assert.match(photographyDocument, /<h1>Photography<\/h1>/);
 
@@ -918,7 +899,7 @@ test("keeps the global shell and removes route-level review placeholders", async
     assert.match(html, /aria-label="Footer primary navigation"/);
     assert.match(html, /href="\/privacy"/);
     assert.equal(
-      (html.split('<script id="_R_">')[0].match(/<main\b/g) ?? []).length,
+      (visibleDocument(html).match(/<main\b/g) ?? []).length,
       1,
       `${path} should expose one main landmark`,
     );
@@ -1051,13 +1032,13 @@ test("grounds Work pages in public proof or an explicit private record", async (
   const legacyCommerce = await render("/work/commerce-practice");
   assert.ok([301, 307, 308].includes(legacyCommerce.status));
   assert.equal(
-    new URL(legacyCommerce.headers.get("location")).pathname,
+    redirectTarget(legacyCommerce).pathname,
     "/work/commerce-architecture",
   );
 
   const whitepapers = await render("/work/whitepapers");
   assert.ok([301, 307, 308].includes(whitepapers.status));
-  const whitepapersLocation = new URL(whitepapers.headers.get("location"));
+  const whitepapersLocation = redirectTarget(whitepapers);
   assert.equal(
     whitepapersLocation.pathname + whitepapersLocation.search,
     "/blog?type=Whitepaper",
@@ -1065,7 +1046,7 @@ test("grounds Work pages in public proof or an explicit private record", async (
 
   const presentations = await render("/work/presentations");
   assert.ok([301, 307, 308].includes(presentations.status));
-  const presentationsLocation = new URL(presentations.headers.get("location"));
+  const presentationsLocation = redirectTarget(presentations);
   assert.equal(
     presentationsLocation.pathname + presentationsLocation.search,
     "/blog?type=Presentation",
@@ -1088,7 +1069,7 @@ test("links work records to the writing that covers them", async () => {
       htmlFor("/work/volleyrx"),
     ]);
 
-  const rally = rallyHtml.split('<script id="_R_">')[0];
+  const rally = visibleDocument(rallyHtml);
   assert.match(rally, /Written about this/);
   assert.doesNotMatch(
     rally,
@@ -1110,11 +1091,11 @@ test("links work records to the writing that covers them", async () => {
 
   assert.match(pepperHtml, /Written about this/);
 
-  const blueprint = blueprintHtml.split('<script id="_R_">')[0];
+  const blueprint = visibleDocument(blueprintHtml);
   assert.match(blueprint, /Written about this/);
   assert.match(blueprint, /href="https:\/\/ninochavez\.co\/blog\/open-kitchen"/);
 
-  const specchain = specchainHtml.split('<script id="_R_">')[0];
+  const specchain = visibleDocument(specchainHtml);
   for (const slug of [
     "spec-driven-development-with-multi-agent-orchestration",
     "from-aegis-to-specchain-when-governance-meets-reality",
@@ -1129,7 +1110,7 @@ test("links work records to the writing that covers them", async () => {
 
   // A record with no writing relations must not render an empty section.
   assert.doesNotMatch(
-    unlinkedHtml.split('<script id="_R_">')[0],
+    visibleDocument(unlinkedHtml),
     /Written about this/,
   );
 });
@@ -1173,7 +1154,7 @@ test("keeps retired AI routes connected to their canonical destinations", async 
       [301, 307, 308].includes(response.status),
       `${from} should redirect permanently in production`,
     );
-    assert.equal(new URL(response.headers.get("location")).pathname, to);
+    assert.equal(redirectTarget(response).pathname, to);
   }
 });
 
@@ -1197,7 +1178,7 @@ test("redirects the renamed work domain facet without losing sibling filters", a
       [301, 307, 308].includes(response.status),
       `${from} should redirect permanently`,
     );
-    const location = new URL(response.headers.get("location"));
+    const location = redirectTarget(response);
     assert.equal(`${location.pathname}${location.search}`, to);
   }
 
@@ -1212,7 +1193,7 @@ test("redirects the renamed work domain facet without losing sibling filters", a
   }
 
   const landed = await htmlFor("/work?domain=Publishing");
-  const document = landed.split('<script id="_R_">')[0];
+  const document = visibleDocument(landed);
   assert.match(document, /Signal Dispatch/);
   assert.doesNotMatch(document, /No work matches these filters/);
 });
@@ -1350,4 +1331,22 @@ test("keeps private review and public launch modes explicit", async () => {
   await access(
     new URL("public/fonts/space-mono-latin-700-normal.woff2", templateRoot),
   );
+});
+
+test("every sitemap page serves its title and share metadata in the document head", async () => {
+  // Link-preview bots and some crawlers read only <head>. vinext 1.0 streams
+  // metadata that awaits data into the body unless next.config opts out
+  // (htmlLimitedBots), which left 63 of 72 pages with no title in <head>.
+  const sitemap = await (await render("/sitemap.xml")).text();
+  const paths = [...sitemap.matchAll(/<loc>https:\/\/ninochavez\.co([^<]*)<\/loc>/g)].map(
+    (match) => match[1] || "/",
+  );
+  assert.ok(paths.length > 50, `sitemap lists ${paths.length} pages`);
+  const missing = [];
+  for (const path of paths) {
+    const head = (await htmlFor(path)).split("</head>")[0];
+    const titles = head.match(/<title>/g) ?? [];
+    if (titles.length !== 1 || !/property="og:title"/.test(head)) missing.push(path);
+  }
+  assert.deepEqual(missing, [], "pages without one <title> and an og:title in <head>");
 });

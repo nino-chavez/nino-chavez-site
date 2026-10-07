@@ -11,6 +11,12 @@ export const metadata = {
     "Complete work sessions and reusable techniques from real agent-assisted work.",
 };
 
+// DemoLibrary filters from the query string (useSearchParams). Rendering this route per
+// request lets the server render the full collection for that query; as a static
+// route, vinext 1.0 (like Next.js) sends only the Suspense fallback and leaves the
+// list to client JavaScript, which search engines and no-JS readers never see.
+export const dynamic = "force-dynamic";
+
 export default async function DemosPage() {
   const { sessions: demoSessions, techniques: appliedTechniques } =
     await getDemoSnapshot();
