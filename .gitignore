@@ -51,3 +51,4 @@ next-env.d.ts
 # Audit evidence: screenshots and rendered HTML are regenerable from a SHA
 docs/audit/evidence/*/shots/
 docs/audit/evidence/*/html/
+*.tsbuildinfo

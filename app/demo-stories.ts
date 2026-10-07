@@ -1,4 +1,9 @@
-import postcss, { type ChildNode, type Rule } from "postcss";
+import postcss, {
+  AtRule,
+  type ChildNode,
+  type Node as CssNode,
+  type Rule,
+} from "postcss";
 import fallback from "./demo-stories.json";
 
 export type DemoStoryKind = "session" | "technique";
@@ -145,10 +150,10 @@ export async function getDemoStory(
 }
 
 function isInsideKeyframes(node: ChildNode) {
-  let parent = node.parent;
+  let parent: CssNode["parent"] = node.parent;
   while (parent) {
     if (
-      parent.type === "atrule" &&
+      parent instanceof AtRule &&
       /(?:^|-)keyframes$/i.test(parent.name)
     ) {
       return true;
