@@ -14,6 +14,7 @@ type DemoKind = "session" | "technique";
 type DemoRecord = DemoEntry & {
   artifact?: DemoSession["artifact"];
   date?: string;
+  evidence?: DemoSession["evidence"];
   theme?: string;
   href: string;
   index: number;

@@ -35,8 +35,9 @@ export function DemoStoryProgress({
       .filter((section): section is HTMLElement => section !== null);
     let frame = 0;
 
+    const storyElement = story;
     function storyIsActive() {
-      const bounds = story.getBoundingClientRect();
+      const bounds = storyElement.getBoundingClientRect();
       const marker = window.innerHeight * 0.46;
       return bounds.top <= marker && bounds.bottom > marker;
     }
