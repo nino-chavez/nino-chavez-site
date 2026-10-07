@@ -22,7 +22,8 @@
 
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import test from "node:test";
+import test, { after } from "node:test";
+import { render, stopWorker, visibleDocument } from "./worker.mjs";
 import {
   getPhotographyArchiveStats,
   getRecentPhotographyAlbums,
@@ -30,30 +31,7 @@ import {
   PHOTOGRAPHY_STATS_ENDPOINT,
 } from "../app/photography-stats.mjs";
 
-let worker;
-
-async function render(path = "/") {
-  if (!worker) {
-    const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-    workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-    ({ default: worker } = await import(workerUrl.href));
-  }
-
-  return worker.fetch(
-    new Request(`http://localhost${path}`, {
-      headers: { accept: "text/html" },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
-      },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
-  );
-}
+after(stopWorker);
 
 async function htmlFor(path) {
   const response = await render(path);
@@ -450,7 +428,7 @@ test("C23 — the photography story lives on the section landing", async () => {
 });
 
 test("C24 — photography archive entrances stay on the apex in the same tab", async () => {
-  const html = (await htmlFor("/photography")).split('<script id="_R_">')[0];
+  const html = visibleDocument(await htmlFor("/photography"));
   assert.doesNotMatch(html, /photography\.ninochavez\.co/);
   assert.match(html, /action="\/photography\/explore"/);
   for (const route of ["explore", "albums", "timeline", "collections", "favorites"]) {

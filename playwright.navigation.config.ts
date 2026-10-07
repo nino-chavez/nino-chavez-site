@@ -12,7 +12,7 @@ export default defineConfig({
     { name: "mobile-chromium", use: { ...devices["Pixel 7"], browserName: "chromium" } },
   ],
   webServer: process.env.NAVIGATION_BASE_URL ? undefined : {
-    command: "npm start -- --port 4318",
+    command: "npm start -- --port 4318 --host 127.0.0.1",
     url: baseURL,
     reuseExistingServer: !process.env.CI,
   },
