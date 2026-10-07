@@ -5,11 +5,11 @@ name: Deploy site
 # site drift from `main` silently (pushes 2026-08-05 → 2026-08-12 sat
 # unpublished because the only auto-build was the vestigial Pages project).
 #
-# DORMANT until secrets are set — it runs green and SKIPS the deploy steps (with
-# a notice) when the Cloudflare credentials are absent, so adding this file does
-# not red-X the repo. To enable, add two repo secrets (Settings → Secrets and
-# variables → Actions):
-#   CLOUDFLARE_API_TOKEN   — a token with Account · Workers Scripts : Edit
+# Live since 2026-10-07. The secrets come from 1Password (see DEPLOY.md
+# § Credentials). Without them the gate below skips the deploy with a notice and
+# the run stays green, so a missing secret never red-X's the repo. A green run
+# is therefore not proof of a deploy: check that the deploy step ran.
+#   CLOUDFLARE_API_TOKEN   — needs at least Account · Workers Scripts : Edit
 #   CLOUDFLARE_ACCOUNT_ID  — the account that owns the Worker
 #
 # Alternative (even less to maintain): connect this repo to the existing Worker

@@ -14,15 +14,35 @@ does not update the Worker that serves the apex domain.
 ## Deploy trigger
 
 `.github/workflows/deploy-site.yml` deploys the Worker on every push to `main`
-(check + test preflight, then `npm run deploy:production`). It is **dormant
-until repo secrets are set**: add `CLOUDFLARE_API_TOKEN` (Account · Workers
-Scripts : Edit) and `CLOUDFLARE_ACCOUNT_ID` under Settings → Secrets and
-variables → Actions. Until then it runs green and skips with a notice, and the
-canonical release stays manual:
+that changes more than `docs/`, `_archive/` or `e2e/` (check + test preflight,
+then `npm run deploy:production`). It can also be run by hand from the Actions
+tab (`workflow_dispatch`). Live since 2026-10-07: the first run deployed version
+`0e28f0a9`.
 
-1. Merge or push the intended revision to `main`.
-2. Run `npm run deploy:production` from a clean `main` checkout.
-3. Verify the deployed Worker revision and the apex routes below.
+**Credentials.** The repo secrets come from 1Password:
+
+- `CLOUDFLARE_API_TOKEN`: `op://Developer Secrets/Cloudflare account-ops claude-code/credential`
+- `CLOUDFLARE_ACCOUNT_ID`: the same item's `account_id` field
+
+That token is broad: 26 permission groups, including DNS, WAF and Registrar,
+not only Workers. The deploy step runs npm dependency code with it. This was a
+deliberate choice on 2026-10-07 over a token scoped to Workers. To narrow it
+later, create a token from the "Edit Cloudflare Workers" template and replace
+the secret. After rotating `account-ops`, refresh the secret the same way:
+
+```
+op read 'op://Developer Secrets/Cloudflare account-ops claude-code/credential' | gh secret set CLOUDFLARE_API_TOKEN --repo nino-chavez/nino-chavez-site
+```
+
+If the secrets are ever removed, the workflow goes back to green-and-skip with a
+notice, and nothing deploys. A green run is not proof of a deploy: check that
+the "Deploy Worker (production)" step ran, or compare the Worker's current
+version.
+
+**Manual fallback**, for when the workflow cannot run:
+
+1. Run `npm run deploy:production` from a clean `main` checkout.
+2. Verify the deployed Worker revision and the apex routes below.
 
 Alternative to the workflow: connect this repository to the existing Worker via
 Workers Builds (**Settings → Builds** on the Worker; build command
