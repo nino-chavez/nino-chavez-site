@@ -265,9 +265,9 @@ code {
   color: var(--text);
   transition:
     opacity var(--motion-fast) ease,
-    transform 240ms var(--ease-practice),
-    display 240ms allow-discrete,
-    overlay 240ms allow-discrete;
+    transform var(--motion-fast) var(--ease-practice),
+    display var(--motion-fast) allow-discrete,
+    overlay var(--motion-fast) allow-discrete;
   transition-behavior: allow-discrete;
 }
 
@@ -287,9 +287,9 @@ code {
   background: rgb(14 25 40 / 0.55);
   opacity: 0;
   transition:
-    opacity 220ms ease,
-    display 220ms allow-discrete,
-    overlay 220ms allow-discrete;
+    opacity var(--motion-fast) ease,
+    display var(--motion-fast) allow-discrete,
+    overlay var(--motion-fast) allow-discrete;
   transition-behavior: allow-discrete;
 }
 
@@ -1053,16 +1053,6 @@ code {
   }
 }
 
-@keyframes practice-profile-float {
-  from {
-    translate: 0 8px;
-  }
-
-  to {
-    translate: 0 -8px;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1077,79 +1067,6 @@ code {
   ::view-transition-old(*),
   ::view-transition-new(*) {
     animation: none !important;
-  }
-}
-
-/* Open Practice art-direction prototype */
-
-@keyframes practice-line-in {
-  from {
-    opacity: 0.72;
-    transform: translateY(0.06em);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes practice-copy-in {
-  from {
-    opacity: 0.72;
-    transform: translateY(6px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes practice-field-in {
-  from {
-    opacity: 0.78;
-    transform: scale(1.004);
-    clip-path: inset(0 0 0 8%);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-    clip-path: inset(0);
-  }
-}
-
-@keyframes practice-proof-in {
-  from {
-    opacity: 0.6;
-    transform: translate(8px, 6px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-
-  .library-opening h1 > span,
-.about-opening h1 > span {
-    animation: practice-line-in 420ms var(--ease-practice) 20ms both;
-  }
-
-  .library-opening h1 > span:nth-child(2),
-.about-opening h1 > span:nth-child(2) {
-    animation-delay: 70ms;
-  }
-
-  .library-opening h1 > span:nth-child(3) {
-    animation-delay: 120ms;
-  }
-
-  .about-opening__portrait {
-    animation: practice-field-in 560ms var(--ease-practice) 40ms both;
   }
 }
 
@@ -4495,7 +4412,7 @@ h3 {
 
 .now-register__entry:hover .now-register__action b,
 .now-register__entry:focus-visible .now-register__action b {
-  transform: translateX(5px);
+  transform: translateX(4px);
 }
 
 .now-notes dl {
@@ -5134,11 +5051,11 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 300ms var(--ease-practice);
+  transition: transform var(--motion-fast) var(--ease-practice);
 }
 
 .photography-recent__card:hover .photography-recent__image img {
-  transform: scale(1.035);
+  transform: scale(1.01);
 }
 
 .photography-recent__card strong,
@@ -6286,7 +6203,7 @@ h3 {
 
 .demo-studio__counts a:hover b,
 .demo-studio__counts a:focus-visible b {
-  transform: translateY(5px);
+  transform: translateY(4px);
 }
 
 .demo-studio__feature {
@@ -6298,12 +6215,6 @@ h3 {
     0 0 0 1px var(--rule);
   color: var(--text);
   text-decoration: none;
-  transition: transform 260ms var(--ease-practice);
-}
-
-.demo-studio__feature:hover,
-.demo-studio__feature:focus-visible {
-  transform: rotate(0deg) translateY(-5px);
 }
 
 .demo-studio__feature > div {
@@ -6320,6 +6231,12 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: transform var(--motion-fast) var(--ease-practice);
+}
+
+.demo-studio__feature:hover img,
+.demo-studio__feature:focus-visible img {
+  transform: scale(1.01);
 }
 
 .demo-studio__feature > div > span {
@@ -6507,12 +6424,12 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: transform 260ms var(--ease-practice);
+  transition: transform var(--motion-fast) var(--ease-practice);
 }
 
 .demo-session-card:hover img,
 .demo-session-card:focus-visible img {
-  transform: scale(1.018);
+  transform: scale(1.01);
 }
 
 .demo-session-card__frame span {
@@ -6694,9 +6611,7 @@ h3 {
   color: var(--bone);
   text-decoration: none;
   backdrop-filter: blur(10px);
-  transition:
-    transform 220ms var(--ease-practice),
-    background var(--motion-fast) ease;
+  transition: background var(--motion-fast) ease;
 }
 
 /* Cold review D1: the "Events" card carried a permanent solid --action (blue)
@@ -6712,7 +6627,6 @@ h3 {
    the data doesn't support; all four cards now share one treatment. */
 .photography-route-deck a:hover,
 .photography-route-deck a:focus-visible {
-  transform: translateY(-7px);
   background: var(--action);
 }
 
@@ -6836,12 +6750,12 @@ h3 {
 
 .photography-frame-grid img {
   transition:
-    transform 360ms var(--ease-practice),
-    filter 360ms ease;
+    transform var(--motion-fast) var(--ease-practice),
+    filter var(--motion-fast) ease;
 }
 
 .photography-frame-grid figure:hover img {
-  transform: scale(1.025);
+  transform: scale(1.01);
   filter: saturate(1.08);
 }
 
