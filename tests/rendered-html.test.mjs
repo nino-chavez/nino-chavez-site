@@ -157,11 +157,12 @@ test("preserves the canonical entity endpoints and generated root sitemap", asyn
     /^application\/xml/i,
   );
   const sitemapXml = await sitemap.text();
-  // 2026-09-08: 72 urls, including the volleyball coverage page. The applied technique adds one native route to
-  // the 18 sessions, 11 techniques, 7 learn tracks, work items, and durable pages. The
+  // 2026-10-10: 73 urls, including the volleyball coverage page. The Rally
+  // capture technique adds one route to 18 sessions, 12 techniques, 7 learn
+  // tracks, work items, and durable pages. The
   // doesNotMatch guards below are the real contract; this total exists to
   // catch a route silently dropping out of the generated map.
-  assert.equal((sitemapXml.match(/<url>/g) ?? []).length, 72);
+  assert.equal((sitemapXml.match(/<url>/g) ?? []).length, 73);
   assert.match(sitemapXml, /https:\/\/ninochavez\.co\/photography\/coverage/);
   assert.match(sitemapXml, /https:\/\/ninochavez\.co\/work\/film-room/);
   assert.doesNotMatch(sitemapXml, /\/work\/whitepapers/);
@@ -338,15 +339,15 @@ test("keeps the complete demo corpus available as native stories", async () => {
       (total, story) => total + story.sectionCount,
       0,
     ),
-    // 2026-08-28: 248 across 18 sessions and 11 techniques, from a clean sync
-    // at nc-demos 25a0394. A sync bumps this total; a drop without one means a
+    // 2026-10-10: 254 across 18 sessions and 12 techniques, from a clean sync
+    // at nc-demos 2e39353. Rally contributes six sections. A drop without a sync means a
     // story lost chapters.
-    248,
+    254,
   );
 
   // This test owns the corpus totals — nothing else should assert them.
   assert.equal(index.sessionCount, 18);
-  assert.equal(index.techniqueCount, 11);
+  assert.equal(index.techniqueCount, 12);
 
   for (const story of [...stories.sessions, ...stories.techniques]) {
     assert.match(story.sourceHash, /^[a-f0-9]{64}$/);

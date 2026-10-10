@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "source": "apps/nc-demos",
-  "sourceRevision": "8142570cc33df21156a61bc2490009bb85d2cae7",
-  "generatedAt": "2026-09-26T10:40:02.970Z",
+  "sourceRevision": "2e393536bc3c9ee5ee91e27e1c8ea936b86c75f4",
+  "generatedAt": "2026-10-10T16:44:45.745Z",
   "sessionCount": 18,
-  "techniqueCount": 11,
+  "techniqueCount": 12,
   "sessions": [
     {
       "number": "01",
@@ -504,6 +504,21 @@
       "relatedSessionSlugs": [],
       "href": "https://ninochavez.co/demos/applied/one-heavy-job",
       "storyHref": "https://nc-demos.pages.dev/content/techniques/one-heavy-job.json"
+    },
+    {
+      "slug": "one-capture-two-outputs",
+      "number": "12",
+      "title": "One Capture, Two Ways to Teach the Product",
+      "summary": "For product teams: inspect a tournament guide and its matching video, then see how one captured source produces both.",
+      "description": "A staged Rally HQ tournament journey becomes both a click-through guide and a playable video. The useful part is not the file conversion; it is keeping the teaching surface attached to real product state and one shared catalogue of reader journeys.",
+      "principles": [
+        "Capture a real product journey before turning it into teaching material.",
+        "Use one named catalogue for the roles and labels shown across demo surfaces.",
+        "Treat staged output as a demonstration, not evidence of customer activity or complete validation."
+      ],
+      "relatedSessionSlugs": [],
+      "href": "https://ninochavez.co/demos/applied/one-capture-two-outputs",
+      "storyHref": "https://nc-demos.pages.dev/content/techniques/one-capture-two-outputs.json"
     },
     {
       "slug": "local-vs-frontier",
