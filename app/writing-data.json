@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "source": "apps/blog/astro-build",
-  "sourceRevision": "3c8a02035cd0cae8e61d86bd04d10f239a78b70d",
-  "generatedAt": "2026-09-30T05:10:47.135Z",
-  "latestPublishedAt": "2026-09-29",
-  "publicPieceCount": 306,
+  "sourceRevision": "ddf7609ee140a0d15807365b494029ca162bd45f",
+  "generatedAt": "2026-10-10T16:39:41.695Z",
+  "latestPublishedAt": "2026-10-10",
+  "publicPieceCount": 309,
   "kindCounts": {
-    "Essay": 260,
+    "Essay": 263,
     "Whitepaper": 15,
     "Presentation": 9,
     "Tutorial": 8,
@@ -26,6 +26,7 @@
     "Meta",
     "Personal Finance",
     "Philosophy",
+    "Photography",
     "Reflection",
     "Systems Thinking"
   ],
@@ -34,6 +35,48 @@
     "2025"
   ],
   "items": [
+    {
+      "slug": "a-product-prototype-someone-else-can-build",
+      "title": "A product prototype that carries its decisions",
+      "excerpt": "A wedding product proposal became a public walkthrough, an interactive fictional prototype, and a planning handoff that carries the product decisions without exposing the original conversation.",
+      "publishedAt": "2026-10-10",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "architecture",
+        "field-notes"
+      ],
+      "href": "https://ninochavez.co/blog/a-product-prototype-someone-else-can-build"
+    },
+    {
+      "slug": "making-club-videos-without-opening-an-editor",
+      "title": "Making club videos without opening a video editor",
+      "excerpt": "Our club-video work moved from hand editing in CapCut to agent-authored HyperFrames compositions and automated renders. The finished campaign shows what changed—and what still needed a person.",
+      "publishedAt": "2026-10-10",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "agentic-systems",
+        "photography",
+        "field-notes"
+      ],
+      "href": "https://ninochavez.co/blog/making-club-videos-without-opening-an-editor"
+    },
+    {
+      "slug": "photography-reports-that-help-me-choose",
+      "title": "Photography reports that help me choose",
+      "excerpt": "A photography report becomes useful when it helps choose what to share or revisit, without mistaking browser activity for people, quality, or proof of growth.",
+      "publishedAt": "2026-10-10",
+      "kind": "Essay",
+      "category": "Photography",
+      "tags": [
+        "photography",
+        "ai-development",
+        "field-notes"
+      ],
+      "href": "https://ninochavez.co/blog/photography-reports-that-help-me-choose"
+    },
     {
       "slug": "the-work-doesnt-end-at-send",
       "title": "The Work Doesn’t End at Send",
