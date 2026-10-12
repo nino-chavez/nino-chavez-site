@@ -12,10 +12,9 @@ colors:
   action-quiet: "#e0e9ed"
   ink: "#07131d"
   signal: "#c53e2a"
-photography:
-  ground: "#f4f4f5"
-  ink: "#07131d"
-  gold: "#d4af37"
+  photography-ground: "#f4f4f5"
+  photography-ink: "#07131d"
+  photography-gold: "#d4af37"
 typography:
   display:
     fontFamily: '"In the Field Display", "Open Practice Body", Inter, ui-sans-serif, system-ui, sans-serif'
@@ -64,7 +63,7 @@ The main application scopes this system to `body.site-a` in `app/in-the-field.cs
 
 ## Colors
 
-**The Warm Ground Rule.** Use the warm ground for main-site reading surfaces. Use navy text and action blue for legibility and interaction. Photography routes use the scoped ground, ink, and gold in the next section.
+**The Warm Ground Rule.** Use the warm ground for main-site reading surfaces. Use navy text and action blue for legibility and interaction. Photography routes use the scoped `photography-*` colors described below.
 
 `ground`, `surface`, and `surface-muted` establish the light hierarchy. `text` is the reading ink. `muted` supports secondary information. `rule` is the shared border color. `action` and `action-quiet` carry links, active states, focus, and quiet interactive fills. `ink` is the dark photographic ground. `signal` is `#c53e2a` (`app/globals.css:53`). `.site-a` leaves that value in place. The stylesheet paints it on the live-indicator dot (`app/globals.css:7442`).
 
@@ -82,12 +81,12 @@ The main application scopes this system to `body.site-a` in `app/in-the-field.cs
 
 **The One Job Per Face Rule.** Schibsted Grotesk, loaded as `In the Field Display`, serves compact interior headings and navigation identity. `Open Practice Body` is the Inter-backed reading face. `Open Practice Evidence` is the Space Mono-backed evidence face. The home lockup uses the `Open Practice Hero` face currently loaded from `anton-400.woff2`.
 
-Interior headings use the display face (`app/in-the-field.css:23`). Each of these headings sets its own line-height:
+Interior headings use the display face (`app/in-the-field.css:23`). Each sets its own line-height; the value listed is the one that renders:
 
 - Home route headings, 1.15 (`app/in-the-field.css:47`).
-- Writing title, 0.92 (`app/by-nino-frontdoors.css:200`). The same heading also matches 1.02 (`app/in-the-field.css:55`) and 0.96 (`app/writing-index.css:15`). All three selectors are two classes and one element. `/blog` imports both route sheets (`app/blog/page.tsx:4-5`) after the layout sheet (`app/layout.tsx:3`), and the rendered page links the frontdoor sheet last.
-- Latest-piece heading, 1.05 (`app/by-nino-frontdoors.css:230`). The same heading also matches 1.08 (`app/in-the-field.css:60`) and 1.04 (`app/writing-index.css:40`). The rendered page links the frontdoor sheet last.
-- Photography title, 1.05 (`app/in-the-field.css:94`). That selector is three classes and one element, so it wins over 0.9 (`app/by-nino-frontdoors.css:343`).
+- Writing title, 0.92 (`app/by-nino-frontdoors.css:200`).
+- Latest-piece heading, 1.05 (`app/by-nino-frontdoors.css:230`).
+- Photography title, 1.05 (`app/in-the-field.css:94`).
 - Photography section headings, 1.1 (`app/in-the-field.css:116`, `app/in-the-field.css:123`).
 - Building headings, 1.08 (`app/building.css:5`).
 - About title, 0.92 (`app/by-nino-frontdoors.css:163`).
