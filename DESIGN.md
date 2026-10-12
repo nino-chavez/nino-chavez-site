@@ -11,11 +11,15 @@ colors:
   action: "#0d5a93"
   action-quiet: "#e0e9ed"
   ink: "#07131d"
+  signal: "#c53e2a"
+photography:
+  ground: "#f4f4f5"
+  ink: "#07131d"
+  gold: "#d4af37"
 typography:
   display:
     fontFamily: '"In the Field Display", "Open Practice Body", Inter, ui-sans-serif, system-ui, sans-serif'
     fontWeight: 700
-    lineHeight: 1.05
     letterSpacing: "-0.04em"
   hero:
     fontFamily: '"Open Practice Hero", "Arial Narrow", Arial, sans-serif'
@@ -60,17 +64,35 @@ The main application scopes this system to `body.site-a` in `app/in-the-field.cs
 
 ## Colors
 
-**The Warm Ground Rule.** Use the warm ground for main-site reading surfaces. Use navy text and action blue for legibility and interaction. Use dark ink where photography needs a dark ground or chrome.
+**The Warm Ground Rule.** Use the warm ground for main-site reading surfaces. Use navy text and action blue for legibility and interaction. Photography routes use the scoped ground, ink, and gold in the next section.
 
-`ground`, `surface`, and `surface-muted` establish the light hierarchy. `text` is the reading ink. `muted` supports secondary information. `rule` is the shared border color. `action` and `action-quiet` carry links, active states, focus, and quiet interactive fills. `ink` is the dark photographic ground.
+`ground`, `surface`, and `surface-muted` establish the light hierarchy. `text` is the reading ink. `muted` supports secondary information. `rule` is the shared border color. `action` and `action-quiet` carry links, active states, focus, and quiet interactive fills. `ink` is the dark photographic ground. `signal` is `#c53e2a` (`app/globals.css:53`). `.site-a` leaves that value in place. The stylesheet paints it on the live-indicator dot (`app/globals.css:7442`).
 
 **The One Action Rule.** On light pages, one action color carries interactive emphasis. Do not introduce another promotional accent to make a section compete.
+
+### Photography routes
+
+`.by-nino-photography` keeps its own ground, ink, and gold.
+
+- Ground `#f4f4f5` (`app/by-nino-frontdoors.css:273`) is the text color on that zone (`app/by-nino-frontdoors.css:276`).
+- Ink is declared `#18181b` (`app/by-nino-frontdoors.css:272`). `body` is `site-a` (`app/layout.tsx:68`), and `.site-a .by-nino-photography` sets ink to `#07131d` (`app/in-the-field.css:110`). That value is the background (`app/by-nino-frontdoors.css:275`).
+- Gold `#d4af37` (`app/by-nino-frontdoors.css:274`) fills the search button (`app/by-nino-frontdoors.css:371`) and colors photography route links on hover (`app/in-the-field.css:113`).
 
 ## Typography
 
 **The One Job Per Face Rule.** Schibsted Grotesk, loaded as `In the Field Display`, serves compact interior headings and navigation identity. `Open Practice Body` is the Inter-backed reading face. `Open Practice Evidence` is the Space Mono-backed evidence face. The home lockup uses the `Open Practice Hero` face currently loaded from `anton-400.woff2`.
 
-Interior headings use the display role with tight tracking. Body copy uses the body role at a comfortable 16px and 1.55 line-height. Evidence, code, and small technical labels use the monospace role.
+Interior headings use the display face (`app/in-the-field.css:23`). Each of these headings sets its own line-height:
+
+- Home route headings, 1.15 (`app/in-the-field.css:47`).
+- Writing title, 0.92 (`app/by-nino-frontdoors.css:200`). The same heading also matches 1.02 (`app/in-the-field.css:55`) and 0.96 (`app/writing-index.css:15`). All three selectors are two classes and one element. `/blog` imports both route sheets (`app/blog/page.tsx:4-5`) after the layout sheet (`app/layout.tsx:3`), and the rendered page links the frontdoor sheet last.
+- Latest-piece heading, 1.05 (`app/by-nino-frontdoors.css:230`). The same heading also matches 1.08 (`app/in-the-field.css:60`) and 1.04 (`app/writing-index.css:40`). The rendered page links the frontdoor sheet last.
+- Photography title, 1.05 (`app/in-the-field.css:94`). That selector is three classes and one element, so it wins over 0.9 (`app/by-nino-frontdoors.css:343`).
+- Photography section headings, 1.1 (`app/in-the-field.css:116`, `app/in-the-field.css:123`).
+- Building headings, 1.08 (`app/building.css:5`).
+- About title, 0.92 (`app/by-nino-frontdoors.css:163`).
+
+Body copy uses the body role at a comfortable 16px and 1.55 line-height. Evidence, code, and small technical labels use the monospace role.
 
 ## Layout
 
