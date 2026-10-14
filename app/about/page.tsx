@@ -1,5 +1,6 @@
 import Link from "next/link";
 import "../by-nino-frontdoors.css";
+import { personSchemaCore } from "../career";
 
 export const metadata = {
   alternates: { canonical: "/about" },
@@ -89,10 +90,7 @@ const profiles = [
 
 const personSchema = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Nino Chavez",
-  url: "https://ninochavez.co/about",
-  image: "https://ninochavez.co/work/nino.jpg",
+  ...personSchemaCore(),
   jobTitle: "Product Architect",
   worksFor: {
     "@type": "Organization",
@@ -114,9 +112,6 @@ const personSchema = {
     "Writing",
     "DJing",
   ],
-  sameAs: profiles
-    .filter((profile) => profile.href.startsWith("https://"))
-    .map((profile) => profile.href),
 };
 
 export default function AboutPage() {
