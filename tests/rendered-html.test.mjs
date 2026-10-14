@@ -131,10 +131,11 @@ test("connects the homepage and person endpoint to one verified Person entity", 
     new URL(canonical.match(/href="([^"]+)"/)?.[1]).href,
     "https://ninochavez.co/",
   );
-  assert.match(
-    homeHtml,
-    process.env.SITE_VISIBILITY === "public" ? /<meta\b(?=[^>]*name="robots")(?=[^>]*content="[^"]*index[^"]*")[^>]*>/ : /<meta\b(?=[^>]*name="robots")(?=[^>]*content="[^"]*noindex[^"]*")[^>]*>/,
-  );
+  const robotsTag = homeHtml.match(/<meta\b(?=[^>]*name="robots")[^>]*>/)?.[0];
+  const directives = (robotsTag?.match(/content="([^"]*)"/)?.[1] ?? "")
+    .split(",").map((directive) => directive.trim().toLowerCase());
+  assert.ok(directives.includes(process.env.SITE_VISIBILITY === "public" ? "index" : "noindex"));
+  assert.ok(!directives.includes(process.env.SITE_VISIBILITY === "public" ? "noindex" : "index"));
 });
 
 test("server-renders the personal entrance and global navigation", async () => {
