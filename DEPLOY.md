@@ -19,6 +19,12 @@ then `npm run deploy:production`). It can also be run by hand from the Actions
 tab (`workflow_dispatch`). Live since 2026-10-07: the first run deployed version
 `0e28f0a9`.
 
+The same workflow runs the Playwright navigation suite (`npm run
+test:navigation`, both `mobile-chromium` and `iphone-webkit`) as its own job on
+every pull request and before every deploy. The deploy job waits for it, so a
+red suite on `main` stops the deploy and the live site keeps its last version.
+On a pull request the suite runs alone; nothing deploys.
+
 **Credentials.** The repo secrets come from 1Password:
 
 - `CLOUDFLARE_API_TOKEN`: `op://Developer Secrets/Cloudflare account-ops claude-code/credential`
