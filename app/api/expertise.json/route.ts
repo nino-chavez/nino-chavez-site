@@ -10,6 +10,8 @@
  * to answer questions about specific expertise areas with concrete examples.
  */
 
+import { personSchemaCore } from '../../career';
+
 export async function GET() {
 	const expertiseData = {
 		'@context': 'https://schema.org',
@@ -222,9 +224,7 @@ export async function GET() {
 
 		// Additional metadata for context
 		about: {
-			'@type': 'Person',
-			name: 'Nino Chavez',
-			url: 'https://ninochavez.co',
+			...personSchemaCore(),
 			jobTitle: ['Product Architect', 'Action Sports Photographer', 'Writer', 'DJ']
 		}
 	};

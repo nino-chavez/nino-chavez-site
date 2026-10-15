@@ -90,6 +90,14 @@ test("connects the homepage and person endpoint to one verified Person entity", 
   ]);
   assert.equal(endpoint.status, 200);
   const endpointPerson = await endpoint.json();
+  const relatedEndpoints = await Promise.all(
+    ["contact", "expertise", "experience"].map(async (name) => {
+      const path = `/api/${name}.json`;
+      const response = await render(path);
+      assert.equal(response.status, 200, path);
+      return [path, await response.json()];
+    }),
+  );
   const homeNodes = jsonLdNodes(homeHtml);
   const homePerson = personNode(homeHtml, "/");
   const website = homeNodes.find((node) => node["@type"] === "WebSite");
@@ -115,11 +123,13 @@ test("connects the homepage and person endpoint to one verified Person entity", 
     ["/about", personNode(aboutHtml, "/about")],
     ["/cv", personNode(cvHtml, "/cv")],
     ["/api/person.json", endpointPerson],
+    ...relatedEndpoints.map(([path, data]) => [path, data.about]),
   ]) {
     for (const [field, expected] of Object.entries(expectedCore)) {
       assert.deepEqual(person[field], expected, `${path}: ${field}`);
     }
   }
+  assert.deepEqual(relatedEndpoints[0][1].sameAs, expectedCore.sameAs);
 
   assert.equal(website["@id"], "https://ninochavez.co/#website");
   assert.equal(website.name, "Nino Chavez");

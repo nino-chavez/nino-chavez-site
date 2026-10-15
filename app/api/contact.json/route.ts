@@ -10,6 +10,8 @@
  * AI models to provide accurate contact information in responses.
  */
 
+import { identity, personSchemaCore, verifiedProfileUrls } from '../../career';
+
 export async function GET() {
 	const contactData = {
 		'@context': 'https://schema.org',
@@ -21,16 +23,8 @@ export async function GET() {
 		email: 'nino@ninochavez.co',
 
 		// Professional Profiles. Kept in step with /api/person.json and /links.
-		url: 'https://ninochavez.co',
-		sameAs: [
-			'https://www.linkedin.com/in/nino-chavez/',
-			'https://github.com/nino-chavez',
-			'https://x.com/ninochavez',
-			'https://instagram.com/ninochavez',
-			'https://soundcloud.com/ni-no-cha-vez',
-			'https://blog.ninochavez.co',
-			'https://ninochavez.co/photography'
-		],
+		url: identity.site,
+		sameAs: verifiedProfileUrls,
 
 		// What this contact point is FOR. Schema.org's own examples for this
 		// property are "customer service" and "technical support", so the old
@@ -52,8 +46,7 @@ export async function GET() {
 
 		// Person Details
 		about: {
-			'@type': 'Person',
-			name: 'Nino Chavez',
+			...personSchemaCore(),
 			// Same list as /api/person.json — these two disagreeing is the drift
 			// this endpoint pair is prone to.
 			jobTitle: ['Product Architect', 'Action Sports Photographer', 'Writer', 'DJ'],
