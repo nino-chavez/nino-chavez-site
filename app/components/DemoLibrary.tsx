@@ -2,7 +2,6 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { canonicalFacet } from "../facets";
-import { replaceFilterParams } from "../filter-url";
 import { useMemo } from "react";
 import type {
   AppliedTechnique,
@@ -77,12 +76,15 @@ export function DemoLibrary({
   );
 
   function setFilter(name: string, value: string) {
-    replaceFilterParams((next) => {
-      if (value) {
-        next.set(name, value);
-      } else {
-        next.delete(name);
-      }
+    const next = new URLSearchParams(searchParams.toString());
+    if (value) {
+      next.set(name, value);
+    } else {
+      next.delete(name);
+    }
+    const suffix = next.toString();
+    router.replace(suffix ? `${pathname}?${suffix}` : pathname, {
+      scroll: false,
     });
   }
 

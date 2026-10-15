@@ -14,7 +14,6 @@ import {
   workKind,
 } from "../data";
 import { canonicalFacet, offeredFacets } from "../facets";
-import { replaceFilterParams } from "../filter-url";
 
 const shortMonths = [
   "Jan",
@@ -55,13 +54,16 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
   const formOptions = offeredFacets(items, "form", forms);
 
   function setFilter(name: string, value: string) {
-    replaceFilterParams((next) => {
-      next.set("view", "all");
-      if (value) {
-        next.set(name, value);
-      } else {
-        next.delete(name);
-      }
+    const next = new URLSearchParams(searchParams.toString());
+    next.set("view", "all");
+    if (value) {
+      next.set(name, value);
+    } else {
+      next.delete(name);
+    }
+    const suffix = next.toString();
+    router.replace(suffix ? `${pathname}?${suffix}` : pathname, {
+      scroll: false,
     });
   }
 
