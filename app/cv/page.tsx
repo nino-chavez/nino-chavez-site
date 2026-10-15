@@ -5,6 +5,7 @@ import {
   careerStartYear,
   education,
   identity,
+  personSchemaCore,
   positions,
   practice,
   skills,
@@ -135,10 +136,7 @@ const continuations = [
 
 const personSchema = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: identity.name,
-  alternateName: identity.alternateName,
-  url: `${identity.site}/cv`,
+  ...personSchemaCore(),
   email: identity.email,
   jobTitle: currentEmployment?.title,
   worksFor: currentEmployment
@@ -158,11 +156,6 @@ const personSchema = {
     name: entry.school,
   })),
   knowsAbout: [...skills.aiAgentic, ...skills.engineering, ...skills.commerce],
-  // Derived from the rendered list, not hand-written, so the structured data
-  // cannot claim a profile the page does not show.
-  sameAs: profiles
-    .filter((profile) => profile.href.startsWith("https://"))
-    .map((profile) => profile.href),
 };
 
 function PositionEntry({ position }: { position: Position }) {

@@ -29,6 +29,20 @@ async function htmlFor(path) {
   return (await response.text()).replaceAll("<!-- -->", "");
 }
 
+function jsonLdNodes(html) {
+  return [...html.matchAll(/<script\b(?=[^>]*type="application\/ld\+json")[^>]*>([\s\S]*?)<\/script>/g)]
+    .flatMap(([, value]) => {
+      const data = JSON.parse(value);
+      return data["@graph"] ?? [data];
+    });
+}
+
+function personNode(html, path) {
+  const person = jsonLdNodes(html).find((node) => node["@type"] === "Person");
+  assert.ok(person, `${path} should render a Person JSON-LD node`);
+  return person;
+}
+
 test("shared activity loads once on public entrances and stays off private review", async () => {
   for (const path of ["/", "/work/blueprint", "/photography", "/blog", "/demos"]) {
     const html = await htmlFor(path);
@@ -65,6 +79,73 @@ test("public entrances keep their own canonical URL on the shared domain", async
     // "https://ninochavez.co/" the same address, and vinext 1.0 emits the first.
     assert.equal(new URL(links[0][0].match(/href="([^"]+)"/)?.[1]).href, new URL(canonical).href, path);
   }
+});
+
+test("connects the homepage and person endpoint to one verified Person entity", async () => {
+  const [homeHtml, aboutHtml, cvHtml, endpoint] = await Promise.all([
+    htmlFor("/"),
+    htmlFor("/about"),
+    htmlFor("/cv"),
+    render("/api/person.json"),
+  ]);
+  assert.equal(endpoint.status, 200);
+  const endpointPerson = await endpoint.json();
+  const relatedEndpoints = await Promise.all(
+    ["contact", "expertise", "experience"].map(async (name) => {
+      const path = `/api/${name}.json`;
+      const response = await render(path);
+      assert.equal(response.status, 200, path);
+      return [path, await response.json()];
+    }),
+  );
+  const homeNodes = jsonLdNodes(homeHtml);
+  const homePerson = personNode(homeHtml, "/");
+  const website = homeNodes.find((node) => node["@type"] === "WebSite");
+  assert.ok(website, "/ should render a WebSite JSON-LD node");
+
+  const expectedCore = {
+    "@id": "https://ninochavez.co/#person",
+    "@type": "Person",
+    name: "Nino Chavez",
+    alternateName: "Antonino Chavez",
+    url: "https://ninochavez.co",
+    image: "https://ninochavez.co/work/nino.jpg",
+    sameAs: [
+      "https://www.linkedin.com/in/nino-chavez/",
+      "https://github.com/nino-chavez",
+      "https://www.instagram.com/nino.chavez.photo/",
+      "https://soundcloud.com/ni-no-cha-vez",
+    ],
+  };
+
+  for (const [path, person] of [
+    ["/", homePerson],
+    ["/about", personNode(aboutHtml, "/about")],
+    ["/cv", personNode(cvHtml, "/cv")],
+    ["/api/person.json", endpointPerson],
+    ...relatedEndpoints.map(([path, data]) => [path, data.about]),
+  ]) {
+    for (const [field, expected] of Object.entries(expectedCore)) {
+      assert.deepEqual(person[field], expected, `${path}: ${field}`);
+    }
+  }
+  assert.deepEqual(relatedEndpoints[0][1].sameAs, expectedCore.sameAs);
+
+  assert.equal(website["@id"], "https://ninochavez.co/#website");
+  assert.equal(website.name, "Nino Chavez");
+  assert.equal(website.url, "https://ninochavez.co");
+  assert.deepEqual(website.publisher, { "@id": expectedCore["@id"] });
+  const canonical = homeHtml.match(/<link\b(?=[^>]*rel="canonical")[^>]*>/)?.[0];
+  assert.ok(canonical, "/ should retain its canonical link");
+  assert.equal(
+    new URL(canonical.match(/href="([^"]+)"/)?.[1]).href,
+    "https://ninochavez.co/",
+  );
+  const robotsTag = homeHtml.match(/<meta\b(?=[^>]*name="robots")[^>]*>/)?.[0];
+  const directives = (robotsTag?.match(/content="([^"]*)"/)?.[1] ?? "")
+    .split(",").map((directive) => directive.trim().toLowerCase());
+  assert.ok(directives.includes(process.env.SITE_VISIBILITY === "public" ? "index" : "noindex"));
+  assert.ok(!directives.includes(process.env.SITE_VISIBILITY === "public" ? "noindex" : "index"));
 });
 
 test("server-renders the personal entrance and global navigation", async () => {

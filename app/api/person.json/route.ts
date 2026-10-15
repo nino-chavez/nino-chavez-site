@@ -27,7 +27,7 @@
  * not hand-write a career fact career.ts already carries.
  */
 
-import { positions, yearsOfPractice } from '../../career';
+import { personSchemaCore, positions, yearsOfPractice } from '../../career';
 
 export async function GET() {
 	const currentPosition = positions.find((p) => p.kind === 'employment' && p.end === null);
@@ -59,15 +59,12 @@ export async function GET() {
 
 	const personData = {
 		'@context': 'https://schema.org',
-		'@type': 'Person',
-		name: 'Nino Chavez',
-		alternateName: 'Antonino Chavez',
+		...personSchemaCore(),
 		// /links introduces him as "Photographer. DJ. Writer. Builder." The day
 		// job stays first — it is still the day job — but it was the whole list.
 		jobTitle: [currentPosition.title, 'Action Sports Photographer', 'Writer', 'DJ'],
 		description:
 			'Chicago-based maker working across software, photography, music, and writing. Writing code since 1999; day job is product architect at commerce.com. Runs Signal X Studio, the holding company behind Let’s Pepper, Rally HQ, Flickday Media, VolleyRX, QuantifAI, and Zero Specs. Shoots action sports and volleyball with a 20,000+ image archive, writes the Signal Dispatch blog, and DJs house and disco.',
-		url: 'https://ninochavez.co',
 		email: 'nino@ninochavez.co',
 
 		// Current Employment
@@ -102,22 +99,6 @@ export async function GET() {
 			addressRegion: 'IL',
 			addressCountry: 'US'
 		},
-
-		// Profiles that identify this person. `sameAs` is what an answer engine
-		// uses to resolve one entity across the web, and it listed two of the
-		// eight the site itself publishes on /links — the DJ, writing, photography
-		// and Instagram/X presences were all invisible here. Company sites are
-		// deliberately NOT in this list; they identify the ventures, not him, and
-		// belong under `affiliation` above.
-		sameAs: [
-			'https://www.linkedin.com/in/nino-chavez/',
-			'https://github.com/nino-chavez',
-			'https://x.com/ninochavez',
-			'https://instagram.com/ninochavez',
-			'https://soundcloud.com/ni-no-cha-vez',
-			'https://blog.ninochavez.co',
-			'https://ninochavez.co/photography'
-		],
 
 		// Areas of Expertise
 		knowsAbout: [

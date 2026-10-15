@@ -16,7 +16,7 @@
  * dual-register note; this file must not hand-write a number career.ts carries.
  */
 
-import { positions, careerStartYear, yearsOfPractice, identity } from '../../career';
+import { positions, careerStartYear, yearsOfPractice, identity, personSchemaCore } from '../../career';
 
 function findPosition(org: string) {
 	const position = positions.find((p) => p.org === org);
@@ -305,9 +305,7 @@ export async function GET() {
 
 		// Summary Statistics
 		about: {
-			'@type': 'Person',
-			name: 'Nino Chavez',
-			url: 'https://ninochavez.co',
+			...personSchemaCore(),
 			additionalProperty: [
 				{
 					'@type': 'PropertyValue',

@@ -71,11 +71,13 @@ export const identity = {
   // Phone stays out of this file — the repo is public and the site never
   // renders it. The Doc/ATS renderers in Drive carry it directly.
   site: "https://ninochavez.co",
+  image: "https://ninochavez.co/work/nino.jpg",
   // Both handles verified 2026-08-08: LinkedIn from the live profile capture;
   // GitHub via API (nino-chavez: created 2015, 47 public repos; the
   // unhyphenated `ninochavez` account is empty and not the real one).
   linkedin: "https://www.linkedin.com/in/nino-chavez/",
   github: "https://github.com/nino-chavez",
+  instagramPhotography: "https://www.instagram.com/nino.chavez.photo/",
   soundcloud: "https://soundcloud.com/ni-no-cha-vez",
   headlines: {
     site: "Product architect + builder",
@@ -86,6 +88,31 @@ export const identity = {
     ats: "Solution Architect and AI Product Builder",
   },
 } as const;
+
+/** Stable public identifier and verified profiles for Nino's Person entity. */
+export const personId = `${identity.site}/#person`;
+export const verifiedProfileUrls = [
+  identity.linkedin,
+  identity.github,
+  identity.instagramPhotography,
+  identity.soundcloud,
+] as const;
+
+/**
+ * The fields every public Person representation must share. Routes may add
+ * their own career or page-specific detail without creating a second entity.
+ */
+export function personSchemaCore() {
+  return {
+    "@id": personId,
+    "@type": "Person",
+    name: identity.name,
+    alternateName: identity.alternateName,
+    url: identity.site,
+    image: identity.image,
+    sameAs: verifiedProfileUrls,
+  };
+}
 
 /** Years of experience derive from this — never hand-write "25+ years". */
 export const careerStartYear = 1999;

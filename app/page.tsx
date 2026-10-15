@@ -1,7 +1,34 @@
 import Link from "next/link";
+import { identity, personId, personSchemaCore, positions } from "./career";
 
 export const metadata = {
   alternates: { canonical: "https://ninochavez.co/" },
+};
+
+const currentEmployment = positions.find(
+  (position) => position.kind === "employment" && position.end === null,
+);
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      ...personSchemaCore(),
+      description: `Product architect and builder in ${identity.location.split(",")[0]}.`,
+      jobTitle: currentEmployment?.title,
+      homeLocation: {
+        "@type": "City",
+        name: identity.location.split(",")[0],
+      },
+    },
+    {
+      "@id": `${identity.site}/#website`,
+      "@type": "WebSite",
+      name: identity.name,
+      url: identity.site,
+      publisher: { "@id": personId },
+    },
+  ],
 };
 
 function DestinationArrow() {
@@ -11,6 +38,10 @@ function DestinationArrow() {
 export default function Home() {
   return (
     <div className="field-home">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <section className="field-opening" aria-labelledby="practice-title">
         <picture>
           <source media="(max-width: 640px)" srcSet="/images/home-hero-frame-narrow.webp" />
