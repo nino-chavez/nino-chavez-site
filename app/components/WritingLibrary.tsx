@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { canonicalFacet } from "../facets";
+import { replaceFilterParams } from "../filter-url";
 import { useMemo } from "react";
 import {
   writingKinds,
@@ -66,15 +67,12 @@ export function WritingLibrary({
   const year = canonicalFacet(searchParams.get("year") ?? "", writingYears);
 
   function setFilter(name: string, value: string) {
-    const next = new URLSearchParams(searchParams.toString());
-    if (value) {
-      next.set(name, value);
-    } else {
-      next.delete(name);
-    }
-    const suffix = next.toString();
-    router.replace(suffix ? `${pathname}?${suffix}` : pathname, {
-      scroll: false,
+    replaceFilterParams((next) => {
+      if (value) {
+        next.set(name, value);
+      } else {
+        next.delete(name);
+      }
     });
   }
 
