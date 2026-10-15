@@ -17,6 +17,15 @@ name: Deploy site
 # `npm run build`, deploy command `npx wrangler deploy`) per DEPLOY.md — that
 # connection is dashboard-only (the builds API rejects API tokens and wrangler
 # OAuth tokens alike, verified 2026-08-12). Pick one mechanism, not both.
+#
+# The `navigation` job runs the Playwright navigation suite (e2e/navigation:
+# library search, mobile menu, the Building catalogue) on every pull request
+# and before every deploy; `deploy` waits for it. It needs no secrets, so it is
+# deliberately outside the credential gate: a skipped suite would leave the run
+# green. Pull requests run the suite only; the deploy job never runs for them.
+# The pull_request trigger has no path filter, so a spec-only change still runs
+# the suite. The ruleset does not require this check yet, so a red PR can still
+# be merged by hand; the deploy will then refuse to ship it.
 
 on:
   push:
@@ -25,6 +34,7 @@ on:
       - 'docs/**'
       - '_archive/**'
       - 'e2e/**'
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -35,7 +45,40 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  navigation:
+    name: Navigation suite
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      # Only the browsers the two projects use: iphone-webkit, mobile-chromium.
+      - name: Install browsers
+        run: npx playwright install --with-deps chromium webkit
+
+      # Builds, then serves the build with `npm start` (vite preview on 4318).
+      - name: Build and run the navigation suite
+        run: npm run test:navigation -- --reporter=list,github
+
+      - if: failure()
+        name: Upload failure traces and screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: navigation-test-results
+          path: outputs/navigation-tests
+          retention-days: 14
+
   deploy:
+    needs: navigation
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Gate on Cloudflare credentials
