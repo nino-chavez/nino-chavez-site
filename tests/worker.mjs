@@ -9,8 +9,9 @@
 // use the documented 4.x shape and go through Miniflare's own converter.
 //
 // The contract is unchanged from the Node loader: ASSETS answers 404 for every
-// path, and no other binding or variable is set, so a page must render from the
-// Worker alone.
+// path, and no service or data binding is set, so a page must render from the
+// Worker alone. An explicitly requested visibility mode is passed as a binding
+// because workerd reads it at runtime, matching the deployed Worker.
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -33,6 +34,9 @@ async function start() {
     modules: files.map((file) => ({ type: "ESModule", path: join(root, file) })),
     compatibilityDate: config.compatibility_date,
     compatibilityFlags: config.compatibility_flags,
+    bindings: process.env.SITE_VISIBILITY
+      ? { SITE_VISIBILITY: process.env.SITE_VISIBILITY }
+      : {},
     serviceBindings: {
       ASSETS: () => new Response("Not found", { status: 404 }),
     },
