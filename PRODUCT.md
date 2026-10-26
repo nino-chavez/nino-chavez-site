@@ -1,3 +1,5 @@
+> Current decision (2026-10-26): [Profile A and independent navigation](docs/decisions/0005-profile-a-personal-home.md) supersedes this document’s combined-site homepage and shared-navigation model. Existing deep content and routes remain supported.
+
 # Product
 
 <!-- impeccable:product-schema 1 -->

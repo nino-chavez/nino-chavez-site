@@ -133,8 +133,9 @@ All three are delivered locally as WOFF2 assets. This supersedes System A
 high-contrast mono layer made the practice read more like a designed operating
 manual than a personal portfolio.
 
-**Typography status: locked.** Anton / Inter / Space Mono is the current
-art-direction baseline and the reference for later comparisons. Anton is
+**Typography status: locked for the application surfaces.** Anton / Inter /
+Space Mono remains the application baseline and reference for later comparisons.
+The selected Profile A uses Georgia for the home and navigation shell; see [ADR 0005](decisions/0005-profile-a-personal-home.md). Anton is
 display-only; its force depends on the rest of the interface remaining quiet.
 
 ## Copy and naming
@@ -290,10 +291,10 @@ legible.
 
 ## Interaction contract
 
-Global navigation is always available. The complete library is one direct move
-away. Work and About remain parent sections for Photography, Now, and Links;
-navigation distinguishes the current page from its current parent section
-instead of marking both as the same destination. Work and Demos search and
+Global navigation is always available on application routes. Profile A owns
+local navigation for the personal home and profile routes; it links directly to
+About, Projects, Contact, the complete Work library, and privacy as documented
+in [ADR 0005](decisions/0005-profile-a-personal-home.md). Work and Demos search and
 filters write their state to the URL and preserve an accurate result count.
 Long records keep a persistent route back to their controls. The compact menu
 is a modal navigation surface, exposes its expanded state, and returns focus to

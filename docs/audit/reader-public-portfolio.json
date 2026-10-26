@@ -1,15 +1,14 @@
 {
   "version": 1,
   "surface": "public portfolio",
-  "reviewedAt": "2026-08-01T01:38:28.949Z",
-  "reviewedBy": "Codex",
-  "method": "Prior full-route browser audit retained; changed commerce page reviewed from user screenshot and server-rendered route output",
-  "sourceDigest": "sha256:3491a2a807523e743d0d29f4fee7f274e2404aca6b0c23b9f1c4785fbeb471f2",
-  "sourceFiles": 44,
+  "reviewedAt": "2026-10-26T16:04:59.802Z",
+  "reviewedBy": "Codex parent and independent model reviewer",
+  "method": "Parent opened whole desktop, 390px and 320px built-page captures; independent model review found no material visual defects. Chromium and WebKit navigation suites passed. Scope covers selected homepage and common header/footer; it does not certify every legacy deep page, physical devices or assistive technology. Generated writing snapshot reverted after build because publication sync is outside this change.",
+  "sourceDigest": "sha256:4e30fab5723e6fb3ce8c5b41a6f34394d9818ed862c4615a4dd359a7bc9a0444",
+  "sourceFiles": 62,
   "scope": [
-    "70 public routes",
-    "390 768 1061 1080 1100 1260 1280 1728 pixel widths",
-    "copy layout navigation overflow landmarks external destinations and runtime errors",
-    "commerce architecture naming evidence metadata canonical URL redirect and contact action"
+    "home",
+    "profile navigation",
+    "profile footer"
   ]
 }

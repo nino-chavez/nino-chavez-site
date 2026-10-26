@@ -148,7 +148,7 @@ test("connects the homepage and person endpoint to one verified Person entity", 
   assert.ok(!directives.includes(process.env.SITE_VISIBILITY === "public" ? "noindex" : "index"));
 });
 
-test("server-renders the personal entrance and global navigation", async () => {
+test("server-renders the selected standalone personal profile", async () => {
   const response = await render("/");
   const html = (await response.text()).replaceAll("<!-- -->", "");
 
@@ -161,47 +161,38 @@ test("server-renders the personal entrance and global navigation", async () => {
   );
 
   assert.match(html, /Nino Chavez — Product architect and builder/);
-  assert.match(html, /<span>Nino <\/span><span>Chavez<\/span>/);
+  assert.match(html, /<h1 id="profile-title">Nino Chavez<\/h1>/);
   assert.match(html, /Product architect and builder in Chicago/);
   assert.match(
     html,
-    /I design products, build the software behind them, and run them in the real world./,
+    /I’m a product architect in Chicago\. Outside work, I run volleyball events, take photographs, write, and DJ\./,
   );
-  assert.match(html, /class="field-opening"/);
-  assert.match(html, /home-hero-frame-narrow\.webp/);
-  assert.match(html, /home-hero-frame\.webp/);
+  assert.match(html, /class="profile-home"/);
+  assert.match(html, /src="\/work\/nino\.jpg" alt="Portrait of Nino Chavez"/);
+  assert.match(html, /aria-label="Profile sections"/);
+  assert.match(html, /href="\/#about">About/);
+  assert.match(html, /href="\/#projects">Projects/);
+  assert.match(html, /href="\/#contact">Contact/);
   assert.match(html, /Selected work/);
-  assert.match(html, /Minder, The Rotation, Rally HQ/);
+  assert.match(html, /A few things I’ve made/);
+  assert.match(html, /Minder[\s\S]*Rally HQ[\s\S]*The Rotation/);
   assert.match(html, /Signal Dispatch/);
   assert.match(html, /href="\/work"/);
-  assert.doesNotMatch(html, /Four places to start|field-hero__rally-proof/);
-  assert.match(html, /href="\/blog"/);
-  assert.match(html, /href="\/about"/);
-  assert.match(html, /href="\/search"/);
+  assert.match(html, /href="\/about">Read my full profile/);
+  assert.match(html, /href="\/privacy">Privacy/);
+  assert.doesNotMatch(html, /class="field-opening"|home-hero-frame/);
+  assert.doesNotMatch(html, /aria-label="Primary navigation"/);
+  assert.match(html, /href="https:\/\/ninochavez\.co\/blog\/archive"/);
   assert.match(html, /mailto:nino@ninochavez\.co/);
 });
 
-test("uses a native dialog and browser history for compact navigation", async () => {
-  const [html, source] = await Promise.all([
-    htmlFor("/"),
-    readFile(
-      new URL("../app/components/SiteHeader.tsx", import.meta.url),
-      "utf8",
-    ),
-  ]);
-
-  assert.match(
-    html,
-    /<button[^>]*aria-haspopup="dialog"[^>]*aria-controls="site-navigation-dialog"[^>]*aria-expanded="false"[^>]*>Menu<\/button>/,
-  );
-  assert.match(html, /<dialog[^>]*id="site-navigation-dialog"/);
-  assert.match(html, /Search this site/);
-  assert.match(html, /<button[^>]*>Close<\/button>/);
-
-  assert.match(source, /\.showModal\(\)/);
-  assert.match(source, /window\.history\.pushState/);
-  assert.match(source, /addEventListener\("popstate", handlePopState\)/);
-  assert.match(source, /closeMenu\(false\)/);
+test("deep profile pages keep ordinary local navigation", async () => {
+  const html = await htmlFor("/work");
+  assert.match(html, /aria-label="Profile sections"/);
+  for (const section of ["about", "projects", "contact"]) {
+    assert.ok(html.includes(`href="/#${section}"`));
+  }
+  assert.doesNotMatch(html, /site-navigation-dialog|Search this site|menu-button/);
 });
 
 test("preserves the canonical entity endpoints and generated root sitemap", async () => {
@@ -912,7 +903,7 @@ test("keeps an unknown route inside the site shell", async () => {
 
   assert.equal(response.status, 404);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-  assert.match(html, /aria-label="Primary navigation"/);
+  assert.match(html, /aria-label="Profile sections"/);
   assert.match(html, /<main\b/);
   assert.match(html, /This path does not resolve/);
   assert.match(html, /href="\/work"/);
@@ -963,22 +954,18 @@ test("renders the current privacy policy and makes it globally searchable", asyn
   assert.match(searchHtml, /What the public site receives/);
 });
 
-test("keeps the global shell and removes route-level review placeholders", async () => {
+test("keeps independent profile navigation throughout its routes", async () => {
   for (const path of [
-    "/",
     "/work",
     "/demos",
     "/learn",
     "/blog",
     "/photography",
-    "/about",
-    "/now",
-    "/links",
     "/privacy",
   ]) {
     const html = await htmlFor(path);
-    assert.match(html, /aria-label="Primary navigation"/);
-    assert.match(html, /aria-label="Footer primary navigation"/);
+    assert.match(html, /aria-label="Profile sections"/);
+    assert.match(html, /class="profile-footer"/);
     assert.match(html, /href="\/privacy"/);
     assert.equal(
       (visibleDocument(html).match(/<main\b/g) ?? []).length,
@@ -989,6 +976,19 @@ test("keeps the global shell and removes route-level review placeholders", async
       html,
       /structural prototype|production policy must cover|gallery structure placeholders|separate runtime|shared shell/i,
       `${path} should not expose implementation or review placeholder copy`,
+    );
+  }
+
+  for (const path of ["/", "/about", "/now", "/links"]) {
+    const html = await htmlFor(path);
+    assert.match(html, /aria-label="Profile sections"/);
+    assert.match(html, /class="profile-footer"/);
+    assert.match(html, /href="\/privacy">Privacy/);
+    assert.doesNotMatch(html, /aria-label="Primary navigation"/);
+    assert.equal(
+      (visibleDocument(html).match(/<main\b/g) ?? []).length,
+      1,
+      `${path} should expose one main landmark`,
     );
   }
 });
@@ -1345,7 +1345,7 @@ test("keeps private review and public launch modes explicit", async () => {
   assert.match(direction, /working practice, not a brochure/);
   assert.match(direction, /complete, honestly labeled record/);
   assert.match(direction, /Typography status: locked/);
-  assert.match(direction, /Anton \/ Inter \/ Space Mono/);
+  assert.match(direction, /Anton\s*\/\s*Inter\s*\/\s*Space Mono/);
   assert.match(direction, /hero remains responsive HTML and CSS/);
   assert.match(direction, /Action-object contract/);
   assert.match(direction, /one perceived object maps to one behavioral object/);
