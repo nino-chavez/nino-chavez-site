@@ -49,10 +49,22 @@
         "CHAVEZ"
       ],
       "denyTerms": [
-        "work object",
-        "durable page",
-        "review build",
-        "snapshot"
+        {
+          "term": "work object",
+          "reason": "Reader-facing copy must use visitor language; preserved from the existing copy-audit terms list."
+        },
+        {
+          "term": "durable page",
+          "reason": "Reader-facing copy must use visitor language; preserved from the existing copy-audit terms list."
+        },
+        {
+          "term": "review build",
+          "reason": "Reader-facing copy must use visitor language; preserved from the existing copy-audit terms list."
+        },
+        {
+          "term": "snapshot",
+          "reason": "Reader-facing copy must use visitor language; preserved from the existing copy-audit terms list."
+        }
       ],
       "maxWordsPerText": 70
     }

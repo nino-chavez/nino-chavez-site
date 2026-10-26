@@ -1,63 +1,33 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
-async function openMenu(page: Page) {
-  await page.locator(".menu-button").tap();
-  await expect(page.getByRole("dialog")).toBeVisible();
-}
-
-function observePageReloads(page: Page) {
-  const requests: string[] = [];
-  page.on("request", (request) => {
-    // A same-page menu history entry must not ask the router to render again.
-    if (new URL(request.url()).pathname === "/.rsc") requests.push(request.url());
-  });
-  return requests;
-}
-
-for (const [label, path] of [
-  ["Writing", "/blog"], ["Building", "/work"], ["Photography", "/photography"],
-  ["About", "/about"], ["Now", "/now"], ["Links", "/links"],
-]) {
-  test(`tapping ${label} opens its destination without reloading the page being left`, async ({ page }) => {
+for (const [label, anchor] of [["About", "about"], ["Projects", "projects"], ["Contact", "contact"]]) {
+  test(`${label} is visible on a phone and opens its section`, async ({ page }) => {
     await page.goto("/");
-    await openMenu(page);
-    const reloads = observePageReloads(page);
-    await page.getByRole("dialog").locator(`a[href="${path}"]`).tap();
-    await expect(page).toHaveURL(new RegExp(`${path}$`));
-    await page.waitForLoadState("networkidle");
-    await expect(page).toHaveURL(new RegExp(`${path}$`));
-    expect(reloads).toEqual([]);
-    await page.goBack();
-    await expect(page).toHaveURL(/\/$/);
-    await expect(page.getByRole("dialog")).not.toBeVisible();
+    const link = page.getByRole("navigation", { name: "Profile sections" }).getByRole("link", { name: label, exact: true });
+    await expect(link).toBeVisible();
+    await link.tap();
+    await expect(page).toHaveURL(new RegExp(`#${anchor}$`));
+    await expect(page.locator(`#${anchor}`)).toBeInViewport();
+    await expect(page.locator(".menu-button")).toHaveCount(0);
   });
 }
 
-test("menu search navigates and Back returns to the original page", async ({ page }) => {
+test("a deep project page returns to the personal page through the same local navigation", async ({ page }) => {
   await page.goto("/");
-  await openMenu(page);
-  const reloads = observePageReloads(page);
-  await page.getByLabel("Search this site").fill("Rally HQ");
-  await page.getByRole("dialog").getByRole("button", { name: "Search", exact: true }).tap();
-  await expect(page).toHaveURL(/\/search\?q=Rally\+HQ$/);
-  expect(reloads).toEqual([]);
+  await page.getByRole("link", { name: "All projects", exact: true }).tap();
+  await expect(page).toHaveURL(/\/work$/);
+  const nav = page.getByRole("navigation", { name: "Profile sections" });
+  await expect(nav.getByRole("link")).toHaveCount(3);
+  await nav.getByRole("link", { name: "Contact", exact: true }).tap();
+  await expect(page).toHaveURL(/\/#contact$/);
+  await expect(page.locator("#contact")).toBeInViewport();
   await page.goBack();
-  await expect(page).toHaveURL(/\/$/);
-  await expect(page.getByRole("dialog")).not.toBeVisible();
+  await expect(page).toHaveURL(/\/work$/);
 });
 
-for (const dismissal of ["Close", "Escape", "Back"]) {
-  test(`${dismissal} dismisses the menu and permits another tap`, async ({ page }) => {
-    await page.goto("/");
-    await openMenu(page);
-    if (dismissal === "Close") await page.getByRole("button", { name: "Close", exact: true }).tap();
-    if (dismissal === "Escape") await page.keyboard.press("Escape");
-    if (dismissal === "Back") await page.goBack();
-    await page.waitForFunction(() => !window.history.state?.siteNavigationDialog);
-    await expect(page.getByRole("dialog")).not.toBeVisible();
-    await expect(page.locator(".menu-button")).toBeFocused();
-    await openMenu(page);
-    await page.getByRole("dialog").locator('a[href="/about"]').tap();
-    await expect(page).toHaveURL(/\/about$/);
-  });
-}
+test("profile Elsewhere links open the specialist archive and photo Events page", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByRole("link", { name: "Signal Dispatch", exact: true })).toHaveAttribute("href", "https://ninochavez.co/blog/archive");
+  await expect(page.getByRole("link", { name: "my photography site" })).toHaveAttribute("href", "https://ninochavez.co/photography/albums");
+  await expect(page.getByRole("navigation", { name: "Profile sections" })).not.toContainText("Writing");
+});

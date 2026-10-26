@@ -526,21 +526,20 @@ test("C29 — the photography landing publishes its canonical URL", async () => 
   );
 });
 
-test("C30 — Photography is a top-level global navigation item", async () => {
-  const html = await htmlFor("/photography");
-  const primary = html.match(
-    /<nav class="desktop-navigation"[\s\S]*?<\/nav>/,
-  )?.[0];
-  assert.ok(primary, "primary navigation should render");
-  assert.match(primary, /Writing[\s\S]*Building[\s\S]*Photography[\s\S]*About/);
-  assert.match(primary, /href="\/photography" aria-current="page"/);
+test("C30 — photography is a contextual destination, not shared primary navigation", async () => {
+  const html = await htmlFor("/");
+  const navigation = html.match(/<nav aria-label="Profile sections"[\s\S]*?<\/nav>/)?.[0];
+  assert.ok(navigation);
+  assert.match(navigation, /About[\s\S]*Projects[\s\S]*Contact/);
+  assert.doesNotMatch(navigation, /Photography|Writing/);
+  assert.match(html, /href="https:\/\/ninochavez\.co\/photography\/albums"/);
 });
 
-test("F8 — the selected homepage enters collections and Building keeps process and guides reachable", async () => {
+test("F8 — the personal home links to projects and the specialist sites while deep work stays reachable", async () => {
   const [home, building] = await Promise.all([htmlFor("/"), htmlFor("/work")]);
   const body = home.match(/<main[^>]*>[\s\S]*?<\/main>/)?.[0];
   assert.ok(body);
-  for (const path of ["/work", "/blog", "/photography"]) assert.ok(body.includes(`href="${path}"`));
+  for (const path of ["/work", "https://ninochavez.co/blog/archive", "https://ninochavez.co/photography/albums"]) assert.ok(body.includes(`href="${path}"`));
   for (const path of ["/demos", "/learn"]) assert.ok(building.includes(`href="${path}"`));
   assert.match(home, /href="\/about"/);
 });
