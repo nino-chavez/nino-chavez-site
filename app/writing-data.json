@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "source": "apps/blog/astro-build",
-  "sourceRevision": "ddf7609ee140a0d15807365b494029ca162bd45f",
-  "generatedAt": "2026-10-10T16:39:41.695Z",
-  "latestPublishedAt": "2026-10-10",
-  "publicPieceCount": 309,
+  "sourceRevision": "3a44ab3769f193853bae1180824e7b46fec664c1",
+  "generatedAt": "2026-10-28T04:43:37.857Z",
+  "latestPublishedAt": "2026-10-28",
+  "publicPieceCount": 313,
   "kindCounts": {
-    "Essay": 263,
+    "Essay": 267,
     "Whitepaper": 15,
     "Presentation": 9,
     "Tutorial": 8,
@@ -28,13 +28,69 @@
     "Philosophy",
     "Photography",
     "Reflection",
-    "Systems Thinking"
+    "Systems Thinking",
+    "Uncategorized"
   ],
   "years": [
     "2026",
     "2025"
   ],
   "items": [
+    {
+      "slug": "because-i-can-is-only-half-the-answer",
+      "title": "Because I Can Is Only Half the Answer",
+      "excerpt": "Gen AI expands what I can contribute at 630 Volleyball. Choosing that work still means deciding where desire and ability meet.",
+      "publishedAt": "2026-10-28",
+      "kind": "Essay",
+      "category": "Reflection",
+      "tags": [
+        "ai-development",
+        "reflection",
+        "leadership"
+      ],
+      "href": "https://ninochavez.co/blog/because-i-can-is-only-half-the-answer"
+    },
+    {
+      "slug": "the-rules-of-the-road-still-apply",
+      "title": "The Rules of the Road Still Apply",
+      "excerpt": "AI gives people new capabilities, but deciding who can be trusted to use them is a familiar problem. Authority should follow demonstrated competence, under rules that bind users and builders alike.",
+      "publishedAt": "2026-10-21",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-governance",
+        "leadership"
+      ],
+      "href": "https://ninochavez.co/blog/the-rules-of-the-road-still-apply"
+    },
+    {
+      "slug": "the-hire-who-never-remembers",
+      "title": "The Hire Who Never Remembers",
+      "excerpt": "People keep asking what kind of person is good at AI. My bet is a skill instead: the written half of management, the only half that reaches an agent's next session.",
+      "publishedAt": "2026-10-19",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "leadership",
+        "agentic-systems",
+        "ai-development"
+      ],
+      "href": "https://ninochavez.co/blog/the-hire-who-never-remembers"
+    },
+    {
+      "slug": "theres-no-replicator-yet",
+      "title": "There's No Replicator Yet",
+      "excerpt": "An AI agent did nearly all of a family member's data entry, missed one or two items, and almost got written off. All-or-nothing is a replicator's bar, and nothing I use with AI clears it yet.",
+      "publishedAt": "2026-10-14",
+      "kind": "Essay",
+      "category": "AI & Automation",
+      "tags": [
+        "ai-development",
+        "agentic-systems",
+        "reflection"
+      ],
+      "href": "https://ninochavez.co/blog/theres-no-replicator-yet"
+    },
     {
       "slug": "a-product-prototype-someone-else-can-build",
       "title": "A product prototype that carries its decisions",
@@ -635,7 +691,7 @@
       "excerpt": "What Lopopolo's million lines confirmed. On December 30, 2025 I published a whitepaper claiming the marginal cost of code generation was approaching zero, that this would produce a class of just-in-time software that challenges the SaaS model, and that the locus of value was shifting from the codebase to the intent behind it. On February 11, 2026, OpenAI published the empirical receipt — a three-engineer team producing one million lines of code over five months with zero manually-written lines. The thesis was right. The framing needed one precision upgrade.",
       "publishedAt": "2026-05-25",
       "kind": "Counterpoint",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "agentic-systems",
         "software-economics",
@@ -649,7 +705,7 @@
       "excerpt": "",
       "publishedAt": "2026-05-24",
       "kind": "Whitepaper",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [],
       "href": "https://ninochavez.co/blog/whitepapers/big-blueprint-methodology"
     },
@@ -659,7 +715,7 @@
       "excerpt": "The predictable objection to the chassis argument is that templates and contracts don't eliminate review — they just relocate it. That objection treats agent output as the inspection target. The Industrial Revolution settled the same argument two centuries ago, in favor of inspecting the lathe instead of the bolt.",
       "publishedAt": "2026-05-24",
       "kind": "Counterpoint",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "agentic-systems",
         "architecture",
@@ -1150,7 +1206,7 @@
       "excerpt": "A systematic challenge to the mimicry-vs-native framing. Where the dual-track model holds, where it fractures, and what the original analysis underweights.",
       "publishedAt": "2026-03-01",
       "kind": "Counterpoint",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "agentic-systems",
         "deep-dive"
@@ -1283,7 +1339,7 @@
       "excerpt": "A systematic challenge to the bandwidth-to-AI analogy. Where the four-stage arc holds, where it fractures, and what the original analysis underweights.",
       "publishedAt": "2026-02-20",
       "kind": "Counterpoint",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "deep-dive"
@@ -1844,7 +1900,7 @@
       "href": "https://ninochavez.co/blog/i-dont-want-to-be-a-10-person-team-of-one"
     },
     {
-      "slug": "q1-2026-the-integration-quarter",
+      "slug": "q1-2025-the-integration-quarter",
       "title": "Q1 2026: The Integration Quarter",
       "excerpt": "Everyone spent 2024-2025 experimenting with AI features. Q1 2026 is when the survivors figure out what actually works—and kill what doesn't.",
       "publishedAt": "2025-12-03",
@@ -1856,7 +1912,7 @@
         "commerce",
         "product-strategy"
       ],
-      "href": "https://ninochavez.co/blog/q1-2026-the-integration-quarter"
+      "href": "https://ninochavez.co/blog/q1-2025-the-integration-quarter"
     },
     {
       "slug": "the-storefront-that-builds-itself",
@@ -1937,7 +1993,7 @@
       "excerpt": "",
       "publishedAt": "2025-11-27",
       "kind": "Whitepaper",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [],
       "href": "https://ninochavez.co/blog/whitepapers/the-agentic-shift"
     },
@@ -1989,7 +2045,7 @@
       "excerpt": "",
       "publishedAt": "2025-11-23",
       "kind": "Whitepaper",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [],
       "href": "https://ninochavez.co/blog/whitepapers/the-fourth-channel"
     },
@@ -1999,7 +2055,7 @@
       "excerpt": "",
       "publishedAt": "2025-11-22",
       "kind": "Whitepaper",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [],
       "href": "https://ninochavez.co/blog/whitepapers/the-algorithmic-consumer"
     },
@@ -2106,7 +2162,7 @@
       "href": "https://ninochavez.co/blog/the-do-more-with-less-paradox"
     },
     {
-      "slug": "self-service-paradox",
+      "slug": "self-service-paradox-revised",
       "title": "When Did I Become the Employee?",
       "excerpt": "I'm not just paying for the service anymore. I'm doing the work. And somewhere between the self-checkout and the self-install kit, I stopped noticing when 'convenience' became unpaid labor.",
       "publishedAt": "2025-10-29",
@@ -2116,7 +2172,7 @@
         "architecture",
         "reflection"
       ],
-      "href": "https://ninochavez.co/blog/self-service-paradox"
+      "href": "https://ninochavez.co/blog/self-service-paradox-revised"
     },
     {
       "slug": "ai-agents-need-a-cop",
@@ -3011,7 +3067,7 @@
       "excerpt": "This post wraps my “Help Me Help You” arc and opens a new question: If precision makes AI more effective, does it also increase human disconnection? I’ve felt the drift. The next thread I’m pulling on is: how to stay human inside all this structure.",
       "publishedAt": "2025-07-02",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "architecture"
@@ -3036,7 +3092,7 @@
       "excerpt": "A behind-the-scenes look at how I use GPT and Lovable together. One rewrites the prompt. One generates the code. I just define the intent — and stay out of the way. This isn’t a tech stack. It’s a new mode of working.",
       "publishedAt": "2025-07-02",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "architecture"
@@ -3049,7 +3105,7 @@
       "excerpt": "Prompting is evolving into orchestration. One AI clarifies, another executes, a third checks the result. We’re entering an era where modular intelligence matters — and prompts become the interface between thinking systems.",
       "publishedAt": "2025-07-02",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "architecture"
@@ -3183,7 +3239,7 @@
       "excerpt": "Most reorgs I’ve seen are just corporate feng shui — shift a few boxes, rename a few titles, pretend it’s visionary. But this one? This one actually maps to something real. For once, the language isn’t just for clients — it mirrors what I’ve been doing in my own damn operating system.",
       "publishedAt": "2025-06-24",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "commerce",
         "consulting"
@@ -3222,7 +3278,7 @@
       "excerpt": "Most MVPs aren’t minimum or viable — they’re just premature.",
       "publishedAt": "2025-06-20",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "consulting",
         "architecture"
@@ -3235,7 +3291,7 @@
       "excerpt": "One of the easiest traps to fall into as a leader or expert is assuming we already understand. That assumption — even when subtle — shuts down curiosity, slows progress, and can quietly place the burden of clarity on everyone but ourselves.",
       "publishedAt": "2025-06-19",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "leadership",
         "reflection"
@@ -3321,7 +3377,7 @@
       "excerpt": "Signal Reflex is now Signal Dispatch — a shift from sensing to sending. Same voice, sharper intent. This is where ideas go out.",
       "publishedAt": "2025-06-16",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "leadership"
@@ -3334,7 +3390,7 @@
       "excerpt": "(How to Keep Moving Without Losing Yourself)",
       "publishedAt": "2025-06-15",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "leadership"
@@ -3810,7 +3866,7 @@
       "excerpt": "A structured index of essays and field notes from Signal Dispatch. Organized by theme and series",
       "publishedAt": "2025-06-05",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "commerce",
         "leadership",
