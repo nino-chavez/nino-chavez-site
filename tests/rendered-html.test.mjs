@@ -563,6 +563,15 @@ test("renders seven grounded learning paths without positional placeholders", as
   assert.doesNotMatch(source, /index\s*%\s*\w+\.length/);
 });
 
+test("keeps uncategorized writing labeled and reachable through its subject filter", async () => {
+  const search = visibleDocument(await htmlFor("/search?q=Five%20Months%20Later"));
+  assert.match(search, /Uncategorized/);
+  assert.doesNotMatch(search, /·\s*·/);
+  const filtered = await htmlFor("/blog?subject=Uncategorized&q=Five%20Months%20Later");
+  assert.match(filtered, /Five Months Later, the Evidence Showed Up/);
+  assert.match(filtered, /2 active filters/);
+});
+
 test("renders the complete Signal Dispatch publication and real article handoffs", async () => {
   const writingSnapshot = JSON.parse(
     await readFile(

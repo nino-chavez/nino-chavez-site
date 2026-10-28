@@ -1,4 +1,5 @@
 import snapshot from "./writing-data.json";
+import { normalizeWritingCategories } from "./writing-normalization.mjs";
 
 export const writingKinds = [
   {
@@ -73,7 +74,9 @@ export type WritingSnapshot = {
 const publishedIndex =
   "https://ninochavez-blog.pages.dev/blog/api/content-index.json";
 
-export const writingSnapshotFallback = snapshot as unknown as WritingSnapshot;
+export const writingSnapshotFallback = normalizeWritingCategories(
+  snapshot as unknown as WritingSnapshot,
+);
 export const writingItems = writingSnapshotFallback.items;
 export const writingSeries = writingSnapshotFallback.series;
 export const writingCategories = writingSnapshotFallback.categories;
@@ -94,7 +97,7 @@ function validate(candidate: WritingSnapshot) {
   ) {
     throw new Error("Writing content index does not match schema version 1.");
   }
-  return candidate;
+  return normalizeWritingCategories(candidate);
 }
 
 export async function getWritingSnapshot() {
