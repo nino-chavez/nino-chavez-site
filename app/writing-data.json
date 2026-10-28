@@ -28,7 +28,8 @@
     "Philosophy",
     "Photography",
     "Reflection",
-    "Systems Thinking"
+    "Systems Thinking",
+    "Uncategorized"
   ],
   "years": [
     "2026",
@@ -690,7 +691,7 @@
       "excerpt": "What Lopopolo's million lines confirmed. On December 30, 2025 I published a whitepaper claiming the marginal cost of code generation was approaching zero, that this would produce a class of just-in-time software that challenges the SaaS model, and that the locus of value was shifting from the codebase to the intent behind it. On February 11, 2026, OpenAI published the empirical receipt — a three-engineer team producing one million lines of code over five months with zero manually-written lines. The thesis was right. The framing needed one precision upgrade.",
       "publishedAt": "2026-05-25",
       "kind": "Counterpoint",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "agentic-systems",
         "software-economics",
@@ -704,7 +705,7 @@
       "excerpt": "",
       "publishedAt": "2026-05-24",
       "kind": "Whitepaper",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [],
       "href": "https://ninochavez.co/blog/whitepapers/big-blueprint-methodology"
     },
@@ -714,7 +715,7 @@
       "excerpt": "The predictable objection to the chassis argument is that templates and contracts don't eliminate review — they just relocate it. That objection treats agent output as the inspection target. The Industrial Revolution settled the same argument two centuries ago, in favor of inspecting the lathe instead of the bolt.",
       "publishedAt": "2026-05-24",
       "kind": "Counterpoint",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "agentic-systems",
         "architecture",
@@ -1205,7 +1206,7 @@
       "excerpt": "A systematic challenge to the mimicry-vs-native framing. Where the dual-track model holds, where it fractures, and what the original analysis underweights.",
       "publishedAt": "2026-03-01",
       "kind": "Counterpoint",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "agentic-systems",
         "deep-dive"
@@ -1338,7 +1339,7 @@
       "excerpt": "A systematic challenge to the bandwidth-to-AI analogy. Where the four-stage arc holds, where it fractures, and what the original analysis underweights.",
       "publishedAt": "2026-02-20",
       "kind": "Counterpoint",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "deep-dive"
@@ -1992,7 +1993,7 @@
       "excerpt": "",
       "publishedAt": "2025-11-27",
       "kind": "Whitepaper",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [],
       "href": "https://ninochavez.co/blog/whitepapers/the-agentic-shift"
     },
@@ -2044,7 +2045,7 @@
       "excerpt": "",
       "publishedAt": "2025-11-23",
       "kind": "Whitepaper",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [],
       "href": "https://ninochavez.co/blog/whitepapers/the-fourth-channel"
     },
@@ -2054,7 +2055,7 @@
       "excerpt": "",
       "publishedAt": "2025-11-22",
       "kind": "Whitepaper",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [],
       "href": "https://ninochavez.co/blog/whitepapers/the-algorithmic-consumer"
     },
@@ -3066,7 +3067,7 @@
       "excerpt": "This post wraps my “Help Me Help You” arc and opens a new question: If precision makes AI more effective, does it also increase human disconnection? I’ve felt the drift. The next thread I’m pulling on is: how to stay human inside all this structure.",
       "publishedAt": "2025-07-02",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "architecture"
@@ -3091,7 +3092,7 @@
       "excerpt": "A behind-the-scenes look at how I use GPT and Lovable together. One rewrites the prompt. One generates the code. I just define the intent — and stay out of the way. This isn’t a tech stack. It’s a new mode of working.",
       "publishedAt": "2025-07-02",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "architecture"
@@ -3104,7 +3105,7 @@
       "excerpt": "Prompting is evolving into orchestration. One AI clarifies, another executes, a third checks the result. We’re entering an era where modular intelligence matters — and prompts become the interface between thinking systems.",
       "publishedAt": "2025-07-02",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "architecture"
@@ -3238,7 +3239,7 @@
       "excerpt": "Most reorgs I’ve seen are just corporate feng shui — shift a few boxes, rename a few titles, pretend it’s visionary. But this one? This one actually maps to something real. For once, the language isn’t just for clients — it mirrors what I’ve been doing in my own damn operating system.",
       "publishedAt": "2025-06-24",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "commerce",
         "consulting"
@@ -3277,7 +3278,7 @@
       "excerpt": "Most MVPs aren’t minimum or viable — they’re just premature.",
       "publishedAt": "2025-06-20",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "consulting",
         "architecture"
@@ -3290,7 +3291,7 @@
       "excerpt": "One of the easiest traps to fall into as a leader or expert is assuming we already understand. That assumption — even when subtle — shuts down curiosity, slows progress, and can quietly place the burden of clarity on everyone but ourselves.",
       "publishedAt": "2025-06-19",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "leadership",
         "reflection"
@@ -3376,7 +3377,7 @@
       "excerpt": "Signal Reflex is now Signal Dispatch — a shift from sensing to sending. Same voice, sharper intent. This is where ideas go out.",
       "publishedAt": "2025-06-16",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "leadership"
@@ -3389,7 +3390,7 @@
       "excerpt": "(How to Keep Moving Without Losing Yourself)",
       "publishedAt": "2025-06-15",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "ai-development",
         "leadership"
@@ -3865,7 +3866,7 @@
       "excerpt": "A structured index of essays and field notes from Signal Dispatch. Organized by theme and series",
       "publishedAt": "2025-06-05",
       "kind": "Essay",
-      "category": "",
+      "category": "Uncategorized",
       "tags": [
         "commerce",
         "leadership",

@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
+import { categoryLabel, normalizeWritingCategories } from "../app/writing-normalization.mjs";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(scriptDirectory, "..");
@@ -129,7 +130,7 @@ if (!fs.existsSync(path.join(sourceRoot, "src/content"))) {
     );
   }
   const publishedSnapshot = preserveGeneratedAt(
-    validate(await response.json()),
+    normalizeWritingCategories(validate(await response.json())),
   );
   fs.writeFileSync(
     outputPath,
@@ -164,9 +165,7 @@ for (const collection of collections) {
       excerpt: data.excerpt ?? "",
       publishedAt: isoDate(data.publishedAt),
       kind: collection.kind,
-      category:
-        data.category ??
-        (collection.kind === "Fiction" ? "Fiction" : "Uncategorized"),
+      category: categoryLabel(data.category, collection.kind),
       tags: Array.isArray(data.tags) ? data.tags : [],
       href: publicHref(collection.href(file.slug)),
     });
