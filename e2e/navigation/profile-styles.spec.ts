@@ -24,7 +24,14 @@ for (const width of [1440, 390]) {
         const response = await page.goto(route);
         expect(response?.status()).toBe(route === "/missing-profile-page" ? 404 : 200);
         await page.evaluate(() => document.fonts.ready);
-        if (route === "/demos") await expect(page.locator(".demo-session-card").first()).toBeVisible();
+        if (route === "/demos") {
+          await expect(page.locator(".demo-session-card").first()).toBeVisible();
+          for (const preview of await page.locator(".demo-session-card img").all()) {
+            await preview.scrollIntoViewIfNeeded();
+            await expect.poll(() => preview.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
+          }
+          await page.evaluate(() => window.scrollTo(0, 0));
+        }
         await expect(page.locator("body")).toHaveCSS("background-color", "rgb(255, 253, 249)");
         await expect(page.locator("#main h1").first()).toHaveCSS("font-family", /Georgia/);
         await expect(page.locator("#main h1").first()).toHaveCSS("font-weight", "400");
@@ -68,5 +75,15 @@ test("Sessions keeps the featured title clear of its image after the collection 
     if (width > 640) expect(image!.x + image!.width).toBeLessThan(title!.x);
     else expect(image!.y + image!.height).toBeLessThan(title!.y);
     await expect(feature).toHaveCSS("transform", "none");
+    const heading = await page.locator("#sessions-title").boundingBox();
+    expect(heading!.width).toBeGreaterThan(200);
+    expect(heading!.height).toBeLessThan(80);
+    const cards = page.locator(".demo-session-card");
+    const first = (await cards.nth(0).boundingBox())!;
+    const next = (await cards.nth(1).boundingBox())!;
+    if (width > 640) {
+      expect(first.x + first.width).toBeLessThan(next.x);
+      expect((await cards.nth(2).boundingBox())!.y).toBeGreaterThanOrEqual(first.y + first.height);
+    } else expect(next.y).toBeGreaterThanOrEqual(first.y + first.height);
   }
 });

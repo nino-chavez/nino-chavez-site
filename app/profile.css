@@ -222,6 +222,23 @@
 .profile-site #main .demo-studio__feature > span { min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 24px; border: 0; }
 .profile-site #main .demo-studio__feature strong { margin: 0; font-family: var(--reading); font-size: 1.65rem; font-weight: 400; line-height: 1.15; }
 .profile-site #main .demo-studio__feature em { margin-top: 0; }
+.profile-site #main .demo-library-stage .library-groups { margin-top: 40px; gap: 48px; }
+.profile-site #main .demo-library-stage .group-heading { grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 8px 20px; }
+.profile-site #main .demo-library-stage .group-heading small { grid-column: 1 / -1; }
+.profile-site #main .demo-session-reel {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-columns: auto;
+  grid-auto-flow: row;
+  gap: 24px;
+  padding: 0;
+  overflow: visible;
+  scroll-snap-type: none;
+}
+.profile-site #main .demo-session-card { grid-template-rows: 220px auto; }
+.profile-site #main .demo-session-card__frame { margin: 0; }
+.profile-site #main .demo-session-card__frame img { height: 100%; }
+.profile-site #main .demo-session-card__copy { padding: 20px; }
+.profile-site #main :is(.demo-session-card, .demo-technique-card) strong { font-family: var(--reading); font-size: 1.35rem; font-weight: 400; line-height: 1.2; }
 
 /* Guide rows have named grid areas at every width; do not inherit the old
  * wide-table layout, which placed all named cells in implicit columns. */
@@ -265,6 +282,7 @@
   .profile-site #main .work-description > p:first-child { font-size: 16px; }
   .profile-site #main :is(.library-controls, .demo-controls, .building-resources, .coverage-opening) { grid-template-columns: minmax(0, 1fr); }
   .profile-site #main .demo-studio__feature { grid-template-columns: minmax(0, 1fr); }
+  .profile-site #main .demo-session-reel { grid-template-columns: minmax(0, 1fr); }
   .profile-site #main .learn-track-register a { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "name arrow" "output output" "start start" "time time"; }
   .profile-site #main .privacy-summary { grid-template-columns: minmax(0, 1fr); }
   .profile-site #main .privacy-summary > div { border-right: 0; border-bottom: 1px solid var(--rule); }
