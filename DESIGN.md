@@ -1,142 +1,93 @@
 ---
-name: Nino Chavez — In the field
-description: A warm, restrained personal practice site led by one full-bleed photograph and direct routes into real work.
+name: Nino Chavez — Personal profile
 colors:
-  ground: "#f4f0e8"
-  surface: "#faf7f1"
-  surface-muted: "#e5e0d7"
-  text: "#122a3c"
-  muted: "#536373"
-  rule: "#bbc0bf"
-  action: "#0d5a93"
-  action-quiet: "#e0e9ed"
-  ink: "#07131d"
-  signal: "#c53e2a"
-  photography-ground: "#f4f4f5"
-  photography-ink: "#07131d"
-  photography-gold: "#d4af37"
+  ground: "#fffdf9"
+  text: "#24211e"
+  muted: "#765d50"
+  rule: "#d9d2c8"
+  action: "#684c3b"
+  surface-muted: "#f3eee6"
 typography:
-  display:
-    fontFamily: '"In the Field Display", "Open Practice Body", Inter, ui-sans-serif, system-ui, sans-serif'
-    fontWeight: 700
-    letterSpacing: "-0.04em"
-  hero:
-    fontFamily: '"Open Practice Hero", "Arial Narrow", Arial, sans-serif'
-    fontSize: "clamp(90px, 13vw, 188px)"
-    fontWeight: 400
-    lineHeight: 0.95
-    letterSpacing: "-0.015em"
-  body:
-    fontFamily: '"Open Practice Body", Inter, ui-sans-serif, system-ui, sans-serif'
-    fontSize: "16px"
-    lineHeight: 1.55
-  evidence:
-    fontFamily: '"Open Practice Evidence", "Courier New", monospace'
-rounded:
-  control: "3px"
-  dialog: "0"
+  reading: 'Georgia, "Times New Roman", serif'
+  controls: '"Open Practice Body", Inter, system-ui, sans-serif'
 spacing:
-  header: "80px"
-  content-gutter: "clamp(40px, 10vw, 156px)"
-components:
-  nav-active:
-    textColor: "{colors.text}"
-  menu-button:
-    backgroundColor: "transparent"
-    textColor: "{colors.text}"
-    rounded: "{rounded.control}"
-    padding: "8px 13px"
+  content: "820px"
+  desktop-gutter: "20px"
+  phone-gutter: "16px"
 ---
 
-## Overview
+# Personal profile
 
-**Creative North Star: "In the field."** The selected October 1, 2026 direction is warm, photographic, and restrained. One full-bleed opening photograph establishes the personal surface. The rest of the site gets visitors to real writing, products, studies, and photographs without repeating the introduction or adding promotional scaffolding.
+The homepage selected October 26 is the visual reference for every profile
+page. Nino extended that direction to the interiors on October 29.
+[ADR 0005](docs/decisions/0005-profile-a-personal-home.md) records both decisions.
+This is a refit within that direction; the previous In the Field treatment is
+retained in Git history and is no longer loaded by the profile shell.
 
-**Key Characteristics:**
+## Reader and purpose
 
-- Warm reading ground and navy ink on main-site pages.
-- A quiet four-link global navigation: Writing, Building, Photography, About.
-- Image-led entrances into the three bodies of work.
-- Compact interiors that put the actual archive, product, or gallery task before extended explanation.
+Visitors arrive from a referral, search result, or a project link. They need
+to understand who Nino is, inspect his work, and find a way to contact him.
+They do not need prior knowledge of the site's structure. Keep project names,
+authored statements, availability, contact details and canonical destinations.
 
-The main application scopes this system to `body.site-a` in `app/in-the-field.css`. The article publisher and photography gallery keep their own application behavior and specialized controls.
+## Character
 
-## Colors
+Personal, readable, unhurried, direct and practical. Avoid oversized poster
+headings, dark editorial entrances, monospaced navigation, narrow prose
+columns and unrelated page themes. The homepage's density is the reference:
+one clear heading, readable paragraphs, ordinary links, thin warm rules.
+Library controls may be denser because people are searching and comparing.
 
-**The Warm Ground Rule.** Use the warm ground for main-site reading surfaces. Use navy text and action blue for legibility and interaction. Photography routes use the scoped `photography-*` colors described below.
+## Surfaces
 
-`ground`, `surface`, and `surface-muted` establish the light hierarchy. `text` is the reading ink. `muted` supports secondary information. `rule` is the shared border color. `action` and `action-quiet` carry links, active states, focus, and quiet interactive fills. `ink` is the dark photographic ground. `signal` is `#c53e2a` (`app/globals.css:53`). `.site-a` leaves that value in place. The stylesheet paints it on the live-indicator dot (`app/globals.css:7442`).
+| Surface | Routes | Preserve |
+| --- | --- | --- |
+| Personal pages | `/`, `/about`, `/now`, `/links`, `/cv` | Biography, authored claims, profile links, CV print behavior |
+| Projects | `/work`, query-filtered catalogue, `/work/:slug` | Search, filters, availability, media and destinations |
+| Sessions | `/demos`, `/demos/:slug`, `/demos/applied/:slug` | Library controls, session navigation, embedded evidence |
+| Guides | `/learn`, `/learn/:track` | Guide order, steps and linked examples |
+| Utilities | `/search`, `/privacy`, missing routes | Search results, empty state, policy, recovery links |
+| Coverage inquiry | `/photography/coverage` | Offer, gallery examples, validation, inquiry behavior |
+| Specialist destinations | `/blog/**`, gallery-owned `/photography/**` | Their independent applications, styles and navigation |
 
-**The One Action Rule.** On light pages, one action color carries interactive emphasis. Do not introduce another promotional accent to make a section compete.
+The profile app's retired writing/gallery facades are not the public
+specialist entrances. Routing remains owned by the apex router.
 
-### Photography routes
+## Shared system
 
-`.by-nino-photography` keeps its own ground, ink, and gold.
+`app/profile.css` owns profile tokens and the `profile-site` scope.
+`app/globals.css` retains the homepage composition and the existing component
+contracts. Route CSS supplies controls and media framing; the profile layer
+normalizes the enclosing layouts, headings, spacing and reading widths.
 
-- Ground `#f4f4f5` (`app/by-nino-frontdoors.css:273`) is the text color on that zone (`app/by-nino-frontdoors.css:276`).
-- Ink is declared `#18181b` (`app/by-nino-frontdoors.css:272`). `body` is `site-a` (`app/layout.tsx:68`), and `.site-a .by-nino-photography` sets ink to `#07131d` (`app/in-the-field.css:110`). That value is the background (`app/by-nino-frontdoors.css:275`).
-- Gold `#d4af37` (`app/by-nino-frontdoors.css:274`) fills the search button (`app/by-nino-frontdoors.css:371`) and colors photography route links on hover (`app/in-the-field.css:113`).
+Interior rules use the `profile-site` and `#main` scope so route styles loaded
+during navigation cannot restore the previous theme. Media grid cells need
+`min-width: 0`; the Sessions feature resets the old image aspect ratio so its
+preview cannot cover the title. These are rendered regressions covered by the
+profile navigation tests. Capture the collection after its records appear,
+not while the Suspense fallback is visible.
 
-## Typography
+All profile content aligns with the 820px header and footer. Georgia carries
+headings and prose. The existing Inter-backed face carries inputs, filters
+and compact metadata. Headings use normal weight and sentence case.
+Links use underlines; controls retain visible focus and native semantics.
+Portraits use the approved photograph from the homepage.
 
-**The One Job Per Face Rule.** Schibsted Grotesk, loaded as `In the Field Display`, serves compact interior headings and navigation identity. `Open Practice Body` is the Inter-backed reading face. `Open Practice Evidence` is the Space Mono-backed evidence face. The home lockup uses the `Open Practice Hero` face currently loaded from `anton-400.woff2`.
+Long text gets a full reading column. Biography facts may sit beside prose
+on desktop and stack below it on phones. Project imagery and embedded
+sessions retain their native appearance inside the profile page.
 
-Interior headings use the display face (`app/in-the-field.css:23`). Each sets its own line-height; the value listed is the one that renders:
+## States and journeys
 
-- Home route headings, 1.15 (`app/in-the-field.css:47`).
-- Writing title, 0.92 (`app/by-nino-frontdoors.css:200`).
-- Latest-piece heading, 1.05 (`app/by-nino-frontdoors.css:230`).
-- Photography title, 1.05 (`app/in-the-field.css:94`).
-- Photography section headings, 1.1 (`app/in-the-field.css:116`, `app/in-the-field.css:123`).
-- Building headings, 1.08 (`app/building.css:5`).
-- About title, 0.92 (`app/by-nino-frontdoors.css:163`).
+| Object | Action | States to check |
+| --- | --- | --- |
+| Profile | Read, follow a section, return home | Desktop and narrow phone; long prose |
+| Library | Search, filter, open an item | Populated, filtered, no results, browser Back |
+| Detail | Read evidence, follow destination, return | Long titles, private/unavailable destinations, missing slug |
+| Inquiry | Read offer, fill fields | Initial form, required-field errors; no live test submission |
+| Cross-site link | Open publication or gallery | Full navigation; specialist chrome remains independent |
 
-Body copy uses the body role at a comfortable 16px and 1.55 line-height. Evidence, code, and small technical labels use the monospace role.
-
-## Layout
-
-**The Arrival Rule.** The homepage opens with one full-bleed photograph, then shows three equally weighted routes: Building, Writing, and Photography. Captions sit outside the images so the route names do not compete with content inside the images.
-
-The main header is 80px on wide screens and contracts to 72px below 920px. Main content uses a maximum width of 1320px and responsive outer gutters. The image routes form three columns on wide screens and compact image-and-text rows at 640px and below.
-
-Interior pages begin with their real task. Writing keeps its title, latest piece, archive controls, and records compact enough for the archive to appear early. Photography keeps its compact identity, direct search, intrinsic image framing, and gallery controls.
-
-## Elevation & Depth
-
-The system is mostly flat. Light surfaces separate through ground, surface, rules, and spacing rather than cards with decorative shadows. The mobile navigation dialog uses a dark translucent backdrop and a short slide-in transition to make its temporary layer clear.
-
-## Shapes
-
-**The Quiet Edge Rule.** Controls use a restrained 3px radius and ordinary 1px rules. The navigation dialog is square after the `site-a` reset, which keeps the temporary panel plain and direct.
-
-Photography uses the images' intrinsic proportions. Do not add rounded frames or veils that obscure the photographs.
-
-## Components
-
-### Navigation
-
-The desktop header keeps identity, the four primary destinations, and Search as a utility. The active route is marked by an action-blue 3px underline. On smaller screens, the same destinations appear in a dialog with its own search, focus handling, Escape dismissal, and browser-Back recovery.
-
-### Route previews
-
-Homepage previews are real images with a route heading, concise descriptor, and directional arrow. At narrow widths, each becomes a compact square image beside its text. Hover underlines the route heading; keyboard focus uses the shared action-blue focus treatment.
-
-### Buttons and controls
-
-Controls use the body face, clear borders, a light surface, and the shared action color for active and focused states. Keep the existing search, filtering, gallery viewer, save, and download controls functional and visible where their task requires them.
-
-## Do's and Don'ts
-
-### Do:
-
-- **Do** preserve the full-bleed opening photograph and the four-link global navigation.
-- **Do** put the actual work, archive, or gallery action before a long introduction on interior pages.
-- **Do** use real images, real destinations, and truthful availability labels.
-- **Do** keep direct routes, query filters, keyboard focus, and recovery behavior intact.
-
-### Don't:
-
-- **Don't** bring back the prior dark-and-lime SvelteKit-era palette or typography as active guidance.
-- **Don't** add competing homepage modules, permanent rails, portrait preambles, or a promotional band around the opening photograph.
-- **Don't** replace specialized gallery and product controls with generic decorative controls.
-- **Don't** present generated imagery as photography or invent evidence, availability, testimonials, or measured outcomes.
+Keep existing anchors, query parameters, breadcrumbs and return links.
+No new animation or scrolling behavior is introduced. Verification uses
+rendered desktop and phone captures plus the project's navigation suite.

@@ -13,7 +13,7 @@ Writing and photography appear in the home’s Elsewhere section. They open the 
 
 Existing deep links, query parameters, detail routes, private boundaries and canonical URLs remain supported. The Work page keeps its process and guide links. Search remains available at its existing route and in the collection controls. There is no shared navigation dialog. The footer retains Privacy.
 
-The older contracts below preserve historical route and interaction rationale. They do not override ADR 0005’s homepage or navigation decision. Deep-page content and typography remain unchanged by this separation.
+The older contracts below preserve historical route and interaction rationale. They do not override ADR 0005’s homepage or navigation decision. The October 29 amendment to ADR 0005 extends the homepage style to all profile interiors. Deep-page content and destinations remain intact.
 
 ## Historical navigation contract
 
