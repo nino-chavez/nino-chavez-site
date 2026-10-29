@@ -90,10 +90,6 @@ body:has(dialog[open]) {
   overflow: hidden;
 }
 
-body:has(.profile-home) {
-  background: #fffdf9;
-}
-
 a {
   color: inherit;
   text-decoration-thickness: 1px;
@@ -159,14 +155,10 @@ code {
   transform: translateY(0);
 }
 
-/* Profile A — selected 2026-10-26. The profile keeps its own quiet, local
- * navigation; deeper collection routes retain their existing application shell. */
+/* Profile A home and chrome. Shared tokens and interior styles live in profile.css. */
 .profile-header,
 .profile-home,
 .profile-footer {
-  --profile-ink: #24211e;
-  --profile-muted: #765d50;
-  --profile-rule: #d9d2c8;
   background: #fffdf9;
   color: var(--profile-ink);
   font-family: Georgia, "Times New Roman", serif;
@@ -8002,14 +7994,14 @@ h3 {
 }
 
 /* Keep the selected personal-page type and ordinary links above legacy page defaults. */
-.site-a .profile-home h1,
-.site-a .profile-home h2,
-.site-a .profile-home h3 {
+.profile-site .profile-home h1,
+.profile-site .profile-home h2,
+.profile-site .profile-home h3 {
   font-family: Georgia, "Times New Roman", serif;
 }
 
-.site-a .profile-home a,
-.site-a .profile-header nav a,
-.site-a .profile-footer a {
+.profile-site .profile-home a,
+.profile-site .profile-header nav a,
+.profile-site .profile-footer a {
   text-decoration-line: underline;
 }

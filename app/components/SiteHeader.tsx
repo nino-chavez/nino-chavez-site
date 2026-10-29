@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Ordinary document links preserve home anchors when returning from any profile route. */
 export function SiteHeader() {
   return (
     <header className="profile-header">

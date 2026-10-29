@@ -1,0 +1,72 @@
+import { expect, test } from "@playwright/test";
+
+const representativeRoutes = [
+  "/", "/about", "/now", "/links", "/privacy", "/cv", "/work",
+  "/work?view=all", "/work?q=no-such-profile-project", "/work/blueprint",
+  "/learn", "/demos", "/search?q=Rally", "/search?q=no-such-profile-project",
+  "/photography/coverage", "/missing-profile-page",
+];
+
+for (const width of [1440, 390]) {
+  test(`profile pages share the homepage style at ${width}px`, async ({ page, request }) => {
+    test.setTimeout(240_000);
+    await page.setViewportSize({ width, height: 900 });
+    const sitemap = await (await request.get("/sitemap.xml")).text();
+    const indexedRoutes = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)]
+      .map((match) => new URL(match[1]).pathname);
+    const routes = process.env.PROFILE_FULL_REVIEW
+      ? [...new Set([...representativeRoutes, ...indexedRoutes])]
+      : [...representativeRoutes,
+        ...["/demos/", "/demos/applied/", "/learn/"].map((prefix) => indexedRoutes.find((route) => route.startsWith(prefix))).filter((route): route is string => !!route)];
+
+    for (const route of routes) {
+      await test.step(route, async () => {
+        const response = await page.goto(route);
+        expect(response?.status()).toBe(route === "/missing-profile-page" ? 404 : 200);
+        await page.evaluate(() => document.fonts.ready);
+        if (route === "/demos") await expect(page.locator(".demo-session-card").first()).toBeVisible();
+        await expect(page.locator("body")).toHaveCSS("background-color", "rgb(255, 253, 249)");
+        await expect(page.locator("#main h1").first()).toHaveCSS("font-family", /Georgia/);
+        await expect(page.locator("#main h1").first()).toHaveCSS("font-weight", "400");
+        await expect(page.locator(".profile-header")).toBeVisible();
+        await expect(page.locator(".profile-header nav a")).toHaveCount(3);
+        expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth), route).toBeLessThanOrEqual(1);
+        const name = (route === "/" ? "home" : route.slice(1)).replace(/[^a-z0-9-]/gi, "-");
+        await page.screenshot({ path: `outputs/profile-review/${test.info().project.name}/${width}/${name}.png`, fullPage: true, scale: "css" });
+        await page.screenshot({ path: `outputs/profile-review/${test.info().project.name}/${width}/${name}-first.png`, scale: "css" });
+      });
+    }
+  });
+}
+
+test("About keeps its reading measure and Guides keep distinct grid cells", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/about");
+  const paragraph = page.locator(".about-biography .about-lead");
+  await expect(paragraph).toHaveCSS("font-weight", "400");
+  expect((await paragraph.boundingBox())?.width).toBeGreaterThan(550);
+  await page.goto("/learn");
+  const firstGuide = page.locator(".learn-track-register a").first();
+  const title = await firstGuide.locator(".learn-track-name").boundingBox();
+  const output = await firstGuide.locator(".learn-track-output").boundingBox();
+  expect(title).not.toBeNull();
+  expect(output).not.toBeNull();
+  expect(title!.x + title!.width).toBeLessThan(output!.x);
+});
+
+test("Sessions keeps the featured title clear of its image after the collection loads", async ({ page }) => {
+  for (const width of [1440, 390]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/demos");
+    await expect(page.locator(".demo-session-card").first()).toBeVisible();
+    await expect(page.getByText("Loading the complete collection…")).toHaveCount(0);
+    const feature = page.locator(".demo-studio__feature");
+    const image = await feature.locator(":scope > div").boundingBox();
+    const title = await feature.locator("strong").boundingBox();
+    expect(image).not.toBeNull();
+    expect(title).not.toBeNull();
+    if (width > 640) expect(image!.x + image!.width).toBeLessThan(title!.x);
+    else expect(image!.y + image!.height).toBeLessThan(title!.y);
+    await expect(feature).toHaveCSS("transform", "none");
+  }
+});

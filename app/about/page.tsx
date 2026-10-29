@@ -156,8 +156,8 @@ export default function AboutPage() {
 
           <figure className="about-opening__portrait">
             <img
-              src="/work/nino-illustrated-v1.webp"
-              alt="Illustrated portrait of Nino Chavez"
+              src="/work/nino.jpg"
+              alt="Portrait of Nino Chavez"
               width={1254}
               height={1254}
               fetchPriority="high"
@@ -201,15 +201,6 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <figure className="about-biography__photo">
-                <img
-                  src="/work/nino.jpg"
-                  alt="Portrait of Nino Chavez"
-                  width={727}
-                  height={727}
-                  loading="lazy"
-                />
-              </figure>
               <dl className="about-coordinates">
               <div>
                 <dt>Current role</dt>

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import "./in-the-field.css";
+import "./profile.css";
 import { SiteActivity } from "./components/SiteActivity";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
@@ -65,7 +65,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="site-a">
+      <body className="profile-site">
         <a className="skip-link" href="#main">
           Skip to content
         </a>
