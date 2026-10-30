@@ -11,7 +11,7 @@ Nino Chavez (home)
 └── Email         mailto:nino@ninochavez.co
 ```
 
-Phones show Home, Links and Email. Writing and Photography remain immediately available in the home introduction and in the footer. Specialist links use full-page navigation. The current Home or Links destination has an active-page indication.
+Phones show Home, Links and Email. Writing and Photography remain immediately available in the home introduction and in the footer. Links to these independent sites open in new tabs, preserving their own styles and navigation. The profile-owned coverage inquiry stays in the current tab. The current Home or Links destination has an active-page indication.
 
 The footer contains About, Projects, Links, Writing, Photography, Email and Privacy. Existing home anchors (`#about`, `#projects`, `#contact`), deep links, query parameters, detail routes, private boundaries and canonical URLs remain supported. Projects retains its process and guide links. Search remains available at its existing route and in collection controls. There is no navigation drawer.
 

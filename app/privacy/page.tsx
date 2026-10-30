@@ -271,7 +271,7 @@ export default function PrivacyPage() {
               by public page, section and action may remain.
             </p>
             <p>
-              <a href="/photography/analytics-preferences">Analytics choices</a>
+              <a href="/photography/analytics-preferences" target="_blank" rel="noopener noreferrer">Analytics choices<span className="assistive-text"> (opens in a new tab)</span></a>
               {" "}let you allow linked analytics or exclude this browser from
               audience action counts. Choices apply to this browser on
               ninochavez.co; they do not follow your email or Chrome account.
@@ -311,8 +311,9 @@ export default function PrivacyPage() {
             <p>
               You can decline linked analytics or turn it off through the
               gallery&apos;s{' '}
-              <a href="/photography/analytics-preferences">
+              <a href="/photography/analytics-preferences" target="_blank" rel="noopener noreferrer">
                 analytics preferences
+                <span className="assistive-text"> (opens in a new tab)</span>
               </a>{' '}
               and keep using the gallery. Turning it off stops new linked
               collection and cancels queued exports. Records already being sent

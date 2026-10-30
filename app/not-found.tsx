@@ -24,7 +24,7 @@ export default function NotFound() {
           </p>
           <div className="about-inline-actions">
             <Link href="/work">Browse work →</Link>
-            <Link href="/blog">Read writing →</Link>
+            <a href="/blog" target="_blank" rel="noopener noreferrer">Read writing ↗<span className="assistive-text"> (opens in a new tab)</span></a>
             <Link href="/search">Search the site →</Link>
           </div>
         </nav>

@@ -1,3 +1,4 @@
+import { isIndependentSiteHref } from "../link-destinations";
 import Link from "next/link";
 import "../by-nino-library.css";
 import {
@@ -255,7 +256,7 @@ export default async function SearchPage({
               <div className="result-list">
                 {work.map((item) => {
                   const href = workHref(item);
-                  const opensInNewTab = href.startsWith("http");
+                  const opensInNewTab = href.startsWith("http") || isIndependentSiteHref(href);
                   return (
                   <a
                     key={item.slug}
@@ -313,6 +314,8 @@ export default async function SearchPage({
                   <a
                     key={`${item.kind}-${item.slug}`}
                     href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <span>
                       {item.kind} · {item.category} ·{" "}
@@ -320,6 +323,7 @@ export default async function SearchPage({
                     </span>
                     <strong>{item.title}</strong>
                     {item.excerpt ? <small>{item.excerpt}</small> : null}
+                    <span className="assistive-text"> (opens in a new tab)</span>
                   </a>
                 ))}
               </div>
@@ -335,13 +339,18 @@ export default async function SearchPage({
                 </span>
               </div>
               <div className="result-list">
-                {pages.map((item) => (
-                  <Link key={item.href} href={item.href}>
+                {pages.map((item) => {
+                  const opensInNewTab = isIndependentSiteHref(item.href);
+                  const ResultLink = opensInNewTab ? "a" : Link;
+                  return <ResultLink key={item.href} href={item.href}
+                    target={opensInNewTab ? "_blank" : undefined}
+                    rel={opensInNewTab ? "noopener noreferrer" : undefined}>
                     <span>{item.kind}</span>
                     <strong>{item.title}</strong>
                     <small>{item.description}</small>
-                  </Link>
-                ))}
+                    {opensInNewTab ? <span className="assistive-text"> (opens in a new tab)</span> : null}
+                  </ResultLink>;
+                })}
               </div>
             </section>
           ) : null}

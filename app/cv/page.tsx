@@ -1,3 +1,4 @@
+import { isIndependentSiteHref } from "../link-destinations";
 import type { Metadata } from "next";
 import "../by-nino-library.css";
 import Link from "next/link";
@@ -208,7 +209,7 @@ function PositionEntry({ position }: { position: Position }) {
 }
 
 function PracticeAction({ item }: { item: WorkItem }) {
-  const opensInNewTab = workHref(item).startsWith("http");
+  const opensInNewTab = workHref(item).startsWith("http") || isIndependentSiteHref(workHref(item));
   return (
     <>
       {item.detailPage === false ? "Browse" : "Open"}{" "}
@@ -379,7 +380,7 @@ export default function CvPage() {
             <div className="cv-leads">
               {leadPractice.map(({ item, stateText }) => {
                 const href = workHref(item);
-                const opensInNewTab = href.startsWith("http");
+                const opensInNewTab = href.startsWith("http") || isIndependentSiteHref(href);
                 return (
                   <a
                     className="cv-lead"
@@ -402,7 +403,7 @@ export default function CvPage() {
             <div className="cv-records">
               {remainingPractice.map(({ item, stateText }) => {
                 const href = workHref(item);
-                const opensInNewTab = href.startsWith("http");
+                const opensInNewTab = href.startsWith("http") || isIndependentSiteHref(href);
                 return (
                   <a
                     className="cv-record"

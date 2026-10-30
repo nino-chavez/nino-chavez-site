@@ -51,7 +51,13 @@ for (const width of [1440, 390]) {
           profileDestinations[0], profileDestinations[3], profileDestinations[4],
         ];
         for (const [name, href] of visibleDestinations) {
-          await expect(navigation.getByRole("link", { name, exact: true })).toHaveAttribute("href", href);
+          const specialist = name === "Writing" || name === "Photography";
+          const link = navigation.getByRole("link", { name: specialist ? `${name} (opens in a new tab)` : name, exact: true });
+          await expect(link).toHaveAttribute("href", href);
+          if (specialist) {
+            await expect(link).toHaveAttribute("target", "_blank");
+            await expect(link).toHaveAttribute("rel", "noopener noreferrer");
+          }
         }
         await expect(navigation.locator("a:visible")).toHaveCount(width > 720 ? 5 : 3);
         expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth), route).toBeLessThanOrEqual(1);

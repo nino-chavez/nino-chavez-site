@@ -1,3 +1,4 @@
+import { isIndependentSiteHref } from "../../link-destinations";
 import type { Metadata } from "next";
 import "../../by-nino-library.css";
 import Link from "next/link";
@@ -679,8 +680,11 @@ export default async function WorkDetailPage({
         }
       : detail,
   );
-  const destinationIsExternal = item.destination?.href.startsWith("http") &&
-    new URL(item.destination.href).origin !== "https://ninochavez.co";
+  const destinationIsExternal = item.destination && (
+    isIndependentSiteHref(item.destination.href) ||
+    (item.destination.href.startsWith("http") &&
+      new URL(item.destination.href).origin !== "https://ninochavez.co")
+  );
   const related = (item.related ?? [])
     .map((relatedSlug) =>
       workItems.find((entry) => entry.slug === relatedSlug),
@@ -824,10 +828,13 @@ export default async function WorkDetailPage({
               <a
                 key={entry.slug}
                 href={entry.href}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span>{entry.kind}</span>
                 <strong>{entry.title}</strong>
                 <small>{entry.excerpt}</small>
+                <span className="assistive-text"> (opens in a new tab)</span>
               </a>
             ))}
           </div>
@@ -841,13 +848,19 @@ export default async function WorkDetailPage({
             <h2 id="related-work">Related work</h2>
           </div>
           <div className="related-list">
-            {related.map((entry) => (
-              <Link key={entry.slug} href={workHref(entry)}>
+            {related.map((entry) => {
+              const href = workHref(entry);
+              const opensInNewTab = isIndependentSiteHref(href);
+              const RelatedLink = opensInNewTab ? "a" : Link;
+              return <RelatedLink key={entry.slug} href={href}
+                target={opensInNewTab ? "_blank" : undefined}
+                rel={opensInNewTab ? "noopener noreferrer" : undefined}>
                 <span>{entry.domain}</span>
                 <strong>{entry.name}</strong>
                 <small>{entry.claim}</small>
-              </Link>
-            ))}
+                {opensInNewTab ? <span className="assistive-text"> (opens in a new tab)</span> : null}
+              </RelatedLink>;
+            })}
           </div>
         </section>
       ) : null}
