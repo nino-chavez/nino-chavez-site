@@ -1,0 +1,25 @@
+The renders are meaningfully distinct and reviewable: A is a compact directory, B is a profile-led workspace, and C is an editorial portfolio with visual work proof. No resources were started.
+
+**Best Home direction: C.** It gives a referral or search visitor the clearest first read—name, role, range of practice—then makes the selected work visibly concrete with three product images. The header also exposes Writing, Photography, Links, and Email on desktop. Tradeoff: it is the most content-forward and image-dependent option; the home page becomes longer on phone.
+
+**Best Links direction: C.** Its short “direct route” framing and two-column desktop grouping make public destinations easy to scan without the long, single-column directory feel of A or B’s persistent sidebar. Tradeoff: it has less in-page navigation than B, which is useful for a visitor jumping to one section of a long directory.
+
+**Phone behavior**
+
+- **A:** Clean and very legible on both pages. Home puts the identity first, then a broad Explore list; it is calm but projects are text-only and arrive after general destinations. Links remains easy to scan but is long.
+- **B:** The desktop sidebar becomes a compact identity-and-navigation header; this adapts well. Home’s large project images and stacked start cards provide clear paths, though the page is the longest and most repetitive.
+- **C:** The mobile header sensibly reduces to Home, Links, and Email. Home’s work images stack into a strong browsing sequence; Links is the most compact directory. Writing and Photography remain reachable from the Home hero and the Links sections, rather than the mobile header.
+
+**Material findings**
+
+1. **C Home, desktop:** Minder’s wide image frame contains a narrow centered phone capture with large empty side areas. It makes the first selected-work card feel less resolved than Rally HQ and The Rotation. Smallest fix: use a portrait-aware image frame for Minder, or crop its frame to its useful content.
+
+2. **B, desktop:** The fixed left profile rail consumes substantial width while the main content stays relatively narrow, leaving a broad unused right field. This makes the work and directory lists feel more constrained than their amount of content warrants. Smallest fix: reduce the rail width and give the main column a modestly wider maximum.
+
+3. **A Home:** “Selected projects” is entirely text while the rest of the page already establishes several categories through text. The three work destinations are understandable, but less immediately distinguishable as products. Smallest fix: add one restrained thumbnail or product-type marker to each project row.
+
+4. **C Links, phone:** Two horizontal rules appear in succession beneath the introductory sentence before Contact begins. The extra gap interrupts an otherwise efficient reading sequence. Smallest fix: retain only the section-divider rule.
+
+5. **A Home, bottom:** The footer calls the directory “Full directory,” while the visible global destination is “Links.” The visitor has to infer they are the same place. Smallest fix: use the same visible name in both locations.
+
+B is the strongest alternative if Nino wants the site to feel explicitly personal and profile-led; C is stronger for quickly proving the range and relevance of the work.

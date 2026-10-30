@@ -1,4 +1,3 @@
-import Link from "next/link";
 import "../by-nino-library.css";
 
 export const metadata = {
@@ -12,111 +11,78 @@ const SOURCE_PATTERN = /^[a-z0-9_-]{1,32}$/;
 
 const destinationGroups = [
   {
-    title: "Products and ventures",
-    description: "Live places where the work can be used or followed.",
+    title: "Contact",
     destinations: [
       {
-        name: "Rally HQ",
-        description:
-          "Run or follow a tournament with registration, schedules, brackets, and live scoring.",
-        href: "https://rallyhq.app",
-        action: "Open product",
-        external: true,
+        name: "LinkedIn",
+        description: "My professional history and current role.",
+        href: "https://www.linkedin.com/in/nino-chavez/",
       },
       {
-        name: "Let’s Pepper",
-        description:
-          "A community-powered grass volleyball tournament series in Chicagoland.",
-        href: "https://letspepper.com",
-        action: "Visit series",
-        external: true,
-      },
-      {
-        name: "Flickday Media",
-        description:
-          "Player-first tournament photography and grassroots sports media.",
-        href: "https://flickdaymedia.com",
-        action: "Open studio",
-        external: true,
-      },
-      {
-        name: "Signal X Studio",
-        description:
-          "The company behind the sports, media, and software ventures.",
-        href: "https://signalx.studio",
-        action: "Visit company",
-        external: true,
+        name: "Email",
+        description: "nino@ninochavez.co",
+        href: "mailto:nino@ninochavez.co",
       },
     ],
   },
   {
-    title: "Source and publishing",
-    description: "The public code, ideas, and professional record.",
+    title: "Writing and code",
     destinations: [
       {
         name: "GitHub",
-        description:
-          "Public source, installable tools, and active repositories.",
+        description: "Public code, tools, and repositories.",
         href: "https://github.com/nino-chavez",
-        action: "Browse source",
-        external: true,
       },
       {
         name: "Signal Dispatch",
-        description:
-          "Essays, whitepapers, presentations, tutorials, counterpoints, and fiction.",
-        href: "/blog",
-        action: "Read publication",
-        external: false,
-      },
-      {
-        name: "LinkedIn",
-        description: "Professional history and current role context.",
-        href: "https://www.linkedin.com/in/nino-chavez/",
-        action: "View profile",
-        external: true,
+        description: "My writing: essays, guides, presentations, and fiction.",
+        href: "https://ninochavez.co/blog",
       },
     ],
   },
   {
-    title: "Images and sound",
-    description: "Where to find the photography and music.",
+    title: "Photography and music",
     destinations: [
       {
         name: "Photography",
-        description:
-          "Volleyball, action-sports, and event galleries on this site.",
+        description: "Volleyball, action-sports, and event galleries.",
         href: "/photography",
-        action: "View galleries",
-        external: false,
         tracksSource: true,
       },
       {
         name: "Instagram",
         description: "Current photography and event images.",
         href: "https://www.instagram.com/nino.chavez.photo/",
-        action: "Open Instagram",
-        external: true,
       },
       {
         name: "SoundCloud",
         description: "DJ sets and mixes.",
         href: "https://soundcloud.com/ni-no-cha-vez",
-        action: "Listen to sets",
-        external: true,
       },
     ],
   },
   {
-    title: "Direct",
-    description: "The shortest route to a conversation.",
+    title: "Projects and businesses",
     destinations: [
       {
-        name: "Email",
-        description: "Contact me directly at nino@ninochavez.co.",
-        href: "mailto:nino@ninochavez.co",
-        action: "Send email",
-        external: true,
+        name: "Rally HQ",
+        description: "Tournament registration, schedules, brackets, and live scoring.",
+        href: "https://rallyhq.app",
+      },
+      {
+        name: "Let’s Pepper",
+        description: "Grass volleyball tournaments in Chicagoland.",
+        href: "https://letspepper.com",
+      },
+      {
+        name: "Flickday Media",
+        description: "Tournament photography and grassroots sports media.",
+        href: "https://flickdaymedia.com",
+      },
+      {
+        name: "Signal X Studio",
+        description: "The company behind my sports, media, and software ventures.",
+        href: "https://signalx.studio",
       },
     ],
   },
@@ -133,46 +99,13 @@ export default async function LinksPage({
 
   return (
     <div className="links-page">
-      <div className="about-context-surface">
-        <nav
-          className="about-context-navigation page-shell"
-          aria-label="Personal pages"
-        >
-          <Link href="/about">About</Link>
-          <Link href="/now">Now</Link>
-          <Link href="/links" aria-current="page">
-            Links
-          </Link>
-        </nav>
-      </div>
-
       <header className="links-opening">
-        <div className="links-opening__register page-shell">
-          <span>Direct links</span>
-          <span>
-            {destinationGroups.reduce(
-              (total, group) => total + group.destinations.length,
-              0,
-            )}{" "}
-            destinations
-          </span>
-          <time dateTime="2026-07-30">Checked 30 July 2026</time>
-        </div>
-
         <div className="links-opening__stage page-shell">
-          <div className="links-opening__lockup">
-            <p className="eyebrow">Find it directly</p>
-            <h1>Links</h1>
-          </div>
-
-          <div className="links-opening__statement">
-            <p className="links-opening__lede">Go to the thing itself.</p>
-            <p>
-              <Link href="/work">Work</Link> shows products, tools, methods, and
-              projects in development. This page is the shortest route to
-              destinations you can use now.
-            </p>
-          </div>
+          <h1>Links</h1>
+          <p className="links-opening__lede">
+            A direct route to the work, writing, photographs, and places I share
+            publicly.
+          </p>
         </div>
       </header>
 
@@ -183,63 +116,37 @@ export default async function LinksPage({
             className="links-group"
             aria-labelledby={`links-${group.title.toLowerCase().replaceAll(" ", "-")}`}
           >
-            <header>
-              <h2
-                id={`links-${group.title.toLowerCase().replaceAll(" ", "-")}`}
-              >
-                {group.title}
-              </h2>
-              <p>{group.description}</p>
-            </header>
-
-            <ol>
+            <h2 id={`links-${group.title.toLowerCase().replaceAll(" ", "-")}`}>
+              {group.title}
+            </h2>
+            <ul>
               {group.destinations.map((destination) => {
                 const href =
                   "tracksSource" in destination && destination.tracksSource
                     ? `${destination.href}?src=${gallerySource}`
                     : destination.href;
                 const opensInNewTab =
-                  destination.external && href.startsWith("http");
-                const contents = (
-                  <>
-                    <strong>{destination.name}</strong>
-                    <small>{destination.description}</small>
-                    <b>
-                      {destination.action}
-                      {opensInNewTab ? (
-                        <span className="assistive-text">
-                          {" "}(opens in a new tab)
-                        </span>
-                      ) : null}{" "}
-                      <span aria-hidden="true">
-                        {destination.external ? "↗" : "→"}
-                      </span>
-                    </b>
-                  </>
-                );
+                  href.startsWith("http") && !href.startsWith("https://ninochavez.co/");
 
                 return (
                   <li key={destination.name}>
-                    {destination.external ? (
-                      <a
-                        href={href}
-                        target={opensInNewTab ? "_blank" : undefined}
-                        rel={
-                          opensInNewTab ? "noopener noreferrer" : undefined
-                        }
-                      >
-                        {contents}
-                      </a>
-                    ) : (
-                      <Link href={href}>{contents}</Link>
-                    )}
+                    <a
+                      href={href}
+                      target={opensInNewTab ? "_blank" : undefined}
+                      rel={opensInNewTab ? "noopener noreferrer" : undefined}
+                    >
+                      {destination.name}
+                      {opensInNewTab ? (
+                        <span className="assistive-text"> (opens in a new tab)</span>
+                      ) : null}
+                    </a>
+                    <p>{destination.description}</p>
                   </li>
                 );
               })}
-            </ol>
+            </ul>
           </section>
         ))}
-
       </div>
     </div>
   );

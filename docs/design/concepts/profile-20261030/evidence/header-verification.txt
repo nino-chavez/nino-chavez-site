@@ -1,0 +1,12 @@
+Pixel review of the six specified first-viewport images:
+
+| Route / width | Profile header: Nino Chavez + Home / Links / Email | Main title entirely visible |
+|---|---|---|
+| `/work` 1440 | Yes | Yes — “Projects” is fully visible and not clipped |
+| `/work` 390 | Yes | Yes |
+| `/demos` 1440 | Yes | Yes — “Sessions” |
+| `/demos` 390 | Yes | Yes |
+| `/cv` 1440 | Yes | Yes — “Nino Chavez” |
+| `/cv` 390 | Yes | Yes |
+
+The prior blocker is contradicted. No files changed; no servers, browsers, or other resources were started.

@@ -526,13 +526,20 @@ test("C29 — the photography landing publishes its canonical URL", async () => 
   );
 });
 
-test("C30 — photography is a contextual destination, not shared primary navigation", async () => {
+test("C30 — the selected profile shell exposes specialist destinations without a drawer", async () => {
   const html = await htmlFor("/");
-  const navigation = html.match(/<nav aria-label="Profile sections"[\s\S]*?<\/nav>/)?.[0];
-  assert.ok(navigation);
-  assert.match(navigation, /About[\s\S]*Projects[\s\S]*Contact/);
-  assert.doesNotMatch(navigation, /Photography|Writing/);
-  assert.match(html, /href="https:\/\/ninochavez\.co\/photography\/albums"/);
+  const header = html.match(/<header\b[^>]*>[\s\S]*?<\/header>/)?.[0];
+  assert.ok(header);
+  for (const [name, href] of [
+    ["Home", "/"],
+    ["Writing", "https://ninochavez.co/blog/archive"],
+    ["Photography", "https://ninochavez.co/photography/albums"],
+    ["Links", "/links"],
+    ["Email", "mailto:nino@ninochavez.co"],
+  ]) {
+    assert.match(header, new RegExp(`href="${href.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[^>]*>${name}<\\/a>`));
+  }
+  assert.doesNotMatch(html, /site-navigation-dialog|menu-button/);
 });
 
 test("F8 — the personal home links to projects and the specialist sites while deep work stays reachable", async () => {

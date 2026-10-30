@@ -1,7 +1,7 @@
 # ADR 0005: Profile A personal home
 
 - **Date:** 2026-10-26
-- **Status:** Accepted
+- **Status:** Superseded by [ADR 0006](0006-profile-work-in-view.md) on October 30, 2026
 - **Scope:** the profile homepage and navigation on all routes served by the profile app
 
 ## Decision

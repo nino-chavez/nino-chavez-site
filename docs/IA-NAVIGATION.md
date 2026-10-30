@@ -1,19 +1,21 @@
-# Independent profile navigation — October 26, 2026
+# Independent profile navigation — October 30, 2026
 
-[ADR 0005](decisions/0005-profile-a-personal-home.md) records Nino’s selection of Profile A and supersedes the shared primary navigation throughout this app. The personal home uses the approved portrait, introduction, project list, and contact links. Every route served by this app uses the same ordinary local header.
+[ADR 0006](decisions/0006-profile-work-in-view.md) records Nino’s selection of C — Work in view. Every route served by the profile app uses the same navigation. The blog and gallery keep their independent applications and styles.
 
 ```text
 Nino Chavez (home)
-├── About       /#about
-├── Projects    /#projects → All projects /work
-└── Contact     /#contact
+├── Home          /
+├── Writing       https://ninochavez.co/blog/archive
+├── Photography   https://ninochavez.co/photography/albums
+├── Links         /links
+└── Email         mailto:nino@ninochavez.co
 ```
 
-Writing and photography appear in the home’s Elsewhere section. They open the publication archive and photography Events page with full-page navigation. These are the currently working specialist URLs; subdomain migration is still proposed.
+Phones show Home, Links and Email. Writing and Photography remain immediately available in the home introduction and in the footer. Specialist links use full-page navigation. The current Home or Links destination has an active-page indication.
 
-Existing deep links, query parameters, detail routes, private boundaries and canonical URLs remain supported. The Work page keeps its process and guide links. Search remains available at its existing route and in the collection controls. There is no shared navigation dialog. The footer retains Privacy.
+The footer contains About, Projects, Links, Writing, Photography, Email and Privacy. Existing home anchors (`#about`, `#projects`, `#contact`), deep links, query parameters, detail routes, private boundaries and canonical URLs remain supported. Projects retains its process and guide links. Search remains available at its existing route and in collection controls. There is no navigation drawer.
 
-The older contracts below preserve historical route and interaction rationale. They do not override ADR 0005’s homepage or navigation decision. The October 29 amendment to ADR 0005 extends the homepage style to all profile interiors. Deep-page content and destinations remain intact.
+The older contracts below preserve historical route and interaction rationale. They do not override ADR 0006’s homepage or navigation decision. Their naming, search, state and content-ownership rules continue to apply where the current decision does not supersede them.
 
 ## Historical navigation contract
 

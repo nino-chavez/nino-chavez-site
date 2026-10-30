@@ -3,26 +3,23 @@ name: Nino Chavez — Personal profile
 colors:
   ground: "#fffdf9"
   text: "#24211e"
-  muted: "#765d50"
+  muted: "#635b54"
   rule: "#d9d2c8"
   action: "#684c3b"
   surface-muted: "#f3eee6"
 typography:
-  reading: 'Georgia, "Times New Roman", serif'
+  reading: '"Open Practice Body", Inter, system-ui, sans-serif'
+  headings: '"Schibsted Grotesk", Inter, system-ui, sans-serif'
   controls: '"Open Practice Body", Inter, system-ui, sans-serif'
 spacing:
-  content: "820px"
+  content: "1160px"
   desktop-gutter: "20px"
-  phone-gutter: "16px"
+  phone-gutter: "20px"
 ---
 
 # Personal profile
 
-The homepage selected October 26 is the visual reference for every profile
-page. Nino extended that direction to the interiors on October 29.
-[ADR 0005](docs/decisions/0005-profile-a-personal-home.md) records both decisions.
-This is a refit within that direction; the previous In the Field treatment is
-retained in Git history and is no longer loaded by the profile shell.
+Nino selected **C — Work in view** on October 30 after finding the prior profile difficult to follow and read. [ADR 0006](docs/decisions/0006-profile-work-in-view.md) records the selection and the pieces retained from the alternatives. The [three-direction comparison](docs/design/concepts/profile-20261030/BRIEF.md) remains the visual reference. This direction applies to every profile route; the publication and gallery remain independent.
 
 ## Reader and purpose
 
@@ -57,8 +54,7 @@ specialist entrances. Routing remains owned by the apex router.
 ## Shared system
 
 `app/profile.css` owns profile tokens and the `profile-site` scope.
-`app/globals.css` retains the homepage composition and the existing component
-contracts. Route CSS supplies controls and media framing; the profile layer
+`app/globals.css` retains the existing component contracts. Home and directory composition also live in `app/profile.css`. Route CSS supplies controls and media framing; the profile layer
 normalizes the enclosing layouts, headings, spacing and reading widths.
 
 Interior rules use the `profile-site` and `#main` scope so route styles loaded
@@ -68,11 +64,11 @@ preview cannot cover the title. These are rendered regressions covered by the
 profile navigation tests. Capture the collection after its records appear,
 not while the Suspense fallback is visible.
 
-All profile content aligns with the 820px header and footer. Georgia carries
-headings and prose. The existing Inter-backed face carries inputs, filters
-and compact metadata. Headings use normal weight and sentence case.
+The shell aligns with the 1160px header and footer. Schibsted Grotesk carries headings; the existing Inter-backed face carries prose, inputs, filters and compact metadata. Headings use sentence case and a clear semibold weight. Body text is 17–18px; descriptions stay next to their linked names. Long prose stays within a comfortable reading measure.
 Links use underlines; controls retain visible focus and native semantics.
 Portraits use the approved photograph from the homepage.
+
+Home shows a compact personal introduction, immediate writing and photography links, then three real project previews. The directory uses two groups across on desktop and a single reading column on phones. Keep names and descriptions together; do not restore the old distant action column.
 
 Long text gets a full reading column. Biography facts may sit beside prose
 on desktop and stack below it on phones. Project imagery and embedded
@@ -82,7 +78,7 @@ sessions retain their native appearance inside the profile page.
 
 | Object | Action | States to check |
 | --- | --- | --- |
-| Profile | Read, follow a section, return home | Desktop and narrow phone; long prose |
+| Profile | Read, follow a destination, return home | Desktop and narrow phone; long prose |
 | Library | Search, filter, open an item | Populated, filtered, no results, browser Back |
 | Detail | Read evidence, follow destination, return | Long titles, private/unavailable destinations, missing slug |
 | Inquiry | Read offer, fill fields | Initial form, required-field errors; no live test submission |

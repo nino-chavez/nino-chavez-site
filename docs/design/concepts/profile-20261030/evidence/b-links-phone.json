@@ -1,0 +1,89 @@
+{
+  "width": 390,
+  "height": 844,
+  "documentHeight": 1885,
+  "headings": [
+    {
+      "text": "Links",
+      "size": "35.1px"
+    },
+    {
+      "text": "Contact",
+      "size": "25px"
+    },
+    {
+      "text": "Writing and code",
+      "size": "25px"
+    },
+    {
+      "text": "Photography and music",
+      "size": "25px"
+    },
+    {
+      "text": "Projects and businesses",
+      "size": "25px"
+    }
+  ],
+  "links": [
+    {
+      "text": "Contact",
+      "href": "http://127.0.0.1:4327/docs/design/concepts/profile-20261030/b/links.html#contact"
+    },
+    {
+      "text": "Writing and code",
+      "href": "http://127.0.0.1:4327/docs/design/concepts/profile-20261030/b/links.html#writing-and-code"
+    },
+    {
+      "text": "Photography and music",
+      "href": "http://127.0.0.1:4327/docs/design/concepts/profile-20261030/b/links.html#photography-and-music"
+    },
+    {
+      "text": "Projects and businesses",
+      "href": "http://127.0.0.1:4327/docs/design/concepts/profile-20261030/b/links.html#projects-and-businesses"
+    },
+    {
+      "text": "LinkedIn",
+      "href": "https://www.linkedin.com/in/nino-chavez/"
+    },
+    {
+      "text": "Email",
+      "href": "mailto:nino@ninochavez.co"
+    },
+    {
+      "text": "GitHub",
+      "href": "https://github.com/nino-chavez"
+    },
+    {
+      "text": "Signal Dispatch",
+      "href": "https://ninochavez.co/blog"
+    },
+    {
+      "text": "Photography",
+      "href": "https://ninochavez.co/photography?src=links"
+    },
+    {
+      "text": "Instagram",
+      "href": "https://www.instagram.com/nino.chavez.photo/"
+    },
+    {
+      "text": "SoundCloud",
+      "href": "https://soundcloud.com/ni-no-cha-vez"
+    },
+    {
+      "text": "Rally HQ",
+      "href": "https://rallyhq.app/"
+    },
+    {
+      "text": "Let’s Pepper",
+      "href": "https://letspepper.com/"
+    },
+    {
+      "text": "Flickday Media",
+      "href": "https://flickdaymedia.com/"
+    },
+    {
+      "text": "Signal X Studio",
+      "href": "https://signalx.studio/"
+    }
+  ]
+}

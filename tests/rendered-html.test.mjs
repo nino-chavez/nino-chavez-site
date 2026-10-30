@@ -22,6 +22,10 @@ function titleText(html) {
     .replaceAll("&amp;", "&");
 }
 
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 async function htmlFor(path) {
   const response = await render(path);
   assert.equal(response.status, 200, `${path} should render`);
@@ -148,7 +152,7 @@ test("connects the homepage and person endpoint to one verified Person entity", 
   assert.ok(!directives.includes(process.env.SITE_VISIBILITY === "public" ? "noindex" : "index"));
 });
 
-test("server-renders the selected standalone personal profile", async () => {
+test("server-renders the selected Work in view profile", async () => {
   const response = await render("/");
   const html = (await response.text()).replaceAll("<!-- -->", "");
 
@@ -169,28 +173,53 @@ test("server-renders the selected standalone personal profile", async () => {
   );
   assert.match(html, /class="profile-home"/);
   assert.match(html, /src="\/work\/nino\.jpg" alt="Portrait of Nino Chavez"/);
-  assert.match(html, /aria-label="Profile sections"/);
-  assert.match(html, /href="\/#about">About/);
-  assert.match(html, /href="\/#projects">Projects/);
-  assert.match(html, /href="\/#contact">Contact/);
+  const header = html.match(/<header\b[^>]*>[\s\S]*?<\/header>/)?.[0];
+  assert.ok(header, "the profile shell should include its document-navigation header");
+  for (const [name, href] of [
+    ["Home", "/"],
+    ["Writing", "https://ninochavez.co/blog/archive"],
+    ["Photography", "https://ninochavez.co/photography/albums"],
+    ["Links", "/links"],
+    ["Email", "mailto:nino@ninochavez.co"],
+  ]) {
+    assert.match(header, new RegExp(`href="${escapeRegExp(href)}"[^>]*>${name}<\\/a>`));
+  }
+  assert.match(html, /id="about"/);
+  assert.match(html, /id="projects"/);
+  assert.match(html, /id="contact"/);
   assert.match(html, /Selected work/);
-  assert.match(html, /A few things I’ve made/);
-  assert.match(html, /Minder[\s\S]*Rally HQ[\s\S]*The Rotation/);
-  assert.match(html, /Signal Dispatch/);
+  for (const [name, src, alt, descriptor] of [
+    ["Minder", "/work/minder.jpg", "Minder app preview showing a fictional sample day", "Activities, tasks, and selected calendars in one view of your day."],
+    ["Rally HQ", "/work/rally-hq.webp", "Rally HQ tournament interface", "Tournament registration, brackets, schedules, and live court scoring."],
+    ["The Rotation", "/work/rotation.png", "The Rotation schedule and must-watch match cards", "Find college volleyball matches and where to watch them."],
+  ]) {
+    assert.match(html, new RegExp(`src="${escapeRegExp(src)}"[^>]*alt="${escapeRegExp(alt)}"`));
+    assert.match(html, new RegExp(`>${escapeRegExp(name)}<`));
+    assert.match(html, new RegExp(escapeRegExp(descriptor)));
+  }
+  assert.match(html, /Published app preview; fictional sample day\./);
+  assert.match(html, /href="https:\/\/ninochavez\.co\/blog\/archive"[^>]*>Writing<\/a>/);
+  assert.match(html, /href="https:\/\/ninochavez\.co\/photography\/albums"[^>]*>Photography<\/a>/);
   assert.match(html, /href="\/work"/);
-  assert.match(html, /href="\/about">Read my full profile/);
-  assert.match(html, /href="\/privacy">Privacy/);
+  const footer = html.match(/<footer\b[^>]*>[\s\S]*?<\/footer>/)?.[0];
+  assert.ok(footer, "the shell should include a footer");
+  assert.match(footer, /href="\/privacy"[^>]*>Privacy<\/a>/);
+  assert.ok((footer.match(/<a\b/g) ?? []).length >= 3, "the footer keeps ordinary discovery links");
   assert.doesNotMatch(html, /class="field-opening"|home-hero-frame/);
-  assert.doesNotMatch(html, /aria-label="Primary navigation"/);
-  assert.match(html, /href="https:\/\/ninochavez\.co\/blog\/archive"/);
-  assert.match(html, /mailto:nino@ninochavez\.co/);
 });
 
-test("deep profile pages keep ordinary local navigation", async () => {
+test("deep profile pages keep the shared Work in view document navigation", async () => {
   const html = await htmlFor("/work");
-  assert.match(html, /aria-label="Profile sections"/);
-  for (const section of ["about", "projects", "contact"]) {
-    assert.ok(html.includes(`href="/#${section}"`));
+  const header = html.match(/<header\b[^>]*>[\s\S]*?<\/header>/)?.[0];
+  assert.ok(header);
+  for (const href of [
+    "/",
+    "https://ninochavez.co/blog/archive",
+    "https://ninochavez.co/photography/albums",
+    "/links",
+    "mailto:nino@ninochavez.co",
+  ]) {
+    assert.match(header, new RegExp(`href="${escapeRegExp(href)}"`));
   }
   assert.doesNotMatch(html, /site-navigation-dialog|Search this site|menu-button/);
 });
@@ -737,7 +766,7 @@ test("ranks and caps broad site searches", async () => {
   assert.match(html, /Agentic Ways of Working/);
 });
 
-test("renders Now as current work and Links as direct destinations", async () => {
+test("renders Now as current work and Links as the selected grouped directory", async () => {
   const [nowHtml, linksHtml, attributedLinksHtml, invalidSourceHtml, searchHtml] =
     await Promise.all([
       htmlFor("/now"),
@@ -772,37 +801,36 @@ test("renders Now as current work and Links as direct destinations", async () =>
   );
   assert.doesNotMatch(nowHtml, /second work inventory|professional timeline/i);
 
-  assert.match(linksHtml, /Direct links/);
-  assert.match(linksHtml, /11(?:<!-- -->)?\s*destinations/);
-  assert.match(linksHtml, /Checked 30 July 2026/);
-  assert.match(linksHtml, /Go to the thing itself/);
-  assert.match(linksHtml, /Products and ventures/);
-  assert.match(linksHtml, /Source and publishing/);
-  assert.match(linksHtml, /Images and sound/);
-  assert.match(linksHtml, /Direct/);
-  assert.match(linksHtml, /Rally HQ/);
-  assert.match(linksHtml, /Flickday Media/);
-  assert.match(linksHtml, /Signal X Studio/);
-  assert.match(linksHtml, /Signal Dispatch/);
-  assert.match(
-    linksHtml,
-    /href="https:\/\/www\.linkedin\.com\/in\/nino-chavez\/"/,
-  );
-  assert.match(
-    linksHtml,
-    /href="https:\/\/www\.instagram\.com\/nino\.chavez\.photo\/"/,
-  );
+  assert.match(linksHtml, /<h1[^>]*>Links<\/h1>/);
+  for (const group of ["Contact", "Writing and code", "Photography and music", "Projects and businesses"]) {
+    assert.match(linksHtml, new RegExp(`>${escapeRegExp(group)}<`));
+  }
+  for (const [name, href] of [
+    ["LinkedIn", "https://www.linkedin.com/in/nino-chavez/"],
+    ["Email", "mailto:nino@ninochavez.co"],
+    ["GitHub", "https://github.com/nino-chavez"],
+    ["Signal Dispatch", "https://ninochavez.co/blog"],
+    ["Photography", "/photography?src=links"],
+    ["Instagram", "https://www.instagram.com/nino.chavez.photo/"],
+    ["SoundCloud", "https://soundcloud.com/ni-no-cha-vez"],
+    ["Rally HQ", "https://rallyhq.app"],
+    ["Let’s Pepper", "https://letspepper.com"],
+    ["Flickday Media", "https://flickdaymedia.com"],
+    ["Signal X Studio", "https://signalx.studio"],
+  ]) {
+    assert.match(
+      linksHtml,
+      new RegExp(`href="${escapeRegExp(href)}"[^>]*>[\\s\\S]*?${escapeRegExp(name)}[\\s\\S]*?<\\/a>\\s*(?:<\\/[^>]+>\\s*)*<p\\b`),
+      `${name} must be followed directly by its explanation`,
+    );
+  }
   assert.match(linksHtml, /href="\/photography\?src=links"/);
   assert.match(
     attributedLinksHtml,
     /href="\/photography\?src=ig-photo"/,
   );
   assert.match(invalidSourceHtml, /href="\/photography\?src=links"/);
-  assert.doesNotMatch(linksHtml, /<span>L(?:0[1-9]|1[01])<\/span>/);
-  assert.match(
-    linksHtml,
-    /href="https:\/\/rallyhq\.app" target="_blank" rel="noopener noreferrer"/,
-  );
+  assert.doesNotMatch(linksHtml, /\b11\s+destinations\b|Checked \d{1,2} \w+ \d{4}/);
   assert.doesNotMatch(
     linksHtml,
     /href="mailto:nino@ninochavez\.co"[^>]*target="_blank"/,
@@ -912,7 +940,8 @@ test("keeps an unknown route inside the site shell", async () => {
 
   assert.equal(response.status, 404);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-  assert.match(html, /aria-label="Profile sections"/);
+  assert.match(html, /<header\b/);
+  assert.match(html, /href="\/links"/);
   assert.match(html, /<main\b/);
   assert.match(html, /This path does not resolve/);
   assert.match(html, /href="\/work"/);
@@ -963,7 +992,7 @@ test("renders the current privacy policy and makes it globally searchable", asyn
   assert.match(searchHtml, /What the public site receives/);
 });
 
-test("keeps independent profile navigation throughout its routes", async () => {
+test("keeps the Work in view shell throughout its routes", async () => {
   for (const path of [
     "/work",
     "/demos",
@@ -973,7 +1002,10 @@ test("keeps independent profile navigation throughout its routes", async () => {
     "/privacy",
   ]) {
     const html = await htmlFor(path);
-    assert.match(html, /aria-label="Profile sections"/);
+    assert.match(html, /<header\b/);
+    assert.match(html, /href="https:\/\/ninochavez\.co\/blog\/archive"/);
+    assert.match(html, /href="https:\/\/ninochavez\.co\/photography\/albums"/);
+    assert.match(html, /href="\/links"/);
     assert.match(html, /class="profile-footer"/);
     assert.match(html, /href="\/privacy"/);
     assert.equal(
@@ -990,10 +1022,10 @@ test("keeps independent profile navigation throughout its routes", async () => {
 
   for (const path of ["/", "/about", "/now", "/links"]) {
     const html = await htmlFor(path);
-    assert.match(html, /aria-label="Profile sections"/);
+    assert.match(html, /<header\b/);
+    assert.match(html, /href="\/links"/);
     assert.match(html, /class="profile-footer"/);
     assert.match(html, /href="\/privacy">Privacy/);
-    assert.doesNotMatch(html, /aria-label="Primary navigation"/);
     assert.equal(
       (visibleDocument(html).match(/<main\b/g) ?? []).length,
       1,
@@ -1416,6 +1448,7 @@ test("keeps private review and public launch modes explicit", async () => {
   await access(new URL("public/og.png", templateRoot));
   await access(new URL("public/fonts/anton-400.woff2", templateRoot));
   await access(new URL("public/fonts/inter-latin.woff2", templateRoot));
+  await access(new URL("public/fonts/schibsted-grotesk-latin.woff2", templateRoot));
   await access(
     new URL("public/fonts/space-mono-latin-400-normal.woff2", templateRoot),
   );

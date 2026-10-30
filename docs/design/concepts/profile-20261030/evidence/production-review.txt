@@ -1,0 +1,13 @@
+Release decision: hold.
+
+1. `/work` and `/demos` at both widths, plus `/cv` at both widths — the top region lacks the shared profile header. On desktop `/work`, the “Projects” heading is also visibly clipped by the top edge.
+
+   Reader consequence: a direct visitor loses Nino’s identity and the clear Home/Links/Email escape route on core profile destinations; the cropped desktop title makes `/work` look broken on arrival.
+
+   Smallest fix: place these profile-owned route presentations inside the same visible profile header used by Home, Links, About, Learn, Privacy, and Coverage; keep any native presentation styling below it. Correct the desktop `/work` top offset so the heading is fully visible.
+
+   Blocks release: yes.
+
+No material divergence from approved C was visible on Home or Links. Both retain the selected direction’s immediate identity, in-view project evidence, grouped links, readable phone flow, and visible contact routes.
+
+This was a browser-rendered capture review only, not physical-device verification. No resources were started and no files were changed.
