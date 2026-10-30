@@ -537,7 +537,7 @@ test("C30 — the selected profile shell exposes specialist destinations without
     ["Links", "/links"],
     ["Email", "mailto:nino@ninochavez.co"],
   ]) {
-    assert.match(header, new RegExp(`href="${href.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[^>]*>${name}<\\/a>`));
+    assert.match(header, new RegExp(`href="${href.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[^>]*>${name}<`));
   }
   assert.doesNotMatch(html, /site-navigation-dialog|menu-button/);
 });

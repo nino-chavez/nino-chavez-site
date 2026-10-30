@@ -32,7 +32,7 @@ const practices = [
       "Anticipate the point before it happens, then make the result easy to find and keep.",
     href: "/photography",
     action: "Open photography",
-    external: false,
+    external: true,
   },
   {
     name: "Writing",
@@ -40,7 +40,7 @@ const practices = [
       "Turn working evidence and unfinished thinking into published arguments.",
     href: "/blog",
     action: "Read Signal Dispatch",
-    external: false,
+    external: true,
   },
   {
     name: "Music",
@@ -193,8 +193,9 @@ export default function AboutPage() {
                 evidence a client can check, and problems they couldn’t see.
                 AI agents supply the depth; the architecture years supply the
                 steering. I wrote about the first full test of that model in{" "}
-                <a href="/blog/the-depth-penalty-is-gone">
+                <a href="/blog/the-depth-penalty-is-gone" target="_blank" rel="noopener noreferrer">
                   The Depth Penalty Is Gone
+                  <span className="assistive-text"> (opens in a new tab)</span>
                 </a>
                 .
               </p>

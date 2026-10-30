@@ -82,7 +82,12 @@ sessions retain their native appearance inside the profile page.
 | Library | Search, filter, open an item | Populated, filtered, no results, browser Back |
 | Detail | Read evidence, follow destination, return | Long titles, private/unavailable destinations, missing slug |
 | Inquiry | Read offer, fill fields | Initial form, required-field errors; no live test submission |
-| Cross-site link | Open publication or gallery | Full navigation; specialist chrome remains independent |
+| Cross-site link | Open publication or gallery in a new tab | Native link with `target="_blank"` and `rel="noopener noreferrer"`; each site keeps its own style and navigation |
+
+Writing and photography are separate sites even though they share the
+`ninochavez.co` domain. Profile links to `/blog/**` and gallery-owned
+`/photography/**` destinations open in new tabs. The profile-owned coverage
+inquiry at `/photography/coverage` stays in the current tab.
 
 Keep existing anchors, query parameters, breadcrumbs and return links.
 No new animation or scrolling behavior is introduced. Verification uses

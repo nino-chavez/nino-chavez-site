@@ -58,13 +58,15 @@ export default function Home() {
             events, take photographs, write, and DJ.
           </p>
           <nav className="profile-home__quick-links" aria-label="Explore Nino’s work">
-            <a href="https://ninochavez.co/blog/archive">
+            <a href="https://ninochavez.co/blog/archive" target="_blank" rel="noopener noreferrer">
               <strong>Writing</strong>
               <small>Signal Dispatch</small>
+              <span className="assistive-text"> (opens in a new tab)</span>
             </a>
-            <a href="https://ninochavez.co/photography/albums">
+            <a href="https://ninochavez.co/photography/albums" target="_blank" rel="noopener noreferrer">
               <strong>Photography</strong>
               <small>Volleyball and event galleries</small>
+              <span className="assistive-text"> (opens in a new tab)</span>
             </a>
           </nav>
         </div>

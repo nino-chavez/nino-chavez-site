@@ -1,3 +1,4 @@
+import { isIndependentSiteHref } from "../../link-destinations";
 import Link from "next/link";
 import "../../by-nino-library.css";
 import { notFound } from "next/navigation";
@@ -90,10 +91,11 @@ export default async function LearnTrackPage({
           </header>
           <div className="learn-evidence-list">
             {track.evidence.map((item) => {
-              const external = item.href.startsWith("http");
+              const external = item.href.startsWith("http") || isIndependentSiteHref(item.href);
+              const EvidenceLink = external ? "a" : Link;
 
               return (
-                <Link
+                <EvidenceLink
                   href={item.href}
                   key={`${item.kind}-${item.href}`}
                   target={external ? "_blank" : undefined}
@@ -108,7 +110,7 @@ export default async function LearnTrackPage({
                   </strong>
                   <small>{item.note}</small>
                   <b aria-hidden="true">{external ? "↗" : "→"}</b>
-                </Link>
+                </EvidenceLink>
               );
             })}
           </div>

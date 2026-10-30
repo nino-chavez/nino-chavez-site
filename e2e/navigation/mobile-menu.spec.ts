@@ -19,10 +19,15 @@ test("phone navigation exposes Home, Links, and Email without a drawer", async (
   await expect(page.locator("#profile-title")).toBeVisible();
 });
 
-test("phone home keeps the specialist destinations visible as ordinary document links", async ({ page }) => {
+test("phone home opens the independent sites in new tabs and keeps the profile open", async ({ page, context }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
 
+  // Test the tab boundary without depending on the independent apps' network.
+  await context.route("https://ninochavez.co/**", (route) => route.fulfill({
+    contentType: "text/html",
+    body: "<html><body><h1>Independent site</h1></body></html>",
+  }));
   for (const [name, href] of [
     ["Writing", "https://ninochavez.co/blog/archive"],
     ["Photography", "https://ninochavez.co/photography/albums"],
@@ -30,7 +35,16 @@ test("phone home keeps the specialist destinations visible as ordinary document 
     const link = page.locator(".profile-home__quick-links").getByRole("link", { name: new RegExp(`^${name}`) });
     await expect(link).toBeInViewport();
     await expect(link).toHaveAttribute("href", href);
+    await expect(link).toHaveAttribute("target", "_blank");
+    await expect(link).toHaveAttribute("rel", "noopener noreferrer");
     expect(await link.evaluate((element) => element instanceof HTMLAnchorElement)).toBe(true);
+    const popupPromise = page.waitForEvent("popup");
+    await link.tap();
+    const popup = await popupPromise;
+    await expect(popup).toHaveURL(href);
+    await expect(page).toHaveURL(/\/$/);
+    await expect(page.locator("#profile-title")).toBeVisible();
+    await popup.close();
   }
 });
 

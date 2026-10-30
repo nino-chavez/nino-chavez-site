@@ -182,7 +182,7 @@ test("server-renders the selected Work in view profile", async () => {
     ["Links", "/links"],
     ["Email", "mailto:nino@ninochavez.co"],
   ]) {
-    assert.match(header, new RegExp(`href="${escapeRegExp(href)}"[^>]*>${name}<\\/a>`));
+    assert.match(header, new RegExp(`href="${escapeRegExp(href)}"[^>]*>${name}<`));
   }
   assert.match(html, /id="about"/);
   assert.match(html, /id="projects"/);
@@ -198,8 +198,8 @@ test("server-renders the selected Work in view profile", async () => {
     assert.match(html, new RegExp(escapeRegExp(descriptor)));
   }
   assert.match(html, /Published app preview; fictional sample day\./);
-  assert.match(html, /href="https:\/\/ninochavez\.co\/blog\/archive"[^>]*>Writing<\/a>/);
-  assert.match(html, /href="https:\/\/ninochavez\.co\/photography\/albums"[^>]*>Photography<\/a>/);
+  assert.match(html, /href="https:\/\/ninochavez\.co\/blog\/archive"[^>]*>Writing</);
+  assert.match(html, /href="https:\/\/ninochavez\.co\/photography\/albums"[^>]*>Photography</);
   assert.match(html, /href="\/work"/);
   const footer = html.match(/<footer\b[^>]*>[\s\S]*?<\/footer>/)?.[0];
   assert.ok(footer, "the shell should include a footer");
@@ -668,7 +668,7 @@ test("renders the complete Signal Dispatch publication and real article handoffs
     /href="https:\/\/ninochavez\.co\/blog\/the-scaffolding-the-agent-doesnt-build"/,
   );
   assert.match(searchHtml, /Essay · Reflection · 2026/);
-  assert.doesNotMatch(
+  assert.match(
     searchHtml,
     /href="https:\/\/ninochavez\.co\/blog\/[^"]+"[^>]*target="_blank"/,
   );
@@ -1194,7 +1194,7 @@ test("links work records to the writing that covers them", async () => {
 
   const rally = visibleDocument(rallyHtml);
   assert.match(rally, /Written about this/);
-  assert.doesNotMatch(
+  assert.match(
     rally,
     /href="https:\/\/ninochavez\.co\/blog\/[^"]+"[^>]*target="_blank"/,
   );
@@ -1238,28 +1238,32 @@ test("links work records to the writing that covers them", async () => {
   );
 });
 
-test("classifies absolute links by destination host before applying external protections", async () => {
+test("opens independent-site links in new tabs while keeping profile destinations local", async () => {
   const sitemap = await render("/sitemap.xml");
   const sitemapXml = await sitemap.text();
   const paths = [...sitemapXml.matchAll(/<loc>https:\/\/ninochavez\.co([^<]*)<\/loc>/g)]
-    .map((match) => match[1] || "/");
+    .map((match) => match[1] || "/")
+    .filter((path) => !/^\/blog(?:\/|$)/.test(path) &&
+      (!/^\/photography(?:\/|$)/.test(path) || path === "/photography/coverage"));
+  paths.push("/work?view=all", "/search?q=photography", "/search?q=whitepaper", "/search?q=AI");
 
   for (const path of paths) {
     const html = await htmlFor(path);
-    const absoluteAnchors =
-      html.match(/<a\b[^>]*href="https?:\/\/[^"]+"[^>]*>/g) ?? [];
-
-    for (const anchor of absoluteAnchors) {
+    const anchors = html.match(/<a\b[^>]*href="[^"]+"[^>]*>/g) ?? [];
+    for (const anchor of anchors) {
       const href = anchor.match(/href="([^"]+)"/)?.[1];
-      assert.ok(href, `${path}: an absolute anchor has an href`);
-
-      if (new URL(href).hostname !== "ninochavez.co") {
+      assert.ok(href, `${path}: an anchor has an href`);
+      const destination = new URL(href, "https://ninochavez.co");
+      if (!/^https?:$/.test(destination.protocol)) continue;
+      const specialist = destination.hostname === "ninochavez.co" &&
+        (/^\/blog(?:\/|$)/.test(destination.pathname) ||
+          (/^\/photography(?:\/|$)/.test(destination.pathname) &&
+            !/^\/photography\/coverage\/?$/.test(destination.pathname)));
+      if (destination.hostname !== "ninochavez.co" || specialist) {
         assert.match(anchor, /target="_blank"/, `${path}: ${anchor}`);
-        assert.match(
-          anchor,
-          /rel="noopener noreferrer"/,
-          `${path}: ${anchor}`,
-        );
+        assert.match(anchor, /rel="noopener noreferrer"/, `${path}: ${anchor}`);
+      } else if (/^\/photography\/coverage\/?$/.test(destination.pathname)) {
+        assert.doesNotMatch(anchor, /target="_blank"/, `${path}: coverage inquiries stay in this tab: ${anchor}`);
       }
     }
   }

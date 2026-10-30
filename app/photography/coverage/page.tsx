@@ -61,7 +61,7 @@ export const metadata: Metadata = {
 export default function SportsEventCoverage() {
   return <div className="coverage-page by-nino-frontdoor by-nino-coverage">
     <div className="coverage-shell">
-      <nav className="coverage-breadcrumb" aria-label="Breadcrumb"><a href="/photography">Photography</a><span aria-hidden="true">/</span><span>Sports & event coverage</span></nav>
+      <nav className="coverage-breadcrumb" aria-label="Breadcrumb"><a href="/photography" target="_blank" rel="noopener noreferrer">Photography<span className="assistive-text"> (opens in a new tab)</span></a><span aria-hidden="true">/</span><span>Sports & event coverage</span></nav>
       <header className="coverage-opening">
         <div className="coverage-intro">
           <p className="coverage-eyebrow">Teams · Tournaments · School &amp; community events</p>

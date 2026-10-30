@@ -1,5 +1,7 @@
 "use client";
 
+import { isIndependentSiteHref } from "../link-destinations";
+
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 import {
@@ -212,7 +214,7 @@ export function WorkLibrary({ items }: { items: WorkItem[] }) {
               <div className="work-list">
                 {group.items.map((item) => {
                   const href = workHref(item);
-                  const opensInNewTab = href.startsWith("http");
+                  const opensInNewTab = href.startsWith("http") || isIndependentSiteHref(href);
                   return (
                     <a
                       className="work-record"

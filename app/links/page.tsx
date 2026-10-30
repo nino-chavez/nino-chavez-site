@@ -1,4 +1,5 @@
 import "../by-nino-library.css";
+import { isIndependentSiteHref } from "../link-destinations";
 
 export const metadata = {
   alternates: { canonical: "/links" },
@@ -126,7 +127,8 @@ export default async function LinksPage({
                     ? `${destination.href}?src=${gallerySource}`
                     : destination.href;
                 const opensInNewTab =
-                  href.startsWith("http") && !href.startsWith("https://ninochavez.co/");
+                  isIndependentSiteHref(href) ||
+                  (href.startsWith("http") && !href.startsWith("https://ninochavez.co/"));
 
                 return (
                   <li key={destination.name}>
