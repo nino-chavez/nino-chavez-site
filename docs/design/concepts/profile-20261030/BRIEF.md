@@ -70,3 +70,14 @@ The independent finished-screen review, in `evidence/concept-review.txt`, chose 
 Verification: all six pages rendered at 1440×900 and 390×844; thirteen Playwright checks pass. They cover loaded images, no page errors, no horizontal overflow, doubled-text stress on phone widths, the eleven canonical Links destinations, and comparison navigation/history. The overflow detector was first proved to fail on an injected oversized element. This is browser-viewport review, not physical-device or usability-test evidence. Full-page and first-viewport captures are in `evidence/`.
 
 Selection: **Nino selected C — Work in view on October 30, 2026**, replying “C — Work in view (Recommended)” to the rendered comparison. This satisfies Signal Frontend Designer Phase 0. Retain C’s visible product proof and grouped Links. Graft A’s compact mobile reading order where it helps without removing the images; retain B’s clear current-page navigation but not its desktop rail. Implement against existing routes and behavior, then review full rendered pages before release.
+
+
+## Implementation review
+
+[PR 62](https://github.com/nino-chavez/nino-chavez-site/pull/62) applies the selected direction to the profile application. ADR 0006, DESIGN.md and the navigation contract carry the new decision. The independent blog/gallery applications and native embedded presentation content retain their own designs.
+
+Verification on the production build: compatibility/typecheck and lint pass (image-optimization warnings remain); all 55 rendered HTML/audit checks and all 11 inquiry checks pass. The 36-test Chromium/WebKit navigation suite passes with `PROFILE_FULL_REVIEW=1`: 80 profile-owned route/state captures at 1440px and 390px in each engine. These are browser captures, not a physical-device or usability trial. The existing CV print rules remain intact; no live inquiry was submitted.
+
+The cold implementation review found no material divergence from C on Home or Links. Its missing-header claim on Projects, Sessions and CV was contradicted by the exact first-viewport images: the parent opened them directly, and a separate focused pixel check confirmed the name, navigation and complete page title at both widths. Preserve both `evidence/production-review.txt` and `evidence/header-verification.txt`; the latter resolves that specific claim. The named captures are retained as `evidence/production-1440-*.png` and `evidence/production-390-*.png`.
+
+The commit review found stale navigation documentation and image links excluded from keyboard order. The canonical documents were updated; project image links now participate in normal keyboard navigation. The new focusability assertion was proved to fail against the previous build before checking the corrected build. Review and CI for the final commit still govern release; the human design selection is not a deployment receipt.

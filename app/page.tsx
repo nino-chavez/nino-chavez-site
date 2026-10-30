@@ -86,7 +86,6 @@ export default function Home() {
               href="https://apps.apple.com/us/app/minder-your-day/id6803974428"
               target="_blank"
               rel="noopener noreferrer"
-              tabIndex={-1}
             >
               <img
                 src="/work/minder.jpg"
@@ -119,7 +118,6 @@ export default function Home() {
               href="https://rallyhq.app"
               target="_blank"
               rel="noopener noreferrer"
-              tabIndex={-1}
             >
               <img
                 src="/work/rally-hq.webp"
@@ -150,7 +148,6 @@ export default function Home() {
               href="https://therotation.tv"
               target="_blank"
               rel="noopener noreferrer"
-              tabIndex={-1}
             >
               <img
                 src="/work/rotation.png"

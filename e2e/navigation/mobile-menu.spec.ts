@@ -46,6 +46,7 @@ test("Work in view keeps the selected project previews loaded on phone", async (
     const preview = page.locator(`img[alt="${alt}"]`);
     await expect(preview).toBeVisible();
     await expect.poll(() => preview.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true);
+    expect(await preview.evaluate((image) => image.closest("a")?.tabIndex)).toBeGreaterThanOrEqual(0);
   }
   expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
 });

@@ -1,5 +1,7 @@
 # Open Practice
 
+The visual composition described below is historical. [ADR 0006](decisions/0006-profile-work-in-view.md) and [DESIGN.md](../DESIGN.md) own the current profile design. The Copy and naming clauses and source-content boundaries remain in force.
+
 This prototype treats the site as a visit to a working practice, not a brochure
 about one and not a control panel for operating it.
 
@@ -133,10 +135,11 @@ All three are delivered locally as WOFF2 assets. This supersedes System A
 high-contrast mono layer made the practice read more like a designed operating
 manual than a personal portfolio.
 
-**Typography status: locked for the application surfaces.** Anton / Inter /
-Space Mono remains the application baseline and reference for later comparisons.
-The selected Profile A uses Georgia for the home and navigation shell; see [ADR 0005](decisions/0005-profile-a-personal-home.md). Anton is
-display-only; its force depends on the rest of the interface remaining quiet.
+**Current typography:** Work in view uses Schibsted Grotesk for headings and
+Inter for reading and controls throughout the profile app; see
+[ADR 0006](decisions/0006-profile-work-in-view.md). The Anton / Inter / Space Mono
+composition above remains a historical reference. Embedded session evidence
+retains its source typography inside the profile shell.
 
 ## Copy and naming
 
@@ -291,14 +294,15 @@ legible.
 
 ## Interaction contract
 
-Global navigation is always available on application routes. Profile A owns
-local navigation for the personal home and profile routes; it links directly to
-About, Projects, Contact, the complete Work library, and privacy as documented
-in [ADR 0005](decisions/0005-profile-a-personal-home.md). Work and Demos search and
+Global navigation is always available on profile routes. Work in view exposes
+Home, Writing, Photography, Links and Email. Phones show Home, Links and Email;
+the home introduction and footer retain the specialist destinations. The footer
+also exposes About, Projects and Privacy. There is no navigation drawer. See
+[ADR 0006](decisions/0006-profile-work-in-view.md) and
+[the navigation contract](IA-NAVIGATION.md). Projects and Sessions search and
 filters write their state to the URL and preserve an accurate result count.
-Long records keep a persistent route back to their controls. The compact menu
-is a modal navigation surface, exposes its expanded state, and returns focus to
-its trigger when closed. Reduced-motion preferences are respected.
+Long records keep a route back to their controls. Reduced-motion preferences
+are respected.
 
 ### Action-object contract
 
