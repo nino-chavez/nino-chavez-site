@@ -1385,8 +1385,11 @@ test("keeps private review and public launch modes explicit", async () => {
   assert.match(readme, /Open Practice/);
   assert.match(direction, /working practice, not a brochure/);
   assert.match(direction, /complete, honestly labeled record/);
-  assert.match(direction, /Typography status: locked/);
-  assert.match(direction, /Anton\s*\/\s*Inter\s*\/\s*Space Mono/);
+  assert.match(
+    direction,
+    /Current typography:\*\* Work in view uses Schibsted Grotesk for headings and\s+Inter for reading and controls/,
+  );
+  assert.match(direction, /ADR 0006/);
   assert.match(direction, /hero remains responsive HTML and CSS/);
   assert.match(direction, /Action-object contract/);
   assert.match(direction, /one perceived object maps to one behavioral object/);
