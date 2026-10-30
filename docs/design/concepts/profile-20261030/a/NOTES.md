@@ -13,5 +13,4 @@ Tradeoff: this direction makes retrieval and reading easier than it makes the
 projects visually demonstrative. It deliberately leaves product imagery out of
 the selected-work list to keep the visitor focused on the person and purpose.
 
-Unverified: visual rendering at the target viewport sizes. No server, browser,
-network, install, or shared runtime was started; parent owns rendered review.
+The parent rendered desktop and phone pages, corrected narrow phone text, and checked doubled text. Evidence and the selection record are in `../BRIEF.md`.

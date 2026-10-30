@@ -17,7 +17,7 @@ function header() {
         <a href="index.html" ${page === 'home' ? 'aria-current="page"' : ''}>Home</a>
         <a href="${escapeHtml(profile.writing)}">Writing</a>
         <a href="${escapeHtml(profile.photography)}">Photography</a>
-        <a href="links.html" ${page === 'links' ? 'aria-current="page"' : ''}>Links</a>
+        <a href="links.html" ${page === 'links' ? 'aria-current="page"' : ''}>Links</a><a href="${escapeHtml(profile.email)}">Email</a>
       </nav>
     </div>`;
 }
@@ -27,7 +27,7 @@ function footer() {
 }
 
 function projectMarkup(project, index) {
-  const featured = index === 0 ? ' project--featured' : '';
+  const featured = '';
   const caption = project.caption ? `<p class="media-caption">${escapeHtml(project.caption)}</p>` : '';
   return `
     <article class="project${featured}">
@@ -48,7 +48,7 @@ function renderHome() {
   $('#intro').innerHTML = `
     <div class="portrait-wrap"><img src="${escapeHtml(portrait)}" alt="Portrait of ${escapeHtml(profile.name)}"></div>
     <div class="intro-copy">
-      <p class="role">Product architect</p>
+
       <h1 id="page-title">${escapeHtml(profile.name)}</h1>
       <p class="lead">${escapeHtml(profile.intro)}</p>
       <nav class="quick-links" aria-label="Explore Nino's work">

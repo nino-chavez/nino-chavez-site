@@ -4,6 +4,6 @@ The desktop rail is intentionally narrow: it gives returning visitors a stable n
 
 On phones, the identity becomes a short header and the same routes stay visible as horizontal links. No route is hidden behind a menu.
 
-The directory favors grouped text rows over cards. Each destination remains a single visible native link with its description immediately beside it. This supports quick scanning while keeping all eleven links on the page.
+The directory favors grouped text rows over cards. Each destination remains a single visible native link with its description immediately below it. This supports quick scanning while keeping all eleven links on the page.
 
-No rendered inspection was run by this worker under the no-browser/no-server scope. The parent owns visual comparison and integration checks.
+The parent rendered desktop and phone pages, corrected the narrow text layout, and checked doubled text. Evidence and the selection record are in `../BRIEF.md`.

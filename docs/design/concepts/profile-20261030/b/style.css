@@ -92,7 +92,7 @@ p { margin: 0; }
 .project-list { display: grid; }
 .project-row { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 25px; padding: 26px 0; border-bottom: 1px solid var(--rule); }
 .project-image { display: block; align-self: start; overflow: hidden; border: 1px solid var(--rule); }
-.project-image img { display: block; width: 100%; aspect-ratio: 1.24; object-fit: cover; }
+.project-image img { display: block; width: 100%; aspect-ratio: 1.24; object-fit: contain; background: #f3eee6; }
 .project-copy { display: grid; align-content: start; gap: 8px; }
 .project-copy h3 a { text-decoration: none; }
 .project-kind, .image-caption { color: var(--quiet); font-size: 14px; line-height: 1.4; }
@@ -109,7 +109,7 @@ p { margin: 0; }
 .directory-group { scroll-margin-top: 28px; }
 .directory-group h2 { padding-bottom: 15px; border-bottom: 1px solid var(--rule); }
 .directory-group ul { display: grid; margin: 0; padding: 0; list-style: none; }
-.directory-group li { display: grid; grid-template-columns: minmax(170px, 0.9fr) minmax(0, 1.8fr); gap: 26px; padding: 17px 0 18px; border-bottom: 1px solid var(--rule); }
+.directory-group li { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 17px 0 18px; border-bottom: 1px solid var(--rule); }
 .directory-group li > a { font-family: "Schibsted Grotesk", Inter, sans-serif; font-weight: 650; letter-spacing: -0.02em; }
 .directory-group li p { color: #4e4842; }
 
@@ -143,3 +143,6 @@ p { margin: 0; }
   .directory-group li { grid-template-columns: 1fr; gap: 4px; padding: 16px 0; }
   .directory-group li p { font-size: 16px; line-height: 1.48; }
 }
+
+.intro-text{font-size:22px;line-height:1.5;margin-top:20px;max-width:35em}.destinations{margin-top:36px}.selected-work{margin-top:42px}.feature-link{min-height:90px;padding:18px}.feature-link span{text-decoration:underline;text-underline-offset:5px;font-size:23px}.main-column{padding-top:54px}.project-copy,.opening,.feature-link{min-width:0;overflow-wrap:anywhere}.section-heading{flex-wrap:wrap}.section-heading a{white-space:normal}.directory-group li p{font-size:18px}.primary-nav a{max-width:100%}.identity-rail{overflow-wrap:anywhere}
+@media(max-width:720px){.identity-rail{position:static}.intro-text{font-size:19px;margin-top:14px}.main-column{padding-top:28px}.opening h1{font-size:34px}.destinations{margin-top:28px}.selected-work{margin-top:32px}.primary-nav{flex-wrap:wrap;white-space:normal;overflow:visible}.project-row{grid-template-columns:1fr}.project-image{max-width:160px}.project-copy p:not(.project-kind):not(.image-caption){font-size:17px}.directory-group li p{font-size:17px}}

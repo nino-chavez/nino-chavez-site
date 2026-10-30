@@ -1,0 +1,73 @@
+{
+  "width": 1440,
+  "height": 900,
+  "documentHeight": 1793,
+  "headings": [
+    {
+      "text": "Links",
+      "size": "48.6px"
+    },
+    {
+      "text": "Contact",
+      "size": "27.9px"
+    },
+    {
+      "text": "Writing and code",
+      "size": "27.9px"
+    },
+    {
+      "text": "Photography and music",
+      "size": "27.9px"
+    },
+    {
+      "text": "Projects and businesses",
+      "size": "27.9px"
+    }
+  ],
+  "links": [
+    {
+      "text": "LinkedIn\nMy professional history and current role.",
+      "href": "https://www.linkedin.com/in/nino-chavez/"
+    },
+    {
+      "text": "Email\nnino@ninochavez.co",
+      "href": "mailto:nino@ninochavez.co"
+    },
+    {
+      "text": "GitHub\nPublic code, tools, and repositories.",
+      "href": "https://github.com/nino-chavez"
+    },
+    {
+      "text": "Signal Dispatch\nMy writing: essays, guides, presentations, and fiction.",
+      "href": "https://ninochavez.co/blog"
+    },
+    {
+      "text": "Photography\nVolleyball, action-sports, and event galleries.",
+      "href": "https://ninochavez.co/photography?src=links"
+    },
+    {
+      "text": "Instagram\nCurrent photography and event images.",
+      "href": "https://www.instagram.com/nino.chavez.photo/"
+    },
+    {
+      "text": "SoundCloud\nDJ sets and mixes.",
+      "href": "https://soundcloud.com/ni-no-cha-vez"
+    },
+    {
+      "text": "Rally HQ\nTournament registration, schedules, brackets, and live scoring.",
+      "href": "https://rallyhq.app/"
+    },
+    {
+      "text": "Let’s Pepper\nGrass volleyball tournaments in Chicagoland.",
+      "href": "https://letspepper.com/"
+    },
+    {
+      "text": "Flickday Media\nTournament photography and grassroots sports media.",
+      "href": "https://flickdaymedia.com/"
+    },
+    {
+      "text": "Signal X Studio\nThe company behind my sports, media, and software ventures.",
+      "href": "https://signalx.studio/"
+    }
+  ]
+}

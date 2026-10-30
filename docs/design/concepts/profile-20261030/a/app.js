@@ -37,7 +37,7 @@ if (document.body.dataset.page === 'home') {
   const photography = destinationByName('Photography');
   const email = destinationByName('Email');
   const homeChoices = [
-    { name: 'Projects', href: profile.projects },
+    { name: 'Projects', description: 'Apps, websites, and other work.', href: profile.projects },
     { name: 'Writing', description: signalDispatch.description, href: profile.writing },
     { name: 'Photography', description: photography.description, href: profile.photography },
     { name: 'Contact', description: email.description, href: profile.email },

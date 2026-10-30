@@ -33,7 +33,7 @@ function rail() {
         <p>Chicago</p>
       </div>
       <nav class="primary-nav" aria-label="Primary">${navigation()}</nav>
-      <a class="comparison-link" href="../index.html">All concepts</a>
+
     </aside>`;
 }
 
@@ -56,7 +56,7 @@ function home() {
   return `
     <main id="main" class="main-column home-main">
       <header class="opening">
-        <h1>${escapeHTML(profile.intro)}</h1>
+        <h1>Nino Chavez</h1><p class="intro-text">${escapeHTML(profile.intro)}</p>
       </header>
       <section class="destinations" aria-labelledby="ways-to-find-title">
         <h2 id="ways-to-find-title">Start here</h2>

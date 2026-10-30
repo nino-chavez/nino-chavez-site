@@ -1,0 +1,77 @@
+{
+  "width": 1440,
+  "height": 900,
+  "documentHeight": 1412,
+  "headings": [
+    {
+      "text": "Nino Chavez",
+      "size": "48.6px"
+    },
+    {
+      "text": "Explore",
+      "size": "27.9px"
+    },
+    {
+      "text": "Selected projects",
+      "size": "27.9px"
+    },
+    {
+      "text": "Minder",
+      "size": "21.6px"
+    },
+    {
+      "text": "Rally HQ",
+      "size": "21.6px"
+    },
+    {
+      "text": "The Rotation",
+      "size": "21.6px"
+    },
+    {
+      "text": "A little more",
+      "size": "27.9px"
+    }
+  ],
+  "links": [
+    {
+      "text": "About Nino →",
+      "href": "https://ninochavez.co/about"
+    },
+    {
+      "text": "Projects\nApps, websites, and other work.",
+      "href": "https://ninochavez.co/work"
+    },
+    {
+      "text": "Writing\nMy writing: essays, guides, presentations, and fiction.",
+      "href": "https://ninochavez.co/blog/archive"
+    },
+    {
+      "text": "Photography\nVolleyball, action-sports, and event galleries.",
+      "href": "https://ninochavez.co/photography/albums"
+    },
+    {
+      "text": "Contact\nnino@ninochavez.co",
+      "href": "mailto:nino@ninochavez.co"
+    },
+    {
+      "text": "All projects →",
+      "href": "https://ninochavez.co/work"
+    },
+    {
+      "text": "Minder",
+      "href": "https://apps.apple.com/us/app/minder-your-day/id6803974428"
+    },
+    {
+      "text": "Rally HQ",
+      "href": "https://rallyhq.app/"
+    },
+    {
+      "text": "The Rotation",
+      "href": "https://therotation.tv/"
+    },
+    {
+      "text": "Get in touch →",
+      "href": "mailto:nino@ninochavez.co"
+    }
+  ]
+}

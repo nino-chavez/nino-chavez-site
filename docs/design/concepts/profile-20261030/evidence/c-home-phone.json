@@ -1,0 +1,77 @@
+{
+  "width": 390,
+  "height": 844,
+  "documentHeight": 2310,
+  "headings": [
+    {
+      "text": "Nino Chavez",
+      "size": "34px"
+    },
+    {
+      "text": "Selected work",
+      "size": "28px"
+    },
+    {
+      "text": "Minder",
+      "size": "27px"
+    },
+    {
+      "text": "Rally HQ",
+      "size": "27px"
+    },
+    {
+      "text": "The Rotation",
+      "size": "27px"
+    },
+    {
+      "text": "A little more",
+      "size": "28px"
+    }
+  ],
+  "links": [
+    {
+      "text": "Writing\nSignal Dispatch",
+      "href": "https://ninochavez.co/blog/archive"
+    },
+    {
+      "text": "Photography\nVolleyball and event galleries",
+      "href": "https://ninochavez.co/photography/albums"
+    },
+    {
+      "text": "View all projects",
+      "href": "https://ninochavez.co/work"
+    },
+    {
+      "text": "",
+      "href": "https://apps.apple.com/us/app/minder-your-day/id6803974428"
+    },
+    {
+      "text": "Minder",
+      "href": "https://apps.apple.com/us/app/minder-your-day/id6803974428"
+    },
+    {
+      "text": "",
+      "href": "https://rallyhq.app/"
+    },
+    {
+      "text": "Rally HQ",
+      "href": "https://rallyhq.app/"
+    },
+    {
+      "text": "",
+      "href": "https://therotation.tv/"
+    },
+    {
+      "text": "The Rotation",
+      "href": "https://therotation.tv/"
+    },
+    {
+      "text": "Read the fuller biography",
+      "href": "https://ninochavez.co/about"
+    },
+    {
+      "text": "Get in touch",
+      "href": "mailto:nino@ninochavez.co"
+    }
+  ]
+}

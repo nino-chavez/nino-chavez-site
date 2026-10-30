@@ -1,0 +1,77 @@
+{
+  "width": 390,
+  "height": 844,
+  "documentHeight": 1766,
+  "headings": [
+    {
+      "text": "Links",
+      "size": "44px"
+    },
+    {
+      "text": "Destinations",
+      "size": "28px"
+    },
+    {
+      "text": "Contact",
+      "size": "24px"
+    },
+    {
+      "text": "Writing and code",
+      "size": "24px"
+    },
+    {
+      "text": "Photography and music",
+      "size": "24px"
+    },
+    {
+      "text": "Projects and businesses",
+      "size": "24px"
+    }
+  ],
+  "links": [
+    {
+      "text": "LinkedIn",
+      "href": "https://www.linkedin.com/in/nino-chavez/"
+    },
+    {
+      "text": "Email",
+      "href": "mailto:nino@ninochavez.co"
+    },
+    {
+      "text": "GitHub",
+      "href": "https://github.com/nino-chavez"
+    },
+    {
+      "text": "Signal Dispatch",
+      "href": "https://ninochavez.co/blog"
+    },
+    {
+      "text": "Photography",
+      "href": "https://ninochavez.co/photography?src=links"
+    },
+    {
+      "text": "Instagram",
+      "href": "https://www.instagram.com/nino.chavez.photo/"
+    },
+    {
+      "text": "SoundCloud",
+      "href": "https://soundcloud.com/ni-no-cha-vez"
+    },
+    {
+      "text": "Rally HQ",
+      "href": "https://rallyhq.app/"
+    },
+    {
+      "text": "Let’s Pepper",
+      "href": "https://letspepper.com/"
+    },
+    {
+      "text": "Flickday Media",
+      "href": "https://flickdaymedia.com/"
+    },
+    {
+      "text": "Signal X Studio",
+      "href": "https://signalx.studio/"
+    }
+  ]
+}
