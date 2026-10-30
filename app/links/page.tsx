@@ -36,7 +36,7 @@ const destinationGroups = [
       {
         name: "Signal Dispatch",
         description: "My writing: essays, guides, presentations, and fiction.",
-        href: "/blog",
+        href: "https://ninochavez.co/blog",
       },
     ],
   },
@@ -125,7 +125,8 @@ export default async function LinksPage({
                   "tracksSource" in destination && destination.tracksSource
                     ? `${destination.href}?src=${gallerySource}`
                     : destination.href;
-                const opensInNewTab = href.startsWith("http");
+                const opensInNewTab =
+                  href.startsWith("http") && !href.startsWith("https://ninochavez.co/");
 
                 return (
                   <li key={destination.name}>

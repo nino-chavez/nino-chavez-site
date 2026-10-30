@@ -42,7 +42,8 @@ for (const width of [1440, 390]) {
         }
         await expect(page.locator("body")).toHaveCSS("background-color", "rgb(255, 253, 249)");
         await expect(page.locator("body")).toHaveCSS("font-family", /Inter/);
-        await expect(page.locator("#main h1").first()).toHaveCSS("font-family", /Schibsted/);
+        // Embedded session evidence keeps its source typography; the enclosing profile heading uses the shared system.
+        await expect(page.locator("#main h1:not(.demo-story-surface h1), .demo-record-context__header h2").first()).toHaveCSS("font-family", /Schibsted/);
         await expect(page.locator(".profile-header")).toBeVisible();
         await expect(page.locator(".profile-header__wordmark")).toHaveText("Nino Chavez");
         const navigation = page.locator(".profile-header nav");

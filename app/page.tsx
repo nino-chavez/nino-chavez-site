@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { identity, personId, personSchemaCore, positions } from "./career";
 
 export const metadata = {
@@ -76,7 +77,7 @@ export default function Home() {
       >
         <div className="profile-home__section-heading">
           <h2 id="profile-projects-title">Selected work</h2>
-          <a href="/work">View all projects</a>
+          <Link href="/work">View all projects</Link>
         </div>
         <ol className="profile-home__project-grid">
           <li className="profile-project">
@@ -86,13 +87,12 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               tabIndex={-1}
-              aria-hidden="true"
             >
               <img
                 src="/work/minder.jpg"
-                alt=""
-                width="800"
-                height="510"
+                alt="Minder app preview showing a fictional sample day"
+                width="590"
+                height="1278"
               />
             </a>
             <div className="profile-project__copy">
@@ -120,13 +120,12 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               tabIndex={-1}
-              aria-hidden="true"
             >
               <img
                 src="/work/rally-hq.webp"
-                alt=""
-                width="1280"
-                height="720"
+                alt="Rally HQ tournament interface"
+                width="1400"
+                height="875"
                 loading="lazy"
               />
             </a>
@@ -152,13 +151,12 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               tabIndex={-1}
-              aria-hidden="true"
             >
               <img
                 src="/work/rotation.png"
-                alt=""
-                width="1280"
-                height="720"
+                alt="The Rotation schedule and must-watch match cards"
+                width="1100"
+                height="820"
                 loading="lazy"
               />
             </a>
@@ -197,11 +195,11 @@ export default function Home() {
             shoot volleyball through Flickday Media, publish Signal Dispatch, and
             keep a music practice on SoundCloud.
           </p>
+          <p className="profile-home__about-actions">
+            <Link href="/about">About</Link>
+            <a href="mailto:nino@ninochavez.co">Get in touch</a>
+          </p>
         </div>
-        <p className="profile-home__about-actions">
-          <a href="/about">About</a>
-          <a href="mailto:nino@ninochavez.co">Get in touch</a>
-        </p>
       </section>
     </div>
   );

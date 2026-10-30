@@ -12,6 +12,11 @@ test("phone navigation exposes Home, Links, and Email without a drawer", async (
   }
   await expect(navigation.locator("a:visible")).toHaveCount(3);
   await expect(page.locator(".menu-button, .navigation-dialog, [role=dialog]")).toHaveCount(0);
+  await navigation.getByRole("link", { name: "Links", exact: true }).tap();
+  await expect(page).toHaveURL(/\/links$/);
+  await expect(page.getByRole("heading", { name: "Links", exact: true })).toBeVisible();
+  await page.goBack();
+  await expect(page.locator("#profile-title")).toBeVisible();
 });
 
 test("phone home keeps the specialist destinations visible as ordinary document links", async ({ page }) => {
@@ -22,8 +27,8 @@ test("phone home keeps the specialist destinations visible as ordinary document 
     ["Writing", "https://ninochavez.co/blog/archive"],
     ["Photography", "https://ninochavez.co/photography/albums"],
   ] as const) {
-    const link = page.getByRole("link", { name, exact: true });
-    await expect(link).toBeVisible();
+    const link = page.locator(".profile-home__quick-links").getByRole("link", { name: new RegExp(`^${name}`) });
+    await expect(link).toBeInViewport();
     await expect(link).toHaveAttribute("href", href);
     expect(await link.evaluate((element) => element instanceof HTMLAnchorElement)).toBe(true);
   }
