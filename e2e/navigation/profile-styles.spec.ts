@@ -7,8 +7,16 @@ const representativeRoutes = [
   "/photography/coverage", "/missing-profile-page",
 ];
 
+const profileDestinations = [
+  ["Home", "/"],
+  ["Writing", "https://ninochavez.co/blog/archive"],
+  ["Photography", "https://ninochavez.co/photography/albums"],
+  ["Links", "/links"],
+  ["Email", "mailto:nino@ninochavez.co"],
+] as const;
+
 for (const width of [1440, 390]) {
-  test(`profile pages share the homepage style at ${width}px`, async ({ page, request }) => {
+  test(`profile pages share the Work in view shell at ${width}px`, async ({ page, request }) => {
     test.setTimeout(240_000);
     await page.setViewportSize({ width, height: 900 });
     const sitemap = await (await request.get("/sitemap.xml")).text();
@@ -33,10 +41,18 @@ for (const width of [1440, 390]) {
           await page.evaluate(() => window.scrollTo(0, 0));
         }
         await expect(page.locator("body")).toHaveCSS("background-color", "rgb(255, 253, 249)");
-        await expect(page.locator("#main h1").first()).toHaveCSS("font-family", /Georgia/);
-        await expect(page.locator("#main h1").first()).toHaveCSS("font-weight", "400");
+        await expect(page.locator("body")).toHaveCSS("font-family", /Inter/);
+        await expect(page.locator("#main h1").first()).toHaveCSS("font-family", /Schibsted/);
         await expect(page.locator(".profile-header")).toBeVisible();
-        await expect(page.locator(".profile-header nav a")).toHaveCount(3);
+        await expect(page.locator(".profile-header__wordmark")).toHaveText("Nino Chavez");
+        const navigation = page.locator(".profile-header nav");
+        const visibleDestinations = width > 720 ? profileDestinations : [
+          profileDestinations[0], profileDestinations[3], profileDestinations[4],
+        ];
+        for (const [name, href] of visibleDestinations) {
+          await expect(navigation.getByRole("link", { name, exact: true })).toHaveAttribute("href", href);
+        }
+        await expect(navigation.locator("a:visible")).toHaveCount(width > 720 ? 5 : 3);
         expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth), route).toBeLessThanOrEqual(1);
         const name = (route === "/" ? "home" : route.slice(1)).replace(/[^a-z0-9-]/gi, "-");
         await page.screenshot({ path: `outputs/profile-review/${test.info().project.name}/${width}/${name}.png`, fullPage: true, scale: "css" });
@@ -46,12 +62,14 @@ for (const width of [1440, 390]) {
   });
 }
 
-test("About keeps its reading measure and Guides keep distinct grid cells", async ({ page }) => {
+test("About keeps a readable measure inside the wider Work in view shell and Guides keep distinct grid cells", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/about");
   const paragraph = page.locator(".about-biography .about-lead");
   await expect(paragraph).toHaveCSS("font-weight", "400");
-  expect((await paragraph.boundingBox())?.width).toBeGreaterThan(550);
+  const paragraphWidth = (await paragraph.boundingBox())?.width;
+  expect(paragraphWidth).toBeGreaterThan(550);
+  expect(paragraphWidth).toBeLessThan(800);
   await page.goto("/learn");
   const firstGuide = page.locator(".learn-track-register a").first();
   const title = await firstGuide.locator(".learn-track-name").boundingBox();

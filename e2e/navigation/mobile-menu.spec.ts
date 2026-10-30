@@ -1,33 +1,46 @@
 import { expect, test } from "@playwright/test";
 
-for (const [label, anchor] of [["About", "about"], ["Projects", "projects"], ["Contact", "contact"]]) {
-  test(`${label} is visible on a phone and opens its section`, async ({ page }) => {
-    await page.goto("/");
-    const link = page.getByRole("navigation", { name: "Profile sections" }).getByRole("link", { name: label, exact: true });
-    await expect(link).toBeVisible();
-    await link.tap();
-    await expect(page).toHaveURL(new RegExp(`#${anchor}$`));
-    await expect(page.locator(`#${anchor}`)).toBeInViewport();
-    await expect(page.locator(".menu-button")).toHaveCount(0);
-  });
-}
-
-test("a deep project page returns to the personal page through the same local navigation", async ({ page }) => {
+test("phone navigation exposes Home, Links, and Email without a drawer", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  await page.getByRole("link", { name: "All projects", exact: true }).tap();
-  await expect(page).toHaveURL(/\/work$/);
-  const nav = page.getByRole("navigation", { name: "Profile sections" });
-  await expect(nav.getByRole("link")).toHaveCount(3);
-  await nav.getByRole("link", { name: "Contact", exact: true }).tap();
-  await expect(page).toHaveURL(/\/#contact$/);
-  await expect(page.locator("#contact")).toBeInViewport();
-  await page.goBack();
-  await expect(page).toHaveURL(/\/work$/);
+
+  const navigation = page.locator(".profile-header nav");
+  for (const [name, href] of [["Home", "/"], ["Links", "/links"], ["Email", "mailto:nino@ninochavez.co"]] as const) {
+    const link = navigation.getByRole("link", { name, exact: true });
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute("href", href);
+  }
+  await expect(navigation.locator("a:visible")).toHaveCount(3);
+  await expect(page.locator(".menu-button, .navigation-dialog, [role=dialog]")).toHaveCount(0);
 });
 
-test("profile Elsewhere links open the specialist archive and photo Events page", async ({ page }) => {
+test("phone home keeps the specialist destinations visible as ordinary document links", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  await expect(page.getByRole("link", { name: "Signal Dispatch", exact: true })).toHaveAttribute("href", "https://ninochavez.co/blog/archive");
-  await expect(page.getByRole("link", { name: "my photography site" })).toHaveAttribute("href", "https://ninochavez.co/photography/albums");
-  await expect(page.getByRole("navigation", { name: "Profile sections" })).not.toContainText("Writing");
+
+  for (const [name, href] of [
+    ["Writing", "https://ninochavez.co/blog/archive"],
+    ["Photography", "https://ninochavez.co/photography/albums"],
+  ] as const) {
+    const link = page.getByRole("link", { name, exact: true });
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute("href", href);
+    expect(await link.evaluate((element) => element instanceof HTMLAnchorElement)).toBe(true);
+  }
+});
+
+test("Work in view keeps the selected project previews loaded on phone", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+
+  for (const alt of [
+    "Minder app preview showing a fictional sample day",
+    "Rally HQ tournament interface",
+    "The Rotation schedule and must-watch match cards",
+  ]) {
+    const preview = page.locator(`img[alt="${alt}"]`);
+    await expect(preview).toBeVisible();
+    await expect.poll(() => preview.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true);
+  }
+  expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
 });
