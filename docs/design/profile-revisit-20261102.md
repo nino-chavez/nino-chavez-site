@@ -1,9 +1,36 @@
 # Profile page rethink — November 2, 2026
 
-design_intent: rethink
-status: research and three whole-page concepts required; no selection
+design_intent: refit
+status: Studio composition selected by Nino; color comparison pending
 
-## Operator correction
+## Studio selected; color refinement
+
+Nino selected **Studio** on November 2: “studio design but re-roll the color palette”. This is the named human composition selection after the three-concept comparison. The original Studio palette is not approved. Editorial and Living index remain preserved alternatives; their structures are not merged into Studio because the latest instruction selects its existing design and asks only for new colors.
+
+Current scope is a color refit of `public/__profile_review/rethink/studio.html`. Preserve every content node, destination, image treatment, font, size, spacing, sticky behavior, responsive rule, focus geometry and motion behavior. Change ground, sidebar/frame planes, text, actions, Photography accent and rules only. The original Studio appearance remains available without a palette query. The earlier research and comparison below are historical evidence, not a pending composition decision.
+
+### Color candidates
+
+- **Navy & apricot:** deep blue ground, apricot actions, ice-blue Photography accent. Test whether warm action links give the dark Studio more warmth without competing with the photographs.
+- **Porcelain & cobalt:** a light porcelain ground, strong cobalt actions, clay-red Photography accent. Test whether the selected Studio layout also works as a bright personal page.
+- **Mulberry & saffron:** wine-colored ground, golden actions, pale-blue Photography accent. Test a more expressive warm/cool relationship while preserving readable product screenshots.
+
+Color roles stay consistent: ground and sidebar distinguish navigation from content; body text and muted text retain hierarchy; warm/cobalt action color marks navigation and calls to action; the second accent names Photography and its destination. Underlines and focus outlines carry the same information without color alone. Images are never tinted, recolored, filtered or cropped.
+
+### Current surfaces
+
+- Studio introduction, Writing, Selected work and About in all three palettes, desktop1440 and phone390.
+- Original Studio as a baseline, plus320 narrow-screen and200% text checks.
+- Real navigation, keyboard focus and hover states; no new interactions or motion.
+- Working palette comparison at `http://127.0.0.1:8872/__profile_review/studio-colors.html`, with a section selector that aligns both viewports for comparison.
+
+Verification: the headless runner `scripts/profile-studio-palette-review.mjs` compares every palette to Original Studio at1440,390 and320. Body text, link destinations, image properties and the measured positions/sizes of all main sections and project rows are identical. All normal and focused contrast/accessibility scans passed. Keyboard focus remains3px, reduced motion remains effective and a biography paragraph doubles at200% without horizontal overflow. The comparison controls switch all palettes and align Introduction, Writing, Selected work and About in both frames. Parent opened the actual first views and whole-document captures before requesting one cold review. These local checks do not establish human usability or deploy a design.
+
+Cold review: the independent reader preferred Mulberry for the personal Studio job, with Navy more product-portfolio-like and Porcelain lighter but less distinctive. A retained finding was that the large cobalt Work title competed with Photography; large linked section titles now use the normal text color and retain their existing underline, returning to the action color on hover/focus. A second concern described the gold Work title as looking actionable; source confirms it really is a link to all Work, so that behavior is preserved, with the same quieter heading treatment. This is a visual judgment, not measured user preference. Parent’s recommendation is Mulberry & saffron; Nino’s palette choice is still pending.
+
+The palette CSS is local to this comparison and activated by a validated query parameter. No production styles, Blog, Photography or Yawn changes are part of this selection step.
+
+## Earlier operator correction
 
 Nino rejected Current, Apricot & ink, and Sage & cocoa: “none of these. rethink the profile page design against other profile pages that are more artful and blend function with color to afford design”.
 
@@ -72,7 +99,7 @@ Same representative states: first view, full document, primary navigation focus 
 ## Local comparison and review record
 
 - Working comparison: `http://127.0.0.1:8872/__profile_review/rethink.html`. Editorial, Studio and Living index are complete independent HTML compositions; Current is the actual local application. Rejected palette refits remain at the original review URL.
-- Source is limited to `public/__profile_review/`, this owned brief and `scripts/profile-rethink-review.mjs`. Production application source, global design record and other sites are unchanged.
+- Source is limited to `public/__profile_review/`, this owned brief and the local review scripts. Production application source, global design record and other sites are unchanged.
 - To reproduce: first run `SITE_VISIBILITY=public npm run dev -- --host 127.0.0.1 --port 8870` in one terminal, then `python3 scripts/profile-review-proxy.py` in another. The committed proxy binds only loopback port 8872, forwards GET/HEAD to 8870 and strips X-Frame-Options from local responses to permit comparison frames. Production security headers remain unchanged.
 - Repeatable headless checks: `node scripts/profile-rethink-review.mjs`, with optional `PROFILE_REVIEW_BASE_URL` and `PROFILE_REVIEW_OUTPUT` (absolute directory ending in `/`). The running local proxy/app pair is required. Default evidence goes to `.artifacts/profile-rethink/`.
 - Initial rendered testing caught stretched portraits, a narrow Studio project column, and enlarged-text overflow. Parent corrected image aspect handling, minimum grid sizes and wrapping, then recaptured the actual pages. No screenshot was cosmetically edited.
@@ -80,7 +107,7 @@ Same representative states: first view, full document, primary navigation focus 
 - The three authors ran through Operator with runtime receipts reporting gpt-5.6-terra, high effort. They wrote one isolated HTML each; parent integrated, tested and reviewed every full-page desktop/mobile render. Their source-only checks were not treated as visual acceptance.
 - Independent cold review (Operator dispatch, runtime receipt stored with the task) preferred Editorial on the six whole-page desktop/mobile captures. Its primary observation was balance: Editorial keeps the person and all three destinations legible, Studio reads as photography-led, and Living index makes Work dominant. Parent independently observed the same tradeoffs. Editorial destination labels were strengthened to explicit Explore/Read/Open actions. Studio’s image-led opening and the index’s folded sections are retained as deliberate comparative choices, not production recommendations; both retain direct first-view navigation to Writing and Photography. No human selection is implied.
 - Source-review fixes: body sizes now use rem; the enlarged-text assertion proves an actual biography paragraph doubles, then checks overflow. The framing proxy is committed with exact startup instructions. Editorial’s down-arrow Work route now scrolls to its real selected-work heading; the browser check exercises that action.
-- No selection has been recorded. This is a never-merge comparison branch and draft PR; implementation of a chosen design is a later change. Profile remains first; Yawn comparison work is retained next.
+- The original comparison ended awaiting a direction. Nino has since selected Studio; the current palette choice is recorded above. This remains a never-merge comparison branch and draft PR; implementation of a chosen design is a later change. Profile remains first; Yawn comparison work is retained next.
 
 ## Historical refit record — rejected
 

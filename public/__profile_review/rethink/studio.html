@@ -305,6 +305,13 @@
       }
     body { overflow-wrap:anywhere; } .stream > *, .photo-link, .photo-line { min-width:0; }
 </style>
+    <script>
+      const palette = new URLSearchParams(location.search).get("palette");
+      if (["navy", "porcelain", "mulberry"].includes(palette)) {
+        document.documentElement.dataset.studioPalette = palette;
+      }
+    </script>
+    <link rel="stylesheet" href="studio-palettes.css">
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>

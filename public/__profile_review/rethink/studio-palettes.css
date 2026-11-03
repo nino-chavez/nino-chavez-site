@@ -1,0 +1,46 @@
+/* Color-only alternatives for the selected Studio composition. */
+html[data-studio-palette="navy"] {
+  color-scheme: dark;
+  --ink: #192B3A;
+  --cream: #F5EEE4;
+  --pistachio: #F2AD85;
+  --lilac: #91D4D5;
+  --muted: #B8C5CE;
+  --rule: #536674;
+  --studio-rail: #142331;
+  --studio-frame: #11212D;
+}
+html[data-studio-palette="porcelain"] {
+  color-scheme: light;
+  --ink: #F1EDE4;
+  --cream: #233343;
+  --pistachio: #244CC2;
+  --lilac: #9A3C2B;
+  --muted: #566273;
+  --rule: #ADB6BA;
+  --studio-rail: #E5E7E2;
+  --studio-frame: #DFE4E2;
+}
+html[data-studio-palette="mulberry"] {
+  color-scheme: dark;
+  --ink: #3B2636;
+  --cream: #F8ECE1;
+  --pistachio: #EDCC78;
+  --lilac: #AECFE8;
+  --muted: #CFBFC9;
+  --rule: #7B6072;
+  --studio-rail: #30212E;
+  --studio-frame: #2B1E29;
+}
+html[data-studio-palette] .identity-rail { background: var(--studio-rail); }
+html[data-studio-palette] .photo-frame,
+html[data-studio-palette] .project-image { background: var(--studio-frame); }
+/* The skip link uses the inverted text/ground pair in all three palettes. */
+html[data-studio-palette] .skip-link:focus-visible {
+  color: var(--ink);
+  outline-color: var(--cream);
+}
+/* Large linked section titles use type weight for emphasis; color returns on interaction. */
+html[data-studio-palette] .section-heading a { color: var(--cream); }
+html[data-studio-palette] .section-heading a:hover,
+html[data-studio-palette] .section-heading a:focus-visible { color: var(--pistachio); }
