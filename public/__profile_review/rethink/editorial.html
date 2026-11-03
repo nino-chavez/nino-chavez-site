@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Nino Chavez</title>
+    <style>
+      @font-face {
+        font-family: "Schibsted";
+        src: url("/fonts/schibsted-grotesk-latin.woff2") format("woff2");
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: url("/fonts/inter-latin.woff2") format("woff2");
+        font-display: swap;
+      }
+
+      :root {
+        --paper: #f5f0e6;
+        --ink: #191817;
+        --cobalt: #263d87;
+        --persimmon: #d27d55;
+        --cream: #fffaf0;
+        --line: #bfb7a9;
+        --display: "Schibsted", Arial, sans-serif;
+        --reading: "Inter", Arial, sans-serif;
+        --italic: Georgia, "Times New Roman", serif;
+      }
+
+      * { box-sizing: border-box; }
+      body { overflow-wrap:anywhere; }
+      .hero > *, .route-strip > *, .project > * { min-width:0; }
+
+      html { scroll-behavior: auto; }
+
+      body {
+        margin: 0;
+
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--reading);
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+
+      a { color: inherit; }
+
+      a:focus-visible {
+        outline: 3px solid var(--ink);
+        outline-offset: 4px;
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 10;
+        top: 0.6rem;
+        left: 0.6rem;
+        transform: translateY(-160%);
+        padding: 0.7rem 0.9rem;
+        background: var(--cream);
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .skip-link:focus { transform: translateY(0); }
+
+      .shell { width: min(100% - 3rem, 80rem); margin: 0 auto; }
+
+      .site-header {
+        padding: 1.15rem 0 0;
+        color: var(--cobalt);
+      }
+
+      .site-header__inner {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding-block: 0.55rem;
+        border-top: 1px solid currentColor;
+      }
+
+      .wordmark {
+        flex: none;
+        font-family: var(--display);
+        font-size: 1.1rem;
+        font-weight: 750;
+        letter-spacing: -0.035em;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.2em;
+      }
+
+      .site-header nav,
+      .footer-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 0.15rem 1rem;
+      }
+
+      .site-header nav a,
+      .footer-nav a,
+      .about-actions a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.22em;
+      }
+
+      .site-header nav a { font-size: 0.92rem; }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.17fr) minmax(20rem, 0.83fr);
+        gap: clamp(2rem, 6vw, 7rem);
+        align-items: end;
+        padding: clamp(3.75rem, 9vw, 8.5rem) 0 clamp(3rem, 6vw, 5rem);
+      }
+
+      .hero-copy {
+        padding-bottom: clamp(0.25rem, 2vw, 2rem);
+      }
+
+      h1, h2, h3, p { margin-top: 0; }
+
+      h1 {
+        max-width: 7.2ch;
+        margin-bottom: clamp(1.6rem, 3.5vw, 3rem);
+        color: var(--cobalt);
+        font-family: var(--display);
+        font-size: clamp(4.35rem, 10.3vw, 10.75rem);
+        font-weight: 760;
+        letter-spacing: -0.08em;
+        line-height: 0.79;
+      }
+
+      .lede {
+        max-width: 37ch;
+        margin-bottom: 2rem;
+        font-family: var(--italic);
+        font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+        font-style: italic;
+        line-height: 1.42;
+      }
+
+      .hero-routes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem 1.25rem;
+      }
+
+      .hero-routes a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        color: var(--cobalt);
+        font-weight: 750;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.22em;
+      }
+
+      .portrait-field {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        min-height: clamp(25rem, 48vw, 39rem);
+        margin: 0;
+      }
+
+      .portrait-field::before {
+        position: absolute;
+        top: 8%;
+        right: -9%;
+        bottom: -4%;
+        left: 13%;
+        z-index: 0;
+        background: var(--persimmon);
+        content: "";
+      }
+
+      .portrait-field img {
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: min(100%, 31rem);
+        height: auto;
+        max-height: 39rem;
+        object-fit: contain;
+      }
+
+      .route-strip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid var(--ink);
+      }
+
+      .route-strip a {
+        min-height: 12.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1.25rem clamp(1rem, 2.5vw, 2.25rem);
+        color: var(--cream);
+        text-decoration: none;
+      }
+
+      .route-strip a:nth-child(1) { background: var(--cobalt); }
+      .route-strip a:nth-child(2) { background: var(--ink); }
+      .route-strip a:nth-child(3) { background: var(--persimmon); color: var(--ink); }
+
+      .route-strip a:focus-visible { outline:3px solid var(--cream); outline-offset:-6px; }
+      .route-strip a:last-child:focus-visible { outline-color:var(--ink); }
+
+      .route-strip strong {
+        font-family: var(--display);
+        font-size: clamp(2rem, 3.2vw, 3.5rem);
+        font-weight: 730;
+        letter-spacing: -0.055em;
+        line-height: 0.95;
+      }
+
+      .route-strip span {
+        max-width: 22ch;
+        font-size: 0.95rem;
+        line-height: 1.35;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.22em;
+      }
+
+      .work-section { padding: clamp(4.5rem, 10vw, 9rem) 0 0; }
+
+      .section-title {
+        display: grid;
+        grid-template-columns: 1fr minmax(0, 2fr);
+        gap: 1.5rem;
+        align-items: baseline;
+        margin-bottom: clamp(2rem, 5vw, 4rem);
+        border-top: 1px solid var(--ink);
+        padding-top: 0.7rem;
+      }
+
+      .section-title h2,
+      .about-title,
+      .photo-copy h2 {
+        margin: 0;
+        color: var(--cobalt);
+        font-family: var(--display);
+        font-size: clamp(2.3rem, 4.4vw, 4.7rem);
+        font-weight: 730;
+        letter-spacing: -0.065em;
+        line-height: 0.9;
+      }
+
+      .section-title a {
+        justify-self: start;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        color: var(--cobalt);
+        font-weight: 700;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.25em;
+      }
+
+      .project-list { display: grid; gap: clamp(4rem, 8vw, 8rem); }
+
+      .project {
+        display: grid;
+        align-items: center;
+        gap: clamp(1.5rem, 5vw, 5rem);
+      }
+
+      .project--minder { grid-template-columns: minmax(12rem, 0.69fr) minmax(18rem, 1.31fr); }
+      .project--rally { grid-template-columns: minmax(0, 1.55fr) minmax(16rem, 0.65fr); }
+      .project--rotation { grid-template-columns: minmax(16rem, 0.76fr) minmax(0, 1.24fr); }
+
+      .project-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 20rem;
+        text-decoration: none;
+      }
+
+      .project--minder .project-image { min-height: 34rem; background: var(--cobalt); padding: 1.5rem; }
+      .project--rally .project-image { min-height: 30rem; background: var(--persimmon); padding: clamp(1rem, 3vw, 2.5rem); }
+      .project--rotation .project-image { min-height: 28rem; background: var(--ink); padding: clamp(1rem, 3vw, 2.5rem); }
+
+      .project-image img {
+        display: block;
+        max-width: 100%;
+        max-height: 37rem;
+        object-fit: contain;
+      }
+
+      .project-copy { max-width: 38rem; }
+      .project-copy .kind { margin-bottom: 0.8rem; color: var(--cobalt); font-size: 0.92rem; font-weight: 700; }
+
+      .project h3 {
+        margin-bottom: 1rem;
+        font-family: var(--display);
+        font-size: clamp(2.1rem, 4.2vw, 4.2rem);
+        font-weight: 730;
+        letter-spacing: -0.06em;
+        line-height: 0.92;
+      }
+
+      .project h3 a { text-decoration-thickness: 2px; text-underline-offset: 0.18em; }
+      .project-copy > p:not(.kind):not(.caption) { max-width: 32ch; font-size: 1.08rem; }
+      .caption { margin-bottom: 0; color: #4e4941; font-size: 0.92rem; }
+
+      .photography-callout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(16rem, 0.75fr);
+        gap: clamp(1.5rem, 5vw, 5rem);
+        align-items: stretch;
+        margin-top: clamp(5rem, 10vw, 10rem);
+        padding: clamp(1.5rem, 4vw, 3rem) 0;
+        border-block: 1px solid var(--ink);
+      }
+
+      .photography-callout > a {
+        min-height: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--cobalt);
+      }
+
+      .photography-callout img { display: block; max-width: 100%; max-height: 28rem; object-fit: contain; }
+      .photo-copy { align-self: center; }
+      .photo-copy p { max-width: 26ch; margin: 1.4rem 0; font-family: var(--italic); font-size: 1.25rem; font-style: italic; }
+      .photo-copy a { color: var(--cobalt); font-weight: 750; text-decoration-thickness: 2px; text-underline-offset: 0.25em; }
+
+      .about-section {
+        display: grid;
+        grid-template-columns: minmax(13rem, 0.7fr) minmax(0, 1.3fr);
+        gap: clamp(2rem, 8vw, 9rem);
+        margin-top: clamp(5rem, 10vw, 10rem);
+        padding: clamp(4.5rem, 9vw, 8rem) 0;
+        background: var(--persimmon);
+      }
+
+      .about-section > * { width: min(100% - 1.5rem, 80rem); }
+      .about-section { padding-inline: max(1.5rem, calc((100vw - 80rem) / 2)); }
+      .about-title { color: var(--ink); }
+      .about-copy { max-width: 59ch; }
+      .about-copy p { margin-bottom: 1.45rem; font-size: clamp(1.05rem, 1.5vw, 1.23rem); }
+      .about-copy p:last-child { margin-bottom: 0; }
+      .about-actions { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-size: 1rem !important; font-weight: 750; }
+
+      footer {
+        padding: 1.1rem 0 2rem;
+        color: var(--cobalt);
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 1rem 2rem;
+        border-top: 1px solid var(--cobalt);
+        padding-top: 0.7rem;
+      }
+
+      .footer-inner > span { font-family: var(--display); font-weight: 750; letter-spacing: -0.035em; }
+      .footer-nav { justify-content: flex-start; }
+      .footer-nav a { font-size: 0.91rem; }
+
+      .external { white-space: normal; }
+      .external-mark { font-size: 0.76em; vertical-align: 0.18em; }
+      .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+      @media (hover: hover) {
+        .hero-routes a,
+        .section-title a,
+        .photo-copy a,
+        .site-header nav a,
+        .footer-nav a,
+        .about-actions a,
+        .project h3 a {
+          transition: color 160ms ease, text-decoration-thickness 160ms ease;
+        }
+
+        .hero-routes a:hover,
+        .section-title a:hover,
+        .photo-copy a:hover,
+        .site-header nav a:hover,
+        .footer-nav a:hover,
+        .about-actions a:hover,
+        .project h3 a:hover { color: #873b27; text-decoration-thickness: 3px; }
+        .route-strip a { transition: filter 160ms ease; }
+        .route-strip a:hover { filter: brightness(1.09); }
+      }
+
+      @media (max-width: 720px) {
+        .shell { width: min(100% - 2rem, 80rem); }
+        .site-header { padding-top: 0.6rem; }
+        .site-header__inner { display: block; }
+        .site-header nav { justify-content: flex-start; margin-top: 0.35rem; }
+        .hero { grid-template-columns: minmax(0,1fr); gap: 2.4rem; padding-top: 3.1rem; }
+        h1 { max-width: 6.7ch; font-size: clamp(4.1rem, 21vw, 7.6rem); }
+        .portrait-field { min-height: 20rem; max-height: 27rem; }
+        .portrait-field::before { top: 5%; right: 2%; bottom: -2%; left: 10%; }
+        .portrait-field img { max-height: 26rem; }
+        .route-strip { grid-template-columns: minmax(0,1fr); }
+        .route-strip a { min-height: 7.5rem; }
+        .section-title { grid-template-columns: 1fr; gap: 0.9rem; }
+        .project, .project--minder, .project--rally, .project--rotation, .photography-callout, .about-section { grid-template-columns: 1fr; }
+        .project--rally .project-image, .project--rotation .project-image { order: 0; }
+        .project--minder .project-image { min-height: 27rem; }
+        .project--rally .project-image, .project--rotation .project-image { min-height: 18rem; }
+        .project-image img { max-height: 28rem; }
+        .photography-callout > a { min-height: 15rem; }
+        .about-section { padding-inline: 1rem; }
+        .about-section > * { width: 100%; }
+        .footer-inner { display: block; }
+        .footer-nav { margin-top: 0.45rem; }
+      }
+
+      @media (max-width: 359px) {
+        .shell { width: min(100% - 1.25rem, 80rem); }
+        .site-header nav, .footer-nav { gap: 0.1rem 0.65rem; }
+        .site-header nav a { font-size: 0.85rem; }
+        h1 { font-size: 4rem; }
+        .lede { font-size: 1.18rem; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="wordmark" href="https://ninochavez.co/">Nino Chavez</a>
+        <nav aria-label="Primary navigation">
+          <a href="https://ninochavez.co/work">Work</a>
+          <a class="external" href="https://ninochavez.co/blog/archive" target="_blank" rel="noopener noreferrer">Writing <span class="external-mark" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+          <a class="external" href="https://ninochavez.co/photography/albums" target="_blank" rel="noopener noreferrer">Photography <span class="external-mark" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+          <a href="https://ninochavez.co/about">About</a>
+          <a href="mailto:nino@ninochavez.co">Email</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="shell hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <h1 id="page-title">Nino<br />Chavez</h1>
+          <p class="lede">I’m a product architect in Chicago. Outside work, I run volleyball events, take photographs, write, and DJ.</p>
+          <nav class="hero-routes" aria-label="Explore Nino’s work">
+            <a href="https://ninochavez.co/work">Work</a>
+            <a href="https://ninochavez.co/about">About</a>
+            <a href="mailto:nino@ninochavez.co">Email</a>
+          </nav>
+        </div>
+        <figure class="portrait-field">
+          <img src="/work/nino.jpg" width="156" height="156" alt="Portrait of Nino Chavez" />
+        </figure>
+      </section>
+
+      <nav class="route-strip" aria-label="Featured destinations">
+        <a href="#work-heading"><strong>Work</strong><span>Explore selected work ↓</span></a>
+        <a href="https://ninochavez.co/blog/archive" target="_blank" rel="noopener noreferrer"><strong>Writing</strong><span>Read Signal Dispatch ↗ <span class="visually-hidden">(opens in a new tab)</span></span></a>
+        <a href="https://ninochavez.co/photography/albums" target="_blank" rel="noopener noreferrer"><strong>Photography</strong><span>Open photo galleries ↗ <span class="visually-hidden">(opens in a new tab)</span></span></a>
+      </nav>
+
+      <section class="shell work-section" aria-labelledby="work-heading">
+        <div class="section-title">
+          <h2 id="work-heading">Selected work</h2>
+          <a href="https://ninochavez.co/work">View all projects</a>
+        </div>
+        <div class="project-list">
+          <article class="project project--minder">
+            <a class="project-image external" href="https://apps.apple.com/us/app/minder-your-day/id6803974428" target="_blank" rel="noopener noreferrer">
+              <img src="/work/minder.jpg" width="590" height="1278" alt="Minder app preview showing a fictional sample day" />
+              <span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
+            <div class="project-copy">
+              <p class="kind">iPhone app</p>
+              <h3><a class="external" href="https://apps.apple.com/us/app/minder-your-day/id6803974428" target="_blank" rel="noopener noreferrer">Minder <span class="external-mark" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+              <p>Activities, tasks, and selected calendars in one view of your day.</p>
+              <p class="caption">Published app preview; fictional sample day.</p>
+            </div>
+          </article>
+
+          <article class="project project--rally">
+            <a class="project-image external" href="https://rallyhq.app" target="_blank" rel="noopener noreferrer">
+              <img src="/work/rally-hq.webp" width="1400" height="875" alt="Rally HQ tournament interface" loading="lazy" />
+              <span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
+            <div class="project-copy">
+              <p class="kind">Web app</p>
+              <h3><a class="external" href="https://rallyhq.app" target="_blank" rel="noopener noreferrer">Rally HQ <span class="external-mark" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+              <p>Tournament registration, brackets, schedules, and live court scoring.</p>
+            </div>
+          </article>
+
+          <article class="project project--rotation">
+            <div class="project-copy">
+              <p class="kind">Website</p>
+              <h3><a class="external" href="https://therotation.tv" target="_blank" rel="noopener noreferrer">The Rotation <span class="external-mark" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+              <p>Find college volleyball matches and where to watch them.</p>
+            </div>
+            <a class="project-image external" href="https://therotation.tv" target="_blank" rel="noopener noreferrer">
+              <img src="/work/rotation.png" width="1100" height="820" alt="The Rotation schedule and must-watch match cards" loading="lazy" />
+              <span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
+          </article>
+        </div>
+
+        <section class="photography-callout" aria-labelledby="photography-heading">
+          <a class="external" href="https://ninochavez.co/photography/albums" target="_blank" rel="noopener noreferrer">
+            <img src="/work/photography.webp" alt="Volleyball photograph" loading="lazy" />
+            <span class="visually-hidden">Photography (opens in a new tab)</span>
+          </a>
+          <div class="photo-copy">
+            <h2 id="photography-heading">Photography</h2>
+            <p>Volleyball and event galleries.</p>
+            <a class="external" href="https://ninochavez.co/photography/albums" target="_blank" rel="noopener noreferrer">Open Photography <span class="external-mark" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+          </div>
+        </section>
+      </section>
+
+      <section class="about-section" aria-labelledby="about-heading">
+        <h2 class="about-title" id="about-heading">A little about me</h2>
+        <div class="about-copy">
+          <p>I started in software engineering, moved through architecture and consulting, and now work as a Product Architect at commerce.com. I still prefer the part where a decision becomes a working system.</p>
+          <p>Outside the day job, I run Let’s Pepper, build and operate Rally HQ, shoot volleyball through Flickday Media, publish Signal Dispatch, and keep a music practice on SoundCloud.</p>
+          <p class="about-actions"><a href="https://ninochavez.co/about">About</a><a href="mailto:nino@ninochavez.co">Get in touch</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell footer-inner">
+        <span>Nino Chavez</span>
+        <nav class="footer-nav" aria-label="More about Nino">
+          <a href="https://ninochavez.co/work">Work</a>
+          <a href="https://ninochavez.co/demos">Sessions</a>
+          <a href="https://ninochavez.co/learn">Learn</a>
+          <a class="external" href="https://ninochavez.co/blog/archive" target="_blank" rel="noopener noreferrer">Writing <span class="visually-hidden">(opens in a new tab)</span></a>
+          <a class="external" href="https://ninochavez.co/photography/albums" target="_blank" rel="noopener noreferrer">Photography <span class="visually-hidden">(opens in a new tab)</span></a>
+          <a href="https://ninochavez.co/about">About</a>
+          <a href="https://ninochavez.co/links">Links</a>
+          <a class="external" href="https://soundcloud.com/ni-no-cha-vez" target="_blank" rel="noopener noreferrer">SoundCloud <span class="visually-hidden">(opens in a new tab)</span></a>
+          <a href="mailto:nino@ninochavez.co">Email</a>
+          <a href="https://ninochavez.co/privacy">Privacy</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

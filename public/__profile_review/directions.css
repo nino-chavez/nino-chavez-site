@@ -1,0 +1,111 @@
+/*
+ * Profile palette comparison — review-only stylesheet.
+ *
+ * Loaded by public/__profile_review/index.html, never by the application. Both
+ * directions share the exact same compositional refinements so a reviewer can
+ * judge palette and presentation independently.
+ */
+
+html[data-profile-study="apricot"] .profile-site {
+  --ground: #FBF1E4;
+  --surface: #F4E2CF;
+  --surface-muted: #F4E2CF;
+  --text: #28384A;
+  --ink: #28384A;
+  --muted: #5D6068;
+  --rule: #D3C4B5;
+  --action: #8B413F;
+  --action-quiet: #F4E2CF;
+  --bone: #FBF1E4;
+  --profile-ink: var(--text);
+  --profile-muted: var(--muted);
+  --profile-rule: var(--rule);
+}
+
+html[data-profile-study="sage"] .profile-site {
+  --ground: #EDF1E8;
+  --surface: #DFE6D7;
+  --surface-muted: #DFE6D7;
+  --text: #35312C;
+  --ink: #35312C;
+  --muted: #62665C;
+  --rule: #C4CEBD;
+  --action: #496650;
+  --action-quiet: #DFE6D7;
+  --bone: #EDF1E8;
+  --profile-ink: var(--text);
+  --profile-muted: var(--muted);
+  --profile-rule: var(--rule);
+}
+
+html:is([data-profile-study="apricot"], [data-profile-study="sage"]) .profile-site {
+  background: var(--ground);
+  color: var(--text);
+}
+
+html:is([data-profile-study="apricot"], [data-profile-study="sage"]) .profile-site :is(
+  .profile-header,
+  .profile-home,
+  .profile-footer
+) {
+  background: var(--ground);
+  color: var(--text);
+}
+
+/* A stronger frame lets the real product interface, rather than a treatment
+ * applied to it, carry the visual interest. The source images remain unchanged. */
+html:is([data-profile-study="apricot"], [data-profile-study="sage"]) .profile-home__projects {
+  border-top-width: 2px;
+}
+
+html:is([data-profile-study="apricot"], [data-profile-study="sage"]) .profile-project__image {
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  border: 0;
+  outline: 1px solid var(--rule);
+  outline-offset: -1px;
+  background: var(--surface);
+  box-shadow: none;
+}
+
+html:is([data-profile-study="apricot"], [data-profile-study="sage"]) .profile-project__image img {
+  object-fit: contain;
+}
+
+html:is([data-profile-study="apricot"], [data-profile-study="sage"]) .profile-project__image:hover {
+  outline-color: var(--action);
+  background: var(--action-quiet);
+}
+
+html:is([data-profile-study="apricot"], [data-profile-study="sage"]) .profile-project .profile-project__kind,
+html:is([data-profile-study="apricot"], [data-profile-study="sage"]) .profile-header nav a[aria-current="page"] {
+  color: var(--action);
+}
+
+html:is([data-profile-study="apricot"], [data-profile-study="sage"]) .profile-site a:focus-visible {
+  outline-color: var(--action);
+}
+
+@media (max-width: 720px) {
+  html:is([data-profile-study="apricot"], [data-profile-study="sage"]) .profile-project__image {
+    aspect-ratio: 3 / 2;
+    padding: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  html:is([data-profile-study="apricot"], [data-profile-study="sage"]) .profile-header__inner {
+    gap: 6px 12px;
+  }
+
+  html:is([data-profile-study="apricot"], [data-profile-study="sage"]) .profile-home__quick-links,
+  html:is([data-profile-study="apricot"], [data-profile-study="sage"]) .profile-home__about-actions {
+    column-gap: 14px;
+  }
+}
+
+/* Keep keyboard focus distinct from the inset presentation frame and hover. */
+html:is([data-profile-study="apricot"], [data-profile-study="sage"]) .profile-project__image:focus-visible {
+  outline: 3px solid var(--action);
+  outline-offset: 4px;
+}
