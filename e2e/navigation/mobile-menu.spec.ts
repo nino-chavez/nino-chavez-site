@@ -1,22 +1,22 @@
 import { expect, test } from "@playwright/test";
 
-test("phone navigation exposes Home, Links, and Email without a drawer", async ({ page }) => {
+test("phone Studio rail exposes the full home navigation without a drawer", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
 
-  const navigation = page.locator(".profile-header nav");
-  for (const [name, href] of [["Home", "/"], ["Links", "/links"], ["Email", "mailto:nino@ninochavez.co"]] as const) {
+  const navigation = page.locator("#studio .identity-rail nav");
+  for (const [name, href] of [["Work", "/work"], ["About", "/about"], ["Email", "mailto:nino@ninochavez.co"]] as const) {
     const link = navigation.getByRole("link", { name, exact: true });
     await expect(link).toBeVisible();
     await expect(link).toHaveAttribute("href", href);
   }
-  await expect(navigation.locator("a:visible")).toHaveCount(3);
+  await expect(navigation.locator("a:visible")).toHaveCount(5);
   await expect(page.locator(".menu-button, .navigation-dialog, [role=dialog]")).toHaveCount(0);
-  await navigation.getByRole("link", { name: "Links", exact: true }).tap();
-  await expect(page).toHaveURL(/\/links$/);
-  await expect(page.getByRole("heading", { name: "Links", exact: true })).toBeVisible();
+  await navigation.getByRole("link", { name: "About", exact: true }).tap();
+  await expect(page).toHaveURL(/\/about$/);
+  await expect(page.getByRole("heading", { name: "Nino Chavez", exact: true })).toBeVisible();
   await page.goBack();
-  await expect(page.locator("#profile-title")).toBeVisible();
+  await expect(page.locator("#studio .identity-heading")).toBeVisible();
 });
 
 test("phone home opens the independent sites in new tabs and keeps the profile open", async ({ page, context }) => {
@@ -32,7 +32,7 @@ test("phone home opens the independent sites in new tabs and keeps the profile o
     ["Writing", "https://ninochavez.co/blog/archive"],
     ["Photography", "https://ninochavez.co/photography/albums"],
   ] as const) {
-    const link = page.locator(".profile-home__quick-links").getByRole("link", { name: new RegExp(`^${name}`) });
+    const link = page.locator("#studio .identity-rail").getByRole("link", { name: new RegExp(`^${name}`) });
     await expect(link).toBeInViewport();
     await expect(link).toHaveAttribute("href", href);
     await expect(link).toHaveAttribute("target", "_blank");
@@ -43,12 +43,12 @@ test("phone home opens the independent sites in new tabs and keeps the profile o
     const popup = await popupPromise;
     await expect(popup).toHaveURL(href);
     await expect(page).toHaveURL(/\/$/);
-    await expect(page.locator("#profile-title")).toBeVisible();
+    await expect(page.locator("#studio .identity-heading")).toBeVisible();
     await popup.close();
   }
 });
 
-test("Work in view keeps the selected project previews loaded on phone", async ({ page }) => {
+test("Studio keeps the selected project previews loaded on phone", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
 
@@ -58,6 +58,7 @@ test("Work in view keeps the selected project previews loaded on phone", async (
     "The Rotation schedule and must-watch match cards",
   ]) {
     const preview = page.locator(`img[alt="${alt}"]`);
+    await preview.scrollIntoViewIfNeeded();
     await expect(preview).toBeVisible();
     await expect.poll(() => preview.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true);
     expect(await preview.evaluate((image) => image.closest("a")?.tabIndex)).toBeGreaterThanOrEqual(0);

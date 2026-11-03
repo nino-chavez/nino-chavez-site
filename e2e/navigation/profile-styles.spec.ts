@@ -7,24 +7,20 @@ const representativeRoutes = [
   "/photography/coverage", "/missing-profile-page",
 ];
 
-const profileDestinations = [
-  ["Home", "/"],
-  ["Writing", "https://ninochavez.co/blog/archive"],
-  ["Photography", "https://ninochavez.co/photography/albums"],
-  ["Links", "/links"],
-  ["Email", "mailto:nino@ninochavez.co"],
-] as const;
+const innerDestinations = [["Home", "/"], ["Writing", "https://ninochavez.co/blog/archive"], ["Photography", "https://ninochavez.co/photography/albums"], ["Links", "/links"], ["Email", "mailto:nino@ninochavez.co"]] as const;
+const studioDestinations = [["Work", "/work"], ["Writing", "https://ninochavez.co/blog/archive"], ["Photography", "https://ninochavez.co/photography/albums"], ["About", "/about"], ["Email", "mailto:nino@ninochavez.co"]] as const;
 
 for (const width of [1440, 390]) {
-  test(`profile pages share the Work in view shell at ${width}px`, async ({ page, request }) => {
+  test(`inner profile pages retain their existing shell at ${width}px`, async ({ page, request }) => {
     test.setTimeout(240_000);
     await page.setViewportSize({ width, height: 900 });
     const sitemap = await (await request.get("/sitemap.xml")).text();
     const indexedRoutes = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)]
       .map((match) => new URL(match[1]).pathname);
+    const innerRoutes = representativeRoutes.filter((route) => route !== "/");
     const routes = process.env.PROFILE_FULL_REVIEW
-      ? [...new Set([...representativeRoutes, ...indexedRoutes])]
-      : [...representativeRoutes,
+      ? [...new Set([...innerRoutes, ...indexedRoutes.filter((route) => route !== "/")])]
+      : [...innerRoutes,
         ...["/demos/", "/demos/applied/", "/learn/"].map((prefix) => indexedRoutes.find((route) => route.startsWith(prefix))).filter((route): route is string => !!route)];
 
     for (const route of routes) {
@@ -40,15 +36,15 @@ for (const width of [1440, 390]) {
           }
           await page.evaluate(() => window.scrollTo(0, 0));
         }
-        await expect(page.locator("body")).toHaveCSS("background-color", "rgb(255, 253, 249)");
+        await expect(page.locator("body")).toHaveCSS("background-color", "rgb(241, 237, 228)");
         await expect(page.locator("body")).toHaveCSS("font-family", /Inter/);
         // Embedded session evidence keeps its source typography; the enclosing profile heading uses the shared system.
         await expect(page.locator("#main h1:not(.demo-story-surface h1), .demo-record-context__header h2").first()).toHaveCSS("font-family", /Schibsted/);
         await expect(page.locator(".profile-header")).toBeVisible();
         await expect(page.locator(".profile-header__wordmark")).toHaveText("Nino Chavez");
         const navigation = page.locator(".profile-header nav");
-        const visibleDestinations = width > 720 ? profileDestinations : [
-          profileDestinations[0], profileDestinations[3], profileDestinations[4],
+        const visibleDestinations = width > 720 ? innerDestinations : [
+          innerDestinations[0], innerDestinations[3], innerDestinations[4],
         ];
         for (const [name, href] of visibleDestinations) {
           const specialist = name === "Writing" || name === "Photography";
@@ -66,6 +62,31 @@ for (const width of [1440, 390]) {
         await page.screenshot({ path: `outputs/profile-review/${test.info().project.name}/${width}/${name}-first.png`, scale: "css" });
       });
     }
+  });
+
+  test(`Studio home has its own rail and canvas at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/");
+    await page.evaluate(() => document.fonts.ready);
+    const studio = page.locator("#studio");
+    await expect(studio).toBeVisible();
+    await expect(page.locator(".profile-header, .profile-footer")).toHaveCount(0);
+    await expect(studio).toHaveCSS("background-color", "rgb(241, 237, 228)");
+    await expect(studio).toHaveCSS("font-family", /Studio Body/);
+    const rail = studio.locator(".identity-rail");
+    await expect(rail).toHaveCSS("background-color", "rgb(36, 76, 194)");
+    await expect(rail.locator(".identity-name")).toHaveCSS("font-family", /Studio Display/);
+    const navigation = rail.locator(".primary-nav");
+    for (const [name, href] of studioDestinations) {
+      const specialist = name === "Writing" || name === "Photography";
+      const link = navigation.getByRole("link", { name: specialist ? `${name} (opens in a new tab)` : name, exact: true });
+      await expect(link).toHaveAttribute("href", href);
+      if (specialist) await expect(link).toHaveAttribute("target", "_blank");
+    }
+    await expect(navigation.locator("a:visible")).toHaveCount(5);
+    await expect(studio.locator(".writing")).toHaveCSS("background-color", "rgb(229, 234, 244)");
+    await expect(studio.locator(".about-actions a[href^='mailto:']")).toHaveCSS("background-color", "rgb(36, 76, 194)");
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
   });
 }
 

@@ -294,12 +294,15 @@ legible.
 
 ## Interaction contract
 
-Global navigation is always available on profile routes. Work in view exposes
-Home, Writing, Photography, Links and Email. Phones show Home, Links and Email;
-the home introduction and footer retain the specialist destinations. The footer
-also exposes About, Projects and Privacy. There is no navigation drawer. See
+Global navigation is always available on profile routes. The Studio home exposes
+Work, Writing, Photography, About and Email in its identity rail and mobile
+header. Inner routes retain the Home, Writing, Photography, Links and Email
+header; phones show Home, Links and Email. Their footer also exposes About,
+Work and Privacy. The Studio footer provides Links, Learn, Sessions, SoundCloud
+and Privacy. There is no navigation drawer. See
+[ADR 0007](decisions/0007-profile-studio.md),
 [ADR 0006](decisions/0006-profile-work-in-view.md) and
-[the navigation contract](IA-NAVIGATION.md). Projects and Sessions search and
+[the navigation contract](IA-NAVIGATION.md). Work and Sessions search and
 filters write their state to the URL and preserve an accurate result count.
 Long records keep a route back to their controls. Reduced-motion preferences
 are respected.

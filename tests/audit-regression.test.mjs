@@ -528,16 +528,16 @@ test("C29 — the photography landing publishes its canonical URL", async () => 
 
 test("C30 — the selected profile shell exposes specialist destinations without a drawer", async () => {
   const html = await htmlFor("/");
-  const header = html.match(/<header\b[^>]*>[\s\S]*?<\/header>/)?.[0];
+  const header = html.match(/<nav\b[^>]*class="primary-nav"[^>]*>[\s\S]*?<\/nav>/)?.[0];
   assert.ok(header);
   for (const [name, href] of [
-    ["Home", "/"],
+    ["Work", "/work"],
     ["Writing", "https://ninochavez.co/blog/archive"],
     ["Photography", "https://ninochavez.co/photography/albums"],
-    ["Links", "/links"],
+    ["About", "/about"],
     ["Email", "mailto:nino@ninochavez.co"],
   ]) {
-    assert.match(header, new RegExp(`href="${href.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[^>]*>${name}<`));
+    assert.match(header, new RegExp(`href="${href.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[^>]*>${name}(?:<|\\s)`));
   }
   assert.doesNotMatch(html, /site-navigation-dialog|menu-button/);
 });

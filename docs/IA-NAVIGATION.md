@@ -1,21 +1,25 @@
-# Independent profile navigation — October 30, 2026
+# Independent profile navigation — November 3, 2026
 
-[ADR 0006](decisions/0006-profile-work-in-view.md) records Nino’s selection of C — Work in view. Every route served by the profile app uses the same navigation. The blog and gallery keep their independent applications and styles.
+[ADR 0007](decisions/0007-profile-studio.md) records the selected Studio home. [ADR 0006](decisions/0006-profile-work-in-view.md) continues to govern inner Profile layouts. Blog and Photography keep their independent applications and styles.
+
+The Studio identity rail becomes a header on phones. Both sizes expose:
 
 ```text
-Nino Chavez (home)
-├── Home          /
+Nino Chavez (home) /
+├── Work          /work
 ├── Writing       https://ninochavez.co/blog/archive
 ├── Photography   https://ninochavez.co/photography/albums
-├── Links         /links
+├── About         /about
 └── Email         mailto:nino@ninochavez.co
 ```
 
-Phones show Home, Links and Email. Writing and Photography remain immediately available in the home introduction and in the footer. Links to these independent sites open in new tabs, preserving their own styles and navigation. The profile-owned coverage inquiry stays in the current tab. The current Home or Links destination has an active-page indication.
+The home footer contains Links, Learn, Sessions, SoundCloud and Privacy. The Work page title and inner footer use Work, matching the selected home link.
 
-The footer contains About, Projects, Links, Writing, Photography, Email and Privacy. Existing home anchors (`#about`, `#projects`, `#contact`), deep links, query parameters, detail routes, private boundaries and canonical URLs remain supported. Projects retains its process and guide links. Search remains available at its existing route and in collection controls. There is no navigation drawer.
+Inner Profile routes retain their Home, Writing, Photography, Links and Email header; phones show Home, Links and Email. Their footer contains About, Work, Links, Writing, Photography, Email and Privacy. Current Home or Links destinations have an active-page indication.
 
-The older contracts below preserve historical route and interaction rationale. They do not override ADR 0006’s homepage or navigation decision. Their naming, search, state and content-ownership rules continue to apply where the current decision does not supersede them.
+Writing and Photography links open in new tabs. The profile-owned coverage inquiry stays in the current tab. Existing home anchors (`#about`, `#projects`, `#contact`), deep links, query parameters, detail routes, private boundaries and canonical URLs remain supported. Work retains its process and guide links. Search remains available at its existing route and in collection controls. There is no navigation drawer.
+
+The older contracts below preserve historical rationale. They do not override ADR 0007’s home navigation or ADR 0006’s inner navigation. Their naming, search, state and content-ownership rules continue to apply where these decisions do not supersede them.
 
 ## Historical navigation contract
 
