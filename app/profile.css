@@ -6,19 +6,20 @@
   font-display: swap;
 }
 
-/* Work in view, selected October 30, 2026. Shared by every profile route. Specialist applications own
+/* Porcelain & cobalt profile tokens. Interior layouts retain Work in view; the
+ * selected Studio homepage is scoped in studio.css. Specialist applications own
  * /blog and /photography; they do not load this shell or stylesheet. */
 .profile-site {
-  --ground: #fffdf9;
-  --surface: #fffdf9;
-  --surface-muted: #f3eee6;
-  --text: #24211e;
-  --ink: #24211e;
-  --muted: #635b54;
-  --rule: #d9d2c8;
-  --action: #684c3b;
-  --action-quiet: #f3eee6;
-  --bone: #fffdf9;
+  --ground: #F1EDE4;
+  --surface: #F1EDE4;
+  --surface-muted: #E5EAF4;
+  --text: #233343;
+  --ink: #233343;
+  --muted: #566273;
+  --rule: #CDBBB0;
+  --action: #244CC2;
+  --action-quiet: #E5EAF4;
+  --bone: #F1EDE4;
   --reading: var(--font);
   --display: "Schibsted Grotesk", var(--font);
   --hero: var(--display);
@@ -30,7 +31,7 @@
   --profile-rule: var(--rule);
   background: var(--ground);
   font-family: var(--reading);
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.58;
 }
 
@@ -166,7 +167,7 @@
 .profile-site #main .about-biography { grid-template-columns: minmax(0, 1fr) 190px; gap: 40px; }
 .profile-site #main :is(.about-prose p, .about-prose .about-lead, .privacy-copy p, .privacy-copy .privacy-lead, .about-operating-model) {
   color: var(--text);
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.58;
@@ -198,7 +199,7 @@
 .profile-site #main .work-entry--text .work-description { grid-column: 1 / -1; }
 .profile-site #main .work-identity { padding: 0; }
 .profile-site #main .work-identity h3 { max-width: none; }
-.profile-site #main .work-description > p:first-child { font-size: 18px; }
+.profile-site #main .work-description > p:first-child { font-size: 1.125rem; }
 .profile-site #main .building-resources { gap: 32px; }
 .profile-site #main .building-action { font-weight: 400; text-decoration: underline; }
 .profile-site #main .library-controls { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -375,7 +376,7 @@
   .profile-home__intro > img { grid-column: 1; grid-row: 1; width: 68px; height: 68px; }
   .profile-home__identity { display: contents; }
   .profile-site #main .profile-home h1 { grid-column: 2; grid-row: 1; align-self: center; font-size: 34px; }
-  .profile-home .profile-home__lede { grid-column: 1 / -1; margin: 0; font-size: 18px; }
+  .profile-home .profile-home__lede { grid-column: 1 / -1; margin: 0; font-size: 1.125rem; }
   .profile-home__quick-links { grid-column: 1 / -1; margin-top: 4px; gap: 16px 20px; }
   .profile-home__projects { padding-block: 30px 40px; }
   .profile-home__section-heading { display: grid; gap: 8px; margin-bottom: 24px; }
@@ -384,7 +385,7 @@
   .profile-home__about { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; padding-block: 36px 48px; }
   .profile-home__biography { gap: 20px; }
   .profile-site #main .links-opening__stage { grid-template-columns: minmax(0, 1fr); gap: 17px; padding-block: 28px; }
-  .profile-site #main .links-opening__lede { font-size: 18px; }
+  .profile-site #main .links-opening__lede { font-size: 1.125rem; }
   .profile-site #main .links-body { grid-template-columns: minmax(0, 1fr); gap: 38px; padding-block: 28px 55px; }
 }
 

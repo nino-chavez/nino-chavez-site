@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "./profile.css";
+import "./studio.css";
 import { SiteActivity } from "./components/SiteActivity";
-import { SiteFooter } from "./components/SiteFooter";
-import { SiteHeader } from "./components/SiteHeader";
+import { ProfileShell } from "./components/ProfileShell";
 
 const isPublicLaunch = process.env.SITE_VISIBILITY === "public";
 
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: "light",
-  themeColor: "#fffdf9",
+  themeColor: "#F1EDE4",
 };
 
 export default function RootLayout({
@@ -66,18 +66,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="profile-site">
-        <a className="skip-link" href="#main">
-          Skip to content
-        </a>
         {!isPublicLaunch ? (
           <div className="prototype-banner">
             Private art-direction review{" "}
             <span>Portfolio redesign — production remains unchanged</span>
           </div>
         ) : null}
-        <SiteHeader />
-        <main id="main">{children}</main>
-        <SiteFooter />
+        <ProfileShell>{children}</ProfileShell>
         {isPublicLaunch ? <SiteActivity /> : null}
       </body>
     </html>

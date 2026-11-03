@@ -1,16 +1,16 @@
 ---
 name: Nino Chavez — Personal profile
 colors:
-  ground: "#fffdf9"
-  text: "#24211e"
-  muted: "#635b54"
-  rule: "#d9d2c8"
-  action: "#684c3b"
-  surface-muted: "#f3eee6"
+  ground: "#F1EDE4"
+  text: "#233343"
+  muted: "#566273"
+  rule: "#CDBBB0"
+  action: "#244CC2"
+  surface-muted: "#E5EAF4"
 typography:
-  reading: '"Open Practice Body", Inter, system-ui, sans-serif'
-  headings: '"Schibsted Grotesk", Inter, system-ui, sans-serif'
-  controls: '"Open Practice Body", Inter, system-ui, sans-serif'
+  reading: 'Inter, system-ui, sans-serif'
+  headings: '"Studio Display", "Schibsted Grotesk", Inter, system-ui, sans-serif'
+  controls: 'Inter, system-ui, sans-serif'
 spacing:
   content: "1160px"
   desktop-gutter: "20px"
@@ -19,7 +19,7 @@ spacing:
 
 # Personal profile
 
-Nino selected **C — Work in view** on October 30 after finding the prior profile difficult to follow and read. [ADR 0006](docs/decisions/0006-profile-work-in-view.md) records the selection and the pieces retained from the alternatives. The [three-direction comparison](docs/design/concepts/profile-20261030/BRIEF.md) remains the visual reference. This direction applies to every profile route; the publication and gallery remain independent.
+Nino selected the Studio home on November 3. [ADR 0007](docs/decisions/0007-profile-studio.md) records the decision. Studio is the home composition only; inner profile routes retain their existing composition. Writing and Photography remain independent specialist applications.
 
 ## Reader and purpose
 
@@ -30,11 +30,13 @@ authored statements, availability, contact details and canonical destinations.
 
 ## Character
 
-Personal, readable, unhurried, direct and practical. Avoid oversized poster
-headings, dark editorial entrances, monospaced navigation, narrow prose
-columns and unrelated page themes. The homepage's density is the reference:
-one clear heading, readable paragraphs, ordinary links, thin warm rules.
-Library controls may be denser because people are searching and comparing.
+Studio is personal, artful and direct: a refined cobalt identity rail beside a
+porcelain canvas. The rail makes the routes and contact action immediate; the
+main stream gives photography, writing, work and biography their own rhythm.
+Use ink headings and natural media. The pale-blue writing field marks a change
+of medium without making another page template. Email actions use contrasting fills: porcelain on the cobalt rail, cobalt on the canvas.
+Inner routes remain readable, practical Work in view pages rather than being
+restyled as Studio.
 
 ## Surfaces
 
@@ -53,9 +55,9 @@ specialist entrances. Routing remains owned by the apex router.
 
 ## Shared system
 
-`app/profile.css` owns profile tokens and the `profile-site` scope.
-`app/globals.css` retains the existing component contracts. Home and directory composition also live in `app/profile.css`. Route CSS supplies controls and media framing; the profile layer
-normalizes the enclosing layouts, headings, spacing and reading widths.
+`app/profile.css` owns the shared profile tokens and inner-route scope.
+`app/studio.css` scopes Studio's home-only composition to `#studio`.
+`app/globals.css` retains the existing component contracts for inner routes.
 
 Interior rules use the `profile-site` and `#main` scope so route styles loaded
 during navigation cannot restore the previous theme. Media grid cells need
@@ -64,11 +66,17 @@ preview cannot cover the title. These are rendered regressions covered by the
 profile navigation tests. Capture the collection after its records appear,
 not while the Suspense fallback is visible.
 
-The shell aligns with the 1160px header and footer. Schibsted Grotesk carries headings; the existing Inter-backed face carries prose, inputs, filters and compact metadata. Headings use sentence case and a clear semibold weight. Body text is 17–18px; descriptions stay next to their linked names. Long prose stays within a comfortable reading measure.
-Links use underlines; controls retain visible focus and native semantics.
-Portraits use the approved photograph from the homepage.
+Studio uses Porcelain `#F1EDE4`, cobalt `#244CC2`, and text `#233343`.
+Body copy is Inter; the Studio Body and Studio Display aliases keep the home’s
+type roles local. Desktop home has the cobalt identity rail, `.identity-heading`
+home link, and main stream. On mobile the rail becomes the Studio header while
+retaining Work, Writing, Photography, About and Email. Links are underlined;
+controls retain visible focus and native semantics.
 
-Home shows a compact personal introduction, immediate writing and photography links, then three real project previews. The directory uses two groups across on desktop and a single reading column on phones. Keep names and descriptions together; do not restore the old distant action column.
+Home shows photography, writing, three real project previews, then a short
+biography. Preserve authored copy, facts and existing media. Specialist links
+open in a new tab. The project links are separate destinations and retain their
+own tab behavior. Inner routes keep their existing header and footer.
 
 Long text gets a full reading column. Biography facts may sit beside prose
 on desktop and stack below it on phones. Project imagery and embedded
@@ -78,7 +86,8 @@ sessions retain their native appearance inside the profile page.
 
 | Object | Action | States to check |
 | --- | --- | --- |
-| Profile | Read, follow a destination, return home | Desktop and narrow phone; long prose |
+| Studio home | Read, follow a destination, return home | Desktop rail; narrow mobile header; natural media |
+| Inner profile route | Read, search, filter or follow a destination | Existing header/footer and route-specific composition |
 | Library | Search, filter, open an item | Populated, filtered, no results, browser Back |
 | Detail | Read evidence, follow destination, return | Long titles, private/unavailable destinations, missing slug |
 | Inquiry | Read offer, fill fields | Initial form, required-field errors; no live test submission |
@@ -89,6 +98,6 @@ Writing and photography are separate sites even though they share the
 `/photography/**` destinations open in new tabs. The profile-owned coverage
 inquiry at `/photography/coverage` stays in the current tab.
 
-Keep existing anchors, query parameters, breadcrumbs and return links.
-No new animation or scrolling behavior is introduced. Verification uses
-rendered desktop and phone captures plus the project's navigation suite.
+Keep existing query parameters, breadcrumbs and return links. Verification
+separates the Studio home shell from the inner shell and checks desktop/phone
+captures, no horizontal overflow, image loads and browser Back.
