@@ -106,6 +106,7 @@ try {
     }
     for(const section of ['writing','work','about','top']) {
       await page.locator('#position').selectOption(section);
+      await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
       for(const frame of page.frames().filter(f=>f.parentFrame())) {
         if(section==='top') await expect.poll(()=>frame.evaluate(()=>scrollY)).toBe(0);
         else await expect.poll(()=>frame.locator('.'+section).evaluate(e=>Math.abs(scrollY-Math.min(scrollY+e.getBoundingClientRect().top,document.documentElement.scrollHeight-innerHeight)))).toBeLessThan(2);
@@ -114,7 +115,7 @@ try {
     await page.screenshot({path:output+'comparison-'+application+'.png'});
   }
   await page.setViewportSize({width:320,height:844});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:output+'comparison-320.png'});
-  expect(errors).toEqual([]);records.push({comparison:true,bothApplications:true,bothFrameSectionsAlign:true,wrapper320:true,pageErrors:errors});await page.close();
+  expect(errors).toEqual([]);records.push({comparison:true,bothApplications:true,bothFrameSectionsAlign:true,reviewControlsRemainVisible:true,wrapper320:true,pageErrors:errors});await page.close();
 } finally {
   await browser.close();await writeFile(output+'checks.json',JSON.stringify(records,null,2)+'\n');
 }
