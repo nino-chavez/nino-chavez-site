@@ -103,3 +103,9 @@ html:is([data-profile-study="apricot"], [data-profile-study="sage"]) .profile-si
     column-gap: 14px;
   }
 }
+
+/* Keep keyboard focus distinct from the inset presentation frame and hover. */
+html:is([data-profile-study="apricot"], [data-profile-study="sage"]) .profile-project__image:focus-visible {
+  outline: 3px solid var(--action);
+  outline-offset: 4px;
+}
