@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>Nino Chavez</title>
+    <style>
+      @font-face {
+        font-family: "Schibsted Grotesk";
+        src: url("/fonts/schibsted-grotesk-latin.woff2") format("woff2");
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: Inter;
+        src: url("/fonts/inter-latin.woff2") format("woff2");
+        font-display: swap;
+      }
+
+      :root {
+        --ink: #1F2526;
+        --cream: #F3ECDD;
+        --pistachio: #CFDA95;
+        --lilac: #C7B7E5;
+        --muted: #B9B6AC;
+        --rule: rgba(243, 236, 221, 0.28);
+        --display: "Schibsted Grotesk", Arial, sans-serif;
+        --body: Inter, Arial, sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: auto; }
+      body {
+        min-width: 0;
+        margin: 0;
+        background: var(--ink);
+        color: var(--cream);
+        font-family: var(--body);
+        font-size: 16px;
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+        text-decoration-color: currentColor;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.18em;
+        transition: color 150ms ease, text-decoration-thickness 150ms ease;
+      }
+
+      a:hover {
+        color: var(--pistachio);
+        text-decoration-thickness: 2px;
+      }
+
+      a:focus-visible {
+        outline: 3px solid var(--pistachio);
+        outline-offset: 4px;
+        border-radius: 1px;
+        color: var(--pistachio);
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 10;
+        top: 0.75rem;
+        left: 0.75rem;
+        transform: translateY(-180%);
+        padding: 0.65rem 0.8rem;
+        background: var(--cream);
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .skip-link:focus { transform: translateY(0); }
+
+      .site-shell { display: grid; grid-template-columns: minmax(250px, 285px) minmax(0, 1fr); }
+
+      .identity-rail {
+        position: sticky;
+        top: 0;
+        display: flex;
+        height: 100vh;
+        min-height: 540px;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: clamp(1.5rem, 3vw, 3.5rem) clamp(1.25rem, 2.2vw, 2.6rem);
+        border-right: 1px solid var(--rule);
+      }
+
+      .rail-top { display: grid; gap: 1.35rem; }
+      .identity-heading { margin: 0; }
+      .identity-name {
+        display: inline-block;
+        width: fit-content;
+        color: var(--cream);
+        font-family: var(--display);
+        font-size: clamp(1.55rem, 2.6vw, 2.15rem);
+        font-weight: 700;
+        letter-spacing: -0.055em;
+        line-height: 0.92;
+        text-decoration: none;
+      }
+      .identity-name:hover { color: var(--pistachio); }
+
+      .portrait {
+        display: block;
+        width: min(156px, 55vw);
+        height: auto;
+        border: 1px solid var(--rule);
+      }
+
+      .lede {
+        max-width: 27ch;
+        margin: 0;
+        color: var(--cream);
+        font-size: 0.98rem;
+      }
+
+      .primary-nav ul,
+      .footer-nav ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .primary-nav ul { flex-direction: column; gap: 0.18rem; }
+      .primary-nav a {
+        display: block;
+        width: fit-content;
+        min-height: 44px;
+        padding: 0.55rem 0;
+        color: var(--pistachio);
+        font-size: 1.02rem;
+        font-weight: 700;
+      }
+      .primary-nav a[aria-current="page"] { text-decoration-thickness: 3px; }
+      .primary-nav .photo-route { color: var(--lilac); }
+      .primary-nav .photo-route:hover, .photo-route:focus-visible { color: var(--cream); }
+
+      .rail-note {
+        margin: 1.5rem 0 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+        line-height: 1.45;
+      }
+
+      main { min-width: 0; }
+      .stream { max-width: 1160px; margin: 0 auto; padding: clamp(1.25rem, 3.8vw, 4.5rem); }
+
+      .photography-opening {
+        display: grid;
+        min-height: min(810px, calc(100vh - 4rem));
+        align-content: end;
+        gap: 1rem;
+        padding-bottom: clamp(2rem, 5vw, 5rem);
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .photo-link {
+        display: block;
+        color: var(--cream);
+        text-decoration: none;
+      }
+      .photo-link:hover { color: var(--lilac); }
+      .photo-link:focus-visible { color: var(--lilac); outline-color: var(--lilac); }
+      .photo-frame {
+        display: grid;
+        min-height: clamp(270px, 55vw, 670px);
+        place-items: center;
+        overflow: hidden;
+        background: #182021;
+      }
+      .photo-frame img {
+        display: block;
+        width: 100%;
+        height:auto;
+        max-height: 670px;
+        object-fit: contain;
+      }
+      .photo-line { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+      .photo-line h2, .writing-heading, .section-heading, .about h2 {
+        margin: 0;
+        font-family: var(--display);
+        font-weight: 700;
+        letter-spacing: -0.06em;
+        line-height: 0.91;
+      }
+      .photo-line h2 { color: var(--lilac); font-size: clamp(2.3rem, 5.3vw, 5rem); }
+      .external-note { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
+
+      .writing {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(13rem, 0.65fr);
+        gap: clamp(1.5rem, 5vw, 5rem);
+        padding: clamp(4rem, 10vw, 9rem) 0;
+        border-bottom: 1px solid var(--rule);
+      }
+      .writing-heading { font-size: clamp(3.1rem, 9vw, 8rem); }
+      .writing-copy { align-self: end; max-width: 34ch; margin: 0; }
+      .writing-copy a { color: var(--pistachio); font-weight: 700; }
+
+      .work { padding: clamp(4rem, 9vw, 8rem) 0 0; }
+      .section-heading { margin-bottom: clamp(2.5rem, 5vw, 4.5rem); font-size: clamp(2.4rem, 5vw, 5.2rem); }
+      .section-heading a { color: var(--pistachio); }
+      .projects { display: grid; gap: clamp(5rem, 12vw, 10rem); }
+      .project { display: grid; align-items: center; gap: clamp(1.4rem, 5vw, 5rem); }
+      .project--minder { width:100%; grid-template-columns: minmax(190px, 0.42fr) minmax(0, 0.58fr); max-width: 790px; margin-left: auto; }
+      .project--rally { grid-template-columns: minmax(0, 0.7fr) minmax(230px, 0.3fr); }
+      .project--rotation { grid-template-columns: minmax(220px, 0.38fr) minmax(0, 0.62fr); max-width: 940px; }
+      .project-image {
+        display: grid;
+        min-height: 200px;
+        place-items: center;
+        border: 1px solid var(--rule);
+        background: #182021;
+      }
+      .project-image:focus-visible { outline-color: var(--pistachio); }
+      .project-image img { display: block; width: 100%; height:auto; max-height: 630px; object-fit: contain; }
+      .project--minder .project-image { justify-self: center; width: min(100%, 300px); }
+      .project--minder .project-image img { max-height: 610px; }
+      .project-copy { max-width: 37ch; }
+      .project-kind { margin: 0 0 0.7rem; color: var(--muted); font-size: 0.9rem; }
+      .project h3 { margin: 0; font-family: var(--display); font-size: clamp(2rem, 4vw, 4rem); letter-spacing: -0.055em; line-height: 0.93; }
+      .project h3 a { color: var(--cream); }
+      .project h3 a:hover, .project h3 a:focus-visible { color: var(--pistachio); }
+      .project p:not(.project-kind) { margin: 1rem 0 0; }
+      .project-caption { color: var(--muted); font-size: 0.9rem; }
+
+      .about {
+        max-width: 69ch;
+        margin: clamp(6rem, 14vw, 12rem) 0 clamp(4rem, 8vw, 7rem);
+        padding-top: clamp(2rem, 5vw, 4rem);
+        border-top: 1px solid var(--rule);
+      }
+      .about h2 { font-size: clamp(2.4rem, 5vw, 4.8rem); }
+      .about-copy { max-width: 60ch; margin-top: 2rem; }
+      .about-copy p { margin: 0 0 1.3rem; }
+      .about-actions { display: flex; flex-wrap: wrap; gap: 1rem 1.8rem; margin-top: 2rem !important; }
+      .about-actions a { display: inline-flex; min-height: 44px; align-items: center; color: var(--pistachio); font-weight: 700; }
+
+      .site-footer { padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+      .footer-name { margin: 0 0 1rem; font-family: var(--display); font-size: 1.3rem; font-weight: 700; letter-spacing: -0.04em; }
+      .footer-nav ul { flex-wrap: wrap; gap: 0.2rem 1.2rem; }
+      .footer-nav a { display: inline-flex; min-height: 44px; align-items: center; color: var(--cream); }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      @media (max-width: 760px) {
+        .site-shell { display: block; }
+        .identity-rail {
+          position: static;
+          display: grid;
+          height: auto;
+          min-height: 0;
+          grid-template-columns: auto 1fr;
+          column-gap: 1rem;
+          padding: 1.25rem;
+          border-right: 0;
+          border-bottom: 1px solid var(--rule);
+        }
+        .rail-top { display: contents; }
+        .identity-name { grid-column: 1; grid-row: 1; align-self: center; font-size: 1.8rem; }
+        .portrait { grid-column: 2; grid-row: 1; justify-self: end; width: 64px; }
+        .lede { grid-column: 1 / -1; grid-row: 2; max-width: 48ch; margin-top: 1.1rem; }
+        .primary-nav { grid-column: 1 / -1; grid-row: 3; margin-top: 1rem; }
+        .primary-nav ul { flex-flow: row wrap; gap: 0.15rem 1rem; }
+        .primary-nav a { min-height: 44px; padding: 0.55rem 0; }
+        .rail-note { display: none; }
+        .stream { padding: 1.25rem; }
+        .photography-opening { min-height: 0; padding-bottom: 3.75rem; }
+        .photo-frame { min-height: 240px; }
+        .photo-line { display: grid; gap: 0.3rem; }
+        .external-note { white-space: normal; }
+        .writing { grid-template-columns: 1fr; gap: 1.5rem; padding: 4rem 0; }
+        .projects { gap: 5rem; }
+        .project, .project--minder, .project--rally, .project--rotation { grid-template-columns: 1fr; max-width: none; margin-left: 0; }
+        .project--minder .project-image { width: min(80%, 300px); }
+        .project--rally .project-image { order: 0; }
+        .project-copy { max-width: 48ch; }
+        .about { margin-top: 6rem; }
+      }
+
+      @media (max-width: 350px) {
+        .stream, .identity-rail { padding-left: 1rem; padding-right: 1rem; }
+        .identity-name { font-size: 1.55rem; }
+        .primary-nav ul { column-gap: 0.75rem; }
+        .photo-line h2 { font-size: 2.25rem; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+      }
+    body { overflow-wrap:anywhere; } .stream > *, .photo-link, .photo-line { min-width:0; }
+</style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="site-shell">
+      <aside class="identity-rail" aria-label="Nino Chavez profile">
+        <div class="rail-top">
+          <h1 class="identity-heading"><a class="identity-name" href="https://ninochavez.co/" aria-current="page">Nino Chavez</a></h1>
+          <img class="portrait" src="/work/nino.jpg" alt="Portrait of Nino Chavez" width="156" height="156">
+          <p class="lede">I’m a product architect in Chicago. Outside work, I run volleyball events, take photographs, write, and DJ.</p>
+          <nav class="primary-nav" aria-label="Primary navigation">
+            <ul>
+              <li><a href="https://ninochavez.co/work">Work</a></li>
+              <li><a href="https://ninochavez.co/blog/archive" target="_blank" rel="noopener noreferrer">Writing <span class="visually-hidden">(opens in a new tab)</span></a></li>
+              <li><a class="photo-route" href="https://ninochavez.co/photography/albums" target="_blank" rel="noopener noreferrer">Photography <span class="visually-hidden">(opens in a new tab)</span></a></li>
+              <li><a href="https://ninochavez.co/about">About</a></li>
+              <li><a href="mailto:nino@ninochavez.co">Email</a></li>
+            </ul>
+          </nav>
+        </div>
+        <p class="rail-note">Writing and Photography open in their own sites.</p>
+      </aside>
+
+      <main id="main-content">
+        <div class="stream">
+          <section class="photography-opening" aria-labelledby="photography-title">
+            <a class="photo-link" href="https://ninochavez.co/photography/albums" target="_blank" rel="noopener noreferrer">
+              <span class="photo-frame"><img src="/work/photography.webp" alt="Volleyball photograph" width="1400" height="933"></span>
+              <span class="photo-line">
+                <h2 id="photography-title">Photography</h2>
+                <span class="external-note">Volleyball and event galleries <span class="visually-hidden">(opens in a new tab)</span></span>
+              </span>
+            </a>
+          </section>
+
+          <section class="writing" aria-labelledby="writing-title">
+            <h2 class="writing-heading" id="writing-title">Writing</h2>
+            <p class="writing-copy"><a href="https://ninochavez.co/blog/archive" target="_blank" rel="noopener noreferrer">Signal Dispatch <span class="visually-hidden">(opens in a new tab)</span></a><br>My writing: essays, guides, presentations, and fiction.</p>
+          </section>
+
+          <section class="work" aria-labelledby="work-title">
+            <h2 class="section-heading" id="work-title"><a href="https://ninochavez.co/work">Selected work</a></h2>
+            <div class="projects">
+              <article class="project project--minder">
+                <a class="project-image" href="https://apps.apple.com/us/app/minder-your-day/id6803974428" target="_blank" rel="noopener noreferrer">
+                  <img src="/work/minder.jpg" alt="Minder app preview showing a fictional sample day" width="590" height="1278" loading="lazy">
+                </a>
+                <div class="project-copy">
+                  <p class="project-kind">iPhone app</p>
+                  <h3><a href="https://apps.apple.com/us/app/minder-your-day/id6803974428" target="_blank" rel="noopener noreferrer">Minder <span class="visually-hidden">(opens in a new tab)</span></a></h3>
+                  <p>Activities, tasks, and selected calendars in one view of your day.</p>
+                  <p class="project-caption">Published app preview; fictional sample day.</p>
+                </div>
+              </article>
+
+              <article class="project project--rally">
+                <a class="project-image" href="https://rallyhq.app" target="_blank" rel="noopener noreferrer">
+                  <img src="/work/rally-hq.webp" alt="Rally HQ tournament interface" width="1400" height="875" loading="lazy">
+                </a>
+                <div class="project-copy">
+                  <p class="project-kind">Web app</p>
+                  <h3><a href="https://rallyhq.app" target="_blank" rel="noopener noreferrer">Rally HQ <span class="visually-hidden">(opens in a new tab)</span></a></h3>
+                  <p>Tournament registration, brackets, schedules, and live court scoring.</p>
+                </div>
+              </article>
+
+              <article class="project project--rotation">
+                <a class="project-image" href="https://therotation.tv" target="_blank" rel="noopener noreferrer">
+                  <img src="/work/rotation.png" alt="The Rotation schedule and must-watch match cards" width="1100" height="820" loading="lazy">
+                </a>
+                <div class="project-copy">
+                  <p class="project-kind">Website</p>
+                  <h3><a href="https://therotation.tv" target="_blank" rel="noopener noreferrer">The Rotation <span class="visually-hidden">(opens in a new tab)</span></a></h3>
+                  <p>Find college volleyball matches and where to watch them.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="about" aria-labelledby="about-title">
+            <h2 id="about-title">A little about me</h2>
+            <div class="about-copy">
+              <p>I started in software engineering, moved through architecture and consulting, and now work as a Product Architect at commerce.com. I still prefer the part where a decision becomes a working system.</p>
+              <p>Outside the day job, I run Let’s Pepper, build and operate Rally HQ, shoot volleyball through Flickday Media, publish Signal Dispatch, and keep a music practice on SoundCloud.</p>
+              <p class="about-actions"><a href="https://ninochavez.co/about">About</a><a href="mailto:nino@ninochavez.co">Get in touch</a></p>
+            </div>
+          </section>
+
+          <footer class="site-footer">
+            <p class="footer-name">Nino Chavez</p>
+            <nav class="footer-nav" aria-label="More destinations">
+              <ul>
+                <li><a href="https://ninochavez.co/links">Links</a></li>
+                <li><a href="https://ninochavez.co/learn">Learn</a></li>
+                <li><a href="https://ninochavez.co/demos">Sessions</a></li>
+                <li><a href="https://soundcloud.com/ni-no-cha-vez" target="_blank" rel="noopener noreferrer">SoundCloud <span class="visually-hidden">(opens in a new tab)</span></a></li>
+                <li><a href="https://ninochavez.co/privacy">Privacy</a></li>
+              </ul>
+            </nav>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
