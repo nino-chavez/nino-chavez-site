@@ -399,3 +399,9 @@
 .profile-site #studio .identity-rail .lede { line-height:1.55; }
 .profile-site #studio h3 { font-weight:700; }
 .profile-site #studio .site-footer { background:transparent; }
+
+/* Keep every identity destination reachable on short desktop windows. */
+@media (min-width:761px) {
+  .profile-site #studio .identity-rail { min-height:0; overflow-y:auto; gap:2rem; }
+  .profile-site #studio .rail-top, .profile-site #studio .rail-note { flex-shrink:0; }
+}

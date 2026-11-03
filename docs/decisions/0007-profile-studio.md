@@ -20,6 +20,8 @@ the linked `.identity-heading`, and the main content stream. Writing has a
 pale-blue field. Headings are ink, media stays natural, and email actions use contrasting fills: porcelain in the rail and cobalt on the canvas. The home body uses Inter through the Studio Body alias; Studio
 Display is reserved for its display role.
 
+The selected home uses **Work** for `/work`. Its page title, heading and inner footer use the same name. This replaces the earlier Projects label without changing the catalogue or its routes.
+
 ## Boundaries
 
 The Studio composition is home-only. Profile-wide Porcelain/cobalt tokens also apply to inner pages. Inner profile routes retain their existing Work in view

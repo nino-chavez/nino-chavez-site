@@ -322,7 +322,7 @@ test("renders the full-volume work and demos collections", async () => {
     htmlFor("/demos?q=no-such-demo"),
   ]);
 
-  assert.match(workHtml, /<h1>Projects<\/h1>/);
+  assert.match(workHtml, /<h1>Work<\/h1>/);
   const selectedHtml = await htmlFor("/work");
   assert.match(selectedHtml, /Selected work/);
   assert.match(selectedHtml, /href="\/work\?view=all"/);

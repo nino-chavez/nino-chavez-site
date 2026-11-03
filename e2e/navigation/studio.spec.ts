@@ -39,3 +39,16 @@ test("Photography affordance changes on hover and keyboard focus independently",
   await expect(heading).toHaveCSS("color", "rgb(36, 76, 194)");
   await expect(link).toHaveCSS("outline-style", "solid");
 });
+
+
+for (const height of [600, 520]) {
+  test(`Studio contact remains reachable in a ${height}px desktop window`, async ({ page }) => {
+    await page.setViewportSize({ width:1366, height });
+    await page.goto("/");
+    const email = page.locator('.primary-nav a[href^="mailto:"]');
+    await email.focus();
+    await expect(email).toBeFocused();
+    await expect(email).toBeInViewport();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
+  });
+}

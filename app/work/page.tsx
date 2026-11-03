@@ -9,7 +9,7 @@ import { BrowseAllWorkLink } from "../components/BrowseAllWorkLink";
 
 export const metadata = {
   alternates: { canonical: "/work" },
-  title: "Projects",
+  title: "Work",
   description:
     "Apps, websites, businesses, and the work behind them, by Nino Chavez.",
 };
@@ -21,7 +21,7 @@ export default async function WorkPage({ searchParams }: { searchParams: Promise
     <div className="work-page work-atlas-page building-page">
       <header className="building-page__header building-wrap">
         <div>
-          <h1>Projects</h1>
+          <h1>Work</h1>
           <p>Apps, websites, businesses, and the work behind them.</p>
         </div>
         {catalogue ? <Link className="building-action" href="/work">Back to selected work <span aria-hidden="true">→</span></Link> : <BrowseAllWorkLink />}
