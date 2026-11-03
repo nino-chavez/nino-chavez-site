@@ -59,7 +59,30 @@ try {
     for(const selector of ['.skip-link','.primary-nav a[href^="mailto:"]','.about-actions a[href^="mailto:"]','.photo-link']) {
       const link=page.locator(selector);await link.focus();await expect(link).toBeFocused();await expect(link).toHaveCSS('outline-width','3px');expect(await audit(page)).toEqual([]);
     }
-    await page.locator('.photo-link').hover();
+    const photoLink=page.locator('.photo-link');
+    await photoLink.evaluate(e=>e.blur());
+    await page.mouse.move(0,0);
+    await expect(photoLink).not.toBeFocused();
+    await expect(page.locator('.photo-line h2')).toHaveCSS('color','rgb(35, 51, 67)');
+    await photoLink.hover();
+    await expect(page.locator('.photo-line h2')).toHaveCSS('color','rgb(36, 76, 194)');
+    // Negative control: remove the hover selector while preserving keyboard focus styling.
+    const originalHoverSelector=await page.evaluate(()=>{
+      const rule=[...document.styleSheets].flatMap(sheet=>[...sheet.cssRules]).find(rule=>rule.selectorText?.includes('.photo-link:hover .photo-line h2'));
+      if(!rule) throw new Error('Missing Photography hover rule');
+      const original=rule.selectorText;
+      rule.selectorText=original.split(',').filter(selector=>!selector.includes(':hover')).join(',');
+      return original;
+    });
+    try {
+      await expect(page.locator('.photo-line h2')).toHaveCSS('color','rgb(35, 51, 67)');
+    } finally {
+      await page.evaluate(original=>{
+        const rule=[...document.styleSheets].flatMap(sheet=>[...sheet.cssRules]).find(rule=>rule.selectorText===original.split(',').filter(selector=>!selector.includes(':hover')).join(',').trim());
+        if(!rule) throw new Error('Cannot restore Photography hover rule');
+        rule.selectorText=original;
+      },originalHoverSelector);
+    }
     await expect(page.locator('.photo-line h2')).toHaveCSS('color','rgb(36, 76, 194)');
     expect(await page.locator('img').evaluateAll(es=>es.every(e=>getComputedStyle(e).filter==='none'))).toBe(true);
     expect(await page.locator('a').evaluateAll(es=>es.every(e=>getComputedStyle(e).transitionDuration.split(',').every(v=>parseFloat(v)<=.01)))).toBe(true);
@@ -71,7 +94,7 @@ try {
       await page.screenshot({path:output+'refined-enlarged.png',fullPage:true,animations:'disabled'});
     }
     expect(errors).toEqual([]);
-    records.push({width,sourceTextLinksImagesFontsUnchanged:true,noOverflow:true,normalAndFourFocusStateScansPass:true,colorSurfaces:true,photoHover:true,reducedMotion:true,enlargedText:width===390});
+    records.push({width,sourceTextLinksImagesFontsUnchanged:true,noOverflow:true,normalAndFourFocusStateScansPass:true,colorSurfaces:true,photoHover:true,hoverNegativeControl:true,reducedMotion:true,enlargedText:width===390});
     await page.close();
   }
   const page=await browser.newPage({viewport:{width:1440,height:1100}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
