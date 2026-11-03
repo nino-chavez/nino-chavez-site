@@ -43,7 +43,7 @@ restyled as Studio.
 | Surface | Routes | Preserve |
 | --- | --- | --- |
 | Personal pages | `/`, `/about`, `/now`, `/links`, `/cv` | Biography, authored claims, profile links, CV print behavior |
-| Projects | `/work`, query-filtered catalogue, `/work/:slug` | Search, filters, availability, media and destinations |
+| Work | `/work`, query-filtered catalogue, `/work/:slug` | Search, filters, availability, media and destinations |
 | Sessions | `/demos`, `/demos/:slug`, `/demos/applied/:slug` | Library controls, session navigation, embedded evidence |
 | Guides | `/learn`, `/learn/:track` | Guide order, steps and linked examples |
 | Utilities | `/search`, `/privacy`, missing routes | Search results, empty state, policy, recovery links |
