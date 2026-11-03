@@ -44,3 +44,84 @@ html[data-studio-palette] .skip-link:focus-visible {
 html[data-studio-palette] .section-heading a { color: var(--cream); }
 html[data-studio-palette] .section-heading a:hover,
 html[data-studio-palette] .section-heading a:focus-visible { color: var(--pistachio); }
+
+/* Porcelain & cobalt: a deliberate surface/action hierarchy for Studio. */
+html[data-studio-palette="porcelain-refined"] {
+  color-scheme: light;
+  --ink: #F1EDE4;
+  --cream: #233343;
+  --pistachio: #244CC2;
+  --lilac: #9A3C2B;
+  --muted: #566273;
+  --rule: #CDBBB0;
+  --studio-rail: #244CC2;
+  --studio-frame: transparent;
+  --studio-wash: #E5EAF4;
+  --studio-light: #F8F5EE;
+  --studio-gutter: clamp(1.25rem, 3.8vw, 4.5rem);
+}
+html[data-studio-palette="porcelain-refined"] .identity-rail,
+html[data-studio-palette="porcelain-refined"] .identity-name,
+html[data-studio-palette="porcelain-refined"] .identity-name:hover,
+html[data-studio-palette="porcelain-refined"] .identity-rail .lede,
+html[data-studio-palette="porcelain-refined"] .primary-nav a,
+html[data-studio-palette="porcelain-refined"] .primary-nav .photo-route,
+html[data-studio-palette="porcelain-refined"] .primary-nav .photo-route:hover {
+  color: var(--studio-light);
+}
+html[data-studio-palette="porcelain-refined"] .identity-rail {
+  border-color: #8DA5E7;
+}
+html[data-studio-palette="porcelain-refined"] .rail-note { color: #DFE6FC; }
+html[data-studio-palette="porcelain-refined"] .portrait { border-color: #8DA5E7; }
+html[data-studio-palette="porcelain-refined"] .identity-rail a:focus-visible {
+  color: var(--studio-light);
+  outline-color: var(--studio-light);
+}
+html[data-studio-palette="porcelain-refined"] .primary-nav a:hover {
+  background: #FFFFFF14;
+}
+html[data-studio-palette="porcelain-refined"] .primary-nav a[href^="mailto:"] {
+  padding-inline: .8rem;
+  background: var(--studio-light);
+  color: var(--pistachio);
+}
+html[data-studio-palette="porcelain-refined"] .primary-nav a[href^="mailto:"]:focus-visible {
+  outline-color: var(--studio-light);
+  color: var(--pistachio);
+}
+html[data-studio-palette="porcelain-refined"] .photo-line h2 { color: var(--cream); }
+html[data-studio-palette="porcelain-refined"] .photo-link:hover .photo-line h2,
+html[data-studio-palette="porcelain-refined"] .photo-link:focus-visible .photo-line h2 {
+  color: var(--pistachio);
+}
+html[data-studio-palette="porcelain-refined"] .photo-link:focus-visible {
+  outline-color: var(--pistachio);
+}
+html[data-studio-palette="porcelain-refined"] .writing {
+  margin-inline: calc(-1 * var(--studio-gutter));
+  padding-inline: var(--studio-gutter);
+  background: var(--studio-wash);
+}
+html[data-studio-palette="porcelain-refined"] .about-actions a[href^="mailto:"] {
+  padding-inline: .8rem;
+  color: var(--studio-light);
+  background: var(--pistachio);
+}
+html[data-studio-palette="porcelain-refined"] .about-actions a[href^="mailto:"]:focus-visible {
+  color: var(--studio-light);
+  outline-color: var(--pistachio);
+}
+html[data-studio-palette="porcelain-refined"] ::selection {
+  background: var(--lilac);
+  color: var(--studio-light);
+}
+@media (max-width: 350px) {
+  html[data-studio-palette="porcelain-refined"] { --studio-gutter: 1rem; }
+}
+html[data-studio-palette="porcelain-refined"] .skip-link:focus-visible {
+  outline-color: var(--studio-light);
+}
+@media (min-width: 351px) and (max-width: 760px) {
+  html[data-studio-palette="porcelain-refined"] { --studio-gutter: 1.25rem; }
+}

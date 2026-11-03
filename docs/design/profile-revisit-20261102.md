@@ -1,9 +1,29 @@
 # Profile page rethink — November 2, 2026
 
 design_intent: refit
-status: Studio composition selected by Nino; color comparison pending
+status: Studio composition and Porcelain & cobalt selected; refined color application under review
 
-## Studio selected; color refinement
+## Porcelain & cobalt selected; application refinement
+
+Nino selected **Porcelain & cobalt**: “porcelain and cobalt but rethink where and how the colors get applied”. This supersedes the preceding palette recommendation. Studio remains the selected composition; no new structure, typography, image, content or destination is proposed.
+
+The refined treatment gives cobalt a larger, coherent job: the identity/navigation rail, interactive emphasis and contact actions. Porcelain remains the main content ground. Photography and product screenshots retain their source colors, with the grey image backplates removed. The large Photography heading returns to normal ink, with cobalt on hover/focus. A pale cobalt wash defines Writing as a reading section. Clay supports warm rules and text selection rather than assigning red to all Photography text. Underlines and visible focus remain alongside color.
+
+Keep the existing Studio grid, sticky rail, source wording, fonts, heading scale, native scrolling, image dimensions/contain behavior and motion. Two bounded presentation changes are intentional: the Writing surface extends to the main column edges while keeping its content aligned, and Email/Get in touch receive padded rectangular fills. No new controls or product behavior.
+
+## Surfaces
+
+- Previous versus refined application at desktop1440 and mobile390; narrow320 and200% text stress checks.
+- Introduction, Writing, Selected work and About, including contact, hover and keyboard-focus states.
+- Working comparison: `http://127.0.0.1:8872/__profile_review/studio-application.html`.
+
+Verification: `scripts/profile-studio-application-review.mjs` compares previous/refined pages at 1440, 390, 320 and 700px. Source body text, destinations, image dimensions/contain/filter properties, heading fonts and type scales match. The cobalt rail, pale-blue Writing field, normal-ink Photography title and cobalt photo hover are checked from rendered styles. Normal and four keyboard-focus accessibility scans pass at each width; all focus rings remain 3px. Reduced motion, actual 200% biography text, no horizontal overflow and aligned section controls in both comparison frames pass. Parent opened the actual whole desktop/mobile pages and representative Writing/Work/About states before requesting a cold visual review. These are browser/rendered checks, not human usability or deployment evidence.
+
+Cold rendered review preferred the refined application and found no material color fixes. Its observation was that the cobalt navigation field connects identity and wayfinding, the pale-blue Writing field echoes it, and porcelain leaves the photographs and product screenshots legible. Parent independently opened the actual frames. The existing desktop rail also remains at the top of the viewport during the rendered Writing, Work and About checks; this is tested behavior, separate from the reviewer’s still-image judgment. No usability or deployment approval is inferred.
+
+Blog, Photography and Yawn keep their own design. This comparison does not deploy the Profile. The historical palettes remain available for reference; the open question is color application within the selected palette.
+
+## Earlier Studio color refinement
 
 Nino selected **Studio** on November 2: “studio design but re-roll the color palette”. This is the named human composition selection after the three-concept comparison. The original Studio palette is not approved. Editorial and Living index remain preserved alternatives; their structures are not merged into Studio because the latest instruction selects its existing design and asks only for new colors.
 
@@ -42,7 +62,7 @@ Inspect original, working personal profile/portfolio pages at desktop and mobile
 
 Develop three structurally different whole-page Profile concepts using the same real Nino content and destinations. Color must clarify grouping, choices, current location and action. New typography, composition, image treatment and interaction are open. Preserve truth, privacy, source images, content ownership, useful URLs, accessibility and product functionality. Do not invent biography, testimonials, project facts, counts, app features or achievements.
 
-## Surfaces
+## Historical surfaces
 
 - Current Profile homepage, desktop and mobile baseline.
 - Three complete proposed homepages on desktop and mobile.
