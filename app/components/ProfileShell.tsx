@@ -26,8 +26,8 @@ export function ProfileShell({ children }: { children: ReactNode }) {
         <nav className="primary-nav" aria-label="Primary navigation">
           <ul>
             <li><Link href="/work">Work</Link></li>
-            <li><a href="https://ninochavez.co/blog/archive" target="_blank" rel="noopener noreferrer">Writing <span className="visually-hidden">(opens in a new tab)</span></a></li>
-            <li><a href="https://ninochavez.co/photography/albums" target="_blank" rel="noopener noreferrer">Photography <span className="visually-hidden">(opens in a new tab)</span></a></li>
+            <li><a href="https://ninochavez.co/blog/archive" target="_blank" rel="noopener noreferrer">Writing<span className="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://ninochavez.co/photography/albums" target="_blank" rel="noopener noreferrer">Photography<span className="visually-hidden"> (opens in a new tab)</span></a></li>
             <li><Link href="/about">About</Link></li>
             <li><a className="primary-nav__mail" href="mailto:nino@ninochavez.co">Email</a></li>
           </ul>

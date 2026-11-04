@@ -172,7 +172,7 @@ test("server-renders the selected Masthead home", async () => {
   const statement = html.match(/<p class="statement">[\s\S]*?<\/p>/)?.[0];
   assert.ok(statement, "home should include the authored statement");
   assert.equal(
-    statement.replace(/<span class="visually-hidden">[^<]*<\/span>/g, "").replace(/<[^>]+>/g, "").replace(/\s+([,.])/g, "$1"),
+    statement.replace(/<span class="visually-hidden">[^<]*<\/span>/g, "").replace(/<[^>]+>/g, ""),
     "I’m a product architect in Chicago. Outside work, I run volleyball events, take photographs, write, and DJ.",
   );
   for (const href of ["/work", "https://letspepper.com/", "https://ninochavez.co/photography/albums", "https://ninochavez.co/blog/archive", "https://soundcloud.com/ni-no-cha-vez"]) {

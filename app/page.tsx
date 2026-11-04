@@ -37,21 +37,21 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <section className="opening" aria-labelledby="photography-title">
         <div className="opening-copy">
-          <p className="statement">I’m a <Link href="/work">product architect</Link> in Chicago. Outside work, I <a href="https://letspepper.com/" target="_blank" rel="noopener noreferrer">run volleyball events <span className="visually-hidden">(opens in a new tab)</span></a>, <a href="https://ninochavez.co/photography/albums" target="_blank" rel="noopener noreferrer">take photographs <span className="visually-hidden">(opens in a new tab)</span></a>, <a href="https://ninochavez.co/blog/archive" target="_blank" rel="noopener noreferrer">write <span className="visually-hidden">(opens in a new tab)</span></a>, and <a href="https://soundcloud.com/ni-no-cha-vez" target="_blank" rel="noopener noreferrer">DJ <span className="visually-hidden">(opens in a new tab)</span></a>.</p>
+          <p className="statement">I’m a <Link href="/work">product architect</Link> in Chicago. Outside work, I <a href="https://letspepper.com/" target="_blank" rel="noopener noreferrer">run volleyball events<span className="visually-hidden"> (opens in a new tab)</span></a>, <a href="https://ninochavez.co/photography/albums" target="_blank" rel="noopener noreferrer">take photographs<span className="visually-hidden"> (opens in a new tab)</span></a>, <a href="https://ninochavez.co/blog/archive" target="_blank" rel="noopener noreferrer">write<span className="visually-hidden"> (opens in a new tab)</span></a>, and <a href="https://soundcloud.com/ni-no-cha-vez" target="_blank" rel="noopener noreferrer">DJ<span className="visually-hidden"> (opens in a new tab)</span></a>.</p>
           <p className="opening-note">Writing and Photography open in their own sites.</p>
         </div>
         <a className="photo-link" href="https://ninochavez.co/photography/albums" target="_blank" rel="noopener noreferrer">
           <img src="/work/photography.webp" alt="Volleyball photograph" width="1080" height="1621" fetchPriority="high" />
           <span className="photo-line">
             <h2 id="photography-title">Photography</h2>
-            <span className="external-note">Volleyball and event galleries <span className="visually-hidden">(opens in a new tab)</span></span>
+            <span className="external-note">Volleyball and event galleries<span className="visually-hidden"> (opens in a new tab)</span></span>
           </span>
         </a>
       </section>
 
       <section className="writing" aria-labelledby="writing-title">
         <h2 id="writing-title">Writing</h2>
-        <p><a href="https://ninochavez.co/blog/archive" target="_blank" rel="noopener noreferrer">Signal Dispatch <span className="visually-hidden">(opens in a new tab)</span></a><br />My writing: essays, guides, presentations, and fiction.</p>
+        <p><a href="https://ninochavez.co/blog/archive" target="_blank" rel="noopener noreferrer">Signal Dispatch<span className="visually-hidden"> (opens in a new tab)</span></a><br />My writing: essays, guides, presentations, and fiction.</p>
       </section>
 
       <section id="projects" className="work" aria-labelledby="work-title">
@@ -59,7 +59,7 @@ export default function Home() {
         <article className="project project--tall">
           <div className="project-copy">
             <p className="project-kind">iPhone app</p>
-            <h3><a href="https://apps.apple.com/us/app/minder-your-day/id6803974428" target="_blank" rel="noopener noreferrer">Minder <span className="visually-hidden">(opens in a new tab)</span></a></h3>
+            <h3><a href="https://apps.apple.com/us/app/minder-your-day/id6803974428" target="_blank" rel="noopener noreferrer">Minder<span className="visually-hidden"> (opens in a new tab)</span></a></h3>
             <p>Activities, tasks, and selected calendars in one view of your day.</p>
             <p className="project-caption">Published app preview; fictional sample day.</p>
           </div>
@@ -70,7 +70,7 @@ export default function Home() {
         <article className="project">
           <div className="project-copy">
             <p className="project-kind">Web app</p>
-            <h3><a href="https://rallyhq.app" target="_blank" rel="noopener noreferrer">Rally HQ <span className="visually-hidden">(opens in a new tab)</span></a></h3>
+            <h3><a href="https://rallyhq.app" target="_blank" rel="noopener noreferrer">Rally HQ<span className="visually-hidden"> (opens in a new tab)</span></a></h3>
             <p>Tournament registration, brackets, schedules, and live court scoring.</p>
           </div>
           <a className="project-image" href="https://rallyhq.app" target="_blank" rel="noopener noreferrer">
@@ -80,7 +80,7 @@ export default function Home() {
         <article className="project">
           <div className="project-copy">
             <p className="project-kind">Website</p>
-            <h3><a href="https://therotation.tv" target="_blank" rel="noopener noreferrer">The Rotation <span className="visually-hidden">(opens in a new tab)</span></a></h3>
+            <h3><a href="https://therotation.tv" target="_blank" rel="noopener noreferrer">The Rotation<span className="visually-hidden"> (opens in a new tab)</span></a></h3>
             <p>Find college volleyball matches and where to watch them.</p>
           </div>
           <a className="project-image" href="https://therotation.tv" target="_blank" rel="noopener noreferrer">
@@ -108,7 +108,7 @@ export default function Home() {
             <li><Link href="/links">Links</Link></li>
             <li><Link href="/learn">Learn</Link></li>
             <li><Link href="/demos">Sessions</Link></li>
-            <li><a href="https://soundcloud.com/ni-no-cha-vez" target="_blank" rel="noopener noreferrer">SoundCloud <span className="visually-hidden">(opens in a new tab)</span></a></li>
+            <li><a href="https://soundcloud.com/ni-no-cha-vez" target="_blank" rel="noopener noreferrer">SoundCloud<span className="visually-hidden"> (opens in a new tab)</span></a></li>
             <li><Link href="/privacy">Privacy</Link></li>
           </ul>
         </nav>

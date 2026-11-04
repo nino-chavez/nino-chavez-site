@@ -4,12 +4,13 @@
 .masthead-shell :is(h1, h2, h3, p, ul) { margin: 0; padding: 0; }
 .masthead-shell ul { list-style: none; }
 .masthead-shell img { display: block; max-width: 100%; height: auto; }
-.masthead-shell a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .16em; }
+.masthead-shell a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .16em; }
 .masthead-shell a:hover { color: var(--action); }
 .masthead-shell a:focus-visible { outline: 3px solid var(--action); outline-offset: 3px; }
 .masthead-shell main:focus { outline: none; }
 ::selection { background: var(--action); color: var(--ground); }
-.masthead-skip { z-index: 50; }
+.profile-site .masthead-skip { transform: translateY(-300%); }
+.profile-site .masthead-skip:focus { transform: translateY(0); }
 .masthead-shell .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
 #masthead .mast { padding: 14px var(--gutter) 0; }
@@ -30,10 +31,9 @@
 #masthead .photo-link { position: relative; display: block; height: 62vh; min-height: 500px; overflow: hidden; color: #fff; text-decoration: none; }
 #masthead .photo-link img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 38%; transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
 #masthead .photo-link:hover img { transform: scale(1.02); }
-#masthead .photo-line { position: absolute; inset: auto 0 0; display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; padding: 22px var(--gutter); background: linear-gradient(transparent, rgba(7, 7, 15, .72)); }
+#masthead .photo-line { position: absolute; inset: auto 0 0; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 22px var(--gutter); background: linear-gradient(transparent, rgba(7, 7, 15, .72)); }
 #masthead #main .photo-line h2 { color: inherit; font: 400 clamp(44px, 6.4vw, 104px)/.98 var(--poster); letter-spacing: 0; text-decoration: underline; text-decoration-thickness: .04em; text-transform: uppercase; text-underline-offset: .1em; }
 #masthead #main .photo-link:is(:hover, :focus-visible) .photo-line h2 { color: var(--action); }
-#masthead .external-note { text-align: right; }
 
 #masthead #main .writing { display: grid; grid-template-columns: 7fr 5fr; align-items: end; gap: 24px; padding: var(--gutter); border-top: 1px solid var(--rule); }
 #masthead #main .writing h2 { font: 400 clamp(72px, 14.4vw, 240px)/.98 var(--poster); letter-spacing: 0; text-transform: uppercase; }
@@ -70,6 +70,7 @@
 #masthead .footer-nav ul { display: flex; flex-wrap: wrap; gap: 6px 20px; }
 
 /* Work: same grammar, on the existing record markup. */
+.profile-site:has(.work-page) .profile-header__inner { width: auto; margin-inline: clamp(20px, 2.4vw, 40px); }
 .profile-site #main .work-page { --gutter: clamp(20px, 2.4vw, 40px); }
 .profile-site #main .work-page .building-wrap { width: auto; margin-inline: var(--gutter); }
 .profile-site #main .work-page .building-studies .building-wrap { margin-inline: var(--gutter); }
@@ -81,7 +82,8 @@
 .profile-site #main .work-page--catalogue .building-page__header h1 { font-size: clamp(64px, 9vw, 150px); }
 .profile-site #main .work-page--catalogue .building-page__header p { font-size: clamp(1.15rem, 2vw, 1.75rem); }
 .profile-site #main .work-page .selected-work { margin-inline: 0; padding-bottom: 0; }
-.profile-site #main .work-page .selected-work > h2 { margin: 0; padding: clamp(32px, 4vw, 64px) var(--gutter) calc(var(--gutter) * 1.4); font: 400 clamp(44px, 7vw, 112px)/.98 var(--poster); letter-spacing: 0; text-transform: uppercase; }
+/* The page title already says Work; the section name stays for assistive tech. */
+.profile-site #main .work-page .selected-work > h2 { position: absolute; width: 1px; height: 1px; margin: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .profile-site #main .work-page .work-entry { display: grid; grid-template-columns: 5fr 7fr; grid-template-rows: auto auto; align-items: start; gap: 12px var(--gutter); padding: clamp(40px, 6vw, 88px) var(--gutter); border-top: 1px solid var(--rule); }
 .profile-site #main .work-page .work-identity { grid-column: 1; align-self: end; padding: 0; }
 .profile-site #main .work-page .work-identity h3 { max-width: none; font: 400 clamp(52px, 6.6vw, 110px)/.98 var(--poster); letter-spacing: 0; text-transform: uppercase; }
@@ -102,8 +104,6 @@
   #masthead .opening-copy { gap: 18px; }
   #masthead .photo-link { height: 124vw; min-height: 0; }
   #masthead .photo-link img { object-position: 60% 30%; }
-  #masthead .photo-line { flex-direction: column; align-items: flex-start; gap: 2px; }
-  #masthead .external-note { text-align: left; }
   #masthead .project { grid-template-columns: minmax(0, 1fr); padding-top: 40px; }
   #masthead .project-image { width: 100vw; margin: 12px calc(-1 * var(--gutter)) 0; }
   #masthead .project--tall .project-image { width: 68vw; margin: 12px auto 0; justify-self: center; }

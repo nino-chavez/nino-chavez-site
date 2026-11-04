@@ -112,6 +112,14 @@ for (const width of [1440, 390]) {
   });
 }
 
+test("About practice links stay on one line on a phone", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/about");
+  const link = page.locator(".about-practice-register a").first();
+  await expect(link).toBeVisible();
+  expect((await link.boundingBox())!.height).toBeLessThan(60);
+});
+
 test("About keeps a readable measure inside the wider Work in view shell and Guides keep distinct grid cells", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/about");
