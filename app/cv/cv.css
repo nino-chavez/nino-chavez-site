@@ -30,7 +30,7 @@
 
 .cv-opening h1 {
   margin: 0;
-  color: var(--ink);
+  color: var(--text);
   font-size: clamp(4.2rem, 8vw, 7.6rem);
   font-weight: 800;
   letter-spacing: -0.045em;

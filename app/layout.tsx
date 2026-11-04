@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "./profile.css";
-import "./studio.css";
+import "./masthead.css";
 import { SiteActivity } from "./components/SiteActivity";
 import { ProfileShell } from "./components/ProfileShell";
 
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  colorScheme: "light",
-  themeColor: "#F1EDE4",
+  colorScheme: "dark",
+  themeColor: "#07070F",
 };
 
 export default function RootLayout({
@@ -66,6 +66,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="profile-site">
+        <link rel="preload" href="/fonts/anton-400.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         {!isPublicLaunch ? (
           <div className="prototype-banner">
             Private art-direction review{" "}

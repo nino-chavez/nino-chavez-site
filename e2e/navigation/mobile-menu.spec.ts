@@ -1,10 +1,10 @@
 import { expect, test } from "@playwright/test";
 
-test("phone Studio rail exposes the full home navigation without a drawer", async ({ page }) => {
+test("phone Masthead exposes the full home navigation without a drawer", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
 
-  const navigation = page.locator("#studio .identity-rail nav");
+  const navigation = page.locator("#masthead .primary-nav");
   for (const [name, href] of [["Work", "/work"], ["About", "/about"], ["Email", "mailto:nino@ninochavez.co"]] as const) {
     const link = navigation.getByRole("link", { name, exact: true });
     await expect(link).toBeVisible();
@@ -16,7 +16,7 @@ test("phone Studio rail exposes the full home navigation without a drawer", asyn
   await expect(page).toHaveURL(/\/about$/);
   await expect(page.getByRole("heading", { name: "Nino Chavez", exact: true })).toBeVisible();
   await page.goBack();
-  await expect(page.locator("#studio .identity-heading")).toBeVisible();
+  await expect(page.locator("#masthead .wordmark")).toBeVisible();
 });
 
 test("phone home opens the independent sites in new tabs and keeps the profile open", async ({ page, context }) => {
@@ -32,7 +32,7 @@ test("phone home opens the independent sites in new tabs and keeps the profile o
     ["Writing", "https://ninochavez.co/blog/archive"],
     ["Photography", "https://ninochavez.co/photography/albums"],
   ] as const) {
-    const link = page.locator("#studio .identity-rail").getByRole("link", { name: new RegExp(`^${name}`) });
+    const link = page.locator("#masthead .primary-nav").getByRole("link", { name: new RegExp(`^${name}`) });
     await expect(link).toBeInViewport();
     await expect(link).toHaveAttribute("href", href);
     await expect(link).toHaveAttribute("target", "_blank");
@@ -43,12 +43,12 @@ test("phone home opens the independent sites in new tabs and keeps the profile o
     const popup = await popupPromise;
     await expect(popup).toHaveURL(href);
     await expect(page).toHaveURL(/\/$/);
-    await expect(page.locator("#studio .identity-heading")).toBeVisible();
+    await expect(page.locator("#masthead .wordmark")).toBeVisible();
     await popup.close();
   }
 });
 
-test("Studio keeps the selected project previews loaded on phone", async ({ page }) => {
+test("Masthead keeps the selected project previews loaded on phone", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
 

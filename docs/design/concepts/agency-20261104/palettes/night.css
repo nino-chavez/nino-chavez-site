@@ -1,0 +1,9 @@
+:root{--ground:#07070F;--text:#F2EEE6;--word:#F2EEE6;--action:#F2EEE6;--note:#B9B6C2;--rule:#3A3A48;--w-bg:#F2EEE6;--w-fg:#07070F;--w-head:#07070F;--w-link:#B82E0C;--t-bg:#FF6A45;--t-fg:#07070F;--a-bg:transparent;--a-fg:#F2EEE6}
+.panel:nth-of-type(1){--pb:#C9B8FF;--pf:#15101F;--pn:#15101F}
+.panel:nth-of-type(2){--pb:#E8A72C;--pf:#15110A;--pn:#15110A}
+.panel:nth-of-type(3){--pb:#F2EEE6;--pf:#07070F;--pn:#07070F}
+.on-work .panel:nth-of-type(1){--pb:#C9B8FF;--pf:#15101F;--pn:#15101F}
+.on-work .panel:nth-of-type(2){--pb:#C4383F;--pf:#FFFFFF;--pn:#FFFFFF}
+.on-work .panel:nth-of-type(3){--pb:#F2EEE6;--pf:#07070F;--pn:#07070F}
+.on-work .panel:nth-of-type(4){--pb:#191925;--pf:#F2EEE6;--pn:#F2EEE6}
+.on-work .panel:nth-of-type(5){--pb:#E8A72C;--pf:#15110A;--pn:#15110A}

@@ -1,8 +1,8 @@
-# Independent profile navigation — November 3, 2026
+# Independent profile navigation — November 4, 2026
 
-[ADR 0007](decisions/0007-profile-studio.md) records the selected Studio home. [ADR 0006](decisions/0006-profile-work-in-view.md) continues to govern inner Profile layouts. Blog and Photography keep their independent applications and styles.
+[ADR 0008](decisions/0008-profile-masthead-arena.md) records the selected Masthead home and Work page in the Arena palette. [ADR 0006](decisions/0006-profile-work-in-view.md) continues to govern other inner Profile layouts. Blog and Photography keep their independent applications and styles.
 
-The Studio identity rail becomes a header on phones. Both sizes expose:
+The Masthead primary navigation sits above the name. Both sizes expose:
 
 ```text
 Nino Chavez (home) /
@@ -19,7 +19,7 @@ Inner Profile routes retain their Home, Writing, Photography, Links and Email he
 
 Writing and Photography links open in new tabs. The profile-owned coverage inquiry stays in the current tab. Existing home anchors (`#about`, `#projects`, `#contact`), deep links, query parameters, detail routes, private boundaries and canonical URLs remain supported. Work retains its process and guide links. Search remains available at its existing route and in collection controls. There is no navigation drawer.
 
-The older contracts below preserve historical rationale. They do not override ADR 0007’s home navigation or ADR 0006’s inner navigation. Their naming, search, state and content-ownership rules continue to apply where these decisions do not supersede them.
+The older contracts below preserve historical rationale. They do not override ADR 0008’s home navigation or ADR 0006’s inner navigation. Their naming, search, state and content-ownership rules continue to apply where these decisions do not supersede them.
 
 ## Historical navigation contract
 

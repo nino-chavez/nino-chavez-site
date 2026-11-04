@@ -14,6 +14,9 @@ export type SelectedWork = {
   action: string;
   image?: {
     src: string;
+    /** Intrinsic size, so large previews do not shift the page as they load. */
+    width: number;
+    height: number;
     alt: string;
     caption?: string;
   };
@@ -33,6 +36,8 @@ export const selectedWork: SelectedWork[] = [
     action: "Get Minder",
     image: {
       src: "/work/minder.jpg",
+      width: 590,
+      height: 1278,
       alt: "Minder app preview showing a fictional sample day",
       caption: "Published app preview; fictional sample day.",
     },
@@ -50,6 +55,8 @@ export const selectedWork: SelectedWork[] = [
     action: "Visit Flickday Media",
     image: {
       src: "/work/flickday.jpg",
+      width: 1066,
+      height: 1600,
       alt: "Volleyball photography from the Flickday Media portfolio",
     },
   },
@@ -66,6 +73,8 @@ export const selectedWork: SelectedWork[] = [
     action: "Open The Rotation",
     image: {
       src: "/work/rotation.png",
+      width: 1100,
+      height: 820,
       alt: "The Rotation schedule and must-watch match cards",
     },
   },
@@ -82,6 +91,8 @@ export const selectedWork: SelectedWork[] = [
     action: "Visit Let’s Pepper",
     image: {
       src: "/work/lets-pepper-site.png",
+      width: 1440,
+      height: 900,
       alt: "Let’s Pepper website with its tournament identity and grass volleyball photograph",
     },
   },
@@ -98,6 +109,8 @@ export const selectedWork: SelectedWork[] = [
     action: "Explore Rally HQ",
     image: {
       src: "/work/rally-hq.webp",
+      width: 1400,
+      height: 875,
       alt: "Rally HQ tournament interface",
     },
   },

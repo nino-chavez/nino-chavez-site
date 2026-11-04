@@ -5,6 +5,10 @@ design_direction: docs/claude-design-system.md
 
 # Make the work easier to understand and reach
 
+## November 4: agency rethink proposed
+
+Nino asked for a rethink of the profile site in a modern agency visual style. The brief, three concepts and comparison are in [concepts/agency-20261104](concepts/agency-20261104/BRIEF.md). Nino selected Masthead with the Arena palette; [ADR 0008](../decisions/0008-profile-masthead-arena.md) owns the decision.
+
 ## September 30: refit rollout paused for a full-site rethink
 
 Nino rejected the homepage's loss of full-bleed photographic appeal and explicitly opened both the design and the technical architecture to reconsideration, including one codebase and a shared stack. The refit-only constraint below is superseded for this evaluation. No replacement design, navigation labels or migration has been selected. Continue from the [first-principles evaluation model](../audit/2026-09-30-site-model/EVALUATION-MODEL.md) and [independent red-team assessment](../audit/2026-09-30-site-model/RED-TEAM-ASSESSMENT.md), rather than extending the current styling across more pages. Existing useful content, actions and public links remain acceptance requirements; their present layout and taxonomy are open to change.

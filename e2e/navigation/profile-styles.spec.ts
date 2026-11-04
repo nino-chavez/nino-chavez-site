@@ -8,7 +8,7 @@ const representativeRoutes = [
 ];
 
 const innerDestinations = [["Home", "/"], ["Writing", "https://ninochavez.co/blog/archive"], ["Photography", "https://ninochavez.co/photography/albums"], ["Links", "/links"], ["Email", "mailto:nino@ninochavez.co"]] as const;
-const studioDestinations = [["Work", "/work"], ["Writing", "https://ninochavez.co/blog/archive"], ["Photography", "https://ninochavez.co/photography/albums"], ["About", "/about"], ["Email", "mailto:nino@ninochavez.co"]] as const;
+const mastheadDestinations = [["Work", "/work"], ["Writing", "https://ninochavez.co/blog/archive"], ["Photography", "https://ninochavez.co/photography/albums"], ["About", "/about"], ["Email", "mailto:nino@ninochavez.co"]] as const;
 
 for (const width of [1440, 390]) {
   test(`inner profile pages retain their existing shell at ${width}px`, async ({ page, request }) => {
@@ -36,10 +36,10 @@ for (const width of [1440, 390]) {
           }
           await page.evaluate(() => window.scrollTo(0, 0));
         }
-        await expect(page.locator("body")).toHaveCSS("background-color", "rgb(241, 237, 228)");
+        await expect(page.locator("body")).toHaveCSS("background-color", "rgb(7, 7, 15)");
         await expect(page.locator("body")).toHaveCSS("font-family", /Inter/);
         // Embedded session evidence keeps its source typography; the enclosing profile heading uses the shared system.
-        await expect(page.locator("#main h1:not(.demo-story-surface h1), .demo-record-context__header h2").first()).toHaveCSS("font-family", /Schibsted/);
+        await expect(page.locator("#main h1:not(.demo-story-surface h1), .demo-record-context__header h2").first()).toHaveCSS("font-family", /Anton|Schibsted/);
         await expect(page.locator(".profile-header")).toBeVisible();
         await expect(page.locator(".profile-header__wordmark")).toHaveText("Nino Chavez");
         const navigation = page.locator(".profile-header nav");
@@ -64,31 +64,64 @@ for (const width of [1440, 390]) {
     }
   });
 
-  test(`Studio home has its own rail and canvas at ${width}px`, async ({ page }) => {
+  test(`Masthead home has its full-width name and one ground at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/");
     await page.evaluate(() => document.fonts.ready);
-    const studio = page.locator("#studio");
-    await expect(studio).toBeVisible();
+    const masthead = page.locator("#masthead");
+    await expect(masthead).toBeVisible();
     await expect(page.locator(".profile-header, .profile-footer")).toHaveCount(0);
-    await expect(studio).toHaveCSS("background-color", "rgb(241, 237, 228)");
-    await expect(studio).toHaveCSS("font-family", /Studio Body/);
-    const rail = studio.locator(".identity-rail");
-    await expect(rail).toHaveCSS("background-color", "rgb(36, 76, 194)");
-    await expect(rail.locator(".identity-name")).toHaveCSS("font-family", /Studio Display/);
-    const navigation = rail.locator(".primary-nav");
-    for (const [name, href] of studioDestinations) {
+    const wordmark = masthead.locator(".wordmark");
+    await expect(wordmark).toHaveCSS("font-family", /Anton/);
+    await expect(wordmark).toHaveText(/Nino\s*Chavez/);
+    const wordmarkLink = await wordmark.locator("a").boundingBox();
+    expect(wordmarkLink!.width).toBeGreaterThan(width * (width > 760 ? 0.85 : 0.5));
+    expect(wordmarkLink!.x + wordmarkLink!.width).toBeLessThanOrEqual(width);
+    const navigation = masthead.locator(".primary-nav");
+    for (const [name, href] of mastheadDestinations) {
       const specialist = name === "Writing" || name === "Photography";
       const link = navigation.getByRole("link", { name: specialist ? `${name} (opens in a new tab)` : name, exact: true });
       await expect(link).toHaveAttribute("href", href);
       if (specialist) await expect(link).toHaveAttribute("target", "_blank");
     }
     await expect(navigation.locator("a:visible")).toHaveCount(5);
-    await expect(studio.locator(".writing")).toHaveCSS("background-color", "rgb(229, 234, 244)");
-    await expect(studio.locator(".about-actions a[href^='mailto:']")).toHaveCSS("background-color", "rgb(36, 76, 194)");
+    // Arena keeps one ground: no section takes its own color. The closing line is the one exception.
+    for (const section of [masthead, masthead.locator(".writing"), masthead.locator(".project").first(), masthead.locator(".about")]) {
+      const background = await section.evaluate((element) => getComputedStyle(element).backgroundColor);
+      expect(["rgb(7, 7, 15)", "rgba(0, 0, 0, 0)"]).toContain(background);
+    }
+    await expect(masthead.locator(".touch")).toHaveCSS("background-color", "rgb(143, 203, 234)");
+    await expect(masthead.locator(".touch a[href^='mailto:']")).toHaveText(/Get in touch/i);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
+  });
+
+  test(`Work uses the Masthead grammar on its records at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/work");
+    await page.evaluate(() => document.fonts.ready);
+    await expect(page.locator(".profile-header")).toBeVisible();
+    await expect(page.locator("#main h1")).toHaveCSS("font-family", /Anton/);
+    await expect(page.locator("#main h1")).toHaveCSS("text-transform", "uppercase");
+    expect(await page.locator(".work-entry").count()).toBeGreaterThanOrEqual(5);
+    await expect(page.locator(".work-entry h3").first()).toHaveCSS("font-family", /Anton/);
+    for (const image of await page.locator(".work-preview img").all()) {
+      // Previews render at full size here, so missing dimensions move the links beside them as they load.
+      await expect(image).toHaveAttribute("width", /\d+/);
+      await expect(image).toHaveAttribute("height", /\d+/);
+      await image.scrollIntoViewIfNeeded();
+      await expect.poll(() => image.evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth > 0)).toBe(true);
+    }
     expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
   });
 }
+
+test("About practice links stay on one line on a phone", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/about");
+  const link = page.locator(".about-practice-register a").first();
+  await expect(link).toBeVisible();
+  expect((await link.boundingBox())!.height).toBeLessThan(60);
+});
 
 test("About keeps a readable measure inside the wider Work in view shell and Guides keep distinct grid cells", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });

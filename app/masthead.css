@@ -1,0 +1,124 @@
+/* Masthead composition in Arena (ADR 0008). One ground holds the page; photographs
+ * and product screens supply the color. Do not give sections their own color. */
+.masthead-shell { --gutter: clamp(20px, 2.4vw, 40px); background: var(--ground); color: var(--text); font-family: var(--font); font-size: 1rem; line-height: 1.5; }
+.masthead-shell :is(h1, h2, h3, p, ul) { margin: 0; padding: 0; }
+.masthead-shell ul { list-style: none; }
+.masthead-shell img { display: block; max-width: 100%; height: auto; }
+.masthead-shell a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .16em; }
+.masthead-shell a:hover { color: var(--action); }
+.masthead-shell a:focus-visible { outline: 3px solid var(--action); outline-offset: 3px; }
+.masthead-shell main:focus { outline: none; }
+::selection { background: var(--action); color: var(--ground); }
+.profile-site .masthead-skip { transform: translateY(-300%); }
+.profile-site .masthead-skip:focus { transform: translateY(0); }
+.masthead-shell .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+#masthead .mast { padding: 14px var(--gutter) 0; }
+#masthead .primary-nav { position: relative; z-index: 1; }
+#masthead .primary-nav ul { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 22px; }
+#masthead .primary-nav a { display: inline-block; font-weight: 500; }
+#masthead .primary-nav__mail { color: var(--action); font-weight: 700; }
+#masthead .wordmark { margin-top: 18px; color: var(--text); font: 400 20.05vw/.92 var(--poster); text-transform: uppercase; white-space: nowrap; }
+#masthead .wordmark a { display: block; text-decoration: none; }
+#masthead .wordmark a:hover { color: var(--text); }
+#masthead .wordmark span { margin-left: .04em; }
+
+#masthead #main .opening { display: grid; grid-template-columns: 6fr 6fr; margin-top: calc(var(--gutter) * .6); }
+#masthead .opening-copy { display: flex; flex-direction: column; justify-content: space-between; gap: 32px; padding: var(--gutter); }
+#masthead .statement { font: 500 clamp(28px, 4vw, 66px)/1.08 var(--font); max-width: 17em; }
+#masthead .statement a { text-decoration-color: var(--action); text-decoration-thickness: .08em; text-underline-offset: .12em; }
+#masthead .opening-note { color: var(--muted); font-size: .94rem; }
+#masthead .photo-link { position: relative; display: block; height: 62vh; min-height: 500px; overflow: hidden; color: #fff; text-decoration: none; }
+#masthead .photo-link img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 38%; transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
+#masthead .photo-link:hover img { transform: scale(1.02); }
+#masthead .photo-line { position: absolute; inset: auto 0 0; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 22px var(--gutter); background: linear-gradient(transparent, rgba(7, 7, 15, .72)); }
+#masthead #main .photo-line h2 { color: inherit; font: 400 clamp(44px, 6.4vw, 104px)/.98 var(--poster); letter-spacing: 0; text-decoration: underline; text-decoration-thickness: .04em; text-transform: uppercase; text-underline-offset: .1em; }
+#masthead #main .photo-link:is(:hover, :focus-visible) .photo-line h2 { color: var(--action); }
+
+#masthead #main .writing { display: grid; grid-template-columns: 7fr 5fr; align-items: end; gap: 24px; padding: var(--gutter); border-top: 1px solid var(--rule); }
+#masthead #main .writing h2 { font: 400 clamp(72px, 14.4vw, 240px)/.98 var(--poster); letter-spacing: 0; text-transform: uppercase; }
+#masthead .writing p { max-width: 26em; padding-bottom: 1.2em; font-size: 1.13rem; }
+#masthead .writing p a { color: var(--action); font-weight: 700; }
+
+#masthead #main .section-heading { padding: clamp(56px, 8vw, 120px) var(--gutter) calc(var(--gutter) * 1.4); font: 400 clamp(44px, 7vw, 112px)/.98 var(--poster); letter-spacing: 0; text-transform: uppercase; }
+#masthead .section-heading a { text-decoration: none; }
+#masthead .section-heading a:hover { text-decoration: underline; text-decoration-thickness: .04em; }
+#masthead .project { display: grid; grid-template-columns: 5fr 7fr; align-items: center; gap: var(--gutter); padding: clamp(40px, 6vw, 88px) var(--gutter); border-top: 1px solid var(--rule); }
+#masthead .project-kind { font-weight: 500; }
+#masthead #main .project h3 { margin: .1em 0 .18em; font: 400 clamp(64px, 10.6vw, 176px)/.98 var(--poster); letter-spacing: 0; text-transform: uppercase; }
+#masthead .project h3 a { text-decoration: none; }
+#masthead .project h3 a:hover { text-decoration: underline; text-decoration-thickness: .04em; text-underline-offset: .08em; }
+#masthead .project-copy > p:not(.project-kind, .project-caption) { max-width: 25em; font-size: clamp(1.05rem, 1.4vw, 1.3rem); }
+#masthead .project-caption { margin-top: .8em; color: var(--muted); font-size: .94rem; }
+#masthead .project-image { display: block; justify-self: end; width: 100%; }
+#masthead .project-image img { width: 100%; transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
+#masthead .project-image:hover img { transform: translateY(-6px); }
+#masthead .project--tall .project-image { width: min(29vw, 410px); margin-right: 8vw; }
+
+#masthead #main .about { display: grid; grid-template-columns: 4fr 8fr; gap: var(--gutter); padding: clamp(56px, 8vw, 120px) var(--gutter); border-top: 1px solid var(--rule); }
+#masthead .about img { width: 100%; }
+#masthead #main .about h2 { margin-bottom: .34em; font: 400 clamp(44px, 7vw, 112px)/.98 var(--poster); letter-spacing: 0; text-transform: uppercase; }
+#masthead .about-copy p { max-width: 33em; margin-bottom: 1em; font-size: clamp(1.05rem, 1.5vw, 1.35rem); }
+#masthead .about-actions a { color: var(--action); }
+
+#masthead .touch { background: var(--action); color: var(--ground); font: 400 19.6vw/1.02 var(--poster); text-transform: uppercase; white-space: nowrap; overflow: hidden; }
+#masthead .touch a { display: block; padding: .16em var(--gutter) .2em; color: inherit; text-decoration: none; }
+#masthead .touch a:hover { color: inherit; text-decoration: underline; text-decoration-thickness: .03em; }
+#masthead .touch a:focus-visible { outline-color: var(--ground); outline-offset: -8px; }
+#masthead .site-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 28px; padding: 22px var(--gutter); }
+#masthead .footer-name { font-weight: 700; }
+#masthead .footer-nav ul { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+
+/* Work: same grammar, on the existing record markup. */
+.profile-site:has(.work-page) .profile-header__inner { width: auto; margin-inline: clamp(20px, 2.4vw, 40px); }
+.profile-site #main .work-page { --gutter: clamp(20px, 2.4vw, 40px); }
+.profile-site #main .work-page .building-wrap { width: auto; margin-inline: var(--gutter); }
+.profile-site #main .work-page .building-studies .building-wrap { margin-inline: var(--gutter); }
+.profile-site #main .work-page .building-page__header { display: grid; grid-template-columns: 6fr 6fr; align-items: end; gap: 12px var(--gutter); margin-inline: 0; padding: var(--gutter); }
+.profile-site #main .work-page .building-page__header > div { display: contents; }
+.profile-site #main .work-page .building-page__header h1 { grid-row: 1 / 3; margin: 0; font: 400 clamp(100px, 17vw, 290px)/.9 var(--poster); letter-spacing: 0; text-transform: uppercase; }
+.profile-site #main .work-page .building-page__header p { color: var(--text); font: 500 clamp(26px, 3.4vw, 56px)/1.08 var(--font); letter-spacing: 0; }
+.profile-site #main .work-page .building-page__header .building-action { grid-column: 2; justify-self: start; }
+.profile-site #main .work-page--catalogue .building-page__header h1 { font-size: clamp(64px, 9vw, 150px); }
+.profile-site #main .work-page--catalogue .building-page__header p { font-size: clamp(1.15rem, 2vw, 1.75rem); }
+.profile-site #main .work-page .selected-work { margin-inline: 0; padding-bottom: 0; }
+/* The page title already says Work; the section name stays for assistive tech. */
+.profile-site #main .work-page .selected-work > h2 { position: absolute; width: 1px; height: 1px; margin: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.profile-site #main .work-page .work-entry { display: grid; grid-template-columns: 5fr 7fr; grid-template-rows: auto 1fr; align-items: start; gap: 12px var(--gutter); padding: clamp(40px, 6vw, 88px) var(--gutter); border-top: 1px solid var(--rule); }
+.profile-site #main .work-page .work-identity { grid-column: 1; padding: 0; }
+.profile-site #main .work-page .work-identity h3 { max-width: none; font: 400 clamp(52px, 6.6vw, 110px)/.98 var(--poster); letter-spacing: 0; text-transform: uppercase; }
+.profile-site #main .work-page .work-identity .work-kind { color: var(--text); font-size: 1rem; font-weight: 500; }
+.profile-site #main .work-page .work-description { grid-column: 1; max-width: 30em; }
+.profile-site #main .work-page .work-description > p:first-child { font-size: clamp(1.05rem, 1.4vw, 1.3rem); }
+.profile-site #main .work-page .work-description .work-availability, .profile-site #main .work-page .work-description .media-caption { font-size: .94rem; }
+.profile-site #main .work-page .work-description .building-action { font-size: 1rem; }
+.profile-site #main .work-page .work-preview { grid-column: 2; grid-row: 1 / 3; align-self: start; justify-self: end; width: 100%; height: auto; background: none; overflow: visible; }
+.profile-site #main .work-page .work-preview img { position: static; width: 100%; height: auto; transform: none; object-fit: initial; }
+.profile-site #main .work-page :is(.work-preview--minder, .work-preview--flickday) { width: min(29vw, 410px); margin-right: 8vw; }
+
+@media (max-width: 760px) {
+  #masthead .primary-nav ul { justify-content: flex-start; gap: 4px 16px; font-size: .94rem; }
+  #masthead .wordmark { font-size: 31vw; line-height: .94; white-space: normal; }
+  #masthead .wordmark span { display: block; margin: 0; }
+  #masthead #main :is(.opening, .writing, .about) { grid-template-columns: minmax(0, 1fr); }
+  #masthead .opening-copy { gap: 18px; }
+  #masthead .photo-link { height: 124vw; min-height: 0; }
+  #masthead .photo-link img { object-position: 60% 30%; }
+  #masthead .project { grid-template-columns: minmax(0, 1fr); padding-top: 40px; }
+  #masthead .project-image { width: 100vw; margin: 12px calc(-1 * var(--gutter)) 0; }
+  #masthead .project--tall .project-image { width: 68vw; margin: 12px auto 0; justify-self: center; }
+  #masthead .touch { font-size: 18.4vw; }
+  .profile-site #main .work-page .building-page__header { grid-template-columns: minmax(0, 1fr); }
+  .profile-site #main .work-page .building-page__header h1 { grid-row: auto; font-size: 38vw; }
+  .profile-site #main .work-page--catalogue .building-page__header h1 { font-size: 22vw; }
+  .profile-site #main .work-page .building-page__header .building-action { grid-column: 1; }
+  .profile-site #main .work-page .work-entry { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
+  .profile-site #main .work-page :is(.work-identity, .work-description, .work-preview) { grid-column: 1; grid-row: auto; }
+  .profile-site #main .work-page :is(.work-preview--minder, .work-preview--flickday) { width: 68vw; margin: 12px auto 0; justify-self: center; }
+}
+
+@media print {
+  .masthead-shell { background: white; color: black; }
+}
+
+.profile-site .profile-header__wordmark { font-family: var(--poster); font-size: 1.5rem; font-weight: 400; letter-spacing: 0; text-transform: uppercase; }

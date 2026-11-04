@@ -17,7 +17,7 @@
 .coverage-price dl>div{border-top:1px solid #526071;padding:12px 0}
 .coverage-price dt{font-size:12px;color:#b9bec6}
 .coverage-price dd{font-size:16px;font-weight:600;margin:3px 0 0}
-.coverage-button{display:inline-flex;justify-content:center;align-items:center;gap:30px;min-height:48px;padding:13px 22px;background:var(--action);color:#fff;border:0;text-decoration:none;font:600 15px/1.4 var(--font);cursor:pointer}
+.coverage-button{display:inline-flex;justify-content:center;align-items:center;gap:30px;min-height:48px;padding:13px 22px;background:var(--action);color:var(--ground);border:0;text-decoration:none;font:600 15px/1.4 var(--font);cursor:pointer}
 .coverage-button:hover{filter:brightness(1.12)}
 .coverage-price .coverage-button{width:100%;background:var(--bone);color:var(--ink)}
 .coverage-price .coverage-price-note{font-size:12px;margin:16px 0 0;color:#b9bec6}
@@ -53,7 +53,7 @@
 .coverage-fields textarea,.coverage-email textarea{resize:vertical}
 .coverage-wide{grid-column:1/-1}
 .coverage-request .coverage-help{font-size:12px;color:var(--muted);margin:16px 0;line-height:1.6}
-.coverage-error{color:#a83424;font-size:14px}
+.coverage-error{color:#FF9A85;font-size:14px}
 .coverage-error:empty{display:none}
 .coverage-direct{border-top:1px solid var(--rule);padding-top:20px;margin-top:28px}
 .coverage-email{border-top:2px solid var(--action);margin-top:28px;padding-top:18px;scroll-margin-top:100px}
@@ -66,8 +66,8 @@
 @media(max-width:700px){.coverage-shell{width:calc(100% - 40px)}.coverage-opening{grid-template-columns:1fr;gap:24px;padding:10px 0 40px}.coverage-breadcrumb{padding:10px 0}.coverage-intro h1{font-size:clamp(48px,14vw,64px);margin-bottom:20px}.coverage-lead{font-size:20px}.coverage-price{padding:26px}.coverage-amount{font-size:76px}.coverage-frames{gap:10px}.coverage-frames figcaption{font-size:10px;line-height:1.5}.coverage-work-heading{align-items:flex-start;flex-direction:column;gap:4px}.coverage-work{padding-bottom:36px}.coverage-scope,.coverage-details,.coverage-booking{grid-template-columns:1fr;gap:24px;padding:36px 0}.coverage-scope h2,.coverage-details h2,.coverage-booking-intro h2{font-size:34px}.coverage-scope>div p:last-child,.coverage-booking-intro p{max-width:none}.coverage-request{padding:24px 18px}.coverage-inclusions dt{font-size:18px}.coverage-booking{padding-bottom:48px}.coverage-caption{line-height:1.6}.coverage-email-actions{flex-direction:column}}
 @media(prefers-reduced-motion:reduce){html:has(.coverage-page){scroll-behavior:auto}}
 
-.coverage-fields input[aria-invalid="true"]{border:2px solid #a83424}
-.coverage-fields .coverage-error{display:block;color:#a83424;font-weight:500;margin-top:7px;line-height:1.5}
+.coverage-fields input[aria-invalid="true"]{border:2px solid #FF9A85}
+.coverage-fields .coverage-error{display:block;color:#FF9A85;font-weight:500;margin-top:7px;line-height:1.5}
 .coverage-fields .coverage-error:empty{display:none}
 @media(max-width:700px){.coverage-frames{grid-template-columns:1fr 1fr}.coverage-frames figure:first-child{grid-column:1/-1}.coverage-frames figure:first-child img{aspect-ratio:2/3}.coverage-frames figcaption{font-size:11px}}
 

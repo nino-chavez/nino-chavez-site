@@ -1,15 +1,16 @@
 ---
 name: Nino Chavez — Personal profile
 colors:
-  ground: "#F1EDE4"
-  text: "#233343"
-  muted: "#566273"
-  rule: "#CDBBB0"
-  action: "#244CC2"
-  surface-muted: "#E5EAF4"
+  ground: "#07070F"
+  text: "#F2F2EE"
+  muted: "#A8A8B3"
+  rule: "#2C2C38"
+  action: "#8FCBEA"
+  surface-muted: "#14141F"
 typography:
   reading: 'Inter, system-ui, sans-serif'
-  headings: '"Studio Display", "Schibsted Grotesk", Inter, system-ui, sans-serif'
+  display: 'Anton, Impact, sans-serif'
+  headings: '"Schibsted Grotesk", Inter, system-ui, sans-serif'
   controls: 'Inter, system-ui, sans-serif'
 spacing:
   content: "1160px"
@@ -19,7 +20,7 @@ spacing:
 
 # Personal profile
 
-Nino selected the Studio home on November 3. [ADR 0007](docs/decisions/0007-profile-studio.md) records the decision. Studio is the home composition only; inner profile routes retain their existing composition. Writing and Photography remain independent specialist applications.
+Nino selected Masthead with the Arena palette on November 4. [ADR 0008](docs/decisions/0008-profile-masthead-arena.md) records the decision. Masthead is the composition of home and `/work`; other profile routes keep their composition and take Arena through shared tokens. Writing and Photography remain independent specialist applications.
 
 ## Reader and purpose
 
@@ -30,13 +31,9 @@ authored statements, availability, contact details and canonical destinations.
 
 ## Character
 
-Studio is personal, artful and direct: a refined cobalt identity rail beside a
-porcelain canvas. The rail makes the routes and contact action immediate; the
-main stream gives photography, writing, work and biography their own rhythm.
-Use ink headings and natural media. The pale-blue writing field marks a change
-of medium without making another page template. Email actions use contrasting fills: porcelain on the cobalt rail, cobalt on the canvas.
-Inner routes remain readable, practical Work in view pages rather than being
-restyled as Studio.
+Masthead is large, physical and plain-spoken: the name fills the width, a photograph sits beside the statement, and each project takes a full-width section with its name at display size. Arena keeps one ground from top to bottom. Photographs and product screens supply the color; the ice-blue action color marks what can be acted on and the closing line.
+
+Do not give sections their own color. Nino rejected that because it competes with the photographs and product screens.
 
 ## Surfaces
 
@@ -55,8 +52,8 @@ specialist entrances. Routing remains owned by the apex router.
 
 ## Shared system
 
-`app/profile.css` owns the shared profile tokens and inner-route scope.
-`app/studio.css` scopes Studio's home-only composition to `#studio`.
+`app/profile.css` owns the shared Arena tokens and inner-route scope.
+`app/masthead.css` owns the Masthead composition of home (`#masthead`) and `/work`.
 `app/globals.css` retains the existing component contracts for inner routes.
 
 Interior rules use the `profile-site` and `#main` scope so route styles loaded
@@ -66,17 +63,10 @@ preview cannot cover the title. These are rendered regressions covered by the
 profile navigation tests. Capture the collection after its records appear,
 not while the Suspense fallback is visible.
 
-Studio uses Porcelain `#F1EDE4`, cobalt `#244CC2`, and text `#233343`.
-Body copy is Inter; the Studio Body and Studio Display aliases keep the home’s
-type roles local. Desktop home has the cobalt identity rail, `.identity-heading`
-home link, and main stream. On mobile the rail becomes the Studio header while
-retaining Work, Writing, Photography, About and Email. Links are underlined;
-controls retain visible focus and native semantics.
-
-Home shows photography, writing, three real project previews, then a short
-biography. Preserve authored copy, facts and existing media. Specialist links
-open in a new tab. The project links are separate destinations and retain their
-own tab behavior. Inner routes keep their existing header and footer.
+Masthead uses arena black `#07070F`, text `#F2F2EE` and action `#8FCBEA`.
+Display type is Anton, at scale in uppercase on home and `/work`, and in sentence case on other routes' `h1`. Reading text is Inter. Other headings use Schibsted Grotesk.
+Home has the primary navigation, the full-width name, the statement with linked phrases, the photograph, Writing, three real project previews, a short biography and the closing "Get in touch". Phones keep Work, Writing, Photography, About and Email. Links are underlined at rest except display-size names, which underline on hover; controls retain visible focus and native semantics.
+Preserve authored copy, facts and existing media. Specialist links open in a new tab, and so do the statement's Let's Pepper and SoundCloud links. The project links are separate destinations and retain their own tab behavior. Inner routes keep their existing header and footer.
 
 Long text gets a full reading column. Biography facts may sit beside prose
 on desktop and stack below it on phones. Project imagery and embedded
@@ -86,7 +76,7 @@ sessions retain their native appearance inside the profile page.
 
 | Object | Action | States to check |
 | --- | --- | --- |
-| Studio home | Read, follow a destination, return home | Desktop rail; narrow mobile header; natural media |
+| Masthead home | Read, follow a destination, return home | Full-width name; phone stack; natural media |
 | Inner profile route | Read, search, filter or follow a destination | Existing header/footer and route-specific composition |
 | Library | Search, filter, open an item | Populated, filtered, no results, browser Back |
 | Detail | Read evidence, follow destination, return | Long titles, private/unavailable destinations, missing slug |
@@ -99,5 +89,5 @@ Writing and photography are separate sites even though they share the
 inquiry at `/photography/coverage` stays in the current tab.
 
 Keep existing query parameters, breadcrumbs and return links. Verification
-separates the Studio home shell from the inner shell and checks desktop/phone
+separates the Masthead home shell from the inner shell and checks desktop/phone
 captures, no horizontal overflow, image loads and browser Back.

@@ -24,7 +24,7 @@
 }
 
 .by-nino-frontdoor .field-hero h1 {
-  color: var(--ink);
+  color: var(--text);
   font-family: var(--font);
   font-size: clamp(3rem, 6.5vw, 6.2rem);
   font-weight: 800;
@@ -70,7 +70,7 @@
 .by-nino-frontdoor .field-hero__cta:hover,
 .by-nino-frontdoor .field-hero__cta:focus-visible {
   background: var(--ink);
-  color: var(--ground);
+  color: var(--bone);
 }
 
 .by-nino-frontdoor .field-hero__about {
@@ -273,7 +273,7 @@
   --ground: #f4f4f5;
   --photography-gold: #d4af37;
   background: var(--ink);
-  color: var(--ground);
+  color: var(--bone);
 }
 
 .by-nino-photography .photography-opening {
@@ -400,6 +400,8 @@
   color: var(--ink);
 }
 
+.by-nino-photography .photography-route-deck a:hover strong,
+.by-nino-photography .photography-route-deck a:focus-visible strong,
 .by-nino-photography .photography-route-deck a:hover small,
 .by-nino-photography .photography-route-deck a:hover b,
 .by-nino-photography .photography-route-deck a:hover b > span[aria-hidden="true"],
@@ -465,7 +467,7 @@
 }
 
 .by-nino-coverage .coverage-amount {
-  color: var(--ink);
+  color: var(--text);
   font-family: var(--font);
   font-size: clamp(3.4rem, 6vw, 5.4rem);
   font-weight: 800;
