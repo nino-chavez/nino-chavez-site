@@ -6,13 +6,22 @@ import { usePathname } from "next/navigation";
 import { SiteHeader } from "./SiteHeader";
 import { SiteFooter } from "./SiteFooter";
 
+/**
+ * The wrapper is load-bearing. Cloudflare AI Labyrinth puts a hidden link first in <body>
+ * for traffic it scores as a bot, and at <body> level React pairs elements by tag name. A
+ * bare <a> here claims that empty link and discards the server HTML with error 418.
+ */
+function SkipLink({ className }: { className: string }) {
+  return <div><a className={className} href="#main">Skip to content</a></div>;
+}
+
 /** Home uses the selected Masthead composition; other profile routes keep their header and footer. */
 export function ProfileShell({ children }: { children: ReactNode }) {
   const isHome = usePathname() === "/";
 
   if (!isHome) {
     return <>
-      <a className="skip-link" href="#main">Skip to content</a>
+      <SkipLink className="skip-link" />
       <SiteHeader />
       <main id="main" tabIndex={-1}>{children}</main>
       <SiteFooter />
@@ -20,7 +29,7 @@ export function ProfileShell({ children }: { children: ReactNode }) {
   }
 
   return <>
-    <a className="skip-link masthead-skip" href="#main">Skip to content</a>
+    <SkipLink className="skip-link masthead-skip" />
     <div id="masthead" className="masthead-shell">
       <header className="mast">
         <nav className="primary-nav" aria-label="Primary navigation">
