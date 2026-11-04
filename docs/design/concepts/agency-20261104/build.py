@@ -124,7 +124,7 @@ C_WORK=page("C Wall · Work","c.css",f'''
 <section class="tile t-id"><h1>Work</h1><p>Apps, websites, businesses, and the work behind them.</p><p class="browse"><a href="{LIVE}/work?view=all">Browse all work <span aria-hidden="true">→</span></a></p></section>
 {"".join(tile(d,c) for d,c in zip(ALL_WORK,["w-minder","w-flick","w-rot","w-pep","w-rally"]))}
 </div></main>{foot()}''')
-PAL={"flare":"Flare","clash":"Clash","night":"Night Game","ultra":"Ultra"}
+PAL={"flare":"Flare","clash":"Clash","night":"Night Game","ultra":"Ultra","gallery":"Gallery","arena":"Arena","bookend":"Bookend"}
 for k,nm in PAL.items():
     d=ROOT/"m"/k; d.mkdir(parents=True,exist_ok=True)
     for f,src,cl in (("home.html",A_HOME,""),("work.html",A_WORK,"on-work")):

@@ -2,7 +2,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="robots" content="noindex">
 <style>
-/* Plain review page on neutral paper so the candidate palettes are what you judge. Layout: recommendation, then one study per palette. */
+/* Plain review page on neutral paper so the candidates are what you judge. Layout: recommendation, then one study per color system. */
 :root{--bg:#FAFAF8;--fg:#17171C;--muted:#5C5C66;--rule:#D6D6D2;--accent:#1F1DD6;--on:#FFFFFF}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.5 Arial,sans-serif}
 .wrap{max-width:1180px;margin:auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -13,7 +13,7 @@ p{margin:0 0 10px;max-width:68ch}a{color:var(--accent)}a:focus-visible{outline:3
 .c{border-top:2px solid var(--fg);padding-top:16px;margin-top:40px}
 .hd{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 20px;align-items:baseline;margin-bottom:12px}
 .links{display:flex;flex-wrap:wrap;gap:4px 16px;font-weight:600}
-.swatches{display:flex;flex-wrap:wrap;gap:0;margin:0 0 12px}.swatches span{width:44px;height:26px;display:block}
+.swatches{display:flex;flex-wrap:wrap;margin:0 0 12px}.swatches span{width:44px;height:26px;display:block}
 .shots{display:grid;grid-template-columns:minmax(0,3.4fr) minmax(0,1fr);gap:12px;align-items:start}
 .shots img{display:block;width:100%;height:auto;border:1px solid var(--rule)}
 figure{margin:0}figcaption{color:var(--muted);font-size:.875rem;margin-top:4px}
@@ -22,34 +22,26 @@ figure{margin:0}figcaption{color:var(--muted);font-size:.875rem;margin-top:4px}
 @media (max-width:760px){.notes{grid-template-columns:1fr}.shots{grid-template-columns:minmax(0,1fr)}.shots figure+figure{max-width:60%}}
 </style>
 <div class="wrap">
-<h1>Masthead, three new palettes</h1>
-<p>Same layout and words, now with your statement's phrases as links. Only the color differs. Pick one and I'll build it across the site.</p>
-<section class="rec"><h2>I recommend Ultra</h2>
-<p>A reviewer who saw only the screenshots ranked it first for identity and clear sections. It's also the one that keeps Profile distinct: Night Game sits close to your charcoal Photography site and Flickday's black, and Ultra grows out of the blue you already chose.</p></section>
-
-<section class="c" id="ultra"><div class="hd"><h2>Ultra</h2><div class="links"><a href="m/ultra/home.html">Open home</a><a href="m/ultra/work.html">Open Work</a><a href="evidence/m-ultra-home-d-full.jpg">Full page</a></div></div>
-<div class="swatches" aria-hidden="true"><span style="background:#1F1DD6"></span><span style="background:#FFC2DC"></span><span style="background:#0B0A47"></span><span style="background:#F7F4FF"></span><span style="background:#FF5238"></span></div>
-<div class="shots"><figure><img src="evidence/m-ultra-home-d-fold.jpg" alt="Ultra desktop first screen: pink wordmark on electric blue with the volleyball photograph" width="1440" height="900"><figcaption>Desktop, first screen</figcaption></figure><figure><img src="evidence/m-ultra-home-m-fold.jpg" alt="Ultra phone first screen" width="780" height="1688"><figcaption>Phone</figcaption></figure></div>
-<div class="notes"><p><strong>Feel.</strong> Electric blue and pink, like an art-school poster. Confident without pointing at any one industry.</p><p><strong>Reviewer.</strong> Ranked first. Clearest sections. Found the full-strength blue tiring behind long text.</p><p><strong>Since then.</strong> Blue slightly deepened. About now sits on pale, so blue stays on the hero and section heads. Orange moved off Let's Pepper, which it fought.</p></div></section>
-
-<section class="c" id="night"><div class="hd"><h2>Night Game</h2><div class="links"><a href="m/night/home.html">Open home</a><a href="m/night/work.html">Open Work</a><a href="evidence/m-night-home-d-full.jpg">Full page</a></div></div>
-<div class="swatches" aria-hidden="true"><span style="background:#07070F"></span><span style="background:#F2EEE6"></span><span style="background:#C9B8FF"></span><span style="background:#E8A72C"></span><span style="background:#FF6A45"></span></div>
-<div class="shots"><figure><img src="evidence/m-night-home-d-fold.jpg" alt="Night Game desktop first screen: bone wordmark on near-black, with the photograph melting into the page" width="1440" height="900"><figcaption>Desktop, first screen</figcaption></figure><figure><img src="evidence/m-night-home-m-fold.jpg" alt="Night Game phone first screen" width="780" height="1688"><figcaption>Phone</figcaption></figure></div>
-<div class="notes"><p><strong>Feel.</strong> The page takes its black from the arena in your photograph, so the two melt together. Each project gets its own color.</p><p><strong>Reviewer.</strong> Ranked second. Best at telling projects apart, but too many hues, and amber stacked on yellow looked cheap.</p><p><strong>Since then.</strong> Yellow and magenta removed. The Rotation is now on bone, and Email is no longer a weak red.</p></div></section>
-
-<section class="c" id="flare"><div class="hd"><h2>Flare</h2><div class="links"><a href="m/flare/home.html">Open home</a><a href="m/flare/work.html">Open Work</a><a href="evidence/m-flare-home-d-full.jpg">Full page</a></div></div>
-<div class="swatches" aria-hidden="true"><span style="background:#FF4B1F"></span><span style="background:#14060C"></span><span style="background:#F6EEE3"></span></div>
-<div class="shots"><figure><img src="evidence/m-flare-home-d-fold.jpg" alt="Flare desktop first screen: near-black wordmark on hot orange" width="1440" height="900"><figcaption>Desktop, first screen</figcaption></figure><figure><img src="evidence/m-flare-home-m-fold.jpg" alt="Flare phone first screen" width="780" height="1688"><figcaption>Phone</figcaption></figure></div>
-<div class="notes"><p><strong>Feel.</strong> Loud and sporty, picking up the red in the jersey. The simplest palette: orange, near-black and bone.</p><p><strong>Reviewer.</strong> Ranked third. Coherent, but the orange mostly decorates. Read as a sports-event operator.</p><p><strong>Since then.</strong> Pink panel dropped. About moved to bone, because the long text on orange was tiring.</p></div></section>
-
-<section class="box"><h3>Where the color ideas came from</h3><ul>
-<li><a href="https://mobbin.com/sites/sections/b1072dab-8faa-4336-8cdf-980edf4d3213">Fiasco</a> and <a href="https://mobbin.com/sites/sections/5a918c4a-32ee-4833-944a-513aae6683f1">TinyWins</a>: one saturated color owns the whole screen, with a single ink on top.</li>
-<li><a href="https://mobbin.com/sites/sections/c27f50ff-dd09-41f9-afc8-598c3ccae77a">Analogue</a> and <a href="https://mobbin.com/sites/sections/6a2f519f-af72-4525-a6ca-2ef3457bdf63">Locomotive</a>: a strong field behind real work, with color that competes with it on purpose.</li>
-<li><a href="https://mobbin.com/sites/sections/ceab4ab4-d046-4356-bde4-32acd9781fa8">Vucko</a> and <a href="https://mobbin.com/sites/sections/6ac71d72-4d9d-4e61-b9f0-df8432c83237">basement.studio</a>: color varies by project, which led to Night Game's panels.</li>
-<li>Impeccable's color guide: give the strongest color a whole region, and set roles for ground, text and action before picking swatches.</li></ul></section>
+<h1>Masthead, with color that serves the page</h1>
+<p>The last round gave every section its own color, and those bands fought your photo and product screens. Here the page keeps one ground, the work supplies the color, and the accent comes from your photo.</p>
+<section class="rec"><h2>I recommend Bookend</h2>
+<p>Court red owns your first screen and your closing line, picking up the jersey and ball in the photograph. Everything between stays quiet so the products can be seen. Gallery is the safer choice, and the reviewer preferred it.</p></section>
+<section class="c" id="bookend"><div class="hd"><h2>Bookend</h2><div class="links"><a href="m/bookend/home.html">Open home</a><a href="m/bookend/work.html">Open Work</a><a href="evidence/m-bookend-home-d-full.jpg">Full page</a></div></div>
+<div class="swatches" aria-hidden="true"><span style="background:#B4232C"></span><span style="background:#FBF6EE"></span><span style="background:#F6F4EF"></span><span style="background:#14141A"></span></div>
+<div class="shots"><figure><img src="evidence/m-bookend-home-d-fold.jpg" alt="Bookend desktop first screen: cream wordmark and statement on court red beside the volleyball photograph" width="1440" height="900"><figcaption>Desktop, first screen</figcaption></figure><figure><img src="evidence/m-bookend-home-m-fold.jpg" alt="Bookend phone first screen" width="780" height="1688"><figcaption>Phone</figcaption></figure></div>
+<div class="notes"><p><strong>Color's job.</strong> Red marks the two moments that speak for you: who you are, and how to reach you. Quiet paper holds the work.</p><p><strong>Reviewer.</strong> Ranked it last, but judged it as a red page throughout, which it isn't. Its advice, red only on the hero and closing line, is what this already does.</p><p><strong>Watch for.</strong> The black photograph meets the red as a hard edge. I read that as poster-like; the reviewer didn't.</p></div></section>
+<section class="c" id="gallery"><div class="hd"><h2>Gallery</h2><div class="links"><a href="m/gallery/home.html">Open home</a><a href="m/gallery/work.html">Open Work</a><a href="evidence/m-gallery-home-d-full.jpg">Full page</a></div></div>
+<div class="swatches" aria-hidden="true"><span style="background:#F5F5F2"></span><span style="background:#0B0B12"></span><span style="background:#C4202B"></span></div>
+<div class="shots"><figure><img src="evidence/m-gallery-home-d-fold.jpg" alt="Gallery desktop first screen: black wordmark on off-white beside the volleyball photograph" width="1440" height="900"><figcaption>Desktop, first screen</figcaption></figure><figure><img src="evidence/m-gallery-home-m-fold.jpg" alt="Gallery phone first screen" width="780" height="1688"><figcaption>Phone</figcaption></figure></div>
+<div class="notes"><p><strong>Color's job.</strong> Black and off-white throughout. Red appears only where you can act: links, Email and the closing line.</p><p><strong>Reviewer.</strong> Ranked first. The red ties to the photo and the screens read cleanly. Found the thin underlines faint, so I thickened those in the statement.</p><p><strong>Watch for.</strong> It's the closest to neutral, so it has the least personality of the three.</p></div></section>
+<section class="c" id="arena"><div class="hd"><h2>Arena</h2><div class="links"><a href="m/arena/home.html">Open home</a><a href="m/arena/work.html">Open Work</a><a href="evidence/m-arena-home-d-full.jpg">Full page</a></div></div>
+<div class="swatches" aria-hidden="true"><span style="background:#07070F"></span><span style="background:#F2F2EE"></span><span style="background:#8FCBEA"></span></div>
+<div class="shots"><figure><img src="evidence/m-arena-home-d-fold.jpg" alt="Arena desktop first screen: bone wordmark on near-black, with the photograph melting into the page" width="1440" height="900"><figcaption>Desktop, first screen</figcaption></figure><figure><img src="evidence/m-arena-home-m-fold.jpg" alt="Arena phone first screen" width="780" height="1688"><figcaption>Phone</figcaption></figure></div>
+<div class="notes"><p><strong>Color's job.</strong> The page takes its black from the arena in your photo. The ice blue comes from the lights behind the player and marks what you can act on.</p><p><strong>Reviewer.</strong> Ranked second. Found the blue unconnected to the photo, and the light product screens glared against black.</p><p><strong>Watch for.</strong> It sits closest to your charcoal Photography site and Flickday's black.</p></div></section>
 <section class="box"><h3>What this doesn't show</h3><ul>
-<li>I rejected a fourth palette, Clash (pink, red and green). It fought both your photos and itself. Its files stay in the repo.</li>
-<li>All text passes standard contrast checks. The reviewer saw the versions before the changes listed above, so a fresh review is due on the real build.</li>
-<li>Phone views are emulated, and no visitor has tested these. Mobbin shows these sites as captured stills, so I'm citing color choices only, not motion or behavior.</li>
+<li>Ultra, Night Game, Flare and Clash remain in the repo as rejected.</li>
+<li>All text passes standard contrast checks, calculated from the color values. Lowest body text: 5.36:1.</li>
+<li>Apart from the statement underlines, the reviewer saw these same versions. Its phone images were too small to judge text, and phone views are emulated.</li>
+<li>The Mobbin study led here: neutral agency sites such as <a href="https://mobbin.com/sites/sections/ceab4ab4-d046-4356-bde4-32acd9781fa8">Vucko</a> and <a href="https://mobbin.com/sites/sections/42aaad97-8c45-41d3-be1e-c4b9b9654332">Büro</a> let the work carry color. They are captured stills, so I'm citing color only.</li>
 </ul></section>
 </div>

@@ -1,0 +1,14 @@
+:root{--ground:#07070F;--text:#F2F2EE;--word:#F2F2EE;--action:#8FCBEA;--note:#A8A8B3;--rule:#2C2C38;--w-bg:#07070F;--w-fg:#F2F2EE;--w-head:#F2F2EE;--w-link:#8FCBEA;--t-bg:#8FCBEA;--t-fg:#07070F;--a-bg:transparent;--a-fg:inherit}
+
+/* Color system: the page keeps one ground. Work and photographs supply the color. */
+.panel{--pb:var(--ground);--pf:var(--text);--pn:var(--text);border-top:1px solid var(--rule)}
+.panel--tall{padding-bottom:clamp(40px,6vw,88px)}.panel--tall .p-img{margin-bottom:0}
+.p-cap,.p-state{color:var(--note)}
+.p-name a:hover,.sec a:hover,.statement a:hover,.writing p a:hover{color:var(--action)}
+.nav a:hover,.foot a:hover,.about a:hover{color:var(--action)}
+.writing{border-top:1px solid var(--rule)}
+.sec{padding-bottom:calc(var(--gutter)*1.4)}
+.p-act a,.about p a{color:var(--action)}
+.statement a{text-decoration-color:var(--action)}
+@media (max-width:760px){.panel--tall .p-img{margin:12px auto 0}}
+.statement a{text-decoration-thickness:.08em}

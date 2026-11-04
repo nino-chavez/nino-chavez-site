@@ -1,7 +1,7 @@
 ---
 design_intent: rethink
 design_direction: docs/decisions/0007-profile-studio.md
-status: Masthead selected 2026-11-04; palette awaiting named selection
+status: Masthead selected 2026-11-04; color system awaiting named selection
 ---
 
 # Profile rethink: a modern agency visual style
@@ -116,3 +116,11 @@ Candidates are in `m/` with tokens in `palettes/`. Strategy per Impeccable's `co
 A reviewer with no brief ranked the first versions: Ultra, Night Game, Flare, Clash. Clash was rejected and its first-round files remain. Revisions after that review were not re-reviewed. Script contrast check after revisions: 0 failures, body text at least 5.27:1 and large text at least 4.2:1.
 
 Sibling sites are a constraint: Photography is charcoal and gold, Flickday is black and yellow (`fleet-color-study.md`). That counts against Night Game and rules out black and yellow.
+
+## Color round two, 2026-11-04
+
+Nino rejected Ultra, Night Game and Flare: none made sense for color combined with the page design. The defect was method. Swatches were chosen first and laid on as a different band per section, so they competed with the photograph and product screens, and the reviewer's ranking of those palettes did not catch it.
+
+The new rule starts from the layout. One ground holds the page, work and photographs supply the color, and the accent comes from the photograph and has a stated job. Candidates: Bookend (court red on the first screen and closing line), Gallery (red only on actions), Arena (black from the arena, ice blue on actions).
+
+The reviewer preferred Gallery, then Arena, then Bookend. Its Bookend critique described a page red throughout, including the About section, which the captures do not show, so that ranking carries less weight. Lowest body contrast is 5.36:1.
