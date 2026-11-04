@@ -49,7 +49,7 @@ export default async function WorkPage({ searchParams }: { searchParams: Promise
               </div>
               {work.image ? <figure className={`work-preview work-preview--${work.slug}`}>
                 {/* eslint-disable-next-line @next/next/no-img-element -- Framed static previews preserve the approved screenshot crops. */}
-                <img src={work.image.src} alt={work.image.alt} loading={work.slug === "minder" ? "eager" : "lazy"} />
+                <img src={work.image.src} alt={work.image.alt} width={work.image.width} height={work.image.height} loading={work.slug === "minder" ? "eager" : "lazy"} />
               </figure> : null}
             </article>
           );

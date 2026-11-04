@@ -105,6 +105,9 @@ for (const width of [1440, 390]) {
     expect(await page.locator(".work-entry").count()).toBeGreaterThanOrEqual(5);
     await expect(page.locator(".work-entry h3").first()).toHaveCSS("font-family", /Anton/);
     for (const image of await page.locator(".work-preview img").all()) {
+      // Previews render at full size here, so missing dimensions move the links beside them as they load.
+      await expect(image).toHaveAttribute("width", /\d+/);
+      await expect(image).toHaveAttribute("height", /\d+/);
       await image.scrollIntoViewIfNeeded();
       await expect.poll(() => image.evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth > 0)).toBe(true);
     }
