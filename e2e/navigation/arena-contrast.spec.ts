@@ -1,16 +1,16 @@
 import { expect, test } from "@playwright/test";
 
 // Arena inverts a palette the shared components were written for; this catches dark-on-dark and light-on-light text.
-const routes = ["/", "/about", "/now", "/links", "/privacy", "/cv", "/work", "/work?view=all", "/work?q=rally", "/work?state=live", "/work/blueprint", "/learn", "/demos", "/search?q=Rally", "/search?q=no-such-profile-project", "/photography/coverage", "/missing-profile-page"];
+const routes = ["/", "/about", "/now", "/links", "/privacy", "/cv", "/work", "/work?view=all", "/work?q=rally", "/work?state=live", "/work/blueprint", "/learn", "/demos", "/search?q=Rally", "/search?q=no-such-profile-project", "/photography", "/photography/coverage", "/learn/explorer", "/demos/twelve-messages", "/demos/applied/two-ways", "/missing-profile-page"];
 
-test("text keeps at least 4.5:1 contrast, or 3:1 when large, on Arena surfaces", async ({ page }) => {
-  test.setTimeout(180_000);
-  await page.setViewportSize({ width: 1440, height: 900 });
+for (const width of [1440, 390]) test(`text keeps at least 4.5:1 contrast, or 3:1 when large, on Arena surfaces at ${width}px`, async ({ page }) => {
+  test.setTimeout(240_000);
+  await page.setViewportSize({ width, height: 900 });
   const failures: string[] = [];
   for (const route of routes) {
     await page.goto(route);
     await page.evaluate(() => document.fonts.ready);
-    const found = await page.evaluate(() => {
+    const scan = () => page.evaluate(() => {
       const parse = (value: string) => {
         const numbers = value.match(/[\d.]+/g)?.map(Number) ?? [0, 0, 0, 0];
         return { r: numbers[0], g: numbers[1], b: numbers[2], a: numbers[3] ?? 1 };
@@ -54,7 +54,14 @@ test("text keeps at least 4.5:1 contrast, or 3:1 when large, on Arena surfaces",
       }
       return out;
     });
-    failures.push(...found.map((item) => `${route}: ${item}`));
+    failures.push(...(await scan()).map((item) => `${route}: ${item}`));
+    // Cards that invert on hover only reveal their color pair in that state.
+    const invertingCard = page.locator(".photography-route-deck a").first();
+    if (route === "/photography" && await invertingCard.isVisible()) {
+      await invertingCard.hover();
+      await page.waitForTimeout(400);
+      failures.push(...(await scan()).map((item) => `${route} (hover): ${item}`));
+    }
   }
   expect(failures).toEqual([]);
 });

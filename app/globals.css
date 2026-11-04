@@ -3219,7 +3219,7 @@ h3 {
 .native-story-rail a[aria-current="step"] {
   border-color: var(--bone);
   background: var(--bone);
-  color: var(--bone);
+  color: #07070F;
 }
 
 .native-story-end {

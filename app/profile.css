@@ -188,7 +188,7 @@
 .profile-site #main .about-practice-register > div { grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 8px 24px; padding-block: 22px; }
 .profile-site #main .about-practice-register dt { font-family: var(--display); font-size: 1.25rem; font-weight: 600; }
 .profile-site #main .about-practice-register a { grid-column: 2; }
-@media (max-width: 760px) { .profile-site #main .about-practice-register a { grid-column: 1 / -1; } }
+@media (max-width: 760px) { .profile-site #main .about-practice-register a { grid-column: 1 / -1; justify-self: start; white-space: nowrap; } }
 .profile-site #main :is(.about-practice-register a, .about-profiles, .now-register__action, .links-group li b) {
   font-size: .85rem;
   letter-spacing: 0;

@@ -369,7 +369,7 @@
 
 .by-nino-photography .photography-search button {
   background: var(--photography-gold);
-  color: var(--text);
+  color: var(--ink);
 }
 
 .by-nino-photography .photography-search > a {
@@ -397,16 +397,18 @@
 .by-nino-photography .photography-route-deck a:hover,
 .by-nino-photography .photography-route-deck a:focus-visible {
   background: var(--photography-gold);
-  color: var(--text);
+  color: var(--ink);
 }
 
+.by-nino-photography .photography-route-deck a:hover strong,
+.by-nino-photography .photography-route-deck a:focus-visible strong,
 .by-nino-photography .photography-route-deck a:hover small,
 .by-nino-photography .photography-route-deck a:hover b,
 .by-nino-photography .photography-route-deck a:hover b > span[aria-hidden="true"],
 .by-nino-photography .photography-route-deck a:focus-visible small,
 .by-nino-photography .photography-route-deck a:focus-visible b,
 .by-nino-photography .photography-route-deck a:focus-visible b > span[aria-hidden="true"] {
-  color: var(--text);
+  color: var(--ink);
 }
 
 .by-nino-coverage .coverage-page {
