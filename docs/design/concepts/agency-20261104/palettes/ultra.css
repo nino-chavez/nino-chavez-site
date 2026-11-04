@@ -1,0 +1,9 @@
+:root{--ground:#1F1DD6;--text:#FFFFFF;--word:#FFC2DC;--action:#FFC2DC;--note:#FFFFFF;--rule:#FFC2DC;--w-bg:#FFC2DC;--w-fg:#0B0A47;--w-head:#1F1DD6;--w-link:#1F1DD6;--t-bg:#FFC2DC;--t-fg:#1F1DD6;--a-bg:#F7F4FF;--a-fg:#0B0A47}
+.panel:nth-of-type(1){--pb:#FFC2DC;--pf:#0B0A47;--pn:#1F1DD6}
+.panel:nth-of-type(2){--pb:#0B0A47;--pf:#FFFFFF;--pn:#FFC2DC}
+.panel:nth-of-type(3){--pb:#F7F4FF;--pf:#0B0A47;--pn:#1F1DD6}
+.on-work .panel:nth-of-type(1){--pb:#FFC2DC;--pf:#0B0A47;--pn:#1F1DD6}
+.on-work .panel:nth-of-type(2){--pb:#0B0A47;--pf:#FFFFFF;--pn:#FFC2DC}
+.on-work .panel:nth-of-type(3){--pb:#F7F4FF;--pf:#0B0A47;--pn:#1F1DD6}
+.on-work .panel:nth-of-type(4){--pb:#0B0A47;--pf:#FFFFFF;--pn:#FFC2DC}
+.on-work .panel:nth-of-type(5){--pb:#FF5238;--pf:#0B0A47;--pn:#0B0A47}

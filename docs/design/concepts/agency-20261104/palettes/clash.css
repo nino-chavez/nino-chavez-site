@@ -1,0 +1,6 @@
+:root{--ground:#FFCBE0;--text:#0E3B2C;--word:#D91F16;--action:#0E3B2C;--note:#0E3B2C;--rule:#0E3B2C;--w-bg:#D91F16;--w-fg:#FFFFFF;--w-head:#FFCBE0;--w-link:#FFFFFF;--t-bg:#0E3B2C;--t-fg:#FFCBE0}
+.panel:nth-of-type(1){--pb:#0E3B2C;--pf:#FFE6F0;--pn:#FFCBE0}
+.panel:nth-of-type(2){--pb:#D91F16;--pf:#FFFFFF;--pn:#FFCBE0}
+.panel:nth-of-type(3){--pb:#FFF4E8;--pf:#0E3B2C;--pn:#D91F16}
+.panel:nth-of-type(4){--pb:#0E3B2C;--pf:#FFE6F0;--pn:#FFCBE0}
+.panel:nth-of-type(5){--pb:#D91F16;--pf:#FFFFFF;--pn:#FFCBE0}

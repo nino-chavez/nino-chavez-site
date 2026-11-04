@@ -43,6 +43,7 @@ def foot():
 NOTE='<p class="note">Writing and Photography open in their own sites.</p>'
 
 # ---------- A: Masthead. Wordmark, photograph, then full-bleed colour panels.
+LINKED=f'I’m a <a href="work.html">product architect</a> in Chicago. Outside work, I <a href="https://letspepper.com/" {NT}>run volleyball events{NEW}</a>, <a href="{PHOTO}" {NT}>take photographs{NEW}</a>, <a href="{BLOG}" {NT}>write{NEW}</a>, and <a href="https://soundcloud.com/ni-no-cha-vez" {NT}>DJ{NEW}</a>.'
 def a_panels(items,all_=False):
     out=[]
     for i,d in enumerate(items):
@@ -60,7 +61,7 @@ A_HOME=page("A Masthead · Nino Chavez","a.css",f'''
 <header class="mast">{nav()}<h1 class="word"><a href="home.html">Nino <span>Chavez</span></a></h1></header>
 <main id="main">
 <section class="open" aria-labelledby="ph">
- <div class="open-copy"><p class="statement">{STATEMENT}</p>{NOTE}</div>
+ <div class="open-copy"><p class="statement">{LINKED}</p>{NOTE}</div>
  <a class="open-photo" href="{PHOTO}" {NT}><img src="../assets/photography.webp" alt="Volleyball photograph" width="1080" height="1621" fetchpriority="high"><span class="open-cap"><span class="d" id="ph">Photography</span><span>Volleyball and event galleries{NEW}</span></span></a>
 </section>
 <section class="writing" aria-labelledby="wr"><h2 class="d" id="wr">Writing</h2><p><a href="{BLOG}" {NT}>Signal Dispatch{NEW}</a><br>My writing: essays, guides, presentations, and fiction.</p></section>
@@ -123,5 +124,12 @@ C_WORK=page("C Wall · Work","c.css",f'''
 <section class="tile t-id"><h1>Work</h1><p>Apps, websites, businesses, and the work behind them.</p><p class="browse"><a href="{LIVE}/work?view=all">Browse all work <span aria-hidden="true">→</span></a></p></section>
 {"".join(tile(d,c) for d,c in zip(ALL_WORK,["w-minder","w-flick","w-rot","w-pep","w-rally"]))}
 </div></main>{foot()}''')
+PAL={"flare":"Flare","clash":"Clash","night":"Night Game","ultra":"Ultra"}
+for k,nm in PAL.items():
+    d=ROOT/"m"/k; d.mkdir(parents=True,exist_ok=True)
+    for f,src,cl in (("home.html",A_HOME,""),("work.html",A_WORK,"on-work")):
+        h=src.replace('<link rel="stylesheet" href="a.css">',f'<link rel="stylesheet" href="../../a/a.css"><link rel="stylesheet" href="../../palettes/{k}.css">').replace('../assets/','../../assets/').replace("<title>A Masthead",f"<title>{nm}")
+        if cl: h=h.replace('<body>',f'<body class="{cl}">')
+        (d/f).write_text(h)
 for p,c in {"a/home.html":A_HOME,"a/work.html":A_WORK,"b/home.html":B_HOME,"b/work.html":B_WORK,"c/home.html":C_HOME,"c/work.html":C_WORK}.items():
     (ROOT/p).write_text(c)

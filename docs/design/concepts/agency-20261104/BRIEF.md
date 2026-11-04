@@ -1,7 +1,7 @@
 ---
 design_intent: rethink
 design_direction: docs/decisions/0007-profile-studio.md
-status: awaiting named selection
+status: Masthead selected 2026-11-04; palette awaiting named selection
 ---
 
 # Profile rethink: a modern agency visual style
@@ -106,3 +106,13 @@ These are static concept pages, not the production route. Motion is limited to h
 A reviewer with no brief saw desktop and phone captures of all three, with neutral names. It ranked C first (real work on the first screen, best phone stack), A second (strongest identity, repetitive on Work), B last (empty blue, template-like Work list). Its findings prompted these revisions, which it did not re-review: A's photo crop and Work heading scale, B's phone Work gap and inline image size, C's clipped product screens and filler tile. A fresh cold review is still owed on the build after selection.
 
 Rendered checks after those revisions: no horizontal overflow at 1440 or 390 wide; specialist links open in a new tab with `noopener`; B's preview follows hover and keyboard focus; the keyboard path starts at the skip link and focus outlines render on it and the primary navigation.
+
+## Selection and palette round, 2026-11-04
+
+Nino selected A, Masthead, and asked to rethink the palette using Mobbin and Impeccable. That reopens the palette held fixed above. B's linked statement is grafted into Masthead's home; the other concepts stay in this folder, not approved. The ADR is written once the palette is named.
+
+Candidates are in `m/` with tokens in `palettes/`. Strategy per Impeccable's `colorize` and `new-work` references: one color owns whole regions, with explicit roles for ground, text, action, panels and closing line.
+
+A reviewer with no brief ranked the first versions: Ultra, Night Game, Flare, Clash. Clash was rejected and its first-round files remain. Revisions after that review were not re-reviewed. Script contrast check after revisions: 0 failures, body text at least 5.27:1 and large text at least 4.2:1.
+
+Sibling sites are a constraint: Photography is charcoal and gold, Flickday is black and yellow (`fleet-color-study.md`). That counts against Night Game and rules out black and yellow.

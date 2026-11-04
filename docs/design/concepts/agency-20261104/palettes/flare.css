@@ -1,0 +1,9 @@
+:root{--ground:#FF4B1F;--text:#14060C;--word:#14060C;--action:#14060C;--note:#14060C;--rule:#14060C;--w-bg:#F6EEE3;--w-fg:#14060C;--w-head:#14060C;--w-link:#B72A08;--t-bg:#14060C;--t-fg:#FF4B1F;--a-bg:#F6EEE3;--a-fg:#14060C}
+.panel:nth-of-type(1){--pb:#14060C;--pf:#F6EEE3;--pn:#FF4B1F}
+.panel:nth-of-type(2){--pb:#F6EEE3;--pf:#14060C;--pn:#D5350F}
+.panel:nth-of-type(3){--pb:#14060C;--pf:#F6EEE3;--pn:#FF4B1F}
+.on-work .panel:nth-of-type(1){--pb:#14060C;--pf:#F6EEE3;--pn:#FF4B1F}
+.on-work .panel:nth-of-type(2){--pb:#F6EEE3;--pf:#14060C;--pn:#D5350F}
+.on-work .panel:nth-of-type(3){--pb:#14060C;--pf:#F6EEE3;--pn:#FF4B1F}
+.on-work .panel:nth-of-type(4){--pb:#F6EEE3;--pf:#14060C;--pn:#D5350F}
+.on-work .panel:nth-of-type(5){--pb:#14060C;--pf:#F6EEE3;--pn:#FF4B1F}
