@@ -11,6 +11,15 @@
 The old `ninochavez-main` Pages project is vestigial. A successful Pages build
 does not update the Worker that serves the apex domain.
 
+## Bots receive different HTML
+
+Cloudflare AI Labyrinth (`crawler_protection` in the zone's bot settings) adds a hidden
+`/cdn-cgi/content` link as the first thing in `<body>`, along with a JavaScript detection
+script, for traffic it scores as a bot. curl and headless browsers get both; an ordinary
+Chrome session does not. A headless check of the live site therefore tests a different
+page from the one people see. `e2e/navigation/bot-injected-link.spec.ts` reproduces the
+injection locally, because a local build never has it.
+
 ## Deploy trigger
 
 `.github/workflows/deploy-site.yml` deploys the Worker on every push to `main`
