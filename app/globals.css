@@ -148,7 +148,7 @@ code {
   transform: translateY(-180%);
   border-radius: var(--radius);
   background: var(--text);
-  color: white;
+  color: var(--ground);
 }
 
 .skip-link:focus {
@@ -162,7 +162,7 @@ code {
   padding: 6px 24px;
   border-bottom: 1px solid rgb(240 241 244 / 0.2);
   background: var(--action-quiet);
-  color: var(--ink);
+  color: var(--text);
   font-family: var(--mono);
   font-size: 0.72rem;
   font-weight: 700;
@@ -172,7 +172,7 @@ code {
 }
 
 .prototype-banner span {
-  color: var(--ink);
+  color: var(--text);
   font-weight: 400;
 }
 
@@ -182,7 +182,7 @@ code {
   top: 0;
   z-index: 50;
   border-bottom: 1px solid var(--rule);
-  background: rgb(240 241 244 / 0.92);
+  background: var(--ground);
   color: var(--text);
   backdrop-filter: blur(12px);
 }
@@ -479,7 +479,7 @@ code {
   border: 1px solid var(--action);
   border-radius: var(--radius);
   background: var(--action);
-  color: white;
+  color: var(--ground);
   text-decoration: none;
 }
 
@@ -880,7 +880,7 @@ code {
   min-width: 100px;
   border-color: var(--action);
   background: var(--action);
-  color: white;
+  color: var(--ground);
 }
 
 .search-results {
@@ -1074,7 +1074,7 @@ code {
 
 ::selection {
   background: var(--action);
-  color: var(--bone);
+  color: var(--ground);
 }
 
 .site-header {
@@ -1128,7 +1128,7 @@ code {
 
 .library-opening h1 {
   margin: 0;
-  color: var(--ink);
+  color: var(--text);
   font-size: clamp(4rem, 8vw, 8rem);
   font-weight: 800;
   letter-spacing: -0.045em;
@@ -1345,7 +1345,7 @@ code {
   padding-right: 18px;
   padding-left: 18px;
   background: var(--action);
-  color: var(--bone);
+  color: var(--ground);
 }
 
 .library-room .record-meta {
@@ -1550,12 +1550,12 @@ h3 {
   min-height: 28px;
   padding-block: 5px;
   background: var(--action-quiet);
-  color: var(--ink);
+  color: var(--text);
   font-size: 0.75rem;
 }
 
 .site-header {
-  background: rgb(240 241 244 / 0.94);
+  background: var(--ground);
 }
 
 .header-inner {
@@ -2420,7 +2420,7 @@ h3 {
   padding: 30px 24px;
   border-bottom: 0;
   background: var(--action);
-  color: var(--bone);
+  color: var(--ground);
 }
 
 .learn-track-register li:first-child .learn-track-name strong {
@@ -2666,7 +2666,7 @@ h3 {
 .learn-evidence-list a:focus-visible {
   background: var(--action);
   box-shadow: inset 4px 0 0 var(--action);
-  color: var(--bone);
+  color: var(--ground);
 }
 
 .learn-evidence-list a > span {
@@ -3411,7 +3411,7 @@ h3 {
   z-index: 30;
   margin-inline: -12px;
   padding-inline: 12px;
-  background: rgb(240 241 244 / 0.97);
+  background: var(--ground);
   box-shadow: 0 10px 22px rgb(14 25 40 / 0.08);
   backdrop-filter: blur(10px);
 }
@@ -3726,7 +3726,7 @@ h3 {
 
 .about-opening h1 {
   margin: 0;
-  color: var(--ink);
+  color: var(--text);
   font-size: clamp(4.2rem, 8vw, 7.6rem);
   font-weight: 800;
   letter-spacing: -0.045em;
@@ -4237,7 +4237,7 @@ h3 {
 .now-opening h1,
 .links-opening h1 {
   margin: 0;
-  color: var(--ink);
+  color: var(--text);
   font-size: clamp(5.5rem, 13vw, 12rem);
   font-weight: 800;
   letter-spacing: -0.05em;
@@ -5489,7 +5489,7 @@ h3 {
   display: grid;
   margin-bottom: clamp(86px, 11vw, 150px);
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid var(--ink);
+  border-top: 1px solid var(--text);
   border-left: 1px solid var(--rule);
 }
 
@@ -5502,7 +5502,7 @@ h3 {
   align-items: center;
   border-right: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
-  color: var(--ink);
+  color: var(--text);
   text-decoration: none;
   transition:
     background 160ms ease,
@@ -5535,7 +5535,7 @@ h3 {
   grid-template-columns: minmax(190px, 0.42fr) minmax(0, 1.58fr);
   gap: clamp(40px, 7vw, 100px);
   align-items: start;
-  border-top: 1px solid var(--ink);
+  border-top: 1px solid var(--text);
   scroll-margin-top: calc(var(--header-height) + 24px);
 }
 
@@ -5574,7 +5574,7 @@ h3 {
 }
 
 .privacy-copy .privacy-lead {
-  color: var(--ink);
+  color: var(--text);
   font-size: clamp(1.35rem, 2.2vw, 1.9rem);
   font-weight: 720;
   letter-spacing: -0.04em;
@@ -5584,7 +5584,7 @@ h3 {
 .privacy-copy ul {
   margin: 30px 0;
   padding: 0;
-  border-top: 1px solid var(--ink);
+  border-top: 1px solid var(--text);
   list-style: none;
 }
 
@@ -5596,7 +5596,7 @@ h3 {
 }
 
 .privacy-copy li strong {
-  color: var(--ink);
+  color: var(--text);
 }
 
 .privacy-copy a {
@@ -5614,8 +5614,8 @@ h3 {
   padding: 22px 0;
   grid-template-columns: minmax(150px, 0.34fr) minmax(0, 1fr);
   gap: 28px;
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
+  border-top: 1px solid var(--text);
+  border-bottom: 1px solid var(--text);
 }
 
 .privacy-change-note p {
@@ -5747,7 +5747,7 @@ h3 {
 /* claude-design-system: one display voice on flat ground — Anton retired here */
 .work-atlas__lead h1 {
   margin: 10px 0 20px;
-  color: var(--ink);
+  color: var(--text);
   font-size: clamp(3.4rem, 5.5vw, 5.6rem);
   font-weight: 800;
   letter-spacing: -0.045em;
@@ -5937,7 +5937,7 @@ h3 {
 .work-library-stage .control,
 .demo-library-stage .control {
   padding: 8px 10px 6px;
-  background: rgb(247 248 250 / 0.82);
+  background: var(--surface-muted);
 }
 
 .work-library-stage .control label,
@@ -5963,7 +5963,7 @@ h3 {
 
 .work-library-stage .control[data-active="true"],
 .demo-library-stage .control[data-active="true"] {
-  background: white;
+  background: var(--surface);
   box-shadow: inset 0 -4px 0 var(--action);
 }
 
@@ -6016,7 +6016,7 @@ h3 {
   flex-direction: column;
   align-items: flex-start;
   border: 0;
-  border-top: 2px solid var(--ink);
+  border-top: 2px solid var(--text);
   background: transparent;
   color: var(--text);
 }
@@ -6033,7 +6033,7 @@ h3 {
 .work-library-stage .group-heading h2 {
   max-width: 100%;
   margin: 0 0 10px;
-  color: var(--ink);
+  color: var(--text);
   font-size: clamp(1.9rem, 2.6vw, 2.8rem);
   letter-spacing: -0.04em;
   line-height: 0.98;
@@ -6139,7 +6139,7 @@ h3 {
 .demo-studio__lead h1 {
   max-width: 690px;
   margin: 14px 0 28px;
-  color: var(--ink);
+  color: var(--text);
   font-size: clamp(3.8rem, 6.5vw, 6.4rem);
   font-weight: 800;
   letter-spacing: -0.045em;
@@ -7263,7 +7263,7 @@ h3 {
 .field-hero__cta {
   padding: 14px 24px;
   background: var(--action);
-  color: #ffffff;
+  color: var(--ground);
   font-weight: 750;
   text-decoration: none;
   transition: background var(--motion-fast) ease;
@@ -7346,7 +7346,7 @@ h3 {
   font-size: clamp(2rem, 3.6vw, 3.4rem);
   letter-spacing: -0.04em;
   line-height: 1;
-  color: var(--ink);
+  color: var(--text);
 }
 
 .proof-bench__register > p {
@@ -7409,7 +7409,7 @@ h3 {
 
 .proof-cell--text {
   align-self: start;
-  border-top-color: var(--ink);
+  border-top-color: var(--text);
   background: var(--surface-muted);
 }
 
@@ -7448,7 +7448,7 @@ h3 {
 .proof-cell__caption strong {
   font-size: 1.3rem;
   letter-spacing: -0.02em;
-  color: var(--ink);
+  color: var(--text);
 }
 
 .proof-cell__caption em {
@@ -7580,7 +7580,7 @@ h3 {
   font-size: clamp(2.2rem, 4vw, 3.8rem);
   letter-spacing: -0.045em;
   line-height: 0.98;
-  color: var(--ink);
+  color: var(--text);
 }
 
 .session-index__register > p {

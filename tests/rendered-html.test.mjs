@@ -152,7 +152,7 @@ test("connects the homepage and person endpoint to one verified Person entity", 
   assert.ok(!directives.includes(process.env.SITE_VISIBILITY === "public" ? "noindex" : "index"));
 });
 
-test("server-renders the selected Studio home", async () => {
+test("server-renders the selected Masthead home", async () => {
   const response = await render("/");
   const html = (await response.text()).replaceAll("<!-- -->", "");
 
@@ -164,20 +164,23 @@ test("server-renders the selected Studio home", async () => {
     "strict-origin-when-cross-origin",
   );
 
-  assert.match(html, /id="studio"/);
-  assert.match(html, /class="identity-rail"/);
-  assert.match(html, /class="identity-heading"/);
-  assert.match(html, /<a\b(?=[^>]*class="identity-name")(?=[^>]*href="\/")[^>]*>Nino Chavez<\/a>/);
+  assert.match(html, /id="masthead"/);
+  assert.match(html, /<h1 class="wordmark"><a\b(?=[^>]*href="\/")[^>]*>Nino <span>Chavez<\/span><\/a><\/h1>/);
   assert.match(html, /Nino Chavez — Product architect and builder/);
   assert.match(html, /Product architect and builder in Chicago/);
   assert.match(html, /id="about"/);
-  assert.match(
-    html,
-    /I’m a product architect in Chicago\. Outside work, I run volleyball events, take photographs, write, and DJ\./,
+  const statement = html.match(/<p class="statement">[\s\S]*?<\/p>/)?.[0];
+  assert.ok(statement, "home should include the authored statement");
+  assert.equal(
+    statement.replace(/<span class="visually-hidden">[^<]*<\/span>/g, "").replace(/<[^>]+>/g, "").replace(/\s+([,.])/g, "$1"),
+    "I’m a product architect in Chicago. Outside work, I run volleyball events, take photographs, write, and DJ.",
   );
-  assert.match(html, /src="\/work\/nino\.jpg" alt="Portrait of Nino Chavez"/);
-  const rail = html.match(/<aside\b[^>]*class="identity-rail"[^>]*>[\s\S]*?<\/aside>/)?.[0];
-  assert.ok(rail, "home should include the Studio identity rail");
+  for (const href of ["/work", "https://letspepper.com/", "https://ninochavez.co/photography/albums", "https://ninochavez.co/blog/archive", "https://soundcloud.com/ni-no-cha-vez"]) {
+    assert.match(statement, new RegExp(`href="${escapeRegExp(href)}"`));
+  }
+  assert.match(html, /src="\/work\/nino\.jpg"[^>]*alt="Portrait of Nino Chavez"|alt="Portrait of Nino Chavez"[^>]*src="\/work\/nino\.jpg"/);
+  const mast = html.match(/<header\b[^>]*class="mast"[^>]*>[\s\S]*?<\/header>/)?.[0];
+  assert.ok(mast, "home should include the Masthead header");
   for (const [name, href] of [
     ["Work", "/work"],
     ["Writing", "https://ninochavez.co/blog/archive"],
@@ -185,7 +188,7 @@ test("server-renders the selected Studio home", async () => {
     ["About", "/about"],
     ["Email", "mailto:nino@ninochavez.co"],
   ]) {
-    assert.match(rail, new RegExp(`href="${escapeRegExp(href)}"[^>]*>${name}(?:<|\\s)`));
+    assert.match(mast, new RegExp(`href="${escapeRegExp(href)}"[^>]*>${name}(?:<|\\s)`));
   }
   assert.match(html, /id="projects"/);
   assert.match(html, /id="contact"/);
@@ -204,10 +207,10 @@ test("server-renders the selected Studio home", async () => {
   assert.match(html, /href="https:\/\/ninochavez\.co\/photography\/albums"[^>]*>Photography(?:<|\s)/);
   assert.match(html, /href="\/work"/);
   const footer = html.match(/<footer\b[^>]*>[\s\S]*?<\/footer>/)?.[0];
-  assert.ok(footer, "the Studio stream should include its own footer");
+  assert.ok(footer, "the Masthead stream should include its own footer");
   assert.match(footer, /href="\/privacy"[^>]*>Privacy<\/a>/);
   assert.ok((footer.match(/<a\b/g) ?? []).length >= 3, "the footer keeps ordinary discovery links");
-  assert.doesNotMatch(html, /<header\b/);
+  assert.doesNotMatch(html, /class="profile-header"/);
   assert.doesNotMatch(html, /class="profile-home"|field-opening|home-hero-frame/);
 });
 
@@ -224,7 +227,7 @@ test("inner profile pages retain the existing document header", async () => {
   ]) {
     assert.match(header, new RegExp(`href="${escapeRegExp(href)}"`));
   }
-  assert.doesNotMatch(html, /id="studio"|class="identity-rail"/);
+  assert.doesNotMatch(html, /id="masthead"/);
   assert.doesNotMatch(html, /site-navigation-dialog|Search this site|menu-button/);
 });
 
@@ -996,7 +999,7 @@ test("renders the current privacy policy and makes it globally searchable", asyn
   assert.match(searchHtml, /What the public site receives/);
 });
 
-test("keeps the existing inner shell off the Studio home", async () => {
+test("keeps the existing inner shell off the Masthead home", async () => {
   for (const path of [
     "/work",
     "/demos",
@@ -1035,13 +1038,12 @@ test("keeps the existing inner shell off the Studio home", async () => {
       1,
       `${path} should expose one main landmark`,
     );
-    assert.doesNotMatch(html, /id="studio"|class="identity-rail"/);
+    assert.doesNotMatch(html, /id="masthead"/);
   }
 
   const home = await htmlFor("/");
-  assert.match(home, /id="studio"/);
-  assert.match(home, /class="identity-rail"/);
-  assert.match(home, /class="identity-heading"/);
+  assert.match(home, /id="masthead"/);
+  assert.match(home, /class="wordmark"/);
   assert.match(home, /<main\b/);
   assert.doesNotMatch(home, /class="profile-header"|class="profile-footer"/);
   assert.equal((visibleDocument(home).match(/<main\b/g) ?? []).length, 1);

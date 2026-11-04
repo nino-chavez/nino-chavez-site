@@ -18,7 +18,7 @@ export default async function WorkPage({ searchParams }: { searchParams: Promise
   const params = await searchParams;
   const catalogue = params.view === "all" || ["q", "domain", "state", "form"].some((key) => Boolean(params[key]));
   return (
-    <div className="work-page work-atlas-page building-page">
+    <div className={`work-page work-atlas-page building-page${catalogue ? " work-page--catalogue" : ""}`}>
       <header className="building-page__header building-wrap">
         <div>
           <h1>Work</h1>

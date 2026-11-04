@@ -1,7 +1,7 @@
 ---
 design_intent: rethink
 design_direction: docs/decisions/0007-profile-studio.md
-status: Masthead selected 2026-11-04; color system awaiting named selection
+status: Selected 2026-11-04, Masthead with Arena; see docs/decisions/0008-profile-masthead-arena.md
 ---
 
 # Profile rethink: a modern agency visual style

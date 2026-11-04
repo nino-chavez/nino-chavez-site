@@ -7,7 +7,7 @@ design_direction: docs/claude-design-system.md
 
 ## November 4: agency rethink proposed
 
-Nino asked for a rethink of the profile site in a modern agency visual style. The brief, three concepts and comparison are in [concepts/agency-20261104](concepts/agency-20261104/BRIEF.md). ADR 0007 stays current until Nino names a selection.
+Nino asked for a rethink of the profile site in a modern agency visual style. The brief, three concepts and comparison are in [concepts/agency-20261104](concepts/agency-20261104/BRIEF.md). Nino selected Masthead with the Arena palette; [ADR 0008](../decisions/0008-profile-masthead-arena.md) owns the decision.
 
 ## September 30: refit rollout paused for a full-site rethink
 

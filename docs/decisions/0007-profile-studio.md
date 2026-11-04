@@ -1,7 +1,7 @@
 # ADR 0007: Use Studio for the profile home
 
 - **Date:** 2026-11-03
-- **Status:** Approved — ship it
+- **Status:** Superseded by [ADR 0008](0008-profile-masthead-arena.md)
 - **Scope:** profile home (`/`)
 - **Supersedes:** the home composition in [ADR 0006](0006-profile-work-in-view.md)
 

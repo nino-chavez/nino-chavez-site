@@ -1,4 +1,12 @@
 @font-face {
+  font-family: "Anton";
+  src: url("/fonts/anton-400.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Schibsted Grotesk";
   src: url("/fonts/schibsted-grotesk-latin.woff2") format("woff2");
   font-style: normal;
@@ -6,22 +14,24 @@
   font-display: swap;
 }
 
-/* Porcelain & cobalt profile tokens. Interior layouts retain Work in view; the
- * selected Studio homepage is scoped in studio.css. Specialist applications own
+/* Arena profile tokens. Interior layouts retain their composition; Masthead on
+ * home and /work is scoped in masthead.css. Specialist applications own
  * /blog and /photography; they do not load this shell or stylesheet. */
 .profile-site {
-  --ground: #F1EDE4;
-  --surface: #F1EDE4;
-  --surface-muted: #E5EAF4;
-  --text: #233343;
-  --ink: #233343;
-  --muted: #566273;
-  --rule: #CDBBB0;
-  --action: #244CC2;
-  --action-quiet: #E5EAF4;
-  --bone: #F1EDE4;
+  --ground: #07070F;
+  --surface: #0E0E18;
+  --surface-muted: #14141F;
+  --text: #F2F2EE;
+  --ink: #14141F;
+  --muted: #A8A8B3;
+  --rule: #2C2C38;
+  --action: #8FCBEA;
+  --action-quiet: #16222C;
+  --danger: #FF9A85;
+  --bone: #F2F2EE;
   --reading: var(--font);
   --display: "Schibsted Grotesk", var(--font);
+  --poster: Anton, Impact, sans-serif;
   --hero: var(--display);
   --mono: var(--font);
   --content: 1160px;
@@ -55,7 +65,7 @@
   overflow-wrap: break-word;
 }
 
-.profile-site #main h1 { font-size: clamp(2.25rem, 6vw, 3.25rem); }
+.profile-site #main h1 { font-family: var(--poster); font-size: clamp(2.5rem, 6vw, 3.75rem); font-weight: 400; letter-spacing: 0; line-height: 1.08; }
 .profile-site #main .profile-home h1 { font-size: clamp(2.125rem, 4vw, 3.125rem); line-height: 1.04; }
 .profile-site #main h2 { font-size: clamp(1.5rem, 3vw, 1.875rem); }
 .profile-site #main h3 { font-size: 1.35rem; }
@@ -391,6 +401,7 @@
 
 
 @media print {
+  .profile-site { --ground: #FFFFFF; --surface: #FFFFFF; --surface-muted: #FFFFFF; --text: #000000; --ink: #000000; --bone: #FFFFFF; --muted: #333333; --rule: #BBBBBB; --action: #000000; --action-quiet: #FFFFFF; }
   body.profile-site { background: white; color: black; }
   .profile-site :is(.profile-header, .profile-footer) { display: none; }
   .profile-site #main :is(.cv-opening__stage, .cv-section) { display: block; padding-block: 18px; }
