@@ -28,8 +28,8 @@
   "dependencies": {
     "next": "^16.4.0",
     "postcss": "^8.5.25",
-    "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "1.63.0",
@@ -44,7 +44,7 @@
     "eslint": "9.39.4",
     "eslint-config-next": "16.4.0",
     "miniflare": "5.20261006.0-alpha",
-    "react-server-dom-webpack": "19.3.0",
+    "react-server-dom-webpack": "19.3.1",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3",
     "vinext": "1.0.1",
